@@ -7,174 +7,150 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C91E4E4522AC2D9600FC4514 /* libDBLib.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = C91E4E4422AC2D9600FC4514 /* libDBLib.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		C962A09222A9BFC800510199 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962A09122A9BFC800510199 /* AppDelegate.swift */; };
-		C962A09422A9BFC800510199 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962A09322A9BFC800510199 /* ViewController.swift */; };
-		C962A09622A9BFC900510199 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C962A09522A9BFC900510199 /* Assets.xcassets */; };
-		C962A09922A9BFC900510199 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C962A09722A9BFC900510199 /* Main.storyboard */; };
-		C962A0CE22A9C90B00510199 /* libCommon.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = C962A0CD22A9C90B00510199 /* libCommon.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		C9655D4D22ADB87A00295976 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9655D4C22ADB87A00295976 /* main.swift */; };
+		C9655D5522ADB88500295976 /* libCommon.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9655D5422ADB88500295976 /* libCommon.dylib */; };
+		C9655D5722ADB88500295976 /* libDBLib.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9655D5622ADB88500295976 /* libDBLib.dylib */; };
+		C9655D5922ADB8A700295976 /* ColList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9655D5822ADB8A700295976 /* ColList.swift */; };
+		C9F253B022AF16BF00FEE69E /* ConsoleColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F253AF22AF16BF00FEE69E /* ConsoleColors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		C962A0CF22A9C90C00510199 /* Embed Libraries */ = {
+		C9655D4722ADB87A00295976 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
 			files = (
-				C91E4E4522AC2D9600FC4514 /* libDBLib.dylib in Embed Libraries */,
-				C962A0CE22A9C90B00510199 /* libCommon.dylib in Embed Libraries */,
 			);
-			name = "Embed Libraries";
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C91E4E4422AC2D9600FC4514 /* libDBLib.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libDBLib.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		C962A08E22A9BFC800510199 /* MacApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C962A09122A9BFC800510199 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C962A09322A9BFC800510199 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C962A09522A9BFC900510199 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C962A09822A9BFC900510199 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C962A09A22A9BFC900510199 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C962A09B22A9BFC900510199 /* MacApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacApp.entitlements; sourceTree = "<group>"; };
-		C962A0CD22A9C90B00510199 /* libCommon.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libCommon.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9655D4922ADB87A00295976 /* SQLiteDB */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SQLiteDB; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9655D4C22ADB87A00295976 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		C9655D5422ADB88500295976 /* libCommon.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libCommon.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9655D5622ADB88500295976 /* libDBLib.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libDBLib.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9655D5822ADB8A700295976 /* ColList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColList.swift; sourceTree = "<group>"; };
+		C9F253AF22AF16BF00FEE69E /* ConsoleColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		C962A08B22A9BFC800510199 /* Frameworks */ = {
+		C9655D4622ADB87A00295976 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9655D5522ADB88500295976 /* libCommon.dylib in Frameworks */,
+				C9655D5722ADB88500295976 /* libDBLib.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C962A08522A9BFC800510199 = {
+		C9655D4022ADB87A00295976 = {
 			isa = PBXGroup;
 			children = (
-				C91E4E4422AC2D9600FC4514 /* libDBLib.dylib */,
-				C962A0CD22A9C90B00510199 /* libCommon.dylib */,
-				C962A09022A9BFC800510199 /* MacApp */,
-				C962A08F22A9BFC800510199 /* Products */,
+				C9655D4B22ADB87A00295976 /* SQLiteDB */,
+				C9655D4A22ADB87A00295976 /* Products */,
+				C9655D5322ADB88500295976 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		C962A08F22A9BFC800510199 /* Products */ = {
+		C9655D4A22ADB87A00295976 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C962A08E22A9BFC800510199 /* MacApp.app */,
+				C9655D4922ADB87A00295976 /* SQLiteDB */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C962A09022A9BFC800510199 /* MacApp */ = {
+		C9655D4B22ADB87A00295976 /* SQLiteDB */ = {
 			isa = PBXGroup;
 			children = (
-				C962A09122A9BFC800510199 /* AppDelegate.swift */,
-				C962A09322A9BFC800510199 /* ViewController.swift */,
-				C962A09522A9BFC900510199 /* Assets.xcassets */,
-				C962A09722A9BFC900510199 /* Main.storyboard */,
-				C962A09A22A9BFC900510199 /* Info.plist */,
-				C962A09B22A9BFC900510199 /* MacApp.entitlements */,
+				C9655D4C22ADB87A00295976 /* main.swift */,
+				C9655D5822ADB8A700295976 /* ColList.swift */,
+				C9F253AF22AF16BF00FEE69E /* ConsoleColors.swift */,
 			);
-			path = MacApp;
+			path = SQLiteDB;
+			sourceTree = "<group>";
+		};
+		C9655D5322ADB88500295976 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C9655D5422ADB88500295976 /* libCommon.dylib */,
+				C9655D5622ADB88500295976 /* libDBLib.dylib */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C962A08D22A9BFC800510199 /* MacApp */ = {
+		C9655D4822ADB87A00295976 /* SQLiteDB */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C962A09E22A9BFC900510199 /* Build configuration list for PBXNativeTarget "MacApp" */;
+			buildConfigurationList = C9655D5022ADB87A00295976 /* Build configuration list for PBXNativeTarget "SQLiteDB" */;
 			buildPhases = (
-				C962A08A22A9BFC800510199 /* Sources */,
-				C962A08B22A9BFC800510199 /* Frameworks */,
-				C962A08C22A9BFC800510199 /* Resources */,
-				C962A0CF22A9C90C00510199 /* Embed Libraries */,
+				C9655D4522ADB87A00295976 /* Sources */,
+				C9655D4622ADB87A00295976 /* Frameworks */,
+				C9655D4722ADB87A00295976 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = MacApp;
-			productName = MacApp;
-			productReference = C962A08E22A9BFC800510199 /* MacApp.app */;
-			productType = "com.apple.product-type.application";
+			name = SQLiteDB;
+			productName = SQLiteDB;
+			productReference = C9655D4922ADB87A00295976 /* SQLiteDB */;
+			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		C962A08622A9BFC800510199 /* Project object */ = {
+		C9655D4122ADB87A00295976 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Matthew Hogg";
 				TargetAttributes = {
-					C962A08D22A9BFC800510199 = {
+					C9655D4822ADB87A00295976 = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
 				};
 			};
-			buildConfigurationList = C962A08922A9BFC800510199 /* Build configuration list for PBXProject "MacApp" */;
+			buildConfigurationList = C9655D4422ADB87A00295976 /* Build configuration list for PBXProject "SQLiteDB" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 			);
-			mainGroup = C962A08522A9BFC800510199;
-			productRefGroup = C962A08F22A9BFC800510199 /* Products */;
+			mainGroup = C9655D4022ADB87A00295976;
+			productRefGroup = C9655D4A22ADB87A00295976 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C962A08D22A9BFC800510199 /* MacApp */,
+				C9655D4822ADB87A00295976 /* SQLiteDB */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXResourcesBuildPhase section */
-		C962A08C22A9BFC800510199 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C962A09622A9BFC900510199 /* Assets.xcassets in Resources */,
-				C962A09922A9BFC900510199 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		C962A08A22A9BFC800510199 /* Sources */ = {
+		C9655D4522ADB87A00295976 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C962A09422A9BFC800510199 /* ViewController.swift in Sources */,
-				C962A09222A9BFC800510199 /* AppDelegate.swift in Sources */,
+				C9655D5922ADB8A700295976 /* ColList.swift in Sources */,
+				C9655D4D22ADB87A00295976 /* main.swift in Sources */,
+				C9F253B022AF16BF00FEE69E /* ConsoleColors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		C962A09722A9BFC900510199 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C962A09822A9BFC900510199 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		C962A09C22A9BFC900510199 /* Debug */ = {
+		C9655D4E22ADB87A00295976 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -235,7 +211,7 @@
 			};
 			name = Debug;
 		};
-		C962A09D22A9BFC900510199 /* Release */ = {
+		C9655D4F22ADB87A00295976 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -289,39 +265,21 @@
 			};
 			name = Release;
 		};
-		C962A09F22A9BFC900510199 /* Debug */ = {
+		C9655D5122ADB87A00295976 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = MacApp/MacApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = JH3ZC8234Q;
-				INFOPLIST_FILE = MacApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.fogusbogus.MacApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		C962A0A022A9BFC900510199 /* Release */ = {
+		C9655D5222ADB87A00295976 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = MacApp/MacApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = JH3ZC8234Q;
-				INFOPLIST_FILE = MacApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.fogusbogus.MacApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -330,25 +288,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C962A08922A9BFC800510199 /* Build configuration list for PBXProject "MacApp" */ = {
+		C9655D4422ADB87A00295976 /* Build configuration list for PBXProject "SQLiteDB" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C962A09C22A9BFC900510199 /* Debug */,
-				C962A09D22A9BFC900510199 /* Release */,
+				C9655D4E22ADB87A00295976 /* Debug */,
+				C9655D4F22ADB87A00295976 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C962A09E22A9BFC900510199 /* Build configuration list for PBXNativeTarget "MacApp" */ = {
+		C9655D5022ADB87A00295976 /* Build configuration list for PBXNativeTarget "SQLiteDB" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C962A09F22A9BFC900510199 /* Debug */,
-				C962A0A022A9BFC900510199 /* Release */,
+				C9655D5122ADB87A00295976 /* Debug */,
+				C9655D5222ADB87A00295976 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = C962A08622A9BFC800510199 /* Project object */;
+	rootObject = C9655D4122ADB87A00295976 /* Project object */;
 }
