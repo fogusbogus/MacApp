@@ -26,27 +26,47 @@ class ColList {
 		_data = rows
 		let rowColLength = "\(rows.count)".length()
 		_cols = []
-		_cols.append(ConsoleColumn(preferredSize: rowColLength, minimumSize: rowColLength, caption: "#"))
+		let cc = ConsoleColumn(preferredSize: rowColLength, minimumSize: rowColLength, caption: "#")
+		cc.Color = .white
+		cc.Name = ""
+		cc.MinimumSize = rowColLength
+		
+		_cols.append(cc)
 		for col in rows.columns() {
+			//Now we need a separator
+			var c = ConsoleColumn(preferredSize: 3, minimumSize: 3, caption: " | ")
+			c.Color = .yellow
+			_cols.append(c)
+
+			//Get the maximum length of the data in the column for all rows
 			var maxSize = rows.max { (a, b) -> Bool in
-				return a.get(col, "").length() > b.get(col, "").length()
-			}?.get(col, "").length() ?? 0
+				return a.text(col, "").length() <= b.text(col, "").length()
+			}?.text(col, "").length() ?? 0
 			if maxSize < col.length() {
 				maxSize = col.length()
 			}
-			maxSize += " | ".length()
-			_cols.append(ConsoleColumn(preferredSize: maxSize, minimumSize: col.length(), caption: col))
+			
+			//Now the column definition
+			c = ConsoleColumn(preferredSize: maxSize, minimumSize: col.length(), caption: col)
+			c.Name = col
+			c.Color = .white
+			
+			_cols.append(c)
+			
+
 		}
 	}
 	
 	func outputToConsole(maxWidth: Int = 80) {
 		_ = _cols.fitToWidth(maxWidth: maxWidth)
-		var line = ANSIColors.white.rawValue
+		var line = "" //ANSIColors.white.rawValue
 		for i in 0..<_cols.count {
-			if i > 0 {
-				line += ANSIColors.yellow.rawValue + " | " + ANSIColors.white.rawValue
-			}
-			line += _cols[i].Caption.padRight(_cols[i].OutputSize)
+			line += /*_cols[i].Color.rawValue +*/ _cols[i].Caption.padRight(_cols[i].OutputSize)
+		}
+		print(line)
+		line = ""
+		for i in 0..<_cols.count {
+			line += _cols[i].Separator()
 		}
 		print(line)
 		line = ANSIColors.white.rawValue
@@ -56,19 +76,20 @@ class ColList {
 			rowNo += 1
 			
 			//Setup the col with some data
-			_cols[0].CurrentText = "\(rowNo)"
-			var colNo = 0
-			for col in row.columns() {
-				colNo += 1
-				_cols[colNo].CurrentText = row.get(col, "")
+			_cols[0].Caption = "\(rowNo)"
+			
+			for col in _cols {
+				if col.Name != "" {
+					//This is mapped to a real column
+					col.CurrentText = row.text(col.Name, "")
+				}
 			}
 			
 			while _cols.hasData() {
+				line = ""
 				for i in 0..<_cols.count {
-					if i > 0 {
-						line += ANSIColors.yellow.rawValue + " | " + ANSIColors.white.rawValue
-					}
-					line += _cols[i].output()
+
+					line += /*_cols[i].Color.rawValue +*/ _cols[i].output()
 				}
 				print(line)
 				line = ANSIColors.white.rawValue
@@ -81,7 +102,25 @@ class ConsoleColumn {
 	var MinimumSize : Int = 3
 	var PreferredSize : Int = 64
 	var OutputSize : Int = 0
-	var Caption = ""
+	private var _caption = ""
+	
+	var Caption : String {
+		get {
+			return _caption
+		}
+		set {
+			_caption = newValue
+			MinimumSize = _caption.length()
+		}
+	}
+	
+	func Separator(_ text: String = "-") -> String {
+		return text.repeating(OutputSize).left(OutputSize)
+	}
+	
+	var Name = ""
+	
+	var Color : ANSIColors = .white
 	
 	init(preferredSize: Int, minimumSize: Int = 3, caption: String = "") {
 		self.PreferredSize = preferredSize
@@ -114,18 +153,24 @@ class ConsoleColumn {
 	}
 	
 	func hasMore() -> Bool {
-		return CurrentText.length() > 0
+		return CurrentText.length() > 0 && Name.length() > 0
 	}
 	
 	func output() -> String {
 		if !hasMore() {
-			return ""
+			if Name.length() == 0 {
+				return Caption.padRight(OutputSize)
+			}
+			return "".padRight(OutputSize)
 		}
 		let next = getNextPart()
 		if !hasMore() {
 			CurrentText = StaticText
 		}
-		return next
+		if Name == "" {
+			CurrentText = Caption
+		}
+		return next.padRight(OutputSize)
 	}
 }
 

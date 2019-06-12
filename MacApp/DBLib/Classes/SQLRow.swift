@@ -234,6 +234,41 @@ public class SQLRow {
 		return defaultValue
 	}
 	
+	public func text(_ id: String, _ defaultValue: String = "") -> String {
+		if !hasKey(id) || isNull(id) {
+			return defaultValue
+		}
+		let data = _data[mapID(id)]
+
+		let rI = data as? Int
+		if rI != nil {
+			return "\(rI!)"
+		}
+		let r32 = data as? Int32
+		if r32 != nil {
+			return "\(r32!)"
+		}
+		let r64 = data as? Int64
+		if r64 != nil {
+			return "\(r64!)"
+		}
+		let rB = data as? Bool
+		if rB != nil {
+			return "\(rB!)"
+		}
+		let rD = data as? Date
+		if rD != nil {
+			return "\(rD!)"
+		}
+		let rT = data as? String
+		if rT != nil {
+			return "\(rT!)"
+		}
+		let r = "\(String(describing: data))"
+		return r
+		
+	}
+	
 	//    private func getTryInt(id: String) throws -> Int {
 	//
 	//    }
