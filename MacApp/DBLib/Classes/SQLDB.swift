@@ -131,7 +131,7 @@ public class SQLDB {
 	
 	public static func assertIndex(indexName: String, createSql: String) {
 		if !indexExists(indexName) {
-			_ = execute(createSql)
+			execute(createSql)
 		}
 	}
 	
@@ -168,7 +168,7 @@ public class SQLDB {
 				sql += "[\(name)] " + nameAndTypes[name]!
 			}
 			sql += ")"
-			_ = SQLDB.execute(sql)
+			SQLDB.execute(sql)
 			return
 		}
 		
@@ -177,7 +177,7 @@ public class SQLDB {
 		for name in nameAndTypes.keys {
 			let lcName = name.lowercased()
 			if !cols.keys.contains(lcName) {
-				_ = self.execute("ALTER TABLE [\(tableName)] ADD COLUMN [\(name)] " + nameAndTypes[name]!)
+				self.execute("ALTER TABLE [\(tableName)] ADD COLUMN [\(name)] " + nameAndTypes[name]!)
 				cols[lcName] = nameAndTypes[name]
 			}
 		}
@@ -429,7 +429,7 @@ public class SQLDB {
 		return ret
 	}
 	
-	public static func execute(_ sql: String, parms:Any?...) -> Bool {
+	@discardableResult public static func execute(_ sql: String, parms:Any?...) -> Bool {
 		if !assertDB {
 			return false
 		}

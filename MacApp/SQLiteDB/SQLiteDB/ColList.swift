@@ -58,7 +58,7 @@ class ColList {
 	}
 	
 	func outputToConsole(maxWidth: Int = 80) {
-		_ = _cols.fitToWidth(maxWidth: maxWidth)
+		_cols.fitToWidth(maxWidth: maxWidth)
 		var line = "" //ANSIColors.white.rawValue
 		for i in 0..<_cols.count {
 			line += /*_cols[i].Color.rawValue +*/ _cols[i].Caption.padRight(_cols[i].OutputSize)
@@ -185,7 +185,7 @@ extension Array where Element == ConsoleColumn {
 		return false
 	}
 	
-	func fitToWidth(maxWidth: Int) -> Bool {
+	@discardableResult func fitToWidth(maxWidth: Int) -> Bool {
 		var totalWidth = 0
 		for item in self {
 			totalWidth += item.MinimumSize
