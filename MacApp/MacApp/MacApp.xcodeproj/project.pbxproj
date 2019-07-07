@@ -7,31 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C91E4E4522AC2D9600FC4514 /* libDBLib.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = C91E4E4422AC2D9600FC4514 /* libDBLib.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		C907982F22C91F3800073F31 /* TreeNodeContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C907982E22C91F3800073F31 /* TreeNodeContainerView.xib */; };
+		C907983122C91F5D00073F31 /* TreeNodeContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C907983022C91F5D00073F31 /* TreeNodeContainerView.swift */; };
+		C907983322C9217F00073F31 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C907983222C9217F00073F31 /* NibView.swift */; };
+		C91A6F9022C17AE400A1E165 /* TreeNodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C91A6F8F22C17AE400A1E165 /* TreeNodeView.xib */; };
+		C91A6F9222C17F1000A1E165 /* TreeNodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91A6F9122C17F1000A1E165 /* TreeNodeView.swift */; };
+		C92D790F22B4E46B00907F2A /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92D790E22B4E46B00907F2A /* TreeNode.swift */; };
+		C933276622B5798E003EEA09 /* libCommon.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C962A0CD22A9C90B00510199 /* libCommon.dylib */; };
+		C933276722B5798E003EEA09 /* libDBLib.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C91E4E4422AC2D9600FC4514 /* libDBLib.dylib */; };
+		C933276922B5A786003EEA09 /* FileNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C933276822B5A786003EEA09 /* FileNode.swift */; };
+		C933276B22B6CE49003EEA09 /* Tree.xib in Resources */ = {isa = PBXBuildFile; fileRef = C933276A22B6CE49003EEA09 /* Tree.xib */; };
+		C933276D22B6CE67003EEA09 /* TreeItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = C933276C22B6CE67003EEA09 /* TreeItem.xib */; };
+		C933276F22B6CE7E003EEA09 /* TreeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C933276E22B6CE7E003EEA09 /* TreeItem.swift */; };
+		C93CABFC22B2E2AC00685968 /* StreetSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CABFB22B2E2AC00685968 /* StreetSource.swift */; };
+		C93CABFE22B2E6F200685968 /* StreetItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CABFD22B2E6F200685968 /* StreetItems.swift */; };
+		C93CAC0022B2E90A00685968 /* StreetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CABFF22B2E90A00685968 /* StreetVC.swift */; };
 		C962A09222A9BFC800510199 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962A09122A9BFC800510199 /* AppDelegate.swift */; };
 		C962A09422A9BFC800510199 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962A09322A9BFC800510199 /* ViewController.swift */; };
 		C962A09622A9BFC900510199 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C962A09522A9BFC900510199 /* Assets.xcassets */; };
 		C962A09922A9BFC900510199 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C962A09722A9BFC900510199 /* Main.storyboard */; };
-		C962A0CE22A9C90B00510199 /* libCommon.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = C962A0CD22A9C90B00510199 /* libCommon.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		C962A0CF22A9C90C00510199 /* Embed Libraries */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				C91E4E4522AC2D9600FC4514 /* libDBLib.dylib in Embed Libraries */,
-				C962A0CE22A9C90B00510199 /* libCommon.dylib in Embed Libraries */,
-			);
-			name = "Embed Libraries";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
+		C907982E22C91F3800073F31 /* TreeNodeContainerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TreeNodeContainerView.xib; sourceTree = "<group>"; };
+		C907983022C91F5D00073F31 /* TreeNodeContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNodeContainerView.swift; sourceTree = "<group>"; };
+		C907983222C9217F00073F31 /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
+		C91A6F8F22C17AE400A1E165 /* TreeNodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TreeNodeView.xib; sourceTree = "<group>"; };
+		C91A6F9122C17F1000A1E165 /* TreeNodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNodeView.swift; sourceTree = "<group>"; };
 		C91E4E4422AC2D9600FC4514 /* libDBLib.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libDBLib.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		C92D790E22B4E46B00907F2A /* TreeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNode.swift; sourceTree = "<group>"; };
+		C933276822B5A786003EEA09 /* FileNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileNode.swift; sourceTree = "<group>"; };
+		C933276A22B6CE49003EEA09 /* Tree.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Tree.xib; sourceTree = "<group>"; };
+		C933276C22B6CE67003EEA09 /* TreeItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TreeItem.xib; sourceTree = "<group>"; };
+		C933276E22B6CE7E003EEA09 /* TreeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeItem.swift; sourceTree = "<group>"; };
+		C93CABFB22B2E2AC00685968 /* StreetSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetSource.swift; sourceTree = "<group>"; };
+		C93CABFD22B2E6F200685968 /* StreetItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetItems.swift; sourceTree = "<group>"; };
+		C93CABFF22B2E90A00685968 /* StreetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetVC.swift; sourceTree = "<group>"; };
 		C962A08E22A9BFC800510199 /* MacApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C962A09122A9BFC800510199 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C962A09322A9BFC800510199 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,19 +58,66 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C933276622B5798E003EEA09 /* libCommon.dylib in Frameworks */,
+				C933276722B5798E003EEA09 /* libDBLib.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C92D790C22B4E44D00907F2A /* Structures */ = {
+			isa = PBXGroup;
+			children = (
+				C92D790D22B4E45A00907F2A /* Tree */,
+				C907983222C9217F00073F31 /* NibView.swift */,
+			);
+			path = Structures;
+			sourceTree = "<group>";
+		};
+		C92D790D22B4E45A00907F2A /* Tree */ = {
+			isa = PBXGroup;
+			children = (
+				C92D790E22B4E46B00907F2A /* TreeNode.swift */,
+				C933276822B5A786003EEA09 /* FileNode.swift */,
+				C933276A22B6CE49003EEA09 /* Tree.xib */,
+				C933276C22B6CE67003EEA09 /* TreeItem.xib */,
+				C933276E22B6CE7E003EEA09 /* TreeItem.swift */,
+				C91A6F8F22C17AE400A1E165 /* TreeNodeView.xib */,
+				C91A6F9122C17F1000A1E165 /* TreeNodeView.swift */,
+				C907982E22C91F3800073F31 /* TreeNodeContainerView.xib */,
+				C907983022C91F5D00073F31 /* TreeNodeContainerView.swift */,
+			);
+			path = Tree;
+			sourceTree = "<group>";
+		};
+		C933276522B5798E003EEA09 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C93CABFA22B2E29800685968 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C93CABFB22B2E2AC00685968 /* StreetSource.swift */,
+				C93CABFD22B2E6F200685968 /* StreetItems.swift */,
+				C93CABFF22B2E90A00685968 /* StreetVC.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		C962A08522A9BFC800510199 = {
 			isa = PBXGroup;
 			children = (
+				C92D790C22B4E44D00907F2A /* Structures */,
+				C93CABFA22B2E29800685968 /* Data */,
 				C91E4E4422AC2D9600FC4514 /* libDBLib.dylib */,
 				C962A0CD22A9C90B00510199 /* libCommon.dylib */,
 				C962A09022A9BFC800510199 /* MacApp */,
 				C962A08F22A9BFC800510199 /* Products */,
+				C933276522B5798E003EEA09 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,7 +152,6 @@
 				C962A08A22A9BFC800510199 /* Sources */,
 				C962A08B22A9BFC800510199 /* Frameworks */,
 				C962A08C22A9BFC800510199 /* Resources */,
-				C962A0CF22A9C90C00510199 /* Embed Libraries */,
 			);
 			buildRules = (
 			);
@@ -143,7 +200,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C91A6F9022C17AE400A1E165 /* TreeNodeView.xib in Resources */,
+				C933276D22B6CE67003EEA09 /* TreeItem.xib in Resources */,
 				C962A09622A9BFC900510199 /* Assets.xcassets in Resources */,
+				C933276B22B6CE49003EEA09 /* Tree.xib in Resources */,
+				C907982F22C91F3800073F31 /* TreeNodeContainerView.xib in Resources */,
 				C962A09922A9BFC900510199 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -155,8 +216,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C933276F22B6CE7E003EEA09 /* TreeItem.swift in Sources */,
+				C93CABFC22B2E2AC00685968 /* StreetSource.swift in Sources */,
+				C907983122C91F5D00073F31 /* TreeNodeContainerView.swift in Sources */,
+				C93CABFE22B2E6F200685968 /* StreetItems.swift in Sources */,
+				C93CAC0022B2E90A00685968 /* StreetVC.swift in Sources */,
+				C907983322C9217F00073F31 /* NibView.swift in Sources */,
 				C962A09422A9BFC800510199 /* ViewController.swift in Sources */,
+				C91A6F9222C17F1000A1E165 /* TreeNodeView.swift in Sources */,
 				C962A09222A9BFC800510199 /* AppDelegate.swift in Sources */,
+				C92D790F22B4E46B00907F2A /* TreeNode.swift in Sources */,
+				C933276922B5A786003EEA09 /* FileNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +374,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.fogusbogus.MacApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;

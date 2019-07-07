@@ -31,7 +31,7 @@ public class NibView: NSView {
 		print("getNib for '\(nibName)'")
 		let mytype = type(of: self)
 		let bundle = Bundle(for: mytype)
-
+		
 		var topLevelArray: NSArray? = nil
 		bundle.loadNibNamed(nibName, owner: self, topLevelObjects: &topLevelArray)
 		let views = Array<Any>(topLevelArray!).filter { type(of: $0) == mytype }

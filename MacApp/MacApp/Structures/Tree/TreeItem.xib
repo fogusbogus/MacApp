@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe" customClass="TreeItem" customModule="MacApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="360" height="17"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="CBn-x6-0Yw" userLabel="cvIndent">
+                    <rect key="frame" x="0.0" y="0.0" width="24" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="hzg-va-VPz"/>
+                    </constraints>
+                </customView>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="2tT-OK-zA9" userLabel="btnBloom">
+                    <rect key="frame" x="24" y="0.0" width="24" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="jXe-NC-MVx"/>
+                    </constraints>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSGoForwardTemplate" imagePosition="only" alignment="center" alternateImage="NSFolder" state="on" inset="2" id="Zxg-GC-ROS">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="SkA-jv-SFP" userLabel="cvContent">
+                    <rect key="frame" x="48" y="0.0" width="312" height="17"/>
+                    <subviews>
+                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="MHI-ue-OFO" userLabel="lblText">
+                            <rect key="frame" x="-2" y="0.0" width="316" height="17"/>
+                            <textFieldCell key="cell" selectable="YES" title="My label" id="xb8-zf-GO4">
+                                <font key="font" usesAppearanceFont="YES"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="MHI-ue-OFO" firstAttribute="top" secondItem="SkA-jv-SFP" secondAttribute="top" id="4Jd-C1-A9S"/>
+                        <constraint firstAttribute="trailing" secondItem="MHI-ue-OFO" secondAttribute="trailing" id="Aks-Og-fhi"/>
+                        <constraint firstItem="MHI-ue-OFO" firstAttribute="leading" secondItem="SkA-jv-SFP" secondAttribute="leading" id="HzK-U9-75H"/>
+                        <constraint firstAttribute="bottom" secondItem="MHI-ue-OFO" secondAttribute="bottom" id="bab-XP-o06"/>
+                    </constraints>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="CBn-x6-0Yw" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="21n-lO-ekp"/>
+                <constraint firstItem="2tT-OK-zA9" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="6Y6-AW-wbg"/>
+                <constraint firstAttribute="bottom" secondItem="2tT-OK-zA9" secondAttribute="bottom" id="9gK-1z-Lwi"/>
+                <constraint firstItem="CBn-x6-0Yw" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="BEg-St-HRR"/>
+                <constraint firstItem="SkA-jv-SFP" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="EAQ-Yv-DfW"/>
+                <constraint firstItem="2tT-OK-zA9" firstAttribute="leading" secondItem="CBn-x6-0Yw" secondAttribute="trailing" id="FxZ-F2-nPz"/>
+                <constraint firstAttribute="bottom" secondItem="SkA-jv-SFP" secondAttribute="bottom" id="MC2-h2-rfY"/>
+                <constraint firstItem="SkA-jv-SFP" firstAttribute="leading" secondItem="2tT-OK-zA9" secondAttribute="trailing" id="pz4-Fd-c0M"/>
+                <constraint firstAttribute="bottom" secondItem="CBn-x6-0Yw" secondAttribute="bottom" id="qbc-Ko-oq3"/>
+                <constraint firstAttribute="trailing" secondItem="SkA-jv-SFP" secondAttribute="trailing" id="zeF-Ev-eHF"/>
+            </constraints>
+            <connections>
+                <outlet property="btnBloom" destination="2tT-OK-zA9" id="xEd-Hw-Sxo"/>
+                <outlet property="cvContent" destination="SkA-jv-SFP" id="T5A-BL-RCe"/>
+                <outlet property="cvIndent" destination="CBn-x6-0Yw" id="yAP-ev-hdK"/>
+                <outlet property="lblText" destination="MHI-ue-OFO" id="nTR-dk-OcO"/>
+            </connections>
+            <point key="canvasLocation" x="79" y="30"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="NSFolder" width="32" height="32"/>
+        <image name="NSGoForwardTemplate" width="9" height="12"/>
+    </resources>
+</document>

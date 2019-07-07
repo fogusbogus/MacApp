@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Log {
+public class Log {
 	static func debug(tag: String = "", text: String, _ parms: Any...) {
 		print("D: {0}\t{1}".fmt(tag, text.fmt(parms)))
 	}

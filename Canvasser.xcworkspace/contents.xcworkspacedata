@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:MCADB/MCADB.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Controls/Controls.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:CommonExtensions/CommonExtensions.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:ServiceCall/ServiceCall.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:DBLib/DBLib.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:MCA/MCA.xcodeproj">
+   </FileRef>
+</Workspace>

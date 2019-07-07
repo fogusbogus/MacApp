@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="TreeNodeContainerView" customModule="MacApp" customModuleProvider="target">
+            <connections>
+                <outlet property="tvStack" destination="yLP-5m-sXq" id="Mer-OP-pTe"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="427" height="206"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MIq-6x-oXi">
+                    <rect key="frame" x="0.0" y="0.0" width="427" height="206"/>
+                    <clipView key="contentView" id="Oph-QD-owH">
+                        <rect key="frame" x="1" y="1" width="410" height="189"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2uB-Dp-XqT">
+                                <rect key="frame" x="0.0" y="0.0" width="395" height="174"/>
+                                <subviews>
+                                    <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yLP-5m-sXq"/>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="yLP-5m-sXq" firstAttribute="leading" secondItem="2uB-Dp-XqT" secondAttribute="leading" id="cSW-Fr-hyE"/>
+                                    <constraint firstAttribute="trailing" secondItem="yLP-5m-sXq" secondAttribute="trailing" id="hr6-dv-h9t"/>
+                                    <constraint firstItem="yLP-5m-sXq" firstAttribute="top" secondItem="2uB-Dp-XqT" secondAttribute="top" id="klY-m6-UMl"/>
+                                    <constraint firstAttribute="bottom" secondItem="yLP-5m-sXq" secondAttribute="bottom" id="su1-AD-r9t"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                    </clipView>
+                    <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="58D-B5-WJr">
+                        <rect key="frame" x="1" y="190" width="410" height="15"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="24U-GJ-kdG">
+                        <rect key="frame" x="411" y="1" width="15" height="189"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="MIq-6x-oXi" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="Hak-5A-nCf"/>
+                <constraint firstAttribute="bottom" secondItem="MIq-6x-oXi" secondAttribute="bottom" id="YWi-tz-Hn8"/>
+                <constraint firstAttribute="trailing" secondItem="MIq-6x-oXi" secondAttribute="trailing" id="frT-pn-E17"/>
+                <constraint firstItem="MIq-6x-oXi" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="i1W-V6-Kuy"/>
+            </constraints>
+            <point key="canvasLocation" x="111.5" y="208"/>
+        </customView>
+    </objects>
+</document>
