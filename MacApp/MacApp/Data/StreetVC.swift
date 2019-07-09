@@ -35,7 +35,10 @@ class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate
 		
 		let dict = NSMutableDictionary(dictionary: root)
 		
-		dict["children"] = [StreetItems("first"), StreetItems("second")]
+		var second = StreetItems("second")
+		second.addNode(StreetItems("third"))
+		
+		dict["children"] = [StreetItems("first"), second]
 //		dict.setObject([StreetItems("first"), StreetItems("second")], forKey: "children" as NSCopying)
 		treeController.addObject(dict)
 	}
