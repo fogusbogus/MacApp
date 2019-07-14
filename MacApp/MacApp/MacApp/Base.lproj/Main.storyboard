@@ -846,10 +846,11 @@ CA
                                                                 <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kUe-1k-exq">
                                                                     <rect key="frame" x="3" y="0.0" width="17" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                                    <imageCell key="cell" refusesFirstResponder="YES" imageScaling="proportionallyDown" image="NSActionTemplate" id="1Yh-SR-V6k"/>
-                                                                    <connections>
-                                                                        <binding destination="Wqs-U3-W4C" name="value" keyPath="objectValue.image" id="k6d-dx-XfJ"/>
-                                                                    </connections>
+                                                                    <imageCell key="cell" refusesFirstResponder="YES" imageScaling="proportionallyDown" image="NSTouchBarTextCenterAlignTemplate" id="1Yh-SR-V6k">
+                                                                        <connections>
+                                                                            <binding destination="Wqs-U3-W4C" name="value" keyPath="objectValue.image" id="YKH-Xj-T67"/>
+                                                                        </connections>
+                                                                    </imageCell>
                                                                 </imageView>
                                                                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3b4-Va-DdZ">
                                                                     <rect key="frame" x="25" y="0.0" width="420" height="17"/>
@@ -1332,6 +1333,6 @@ CA
         </scene>
     </scenes>
     <resources>
-        <image name="NSActionTemplate" width="14" height="14"/>
+        <image name="NSTouchBarTextCenterAlignTemplate" width="14" height="30"/>
     </resources>
 </document>

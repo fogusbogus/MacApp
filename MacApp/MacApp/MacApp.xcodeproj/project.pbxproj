@@ -12,6 +12,7 @@
 		C907983322C9217F00073F31 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C907983222C9217F00073F31 /* NibView.swift */; };
 		C91A6F9022C17AE400A1E165 /* TreeNodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C91A6F8F22C17AE400A1E165 /* TreeNodeView.xib */; };
 		C91A6F9222C17F1000A1E165 /* TreeNodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91A6F9122C17F1000A1E165 /* TreeNodeView.swift */; };
+		C91E680922D52878005AF496 /* ImageRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91E680822D52878005AF496 /* ImageRepo.swift */; };
 		C92D790F22B4E46B00907F2A /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92D790E22B4E46B00907F2A /* TreeNode.swift */; };
 		C933276622B5798E003EEA09 /* libCommon.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C962A0CD22A9C90B00510199 /* libCommon.dylib */; };
 		C933276722B5798E003EEA09 /* libDBLib.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C91E4E4422AC2D9600FC4514 /* libDBLib.dylib */; };
@@ -26,6 +27,8 @@
 		C962A09422A9BFC800510199 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962A09322A9BFC800510199 /* ViewController.swift */; };
 		C962A09622A9BFC900510199 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C962A09522A9BFC900510199 /* Assets.xcassets */; };
 		C962A09922A9BFC900510199 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C962A09722A9BFC900510199 /* Main.storyboard */; };
+		C9C33F0B22D9CF93003D8B3A /* mainviewicons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9C33F0A22D9CF93003D8B3A /* mainviewicons.xcassets */; };
+		C9C33F4D22DB9CA9003D8B3A /* TreeNodeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C33F4C22DB9CA9003D8B3A /* TreeNodeImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +38,7 @@
 		C91A6F8F22C17AE400A1E165 /* TreeNodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TreeNodeView.xib; sourceTree = "<group>"; };
 		C91A6F9122C17F1000A1E165 /* TreeNodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNodeView.swift; sourceTree = "<group>"; };
 		C91E4E4422AC2D9600FC4514 /* libDBLib.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libDBLib.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		C91E680822D52878005AF496 /* ImageRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepo.swift; sourceTree = "<group>"; };
 		C92D790E22B4E46B00907F2A /* TreeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNode.swift; sourceTree = "<group>"; };
 		C933276822B5A786003EEA09 /* FileNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileNode.swift; sourceTree = "<group>"; };
 		C933276A22B6CE49003EEA09 /* Tree.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Tree.xib; sourceTree = "<group>"; };
@@ -51,6 +55,8 @@
 		C962A09A22A9BFC900510199 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C962A09B22A9BFC900510199 /* MacApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacApp.entitlements; sourceTree = "<group>"; };
 		C962A0CD22A9C90B00510199 /* libCommon.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libCommon.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9C33F0A22D9CF93003D8B3A /* mainviewicons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = mainviewicons.xcassets; sourceTree = "<group>"; };
+		C9C33F4C22DB9CA9003D8B3A /* TreeNodeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNodeImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C91E680722D52784005AF496 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				C91E680822D52878005AF496 /* ImageRepo.swift */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
 		C92D790C22B4E44D00907F2A /* Structures */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +118,7 @@
 				C93CABFB22B2E2AC00685968 /* StreetSource.swift */,
 				C93CABFD22B2E6F200685968 /* StreetItems.swift */,
 				C93CABFF22B2E90A00685968 /* StreetVC.swift */,
+				C9C33F4C22DB9CA9003D8B3A /* TreeNodeImage.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -111,6 +126,8 @@
 		C962A08522A9BFC800510199 = {
 			isa = PBXGroup;
 			children = (
+				C9C33F0A22D9CF93003D8B3A /* mainviewicons.xcassets */,
+				C91E680722D52784005AF496 /* Icons */,
 				C92D790C22B4E44D00907F2A /* Structures */,
 				C93CABFA22B2E29800685968 /* Data */,
 				C91E4E4422AC2D9600FC4514 /* libDBLib.dylib */,
@@ -205,6 +222,7 @@
 				C962A09622A9BFC900510199 /* Assets.xcassets in Resources */,
 				C933276B22B6CE49003EEA09 /* Tree.xib in Resources */,
 				C907982F22C91F3800073F31 /* TreeNodeContainerView.xib in Resources */,
+				C9C33F0B22D9CF93003D8B3A /* mainviewicons.xcassets in Resources */,
 				C962A09922A9BFC900510199 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,6 +236,7 @@
 			files = (
 				C933276F22B6CE7E003EEA09 /* TreeItem.swift in Sources */,
 				C93CABFC22B2E2AC00685968 /* StreetSource.swift in Sources */,
+				C9C33F4D22DB9CA9003D8B3A /* TreeNodeImage.swift in Sources */,
 				C907983122C91F5D00073F31 /* TreeNodeContainerView.swift in Sources */,
 				C93CABFE22B2E6F200685968 /* StreetItems.swift in Sources */,
 				C93CAC0022B2E90A00685968 /* StreetVC.swift in Sources */,
@@ -227,6 +246,7 @@
 				C962A09222A9BFC800510199 /* AppDelegate.swift in Sources */,
 				C92D790F22B4E46B00907F2A /* TreeNode.swift in Sources */,
 				C933276922B5A786003EEA09 /* FileNode.swift in Sources */,
+				C91E680922D52878005AF496 /* ImageRepo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

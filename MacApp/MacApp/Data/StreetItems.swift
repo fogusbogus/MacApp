@@ -15,18 +15,43 @@ class StreetItems : NodeBase {
 		self.name = name
 	}
 	
+	override func postSetup() {
+		if let img = ImageRepo.shared["icoStreet1-1"] {
+			image = img
+			//image?.handler = self
+			//image?.nodeImage = img
+		}
+	}
+	
+	@objc dynamic var imagecell : NSImage?
 
 }
 
 class NodeBase : NSObject {
 	
 	override init() {
+		super.init()
 		id = TreeNodeCounter.shared.getID()
+		postSetup()
+	}
+	
+	func postSetup() {
+		
 	}
 	
 	@objc dynamic var name = ""
 	@objc dynamic var children : [NodeBase]?
-	@objc dynamic var image : NSImage?
+	@objc dynamic var image : NSImage? {
+		get {
+			return _image
+		}
+		set {
+			_image = newValue
+		}
+	}
+	
+	private dynamic var _image : NSImage?
+	
 	var id : String = ""
 	
 	@objc func isLeaf() -> Bool {
