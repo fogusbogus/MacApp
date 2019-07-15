@@ -10,6 +10,29 @@ import Cocoa
 
 class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate {
 
+	var selectedNode: NodeBase?
+	
+	var selectedNodeHandler : SelectedNodeListenerDelegate?
+	
+	@IBAction func ovAction(_ sender: Any) {
+		
+		if sender is NSOutlineView {
+			let ov = sender as? NSOutlineView
+			if let sn = ov?.selectedNode() {
+	
+				print("\(sn.className) \(sn.id)")
+			}
+		}
+		
+		if sender is NodeBase {
+			let lastNode = selectedNode
+			selectedNode = sender as? NodeBase
+			if lastNode != selectedNode {
+				selectedNodeHandler?.selectionChange(node: selectedNode)
+			}
+		}
+	}
+	
 	@IBOutlet var treeController: NSTreeController!
 	@IBOutlet weak var outlineView: NSOutlineView!
 	override func viewDidLoad() {
@@ -35,10 +58,10 @@ class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate
 		
 		let dict = NSMutableDictionary(dictionary: root)
 		
-		var second = StreetItems("second")
-		second.addNode(StreetItems("third"))
+		var second = StreetItem("second")
+		second.addNode(PropertyItem("third"))
 		
-		dict["children"] = [StreetItems("first"), second]
+		dict["children"] = [StreetItem("first"), second]
 //		dict.setObject([StreetItems("first"), StreetItems("second")], forKey: "children" as NSCopying)
 		treeController.addObject(dict)
 	}
@@ -46,9 +69,9 @@ class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate
 	//MARK: Helpers
 	func isHeader(_ item: Any) -> Bool {
 		if let item = item as? NSTreeNode {
-			return !(item.representedObject is StreetItems)
+			return !(item.representedObject is NodeBase)
 		}
-		return !(item is StreetItems)
+		return !(item is StreetItem)
 	}
 	
 	//MARK: Delegate
@@ -61,4 +84,23 @@ class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate
 		}
 	}
 	
+}
+
+protocol SelectedNodeListenerDelegate {
+	func selectionChange(node: NodeBase?)
+}
+
+extension NSOutlineView {
+	func nodeAtRow(_ row: Int) -> NodeBase? {
+		
+		if let obj = self.item(atRow: row) {
+			let tn = obj as! NSTreeNode
+			return tn.representedObject as? NodeBase
+		}
+		return nil
+	}
+	
+	func selectedNode() -> NodeBase? {
+		return nodeAtRow(self.selectedRow)
+	}
 }

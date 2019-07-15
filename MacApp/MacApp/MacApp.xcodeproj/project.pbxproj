@@ -21,7 +21,7 @@
 		C933276D22B6CE67003EEA09 /* TreeItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = C933276C22B6CE67003EEA09 /* TreeItem.xib */; };
 		C933276F22B6CE7E003EEA09 /* TreeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C933276E22B6CE7E003EEA09 /* TreeItem.swift */; };
 		C93CABFC22B2E2AC00685968 /* StreetSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CABFB22B2E2AC00685968 /* StreetSource.swift */; };
-		C93CABFE22B2E6F200685968 /* StreetItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CABFD22B2E6F200685968 /* StreetItems.swift */; };
+		C93CABFE22B2E6F200685968 /* StreetItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CABFD22B2E6F200685968 /* StreetItem.swift */; };
 		C93CAC0022B2E90A00685968 /* StreetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CABFF22B2E90A00685968 /* StreetVC.swift */; };
 		C962A09222A9BFC800510199 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962A09122A9BFC800510199 /* AppDelegate.swift */; };
 		C962A09422A9BFC800510199 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962A09322A9BFC800510199 /* ViewController.swift */; };
@@ -45,7 +45,7 @@
 		C933276C22B6CE67003EEA09 /* TreeItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TreeItem.xib; sourceTree = "<group>"; };
 		C933276E22B6CE7E003EEA09 /* TreeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeItem.swift; sourceTree = "<group>"; };
 		C93CABFB22B2E2AC00685968 /* StreetSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetSource.swift; sourceTree = "<group>"; };
-		C93CABFD22B2E6F200685968 /* StreetItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetItems.swift; sourceTree = "<group>"; };
+		C93CABFD22B2E6F200685968 /* StreetItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetItem.swift; sourceTree = "<group>"; };
 		C93CABFF22B2E90A00685968 /* StreetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetVC.swift; sourceTree = "<group>"; };
 		C962A08E22A9BFC800510199 /* MacApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C962A09122A9BFC800510199 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -116,7 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				C93CABFB22B2E2AC00685968 /* StreetSource.swift */,
-				C93CABFD22B2E6F200685968 /* StreetItems.swift */,
+				C93CABFD22B2E6F200685968 /* StreetItem.swift */,
 				C93CABFF22B2E90A00685968 /* StreetVC.swift */,
 				C9C33F4C22DB9CA9003D8B3A /* TreeNodeImage.swift */,
 			);
@@ -238,7 +238,7 @@
 				C93CABFC22B2E2AC00685968 /* StreetSource.swift in Sources */,
 				C9C33F4D22DB9CA9003D8B3A /* TreeNodeImage.swift in Sources */,
 				C907983122C91F5D00073F31 /* TreeNodeContainerView.swift in Sources */,
-				C93CABFE22B2E6F200685968 /* StreetItems.swift in Sources */,
+				C93CABFE22B2E6F200685968 /* StreetItem.swift in Sources */,
 				C93CAC0022B2E90A00685968 /* StreetVC.swift in Sources */,
 				C907983322C9217F00073F31 /* NibView.swift in Sources */,
 				C962A09422A9BFC800510199 /* ViewController.swift in Sources */,

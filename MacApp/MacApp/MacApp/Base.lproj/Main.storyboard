@@ -879,6 +879,7 @@ CA
                                                 </tableColumn>
                                             </tableColumns>
                                             <connections>
+                                                <action selector="ovAction:" target="6Fc-0n-jqx" id="Yno-3c-Ll1"/>
                                                 <outlet property="dataSource" destination="6Fc-0n-jqx" id="GUA-QV-V1j"/>
                                                 <outlet property="delegate" destination="6Fc-0n-jqx" id="ncA-Gy-U9C"/>
                                             </connections>
@@ -909,7 +910,7 @@ CA
                     </connections>
                 </viewController>
                 <customObject id="hxu-lH-D6L" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <treeController objectClassName="StreetItems" childrenKeyPath="children" leafKeyPath="isLeaf" id="lEt-lI-6Ba">
+                <treeController objectClassName="StreetItem" childrenKeyPath="children" leafKeyPath="isLeaf" id="lEt-lI-6Ba">
                     <connections>
                         <outlet property="content" destination="l9J-fJ-czd" id="qVW-NS-A58"/>
                     </connections>

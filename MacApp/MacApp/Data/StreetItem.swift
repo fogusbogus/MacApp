@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class StreetItems : NodeBase {
+class StreetItem : NodeBase {
 	
 	init(_ name: String) {
 		super.init()
@@ -16,14 +16,20 @@ class StreetItems : NodeBase {
 	}
 	
 	override func postSetup() {
-		if let img = ImageRepo.shared["icoStreet1-1"] {
-			image = img
-			//image?.handler = self
-			//image?.nodeImage = img
-		}
+		image = ImageRepo.shared["icoStreet1-1"]
+	}
+
+}
+
+class PropertyItem: NodeBase {
+	init(_ name: String) {
+		super.init()
+		self.name = name
 	}
 	
-	@objc dynamic var imagecell : NSImage?
+	override func postSetup() {
+		image = ImageRepo.shared["icoAddress"]
+	}
 
 }
 
@@ -49,6 +55,8 @@ class NodeBase : NSObject {
 			_image = newValue
 		}
 	}
+	
+	var parent : NodeBase?
 	
 	private dynamic var _image : NSImage?
 	
@@ -128,6 +136,7 @@ class NodeBase : NSObject {
 	func addNode(_ node: NodeBase) {
 		children = children ?? []
 		children!.append(node)
+		node.parent = self
 		requiresRefresh()
 	}
 }
