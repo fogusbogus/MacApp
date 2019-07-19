@@ -735,7 +735,7 @@ CA
                                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="HlG-LW-teo" userLabel="pnlStreets">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="464"/>
                                                 <connections>
-                                                    <segue destination="6Fc-0n-jqx" kind="embed" id="3jA-GP-qGX"/>
+                                                    <segue destination="6Fc-0n-jqx" kind="embed" identifier="sgStreets" id="3jA-GP-qGX"/>
                                                 </connections>
                                             </containerView>
                                         </subviews>
@@ -778,6 +778,9 @@ CA
                             <constraint firstAttribute="bottom" secondItem="M5b-AW-ZwN" secondAttribute="bottom" id="ncS-0L-ZtD"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pnlStreets" destination="HlG-LW-teo" id="1iS-Sb-gWK"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

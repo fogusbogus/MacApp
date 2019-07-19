@@ -12,7 +12,18 @@ class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate
 
 	var selectedNode: NodeBase?
 	
+	@IBOutlet
 	var selectedNodeHandler : SelectedNodeListenerDelegate?
+	
+//	@IBOutlet
+//	var ibSelectedNodeHandler : AnyObject? {
+//		get {
+//			return selectedNodeHandler
+//		}
+//		set {
+//			selectedNodeHandler = newValue as? SelectedNodeListenerDelegate
+//		}
+//	}
 	
 	@IBAction func ovAction(_ sender: Any) {
 		
@@ -21,14 +32,11 @@ class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate
 			if let sn = ov?.selectedNode() {
 	
 				print("\(sn.className) \(sn.id)")
-			}
-		}
-		
-		if sender is NodeBase {
-			let lastNode = selectedNode
-			selectedNode = sender as? NodeBase
-			if lastNode != selectedNode {
-				selectedNodeHandler?.selectionChange(node: selectedNode)
+				
+				if sn != selectedNode {
+					selectedNode = sn
+					selectedNodeHandler?.selectionChange(node: sn)
+				}
 			}
 		}
 	}
@@ -86,7 +94,7 @@ class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate
 	
 }
 
-protocol SelectedNodeListenerDelegate {
+@objc protocol SelectedNodeListenerDelegate {
 	func selectionChange(node: NodeBase?)
 }
 
