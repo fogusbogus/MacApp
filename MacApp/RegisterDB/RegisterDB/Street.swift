@@ -10,14 +10,17 @@ import Foundation
 import DBLib
 import Common
 
-class Street : TableBased<Int> {
-	override init(_ id: Int?) {
+public class Street : TableBased<Int> {
+	override public init(_ id: Int?) {
 		super.init(id)
 	}
-	override init() {
+	override public init() {
 		super.init()
 	}
-	
+	override public init(row: SQLRow) {
+		super.init(row: row)
+	}
+
 	override func sanityCheck() {
 		super.sanityCheck()
 		if !SQLDB.tableExists("Street") {
@@ -42,32 +45,37 @@ class Street : TableBased<Int> {
 		SQLDB.execute(sql, parms: Name, PropertyCount, ElectorCount, GPS, _pdid, _sid, _pid, ID ?? _eid)
 	}
 	
-	public var Name = "", Number = 0, PropertyCount = 0, ElectorCount = 0, GPS = ""
+	public var Name = "", PropertyCount = 0, ElectorCount = 0, GPS = ""
 	
 	private var _pdid = -1, _sid = -1, _pid = -1, _eid = -1
 	private var _created = Date()
 	
 	override func signatureItems() -> [Any] {
-		return [Name, Number, PropertyCount, ElectorCount, GPS, _pdid, _sid, _pid, _eid, _created] + super.signatureItems()
+		return [Name, PropertyCount, ElectorCount, GPS, _pdid, _sid, _pid, _eid, _created] + super.signatureItems()
 	}
 	
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	override func loadData() {
 		let data = SQLDB.querySingleRow("SELECT * FROM Street WHERE ID = \(ID ?? -1)")
-		Name = data.get("Name", "")
-		PropertyCount = Property.count(street: ID ?? -1)
-		ElectorCount = Elector.count(property: ID ?? -1)
-		GPS = data.get("GPS", "")
-		
-		_pdid = data.get("PDID", -1)
-		_sid = data.get("SID", -1)
-		_pid = data.get("PID", -1)
-		_eid = data.get("EID", -1)
-		_created = data.get("Created", Date())
+		loadData(row: data)
 	}
 	
-	var PDID : Int? {
+	override func loadData(row: SQLRow) {
+		super.loadData(row: row)
+		Name = row.get("Name", "")
+		PropertyCount = Property.count(street: ID ?? -1)
+		ElectorCount = Elector.count(property: ID ?? -1)
+		GPS = row.get("GPS", "")
+		
+		_pdid = row.get("PDID", -1)
+		_sid = row.get("SID", -1)
+		_pid = row.get("PID", -1)
+		_eid = row.get("EID", -1)
+		_created = row.get("Created", Date())
+	}
+	
+	public var PDID : Int? {
 		get {
 			return _pdid > 0 ? _pdid : nil
  		}
@@ -76,7 +84,7 @@ class Street : TableBased<Int> {
 		}
 	}
 	
-	var SID : Int? {
+	public var SID : Int? {
 		get {
 			return _sid > 0 ? _sid : nil
 		}
@@ -84,7 +92,7 @@ class Street : TableBased<Int> {
 			_sid = newValue ?? 0
 		}
 	}
-	var PID : Int? {
+	public var PID : Int? {
 		get {
 			return _pid > 0 ? _pid : nil
 		}
@@ -92,7 +100,7 @@ class Street : TableBased<Int> {
 			_pid = newValue ?? 0
 		}
 	}
-	var EID : Int? {
+	public var EID : Int? {
 		get {
 			return _eid > 0 ? _eid : nil
 		}
@@ -101,19 +109,48 @@ class Street : TableBased<Int> {
 		}
 	}
 
+	override public func getChildIDs() -> [Int] {
+		let sql = "SELECT ID FROM Property WHERE SID = \(ID ?? -1) ORDER BY ID"
+		return SQLDB.queryMultiRow(sql).map { (row) -> Int in
+			return row.get("ID", -1)
+		}
+	}
 	
+	override public var hasChildren: Bool {
+		get {
+			return PropertyCount > 0
+		}
+	}
+
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
-	private func recalculateCounts() {
+	func recalculateCounts() {
 		if _hasTable {
 			PropertyCount = Property.count(street: ID!)
 			ElectorCount = Elector.count(street: ID!)
 		}
 	}
 	
-	func createProperty() -> Property {
+	public static func count(pollingDistrict: Int) -> Int {
+		return SQLDB.queryValue("SELECT COUNT(*) FROM Street WHERE PDID = \(pollingDistrict)", 0)
+	}
+	
+	public static func assertCounts() {
+		let sql = "UPDATE Street SET PropertyCount = (SELECT COUNT(*) FROM Property WHERE Property.SID = Street.ID)"
+		SQLDB.execute(sql)
+
+		let sql2 = "UPDATE Street SET ElectorCount = (SELECT COUNT(*) FROM Elector WHERE Elector.SID = Street.ID)"
+		SQLDB.execute(sql2)
+		
+		let sql3 = "UPDATE Property SET ElectorCount = (SELECT COUNT(*) FROM Elector WHERE Elector.PID = Property.ID)"
+		SQLDB.execute(sql3)
+
+	}
+	
+	public func createProperty() -> Property {
 		let ret = Property()
 		ret.SID = ID!
+		ret.PDID = PDID
 		return ret
 	}
 }

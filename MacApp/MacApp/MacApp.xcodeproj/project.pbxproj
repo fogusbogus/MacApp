@@ -10,6 +10,7 @@
 		C907982F22C91F3800073F31 /* TreeNodeContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C907982E22C91F3800073F31 /* TreeNodeContainerView.xib */; };
 		C907983122C91F5D00073F31 /* TreeNodeContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C907983022C91F5D00073F31 /* TreeNodeContainerView.swift */; };
 		C907983322C9217F00073F31 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C907983222C9217F00073F31 /* NibView.swift */; };
+		C90BC4A322E26EDA002FB78F /* libRegisterDB.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C90BC4A222E26EDA002FB78F /* libRegisterDB.dylib */; };
 		C91A6F9022C17AE400A1E165 /* TreeNodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C91A6F8F22C17AE400A1E165 /* TreeNodeView.xib */; };
 		C91A6F9222C17F1000A1E165 /* TreeNodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91A6F9122C17F1000A1E165 /* TreeNodeView.swift */; };
 		C91E680922D52878005AF496 /* ImageRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91E680822D52878005AF496 /* ImageRepo.swift */; };
@@ -35,6 +36,7 @@
 		C907982E22C91F3800073F31 /* TreeNodeContainerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TreeNodeContainerView.xib; sourceTree = "<group>"; };
 		C907983022C91F5D00073F31 /* TreeNodeContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNodeContainerView.swift; sourceTree = "<group>"; };
 		C907983222C9217F00073F31 /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
+		C90BC4A222E26EDA002FB78F /* libRegisterDB.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libRegisterDB.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		C91A6F8F22C17AE400A1E165 /* TreeNodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TreeNodeView.xib; sourceTree = "<group>"; };
 		C91A6F9122C17F1000A1E165 /* TreeNodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNodeView.swift; sourceTree = "<group>"; };
 		C91E4E4422AC2D9600FC4514 /* libDBLib.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libDBLib.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C90BC4A322E26EDA002FB78F /* libRegisterDB.dylib in Frameworks */,
 				C933276622B5798E003EEA09 /* libCommon.dylib in Frameworks */,
 				C933276722B5798E003EEA09 /* libDBLib.dylib in Frameworks */,
 			);
@@ -108,6 +111,7 @@
 		C933276522B5798E003EEA09 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C90BC4A222E26EDA002FB78F /* libRegisterDB.dylib */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

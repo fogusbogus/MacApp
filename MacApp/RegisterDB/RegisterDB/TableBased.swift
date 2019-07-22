@@ -10,7 +10,7 @@ import Foundation
 import DBLib
 import Common
 
-class TableBased<IDType> {
+public class TableBased<IDType> {
 
 	internal var _id : IDType?
 	internal var _originalSignature = ""
@@ -19,23 +19,35 @@ class TableBased<IDType> {
 		return []
 	}
 	
+	public func getChildIDs() -> [IDType] {
+		return []
+	}
+	
 	final func getSignature() -> String {
 		return "\t".join(signatureItems())
 	}
 	
-	final func isDirty() -> Bool {
+	public final func isDirty() -> Bool {
 		return getSignature().compare(_originalSignature) != .orderedSame
 	}
 	
-	init(_ id: IDType?) {
+	public init(_ id: IDType?) {
 		DB.shared.assertDB()
+		sanityCheck()
 		if let id = id {
 			ID = id
 		}
 	}
 	
-	init() {
+	public init() {
 		DB.shared.assertDB()
+		sanityCheck()
+	}
+	
+	public init(row: SQLRow) {
+		DB.shared.assertDB()
+		sanityCheck()
+		loadData(row: row)
 	}
 	
 	var _hasTable = false
@@ -45,7 +57,7 @@ class TableBased<IDType> {
 		_hasTable = false
 	}
 	
-	func IDChanged() {
+	public func IDChanged() {
 		//override this to catch a data change
 		_originalSignature = getSignature()
 	}
@@ -59,16 +71,25 @@ class TableBased<IDType> {
 		//override and load the data in here. Call the superclass.
 	}
 	
+	func loadData(row: SQLRow) {
+		if IDType.self is String {
+			_id = row.get("ID", "") as! IDType
+		}
+		else {
+			_id = row.get("ID", 0) as! IDType
+		}
+	}
+	
 	var idChangeHandler : TableBaseIDChange?
 	
 	private var _hasLoaded : Bool = false
-	var hasLoaded : Bool {
+	public var hasLoaded : Bool {
 		get {
 			return _hasLoaded
 		}
 	}
 	
-	var ID : IDType? {
+	public var ID : IDType? {
 		get {
 			return _id
 		}
@@ -82,7 +103,7 @@ class TableBased<IDType> {
 		}
 	}
 	
-	func clear() {
+	public func clear() {
 		_hasLoaded = false
 	}
 	
@@ -93,7 +114,7 @@ class TableBased<IDType> {
 		//requires an override
 	}
 	
-	final func save() {
+	public final func save() {
 		if _id != nil {
 			if isDirty() {
 				saveAsUpdate()
@@ -104,6 +125,12 @@ class TableBased<IDType> {
 		}
 		_originalSignature = getSignature()
 	}
+	
+	public var hasChildren : Bool {
+		get {
+			return false
+		}
+	}
 }
 
 
@@ -112,10 +139,10 @@ protocol TableBaseIDChange {
 }
 
 
-class TableBaseCollection<TableBased> {
+public class TableBaseCollection<TableBased> {
 	private var _tables : [TableBased] = []
 	
-	subscript(index: Int) -> TableBased? {
+	public subscript(index: Int) -> TableBased? {
 		get {
 			if index < 0 || index >= _tables.count {
 				return nil

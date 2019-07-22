@@ -10,12 +10,15 @@ import Foundation
 import DBLib
 import Common
 
-class Elector : TableBased<Int> {
-	override init(_ id: Int?) {
+public class Elector : TableBased<Int> {
+	override public init(_ id: Int?) {
 		super.init(id)
 	}
-	override init() {
+	override public init() {
 		super.init()
+	}
+	override public init(row: SQLRow) {
+		super.init(row: row)
 	}
 
 	
@@ -55,18 +58,22 @@ class Elector : TableBased<Int> {
 	
 	override func loadData() {
 		let data = SQLDB.querySingleRow("SELECT * FROM Elector WHERE ID = \(ID ?? -1)")
-		DisplayName = data.get("DisplayName", "")
-		Surname = data.get("Surname", "")
-		Forename = data.get("Forename", "")
-		MiddleName = data.get("MiddleName", "")
-		_pdid = data.get("PDID", -1)
-		_sid = data.get("SID", -1)
-		_pid = data.get("PID", -1)
-		_eid = data.get("EID", -1)
-		_created = data.get("Created", Date())
+		loadData(row: data)
 	}
 	
-	var PDID : Int? {
+	override func loadData(row: SQLRow) {
+		DisplayName = row.get("DisplayName", "")
+		Surname = row.get("Surname", "")
+		Forename = row.get("Forename", "")
+		MiddleName = row.get("MiddleName", "")
+		_pdid = row.get("PDID", -1)
+		_sid = row.get("SID", -1)
+		_pid = row.get("PID", -1)
+		_eid = row.get("EID", -1)
+		_created = row.get("Created", Date())
+	}
+	
+	public var PDID : Int? {
 		get {
 			return _pdid > 0 ? _pdid : nil
 		}
@@ -75,7 +82,7 @@ class Elector : TableBased<Int> {
 		}
 	}
 	
-	var SID : Int? {
+	public var SID : Int? {
 		get {
 			return _sid > 0 ? _sid : nil
 		}
@@ -83,7 +90,7 @@ class Elector : TableBased<Int> {
 			_sid = newValue ?? 0
 		}
 	}
-	var PID : Int? {
+	public var PID : Int? {
 		get {
 			return _pid > 0 ? _pid : nil
 		}
@@ -91,7 +98,7 @@ class Elector : TableBased<Int> {
 			_pid = newValue ?? 0
 		}
 	}
-	var EID : Int? {
+	public var EID : Int? {
 		get {
 			return _eid > 0 ? _eid : nil
 		}
@@ -102,8 +109,8 @@ class Elector : TableBased<Int> {
 	
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
-	public static func count(district: Int) -> Int {
-		return SQLDB.queryValue("SELECT COUNT(*) FROM Elector WHERE PDID = \(district)", 0)
+	public static func count(pollingDistrict: Int) -> Int {
+		return SQLDB.queryValue("SELECT COUNT(*) FROM Elector WHERE PDID = \(pollingDistrict)", 0)
 	}
 	
 	public static func count(street: Int) -> Int {

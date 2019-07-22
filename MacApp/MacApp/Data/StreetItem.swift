@@ -7,6 +7,47 @@
 //
 
 import Cocoa
+import RegisterDB
+
+class PollingDistrictItem : NodeBase {
+	
+	init(_ name: String) {
+		super.init()
+		self.name = name
+	}
+	
+	override func postSetup() {
+		image = ImageRepo.shared["icoGlobe"]
+	}
+	
+	override func expand() {
+		super.expand()
+		print("PD: I'm expanding")
+	}
+	
+	override func getChildItems() {
+		super.getChildItems()
+		
+		if let st = linkedItem as? PollingDistrict {
+			let childIDs = st.getChildIDs()
+			var toSet : [NodeBase] = []
+			for childID in childIDs {
+				var child = children?.first(where: { (nb) -> Bool in
+					return nb.linkedItem?.ID == childID
+				})
+				if child == nil {
+					let st = Street(childID)
+					child = StreetItem(st.Name)
+					child?.linkedItem = st
+				}
+				toSet.append(child!)
+			}
+			children?.removeAll()
+			addNodes(toSet)
+		}
+	}
+	
+}
 
 class StreetItem : NodeBase {
 	
@@ -17,6 +58,33 @@ class StreetItem : NodeBase {
 	
 	override func postSetup() {
 		image = ImageRepo.shared["icoStreet1-1"]
+	}
+	
+	override func expand() {
+		super.expand()
+		print("ST: I'm expanding")
+	}
+
+	override func getChildItems() {
+		super.getChildItems()
+		
+		if let st = linkedItem as? Street {
+			let childIDs = st.getChildIDs()
+			var toSet : [NodeBase] = []
+			for childID in childIDs {
+				var child = children?.first(where: { (nb) -> Bool in
+					return nb.linkedItem?.ID == childID
+				})
+				if child == nil {
+					let pr = Property(childID)
+					child = PropertyItem(pr.getDisplayName())
+					child?.linkedItem = pr
+				}
+				toSet.append(child!)
+			}
+			children?.removeAll()
+			addNodes(toSet)
+		}
 	}
 
 }
@@ -31,14 +99,85 @@ class PropertyItem: NodeBase {
 		image = ImageRepo.shared["icoAddress"]
 	}
 
+	override func expand() {
+		super.expand()
+	}
+
+	override func getChildItems() {
+		super.getChildItems()
+		
+		if let st = linkedItem as? Property {
+			let childIDs = st.getChildIDs()
+			var toSet : [NodeBase] = []
+			for childID in childIDs {
+				var child = children?.first(where: { (nb) -> Bool in
+					return nb.linkedItem?.ID == childID
+				})
+				if child == nil {
+					let el = Elector(childID)
+					child = ElectorItem(el.DisplayName)
+					child?.linkedItem = el
+				}
+				if !child!.isLeaf() {
+					child!.children?.append(NodeBase())
+				}
+				toSet.append(child!)
+			}
+			children?.removeAll()
+			addNodes(toSet)
+		}
+	}
+}
+
+class ElectorItem: NodeBase {
+	init(_ name: String) {
+		super.init()
+		self.name = name
+	}
+	
+	override func postSetup() {
+		image = ImageRepo.shared["Elector"]
+	}
+	
+	override func expand() {
+		super.expand()
+	}
+	
+	override func getChildItems() {
+		super.getChildItems()
+		
+		if let st = linkedItem as? Property {
+			let childIDs = st.getChildIDs()
+			var toSet : [NodeBase] = []
+			for childID in childIDs {
+				var child = children?.first(where: { (nb) -> Bool in
+					return nb.linkedItem?.ID == childID
+				})
+				if child == nil {
+					let el = Elector(childID)
+					child = ElectorItem(el.DisplayName)
+					child?.linkedItem = el
+				}
+				toSet.append(child!)
+			}
+			children?.removeAll()
+			addNodes(toSet)
+		}
+	}
 }
 
 class NodeBase : NSObject {
+	
+	public var linkedItem : TableBased<Int>?
 	
 	override init() {
 		super.init()
 		id = TreeNodeCounter.shared.getID()
 		postSetup()
+	}
+	
+	func getChildItems() {
+		
 	}
 	
 	func postSetup() {
@@ -63,6 +202,9 @@ class NodeBase : NSObject {
 	var id : String = ""
 	
 	@objc func isLeaf() -> Bool {
+		if let li = linkedItem {
+			return !li.hasChildren
+		}
 		return !hasChildren
 	}
 	
@@ -76,6 +218,10 @@ class NodeBase : NSObject {
 		get {
 			return children?.count ?? 0
 		}
+	}
+	
+	func expand() {
+		getChildItems()
 	}
 	
 	func containsNode(id: String) -> Bool {
@@ -137,6 +283,15 @@ class NodeBase : NSObject {
 		children = children ?? []
 		children!.append(node)
 		node.parent = self
+		requiresRefresh()
+	}
+	
+	func addNodes(_ nodes: [NodeBase]) {
+		children = children ?? []
+		for node in nodes {
+			children!.append(node)
+			node.parent = self
+		}
 		requiresRefresh()
 	}
 }

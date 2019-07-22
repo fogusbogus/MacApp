@@ -920,7 +920,7 @@ CA
                 </treeController>
                 <customObject id="l9J-fJ-czd" userLabel="Streets" customClass="NSMutableArray"/>
             </objects>
-            <point key="canvasLocation" x="-2" y="1306"/>
+            <point key="canvasLocation" x="-4" y="1325"/>
         </scene>
         <!--vcPropElecs-->
         <scene sceneID="r7Z-sl-Sql">

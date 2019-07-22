@@ -54,10 +54,10 @@ public class SQLDB {
 		}
 	}
 	
-	public static func open() {
-		open(path: "")
+	public static func open(_ openCurrent : Bool = false) {
+		open(path: "", openCurrent)
 	}
-	public static func open(path: String) {
+	public static func open(path: String, _ openCurrent : Bool = false) {
 		close()
 		
 		var sqlPath = path
@@ -66,6 +66,22 @@ public class SQLDB {
 			let fm = FileManager.default
 			let docsurl = try! fm.url(for:.documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
 			sqlPath = String(describing: docsurl) + "data.sqlite"
+		}
+		
+		//Archive?
+		if !openCurrent && FileManager.default.fileExists(atPath: path) {
+			let fm = FileManager.default
+			var backup = 0
+			while (fm.fileExists(atPath: path + " [\(backup)]")) {
+				backup += 1
+			}
+			do {
+				try fm.copyItem(atPath: path, toPath: path + " [\(backup)]")
+				try fm.removeItem(atPath: path)
+			}
+			catch {
+				
+			}
 		}
 		
 		if sqlite3_open(sqlPath, &_db) == SQLITE_OK {
