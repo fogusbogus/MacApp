@@ -11,10 +11,71 @@ import DBLib
 import Common
 import RegisterDB
 
-class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate {
+class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate, NSMenuDelegate {
+	
+	@objc func menuItemSelected(_ sender: NSMenuItem) {
+		let ma : MenuAction = MenuAction(rawValue: sender.tag)!
+		
+		print(String(describing:ma))
+		switch ma {
+		case .newChild:
+			openNewPropertyWindow()
+		case .delete:
+			break
+		case .edit:
+			break
+		case .new:
+			break
+		case .view:
+			break
+		case .none:
+			break
+		}
+	}
+	
+	private var wc : NewPropertyWindowController?
+	
+	
+	func openNewPropertyWindow() {
+		if wc == nil {
+			wc = NewPropertyWindowController.loadFromNib()
+			
+			if let streetItem = selectedNode as? StreetItem {
+				if let st = streetItem.linkedItem as? Street {
+					wc?.setStreet(street: st)
+				}
+			}
+		}
+		wc?.showWindow(self)
+	}
 
+	
+	func menuButton(_ title: String, tag: MenuAction = .none, keys: String = "") -> NSMenuItem {
+		let ret = NSMenuItem(title: title, action: #selector(menuItemSelected(_:)), keyEquivalent: keys)
+		ret.tag = tag.rawValue
+		return ret
+	}
+
+	func menuWillOpen(_ menu: NSMenu) {
+		if let sn = selectedNode {
+			menu.removeAllItems()
+			if sn is StreetItem {
+				menu.addItem(menuButton("Add Property", tag: .newChild, keys: ""))
+				menu.addItem(NSMenuItem.separator())
+				menu.addItem(menuButton("New", tag: .new, keys: ""))
+				menu.addItem(menuButton("Edit", tag: .edit, keys: ""))
+				menu.addItem(menuButton("Delete", tag: .delete, keys: ""))
+				menu.addItem(menuButton("View", tag: .view, keys: ""))
+			}
+		}
+		else {
+			menu.cancelTracking()
+		}
+	}
+	
 	var selectedNode: NodeBase?
 	
+	@IBOutlet var ctxMenu: NSMenu!
 	@IBOutlet
 	var selectedNodeHandler : SelectedNodeListenerDelegate?
 	
@@ -162,4 +223,13 @@ extension NSOutlineView {
 	func selectedNode() -> NodeBase? {
 		return nodeAtRow(self.selectedRow)
 	}
+}
+
+enum MenuAction: Int {
+	case newChild
+	case new
+	case edit
+	case delete
+	case view
+	case none
 }

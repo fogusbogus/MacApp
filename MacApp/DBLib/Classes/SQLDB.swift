@@ -97,13 +97,15 @@ public class SQLDB {
 		_db = nil
 	}
 	
-	public static func queryValue<T>(_ sql: String, _ defaultValue: T) -> T {
+	public static func queryValue<T>(_ sql: String, _ defaultValue: T, _ parms: Any?...) -> T {
 		if !assertDB {
 			return defaultValue
 		}
 		var statement : SQLitePointer? = nil
 		var ret = defaultValue
 		if sqlite3_prepare(_db, sql, -1, &statement, nil) == SQLITE_OK {
+			bindParameters(statement: statement, parms: parms)
+
 			var step = sqlite3_step(statement)
 			while step != SQLITE_DONE {
 				if step == SQLITE_ROW {
@@ -241,7 +243,7 @@ public class SQLDB {
 	}
 	
 	
-	public static func queryRowsAsJson(_ sql: String) -> String {
+	public static func queryRowsAsJson(_ sql: String, _ parms: Any?...) -> String {
 		if !assertDB {
 			return ""
 		}
@@ -249,6 +251,7 @@ public class SQLDB {
 		var ret = "\"rows\": ["
 		var rowCount = 0
 		if sqlite3_prepare(_db, sql, -1, &statement, nil) == SQLITE_OK {
+			bindParameters(statement: statement, parms: parms)
 			var step = sqlite3_step(statement)
 			while step != SQLITE_DONE {
 				if step == SQLITE_ROW {
@@ -280,15 +283,15 @@ public class SQLDB {
 		return ret.replacingOccurrences(of: "\\\"", with: "\"").replacingOccurrences(of: "\\\\", with: "\\")
 	}
 	
-	public static func querySingleRow(_ sql: String) -> SQLRow {
-		let ret = queryMultiRow(sql)
+	public static func querySingleRow(_ sql: String, _ parms: Any?...) -> SQLRow {
+		let ret = queryMultiRow(sql, parms)
 		if ret.count > 0 {
 			return ret[0]
 		}
 		return SQLRow()
 	}
 	
-	public static func queryMultiRow(_ sql: String) -> [SQLRow] {
+	public static func queryMultiRow(_ sql: String, _ parms: Any?...) -> [SQLRow] {
 		if !assertDB {
 			return []
 		}
@@ -296,6 +299,7 @@ public class SQLDB {
 		var statement : SQLitePointer? = nil
 		
 		if sqlite3_prepare(_db, sql, -1, &statement, nil) == SQLITE_OK {
+			bindParameters(statement: statement, parms: parms)
 			var step = sqlite3_step(statement)
 			if step == SQLITE_DONE {
 				//Just collect the columns
@@ -314,11 +318,11 @@ public class SQLDB {
 		
 	}
 	
-	public static func collectColumnDataDelimited<T>(_ sql: String, column: String, hintType: T, delimiter: String = ",") -> String {
-		return collectColumnData(sql, column: column,  hintType: hintType).toDelimitedString(delimiter: delimiter)
+	public static func collectColumnDataDelimited<T>(_ sql: String, column: String, hintType: T, delimiter: String = ",", _ parms: Any?...) -> String {
+		return collectColumnData(sql, column: column,  hintType: hintType, parms).toDelimitedString(delimiter: delimiter)
 	}
 	
-	public static func collectColumnData<T>(_ sql: String, column: String = "", hintType: T) -> [T] {
+	public static func collectColumnData<T>(_ sql: String, column: String = "", hintType: T, _ parms: Any?...) -> [T] {
 		if !assertDB {
 			return []
 		}
@@ -326,6 +330,7 @@ public class SQLDB {
 		var statement : SQLitePointer? = nil
 		
 		if sqlite3_prepare(_db, sql, -1, &statement, nil) == SQLITE_OK {
+			bindParameters(statement: statement, parms: parms)
 			var step = sqlite3_step(statement)
 			let index = columnIndex(ptr: statement, columnName: column)
 			
@@ -443,6 +448,33 @@ public class SQLDB {
 			}
 		}
 		return ret
+	}
+	
+	private static func unwrapParms(parms: [Any?]) -> [Any?] {
+		var ret : [Any?] = []
+		for item in parms {
+			if let moreItems = item as? [Any?] {
+				ret.append(contentsOf: unwrapParms(parms: moreItems))
+			}
+			else {
+				ret.append(item)
+			}
+		}
+		return ret
+	}
+	
+	private static func bindParameters(statement: SQLitePointer?, parms: [Any?]) {
+		let parms = unwrapParms(parms: parms)
+		var index = 1
+		for parm in parms {
+			if statement.bindValue(index, value: parm) {
+				index += 1
+			}
+			else {
+				let err = sqlite3_errmsg(statement)
+				print("\(String(describing: err))")
+			}
+		}
 	}
 	
 	@discardableResult public static func execute(_ sql: String, parms:Any?...) -> Bool {

@@ -54,6 +54,11 @@ public class Street : TableBased<Int> {
 		return [Name, PropertyCount, ElectorCount, GPS, _pdid, _sid, _pid, _eid, _created] + super.signatureItems()
 	}
 	
+	public func PollingDistrictName() -> String {
+		let sql = "SELECT Name FROM PollingDistrict WHERE ID = ?"
+		return SQLDB.queryValue(sql, "<Unknown>", ID)
+	}
+	
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	override func loadData() {

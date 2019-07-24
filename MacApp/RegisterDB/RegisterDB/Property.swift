@@ -156,4 +156,48 @@ public class Property : TableBased<Int> {
 		ret.PDID = PDID
 		return ret
 	}
+	
+	public static func propertyExists(name: String, numberPrefix: String, number: Int, numberSuffix: String, sid: Int) -> Bool {
+		let sql = "SELECT COUNT(*) FROM Street WHERE Name LIKE ? AND NumberPrefix LIKE ? AND Number = ? AND NumberSuffix LIKE ? AND SID = ?"
+		return SQLDB.queryValue(sql, 0, name, numberPrefix, number, numberSuffix, sid) > 0
+	}
+	
+	public static func nextAvailableProperty(current: Property) -> Property {
+		if let sid = current.SID {
+			var current = suggestNextProperty(current: current)
+			while propertyExists(name: current.Name, numberPrefix: current.NumberPrefix, number: current.Number, numberSuffix: current.NumberSuffix, sid: sid) {
+				current = suggestNextProperty(current: current)
+			}
+			return current
+		}
+		return suggestNextProperty(current: current)
+	}
+	
+	public static func suggestNextProperty(current: Property) -> Property {
+		
+		if current.Number > 0 {
+			let letter = current.NumberSuffix.substring(from: 0, length: 1)
+			if letter.length() > 0 {
+				let chars = "abcdefghijklmnopqrstuvwxyz".after(letter.lowercased())
+				if chars.length() == 0 {
+					current.NumberSuffix = "a"
+					current.Number += 1
+				}
+				else {
+					current.NumberSuffix = chars.left(1)
+				}
+			}
+			else {
+				current.Number += 1
+			}
+		}
+		else {
+			current.Name = ""
+			current.NumberPrefix = ""
+			current.Number = 0
+			current.NumberSuffix = ""
+		}
+		
+		return current
+	}
 }

@@ -28,6 +28,8 @@
 		C962A09422A9BFC800510199 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962A09322A9BFC800510199 /* ViewController.swift */; };
 		C962A09622A9BFC900510199 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C962A09522A9BFC900510199 /* Assets.xcassets */; };
 		C962A09922A9BFC900510199 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C962A09722A9BFC900510199 /* Main.storyboard */; };
+		C969B85722E77DA200EBC869 /* NewProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C969B85622E77DA200EBC869 /* NewProperty.swift */; };
+		C9B6342F22E674D60085C92A /* NewProperty.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B6342E22E674D60085C92A /* NewProperty.storyboard */; };
 		C9C33F0B22D9CF93003D8B3A /* mainviewicons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9C33F0A22D9CF93003D8B3A /* mainviewicons.xcassets */; };
 		C9C33F4D22DB9CA9003D8B3A /* TreeNodeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C33F4C22DB9CA9003D8B3A /* TreeNodeImage.swift */; };
 /* End PBXBuildFile section */
@@ -57,6 +59,8 @@
 		C962A09A22A9BFC900510199 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C962A09B22A9BFC900510199 /* MacApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacApp.entitlements; sourceTree = "<group>"; };
 		C962A0CD22A9C90B00510199 /* libCommon.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libCommon.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		C969B85622E77DA200EBC869 /* NewProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProperty.swift; sourceTree = "<group>"; };
+		C9B6342E22E674D60085C92A /* NewProperty.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewProperty.storyboard; sourceTree = "<group>"; };
 		C9C33F0A22D9CF93003D8B3A /* mainviewicons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = mainviewicons.xcassets; sourceTree = "<group>"; };
 		C9C33F4C22DB9CA9003D8B3A /* TreeNodeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNodeImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,6 +134,8 @@
 		C962A08522A9BFC800510199 = {
 			isa = PBXGroup;
 			children = (
+				C969B85622E77DA200EBC869 /* NewProperty.swift */,
+				C9B6342E22E674D60085C92A /* NewProperty.storyboard */,
 				C9C33F0A22D9CF93003D8B3A /* mainviewicons.xcassets */,
 				C91E680722D52784005AF496 /* Icons */,
 				C92D790C22B4E44D00907F2A /* Structures */,
@@ -225,6 +231,7 @@
 				C933276D22B6CE67003EEA09 /* TreeItem.xib in Resources */,
 				C962A09622A9BFC900510199 /* Assets.xcassets in Resources */,
 				C933276B22B6CE49003EEA09 /* Tree.xib in Resources */,
+				C9B6342F22E674D60085C92A /* NewProperty.storyboard in Resources */,
 				C907982F22C91F3800073F31 /* TreeNodeContainerView.xib in Resources */,
 				C9C33F0B22D9CF93003D8B3A /* mainviewicons.xcassets in Resources */,
 				C962A09922A9BFC900510199 /* Main.storyboard in Resources */,
@@ -247,6 +254,7 @@
 				C907983322C9217F00073F31 /* NibView.swift in Sources */,
 				C962A09422A9BFC800510199 /* ViewController.swift in Sources */,
 				C91A6F9222C17F1000A1E165 /* TreeNodeView.swift in Sources */,
+				C969B85722E77DA200EBC869 /* NewProperty.swift in Sources */,
 				C962A09222A9BFC800510199 /* AppDelegate.swift in Sources */,
 				C92D790F22B4E46B00907F2A /* TreeNode.swift in Sources */,
 				C933276922B5A786003EEA09 /* FileNode.swift in Sources */,

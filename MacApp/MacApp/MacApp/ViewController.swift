@@ -42,6 +42,12 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate {
 		return p
 	}
 	
+	func openNewPropertyWindow() {
+		let wc = NSStoryboard(name: "NewProperty", bundle: nil)
+		let np = wc.instantiateController(withIdentifier: "winController") as! NSWindowController
+		np.showWindow(self)
+	}
+	
 	func newRandomElector(property: Property) -> Elector {
 		let surnames = ["Andrews", "Brown", "Cox", "Delamare", "Edgebaston", "Frederiksen", "Gamble", "Hopps", "Ing", "Johnson", "Kilmarnock", "Lewis", "Mann", "Nero", "Ogilvie", "Petersen", "Roberts", "Stevens", "Thomas", "Vick", "Williams", "Yanush"]
 		

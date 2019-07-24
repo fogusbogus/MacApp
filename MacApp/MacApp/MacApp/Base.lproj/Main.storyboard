@@ -906,13 +906,33 @@ CA
                             <constraint firstItem="8uZ-bv-2aI" firstAttribute="leading" secondItem="mVA-gS-kDZ" secondAttribute="leading" id="qsf-Dt-FP9"/>
                             <constraint firstAttribute="trailing" secondItem="8uZ-bv-2aI" secondAttribute="trailing" id="sga-by-qEi"/>
                         </constraints>
+                        <connections>
+                            <outlet property="menu" destination="qX8-HF-VCX" id="KsM-Ob-NAC"/>
+                        </connections>
                     </view>
                     <connections>
+                        <outlet property="ctxMenu" destination="qX8-HF-VCX" id="nVU-Se-u3d"/>
                         <outlet property="outlineView" destination="KzU-v9-mmN" id="vPz-Qw-cDv"/>
                         <outlet property="treeController" destination="lEt-lI-6Ba" id="nhS-VW-hi9"/>
                     </connections>
                 </viewController>
                 <customObject id="hxu-lH-D6L" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <menu id="qX8-HF-VCX">
+                    <items>
+                        <menuItem title="Item 1" id="V1w-kq-k8n">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
+                        <menuItem title="Item 2" id="Nis-MJ-WTX">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
+                        <menuItem title="Item 3" id="4M6-8k-dRs">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
+                    </items>
+                    <connections>
+                        <outlet property="delegate" destination="6Fc-0n-jqx" id="VrQ-Og-8kj"/>
+                    </connections>
+                </menu>
                 <treeController objectClassName="StreetItem" childrenKeyPath="children" leafKeyPath="isLeaf" id="lEt-lI-6Ba">
                     <connections>
                         <outlet property="content" destination="l9J-fJ-czd" id="qVW-NS-A58"/>
