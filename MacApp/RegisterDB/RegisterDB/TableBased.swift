@@ -150,7 +150,22 @@ public class TableBaseCollection<TableBased> {
 			return _tables[index]
 		}
 		set {
-			
 		}
 	}
 }
+
+public extension Int {
+	func Nil() -> Int? {
+		if self < 0 {
+			return nil
+		}
+		return self
+	}
+}
+
+public extension Optional where Wrapped == Int {
+	func Nil() -> Int {
+		return self ?? -1
+	}
+}
+

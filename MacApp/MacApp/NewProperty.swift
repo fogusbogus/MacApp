@@ -10,23 +10,11 @@ import Cocoa
 import RegisterDB
 
 class NewPropertyWindowController: NSWindowController, NewPropertyWindowDelegate {
-	func getSmartNextProperty(current: PropertyData) -> PropertyData {
-		let p = Property()
-		p.Name = current.Name
-		p.NumberPrefix = current.NumberPrefix
-		p.Number = current.Number
-		p.NumberSuffix = current.NumberSuffix
-		p.SID = current.SID
-		let np = Property.nextAvailableProperty(current: p)
-		var current = current
-		current.Name = np.Name
-		current.NumberPrefix = np.NumberPrefix
-		current.Number = np.Number
-		current.NumberSuffix = np.NumberSuffix
-		return current
+	func getSmartNextProperty(current: PropertyDataStruct) -> PropertyDataStruct {
+		return Property.nextAvailableProperty(current: current)
 	}
 	
-	func isPropertyAlreadyTaken(data: PropertyData) -> Bool {
+	func isPropertyAlreadyTaken(data: PropertyDataStruct) -> Bool {
 		return false
 	}
 	
@@ -34,7 +22,7 @@ class NewPropertyWindowController: NSWindowController, NewPropertyWindowDelegate
 		
 	}
 	
-	func addOrUpdate(data: PropertyData) {
+	func addOrUpdate(data: PropertyDataStruct) {
 		print("addOrUpdate")
 	}
 	
@@ -99,12 +87,19 @@ class NewPropertyVC : NSViewController {
 		}
 		if sender == btnAdd {
 			if let h = handler {
-				let data = PropertyData(ID: -1, Name: txtName.stringValue, NumberPrefix: txtNumberPrefix.stringValue, Number: Int(txtNumber.stringValue) ?? 0, NumberSuffix: txtNumberSuffix.stringValue, GPS: "", SID: _street?.ID ?? -1, PDID: _street?.PDID ?? -1)
+				
+				let data = PropertyDataStruct(Name: txtName.stringValue, NumberPrefix: txtNumberPrefix.stringValue, NumberSuffix: txtNumberSuffix.stringValue, DisplayName: "", ElectorCount: 0, Number: Int(txtNumber.stringValue) ?? 0, ID: -1, GPS: "", EID: nil, PID: nil, SID: _street?.ID, PDID: _street?.PDID)
+
 				h.addOrUpdate(data: data)
 				let newData = h.getSmartNextProperty(current: data)
 				txtName.stringValue = newData.Name
 				txtNumberPrefix.stringValue = newData.NumberPrefix
-				txtNumber.stringValue = "\(newData.Number)"
+				if newData.Number < 1 {
+					txtNumber.stringValue = ""
+				}
+				else {
+					txtNumber.stringValue = "\(newData.Number)"
+				}
 				txtNumberSuffix.stringValue = newData.NumberSuffix
 			}
 		}
@@ -112,20 +107,9 @@ class NewPropertyVC : NSViewController {
 	
 }
 
-struct PropertyData {
-	var ID : Int = -1
-	var Name : String = ""
-	var NumberPrefix : String = ""
-	var Number : Int = 0
-	var NumberSuffix : String = ""
-	var GPS : String = ""
-	var SID : Int = -1
-	var PDID : Int = -1
-}
-
 protocol NewPropertyWindowDelegate {
-	func addOrUpdate(data: PropertyData)
+	func addOrUpdate(data: PropertyDataStruct)
 	func cancel()
-	func getSmartNextProperty(current: PropertyData) -> PropertyData
-	func isPropertyAlreadyTaken(data: PropertyData) -> Bool
+	func getSmartNextProperty(current: PropertyDataStruct) -> PropertyDataStruct
+	func isPropertyAlreadyTaken(data: PropertyDataStruct) -> Bool
 }

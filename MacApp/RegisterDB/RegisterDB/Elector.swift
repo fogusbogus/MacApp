@@ -20,7 +20,26 @@ public class Elector : TableBased<Int> {
 	override public init(row: SQLRow) {
 		super.init(row: row)
 	}
+	public init(data: ElectorDataStruct) {
+		super.init()
+		Data = data
+	}
 
+	public var Data : ElectorDataStruct {
+		get {
+			return ElectorDataStruct(DisplayName: DisplayName, Forename: Forename, MiddleName: MiddleName, Surname: Surname, ID: ID, EID: EID.Nil(), PID: PID.Nil(), SID: SID.Nil(), PDID: PDID.Nil())
+		}
+		set {
+			self.ID = newValue.ID
+			self.Forename = newValue.Forename
+			self.MiddleName = newValue.MiddleName
+			self.Surname = newValue.Surname
+			self.PDID = newValue.PDID.Nil()
+			self.SID = newValue.SID.Nil()
+			self.PID = newValue.PID.Nil()
+			self.EID = newValue.EID.Nil()
+		}
+	}
 	
 	override func sanityCheck() {
 		super.sanityCheck()
@@ -122,4 +141,14 @@ public class Elector : TableBased<Int> {
 	}
 	
 	
+}
+
+public struct ElectorDataStruct {
+	var DisplayName = "", Forename = "", MiddleName = "", Surname = ""
+	
+	var ID : Int?
+	var EID : Int?
+	var PID : Int?
+	var SID : Int?
+	var PDID : Int?
 }

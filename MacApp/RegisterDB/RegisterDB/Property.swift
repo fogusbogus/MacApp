@@ -20,6 +20,29 @@ public class Property : TableBased<Int> {
 	override public init(row: SQLRow) {
 		super.init(row: row)
 	}
+	public init(data: PropertyDataStruct) {
+		super.init()
+		Data = data
+	}
+	
+	public var Data : PropertyDataStruct {
+		get {
+			return PropertyDataStruct(Name: Name, NumberPrefix: NumberPrefix, NumberSuffix: NumberSuffix, DisplayName: DisplayName, ElectorCount: ElectorCount, Number: Number, ID: ID, GPS: GPS, EID: EID.Nil(), PID: PID.Nil(), SID: SID.Nil(), PDID: PDID.Nil())
+		}
+		set {
+			self.ID = newValue.ID
+			self.PDID = newValue.PDID.Nil()
+			self.SID = newValue.SID.Nil()
+			self.PID = newValue.PID.Nil()
+			self.EID = newValue.EID.Nil()
+			
+			self.Name = newValue.Name
+			self.NumberPrefix = newValue.NumberPrefix
+			self.NumberSuffix = newValue.NumberSuffix
+			self.Number = newValue.Number
+			self.ElectorCount = newValue.ElectorCount
+		}
+	}
 	
 	override func sanityCheck() {
 		super.sanityCheck()
@@ -162,42 +185,75 @@ public class Property : TableBased<Int> {
 		return SQLDB.queryValue(sql, 0, name, numberPrefix, number, numberSuffix, sid) > 0
 	}
 	
-	public static func nextAvailableProperty(current: Property) -> Property {
-		if let sid = current.SID {
-			var current = suggestNextProperty(current: current)
-			while propertyExists(name: current.Name, numberPrefix: current.NumberPrefix, number: current.Number, numberSuffix: current.NumberSuffix, sid: sid) {
-				current = suggestNextProperty(current: current)
+	public static func propertyExists(data: PropertyDataStruct) -> Bool {
+		let sql = "SELECT COUNT(*) FROM Street WHERE Name LIKE ? AND NumberPrefix LIKE ? AND Number = ? AND NumberSuffix LIKE ? AND SID = ?"
+		return SQLDB.queryValue(sql, 0, data.Name, data.NumberPrefix, data.Number, data.NumberSuffix, data.SID.Nil()) > 0
+	}
+	
+	public static func nextAvailableProperty(current: PropertyDataStruct) -> PropertyDataStruct {
+		if current.SID != nil {
+			var current = current.suggestNextProperty()
+			while propertyExists(data: current) {
+				current = current.suggestNextProperty()
 			}
 			return current
 		}
-		return suggestNextProperty(current: current)
+		return current.suggestNextProperty()
 	}
 	
-	public static func suggestNextProperty(current: Property) -> Property {
+}
+
+public struct PropertyDataStruct {
+	public init(Name: String, NumberPrefix: String, NumberSuffix: String, DisplayName: String, ElectorCount: Int, Number: Int, ID: Int?, GPS: String, EID: Int?, PID: Int?, SID: Int?, PDID: Int?) {
 		
-		if current.Number > 0 {
-			let letter = current.NumberSuffix.substring(from: 0, length: 1)
+		self.Name = Name
+		self.NumberPrefix = NumberPrefix
+		self.NumberSuffix = NumberSuffix
+		self.DisplayName = DisplayName
+		self.ElectorCount = ElectorCount
+		self.Number = Number
+		self.ID = ID
+		self.GPS = GPS
+		self.EID = EID
+		self.PID = PID
+		self.SID = SID
+		self.PDID = PDID
+	}
+	
+	public var Name = "", NumberPrefix = "", NumberSuffix = "", DisplayName = ""
+	public var ElectorCount = 0, Number = 0
+	
+	public var ID : Int?
+	public var GPS = ""
+	public var EID : Int?
+	public var PID : Int?
+	public var SID : Int?
+	public var PDID : Int?
+	
+	public func suggestNextProperty() -> PropertyDataStruct {
+		var ret = self
+		if Number > 0 {
+			let letter = NumberSuffix.left(1)
 			if letter.length() > 0 {
-				let chars = "abcdefghijklmnopqrstuvwxyz".after(letter.lowercased())
+				let chars = "abcdefghijklnopqrstuvwxyz".after(letter.lowercased())
 				if chars.length() == 0 {
-					current.NumberSuffix = "a"
-					current.Number += 1
+					ret.NumberSuffix = "a"
+					ret.Number += 1
 				}
 				else {
-					current.NumberSuffix = chars.left(1)
+					ret.NumberSuffix = chars.left(1)
 				}
 			}
 			else {
-				current.Number += 1
+				ret.Number += 1
 			}
 		}
 		else {
-			current.Name = ""
-			current.NumberPrefix = ""
-			current.Number = 0
-			current.NumberSuffix = ""
+			ret.Name = ""
+			ret.NumberPrefix = ""
+			ret.NumberSuffix = ""
+			ret.Number = 0
 		}
-		
-		return current
+		return ret
 	}
 }
