@@ -35,6 +35,7 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate {
 		}
 	}
 	
+	@discardableResult
 	func newProp(street: Street, number: Int) -> Property {
 		let p = street.createProperty()
 		p.Number = number
@@ -48,6 +49,7 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate {
 		np.showWindow(self)
 	}
 	
+	@discardableResult
 	func newRandomElector(property: Property) -> Elector {
 		let surnames = ["Andrews", "Brown", "Cox", "Delamare", "Edgebaston", "Frederiksen", "Gamble", "Hopps", "Ing", "Johnson", "Kilmarnock", "Lewis", "Mann", "Nero", "Ogilvie", "Petersen", "Roberts", "Stevens", "Thomas", "Vick", "Williams", "Yanush"]
 		
@@ -75,7 +77,7 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate {
 		st1.save()
 		for pn in 1...26 {
 			let pr = newProp(street: st1, number: pn)
-			for el in 0...Int.random(in: 0...5) {
+			for _ in 0...Int.random(in: 0...5) {
 				newRandomElector(property: pr)
 			}
 		}
@@ -85,7 +87,7 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate {
 		st2.save()
 		for pn in 1...155 {
 			let pr = newProp(street: st2, number: pn)
-			for el in 0...Int.random(in: 0...5) {
+			for _ in 0...Int.random(in: 0...5) {
 				newRandomElector(property: pr)
 			}
 		}
@@ -101,11 +103,11 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate {
 		// Do any additional setup after loading the view.
 		_ = "Test".right(2)
 		
-		let find = pnlStreets.findView("StreetVC")
-		
-		let child = pnlStreets.subviews.filter { (vc) -> Bool in
-			return vc is StreetVC
-		} as? StreetVC
+//		let find = pnlStreets.findView("StreetVC")
+//
+//		let child = pnlStreets.subviews.filter { (vc) -> Bool in
+//			return vc is StreetVC
+//		} as? StreetVC
 		//child?.selectedNodeHandler = self
 		
 		print("")

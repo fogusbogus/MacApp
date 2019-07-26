@@ -42,7 +42,7 @@ public class PollingDistrict : TableBased<Int> {
 	override func saveAsUpdate() {
 		super.saveAsUpdate()
 		let sql = "UPDATE Name = ?, StreetCount = ?, PollingDistrict SET Name = ?, PropertyCount = ?, ElectorCount = ?, PDID = ?, SID = ?, PID = ?, EID = ? WHERE ID = \(ID ?? -1)"
-		SQLDB.execute(sql, parms: Name, StreetCount, PropertyCount, ElectorCount, _pdid, _sid, _pid, ID ?? _eid)
+		SQLDB.execute(sql, parms: Name, StreetCount, PropertyCount, ElectorCount, ID ?? _pdid, _sid, _pid, _eid)
 	}
 	
 	public var Name = "", PropertyCount = 0, ElectorCount = 0, StreetCount = 0

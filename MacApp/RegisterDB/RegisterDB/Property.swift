@@ -27,7 +27,7 @@ public class Property : TableBased<Int> {
 	
 	public var Data : PropertyDataStruct {
 		get {
-			return PropertyDataStruct(Name: Name, NumberPrefix: NumberPrefix, NumberSuffix: NumberSuffix, DisplayName: DisplayName, ElectorCount: ElectorCount, Number: Number, ID: ID, GPS: GPS, EID: EID.Nil(), PID: PID.Nil(), SID: SID.Nil(), PDID: PDID.Nil())
+			return PropertyDataStruct(Name: Name, NumberPrefix: NumberPrefix, NumberSuffix: NumberSuffix, DisplayName: DisplayName, ElectorCount: ElectorCount, Number: Number, ID: ID, GPS: GPS, Meta: Meta, EID: EID.Nil(), PID: PID.Nil(), SID: SID.Nil(), PDID: PDID.Nil())
 		}
 		set {
 			self.ID = newValue.ID
@@ -41,13 +41,14 @@ public class Property : TableBased<Int> {
 			self.NumberSuffix = newValue.NumberSuffix
 			self.Number = newValue.Number
 			self.ElectorCount = newValue.ElectorCount
+			self.Meta = newValue.Meta
 		}
 	}
 	
 	override func sanityCheck() {
 		super.sanityCheck()
 		if !SQLDB.tableExists("Property") {
-			let sql = "CREATE TABLE Property (ID INTEGER PRIMARY KEY AUTOINCREMENT, DisplayName TEXT, Name TEXT, Number INTEGER, NumberPrefix TEXT, NumberSuffix TEXT, ElectorCount INTEGER, GPS TEXT, PDID INTEGER, SID INTEGER, PID INTEGER, EID INTEGER, Created DATE)"
+			let sql = "CREATE TABLE Property (ID INTEGER PRIMARY KEY AUTOINCREMENT, DisplayName TEXT, Name TEXT, Number INTEGER, NumberPrefix TEXT, NumberSuffix TEXT, ElectorCount INTEGER, GPS TEXT, Meta TEXT, PDID INTEGER, SID INTEGER, PID INTEGER, EID INTEGER, Created DATE)"
 			SQLDB.execute(sql)
 			_hasTable = SQLDB.tableExists("Property")
 		}
@@ -55,26 +56,27 @@ public class Property : TableBased<Int> {
 	
 	override func saveAsNew() {
 		super.saveAsNew()
-		let sql = "INSERT INTO Property (DisplayName, Name, Number, NumberPrefix, NumberSuffix, ElectorCount, GPS, PDID, SID, PID, EID, Created) " +
-		"VALUES (?,?,?,?,?,?,?,?,?,?,?,?)"
-		SQLDB.execute(sql, parms: getDisplayName(), Name, Number, NumberPrefix, NumberSuffix, ElectorCount, GPS, _pdid, _sid, _pid, _eid, Date())
+		let sql = "INSERT INTO Property (DisplayName, Name, Number, NumberPrefix, NumberSuffix, ElectorCount, GPS, Meta, PDID, SID, PID, EID, Created) " +
+		"VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)"
+		SQLDB.execute(sql, parms: getDisplayName(), Name, Number, NumberPrefix, NumberSuffix, ElectorCount, GPS, Meta, _pdid, _sid, _pid, _eid, Date())
 		_id = SQLDB.queryValue("SELECT last_insert_rowid()", -1)
 		SQLDB.execute("UPDATE Property SET PID = \(ID ?? -1) WHERE ID = \(ID ?? -1)")
 	}
 	
 	override func saveAsUpdate() {
 		super.saveAsUpdate()
-		let sql = "UPDATE Property SET DisplayName = ?, Name = ?, Number = ?, NumberPrefix = ?, NumberSuffix = ?, ElectorCount = ?, GPS = ?, PDID = ?, SID = ?, PID = ?, EID = ? WHERE ID = \(ID ?? -1)"
-		SQLDB.execute(sql, parms: getDisplayName(), Name, Number, NumberPrefix, NumberSuffix, ElectorCount, GPS, _pdid, _sid, _pid, ID ?? _eid)
+		let sql = "UPDATE Property SET DisplayName = ?, Name = ?, Number = ?, NumberPrefix = ?, NumberSuffix = ?, ElectorCount = ?, GPS = ?, Meta = ?, PDID = ?, SID = ?, PID = ?, EID = ? WHERE ID = \(ID ?? -1)"
+		SQLDB.execute(sql, parms: getDisplayName(), Name, Number, NumberPrefix, NumberSuffix, ElectorCount, GPS, Meta, _pdid, _sid, ID ?? _pid, _eid)
 	}
 	
 	public var DisplayName = "", Name = "", Number = 0, NumberPrefix = "", NumberSuffix = "", ElectorCount = 0, GPS = ""
+	public var Meta = ""
 	
 	private var _pdid = -1, _sid = -1, _pid = -1, _eid = -1
 	private var _created = Date()
 	
 	override func signatureItems() -> [Any] {
-		return [Name, Number, NumberPrefix, NumberSuffix, ElectorCount, GPS, _pdid, _sid, _pid, _eid, _created] + super.signatureItems()
+		return [Name, Number, NumberPrefix, NumberSuffix, ElectorCount, GPS, Meta, _pdid, _sid, _pid, _eid, _created] + super.signatureItems()
 	}
 	
 	override public func getChildIDs() -> [Int] {
@@ -104,6 +106,7 @@ public class Property : TableBased<Int> {
 		NumberSuffix = row.get("NumberSuffix", "")
 		ElectorCount = Elector.count(property: ID ?? -1)
 		GPS = row.get("GPS", "")
+		Meta = row.get("Meta", "")
 		
 		_pdid = row.get("PDID", -1)
 		_sid = row.get("SID", -1)
@@ -204,7 +207,7 @@ public class Property : TableBased<Int> {
 }
 
 public struct PropertyDataStruct {
-	public init(Name: String, NumberPrefix: String, NumberSuffix: String, DisplayName: String, ElectorCount: Int, Number: Int, ID: Int?, GPS: String, EID: Int?, PID: Int?, SID: Int?, PDID: Int?) {
+	public init(Name: String, NumberPrefix: String, NumberSuffix: String, DisplayName: String, ElectorCount: Int, Number: Int, ID: Int?, GPS: String, Meta : String, EID: Int?, PID: Int?, SID: Int?, PDID: Int?) {
 		
 		self.Name = Name
 		self.NumberPrefix = NumberPrefix
@@ -214,13 +217,14 @@ public struct PropertyDataStruct {
 		self.Number = Number
 		self.ID = ID
 		self.GPS = GPS
+		self.Meta = Meta
 		self.EID = EID
 		self.PID = PID
 		self.SID = SID
 		self.PDID = PDID
 	}
 	
-	public var Name = "", NumberPrefix = "", NumberSuffix = "", DisplayName = ""
+	public var Name = "", NumberPrefix = "", NumberSuffix = "", DisplayName = "", Meta = ""
 	public var ElectorCount = 0, Number = 0
 	
 	public var ID : Int?

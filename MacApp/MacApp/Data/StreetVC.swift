@@ -11,7 +11,12 @@ import DBLib
 import Common
 import RegisterDB
 
-class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate, NSMenuDelegate {
+class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate, NSMenuDelegate, StreetVCRefreshDelegate {
+	func refresh() {
+		selectedNode?.getChildItems()
+		outlineView.reloadItem(selectedNode, reloadChildren: true)
+	}
+	
 	
 	@objc func menuItemSelected(_ sender: NSMenuItem) {
 		let ma : MenuAction = MenuAction(rawValue: sender.tag)!
@@ -43,6 +48,7 @@ class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate
 			if let streetItem = selectedNode as? StreetItem {
 				if let st = streetItem.linkedItem as? Street {
 					wc?.setStreet(street: st)
+					wc?.refreshDelegate = self
 				}
 			}
 		}
@@ -123,14 +129,14 @@ class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate
 	func addData() {
 		//add the object to the tree controller
 		let root = [
-			"name":"Street Items",	//This is what is shown on the screen (i.e. the Caption!!)
+			"name":"Polling Districts",	//This is what is shown on the screen (i.e. the Caption!!)
 			"isLeaf": false			//Is this a child of something?
 		]
 			as [String : Any]
 		
 		let dict = NSMutableDictionary(dictionary: root)
 		
-		var rowsPD = SQLDB.queryMultiRow("SELECT * FROM PollingDistrict ORDER BY Name")
+		let rowsPD = SQLDB.queryMultiRow("SELECT * FROM PollingDistrict ORDER BY Name")
 		var lst : [PollingDistrictItem] = []
 		for rowPD in rowsPD {
 			let pd = PollingDistrictItem(rowPD.get("Name", ""))
@@ -195,13 +201,13 @@ class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate
 	}
 	
 	func outlineView(_ outlineView: NSOutlineView, shouldExpandItem item: Any) -> Bool {
-		if let item = item as? NSTreeNode {
-			let ro = item.representedObject
+		if let tnitem = item as? NSTreeNode {
+			let ro = tnitem.representedObject
 			if let nb = ro as? NodeBase {
 				nb.expand()
 			}
 		}
-		return item != nil
+		return true //item != nil
 		//return outlineView. outlineView(outlineView, shouldExpandItem: item)
 	}
 }

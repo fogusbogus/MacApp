@@ -115,7 +115,7 @@ public class TableBased<IDType> {
 	}
 	
 	public final func save() {
-		if _id != nil {
+		if validID() {
 			if isDirty() {
 				saveAsUpdate()
 			}
@@ -130,6 +130,18 @@ public class TableBased<IDType> {
 		get {
 			return false
 		}
+	}
+	
+	public func validID() -> Bool {
+		if ID is Int {
+			let i = ID as? Int ?? -1
+			return i >= 0
+		}
+		if ID == nil {
+			return false
+		}
+		let s = String(describing: ID!)
+		return s.length() > 0
 	}
 }
 

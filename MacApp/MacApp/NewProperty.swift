@@ -23,11 +23,13 @@ class NewPropertyWindowController: NSWindowController, NewPropertyWindowDelegate
 	}
 	
 	func addOrUpdate(data: PropertyDataStruct) {
-		print("addOrUpdate")
+		let p = Property(data: data)
+		p.save()
 	}
 	
 	func cancel() {
 		close()
+		refreshDelegate?.refresh()
 	}
 	
 	class func loadFromNib() -> NewPropertyWindowController {
@@ -51,7 +53,12 @@ class NewPropertyWindowController: NSWindowController, NewPropertyWindowDelegate
 			vc.setParentage(street: street)
 		}
 	}
-    
+	
+	public var refreshDelegate : StreetVCRefreshDelegate?
+}
+
+protocol StreetVCRefreshDelegate {
+	func refresh()
 }
 
 class NewPropertyVC : NSViewController {
@@ -88,7 +95,7 @@ class NewPropertyVC : NSViewController {
 		if sender == btnAdd {
 			if let h = handler {
 				
-				let data = PropertyDataStruct(Name: txtName.stringValue, NumberPrefix: txtNumberPrefix.stringValue, NumberSuffix: txtNumberSuffix.stringValue, DisplayName: "", ElectorCount: 0, Number: Int(txtNumber.stringValue) ?? 0, ID: -1, GPS: "", EID: nil, PID: nil, SID: _street?.ID, PDID: _street?.PDID)
+				let data = PropertyDataStruct(Name: txtName.stringValue, NumberPrefix: txtNumberPrefix.stringValue, NumberSuffix: txtNumberSuffix.stringValue, DisplayName: "", ElectorCount: 0, Number: Int(txtNumber.stringValue) ?? 0, ID: -1, GPS: "", Meta: "", EID: nil, PID: nil, SID: _street?.ID, PDID: _street?.PDID)
 
 				h.addOrUpdate(data: data)
 				let newData = h.getSmartNextProperty(current: data)
