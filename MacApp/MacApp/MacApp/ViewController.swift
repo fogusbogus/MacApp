@@ -9,6 +9,7 @@
 import Cocoa
 import Common
 import RegisterDB
+import DBLib
 
 class ViewController: NSViewController, SelectedNodeListenerDelegate {
 	
@@ -61,6 +62,7 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate {
 		ret.Forename = forenames[fn]
 		ret.Surname = surnames[sn]
 		ret.DisplayName = "\(ret.Forename) \(ret.Surname)"
+		ret.MetaData.add(collection: ["fn":forenames[fn], "sn":surnames[sn], "dob":"1980-01-01" ])
 		ret.save()
 		return ret
 	}
@@ -69,11 +71,13 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate {
 		
 		let pd = PollingDistrict()
 		pd.Name = "Cashes Green"
+		pd.MetaData.add(collection: ["name":"Cashes Green", "ward":"Cainscross", "parliamentary":"Stroud"])
 		pd.save()
 		
 		let st1 = pd.createStreet()
 		st1.Name = "Berkeley Close"
 		st1.GPS = ""
+		st1.MetaData.add(collection: ["name":"Berkeley Close", "ward":"Cainscross", "parliamentary":"Stroud", "propCount":30])
 		st1.save()
 		for pn in 1...26 {
 			let pr = newProp(street: st1, number: pn)
@@ -83,7 +87,8 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate {
 		}
 		
 		let st2 = pd.createStreet()
-		st2.Name = "Hunter's Way"
+		st2.Name = "Hunters Way"
+		st1.MetaData.add(collection: ["name":"Hunters Way", "ward":"Cainscross", "parliamentary":"Stroud", "propCount":155])
 		st2.save()
 		for pn in 1...155 {
 			let pr = newProp(street: st2, number: pn)
@@ -99,6 +104,9 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate {
 		super.viewDidLoad()
 		
 		setupDB()
+		
+		let m = DBLib.Meta()
+		m.load(json: "{\"a\": {\"items\" : [{\"b\":\"0\", \"c\":\"1\"},{\"b\":\"1\", \"c\":\"2\"}]}}")
 
 		// Do any additional setup after loading the view.
 		_ = "Test".right(2)

@@ -27,14 +27,14 @@ public class Elector : TableBased<Int> {
 
 	public var Data : ElectorDataStruct {
 		get {
-			return ElectorDataStruct(DisplayName: DisplayName, Forename: Forename, MiddleName: MiddleName, Surname: Surname, Meta: Meta, ID: ID, EID: EID.Nil(), PID: PID.Nil(), SID: SID.Nil(), PDID: PDID.Nil())
+			return ElectorDataStruct(DisplayName: DisplayName, Forename: Forename, MiddleName: MiddleName, Surname: Surname, Meta: MetaData.getSignature(), ID: ID, EID: EID.Nil(), PID: PID.Nil(), SID: SID.Nil(), PDID: PDID.Nil())
 		}
 		set {
 			self.ID = newValue.ID
 			self.Forename = newValue.Forename
 			self.MiddleName = newValue.MiddleName
 			self.Surname = newValue.Surname
-			self.Meta = newValue.Meta
+			self.MetaData.load(json: newValue.Meta, true)
 			self.PDID = newValue.PDID.Nil()
 			self.SID = newValue.SID.Nil()
 			self.PID = newValue.PID.Nil()
@@ -55,7 +55,7 @@ public class Elector : TableBased<Int> {
 		super.saveAsNew()
 		let sql = "INSERT INTO Elector (DisplayName, Surname, Forename, MiddleName, Meta, PDID, SID, PID, EID, Created) " +
 		"VALUES (?,?,?,?,?,?,?,?,?,?)"
-		SQLDB.execute(sql, parms: DisplayName, Surname, Forename, MiddleName, Meta, _pdid, _sid, _pid, _eid, Date())
+		SQLDB.execute(sql, parms: DisplayName, Surname, Forename, MiddleName, MetaData.getSignature(), _pdid, _sid, _pid, _eid, Date())
 		_id = SQLDB.queryValue("SELECT last_insert_rowid()", -1)
 		SQLDB.execute("UPDATE Elector SET EID = \(ID ?? -1) WHERE ID = \(ID ?? -1)")
 	}
@@ -63,15 +63,15 @@ public class Elector : TableBased<Int> {
 	override func saveAsUpdate() {
 		super.saveAsUpdate()
 		let sql = "UPDATE Elector SET DisplayName = ?, Surname = ?, Forename = ?, MiddleName = ?, Meta = ?, PDID = ?, SID = ?, PID = ?, EID = ? WHERE ID = \(ID ?? -1)"
-		SQLDB.execute(sql, parms: DisplayName, Surname, Forename, MiddleName, Meta, _pdid, _sid, _pid, ID ?? _eid)
+		SQLDB.execute(sql, parms: DisplayName, Surname, Forename, MiddleName, MetaData.getSignature(), _pdid, _sid, _pid, ID ?? _eid)
 	}
 	
-	public var DisplayName = "", Surname = "", Forename = "", MiddleName = "", Meta = ""
+	public var DisplayName = "", Surname = "", Forename = "", MiddleName = ""
 	private var _pdid = -1, _sid = -1, _pid = -1, _eid = -1
 	private var _created = Date()
 	
 	override func signatureItems() -> [Any] {
-		return [DisplayName, Surname, Forename, MiddleName, Meta, _pdid, _sid, _pid, _eid, _created] + super.signatureItems()
+		return [DisplayName, Surname, Forename, MiddleName, MetaData.getSignature(), _pdid, _sid, _pid, _eid, _created] + super.signatureItems()
 	}
 	
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -86,8 +86,8 @@ public class Elector : TableBased<Int> {
 		Surname = row.get("Surname", "")
 		Forename = row.get("Forename", "")
 		MiddleName = row.get("MiddleName", "")
-		Meta = row.get("Meta", "")
-		
+		MetaData.load(json: row.get("Meta", ""), true)
+
 		_pdid = row.get("PDID", -1)
 		_sid = row.get("SID", -1)
 		_pid = row.get("PID", -1)

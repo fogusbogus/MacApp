@@ -72,11 +72,11 @@ public class TableBased<IDType> {
 	}
 	
 	func loadData(row: SQLRow) {
-		if IDType.self is String {
-			_id = row.get("ID", "") as! IDType
+		if IDType.self == String.self {
+			_id = row.get("ID", "") as? IDType
 		}
 		else {
-			_id = row.get("ID", 0) as! IDType
+			_id = row.get("ID", 0) as? IDType
 		}
 	}
 	
@@ -103,6 +103,14 @@ public class TableBased<IDType> {
 		}
 	}
 	
+	private var _metaData : DBLib.Meta?
+	public var MetaData : DBLib.Meta {
+		get {
+			_metaData = _metaData ?? DBLib.Meta()
+			return _metaData!
+		}
+	}
+	
 	public func clear() {
 		_hasLoaded = false
 	}
@@ -124,6 +132,7 @@ public class TableBased<IDType> {
 			saveAsNew()
 		}
 		_originalSignature = getSignature()
+		MetaData.resetSignature()
 	}
 	
 	public var hasChildren : Bool {

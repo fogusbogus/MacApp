@@ -27,7 +27,7 @@ public class Property : TableBased<Int> {
 	
 	public var Data : PropertyDataStruct {
 		get {
-			return PropertyDataStruct(Name: Name, NumberPrefix: NumberPrefix, NumberSuffix: NumberSuffix, DisplayName: DisplayName, ElectorCount: ElectorCount, Number: Number, ID: ID, GPS: GPS, Meta: Meta, EID: EID.Nil(), PID: PID.Nil(), SID: SID.Nil(), PDID: PDID.Nil())
+			return PropertyDataStruct(Name: Name, NumberPrefix: NumberPrefix, NumberSuffix: NumberSuffix, DisplayName: DisplayName, ElectorCount: ElectorCount, Number: Number, ID: ID, GPS: GPS, Meta: MetaData.getSignature(), EID: EID.Nil(), PID: PID.Nil(), SID: SID.Nil(), PDID: PDID.Nil())
 		}
 		set {
 			self.ID = newValue.ID
@@ -41,7 +41,7 @@ public class Property : TableBased<Int> {
 			self.NumberSuffix = newValue.NumberSuffix
 			self.Number = newValue.Number
 			self.ElectorCount = newValue.ElectorCount
-			self.Meta = newValue.Meta
+			self.MetaData.load(json: newValue.Meta, true)
 		}
 	}
 	
@@ -58,7 +58,7 @@ public class Property : TableBased<Int> {
 		super.saveAsNew()
 		let sql = "INSERT INTO Property (DisplayName, Name, Number, NumberPrefix, NumberSuffix, ElectorCount, GPS, Meta, PDID, SID, PID, EID, Created) " +
 		"VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)"
-		SQLDB.execute(sql, parms: getDisplayName(), Name, Number, NumberPrefix, NumberSuffix, ElectorCount, GPS, Meta, _pdid, _sid, _pid, _eid, Date())
+		SQLDB.execute(sql, parms: getDisplayName(), Name, Number, NumberPrefix, NumberSuffix, ElectorCount, GPS, MetaData.getSignature(), _pdid, _sid, _pid, _eid, Date())
 		_id = SQLDB.queryValue("SELECT last_insert_rowid()", -1)
 		SQLDB.execute("UPDATE Property SET PID = \(ID ?? -1) WHERE ID = \(ID ?? -1)")
 	}
@@ -66,17 +66,16 @@ public class Property : TableBased<Int> {
 	override func saveAsUpdate() {
 		super.saveAsUpdate()
 		let sql = "UPDATE Property SET DisplayName = ?, Name = ?, Number = ?, NumberPrefix = ?, NumberSuffix = ?, ElectorCount = ?, GPS = ?, Meta = ?, PDID = ?, SID = ?, PID = ?, EID = ? WHERE ID = \(ID ?? -1)"
-		SQLDB.execute(sql, parms: getDisplayName(), Name, Number, NumberPrefix, NumberSuffix, ElectorCount, GPS, Meta, _pdid, _sid, ID ?? _pid, _eid)
+		SQLDB.execute(sql, parms: getDisplayName(), Name, Number, NumberPrefix, NumberSuffix, ElectorCount, GPS, MetaData.getSignature(), _pdid, _sid, ID ?? _pid, _eid)
 	}
 	
 	public var DisplayName = "", Name = "", Number = 0, NumberPrefix = "", NumberSuffix = "", ElectorCount = 0, GPS = ""
-	public var Meta = ""
 	
 	private var _pdid = -1, _sid = -1, _pid = -1, _eid = -1
 	private var _created = Date()
 	
 	override func signatureItems() -> [Any] {
-		return [Name, Number, NumberPrefix, NumberSuffix, ElectorCount, GPS, Meta, _pdid, _sid, _pid, _eid, _created] + super.signatureItems()
+		return [Name, Number, NumberPrefix, NumberSuffix, ElectorCount, GPS, MetaData.getSignature(), _pdid, _sid, _pid, _eid, _created] + super.signatureItems()
 	}
 	
 	override public func getChildIDs() -> [Int] {
@@ -106,8 +105,8 @@ public class Property : TableBased<Int> {
 		NumberSuffix = row.get("NumberSuffix", "")
 		ElectorCount = Elector.count(property: ID ?? -1)
 		GPS = row.get("GPS", "")
-		Meta = row.get("Meta", "")
-		
+		MetaData.load(json: row.get("Meta", ""), true)
+
 		_pdid = row.get("PDID", -1)
 		_sid = row.get("SID", -1)
 		_pid = row.get("PID", -1)
@@ -223,6 +222,7 @@ public struct PropertyDataStruct {
 		self.SID = SID
 		self.PDID = PDID
 	}
+	
 	
 	public var Name = "", NumberPrefix = "", NumberSuffix = "", DisplayName = "", Meta = ""
 	public var ElectorCount = 0, Number = 0

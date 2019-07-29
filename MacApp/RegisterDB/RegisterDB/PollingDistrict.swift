@@ -67,7 +67,8 @@ public class PollingDistrict : TableBased<Int> {
 		StreetCount = Street.count(pollingDistrict: ID ?? -1)
 		PropertyCount = Property.count(pollingDistrict: ID ?? -1)
 		ElectorCount = Elector.count(pollingDistrict: ID ?? -1)
-		
+		MetaData.load(json: row.get("Meta", ""), true)
+
 		_pdid = row.get("PDID", -1)
 		_sid = row.get("SID", -1)
 		_pid = row.get("PID", -1)
