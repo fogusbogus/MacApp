@@ -186,17 +186,28 @@ public class Meta {
 		_coll.removeAll()
 	}
 	
-	public func getSignature() -> String {
-		return toJson(true)
-//		let keys = _coll.keys.sorted()
-//		var ret = ""
-//		for key in keys {
-//			ret.append(key.replacingOccurrences(of: "\t", with: ""))
-//			ret.append("\t")
-//			ret.append(String(describing: _coll[key]).replacingOccurrences(of: "\t", with: ""))
-//			ret.append("\t")
-//		}
-//		return ret
+	public func getSignature(_ archiveOriginalState: Bool = false, _ archiveKey: String = "previous") -> String {
+		guard archiveKey.trim().length() > 0 else {
+			return ""
+		}
+		var ret = toJson(true)
+		if archiveOriginalState && ret != _originalSignature {
+			if let p1 = self[archiveKey] as? Meta {
+				remove(key: archiveKey)
+				addSub(key: archiveKey, _originalSignature)
+				ret = toJson(true)
+				remove(key: archiveKey)
+				self[archiveKey] = p1
+			}
+			else {
+				if !hasKey(key: archiveKey) {
+					addSub(key: archiveKey, _originalSignature)
+					ret = toJson(true)
+					remove(key: archiveKey)
+				}
+			}
+		}
+		return ret
 	}
 	
 	private func matchedKey(key: String) -> String {

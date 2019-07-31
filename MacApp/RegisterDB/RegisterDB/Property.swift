@@ -27,7 +27,7 @@ public class Property : TableBased<Int> {
 	
 	public var Data : PropertyDataStruct {
 		get {
-			return PropertyDataStruct(Name: Name, NumberPrefix: NumberPrefix, NumberSuffix: NumberSuffix, DisplayName: DisplayName, ElectorCount: ElectorCount, Number: Number, ID: ID, GPS: GPS, Meta: MetaData.getSignature(), EID: EID.Nil(), PID: PID.Nil(), SID: SID.Nil(), PDID: PDID.Nil())
+			return PropertyDataStruct(Name: Name, NumberPrefix: NumberPrefix, NumberSuffix: NumberSuffix, DisplayName: DisplayName, ElectorCount: ElectorCount, Number: Number, ID: ID, GPS: GPS, Meta: MetaData.getSignature(true), EID: EID.Nil(), PID: PID.Nil(), SID: SID.Nil(), PDID: PDID.Nil())
 		}
 		set {
 			self.ID = newValue.ID
@@ -58,7 +58,7 @@ public class Property : TableBased<Int> {
 		super.saveAsNew()
 		let sql = "INSERT INTO Property (DisplayName, Name, Number, NumberPrefix, NumberSuffix, ElectorCount, GPS, Meta, PDID, SID, PID, EID, Created) " +
 		"VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)"
-		SQLDB.execute(sql, parms: getDisplayName(), Name, Number, NumberPrefix, NumberSuffix, ElectorCount, GPS, MetaData.getSignature(), _pdid, _sid, _pid, _eid, Date())
+		SQLDB.execute(sql, parms: getDisplayName(), Name, Number, NumberPrefix, NumberSuffix, ElectorCount, GPS, MetaData.getSignature(true), _pdid, _sid, _pid, _eid, Date())
 		_id = SQLDB.queryValue("SELECT last_insert_rowid()", -1)
 		SQLDB.execute("UPDATE Property SET PID = \(ID ?? -1) WHERE ID = \(ID ?? -1)")
 	}
@@ -66,7 +66,7 @@ public class Property : TableBased<Int> {
 	override func saveAsUpdate() {
 		super.saveAsUpdate()
 		let sql = "UPDATE Property SET DisplayName = ?, Name = ?, Number = ?, NumberPrefix = ?, NumberSuffix = ?, ElectorCount = ?, GPS = ?, Meta = ?, PDID = ?, SID = ?, PID = ?, EID = ? WHERE ID = \(ID ?? -1)"
-		SQLDB.execute(sql, parms: getDisplayName(), Name, Number, NumberPrefix, NumberSuffix, ElectorCount, GPS, MetaData.getSignature(), _pdid, _sid, ID ?? _pid, _eid)
+		SQLDB.execute(sql, parms: getDisplayName(), Name, Number, NumberPrefix, NumberSuffix, ElectorCount, GPS, MetaData.getSignature(true), _pdid, _sid, ID ?? _pid, _eid)
 	}
 	
 	public var DisplayName = "", Name = "", Number = 0, NumberPrefix = "", NumberSuffix = "", ElectorCount = 0, GPS = ""

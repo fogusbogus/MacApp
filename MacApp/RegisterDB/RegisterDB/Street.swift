@@ -56,7 +56,7 @@ public class Street : TableBased<Int> {
 		super.saveAsNew()
 		let sql = "INSERT INTO Street (Name, PropertyCount, ElectorCount, GPS, Meta, PDID, SID, PID, EID, Created) " +
 		"VALUES (?,?,?,?,?,?,?,?,?,?)"
-		SQLDB.execute(sql, parms: Name, PropertyCount, ElectorCount, GPS, MetaData.toJson(true), _pdid, _sid, _pid, _eid, Date())
+		SQLDB.execute(sql, parms: Name, PropertyCount, ElectorCount, GPS, MetaData.getSignature(true), _pdid, _sid, _pid, _eid, Date())
 		_id = SQLDB.queryValue("SELECT last_insert_rowid()", -1)
 		SQLDB.execute("UPDATE Street SET SID = \(ID ?? -1) WHERE ID = \(ID ?? -1)")
 	}
@@ -64,7 +64,7 @@ public class Street : TableBased<Int> {
 	override func saveAsUpdate() {
 		super.saveAsUpdate()
 		let sql = "UPDATE Street SET Name = ?, PropertyCount = ?, ElectorCount = ?, GPS = ?, PDID = ?, SID = ?, PID = ?, EID = ?, Meta = ? WHERE ID = \(ID ?? -1)"
-		SQLDB.execute(sql, parms: Name, PropertyCount, ElectorCount, GPS, _pdid, ID ?? _sid, _pid, _eid, MetaData.toJson(true))
+		SQLDB.execute(sql, parms: Name, PropertyCount, ElectorCount, GPS, _pdid, ID ?? _sid, _pid, _eid, MetaData.getSignature(true))
 	}
 	
 	public var Name = "", PropertyCount = 0, ElectorCount = 0, GPS = ""

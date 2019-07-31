@@ -27,7 +27,7 @@ public class Elector : TableBased<Int> {
 
 	public var Data : ElectorDataStruct {
 		get {
-			return ElectorDataStruct(DisplayName: DisplayName, Forename: Forename, MiddleName: MiddleName, Surname: Surname, Meta: MetaData.getSignature(), ID: ID, EID: EID.Nil(), PID: PID.Nil(), SID: SID.Nil(), PDID: PDID.Nil())
+			return ElectorDataStruct(DisplayName: DisplayName, Forename: Forename, MiddleName: MiddleName, Surname: Surname, Meta: MetaData.getSignature(true), ID: ID, EID: EID.Nil(), PID: PID.Nil(), SID: SID.Nil(), PDID: PDID.Nil())
 		}
 		set {
 			self.ID = newValue.ID
@@ -55,7 +55,7 @@ public class Elector : TableBased<Int> {
 		super.saveAsNew()
 		let sql = "INSERT INTO Elector (DisplayName, Surname, Forename, MiddleName, Meta, PDID, SID, PID, EID, Created) " +
 		"VALUES (?,?,?,?,?,?,?,?,?,?)"
-		SQLDB.execute(sql, parms: DisplayName, Surname, Forename, MiddleName, MetaData.getSignature(), _pdid, _sid, _pid, _eid, Date())
+		SQLDB.execute(sql, parms: DisplayName, Surname, Forename, MiddleName, MetaData.getSignature(true), _pdid, _sid, _pid, _eid, Date())
 		_id = SQLDB.queryValue("SELECT last_insert_rowid()", -1)
 		SQLDB.execute("UPDATE Elector SET EID = \(ID ?? -1) WHERE ID = \(ID ?? -1)")
 	}
@@ -63,7 +63,7 @@ public class Elector : TableBased<Int> {
 	override func saveAsUpdate() {
 		super.saveAsUpdate()
 		let sql = "UPDATE Elector SET DisplayName = ?, Surname = ?, Forename = ?, MiddleName = ?, Meta = ?, PDID = ?, SID = ?, PID = ?, EID = ? WHERE ID = \(ID ?? -1)"
-		SQLDB.execute(sql, parms: DisplayName, Surname, Forename, MiddleName, MetaData.getSignature(), _pdid, _sid, _pid, ID ?? _eid)
+		SQLDB.execute(sql, parms: DisplayName, Surname, Forename, MiddleName, MetaData.getSignature(true), _pdid, _sid, _pid, ID ?? _eid)
 	}
 	
 	public var DisplayName = "", Surname = "", Forename = "", MiddleName = ""
