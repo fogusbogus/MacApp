@@ -152,6 +152,7 @@ public class TableBased<IDType> {
 		let s = String(describing: ID!)
 		return s.length() > 0
 	}
+	
 }
 
 

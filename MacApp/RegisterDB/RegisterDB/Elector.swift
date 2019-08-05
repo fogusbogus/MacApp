@@ -27,7 +27,7 @@ public class Elector : TableBased<Int> {
 
 	public var Data : ElectorDataStruct {
 		get {
-			return ElectorDataStruct(DisplayName: DisplayName, Forename: Forename, MiddleName: MiddleName, Surname: Surname, Meta: MetaData.getSignature(true), ID: ID, EID: EID.Nil(), PID: PID.Nil(), SID: SID.Nil(), PDID: PDID.Nil())
+			return ElectorDataStruct(ID: ID, EID: EID.Nil(), PID: PID.Nil(), SID: SID.Nil(), PDID: PDID.Nil(), displayName: DisplayName, forename: Forename, middleName: MiddleName, surname: Surname, meta: MetaData.getSignature(true))
 		}
 		set {
 			self.ID = newValue.ID
@@ -143,15 +143,54 @@ public class Elector : TableBased<Int> {
 		return SQLDB.queryValue("SELECT COUNT(*) FROM Elector WHERE PID = \(property)", 0)
 	}
 	
-	
+	public static func getParentageDisplayInformation(id: Int) -> [String:String] {
+		let row = SQLDB.querySingleRow("SELECT EL.DisplayName AS ELName, PR.DisplayName AS PRName, ST.Name AS STName, PD.Name AS PDName FROM Elector EL LEFT JOIN Property PR ON EL.PID = PR.ID LEFT JOIN Street ST ON EL.SID = ST.ID LEFT JOIN PollingDistrict PD ON EL.PDID = PD.ID WHERE EL.ID = ?", id)
+		
+		var ret : [String:String] = [:]
+		ret["el"] = row.get("ELName", "")
+		ret["pr"] = row.get("PRName", "")
+		ret["st"] = row.get("STName", "")
+		ret["pd"] = row.get("PDName", "")
+		return ret
+	}
 }
 
 public struct ElectorDataStruct {
-	var DisplayName = "", Forename = "", MiddleName = "", Surname = "", Meta = ""
+	public init(ID: Int?, EID: Int?, PID: Int?, SID: Int?, PDID: Int?, displayName: String, forename: String, middleName: String, surname: String, meta: String) {
+		self.ID = ID
+		self.EID = EID
+		self.PID = PID
+		self.SID = SID
+		self.PDID = PDID
+		DisplayName = displayName
+		Forename = forename
+		MiddleName = middleName
+		Surname = surname
+		Meta = meta
+	}
 	
-	var ID : Int?
-	var EID : Int?
-	var PID : Int?
-	var SID : Int?
-	var PDID : Int?
+	public var DisplayName = "", Forename = "", MiddleName = "", Surname = "", Meta = ""
+	
+	public var ID : Int?
+	public var EID : Int?
+	public var PID : Int?
+	public var SID : Int?
+	public var PDID : Int?
+	
+	public mutating func readyNextElector() {
+		self.ID = nil
+		self.EID = nil
+		DisplayName = ""
+		Forename = ""
+		MiddleName = ""
+		Meta = ""
+		
+	}
+	
+	public func getDisplayInformation() -> [String:String] {
+		if let elid = ID {
+			return Elector.getParentageDisplayInformation(id: elid)
+		}
+		return [:]
+	}
 }

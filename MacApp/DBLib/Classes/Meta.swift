@@ -157,6 +157,23 @@ public class Meta {
 		}
 	}
 	
+	public func get<T>(_ key: String, _ defaultValue: T) -> T {
+		if !hasKey(key: key) {
+			return defaultValue
+		}
+		let ret = "\(self[key])"
+		if defaultValue is String {
+			return ret as? T ?? defaultValue
+		}
+		if defaultValue is Int {
+			return Int(ret) as? T ?? defaultValue
+		}
+		if defaultValue is Bool {
+			return Bool(ret) as? T ?? defaultValue
+		}
+		return defaultValue
+	}
+	
 	public func add(collection: [String:Any]) {
 		for (k,v) in collection {
 			self[k] = v

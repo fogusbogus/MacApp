@@ -24,10 +24,15 @@ class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate
 		print(String(describing:ma))
 		switch ma {
 		case .newChild:
-			openNewPropertyWindow()
+			if selectedNode is StreetItem {
+				openNewPropertyWindow()
+			}
 		case .delete:
 			break
 		case .edit:
+			if selectedNode is ElectorItem {
+				openEditElectorWindow()
+			}
 			break
 		case .new:
 			break
@@ -36,6 +41,21 @@ class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate
 		case .none:
 			break
 		}
+	}
+	
+	private var wcEditElector: EditElectorWindowController?
+	
+	func openEditElectorWindow() {
+		if wcEditElector == nil {
+			wcEditElector = EditElectorWindowController.loadFromNib()
+			
+			if let elItem = selectedNode as? ElectorItem {
+				if elItem.linkedItem is Elector {
+					wcEditElector?.loadElector(elector: elItem.linkedItem as! Elector)
+				}
+			}
+		}
+		wcEditElector?.showWindow(self)
 	}
 	
 	private var wc : NewPropertyWindowController?
@@ -72,6 +92,9 @@ class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate
 				menu.addItem(menuButton("Edit", tag: .edit, keys: ""))
 				menu.addItem(menuButton("Delete", tag: .delete, keys: ""))
 				menu.addItem(menuButton("View", tag: .view, keys: ""))
+			}
+			if sn is ElectorItem {
+				menu.addItem(menuButton("Edit Elector", tag: .edit, keys: ""))
 			}
 		}
 		else {
