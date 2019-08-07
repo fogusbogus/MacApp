@@ -11,7 +11,14 @@ import DBLib
 import Common
 import RegisterDB
 
-class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate, NSMenuDelegate, StreetVCRefreshDelegate {
+class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate, NSMenuDelegate, StreetVCRefreshDelegate, ElectorVCRefreshDelegate {
+	func refreshElector() {
+		if let el = selectedNode?.linkedItem as? Elector {
+			el.reload()
+			selectedNode?.linkedItem = el
+		}
+	}
+	
 	func refresh() {
 		selectedNode?.getChildItems()
 		outlineView.reloadItem(selectedNode, reloadChildren: true)
@@ -48,11 +55,12 @@ class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate
 	func openEditElectorWindow() {
 		if wcEditElector == nil {
 			wcEditElector = EditElectorWindowController.loadFromNib()
-			
-			if let elItem = selectedNode as? ElectorItem {
-				if elItem.linkedItem is Elector {
-					wcEditElector?.loadElector(elector: elItem.linkedItem as! Elector)
-				}
+			wcEditElector?.refreshDelegate = self
+
+		}
+		if let elItem = selectedNode as? ElectorItem {
+			if elItem.linkedItem is Elector {
+				wcEditElector?.loadElector(elector: elItem.linkedItem as! Elector)
 			}
 		}
 		wcEditElector?.showWindow(self)

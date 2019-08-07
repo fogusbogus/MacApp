@@ -23,6 +23,8 @@
 		C933276B22B6CE49003EEA09 /* Tree.xib in Resources */ = {isa = PBXBuildFile; fileRef = C933276A22B6CE49003EEA09 /* Tree.xib */; };
 		C933276D22B6CE67003EEA09 /* TreeItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = C933276C22B6CE67003EEA09 /* TreeItem.xib */; };
 		C933276F22B6CE7E003EEA09 /* TreeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C933276E22B6CE7E003EEA09 /* TreeItem.swift */; };
+		C937958C22FA248E00FDB98F /* pnlButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = C937958A22FA248E00FDB98F /* pnlButtons.swift */; };
+		C937958D22FA248E00FDB98F /* pnlButtons.xib in Resources */ = {isa = PBXBuildFile; fileRef = C937958B22FA248E00FDB98F /* pnlButtons.xib */; };
 		C93CABFC22B2E2AC00685968 /* StreetSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CABFB22B2E2AC00685968 /* StreetSource.swift */; };
 		C93CABFE22B2E6F200685968 /* StreetItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CABFD22B2E6F200685968 /* StreetItem.swift */; };
 		C93CAC0022B2E90A00685968 /* StreetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CABFF22B2E90A00685968 /* StreetVC.swift */; };
@@ -54,6 +56,8 @@
 		C933276A22B6CE49003EEA09 /* Tree.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Tree.xib; sourceTree = "<group>"; };
 		C933276C22B6CE67003EEA09 /* TreeItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TreeItem.xib; sourceTree = "<group>"; };
 		C933276E22B6CE7E003EEA09 /* TreeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeItem.swift; sourceTree = "<group>"; };
+		C937958A22FA248E00FDB98F /* pnlButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pnlButtons.swift; sourceTree = "<group>"; };
+		C937958B22FA248E00FDB98F /* pnlButtons.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = pnlButtons.xib; sourceTree = "<group>"; };
 		C93CABFB22B2E2AC00685968 /* StreetSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetSource.swift; sourceTree = "<group>"; };
 		C93CABFD22B2E6F200685968 /* StreetItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetItem.swift; sourceTree = "<group>"; };
 		C93CABFF22B2E90A00685968 /* StreetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetVC.swift; sourceTree = "<group>"; };
@@ -94,6 +98,8 @@
 				C94A9BE322F25A73006CD380 /* EditElector.swift */,
 				C912432C22F386A000564EE4 /* pnlDetails.swift */,
 				C912432D22F386A000564EE4 /* pnlDetails.xib */,
+				C937958A22FA248E00FDB98F /* pnlButtons.swift */,
+				C937958B22FA248E00FDB98F /* pnlButtons.xib */,
 			);
 			path = EditElector;
 			sourceTree = "<group>";
@@ -260,6 +266,7 @@
 				C962A09622A9BFC900510199 /* Assets.xcassets in Resources */,
 				C933276B22B6CE49003EEA09 /* Tree.xib in Resources */,
 				C9B6342F22E674D60085C92A /* NewProperty.storyboard in Resources */,
+				C937958D22FA248E00FDB98F /* pnlButtons.xib in Resources */,
 				C94A9BE222F245E1006CD380 /* EditElector.storyboard in Resources */,
 				C907982F22C91F3800073F31 /* TreeNodeContainerView.xib in Resources */,
 				C9C33F0B22D9CF93003D8B3A /* mainviewicons.xcassets in Resources */,
@@ -291,6 +298,7 @@
 				C92D790F22B4E46B00907F2A /* TreeNode.swift in Sources */,
 				C933276922B5A786003EEA09 /* FileNode.swift in Sources */,
 				C91E680922D52878005AF496 /* ImageRepo.swift in Sources */,
+				C937958C22FA248E00FDB98F /* pnlButtons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

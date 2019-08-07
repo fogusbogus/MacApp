@@ -157,6 +157,10 @@ public class Meta {
 		}
 	}
 	
+	public func set<T>(_ key: String, _ value: T) {
+		self[key] = value
+	}
+	
 	public func get<T>(_ key: String, _ defaultValue: T) -> T {
 		if !hasKey(key: key) {
 			return defaultValue

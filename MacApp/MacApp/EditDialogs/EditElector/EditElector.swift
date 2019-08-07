@@ -9,11 +9,41 @@
 import Cocoa
 import RegisterDB
 
-class EditElector: NSSplitViewController {
+class EditElector: NSSplitViewController, EditElectorButtonDelegate {
+	func save() {
+		handler?.addOrUpdate(data: _pnlDetails!.getData())
+	}
+	
+	func cancel() {
+		handler?.cancel()
+	}
+	
+
+	
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do view setup here.
+		
+		//Okay, we have some combos to set up
+		let titles : [String] = ["Mr", "Mrs", "Miss", "Ms", "Dr", "Prof", "Gen", "Maj", "Sgt", "May", "Sir", "Dame"]
+		assertPanels()
+		if _pnlDetails != nil {
+			_pnlDetails?.cboTitle.addItems(withObjectValues: titles)
+			_pnlDetails?.cboGender.removeAllItems()
+			_pnlDetails?.cboGender.addItems(withObjectValues: ["Male", "Female"])
+		}
+		
+		_pnlButtons?.handler = self
+	}
+	
+	private func assertPanels() {
+		_pnlDetails = _pnlDetails ?? children.first { (vc) -> Bool in
+			return vc is pnlDetails
+			} as? pnlDetails
+		_pnlButtons = _pnlButtons ?? children.first { (vc) -> Bool in
+			return vc is pnlButtons
+			} as? pnlButtons
 	}
 	
 	public var handler : EditElectorWindowDelegate?
@@ -24,13 +54,14 @@ class EditElector: NSSplitViewController {
 		_property = property
 	}
 	
+	private var _pnlDetails : pnlDetails?
+	private var _pnlButtons : pnlButtons?
+	
 	func setElectorData(data: ElectorDataStruct) {
-		let pnl = children.first { (vc) -> Bool in
-			return vc is pnlDetails
-			} as? pnlDetails
-		if pnl != nil {
-			pnl?.loadData(electorData: data)
-		}
+		assertPanels()
+		_pnlButtons?.handler = self
+
+		_pnlDetails?.loadData(electorData: data)
 	}
 }
 
@@ -43,11 +74,12 @@ class EditElectorWindowController: NSWindowController, EditElectorWindowDelegate
 	func addOrUpdate(data: ElectorDataStruct ) {
 		let e = Elector(data: data)
 		e.save()
+		refreshDelegate?.refreshElector()
 	}
 	
 	func cancel() {
 		close()
-		refreshDelegate?.refresh()
+		refreshDelegate?.refreshElector()
 	}
 	
 	class func loadFromNib() -> EditElectorWindowController {
@@ -83,7 +115,7 @@ class EditElectorWindowController: NSWindowController, EditElectorWindowDelegate
 }
 
 protocol ElectorVCRefreshDelegate {
-	func refresh()
+	func refreshElector()
 }
 
 protocol EditElectorWindowDelegate {

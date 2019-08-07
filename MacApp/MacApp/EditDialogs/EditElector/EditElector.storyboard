@@ -33,10 +33,10 @@
                 <customObject id="4P4-au-w9F" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <splitViewController id="yhj-Ft-Qm6" customClass="EditElector" customModule="MacApp" customModuleProvider="target" sceneMemberID="viewController">
                     <splitViewItems>
-                        <splitViewItem holdingPriority="1000" id="KBx-GY-FRD"/>
-                        <splitViewItem canCollapse="YES" holdingPriority="260" behavior="sidebar" id="X4e-dr-5Kv"/>
+                        <splitViewItem id="KBx-GY-FRD"/>
+                        <splitViewItem holdingPriority="1000" id="X4e-dr-5Kv"/>
                     </splitViewItems>
-                    <splitView key="splitView" dividerStyle="thin" vertical="YES" id="7Xr-GW-dQ0">
+                    <splitView key="splitView" focusRingType="none" dividerStyle="thin" vertical="YES" id="7Xr-GW-dQ0">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
@@ -117,11 +117,6 @@
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                    <objectValues>
-                                        <string>Item 1</string>
-                                        <string>Item 2</string>
-                                        <string>Item 3</string>
-                                    </objectValues>
                                 </comboBoxCell>
                             </comboBox>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jL4-FB-ufa">
@@ -167,16 +162,22 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="97F-xL-NiB">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="97F-xL-NiB">
                                 <rect key="frame" x="28" y="238" width="111" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="107" id="Glj-8X-bP4"/>
+                                </constraints>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Street" id="FzB-dg-hEp">
                                     <font key="font" usesAppearanceFont="YES"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4gy-Kr-vK0">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4gy-Kr-vK0">
                                 <rect key="frame" x="28" y="213" width="111" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="107" id="fhD-Hx-egy"/>
+                                </constraints>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Property" id="vdc-yp-Kqi">
                                     <font key="font" usesAppearanceFont="YES"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -191,16 +192,16 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OSv-f9-GDt">
-                                <rect key="frame" x="154" y="238" width="239" height="17"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OSv-f9-GDt">
+                                <rect key="frame" x="154" y="238" width="92" height="17"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="Street" id="ndc-TT-f4W">
                                     <font key="font" usesAppearanceFont="YES"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IYV-sk-5bF">
-                                <rect key="frame" x="154" y="213" width="239" height="17"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IYV-sk-5bF">
+                                <rect key="frame" x="154" y="213" width="57" height="17"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="Property" id="3Jj-9q-78K">
                                     <font key="font" usesAppearanceFont="YES"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -229,6 +230,7 @@
                             <constraint firstItem="VDR-Y4-B1I" firstAttribute="leading" secondItem="xNt-zk-x1d" secondAttribute="trailing" constant="19" id="B46-0L-2To"/>
                             <constraint firstItem="OSv-f9-GDt" firstAttribute="centerY" secondItem="97F-xL-NiB" secondAttribute="centerY" id="C17-zH-uhj"/>
                             <constraint firstItem="jL4-FB-ufa" firstAttribute="top" secondItem="Yga-zP-Pqb" secondAttribute="bottom" constant="4" id="C7d-Ko-NTK"/>
+                            <constraint firstItem="97F-xL-NiB" firstAttribute="leading" secondItem="rIw-5V-2El" secondAttribute="leading" constant="30" id="Cp2-jW-u6F"/>
                             <constraint firstAttribute="trailing" secondItem="Vi0-ze-SKy" secondAttribute="trailing" constant="59" id="Eip-oV-231"/>
                             <constraint firstItem="JJk-Hg-CwN" firstAttribute="leading" secondItem="rIw-5V-2El" secondAttribute="leading" constant="30" id="FTq-j9-ttS"/>
                             <constraint firstItem="Vi0-ze-SKy" firstAttribute="leading" secondItem="kCw-ju-ZTd" secondAttribute="trailing" constant="19" id="JaB-Vo-bCW"/>
@@ -259,12 +261,14 @@
                             <constraint firstItem="OSv-f9-GDt" firstAttribute="leading" secondItem="97F-xL-NiB" secondAttribute="trailing" constant="19" id="msV-8V-lzO"/>
                             <constraint firstItem="Tur-SW-p9u" firstAttribute="leading" secondItem="JJk-Hg-CwN" secondAttribute="trailing" constant="19" id="mwf-my-fKc"/>
                             <constraint firstItem="Tur-SW-p9u" firstAttribute="top" secondItem="jL4-FB-ufa" secondAttribute="bottom" constant="3" id="neF-mH-jxf"/>
+                            <constraint firstItem="kCw-ju-ZTd" firstAttribute="leading" secondItem="rIw-5V-2El" secondAttribute="leading" constant="30" id="npJ-OI-RVX"/>
                             <constraint firstAttribute="trailing" secondItem="jL4-FB-ufa" secondAttribute="trailing" constant="59" id="o9f-OW-SYn"/>
                             <constraint firstItem="OSv-f9-GDt" firstAttribute="top" secondItem="Vi0-ze-SKy" secondAttribute="bottom" constant="8" id="pOE-uC-bSt"/>
                             <constraint firstItem="i9u-Vc-wEw" firstAttribute="width" secondItem="xNt-zk-x1d" secondAttribute="width" id="sPa-RB-pWe"/>
                             <constraint firstItem="VDR-Y4-B1I" firstAttribute="top" secondItem="JCJ-PZ-Mp5" secondAttribute="bottom" constant="4" id="svT-s5-WMS"/>
                             <constraint firstItem="Vi0-ze-SKy" firstAttribute="centerY" secondItem="kCw-ju-ZTd" secondAttribute="centerY" id="wS2-Il-5jN"/>
                             <constraint firstItem="Dua-lW-xNq" firstAttribute="centerY" secondItem="8Vl-Ve-t1i" secondAttribute="centerY" id="wUU-hk-zbM"/>
+                            <constraint firstItem="4gy-Kr-vK0" firstAttribute="leading" secondItem="rIw-5V-2El" secondAttribute="leading" constant="30" id="xoe-He-hFG"/>
                         </constraints>
                     </view>
                     <connections>
@@ -281,12 +285,12 @@
                 </viewController>
                 <customObject id="ZhA-bP-lCd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="633" y="542"/>
+            <point key="canvasLocation" x="454" y="555"/>
         </scene>
         <!--pnlButtons-->
         <scene sceneID="Aym-RI-FaD">
             <objects>
-                <viewController id="O1a-Z4-3Lc" userLabel="pnlButtons" sceneMemberID="viewController">
+                <viewController id="O1a-Z4-3Lc" userLabel="pnlButtons" customClass="pnlButtons" customModule="MacApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="XkL-7e-jXc">
                         <rect key="frame" x="0.0" y="0.0" width="112" height="305"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -304,6 +308,9 @@
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="Save_Click:" target="O1a-Z4-3Lc" id="kn4-DM-4cJ"/>
+                                        </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MEt-DO-0du">
                                         <rect key="frame" x="23" y="-2" width="66" height="67"/>
@@ -315,6 +322,9 @@
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="Cancel_Click:" target="O1a-Z4-3Lc" id="upF-dA-xiJ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

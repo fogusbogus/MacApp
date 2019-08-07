@@ -169,6 +169,10 @@ public struct ElectorDataStruct {
 		Meta = meta
 	}
 	
+	public init() {
+		
+	}
+	
 	public var DisplayName = "", Forename = "", MiddleName = "", Surname = "", Meta = ""
 	
 	public var ID : Int?

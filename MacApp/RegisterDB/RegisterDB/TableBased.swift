@@ -57,6 +57,12 @@ public class TableBased<IDType> {
 		_hasTable = false
 	}
 	
+	public func reload() {
+		if let id = ID {
+			ID = id
+		}
+	}
+	
 	public func IDChanged() {
 		//override this to catch a data change
 		_originalSignature = getSignature()
