@@ -38,10 +38,13 @@ class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate
 			break
 		case .edit:
 			if selectedNode is ElectorItem {
-				openEditElectorWindow()
+				openEditElectorWindow(.edit)
 			}
 			break
 		case .new:
+			if selectedNode is ElectorItem {
+				openEditElectorWindow(.new)
+			}
 			break
 		case .view:
 			break
@@ -52,7 +55,7 @@ class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate
 	
 	private var wcEditElector: EditElectorWindowController?
 	
-	func openEditElectorWindow() {
+	func openEditElectorWindow(_ usage: FormUseType = .notSpecified) {
 		if wcEditElector == nil {
 			wcEditElector = EditElectorWindowController.loadFromNib()
 			wcEditElector?.refreshDelegate = self
@@ -60,9 +63,15 @@ class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate
 		}
 		if let elItem = selectedNode as? ElectorItem {
 			if elItem.linkedItem is Elector {
-				wcEditElector?.loadElector(elector: elItem.linkedItem as! Elector)
+				if usage == .new {
+					wcEditElector?.loadElector(elector: Elector())
+				}
+				else {
+					wcEditElector?.loadElector(elector: elItem.linkedItem as! Elector)
+				}
 			}
 		}
+		wcEditElector?.FormUsage = usage
 		wcEditElector?.showWindow(self)
 	}
 	
@@ -103,6 +112,7 @@ class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate
 			}
 			if sn is ElectorItem {
 				menu.addItem(menuButton("Edit Elector", tag: .edit, keys: ""))
+				menu.addItem(menuButton("New Elector", tag: .new, keys: ""))
 			}
 		}
 		else {

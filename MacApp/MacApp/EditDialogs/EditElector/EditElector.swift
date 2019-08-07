@@ -9,9 +9,31 @@
 import Cocoa
 import RegisterDB
 
-class EditElector: NSSplitViewController, EditElectorButtonDelegate {
-	func save() {
-		handler?.addOrUpdate(data: _pnlDetails!.getData())
+class EditElector: NSSplitViewController, EditableFormButtonDelegate {
+	func action(_ usage: FormUseType) {
+		switch usage {
+		case .edit:
+			handler?.addOrUpdate(data: _pnlDetails!.getData())
+			handler?.cancel()
+			break
+			
+		case .new:
+			var data = _pnlDetails!.getData()
+			handler?.addOrUpdate(data: data)
+			data.readyNextElector()
+			_pnlDetails?.loadData(electorData: data)
+			break
+			
+		case .remove:
+			break
+			
+		case .view:
+			FormUsage = .edit
+			break
+			
+		default:
+			break
+		}
 	}
 	
 	func cancel() {
@@ -19,7 +41,15 @@ class EditElector: NSSplitViewController, EditElectorButtonDelegate {
 	}
 	
 
-	
+	public var FormUsage: FormUseType {
+		get {
+			return _pnlButtons?.FormUsage ?? .notSpecified
+		}
+		set {
+			_pnlButtons?.FormUsage = newValue
+		}
+	}
+
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -66,6 +96,15 @@ class EditElector: NSSplitViewController, EditElectorButtonDelegate {
 }
 
 class EditElectorWindowController: NSWindowController, EditElectorWindowDelegate {
+	
+	public var FormUsage: FormUseType {
+		get {
+			return _activeForm?.FormUsage ?? .notSpecified
+		}
+		set {
+			_activeForm?.FormUsage = newValue
+		}
+	}
 	
 	func windowHasLoaded() {
 		

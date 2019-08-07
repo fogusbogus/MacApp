@@ -52,13 +52,13 @@ class pnlDetails: NSViewController {
 	
 	public func getData() -> ElectorDataStruct {
 		_currentData = _currentData ?? ElectorDataStruct()
-		var md = Meta(json: _currentData?.Meta ?? "")
-		md.set("title", cboTitle.stringValue)
+		let md = Meta(json: _currentData?.Meta ?? "")
+		md["title"] = cboTitle.stringValue
 		_currentData?.Forename = txtForename.stringValue
 		_currentData?.MiddleName = txtMiddle.stringValue
 		_currentData?.Surname = txtSurname.stringValue
-		md.set("gender", cboGender.stringValue)
-		md.set("dob", dtDOB.stringValue)
+		md["gender"] = cboGender.stringValue
+		md["dob"] = dtDOB.stringValue
 		return _currentData!
 		
 	}

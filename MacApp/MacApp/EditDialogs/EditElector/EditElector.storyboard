@@ -296,10 +296,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="centerX" horizontalStackHuggingPriority="250" verticalStackHuggingPriority="250" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r7S-WM-EMu">
-                                <rect key="frame" x="0.0" y="169" width="112" height="136"/>
+                                <rect key="frame" x="0.0" y="-47" width="112" height="352"/>
                                 <subviews>
-                                    <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="peo-nJ-0Iv">
-                                        <rect key="frame" x="23" y="70" width="66" height="67"/>
+                                    <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="peo-nJ-0Iv" userLabel="btnSave">
+                                        <rect key="frame" x="23" y="286" width="66" height="67"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="Jhb-wY-aKl"/>
                                             <constraint firstAttribute="width" constant="64" id="YtO-is-Aad"/>
@@ -310,6 +310,48 @@
                                         </buttonCell>
                                         <connections>
                                             <action selector="Save_Click:" target="O1a-Z4-3Lc" id="kn4-DM-4cJ"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lvn-kL-fIi" userLabel="btnNext">
+                                        <rect key="frame" x="23" y="214" width="66" height="67"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="64" id="1ap-JZ-Ngp"/>
+                                            <constraint firstAttribute="height" constant="64" id="atS-ir-oWz"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="squareTextured" title="Next" bezelStyle="texturedSquare" image="preferences" imagePosition="above" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="SuR-vC-Szy">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="Save_Click:" target="O1a-Z4-3Lc" id="0gD-Wt-fJ2"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JUF-Br-Bhx" userLabel="btnEdit">
+                                        <rect key="frame" x="23" y="142" width="66" height="67"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="64" id="GN1-C9-pNh"/>
+                                            <constraint firstAttribute="height" constant="64" id="YvH-mA-evo"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="squareTextured" title="Edit" bezelStyle="texturedSquare" image="NSStatusAvailable" imagePosition="above" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0ve-oC-rvG">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="Save_Click:" target="O1a-Z4-3Lc" id="nQH-lP-9bD"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FxS-eO-eMx" userLabel="btnDelete">
+                                        <rect key="frame" x="23" y="70" width="66" height="67"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="4Ps-48-JnQ"/>
+                                            <constraint firstAttribute="width" constant="64" id="yAh-GP-RkK"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="squareTextured" title="Delete" bezelStyle="texturedSquare" image="NSCaution" imagePosition="above" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="RRi-EU-Xi1">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="Save_Click:" target="O1a-Z4-3Lc" id="blH-xJ-HmG"/>
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MEt-DO-0du">
@@ -334,8 +376,14 @@
                                 <visibilityPriorities>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
@@ -347,6 +395,13 @@
                             <constraint firstItem="r7S-WM-EMu" firstAttribute="leading" secondItem="XkL-7e-jXc" secondAttribute="leading" id="GxC-fO-xSo"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnCancel" destination="MEt-DO-0du" id="EH7-cz-Wyf"/>
+                        <outlet property="btnDelete" destination="FxS-eO-eMx" id="GSX-px-zHu"/>
+                        <outlet property="btnEdit" destination="JUF-Br-Bhx" id="heu-WK-qFv"/>
+                        <outlet property="btnNext" destination="Lvn-kL-fIi" id="SGa-a4-DUt"/>
+                        <outlet property="btnSave" destination="peo-nJ-0Iv" id="abE-Ar-iau"/>
+                    </connections>
                 </viewController>
                 <customObject id="5JN-Vc-ca4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -355,6 +410,9 @@
     </scenes>
     <resources>
         <image name="Likely_unavail" width="16" height="16"/>
+        <image name="NSCaution" width="32" height="32"/>
+        <image name="NSStatusAvailable" width="16" height="16"/>
+        <image name="preferences" width="16" height="16"/>
         <image name="savefloppy" width="16" height="16"/>
     </resources>
 </document>

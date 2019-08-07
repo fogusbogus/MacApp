@@ -10,8 +10,13 @@ import Cocoa
 
 class pnlButtons: NSViewController {
 
+	@IBOutlet weak var btnSave: NSButton!
+	@IBOutlet weak var btnNext: NSButton!
+	@IBOutlet weak var btnEdit: NSButton!
+	@IBOutlet weak var btnDelete: NSButton!
+	@IBOutlet weak var btnCancel: NSButton!
 	@IBAction func Save_Click(_ sender: NSButton) {
-		handler?.save()
+		handler?.action(_formUseType)
 	}
 	@IBAction func Cancel_Click(_ sender: NSButton) {
 		handler?.cancel()
@@ -19,13 +24,38 @@ class pnlButtons: NSViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+		FormUsage = _formUseType
     }
 	
-	public var handler: EditElectorButtonDelegate?
-    
+	public var handler: EditableFormButtonDelegate?
+	
+	private var _formUseType: FormUseType = .notSpecified
+	public var FormUsage : FormUseType {
+		get {
+			return _formUseType
+		}
+		set {
+			_formUseType = newValue
+			
+			btnCancel.isHidden = false
+			
+			btnSave.isHidden = newValue != .edit
+			btnNext.isHidden = newValue != .new
+			btnDelete.isHidden = newValue != .remove
+			btnEdit.isHidden = newValue != .view
+		}
+	}
 }
 
-protocol EditElectorButtonDelegate {
-	func save()
+protocol EditableFormButtonDelegate {
+	func action(_ usage: FormUseType)
 	func cancel()
+}
+
+public enum FormUseType {
+	case edit
+	case new
+	case view
+	case remove
+	case notSpecified
 }

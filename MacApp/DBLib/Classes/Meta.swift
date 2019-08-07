@@ -142,7 +142,7 @@ public class Meta {
 	
 	private var _coll : [String:Any] = [:]
 	
-	subscript(key: String) -> Any {
+	public subscript(key: String) -> Any {
 		get {
 			let mKey = matchedKey(key: key)
 			if let ret = _coll[mKey] {

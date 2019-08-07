@@ -266,13 +266,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacApp/Data/StreetVC.swift"
-            timestampString = "586855855.227931"
+            timestampString = "586911563.58527"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "216"
-            endingLineNumber = "216"
-            landmarkName = "addData()"
-            landmarkType = "7">
+            startingLineNumber = "226"
+            endingLineNumber = "226"
+            landmarkName = "StreetVC"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -282,13 +282,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacApp/Data/StreetVC.swift"
-            timestampString = "586855855.227984"
+            timestampString = "586911563.585547"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
-            landmarkName = "ovAction(_:)"
-            landmarkType = "7">
+            startingLineNumber = "154"
+            endingLineNumber = "154"
+            landmarkName = "StreetVC"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -394,7 +394,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacApp/MacApp/ViewController.swift"
-            timestampString = "586164675.455303"
+            timestampString = "586911563.585801"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "104"
@@ -410,7 +410,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacApp/MacApp/ViewController.swift"
-            timestampString = "586164675.455518"
+            timestampString = "586911563.58584"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
@@ -426,7 +426,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacApp/MacApp/ViewController.swift"
-            timestampString = "586164675.455557"
+            timestampString = "586911563.585871"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
@@ -442,7 +442,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacApp/MacApp/ViewController.swift"
-            timestampString = "586164675.45559"
+            timestampString = "586911563.585901"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "124"
@@ -458,7 +458,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacApp/MacApp/ViewController.swift"
-            timestampString = "586164675.455623"
+            timestampString = "586911563.58593"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "119"
@@ -506,7 +506,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacApp/MacApp/ViewController.swift"
-            timestampString = "586164675.455653"
+            timestampString = "586911563.585959"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "119"
@@ -522,7 +522,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacApp/MacApp/ViewController.swift"
-            timestampString = "586164675.455683"
+            timestampString = "586911563.585988"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "133"
@@ -538,7 +538,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacApp/MacApp/ViewController.swift"
-            timestampString = "586164675.455713"
+            timestampString = "586911563.586017"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "141"
@@ -554,7 +554,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacApp/MacApp/ViewController.swift"
-            timestampString = "586164675.455744"
+            timestampString = "586911563.586046"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "142"
@@ -570,7 +570,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacApp/MacApp/ViewController.swift"
-            timestampString = "586164675.455773"
+            timestampString = "586911563.586074"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "145"
@@ -586,7 +586,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacApp/MacApp/ViewController.swift"
-            timestampString = "586164675.455803"
+            timestampString = "586911563.586102"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
@@ -634,7 +634,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacApp/MacApp/ViewController.swift"
-            timestampString = "586164675.456117"
+            timestampString = "586911563.586151"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "99"
@@ -650,7 +650,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacApp/MacApp/ViewController.swift"
-            timestampString = "586164675.456152"
+            timestampString = "586911563.586181"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "43"
@@ -746,13 +746,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacApp/Data/StreetVC.swift"
-            timestampString = "586855855.228187"
+            timestampString = "586911563.5862499"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "230"
-            endingLineNumber = "230"
-            landmarkName = "StreetVC"
-            landmarkType = "3">
+            startingLineNumber = "240"
+            endingLineNumber = "240"
+            landmarkName = "outlineView(_:viewFor:item:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -762,12 +762,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacApp/Data/StreetVC.swift"
-            timestampString = "586855855.228224"
+            timestampString = "586911563.586448"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "237"
-            endingLineNumber = "237"
-            landmarkName = "outlineView(_:viewFor:item:)"
+            startingLineNumber = "247"
+            endingLineNumber = "247"
+            landmarkName = "outlineView(_:shouldExpandItem:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -970,11 +970,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacApp/Data/StreetVC.swift"
-            timestampString = "586855855.228333"
+            timestampString = "586911563.58673"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
             landmarkName = "addData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1002,12 +1002,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacApp/Data/StreetVC.swift"
-            timestampString = "586855855.228375"
+            timestampString = "586911563.586936"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "menuButton(_:tag:keys:)"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "menuWillOpen(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1018,11 +1018,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacApp/Data/StreetVC.swift"
-            timestampString = "586855855.228408"
+            timestampString = "586911563.587129"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "menuItemSelected(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1034,7 +1034,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacApp/Data/StreetVC.swift"
-            timestampString = "586855855.22844"
+            timestampString = "586911563.587323"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
@@ -1050,13 +1050,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacApp/Data/StreetVC.swift"
-            timestampString = "586855855.228471"
+            timestampString = "586911563.58751"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "StreetVC"
-            landmarkType = "3">
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "openNewPropertyWindow()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1130,11 +1130,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacApp/Data/StreetVC.swift"
-            timestampString = "586855855.22853"
+            timestampString = "586911563.587731"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "openNewPropertyWindow()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1274,12 +1274,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacApp/Data/StreetVC.swift"
-            timestampString = "586855855.228614"
+            timestampString = "586911563.587978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
             endingLineNumber = "24"
-            landmarkName = "refreshElector()"
+            landmarkName = "refresh()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1290,7 +1290,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DBLib/Classes/Meta.swift"
-            timestampString = "586820157.174932"
+            timestampString = "586911563.588168"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
@@ -1306,7 +1306,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacApp/MacApp/ViewController.swift"
-            timestampString = "586164675.457168"
+            timestampString = "586911563.588204"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "109"
@@ -1322,7 +1322,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacApp/MacApp/ViewController.swift"
-            timestampString = "586164675.4572051"
+            timestampString = "586911563.588236"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "105"
@@ -1338,7 +1338,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DBLib/Classes/Meta.swift"
-            timestampString = "586820157.175002"
+            timestampString = "586911563.5882649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "51"
@@ -1354,7 +1354,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DBLib/Classes/Meta.swift"
-            timestampString = "586820157.175038"
+            timestampString = "586911563.588294"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "93"
@@ -1370,7 +1370,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DBLib/Classes/Meta.swift"
-            timestampString = "586820157.175071"
+            timestampString = "586911563.588323"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "127"
@@ -1386,7 +1386,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DBLib/Classes/Meta.swift"
-            timestampString = "586820157.175101"
+            timestampString = "586911563.588351"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "99"
@@ -1402,7 +1402,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DBLib/Classes/Meta.swift"
-            timestampString = "586820157.175131"
+            timestampString = "586911563.588379"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "237"
@@ -1418,7 +1418,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacApp/MacApp/ViewController.swift"
-            timestampString = "586164675.458174"
+            timestampString = "586911563.588407"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
@@ -1434,7 +1434,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DBLib/Classes/Meta.swift"
-            timestampString = "586820157.1751699"
+            timestampString = "586911563.588451"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "196"
@@ -1450,7 +1450,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DBLib/Classes/Meta.swift"
-            timestampString = "586820157.1752"
+            timestampString = "586911563.588478"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "197"
@@ -1498,7 +1498,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacApp/MacApp/ViewController.swift"
-            timestampString = "586423514.366996"
+            timestampString = "586911563.588505"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "23"
@@ -1514,7 +1514,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacApp/Data/StreetVC.swift"
-            timestampString = "586855855.2287199"
+            timestampString = "586911563.588535"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
@@ -1530,76 +1530,76 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacApp/EditDialogs/EditElector/EditElector.swift"
-            timestampString = "586855855.228754"
+            timestampString = "586911563.588724"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "assertPanels()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MacApp/EditDialogs/EditElector/EditElector.swift"
+            timestampString = "586911563.588764"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "EditElectorWindowController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MacApp/EditDialogs/EditElector/EditElector.swift"
+            timestampString = "586911563.588799"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "assertPanels()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MacApp/EditDialogs/EditElector/EditElector.swift"
+            timestampString = "586911563.5888309"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "assertPanels()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MacApp/EditDialogs/EditElector/EditElector.swift"
+            timestampString = "586911563.588863"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "setElectorData(data:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MacApp/EditDialogs/EditElector/EditElector.swift"
-            timestampString = "586855855.228786"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
-            landmarkName = "loadElector(elector:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MacApp/EditDialogs/EditElector/EditElector.swift"
-            timestampString = "586855855.228819"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "setElectorData(data:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MacApp/EditDialogs/EditElector/EditElector.swift"
-            timestampString = "586855855.228848"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "setElectorData(data:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MacApp/EditDialogs/EditElector/EditElector.swift"
-            timestampString = "586855855.228878"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "addOrUpdate(data:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1610,12 +1610,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacApp/Data/StreetVC.swift"
-            timestampString = "586855855.228907"
+            timestampString = "586911563.588894"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "menuItemSelected(_:)"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "openEditElectorWindow(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1626,12 +1626,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacApp/EditDialogs/EditElector/EditElector.swift"
-            timestampString = "586855855.228938"
+            timestampString = "586911563.58908"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
-            landmarkName = "addOrUpdate(data:)"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "setElectorData(data:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
