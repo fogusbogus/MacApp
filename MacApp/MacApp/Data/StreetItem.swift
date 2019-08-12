@@ -164,11 +164,37 @@ class ElectorItem: NodeBase {
 			addNodes(toSet)
 		}
 	}
+	
+	override func updateText() {
+		if let el = linkedItem as? Elector {
+			name = "\(el.Forename) \(el.MiddleName) \(el.Surname)".removeMultipleSpaces(true)
+		}
+		else {
+			name = ""
+		}
+	}
 }
 
-class NodeBase : NSObject {
+class NodeBase : NSObject, TableBasedDelegate {
+	func dataChanged() {
+		updateText()
+	}
 	
-	public var linkedItem : TableBased<Int>?
+	internal func updateText() {
+		
+	}
+	
+	private var _linkedItem : TableBased<Int>?
+	
+	public var linkedItem : TableBased<Int>? {
+		get {
+			return _linkedItem
+		}
+		set {
+			_linkedItem = newValue
+			newValue?.handler = self
+		}
+	}
 	
 	override init() {
 		super.init()

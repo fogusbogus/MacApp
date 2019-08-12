@@ -16,10 +16,11 @@ class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate
 		if let el = selectedNode?.linkedItem as? Elector {
 			el.reload()
 			selectedNode?.linkedItem = el
+			selectedNode?.name = el.getDisplayName()
 		}
 	}
 	
-	func refresh() {
+	func refreshStreet() {
 		selectedNode?.getChildItems()
 		outlineView.reloadItem(selectedNode, reloadChildren: true)
 	}

@@ -12,4 +12,9 @@ public extension Date {
 	func toISOString() -> String {
 		return ISO8601DateFormatter().string(from: self)
 	}
+	
+	@discardableResult
+	static func fromISOString(date: String) -> Date {
+		return ISO8601DateFormatter().date(from: date) ?? Date()
+	}
 }

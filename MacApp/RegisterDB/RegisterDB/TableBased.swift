@@ -11,6 +11,8 @@ import DBLib
 import Common
 
 public class TableBased<IDType> {
+	
+	public var handler : TableBasedDelegate?
 
 	internal var _id : IDType?
 	internal var _originalSignature = ""
@@ -109,7 +111,7 @@ public class TableBased<IDType> {
 		}
 	}
 	
-	private var _metaData : DBLib.Meta?
+	internal var _metaData : DBLib.Meta?
 	public var MetaData : DBLib.Meta {
 		get {
 			_metaData = _metaData ?? DBLib.Meta()
@@ -197,3 +199,6 @@ public extension Optional where Wrapped == Int {
 	}
 }
 
+public protocol TableBasedDelegate {
+	func dataChanged()
+}

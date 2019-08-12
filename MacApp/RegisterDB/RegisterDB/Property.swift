@@ -42,6 +42,7 @@ public class Property : TableBased<Int> {
 			self.Number = newValue.Number
 			self.ElectorCount = newValue.ElectorCount
 			self.MetaData.load(json: newValue.Meta, true)
+			handler?.dataChanged()
 		}
 	}
 	

@@ -39,6 +39,7 @@ public class Elector : TableBased<Int> {
 			self.SID = newValue.SID.Nil()
 			self.PID = newValue.PID.Nil()
 			self.EID = newValue.EID.Nil()
+			handler?.dataChanged()
 		}
 	}
 	
@@ -72,6 +73,21 @@ public class Elector : TableBased<Int> {
 	
 	override func signatureItems() -> [Any] {
 		return [DisplayName, Surname, Forename, MiddleName, MetaData.getSignature(), _pdid, _sid, _pid, _eid, _created] + super.signatureItems()
+	}
+	
+	public func getDisplayName() -> String {
+		return "\(Forename) \(getMiddleInitials()) \(Surname)".removeMultipleSpaces(true)
+	}
+	
+	public func getMiddleInitials() -> String {
+		let parts = MiddleName.components(separatedBy: .whitespacesAndNewlines)
+		var ret = ""
+		parts.filter { (s) -> Bool in
+			return s.trim().length() > 0
+			}.forEach { (s) in
+				ret += " " + s.trim().left(1).uppercased()
+			}
+		return ret.trim()
 	}
 	
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -129,6 +145,12 @@ public class Elector : TableBased<Int> {
 		}
 	}
 	
+	override public var MetaData: ElectorMeta {
+		get {
+			_metaData = _metaData ?? ElectorMeta()
+			return _metaData as! ElectorMeta
+		}
+	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	public static func count(pollingDistrict: Int) -> Int {

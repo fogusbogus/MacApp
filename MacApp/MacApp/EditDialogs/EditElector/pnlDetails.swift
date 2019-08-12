@@ -22,6 +22,7 @@ class pnlDetails: NSViewController {
 	@IBOutlet weak var txtSurname: NSTextField!
 	
 	@IBOutlet weak var cboGender: NSComboBox!
+	@IBOutlet weak var txtNINO: NSTextField!
 	
 	@IBOutlet weak var dtDOB: NSDatePicker!
 	
@@ -40,25 +41,28 @@ class pnlDetails: NSViewController {
 		lblStreet.stringValue = disp["st"] ?? ""
 		lblProperty.stringValue = disp["pr"] ?? ""
 
-		let md = Meta(json: electorData.Meta)
+		let md = ElectorMeta(json: electorData.Meta)
 		
-		cboTitle.stringValue = md.get("title", "")
+		cboTitle.stringValue = md.Title
 		txtForename.stringValue = electorData.Forename
 		txtMiddle.stringValue = electorData.MiddleName
 		txtSurname.stringValue = electorData.Surname
-		cboGender.stringValue = md.get("gender", "")
-		dtDOB.stringValue = md.get("dob", Date().description)
+		cboGender.stringValue = md.Gender
+		dtDOB.dateValue = md.DOB ?? Date()
+		txtNINO.stringValue = md.NINO
 	}
 	
 	public func getData() -> ElectorDataStruct {
 		_currentData = _currentData ?? ElectorDataStruct()
-		let md = Meta(json: _currentData?.Meta ?? "")
-		md["title"] = cboTitle.stringValue
+		let md = ElectorMeta(json: _currentData?.Meta ?? "")
+		md.Title = cboTitle.stringValue
 		_currentData?.Forename = txtForename.stringValue
 		_currentData?.MiddleName = txtMiddle.stringValue
 		_currentData?.Surname = txtSurname.stringValue
-		md["gender"] = cboGender.stringValue
-		md["dob"] = dtDOB.stringValue
+		md.Gender = cboGender.stringValue
+		md.DOB = dtDOB.dateValue
+		md.NINO = txtNINO.stringValue
+		_currentData?.Meta = md.getSignature()
 		return _currentData!
 		
 	}

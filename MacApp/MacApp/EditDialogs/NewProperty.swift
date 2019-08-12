@@ -29,7 +29,7 @@ class NewPropertyWindowController: NSWindowController, NewPropertyWindowDelegate
 	
 	func cancel() {
 		close()
-		refreshDelegate?.refresh()
+		refreshDelegate?.refreshStreet()
 	}
 	
 	class func loadFromNib() -> NewPropertyWindowController {
@@ -58,7 +58,7 @@ class NewPropertyWindowController: NSWindowController, NewPropertyWindowDelegate
 }
 
 protocol StreetVCRefreshDelegate {
-	func refresh()
+	func refreshStreet()
 }
 
 class NewPropertyVC : NSViewController {

@@ -40,6 +40,7 @@ public class Street : TableBased<Int> {
 			self.PropertyCount = newValue.PropertyCount
 			self.ElectorCount = newValue.ElectorCount
 			self.MetaData.load(json: newValue.Meta, true)
+			handler?.dataChanged()
 		}
 	}
 

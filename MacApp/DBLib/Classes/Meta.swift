@@ -8,7 +8,8 @@
 
 import Foundation
 
-public class Meta {
+
+open class Meta {
 	
 	private var _originalSignature = ""
 	
@@ -78,6 +79,17 @@ public class Meta {
 			print(err)
 		}
 		_originalSignature = toJson(true)
+	}
+	
+	public func decrypt(key: String, password: String, salt: Data, iv: Data) -> String {
+		return decrypt(value: get(key, ""), password: password, salt: salt, iv: iv)
+	}
+	public func decrypt(value: String, password: String, salt: Data, iv: Data) -> String {
+		return value.decrypt(password: password, salt: salt, iv: iv)
+	}
+	
+	public func encrypt(unencrypted: String, password: String, salt: Data, iv: Data) -> String {
+		return unencrypted.encrypt(password: password, salt: salt, iv: iv)
 	}
 	
 	public func hasChanged() -> Bool {
@@ -154,6 +166,24 @@ public class Meta {
 			let mKey = matchedKey(key: key)
 			remove(key: mKey)
 			_coll[mKey] = newValue
+		}
+	}
+	
+	public func setOrRemove<T>(_ key: String, _ value: T?) {
+		if value == nil {
+			remove(key: key)
+			return
+		}
+		else {
+			if value is String {
+				if let v = value as? String {
+					if v.length() == 0 {
+						remove(key: key)
+						return
+					}
+				}
+			}
+			set(key, value!)
 		}
 	}
 	
