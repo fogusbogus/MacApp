@@ -1290,7 +1290,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DBLib/Classes/Meta.swift"
-            timestampString = "587343866.997322"
+            timestampString = "587431223.58068"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
@@ -1338,7 +1338,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DBLib/Classes/Meta.swift"
-            timestampString = "587343866.997448"
+            timestampString = "587431223.580748"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "52"
@@ -1354,7 +1354,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DBLib/Classes/Meta.swift"
-            timestampString = "587343866.997504"
+            timestampString = "587431223.5807869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "105"
@@ -1370,13 +1370,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DBLib/Classes/Meta.swift"
-            timestampString = "587343866.99755"
+            timestampString = "587431223.580821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "139"
             endingLineNumber = "139"
-            landmarkName = "Meta"
-            landmarkType = "3">
+            landmarkName = "load(items:_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1386,7 +1386,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DBLib/Classes/Meta.swift"
-            timestampString = "587343866.997595"
+            timestampString = "587431223.580853"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "111"
@@ -1402,11 +1402,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DBLib/Classes/Meta.swift"
-            timestampString = "587343866.997638"
+            timestampString = "587431223.580884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "267"
-            endingLineNumber = "267"
+            startingLineNumber = "287"
+            endingLineNumber = "287"
             landmarkName = "matchedKey(key:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1434,13 +1434,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DBLib/Classes/Meta.swift"
-            timestampString = "587343866.9976929"
+            timestampString = "587431223.5809259"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "226"
-            endingLineNumber = "226"
-            landmarkName = "Meta"
-            landmarkType = "3">
+            startingLineNumber = "246"
+            endingLineNumber = "246"
+            landmarkName = "remove(key:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1450,11 +1450,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DBLib/Classes/Meta.swift"
-            timestampString = "587343866.997738"
+            timestampString = "587431223.5809571"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "227"
-            endingLineNumber = "227"
+            startingLineNumber = "247"
+            endingLineNumber = "247"
             landmarkName = "remove(key:)"
             landmarkType = "7">
             <Locations>
@@ -1674,7 +1674,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacApp/EditDialogs/EditElector/pnlDetails.swift"
-            timestampString = "587343866.997927"
+            timestampString = "587431223.581064"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "47"
@@ -1690,7 +1690,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacApp/EditDialogs/EditElector/pnlDetails.swift"
-            timestampString = "587343866.998269"
+            timestampString = "587431223.5810961"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "56"
@@ -1706,7 +1706,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MacApp/EditDialogs/EditElector/pnlDetails.swift"
-            timestampString = "587343866.998493"
+            timestampString = "587431223.581126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "65"
@@ -1722,12 +1722,60 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DBLib/Classes/Meta.swift"
-            timestampString = "587343866.998717"
+            timestampString = "587431223.5811549"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "244"
-            endingLineNumber = "244"
+            startingLineNumber = "264"
+            endingLineNumber = "264"
             landmarkName = "getSignature(_:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RegisterDB/RegisterDB/Meta/ElectorMeta.swift"
+            timestampString = "587431223.58119"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "encrypt(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RegisterDB/RegisterDB/Meta/ElectorMeta.swift"
+            timestampString = "587431223.581427"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "decrypt(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DBLib/Classes/Meta.swift"
+            timestampString = "587431223.581607"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
+            landmarkName = "get(_:_:_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

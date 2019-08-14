@@ -9,17 +9,23 @@
 import Foundation
 
 
+/// Base class for the meta collection
 open class Meta {
 	
 	private var _originalSignature = ""
 	
+	/// Initialise as empty
 	public init() {
 	}
 	
+	/// Initialise with some json from a string
+	///
+	/// - Parameter json: Json string
 	public init(json: String) {
 		load(json: json)
 	}
 	
+	/// Reset the signature as an original state
 	public func resetSignature() {
 		_originalSignature = getSignature()
 		for key in _coll.keys.filter({ (k) -> Bool in
@@ -41,6 +47,11 @@ open class Meta {
 		return ret != nil
 	}
 	
+	/// Load a collection from some Json string
+	///
+	/// - Parameters:
+	///   - json: Json string
+	///   - clear: Clear the current collection or merge?
 	public func load(json: String, _ clear: Bool = true) {
 		if clear {
 			self.clear()
@@ -81,17 +92,44 @@ open class Meta {
 		_originalSignature = toJson(true)
 	}
 	
+	/// Decrypt a string (AES256)
+	///
+	/// - Parameters:
+	///   - key: Collection key name
+	///   - password: Password to use to decrypt
+	///   - salt: Salt
+	///   - iv: IV
+	/// - Returns: Decrypted string
 	public func decrypt(key: String, password: String, salt: Data, iv: Data) -> String {
 		return decrypt(value: get(key, ""), password: password, salt: salt, iv: iv)
 	}
+	/// Decrypt a string (AES256)
+	///
+	/// - Parameters:
+	///   - value: String value to decrypt
+	///   - password: Password to use to decrypt
+	///   - salt: Salt
+	///   - iv: IV
+	/// - Returns: Decrypted string
 	public func decrypt(value: String, password: String, salt: Data, iv: Data) -> String {
 		return value.decrypt(password: password, salt: salt, iv: iv)
 	}
 	
+	/// Encrypt a string (AES256)
+	///
+	/// - Parameters:
+	///   - unencrypted: String to encrypt
+	///   - password: Password to use to encrypt
+	///   - salt: Salt
+	///   - iv: IV
+	/// - Returns: Encrypted string
 	public func encrypt(unencrypted: String, password: String, salt: Data, iv: Data) -> String {
 		return unencrypted.encrypt(password: password, salt: salt, iv: iv)
 	}
 	
+	/// Has the data changed?
+	///
+	/// - Returns: True/false
 	public func hasChanged() -> Bool {
 		return _originalSignature != toJson(true)
 	}
@@ -154,10 +192,32 @@ open class Meta {
 	
 	private var _coll : [String:Any] = [:]
 	
+	/// Get/set a meta value
+	///
+	/// - Parameter key: String key value
 	public subscript(key: String) -> Any {
+		get {
+			return self[key, nil]
+		}
+		set {
+			self[key, nil] = newValue
+		}
+	}
+	
+	/// Get/set a meta value
+	///
+	/// - Parameters:
+	///   - key: String key value
+	///   - crypto: Encryption/decryption
+	public subscript(key: String, _ crypto: MetaEncrypterDelegate?) -> Any {
 		get {
 			let mKey = matchedKey(key: key)
 			if let ret = _coll[mKey] {
+				if ret is String {
+					if crypto != nil {
+						return crypto!.decrypt(ret as! String)
+					}
+				}
 				return ret
 			}
 			return ""
@@ -165,11 +225,17 @@ open class Meta {
 		set {
 			let mKey = matchedKey(key: key)
 			remove(key: mKey)
+			if newValue is String {
+				if crypto != nil {
+					_coll[mKey] = crypto!.encrypt(newValue as! String)
+					return
+				}
+			}
 			_coll[mKey] = newValue
 		}
 	}
 	
-	public func setOrRemove<T>(_ key: String, _ value: T?) {
+	public func setOrRemove<T>(_ key: String, _ value: T?, _ crypto: MetaEncrypterDelegate? = nil) {
 		if value == nil {
 			remove(key: key)
 			return
@@ -183,19 +249,19 @@ open class Meta {
 					}
 				}
 			}
-			set(key, value!)
+			set(key, value!, crypto)
 		}
 	}
 	
-	public func set<T>(_ key: String, _ value: T) {
-		self[key] = value
+	public func set<T>(_ key: String, _ value: T, _ crypto: MetaEncrypterDelegate? = nil) {
+		self[key, crypto] = value
 	}
 	
-	public func get<T>(_ key: String, _ defaultValue: T) -> T {
+	open func get<T>(_ key: String, _ defaultValue: T, _ crypto: MetaEncrypterDelegate? = nil) -> T {
 		if !hasKey(key: key) {
 			return defaultValue
 		}
-		let ret = "\(self[key])"
+		let ret = "\(self[key, crypto])"
 		if defaultValue is String {
 			return ret as? T ?? defaultValue
 		}
@@ -208,9 +274,9 @@ open class Meta {
 		return defaultValue
 	}
 	
-	public func add(collection: [String:Any]) {
+	public func add(collection: [String:Any], _ crypto: MetaEncrypterDelegate? = nil) {
 		for (k,v) in collection {
-			self[k] = v
+			self[k, crypto] = v
 		}
 	}
 	
@@ -379,4 +445,9 @@ open class Meta {
 			return ""
 		}
 	}
+}
+
+public protocol MetaEncrypterDelegate {
+	func encrypt(_ value: String) -> String
+	func decrypt(_ value: String) -> String
 }
