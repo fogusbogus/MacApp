@@ -12,7 +12,7 @@ import Common
 import CommonCrypto
 
 
-public class ElectorMeta: Meta, MetaEncrypterDelegate {
+public class ElectorMeta: Meta, MetaCryptoDelegate {
 	public func encrypt(_ value: String) -> String {
 		return encrypt(unencrypted: value, password: CryptoInternal.shared.Password, salt: CryptoInternal.shared.Salt, iv: CryptoInternal.shared.IV)
 	}
@@ -82,15 +82,33 @@ public class ElectorMeta: Meta, MetaEncrypterDelegate {
 		}
 	}
 	
-	public var Nationality: String {
+	public var Nationality: [String] {
 		get {
-			return get("nationality", "")
+			return get("nationality", "").components(separatedBy: ";")
 		}
 		set {
-			setOrRemove("nationality", newValue)
+			setOrRemove("nationality", newValue.joined(separator: ";"))
 		}
 	}
 	
+	public var Ethnicity : String {
+		get {
+			return get("ethnicity", "")
+		}
+		set {
+			setOrRemove("ethnicity", newValue)
+		}
+	}
+	
+	public var Birthplace : String {
+		get {
+			return get("birthplace", "")
+		}
+		set {
+			setOrRemove("birthplace", newValue)
+		}
+	}
+
 	public var PreviousAddress: String {
 		get {
 			return get("prevaddress", "", self)

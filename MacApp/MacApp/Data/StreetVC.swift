@@ -73,7 +73,9 @@ class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate
 			}
 		}
 		wcEditElector?.FormUsage = usage
-		wcEditElector?.showWindow(self)
+		wcEditElector?.openModal()
+		//NSApp.runModal(for: wcEditElector!.window!)
+		//wcEditElector?.showWindow(self)
 	}
 	
 	private var wc : NewPropertyWindowController?
@@ -90,7 +92,8 @@ class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate
 				}
 			}
 		}
-		wc?.showWindow(self)
+		wc?.openModal()
+		//wc?.showWindow(self)
 	}
 
 	

@@ -5,10 +5,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Window Controller-->
+        <!--NewPropertyWindowController-->
         <scene sceneID="iLc-HT-PzK">
             <objects>
-                <windowController storyboardIdentifier="NewPropertyWindowController" id="UFQ-v9-bAs" customClass="NewPropertyWindowController" customModule="MacApp" customModuleProvider="target" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="NewPropertyWindowController" id="UFQ-v9-bAs" userLabel="NewPropertyWindowController" customClass="NewPropertyWindowController" customModule="MacApp" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="5IZ-tc-aAB">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>

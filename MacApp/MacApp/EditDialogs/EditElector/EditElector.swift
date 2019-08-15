@@ -49,7 +49,6 @@ class EditElector: NSSplitViewController, EditableFormButtonDelegate {
 			_pnlButtons?.FormUsage = newValue
 		}
 	}
-
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -95,7 +94,18 @@ class EditElector: NSSplitViewController, EditableFormButtonDelegate {
 	}
 }
 
-class EditElectorWindowController: NSWindowController, EditElectorWindowDelegate {
+open class ModalWindowController : NSWindowController {
+	override open func close() {
+		NSApp.stopModal()
+		super.close()
+	}
+	
+	open func openModal() {
+		NSApp.runModal(for: self.window!)
+	}
+}
+
+class EditElectorWindowController: ModalWindowController, EditElectorWindowDelegate {
 	
 	public var FormUsage: FormUseType {
 		get {

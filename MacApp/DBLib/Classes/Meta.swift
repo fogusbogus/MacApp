@@ -209,7 +209,7 @@ open class Meta {
 	/// - Parameters:
 	///   - key: String key value
 	///   - crypto: Encryption/decryption
-	public subscript(key: String, _ crypto: MetaEncrypterDelegate?) -> Any {
+	public subscript(key: String, _ crypto: MetaCryptoDelegate?) -> Any {
 		get {
 			let mKey = matchedKey(key: key)
 			if let ret = _coll[mKey] {
@@ -235,7 +235,7 @@ open class Meta {
 		}
 	}
 	
-	public func setOrRemove<T>(_ key: String, _ value: T?, _ crypto: MetaEncrypterDelegate? = nil) {
+	public func setOrRemove<T>(_ key: String, _ value: T?, _ crypto: MetaCryptoDelegate? = nil) {
 		if value == nil {
 			remove(key: key)
 			return
@@ -253,11 +253,11 @@ open class Meta {
 		}
 	}
 	
-	public func set<T>(_ key: String, _ value: T, _ crypto: MetaEncrypterDelegate? = nil) {
+	public func set<T>(_ key: String, _ value: T, _ crypto: MetaCryptoDelegate? = nil) {
 		self[key, crypto] = value
 	}
 	
-	open func get<T>(_ key: String, _ defaultValue: T, _ crypto: MetaEncrypterDelegate? = nil) -> T {
+	open func get<T>(_ key: String, _ defaultValue: T, _ crypto: MetaCryptoDelegate? = nil) -> T {
 		if !hasKey(key: key) {
 			return defaultValue
 		}
@@ -274,7 +274,7 @@ open class Meta {
 		return defaultValue
 	}
 	
-	public func add(collection: [String:Any], _ crypto: MetaEncrypterDelegate? = nil) {
+	public func add(collection: [String:Any], _ crypto: MetaCryptoDelegate? = nil) {
 		for (k,v) in collection {
 			self[k, crypto] = v
 		}
@@ -447,7 +447,7 @@ open class Meta {
 	}
 }
 
-public protocol MetaEncrypterDelegate {
+public protocol MetaCryptoDelegate {
 	func encrypt(_ value: String) -> String
 	func decrypt(_ value: String) -> String
 }

@@ -27,7 +27,7 @@ public class Elector : TableBased<Int> {
 
 	public var Data : ElectorDataStruct {
 		get {
-			return ElectorDataStruct(ID: ID, EID: EID.Nil(), PID: PID.Nil(), SID: SID.Nil(), PDID: PDID.Nil(), displayName: DisplayName, forename: Forename, middleName: MiddleName, surname: Surname, meta: MetaData.getSignature(true))
+			return ElectorDataStruct(ID: ID, EID: EID.Nil(), PID: PID.Nil(), SID: SID.Nil(), PDID: PDID.Nil(), displayName: DisplayName, forename: Forename, middleName: MiddleName, surname: Surname, meta: MetaData.getSignature(true), markers: Markers)
 		}
 		set {
 			self.ID = newValue.ID
@@ -35,6 +35,7 @@ public class Elector : TableBased<Int> {
 			self.MiddleName = newValue.MiddleName
 			self.Surname = newValue.Surname
 			self.MetaData.load(json: newValue.Meta, true)
+			self.Markers = newValue.Markers
 			self.PDID = newValue.PDID.Nil()
 			self.SID = newValue.SID.Nil()
 			self.PID = newValue.PID.Nil()
@@ -46,7 +47,7 @@ public class Elector : TableBased<Int> {
 	override func sanityCheck() {
 		super.sanityCheck()
 		if !SQLDB.tableExists("Elector") {
-			let sql = "CREATE TABLE Elector (ID INTEGER PRIMARY KEY AUTOINCREMENT, DisplayName TEXT, Surname TEXT, Forename TEXT, MiddleName TEXT, Meta TEXT, PDID INTEGER, SID INTEGER, PID INTEGER, EID INTEGER, Created DATE)"
+			let sql = "CREATE TABLE Elector (ID INTEGER PRIMARY KEY AUTOINCREMENT, DisplayName TEXT, Surname TEXT, Forename TEXT, MiddleName TEXT, Meta TEXT, Markers TEXT, PDID INTEGER, SID INTEGER, PID INTEGER, EID INTEGER, Created DATE)"
 			SQLDB.execute(sql)
 			_hasTable = SQLDB.tableExists("Elector")
 		}
@@ -54,25 +55,25 @@ public class Elector : TableBased<Int> {
 	
 	override func saveAsNew() {
 		super.saveAsNew()
-		let sql = "INSERT INTO Elector (DisplayName, Surname, Forename, MiddleName, Meta, PDID, SID, PID, EID, Created) " +
-		"VALUES (?,?,?,?,?,?,?,?,?,?)"
-		SQLDB.execute(sql, parms: DisplayName, Surname, Forename, MiddleName, MetaData.getSignature(true), _pdid, _sid, _pid, _eid, Date())
+		let sql = "INSERT INTO Elector (DisplayName, Surname, Forename, MiddleName, Meta, Markers, PDID, SID, PID, EID, Created) " +
+		"VALUES (?,?,?,?,?,?,?,?,?,?,?)"
+		SQLDB.execute(sql, parms: DisplayName, Surname, Forename, MiddleName, MetaData.getSignature(true), Markers, _pdid, _sid, _pid, _eid, Date())
 		_id = SQLDB.queryValue("SELECT last_insert_rowid()", -1)
 		SQLDB.execute("UPDATE Elector SET EID = \(ID ?? -1) WHERE ID = \(ID ?? -1)")
 	}
 	
 	override func saveAsUpdate() {
 		super.saveAsUpdate()
-		let sql = "UPDATE Elector SET DisplayName = ?, Surname = ?, Forename = ?, MiddleName = ?, Meta = ?, PDID = ?, SID = ?, PID = ?, EID = ? WHERE ID = \(ID ?? -1)"
-		SQLDB.execute(sql, parms: DisplayName, Surname, Forename, MiddleName, MetaData.getSignature(true), _pdid, _sid, _pid, ID ?? _eid)
+		let sql = "UPDATE Elector SET DisplayName = ?, Surname = ?, Forename = ?, MiddleName = ?, Meta = ?, Markers = ?, PDID = ?, SID = ?, PID = ?, EID = ? WHERE ID = \(ID ?? -1)"
+		SQLDB.execute(sql, parms: DisplayName, Surname, Forename, MiddleName, MetaData.getSignature(true), Markers, _pdid, _sid, _pid, ID ?? _eid)
 	}
 	
-	public var DisplayName = "", Surname = "", Forename = "", MiddleName = ""
+	public var DisplayName = "", Surname = "", Forename = "", MiddleName = "", Markers = ""
 	private var _pdid = -1, _sid = -1, _pid = -1, _eid = -1
 	private var _created = Date()
 	
 	override func signatureItems() -> [Any] {
-		return [DisplayName, Surname, Forename, MiddleName, MetaData.getSignature(), _pdid, _sid, _pid, _eid, _created] + super.signatureItems()
+		return [DisplayName, Surname, Forename, MiddleName, MetaData.getSignature(), Markers, _pdid, _sid, _pid, _eid, _created] + super.signatureItems()
 	}
 	
 	public func getDisplayName() -> String {
@@ -102,6 +103,7 @@ public class Elector : TableBased<Int> {
 		Surname = row.get("Surname", "")
 		Forename = row.get("Forename", "")
 		MiddleName = row.get("MiddleName", "")
+		Markers = row.get("Markers", "")
 		MetaData.load(json: row.get("Meta", ""), true)
 
 		_pdid = row.get("PDID", -1)
@@ -178,7 +180,7 @@ public class Elector : TableBased<Int> {
 }
 
 public struct ElectorDataStruct {
-	public init(ID: Int?, EID: Int?, PID: Int?, SID: Int?, PDID: Int?, displayName: String, forename: String, middleName: String, surname: String, meta: String) {
+	public init(ID: Int?, EID: Int?, PID: Int?, SID: Int?, PDID: Int?, displayName: String, forename: String, middleName: String, surname: String, meta: String, markers: String) {
 		self.ID = ID
 		self.EID = EID
 		self.PID = PID
@@ -189,13 +191,14 @@ public struct ElectorDataStruct {
 		MiddleName = middleName
 		Surname = surname
 		Meta = meta
+		Markers = markers
 	}
 	
 	public init() {
 		
 	}
 	
-	public var DisplayName = "", Forename = "", MiddleName = "", Surname = "", Meta = ""
+	public var DisplayName = "", Forename = "", MiddleName = "", Surname = "", Meta = "", Markers = ""
 	
 	public var ID : Int?
 	public var EID : Int?
@@ -210,7 +213,7 @@ public struct ElectorDataStruct {
 		Forename = ""
 		MiddleName = ""
 		Meta = ""
-		
+		Markers = ""
 	}
 	
 	public func getDisplayInformation() -> [String:String] {

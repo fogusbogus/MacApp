@@ -9,7 +9,7 @@
 import Cocoa
 import RegisterDB
 
-class NewPropertyWindowController: NSWindowController, NewPropertyWindowDelegate {
+class NewPropertyWindowController: ModalWindowController, NewPropertyWindowDelegate {
 	func getSmartNextProperty(current: PropertyDataStruct) -> PropertyDataStruct {
 		return Property.nextAvailableProperty(current: current)
 	}
