@@ -1,0 +1,12 @@
+/*
+TODO:
+
+- MapKit to be added to the property and street edit forms
+
+There are numerous examples online and it seems quite a small solution to a large problem
+Apple maps is the default for this, but we want to embed a small image on the property screen
+which can then be clicked to select a new position. It should be ok to have a separate modal
+dialog which allows selection/cancellation of a new property location. This should then update the
+metadata for saving.
+
+*/

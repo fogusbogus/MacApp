@@ -91,6 +91,13 @@ public class Property : TableBased<Int> {
 			return ElectorCount > 0
 		}
 	}
+	
+	override public var MetaData: PropertyMeta {
+		get {
+			_metaData = _metaData ?? PropertyMeta()
+			return _metaData as! PropertyMeta
+		}
+	}
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	

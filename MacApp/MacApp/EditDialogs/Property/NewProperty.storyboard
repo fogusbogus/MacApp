@@ -162,11 +162,27 @@ Gw
                                     <action selector="btnAdd_Click:" target="WMB-yH-dKq" id="pTc-YY-Bf5"/>
                                 </connections>
                             </button>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="XmC-c2-1eN" userLabel="btnMap">
+                                <rect key="frame" x="20" y="20" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Mpc-Z5-xle"/>
+                                    <constraint firstAttribute="width" constant="48" id="vf3-S1-RLX"/>
+                                </constraints>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="ic_gpsinverse-web" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="IlJ-gA-Vrq">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="btnMap:" target="WMB-yH-dKq" id="b0K-fe-U5i"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="XmC-c2-1eN" firstAttribute="leading" secondItem="2Qi-uO-ex2" secondAttribute="leading" constant="20" id="4w0-cJ-icU"/>
                             <constraint firstItem="ezg-aU-4cT" firstAttribute="top" secondItem="sCC-tg-nop" secondAttribute="bottom" constant="23" id="5R5-yy-rId"/>
                             <constraint firstItem="1M3-L6-j2n" firstAttribute="top" secondItem="dg4-qO-KMe" secondAttribute="top" id="5dg-vs-lPo"/>
                             <constraint firstItem="b03-FQ-CN2" firstAttribute="top" secondItem="rRj-Oe-G88" secondAttribute="top" id="5zc-pi-Wgg"/>
+                            <constraint firstAttribute="bottom" secondItem="XmC-c2-1eN" secondAttribute="bottom" constant="20" id="7rf-Xj-vmi"/>
                             <constraint firstAttribute="trailing" secondItem="dg4-qO-KMe" secondAttribute="trailing" constant="20" id="AKL-n8-KvA"/>
                             <constraint firstItem="15M-vF-hFM" firstAttribute="leading" secondItem="sCC-tg-nop" secondAttribute="trailing" constant="8" id="B8c-MH-jz6"/>
                             <constraint firstItem="s9O-4F-h68" firstAttribute="top" secondItem="ezg-aU-4cT" secondAttribute="top" id="C2m-is-EPb"/>
@@ -211,4 +227,7 @@ Gw
             <point key="canvasLocation" x="161" y="-468"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_gpsinverse-web" width="512" height="512"/>
+    </resources>
 </document>

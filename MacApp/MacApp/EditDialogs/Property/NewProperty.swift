@@ -55,6 +55,8 @@ class NewPropertyWindowController: ModalWindowController, NewPropertyWindowDeleg
 	}
 	
 	public var refreshDelegate : StreetVCRefreshDelegate?
+	
+
 }
 
 protocol StreetVCRefreshDelegate {
@@ -62,6 +64,19 @@ protocol StreetVCRefreshDelegate {
 }
 
 class NewPropertyVC : NSViewController {
+	
+	private var wcMap: PropertyMapWindowController?
+	
+	func openMapWindow() {
+		if wcMap == nil {
+			wcMap = PropertyMapWindowController.loadFromNib()
+			
+		}
+		
+		wcMap?.openModal()
+		//NSApp.runModal(for: wcEditElector!.window!)
+		//wcEditElector?.showWindow(self)
+	}
 	
 	public var handler : NewPropertyWindowDelegate?
 	
@@ -73,7 +88,10 @@ class NewPropertyVC : NSViewController {
 		lblPD.stringValue = street.PollingDistrictName()
 	}
 	
-
+	@IBAction func btnMap(_ sender: Any) {
+		openMapWindow()
+	}
+	
 	@IBOutlet weak var lblPD: NSTextField!
 	@IBOutlet weak var lblST: NSTextField!
 	@IBOutlet weak var txtName: NSTextField!
