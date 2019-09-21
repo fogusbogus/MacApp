@@ -12,7 +12,7 @@ import MapKit
 import CoreLocation			//Allows us to find the user location
 import RegisterDB
 
-class PropertyMapVC: NSViewController {
+class PropertyMapVC: NSViewController, MKMapViewDelegate {
 
 	//The delegate has been set on the storyboard
 	@IBOutlet weak var mapView: MKMapView!
@@ -20,11 +20,91 @@ class PropertyMapVC: NSViewController {
         super.viewDidLoad()
 		checkLocationServices()
         // Do view setup here.
-    }
+		
+		mapView.mapType = .hybrid
+		mapView.delegate = self
+		
+		let clickGR = NSClickGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+		
+		//let longPressRecognizer = NSPressGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+		
+		//longPressRecognizer.minimumPressDuration = 0.25
+		mapView.addGestureRecognizer(clickGR)
+		
+		let coordinate = MKUserLocation().coordinate
+		let annotation = MKPointAnnotation()
+		annotation.coordinate = coordinate
+		annotation.title = "lat: \(coordinate.latitude), lng: \(coordinate.longitude)"
+		//let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "")
+		
+		mapView.addAnnotation(annotation)
+		
+		let london = MKPointAnnotation()
+		london.title = "London"
+		london.coordinate = CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275)
+		mapView.addAnnotation(london)
+}
 	@IBAction func onClick(_ sender: NSClickGestureRecognizer) {
 		let loc = sender.location(in: mapView)
 		print("\(loc.x),\(loc.y)")
 	}
+	
+	private var _overlay : MKAnnotationView?
+	
+	@objc
+	func handleTap(_ gestureRecognizer: NSPressGestureRecognizer) {
+		let location = gestureRecognizer.location(in: mapView)
+		let coordinate = mapView.convert(location, toCoordinateFrom: mapView)
+		
+		//Add annotation to the view
+		let annotation = MKPointAnnotation()
+		annotation.coordinate = coordinate
+		annotation.title = "lat: \(coordinate.latitude), lng: \(coordinate.longitude)"
+		//let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "")
+		
+		for an in mapView.annotations {
+			mapView.removeAnnotation(an)
+		}
+		mapView.addAnnotation(annotation)
+		mapView.showAnnotations(mapView.annotations, animated: true)
+	}
+	
+	func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+		guard annotation is MKPointAnnotation else { return nil }
+		
+		let id = "Annotation"
+		var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: id)
+		if annotationView == nil {
+			annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: id)
+			annotationView!.canShowCallout = true
+		}
+		else {
+			annotationView!.annotation = annotation
+		}
+		
+		return annotationView
+	}
+	
+	private var _selectedAnnotation : MKPointAnnotation?
+	
+	func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+		if let an = view.annotation {
+			let lat = "\(an.coordinate.latitude)"
+			let lng = "\(an.coordinate.longitude)"
+			print("lat: \(lat), lng: \(lng)")
+		}
+	}
+	
+	//////////////////////////////////////////////////////////////////////////////////////////
+
+	private func zoomToLatestLocation(with coordinate: CLLocationCoordinate2D) {
+		let zoomRegion = MKCoordinateRegion(center: coordinate, latitudinalMeters: 10000, longitudinalMeters: 10000)
+		mapView.setRegion(zoomRegion, animated: true)
+	}
+	
+	//////////////////////////////////////////////////////////////////////////////////////////
+
+	
 	
 	private let _locMan = CLLocationManager()
 	
@@ -77,6 +157,18 @@ class PropertyMapVC: NSViewController {
 		@unknown default:
 			break
 		}
+	}
+}
+
+class mapPin : NSObject, MKAnnotation {
+	var coordinate: CLLocationCoordinate2D
+	var title: String?
+	var subtitle: String?
+
+	init(coordinates : CLLocationCoordinate2D, title : String, subTitle : String = "") {
+		self.coordinate = coordinates
+		self.title = title
+		self.subtitle = subTitle
 	}
 }
 

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14868"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -29,13 +30,13 @@
         <!--New PropertyVC-->
         <scene sceneID="WqG-Sc-0r7">
             <objects>
-                <viewController storyboardIdentifier="NewPropertyWindowController" id="WMB-yH-dKq" customClass="NewPropertyVC" customModule="MacApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewPropertyViewController" id="WMB-yH-dKq" customClass="NewPropertyVC" customModule="MacApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="2Qi-uO-ex2">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="230"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="M8M-wb-eNE">
-                                <rect key="frame" x="16" y="197" width="128" height="17"/>
+                                <rect key="frame" x="16" y="198" width="128" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="124" id="Eaa-L4-8Nc"/>
                                 </constraints>
@@ -46,7 +47,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sCC-tg-nop">
-                                <rect key="frame" x="16" y="168" width="128" height="17"/>
+                                <rect key="frame" x="16" y="170" width="128" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="124" id="bbz-TH-cGT"/>
                                 </constraints>
@@ -57,7 +58,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cdl-MG-iZc">
-                                <rect key="frame" x="148" y="197" width="288" height="17"/>
+                                <rect key="frame" x="148" y="198" width="288" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="&lt;Polling District&gt;" id="juD-8n-MBX">
                                     <font key="font" usesAppearanceFont="YES"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -65,7 +66,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="15M-vF-hFM">
-                                <rect key="frame" x="148" y="168" width="288" height="17"/>
+                                <rect key="frame" x="148" y="170" width="288" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="&lt;Street Name&gt;" id="APQ-op-J8Z">
                                     <font key="font" usesAppearanceFont="YES"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -73,7 +74,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ezg-aU-4cT">
-                                <rect key="frame" x="16" y="128" width="128" height="17"/>
+                                <rect key="frame" x="16" y="131" width="128" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Name:" id="jTU-K4-apx">
                                     <font key="font" usesAppearanceFont="YES"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -81,7 +82,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="s9O-4F-h68">
-                                <rect key="frame" x="150" y="123" width="237" height="22"/>
+                                <rect key="frame" x="150" y="126" width="237" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="237" id="7w8-JP-L1C"/>
                                 </constraints>
@@ -92,7 +93,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="b03-FQ-CN2">
-                                <rect key="frame" x="150" y="94" width="96" height="22"/>
+                                <rect key="frame" x="150" y="98" width="96" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="96" id="gaT-Sq-dr4"/>
                                 </constraints>
@@ -103,7 +104,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Gaz-BA-sIc">
-                                <rect key="frame" x="254" y="94" width="60" height="22"/>
+                                <rect key="frame" x="254" y="98" width="60" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="opN-ir-Q5x"/>
                                 </constraints>
@@ -115,7 +116,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YkF-6G-aMU">
-                                <rect key="frame" x="322" y="94" width="96" height="22"/>
+                                <rect key="frame" x="322" y="98" width="96" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="96" id="6Nt-sb-HdL"/>
                                 </constraints>
@@ -126,7 +127,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rRj-Oe-G88">
-                                <rect key="frame" x="16" y="99" width="128" height="17"/>
+                                <rect key="frame" x="16" y="103" width="128" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Number:" id="jZH-d6-48a">
                                     <font key="font" usesAppearanceFont="YES"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>

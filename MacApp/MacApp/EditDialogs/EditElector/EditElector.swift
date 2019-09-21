@@ -94,7 +94,7 @@ class EditElector: NSSplitViewController, EditableFormButtonDelegate {
 	}
 }
 
-open class ModalWindowController : NSWindowController {
+open class ModalWindowController : NSWindowController, NSWindowDelegate {
 	override open func close() {
 		NSApp.stopModal()
 		super.close()
@@ -102,6 +102,10 @@ open class ModalWindowController : NSWindowController {
 	
 	open func openModal() {
 		NSApp.runModal(for: self.window!)
+	}
+	
+	public func windowWillClose(_ notification: Notification) {
+		NSApp.stopModal()
 	}
 }
 

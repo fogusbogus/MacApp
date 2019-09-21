@@ -35,25 +35,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <mapView mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="o05-YZ-M7w">
+                            <mapView mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o05-YZ-M7w">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                                <gestureRecognizers>
-                                    <clickGestureRecognizer delaysPrimaryMouseButtonEvents="YES" numberOfClicksRequired="1" id="alP-gC-nrL">
-                                        <connections>
-                                            <action selector="onClick:" target="ri2-Ag-Yda" id="fxH-i7-arK"/>
-                                        </connections>
-                                    </clickGestureRecognizer>
-                                </gestureRecognizers>
                                 <connections>
                                     <outlet property="delegate" destination="ri2-Ag-Yda" id="H8s-2r-gtS"/>
                                 </connections>
                             </mapView>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="C1E-nf-SoY">
+                                <rect key="frame" x="18" y="229" width="444" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="17" id="CXs-NV-D0m"/>
+                                </constraints>
+                                <textFieldCell key="cell" lineBreakMode="truncatingTail" title="&lt;Current Address&gt;" usesSingleLineMode="YES" id="AUo-t1-0So">
+                                    <font key="font" metaFont="system" size="17"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.68668664383561639" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstItem="o05-YZ-M7w" firstAttribute="top" secondItem="Eym-YX-Wtz" secondAttribute="top" id="1EP-vX-p93"/>
+                            <constraint firstAttribute="trailing" secondItem="C1E-nf-SoY" secondAttribute="trailing" constant="20" id="GmU-sI-gt6"/>
                             <constraint firstAttribute="trailing" secondItem="o05-YZ-M7w" secondAttribute="trailing" id="Yoe-0v-GvU"/>
                             <constraint firstItem="o05-YZ-M7w" firstAttribute="leading" secondItem="Eym-YX-Wtz" secondAttribute="leading" id="b0u-e6-WTf"/>
                             <constraint firstAttribute="bottom" secondItem="o05-YZ-M7w" secondAttribute="bottom" id="qh6-pE-Oqn"/>
+                            <constraint firstItem="C1E-nf-SoY" firstAttribute="top" secondItem="Eym-YX-Wtz" secondAttribute="top" constant="20" id="tbk-2l-rWc"/>
+                            <constraint firstItem="C1E-nf-SoY" firstAttribute="leading" secondItem="Eym-YX-Wtz" secondAttribute="leading" constant="20" id="xEn-Uo-Jqx"/>
                         </constraints>
                     </view>
                     <connections>
