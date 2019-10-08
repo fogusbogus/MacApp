@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
-        <plugIn identifier="com.apple.MapKitIBPlugin" version="14490.70"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14868"/>
+        <plugIn identifier="com.apple.MapKitIBPlugin" version="14868"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -35,14 +36,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <mapView mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o05-YZ-M7w">
+                            <mapView canDrawConcurrently="YES" focusRingType="exterior" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o05-YZ-M7w">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                                 <connections>
                                     <outlet property="delegate" destination="ri2-Ag-Yda" id="H8s-2r-gtS"/>
                                 </connections>
                             </mapView>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="C1E-nf-SoY">
-                                <rect key="frame" x="18" y="229" width="444" height="21"/>
+                                <rect key="frame" x="18" y="230" width="444" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="17" id="CXs-NV-D0m"/>
                                 </constraints>
@@ -64,6 +65,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="lblAddress" destination="C1E-nf-SoY" id="OGS-PO-bTG"/>
                         <outlet property="mapView" destination="o05-YZ-M7w" id="2bh-NW-Ivr"/>
                     </connections>
                 </viewController>

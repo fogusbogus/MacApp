@@ -14,6 +14,7 @@ import RegisterDB
 
 class PropertyMapVC: NSViewController, MKMapViewDelegate {
 
+	@IBOutlet weak var lblAddress: NSTextField!
 	//The delegate has been set on the storyboard
 	@IBOutlet weak var mapView: MKMapView!
 	override func viewDidLoad() {
@@ -23,6 +24,8 @@ class PropertyMapVC: NSViewController, MKMapViewDelegate {
 		
 		mapView.mapType = .hybrid
 		mapView.delegate = self
+		
+		_overlay = MKPinAnnotationView(frame: mapView.frame)
 		
 		let clickGR = NSClickGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
 		
@@ -37,19 +40,22 @@ class PropertyMapVC: NSViewController, MKMapViewDelegate {
 		annotation.title = "lat: \(coordinate.latitude), lng: \(coordinate.longitude)"
 		//let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "")
 		
-		mapView.addAnnotation(annotation)
+		//mapView.addAnnotation(annotation)
 		
 		let london = MKPointAnnotation()
-		london.title = "London"
+		london.title = "Londinium"
 		london.coordinate = CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275)
-		mapView.addAnnotation(london)
+		//mapView.addAnnotation(london)
+		
+	
 }
 	@IBAction func onClick(_ sender: NSClickGestureRecognizer) {
 		let loc = sender.location(in: mapView)
 		print("\(loc.x),\(loc.y)")
 	}
 	
-	private var _overlay : MKAnnotationView?
+	private var _olay : MKOverlay?
+	private var _overlay : MKPinAnnotationView?
 	
 	@objc
 	func handleTap(_ gestureRecognizer: NSPressGestureRecognizer) {
@@ -60,30 +66,32 @@ class PropertyMapVC: NSViewController, MKMapViewDelegate {
 		let annotation = MKPointAnnotation()
 		annotation.coordinate = coordinate
 		annotation.title = "lat: \(coordinate.latitude), lng: \(coordinate.longitude)"
+		
+		lblAddress.stringValue = annotation.title!
 		//let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "")
 		
-		for an in mapView.annotations {
-			mapView.removeAnnotation(an)
-		}
+//		for an in mapView.annotations {
+//			mapView.removeAnnotation(an)
+//		}
 		mapView.addAnnotation(annotation)
 		mapView.showAnnotations(mapView.annotations, animated: true)
 	}
 	
-	func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-		guard annotation is MKPointAnnotation else { return nil }
-		
-		let id = "Annotation"
-		var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: id)
-		if annotationView == nil {
-			annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: id)
-			annotationView!.canShowCallout = true
-		}
-		else {
-			annotationView!.annotation = annotation
-		}
-		
-		return annotationView
-	}
+//	func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+//		guard annotation is MKPointAnnotation else { return nil }
+//		
+//		let id = "Annotation"
+//		var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: id)
+//		if annotationView == nil {
+//			annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: id)
+//			annotationView!.canShowCallout = true
+//		}
+//		else {
+//			annotationView!.annotation = annotation
+//		}
+//		
+//		return annotationView
+//	}
 	
 	private var _selectedAnnotation : MKPointAnnotation?
 	

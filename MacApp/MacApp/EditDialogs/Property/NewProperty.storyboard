@@ -30,7 +30,7 @@
         <!--New PropertyVC-->
         <scene sceneID="WqG-Sc-0r7">
             <objects>
-                <viewController storyboardIdentifier="NewPropertyViewController" id="WMB-yH-dKq" customClass="NewPropertyVC" customModule="MacApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="WMB-yH-dKq" customClass="NewPropertyVC" customModule="MacApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="2Qi-uO-ex2">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="230"/>
                         <autoresizingMask key="autoresizingMask"/>

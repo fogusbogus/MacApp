@@ -18,6 +18,9 @@
 		C962A0CA22A9C72E00510199 /* Arrays.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962A0C922A9C72E00510199 /* Arrays.swift */; };
 		C962A0CC22A9C79300510199 /* JCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962A0CB22A9C79300510199 /* JCollection.swift */; };
 		C962A0ED22A9D08700510199 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962A0EC22A9D08700510199 /* Date.swift */; };
+		C96BBCE22348BAF500875037 /* ConsoleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96BBCE12348BAF500875037 /* ConsoleOutput.swift */; };
+		C9B488EC234BD45C00765D61 /* BaseLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B488EB234BD45C00765D61 /* BaseLog.swift */; };
+		C9B488EE234BD53700765D61 /* ILogDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B488ED234BD53700765D61 /* ILogDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		C962A0C922A9C72E00510199 /* Arrays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrays.swift; sourceTree = "<group>"; };
 		C962A0CB22A9C79300510199 /* JCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCollection.swift; sourceTree = "<group>"; };
 		C962A0EC22A9D08700510199 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		C96BBCE12348BAF500875037 /* ConsoleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleOutput.swift; sourceTree = "<group>"; };
+		C9B488EB234BD45C00765D61 /* BaseLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLog.swift; sourceTree = "<group>"; };
+		C9B488ED234BD53700765D61 /* ILogDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILogDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,8 @@
 				C962A0BF22A9C0F400510199 /* Log.swift */,
 				C962A0CB22A9C79300510199 /* JCollection.swift */,
 				C90626272301B0050095D528 /* AES256.swift */,
+				C9B488EB234BD45C00765D61 /* BaseLog.swift */,
+				C9B488ED234BD53700765D61 /* ILogDelegate.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -94,6 +102,7 @@
 				C962A0C722A9C70A00510199 /* Collections.swift */,
 				C962A0C922A9C72E00510199 /* Arrays.swift */,
 				C962A0EC22A9D08700510199 /* Date.swift */,
+				C96BBCE12348BAF500875037 /* ConsoleOutput.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -171,10 +180,13 @@
 				C962A0B022A9C03000510199 /* Common.m in Sources */,
 				C962A0CC22A9C79300510199 /* JCollection.swift in Sources */,
 				C962A0CA22A9C72E00510199 /* Arrays.swift in Sources */,
+				C96BBCE22348BAF500875037 /* ConsoleOutput.swift in Sources */,
 				C962A0C622A9C56700510199 /* Numerical.swift in Sources */,
 				C90626282301B0050095D528 /* AES256.swift in Sources */,
+				C9B488EE234BD53700765D61 /* ILogDelegate.swift in Sources */,
 				C962A0C822A9C70A00510199 /* Collections.swift in Sources */,
 				C962A0C422A9C52200510199 /* Strings.swift in Sources */,
+				C9B488EC234BD45C00765D61 /* BaseLog.swift in Sources */,
 				C962A0ED22A9D08700510199 /* Date.swift in Sources */,
 				C962A0C022A9C0F400510199 /* Log.swift in Sources */,
 			);
