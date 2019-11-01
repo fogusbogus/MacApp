@@ -48,7 +48,31 @@ class PropertyMapVC: NSViewController, MKMapViewDelegate {
 		//mapView.addAnnotation(london)
 		
 	
-}
+	}
+	
+	func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+		if let an = view.annotation {
+			print("\(an.subtitle)")
+		}
+	}
+	
+	private var _shiftPressed = false
+	
+	override func keyDown(with event: NSEvent) {
+		var handler = false
+		if event.modifierFlags.contains(.shift) {
+			_shiftPressed = true
+		}
+		super.keyDown(with: event)
+	}
+	
+	override func keyUp(with event: NSEvent) {
+		if event.modifierFlags.contains(.shift) {
+			_shiftPressed = false
+		}
+		super.keyUp(with: event)
+	}
+	
 	@IBAction func onClick(_ sender: NSClickGestureRecognizer) {
 		let loc = sender.location(in: mapView)
 		print("\(loc.x),\(loc.y)")
@@ -59,13 +83,18 @@ class PropertyMapVC: NSViewController, MKMapViewDelegate {
 	
 	@objc
 	func handleTap(_ gestureRecognizer: NSPressGestureRecognizer) {
+		
+//		if !_shiftPressed {
+//			return
+//		}
 		let location = gestureRecognizer.location(in: mapView)
 		let coordinate = mapView.convert(location, toCoordinateFrom: mapView)
 		
 		//Add annotation to the view
-		let annotation = MKPointAnnotation()
-		annotation.coordinate = coordinate
-		annotation.title = "lat: \(coordinate.latitude), lng: \(coordinate.longitude)"
+		
+		let annotation = mapPin(coordinates: coordinate, title: "lat: \(coordinate.latitude), lng: \(coordinate.longitude)", subTitle: "Somewhere")
+		//annotation.coordinate = coordinate
+		//annotation.title = "lat: \(coordinate.latitude), lng: \(coordinate.longitude)"
 		
 		lblAddress.stringValue = annotation.title!
 		//let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "")
@@ -74,24 +103,10 @@ class PropertyMapVC: NSViewController, MKMapViewDelegate {
 //			mapView.removeAnnotation(an)
 //		}
 		mapView.addAnnotation(annotation)
-		mapView.showAnnotations(mapView.annotations, animated: true)
+		mapView.showAnnotations(mapView.annotations, animated: false)
 	}
 	
-//	func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-//		guard annotation is MKPointAnnotation else { return nil }
-//		
-//		let id = "Annotation"
-//		var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: id)
-//		if annotationView == nil {
-//			annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: id)
-//			annotationView!.canShowCallout = true
-//		}
-//		else {
-//			annotationView!.annotation = annotation
-//		}
-//		
-//		return annotationView
-//	}
+
 	
 	private var _selectedAnnotation : MKPointAnnotation?
 	
