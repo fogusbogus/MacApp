@@ -22,6 +22,7 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 			if _logFileURL == nil {
 				let dir: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last! as URL
 				_logFileURL = dir.appendingPathComponent(DefaultFileName)
+				self.LogInfo("\n---------------------------------")
 			}
 			return _logFileURL
 		}
@@ -53,6 +54,7 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 	
 	func selectionChange(node: NodeBase?) {
 
+		self.LogDebug("Something new has been selected from the tree")
 		self.LogCheckpoint("selectionChange", { () -> Void in
 
 			if node == nil {
@@ -83,9 +85,16 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 	}
 	
 	func openNewPropertyWindow() {
-		let wc = NSStoryboard(name: "NewProperty", bundle: nil)
-		let np = wc.instantiateController(withIdentifier: "winController") as! NSWindowController
-		np.showWindow(self)
+		
+		self.LogDebug("Open the property window")
+		self.LogCheckpoint("openNewPropertyWindow()", {
+
+			let wc = NSStoryboard(name: "NewProperty", bundle: nil)
+			let np = wc.instantiateController(withIdentifier: "winController") as! NSWindowController
+			np.showWindow(self)
+			
+		}, keyAndValues: [])
+		
 	}
 	
 	@discardableResult
@@ -107,34 +116,41 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 	
 	func setupDB() {
 		
-		let pd = PollingDistrict()
-		pd.Name = "Cashes Green"
-		pd.MetaData.add(collection: ["name":"Cashes Green", "ward":"Cainscross", "parliamentary":"Stroud"])
-		pd.save()
-		
-		let st1 = pd.createStreet()
-		st1.Name = "Berkeley Close"
-		st1.GPS = ""
-		st1.MetaData.add(collection: ["name":"Berkeley Close", "ward":"Cainscross", "parliamentary":"Stroud", "propCount":30])
-		st1.save()
-		for pn in 1...26 {
-			let pr = newProp(street: st1, number: pn)
-			for _ in 0...Int.random(in: 0...5) {
-				newRandomElector(property: pr)
+		LogCheckpoint("setupDB()", {
+			
+			LogDebug("Create polling districts")
+			let pd = PollingDistrict()
+			pd.Name = "Cashes Green"
+			pd.MetaData.add(collection: ["name":"Cashes Green", "ward":"Cainscross", "parliamentary":"Stroud"])
+			pd.save()
+			
+			LogDebug("Create streets")
+
+			let st1 = pd.createStreet()
+			st1.Name = "Berkeley Close"
+			st1.GPS = ""
+			st1.MetaData.add(collection: ["name":"Berkeley Close", "ward":"Cainscross", "parliamentary":"Stroud", "propCount":30])
+			st1.save()
+			for pn in 1...26 {
+				let pr = newProp(street: st1, number: pn)
+				for _ in 0...Int.random(in: 0...5) {
+					newRandomElector(property: pr)
+				}
 			}
-		}
-		
-		let st2 = pd.createStreet()
-		st2.Name = "Hunters Way"
-		st1.MetaData.add(collection: ["name":"Hunters Way", "ward":"Cainscross", "parliamentary":"Stroud", "propCount":155])
-		st2.save()
-		for pn in 1...155 {
-			let pr = newProp(street: st2, number: pn)
-			for _ in 0...Int.random(in: 0...5) {
-				newRandomElector(property: pr)
+			
+			let st2 = pd.createStreet()
+			st2.Name = "Hunters Way"
+			st1.MetaData.add(collection: ["name":"Hunters Way", "ward":"Cainscross", "parliamentary":"Stroud", "propCount":155])
+			st2.save()
+			for pn in 1...155 {
+				let pr = newProp(street: st2, number: pn)
+				for _ in 0...Int.random(in: 0...5) {
+					newRandomElector(property: pr)
+				}
 			}
-		}
-		Street.assertCounts()
+			Street.assertCounts()
+
+		}, keyAndValues: [])
 		
 	}
 
