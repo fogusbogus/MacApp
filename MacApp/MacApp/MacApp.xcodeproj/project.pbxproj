@@ -40,6 +40,8 @@
 		C969B85722E77DA200EBC869 /* NewProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C969B85622E77DA200EBC869 /* NewProperty.swift */; };
 		C9B5EC0C2315F77100814E1F /* PropertyMapWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B5EC0A2315F77100814E1F /* PropertyMapWindowController.swift */; };
 		C9B6342F22E674D60085C92A /* NewProperty.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B6342E22E674D60085C92A /* NewProperty.storyboard */; };
+		C9C25A1F237016F90098B08B /* libLogging.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C25A1E237016F90098B08B /* libLogging.dylib */; };
+		C9C25A23237017C80098B08B /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C25A22237017C80098B08B /* Log.swift */; };
 		C9C33F0B22D9CF93003D8B3A /* mainviewicons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9C33F0A22D9CF93003D8B3A /* mainviewicons.xcassets */; };
 		C9C33F4D22DB9CA9003D8B3A /* TreeNodeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C33F4C22DB9CA9003D8B3A /* TreeNodeImage.swift */; };
 /* End PBXBuildFile section */
@@ -81,6 +83,8 @@
 		C969B85622E77DA200EBC869 /* NewProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProperty.swift; sourceTree = "<group>"; };
 		C9B5EC0A2315F77100814E1F /* PropertyMapWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyMapWindowController.swift; sourceTree = "<group>"; };
 		C9B6342E22E674D60085C92A /* NewProperty.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewProperty.storyboard; sourceTree = "<group>"; };
+		C9C25A1E237016F90098B08B /* libLogging.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libLogging.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9C25A22237017C80098B08B /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		C9C33F0A22D9CF93003D8B3A /* mainviewicons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = mainviewicons.xcassets; sourceTree = "<group>"; };
 		C9C33F4C22DB9CA9003D8B3A /* TreeNodeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNodeImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9C25A1F237016F90098B08B /* libLogging.dylib in Frameworks */,
 				C90BC4A322E26EDA002FB78F /* libRegisterDB.dylib in Frameworks */,
 				C933276622B5798E003EEA09 /* libCommon.dylib in Frameworks */,
 				C933276722B5798E003EEA09 /* libDBLib.dylib in Frameworks */,
@@ -148,6 +153,7 @@
 		C933276522B5798E003EEA09 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C9C25A1E237016F90098B08B /* libLogging.dylib */,
 				C90BC4A222E26EDA002FB78F /* libRegisterDB.dylib */,
 			);
 			name = Frameworks;
@@ -219,6 +225,7 @@
 				C962A09722A9BFC900510199 /* Main.storyboard */,
 				C962A09A22A9BFC900510199 /* Info.plist */,
 				C962A09B22A9BFC900510199 /* MacApp.entitlements */,
+				C9C25A22237017C80098B08B /* Log.swift */,
 			);
 			path = MacApp;
 			sourceTree = "<group>";
@@ -314,6 +321,7 @@
 			files = (
 				C933276F22B6CE7E003EEA09 /* TreeItem.swift in Sources */,
 				C93CABFC22B2E2AC00685968 /* StreetSource.swift in Sources */,
+				C9C25A23237017C80098B08B /* Log.swift in Sources */,
 				C9C33F4D22DB9CA9003D8B3A /* TreeNodeImage.swift in Sources */,
 				C907983122C91F5D00073F31 /* TreeNodeContainerView.swift in Sources */,
 				C93CABFE22B2E6F200685968 /* StreetItem.swift in Sources */,

@@ -20,6 +20,7 @@
 		C9080E4E22E1366300D37D70 /* Elector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9080E4D22E1366300D37D70 /* Elector.swift */; };
 		C975188523076B7500BD4160 /* PropertyMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = C975188423076B7500BD4160 /* PropertyMeta.swift */; };
 		C98E391322E52FF30077C208 /* PollingDistrict.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E391222E52FF30077C208 /* PollingDistrict.swift */; };
+		C9C25A1B237015D80098B08B /* libLogging.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C25A1A237015D80098B08B /* libLogging.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		C9080E4D22E1366300D37D70 /* Elector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Elector.swift; sourceTree = "<group>"; };
 		C975188423076B7500BD4160 /* PropertyMeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyMeta.swift; sourceTree = "<group>"; };
 		C98E391222E52FF30077C208 /* PollingDistrict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollingDistrict.swift; sourceTree = "<group>"; };
+		C9C25A1A237015D80098B08B /* libLogging.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libLogging.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +48,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9080E4122DFDD3A00D37D70 /* libCommon.dylib in Frameworks */,
+				C9C25A1B237015D80098B08B /* libLogging.dylib in Frameworks */,
 				C9080E4322DFDD3A00D37D70 /* libDBLib.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,6 +103,7 @@
 		C9080E3F22DFDD3A00D37D70 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C9C25A1A237015D80098B08B /* libLogging.dylib */,
 				C9080E4022DFDD3A00D37D70 /* libCommon.dylib */,
 				C9080E4222DFDD3A00D37D70 /* libDBLib.dylib */,
 			);

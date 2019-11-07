@@ -14,7 +14,23 @@
 		C962A0F022A9D0CB00510199 /* libCommon.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C962A0EF22A9D0CB00510199 /* libCommon.dylib */; };
 		C962A0F222A9D14100510199 /* SQLDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962A0F122A9D14100510199 /* SQLDB.swift */; };
 		C962A0F422A9D16E00510199 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962A0F322A9D16E00510199 /* Meta.swift */; };
+		C9C25A15236F91680098B08B /* libLogging.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C25A14236F91680098B08B /* libLogging.dylib */; };
+		C9C25A16236F91680098B08B /* libLogging.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = C9C25A14236F91680098B08B /* libLogging.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C9C25A17236F91680098B08B /* Embed Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C9C25A16236F91680098B08B /* libLogging.dylib in Embed Libraries */,
+			);
+			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C962A0D922A9CF7F00510199 /* libDBLib.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libDBLib.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,6 +42,7 @@
 		C962A0EF22A9D0CB00510199 /* libCommon.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libCommon.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		C962A0F122A9D14100510199 /* SQLDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLDB.swift; sourceTree = "<group>"; };
 		C962A0F322A9D16E00510199 /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
+		C9C25A14236F91680098B08B /* libLogging.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libLogging.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9C25A15236F91680098B08B /* libLogging.dylib in Frameworks */,
 				C962A0F022A9D0CB00510199 /* libCommon.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,6 +108,7 @@
 		C962A0EE22A9D0CB00510199 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C9C25A14236F91680098B08B /* libLogging.dylib */,
 				C962A0EF22A9D0CB00510199 /* libCommon.dylib */,
 			);
 			name = Frameworks;
@@ -116,6 +135,7 @@
 				C962A0D522A9CF7F00510199 /* Headers */,
 				C962A0D622A9CF7F00510199 /* Sources */,
 				C962A0D722A9CF7F00510199 /* Frameworks */,
+				C9C25A17236F91680098B08B /* Embed Libraries */,
 			);
 			buildRules = (
 			);

@@ -10,8 +10,40 @@ import Cocoa
 import Common
 import RegisterDB
 import DBLib
+import Logging
 
-class ViewController: NSViewController, SelectedNodeListenerDelegate {
+class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog {
+	var LogIndent: Int = 0
+	
+	var DefaultFileName = "logFile.txt"
+	private var _logFileURL : URL? = nil
+	var LogFileURL : URL? {
+		get {
+			if _logFileURL == nil {
+				let dir: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last! as URL
+				_logFileURL = dir.appendingPathComponent(DefaultFileName)
+			}
+			return _logFileURL
+		}
+		set {
+			_logFileURL = newValue
+		}
+	}
+
+	func IncreaseLogIndent() -> Int {
+		return ResetLogIndent(LogIndent + 1)
+	}
+	
+	func DecreaseLogIndent() -> Int {
+		return ResetLogIndent(LogIndent - 1)
+	}
+	
+	func ResetLogIndent(_ indent: Int) -> Int {
+		LogIndent = indent < 0 ? 0 : indent
+		return LogIndent
+	}
+
+	
 	
 	@IBOutlet weak var pnlStreets: NSView!
 	
@@ -20,14 +52,20 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate {
 	private var currentlySelectedNode: NodeBase?
 	
 	func selectionChange(node: NodeBase?) {
-		if node == nil {
-			print("Nothing selected")
-		}
-		else {
-			print("\(String(describing: node))")
-		}
-		currentlySelectedNode = node
-		selectedNodeListener?.selectionChange(node: node)
+
+		self.LogCheckpoint("selectionChange", { () -> Void in
+
+			if node == nil {
+				self.LogDebug("Nothing selected")
+			}
+			else {
+				self.LogDebug("\(String(describing: node))")
+			}
+			currentlySelectedNode = node
+			selectedNodeListener?.selectionChange(node: node)
+
+		}, keyAndValues: [])
+		
 	}
 	
 	override func prepare(for segue: NSStoryboardSegue, sender: Any?) {

@@ -50,6 +50,19 @@ class PropertyMapVC: NSViewController, MKMapViewDelegate {
 	
 	}
 	
+	func mapView(_ mapView: MKMapView!, viewFor annotation: MKAnnotation!) -> MKAnnotationView! {
+		if annotation is MKPointAnnotation {
+			let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "myPin")
+			pin.pinColor = .purple
+			pin.isDraggable = true
+            pin.canShowCallout = true
+            pin.animatesDrop = true
+			
+			return pin
+		}
+		return nil
+	}
+	
 	func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
 		if let an = view.annotation {
 			print("\(an.subtitle)")

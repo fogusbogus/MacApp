@@ -9,18 +9,19 @@
 import Foundation
 import SQLite3
 import Common
+import Logging
 
 
+public class SQLDB : BaseIndentLog {
 
-public class SQLDB {
-	
 	public typealias SQLitePointer = OpaquePointer
 	
 	static let shared = SQLDB()
 	
 	// Initialization
 	
-	private init() {
+	private override init() {
+		super.init()
 	}
 	
 	internal static var _db : SQLitePointer? = nil
@@ -105,6 +106,8 @@ public class SQLDB {
 		var ret = defaultValue
 		if sqlite3_prepare(_db, sql, -1, &statement, nil) == SQLITE_OK {
 			bindParameters(statement: statement, parms: parms)
+			
+			//shared.LogSQL(sql)
 
 			var step = sqlite3_step(statement)
 			while step != SQLITE_DONE {
