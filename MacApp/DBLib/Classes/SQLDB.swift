@@ -107,7 +107,7 @@ public class SQLDB : BaseIndentLog {
 		if sqlite3_prepare(_db, sql, -1, &statement, nil) == SQLITE_OK {
 			bindParameters(statement: statement, parms: parms)
 			
-			//shared.LogSQL(sql)
+			//shared.SQL(sql)
 
 			var step = sqlite3_step(statement)
 			while step != SQLITE_DONE {

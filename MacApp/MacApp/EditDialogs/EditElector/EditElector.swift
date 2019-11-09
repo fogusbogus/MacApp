@@ -8,6 +8,7 @@
 
 import Cocoa
 import RegisterDB
+import Logging
 
 class EditElector: NSSplitViewController, EditableFormButtonDelegate {
 	func action(_ usage: FormUseType) {
@@ -94,7 +95,38 @@ class EditElector: NSSplitViewController, EditableFormButtonDelegate {
 	}
 }
 
-open class ModalWindowController : NSWindowController, NSWindowDelegate {
+open class ModalWindowController : NSWindowController, NSWindowDelegate, IIndentLog {
+	
+	public var LogIndent: Int = 0
+	
+	private var _logFileURL : URL? = nil
+	public var LogFileURL: URL?
+	
+	private var _log : IIndentLog? = nil
+	public var Log : IIndentLog {
+		get {
+			return _log ?? self
+		}
+		set {
+			_log = newValue
+			LogFileURL = newValue.LogFileURL
+		}
+	}
+	
+	public func IncreaseLogIndent() -> Int {
+		return Log.ResetLogIndent(LogIndent + 1)
+	}
+	
+	public func DecreaseLogIndent() -> Int {
+		return Log.ResetLogIndent(LogIndent - 1)
+	}
+	
+	public func ResetLogIndent(_ indent: Int) -> Int {
+		LogIndent = indent < 0 ? 0 : indent
+		return LogIndent
+	}
+
+	
 	override open func close() {
 		NSApp.stopModal()
 		super.close()

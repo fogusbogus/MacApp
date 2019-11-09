@@ -12,7 +12,7 @@ import MapKit
 import CoreLocation			//Allows us to find the user location
 import RegisterDB
 
-class PropertyMapVC: NSViewController, MKMapViewDelegate {
+class PropertyMapVC: NSViewControllerWithLog, MKMapViewDelegate {
 
 	@IBOutlet weak var lblAddress: NSTextField!
 	//The delegate has been set on the storyboard
@@ -145,8 +145,10 @@ class PropertyMapVC: NSViewController, MKMapViewDelegate {
 	private let _locMan = CLLocationManager()
 	
 	private func setupLocationManager() {
-		_locMan.delegate = self
-		_locMan.desiredAccuracy = kCLLocationAccuracyBest
+		Log.CheckpointLabel("Setting up the location manager", {
+			_locMan.delegate = self
+			_locMan.desiredAccuracy = kCLLocationAccuracyBest
+		}, keyAndValues: [:])
 	}
 	
 	/// Let's see if the user has allowed location services

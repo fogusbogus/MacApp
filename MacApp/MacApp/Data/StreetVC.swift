@@ -10,97 +10,158 @@ import Cocoa
 import DBLib
 import Common
 import RegisterDB
+import Logging
 
-class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate, NSMenuDelegate, StreetVCRefreshDelegate, ElectorVCRefreshDelegate {
-	func refreshElector() {
-		if let el = selectedNode?.linkedItem as? Elector {
-			el.reload()
-			selectedNode?.linkedItem = el
-			selectedNode?.name = el.getDisplayName()
+class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate, NSMenuDelegate, StreetVCRefreshDelegate, ElectorVCRefreshDelegate, IIndentLog {
+	var LogIndent: Int = 0
+	
+	var LogFileURL: URL?
+	
+	private var _log : IIndentLog? = nil
+	var Log : IIndentLog {
+		get {
+			return _log ?? self
+		}
+		set {
+			_log = newValue
+			LogFileURL = newValue.LogFileURL
 		}
 	}
 	
+	func IncreaseLogIndent() -> Int {
+		return Log.ResetLogIndent(LogIndent + 1)
+	}
+	
+	func DecreaseLogIndent() -> Int {
+		return Log.ResetLogIndent(LogIndent - 1)
+	}
+	
+	func ResetLogIndent(_ indent: Int) -> Int {
+		LogIndent = indent < 0 ? 0 : indent
+		return LogIndent
+	}
+
+	
+	func refreshElector() {
+		Log.Checkpoint("refreshElector", {
+			
+			if let el = selectedNode?.linkedItem as? Elector {
+				el.reload()
+				selectedNode?.linkedItem = el
+				selectedNode?.name = el.getDisplayName()
+			}
+		}, keyAndValues: [:])
+	}
+	
 	func refreshStreet() {
-		selectedNode?.getChildItems()
-		outlineView.reloadItem(selectedNode, reloadChildren: true)
+		Log.Checkpoint("refreshStreet", {
+			
+			selectedNode?.getChildItems()
+			outlineView.reloadItem(selectedNode, reloadChildren: true)
+		}, keyAndValues: [:])
 	}
 	
 	
 	@objc func menuItemSelected(_ sender: NSMenuItem) {
-		let ma : MenuAction = MenuAction(rawValue: sender.tag)!
-		
-		print(String(describing:ma))
-		switch ma {
-		case .newChild:
-			if selectedNode is StreetItem {
-				openNewPropertyWindow()
+		Log.Checkpoint("menuItemSelected", {
+			
+			
+			let ma : MenuAction = MenuAction(rawValue: sender.tag)!
+			
+			Log.Debug(String(describing:ma))
+			
+			switch ma {
+			case .newChild:
+				if selectedNode is StreetItem {
+					openNewPropertyWindow()
+				}
+			case .delete:
+				break
+			case .edit:
+				if selectedNode is ElectorItem {
+					openEditElectorWindow(.edit)
+				}
+				break
+			case .new:
+				if selectedNode is ElectorItem {
+					openEditElectorWindow(.new)
+				}
+				break
+			case .view:
+				break
+			case .none:
+				break
 			}
-		case .delete:
-			break
-		case .edit:
-			if selectedNode is ElectorItem {
-				openEditElectorWindow(.edit)
-			}
-			break
-		case .new:
-			if selectedNode is ElectorItem {
-				openEditElectorWindow(.new)
-			}
-			break
-		case .view:
-			break
-		case .none:
-			break
-		}
+		}, keyAndValues: ["sender":sender])
 	}
 	
 	private var wcEditElector: EditElectorWindowController?
 	
 	func openEditElectorWindow(_ usage: FormUseType = .notSpecified) {
-		if wcEditElector == nil {
-			wcEditElector = EditElectorWindowController.loadFromNib()
-			wcEditElector?.refreshDelegate = self
-
-		}
-		if let elItem = selectedNode as? ElectorItem {
-			if elItem.linkedItem is Elector {
-				if usage == .new {
-					wcEditElector?.loadElector(elector: Elector())
-				}
-				else {
-					wcEditElector?.loadElector(elector: elItem.linkedItem as! Elector)
+		
+		Log.Checkpoint("openEditElectorWindow", {
+			
+			
+			if wcEditElector == nil {
+				wcEditElector = EditElectorWindowController.loadFromNib()
+				wcEditElector?.Log = Log
+				wcEditElector?.refreshDelegate = self
+				
+			}
+			
+			
+			if let elItem = selectedNode as? ElectorItem {
+				if elItem.linkedItem is Elector {
+					if usage == .new {
+						wcEditElector?.loadElector(elector: Elector())
+					}
+					else {
+						wcEditElector?.loadElector(elector: elItem.linkedItem as! Elector)
+					}
 				}
 			}
-		}
-		wcEditElector?.FormUsage = usage
-		wcEditElector?.openModal()
-		//NSApp.runModal(for: wcEditElector!.window!)
-		//wcEditElector?.showWindow(self)
+			wcEditElector?.FormUsage = usage
+			wcEditElector?.openModal()
+			//NSApp.runModal(for: wcEditElector!.window!)
+			//wcEditElector?.showWindow(self)
+		}, keyAndValues: ["usage":usage])
 	}
 	
 	private var wc : NewPropertyWindowController?
 	
 	
 	func openNewPropertyWindow() {
-		if wc == nil {
-			wc = NewPropertyWindowController.loadFromNib()
+		
+		Log.Checkpoint("openNewPropertyWindow", {
 			
-			if let streetItem = selectedNode as? StreetItem {
-				if let st = streetItem.linkedItem as? Street {
-					wc?.setStreet(street: st)
-					wc?.refreshDelegate = self
+			
+			if wc == nil {
+				wc = NewPropertyWindowController.loadFromNib()
+				wc?.Log = Log
+				
+				if let streetItem = selectedNode as? StreetItem {
+					if let st = streetItem.linkedItem as? Street {
+						wc?.setStreet(street: st)
+						wc?.refreshDelegate = self
+					}
 				}
 			}
-		}
-		wc?.openModal()
-		//wc?.showWindow(self)
+			wc?.openModal()
+			//wc?.showWindow(self)
+		}, keyAndValues: [:])
+
 	}
 
 	
 	func menuButton(_ title: String, tag: MenuAction = .none, keys: String = "") -> NSMenuItem {
-		let ret = NSMenuItem(title: title, action: #selector(menuItemSelected(_:)), keyEquivalent: keys)
-		ret.tag = tag.rawValue
-		return ret
+		
+		return Log.Checkpoint("menuButton", { () -> NSMenuItem in
+			
+			
+			let ret = NSMenuItem(title: title, action: #selector(menuItemSelected(_:)), keyEquivalent: keys)
+			ret.tag = tag.rawValue
+			return ret
+		}, keyAndValues: ["title":title, "tag":tag, "keys":keys])
 	}
 
 	func menuWillOpen(_ menu: NSMenu) {
@@ -146,7 +207,7 @@ class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate
 			let ov = sender as? NSOutlineView
 			if let sn = ov?.selectedNode() {
 	
-				print("\(sn.className) \(sn.id)")
+				Log.Debug("\(sn.className) \(sn.id)")
 				
 				if sn != selectedNode {
 					selectedNode = sn

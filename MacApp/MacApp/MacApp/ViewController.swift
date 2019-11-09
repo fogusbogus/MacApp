@@ -15,6 +15,17 @@ import Logging
 class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog {
 	var LogIndent: Int = 0
 	
+	private var _log : IIndentLog? = nil
+	var Log : IIndentLog {
+		get {
+			return _log ?? self
+		}
+		set {
+			_log = newValue
+			LogFileURL = newValue.LogFileURL
+		}
+	}
+
 	var DefaultFileName = "logFile.txt"
 	private var _logFileURL : URL? = nil
 	var LogFileURL : URL? {
@@ -22,7 +33,7 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 			if _logFileURL == nil {
 				let dir: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last! as URL
 				_logFileURL = dir.appendingPathComponent(DefaultFileName)
-				self.LogInfo("\n---------------------------------")
+				Log.Info("\n---------------------------------")
 			}
 			return _logFileURL
 		}
@@ -32,11 +43,11 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 	}
 
 	func IncreaseLogIndent() -> Int {
-		return ResetLogIndent(LogIndent + 1)
+		return Log.ResetLogIndent(LogIndent + 1)
 	}
 	
 	func DecreaseLogIndent() -> Int {
-		return ResetLogIndent(LogIndent - 1)
+		return Log.ResetLogIndent(LogIndent - 1)
 	}
 	
 	func ResetLogIndent(_ indent: Int) -> Int {
@@ -54,25 +65,26 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 	
 	func selectionChange(node: NodeBase?) {
 
-		self.LogDebug("Something new has been selected from the tree")
-		self.LogCheckpoint("selectionChange", { () -> Void in
+		Log.Label("Something new has been selected from the tree")
+		Log.Checkpoint("selectionChange", { () -> Void in
 
 			if node == nil {
-				self.LogDebug("Nothing selected")
+				Log.Debug("Nothing selected")
 			}
 			else {
-				self.LogDebug("\(String(describing: node))")
+				Log.Debug("\(String(describing: node))")
 			}
 			currentlySelectedNode = node
 			selectedNodeListener?.selectionChange(node: node)
 
-		}, keyAndValues: [])
+		}, keyAndValues: ["node":node])
 		
 	}
 	
 	override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
 		if let svc = segue.destinationController as? StreetVC {
 			svc.selectedNodeHandler = selectedNodeListener ?? self
+			svc.Log = self
 		}
 	}
 	
@@ -86,14 +98,14 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 	
 	func openNewPropertyWindow() {
 		
-		self.LogDebug("Open the property window")
-		self.LogCheckpoint("openNewPropertyWindow()", {
+		Log.Debug("Open the property window")
+		Log.Checkpoint("openNewPropertyWindow()", {
 
 			let wc = NSStoryboard(name: "NewProperty", bundle: nil)
 			let np = wc.instantiateController(withIdentifier: "winController") as! NSWindowController
 			np.showWindow(self)
 			
-		}, keyAndValues: [])
+		}, keyAndValues: [:])
 		
 	}
 	
@@ -116,15 +128,15 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 	
 	func setupDB() {
 		
-		LogCheckpoint("setupDB()", {
+		Log.Checkpoint("setupDB()", {
 			
-			LogDebug("Create polling districts")
+			Log.Debug("Create polling districts")
 			let pd = PollingDistrict()
 			pd.Name = "Cashes Green"
 			pd.MetaData.add(collection: ["name":"Cashes Green", "ward":"Cainscross", "parliamentary":"Stroud"])
 			pd.save()
 			
-			LogDebug("Create streets")
+			Log.Debug("Create streets")
 
 			let st1 = pd.createStreet()
 			st1.Name = "Berkeley Close"
@@ -150,29 +162,33 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 			}
 			Street.assertCounts()
 
-		}, keyAndValues: [])
+		}, keyAndValues: [:])
 		
 	}
 
 	override func viewDidLoad() {
-		super.viewDidLoad()
 		
-		setupDB()
-		
-		let m = DBLib.Meta()
-		m.load(json: "{\"a\": {\"items\" : [{\"b\":\"0\", \"c\":\"1\"},{\"b\":\"1\", \"c\":\"2\"}]}}")
-
-		// Do any additional setup after loading the view.
-		_ = "Test".right(2)
-		
-//		let find = pnlStreets.findView("StreetVC")
-//
-//		let child = pnlStreets.subviews.filter { (vc) -> Bool in
-//			return vc is StreetVC
-//		} as? StreetVC
-		//child?.selectedNodeHandler = self
-		
-		print("")
+		Log.Checkpoint("viewDidLoad", {
+			
+			super.viewDidLoad()
+			
+			setupDB()
+			
+			let m = DBLib.Meta()
+			m.load(json: "{\"a\": {\"items\" : [{\"b\":\"0\", \"c\":\"1\"},{\"b\":\"1\", \"c\":\"2\"}]}}")
+			
+			// Do any additional setup after loading the view.
+			_ = "Test".right(2)
+			
+			//		let find = pnlStreets.findView("StreetVC")
+			//
+			//		let child = pnlStreets.subviews.filter { (vc) -> Bool in
+			//			return vc is StreetVC
+			//		} as? StreetVC
+			//child?.selectedNodeHandler = self
+			
+			print("")
+		}, keyAndValues: [:])
 	}
 
 	override var representedObject: Any? {
