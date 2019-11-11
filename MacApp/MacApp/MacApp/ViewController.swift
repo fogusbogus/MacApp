@@ -16,13 +16,15 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 	var LogIndent: Int = 0
 	
 	private var _log : IIndentLog? = nil
-	var Log : IIndentLog {
+	var Log : IIndentLog? {
 		get {
-			return _log ?? self
+			return _log //?? self
 		}
 		set {
 			_log = newValue
-			LogFileURL = newValue.LogFileURL
+			if newValue != nil {
+				LogFileURL = newValue!.LogFileURL
+			}
 		}
 	}
 
@@ -43,11 +45,11 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 	}
 
 	func IncreaseLogIndent() -> Int {
-		return Log.ResetLogIndent(LogIndent + 1)
+		return Log?.ResetLogIndent(LogIndent + 1) ?? 0
 	}
 	
 	func DecreaseLogIndent() -> Int {
-		return Log.ResetLogIndent(LogIndent - 1)
+		return Log?.ResetLogIndent(LogIndent - 1) ?? 0
 	}
 	
 	func ResetLogIndent(_ indent: Int) -> Int {

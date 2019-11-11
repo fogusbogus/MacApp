@@ -493,8 +493,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "47"
             endingLineNumber = "47"
-            landmarkName = "sanityCheck()"
-            landmarkType = "7">
+            landmarkName = "Street"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -680,8 +680,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "140"
             endingLineNumber = "140"
-            landmarkName = "Street"
-            landmarkType = "3">
+            landmarkName = "EID"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1054,8 +1054,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "87"
             endingLineNumber = "87"
-            landmarkName = "loadData()"
-            landmarkType = "7">
+            landmarkName = "Street"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1900,7 +1900,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "83"
             endingLineNumber = "83"
-            landmarkName = "Checkpoint(_:_:keyAndValues:)"
+            landmarkName = "fromCode(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1916,7 +1916,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "139"
             endingLineNumber = "139"
-            landmarkName = "write(_:_:_:_:)"
+            landmarkName = "Checkpoint(_:_:keyAndValues:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1932,8 +1932,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "65"
             endingLineNumber = "65"
-            landmarkName = "IIndentLog"
-            landmarkType = "21">
+            landmarkName = "fromCode(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1948,7 +1948,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "54"
             endingLineNumber = "54"
-            landmarkName = "ResetLogIndent(_:)"
+            landmarkName = "DecreaseLogIndent()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1964,7 +1964,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "151"
             endingLineNumber = "151"
-            landmarkName = "write(_:_:_:_:)"
+            landmarkName = "Checkpoint(_:_:keyAndValues:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1980,7 +1980,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "153"
             endingLineNumber = "153"
-            landmarkName = "write(_:_:_:_:)"
+            landmarkName = "Checkpoint(_:_:keyAndValues:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1996,7 +1996,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "154"
             endingLineNumber = "154"
-            landmarkName = "write(_:_:_:_:)"
+            landmarkName = "Checkpoint(_:_:keyAndValues:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2012,7 +2012,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "149"
             endingLineNumber = "149"
-            landmarkName = "write(_:_:_:_:)"
+            landmarkName = "Checkpoint(_:_:keyAndValues:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2028,7 +2028,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "200"
             endingLineNumber = "200"
-            landmarkName = "Args(_:_:_:)"
+            landmarkName = "Checkpoint(_:_:_:keyAndValues:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2044,7 +2044,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "140"
             endingLineNumber = "140"
-            landmarkName = "write(_:_:_:_:)"
+            landmarkName = "Checkpoint(_:_:keyAndValues:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2156,7 +2156,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "203"
             endingLineNumber = "203"
-            landmarkName = "Args(_:_:_:)"
+            landmarkName = "Label(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2284,7 +2284,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
             endingLineNumber = "21"
-            landmarkName = "init(row:)"
+            landmarkName = "init(row:_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2332,7 +2332,151 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "199"
             endingLineNumber = "199"
-            landmarkName = "Args(_:_:_:)"
+            landmarkName = "Checkpoint(_:_:_:keyAndValues:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "67C83876-9A2B-4064-8355-AF7C6ABB3E44"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RegisterDB/RegisterDB/TableBased.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "save()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "67C83876-9A2B-4064-8355-AF7C6ABB3E44 - 4368267b1cfc727"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RegisterDB.TableBased.save() -&gt; ()"
+                  moduleName = "libRegisterDB.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacApp/RegisterDB/RegisterDB/TableBased.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "145"
+                  endingLineNumber = "145"
+                  offsetFromSymbolStart = "200">
+               </Location>
+               <Location
+                  uuid = "67C83876-9A2B-4064-8355-AF7C6ABB3E44 - dc15261bc527ce03"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in RegisterDB.TableBased.save() -&gt; ()"
+                  moduleName = "libRegisterDB.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacApp/RegisterDB/RegisterDB/TableBased.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "146"
+                  endingLineNumber = "146"
+                  offsetFromSymbolStart = "8">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "57235828-33E5-4BED-ABB1-C3F609DE556F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RegisterDB/RegisterDB/TableBased.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
+            landmarkName = "save()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F5138039-E81F-40EE-A493-B0A7D0AC6EED"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Logging/Logging/IIndentLog.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "fromCode(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8C877488-5D28-4A16-995C-5A7FB559EDD3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RegisterDB/RegisterDB/TableBased.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
+            landmarkName = "save()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8C877488-5D28-4A16-995C-5A7FB559EDD3 - 4368267b1cfc727"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RegisterDB.TableBased.save() -&gt; ()"
+                  moduleName = "libRegisterDB.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacApp/RegisterDB/RegisterDB/TableBased.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "145"
+                  endingLineNumber = "145"
+                  offsetFromSymbolStart = "200">
+               </Location>
+               <Location
+                  uuid = "8C877488-5D28-4A16-995C-5A7FB559EDD3 - dc15261bc527ce03"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in RegisterDB.TableBased.save() -&gt; ()"
+                  moduleName = "libRegisterDB.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacApp/RegisterDB/RegisterDB/TableBased.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "146"
+                  endingLineNumber = "146"
+                  offsetFromSymbolStart = "8">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "960577E5-5829-4B61-9E8F-735BFA361ECD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RegisterDB/RegisterDB/TableBased.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "save()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -18,22 +18,24 @@ class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate
 	var LogFileURL: URL?
 	
 	private var _log : IIndentLog? = nil
-	var Log : IIndentLog {
+	var Log : IIndentLog? {
 		get {
-			return _log ?? self
+			return _log //?? self
 		}
 		set {
 			_log = newValue
-			LogFileURL = newValue.LogFileURL
+			if newValue != nil {
+				LogFileURL = newValue!.LogFileURL
+			}
 		}
 	}
 	
 	func IncreaseLogIndent() -> Int {
-		return Log.ResetLogIndent(LogIndent + 1)
+		return Log?.ResetLogIndent(LogIndent + 1) ?? 0
 	}
 	
 	func DecreaseLogIndent() -> Int {
-		return Log.ResetLogIndent(LogIndent - 1)
+		return Log?.ResetLogIndent(LogIndent - 1) ?? 0
 	}
 	
 	func ResetLogIndent(_ indent: Int) -> Int {

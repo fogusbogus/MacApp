@@ -9,16 +9,17 @@
 import Foundation
 import DBLib
 import Common
+import Logging
 
 public class PollingDistrict : TableBased<Int> {
-	override public init(_ id: Int?) {
-		super.init(id)
+	override public init(_ id: Int?, _ log: IIndentLog? = nil) {
+		super.init(id, log)
 	}
-	override public init() {
-		super.init()
+	override public init(_ log: IIndentLog? = nil) {
+		super.init(log)
 	}
-	override public init(row: SQLRow) {
-		super.init(row: row)
+	override public init(row: SQLRow, _ log: IIndentLog? = nil) {
+		super.init(row: row, log)
 	}
 	
 	override func sanityCheck() {

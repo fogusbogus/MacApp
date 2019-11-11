@@ -50,10 +50,10 @@ class PropertyMapVC: NSViewControllerWithLog, MKMapViewDelegate {
 	
 	}
 	
-	func mapView(_ mapView: MKMapView!, viewFor annotation: MKAnnotation!) -> MKAnnotationView! {
+	func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
 		if annotation is MKPointAnnotation {
 			let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "myPin")
-			pin.pinColor = .purple
+			pin.pinTintColor = .purple
 			pin.isDraggable = true
             pin.canShowCallout = true
             pin.animatesDrop = true

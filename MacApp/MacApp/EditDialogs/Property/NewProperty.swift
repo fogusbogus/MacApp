@@ -83,22 +83,24 @@ class NSViewControllerWithLog : NSViewController, IIndentLog {
 	public var LogFileURL: URL?
 	
 	private var _log : IIndentLog? = nil
-	public var Log : IIndentLog {
+	public var Log : IIndentLog? {
 		get {
-			return _log ?? self
+			return _log //?? self
 		}
 		set {
 			_log = newValue
-			LogFileURL = newValue.LogFileURL
+			if newValue != nil {
+				LogFileURL = newValue!.LogFileURL
+			}
 		}
 	}
 	
 	public func IncreaseLogIndent() -> Int {
-		return Log.ResetLogIndent(LogIndent + 1)
+		return Log?.ResetLogIndent(LogIndent + 1) ?? 0
 	}
 	
 	public func DecreaseLogIndent() -> Int {
-		return Log.ResetLogIndent(LogIndent - 1)
+		return Log?.ResetLogIndent(LogIndent - 1) ?? 0
 	}
 	
 	public func ResetLogIndent(_ indent: Int) -> Int {

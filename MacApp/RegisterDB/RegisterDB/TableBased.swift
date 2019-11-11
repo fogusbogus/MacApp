@@ -9,9 +9,11 @@
 import Foundation
 import DBLib
 import Common
+import Logging
 
 public class TableBased<IDType> {
 	
+	public var Log : IIndentLog? = nil
 	public var handler : TableBasedDelegate?
 
 	internal var _id : IDType?
@@ -33,7 +35,8 @@ public class TableBased<IDType> {
 		return getSignature().compare(_originalSignature) != .orderedSame
 	}
 	
-	public init(_ id: IDType?) {
+	public init(_ id: IDType?, _ log: IIndentLog? = nil) {
+		Log = log
 		DB.shared.assertDB()
 		sanityCheck()
 		if let id = id {
@@ -41,12 +44,14 @@ public class TableBased<IDType> {
 		}
 	}
 	
-	public init() {
+	public init(_ log: IIndentLog? = nil) {
+		Log = log
 		DB.shared.assertDB()
 		sanityCheck()
 	}
 	
-	public init(row: SQLRow) {
+	public init(row: SQLRow, _ log: IIndentLog? = nil) {
+		Log = log
 		DB.shared.assertDB()
 		sanityCheck()
 		loadData(row: row)
@@ -135,6 +140,12 @@ public class TableBased<IDType> {
 	}
 	
 	public final func save() {
+		Log.Debug("")
+		
+		Log.Checkpoint("Test", {
+			print("This is called!!")
+		}, keyAndValues: [:])
+		
 		if validID() {
 			if isDirty() {
 				saveAsUpdate()
