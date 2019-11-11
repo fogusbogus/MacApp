@@ -145,7 +145,7 @@ class PropertyMapVC: NSViewControllerWithLog, MKMapViewDelegate {
 	private let _locMan = CLLocationManager()
 	
 	private func setupLocationManager() {
-		Log.CheckpointLabel("Setting up the location manager", {
+		Log.Checkpoint("Setting up the location manager", "setupLocationManager", {
 			_locMan.delegate = self
 			_locMan.desiredAccuracy = kCLLocationAccuracyBest
 		}, keyAndValues: [:])

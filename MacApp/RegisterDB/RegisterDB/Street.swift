@@ -93,7 +93,7 @@ public class Street : TableBased<Int> {
 		super.loadData(row: row)
 		Name = row.get("Name", "")
 		PropertyCount = Property.count(street: ID ?? -1)
-		ElectorCount = Elector.count(property: ID ?? -1)
+		ElectorCount = Elector.count(street: ID ?? -1)
 		GPS = row.get("GPS", "")
 		MetaData.load(json: row.get("Meta", ""), true)
 		
@@ -153,7 +153,7 @@ public class Street : TableBased<Int> {
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
-	func recalculateCounts() {
+	public func recalculateCounts() {
 		if _hasTable {
 			PropertyCount = Property.count(street: ID!)
 			ElectorCount = Elector.count(street: ID!)
@@ -173,7 +173,6 @@ public class Street : TableBased<Int> {
 		
 		let sql3 = "UPDATE Property SET ElectorCount = (SELECT COUNT(*) FROM Elector WHERE Elector.PID = Property.ID)"
 		SQLDB.execute(sql3)
-
 	}
 	
 	public func createProperty() -> Property {
@@ -182,6 +181,30 @@ public class Street : TableBased<Int> {
 		ret.PDID = PDID
 		return ret
 	}
+	
+	public func GetProperties() -> [Property] {
+		let rows = SQLDB.queryMultiRow("SELECT * FROM Property WHERE SID = ? ORDER BY PID", ID!)
+		var ret : [Property] = []
+		for row in rows {
+			ret.append(Property(row: row))
+		}
+		return ret
+	}
+
+	public func GetElectors() -> [Elector] {
+		let rows = SQLDB.queryMultiRow("SELECT * FROM Elector WHERE SID = ? ORDER BY PID, EID", ID!)
+		var ret : [Elector] = []
+		for row in rows {
+			ret.append(Elector(row: row))
+		}
+		return ret
+	}
+
+	override public func reassertCounts() {
+		ElectorCount = SQLDB.queryValue("SELECT COUNT(*) FROM Elector WHERE SID = ?", 0, ID!)
+		PropertyCount = SQLDB.queryValue("SELECT COUNT(*) FROM Property WHERE SID = ?", 0, ID!)
+	}
+
 }
 
 public struct StreetDataStruct {

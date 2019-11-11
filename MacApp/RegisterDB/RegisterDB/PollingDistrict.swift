@@ -125,7 +125,7 @@ public class PollingDistrict : TableBased<Int> {
 	
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
-	func recalculateCounts() {
+	public func recalculateCounts() {
 		if _hasTable {
 			StreetCount = Street.count(pollingDistrict: ID!)
 			PropertyCount = Property.count(pollingDistrict: ID!)
@@ -143,11 +143,48 @@ public class PollingDistrict : TableBased<Int> {
 		let sql3 = "UPDATE PollingDistrict SET StreetCount = (SELECT COUNT(*) FROM Street WHERE Street.PDID = Street.ID)"
 		SQLDB.execute(sql3)
 		
+		//Streets
+		let sql4 = "UPDATE Street SET PropertyCount = (SELECT COUNT(*) FROM Property WHERE Property.SID = Street.ID)"
+		SQLDB.execute(sql4)
+
+		let sql5 = "UPDATE Street SET ElectorCount = (SELECT COUNT(*) FROM Elector WHERE Elector.SID = Street.ID)"
+		SQLDB.execute(sql5)
+		
+		//Properties
+		let sql6 = "UPDATE Property SET ElectorCount = (SELECT COUNT(*) FROM Elector WHERE Elector.PID = Property.ID)"
+		SQLDB.execute(sql6)
+
 	}
+	
+	override public func reassertCounts() {
+		ElectorCount = SQLDB.queryValue("SELECT COUNT(*) FROM Elector WHERE PDID = ?", 0, ID!)
+		PropertyCount = SQLDB.queryValue("SELECT COUNT(*) FROM Property WHERE PDID = ?", 0, ID!)
+		StreetCount = SQLDB.queryValue("SELECT COUNT(*) FROM Street WHERE PDID = ?", 0, ID!)
+	}
+
 	
 	public func createStreet() -> Street {
 		let ret = Street()
 		ret.PDID = ID!
 		return ret
 	}
+	
+	public func GetStreets() -> [Street] {
+		let rows = SQLDB.queryMultiRow("SELECT * FROM Street WHERE PDID = ? ORDER BY SID", ID!)
+		var ret : [Street] = []
+		for row in rows {
+			ret.append(Street(row: row))
+		}
+		return ret
+	}
+	
+	public func GetProperties() -> [Property] {
+		let rows = SQLDB.queryMultiRow("SELECT * FROM Property WHERE PDID = ? ORDER BY SID, PID", ID!)
+		var ret : [Property] = []
+		for row in rows {
+			ret.append(Property(row: row))
+		}
+		return ret
+	}
+
 }

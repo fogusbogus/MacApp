@@ -65,8 +65,7 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 	
 	func selectionChange(node: NodeBase?) {
 
-		Log.Label("Something new has been selected from the tree")
-		Log.Checkpoint("selectionChange", { () -> Void in
+		Log.Checkpoint("Something new has been selected from the tree", "selectionChange", { () -> Void in
 
 			if node == nil {
 				Log.Debug("Nothing selected")
@@ -82,24 +81,30 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 	}
 	
 	override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+		
+		//Log.Checkpoint("Segue preparation", "prepare", {
 		if let svc = segue.destinationController as? StreetVC {
+			Log.Debug("Segue is StreetVC")
 			svc.selectedNodeHandler = selectedNodeListener ?? self
 			svc.Log = self
 		}
+		//}, keyAndValues: ["segue":segue, "sender":sender])
 	}
 	
 	@discardableResult
 	func newProp(street: Street, number: Int) -> Property {
+		
+		//return Log.Checkpoint("New property", "newProp", { () -> Property in
 		let p = street.createProperty()
 		p.Number = number
 		p.save()
 		return p
+		//}, keyAndValues: ["street":street, "number":number])
 	}
 	
 	func openNewPropertyWindow() {
 		
-		Log.Debug("Open the property window")
-		Log.Checkpoint("openNewPropertyWindow()", {
+		Log.Checkpoint("Open the property window", "openNewPropertyWindow()", {
 
 			let wc = NSStoryboard(name: "NewProperty", bundle: nil)
 			let np = wc.instantiateController(withIdentifier: "winController") as! NSWindowController
@@ -128,7 +133,7 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 	
 	func setupDB() {
 		
-		Log.Checkpoint("setupDB()", {
+		Log.Checkpoint("Setting up the database with random fluff", "setupDB()", {
 			
 			Log.Debug("Create polling districts")
 			let pd = PollingDistrict()
@@ -143,13 +148,19 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 			st1.GPS = ""
 			st1.MetaData.add(collection: ["name":"Berkeley Close", "ward":"Cainscross", "parliamentary":"Stroud", "propCount":30])
 			st1.save()
+			
+			Log.Debug("Create 26 properties in 'Berkeley Close' and a random amount of electors in each one")
 			for pn in 1...26 {
 				let pr = newProp(street: st1, number: pn)
 				for _ in 0...Int.random(in: 0...5) {
 					newRandomElector(property: pr)
 				}
 			}
-			
+			pd.recalculateCounts()
+			st1.recalculateCounts()
+			//Log.Debug("\(st1.ElectorCount) electors created")
+
+			Log.Debug("Create 155 properties in 'Hunter's Way' and a random amount of electors in each one")
 			let st2 = pd.createStreet()
 			st2.Name = "Hunters Way"
 			st1.MetaData.add(collection: ["name":"Hunters Way", "ward":"Cainscross", "parliamentary":"Stroud", "propCount":155])
@@ -160,7 +171,17 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 					newRandomElector(property: pr)
 				}
 			}
-			Street.assertCounts()
+			st2.recalculateCounts()
+			PollingDistrict.assertCounts()
+			
+			let streets = pd.GetStreets()
+			for street in streets {
+				Log.Args("Street: \(street.Name)", ["Properties":street.PropertyCount, "Electors":street.ElectorCount])
+			}
+			
+			let totalElectors = st1.ElectorCount + st2.ElectorCount
+			Log.Debug("\(totalElectors) electors created")
+			//Log.Debug("\(st2.ElectorCount) electors created")
 
 		}, keyAndValues: [:])
 		
@@ -168,7 +189,7 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 
 	override func viewDidLoad() {
 		
-		Log.Checkpoint("viewDidLoad", {
+		Log.Checkpoint("View has loaded", "viewDidLoad", {
 			
 			super.viewDidLoad()
 			

@@ -190,6 +190,17 @@ public class Property : TableBased<Int> {
 		return ret
 	}
 	
+	public func recalculateCounts() {
+		if _hasTable {
+			ElectorCount = Elector.count(street: ID!)
+		}
+	}
+	
+	override public func reassertCounts() {
+		ElectorCount = SQLDB.queryValue("SELECT COUNT(*) FROM Elector WHERE PID = ?", 0, ID!)
+	}
+
+	
 	public static func propertyExists(name: String, numberPrefix: String, number: Int, numberSuffix: String, sid: Int) -> Bool {
 		let sql = "SELECT COUNT(*) FROM Street WHERE Name LIKE ? AND NumberPrefix LIKE ? AND Number = ? AND NumberSuffix LIKE ? AND SID = ?"
 		return SQLDB.queryValue(sql, 0, name, numberPrefix, number, numberSuffix, sid) > 0
@@ -268,4 +279,24 @@ public struct PropertyDataStruct {
 		}
 		return ret
 	}
+	
+	public func GetProperties() -> [Property] {
+		let rows = SQLDB.queryMultiRow("SELECT * FROM Property WHERE SID = ? ORDER BY PID", ID!)
+		var ret : [Property] = []
+		for row in rows {
+			ret.append(Property(row: row))
+		}
+		return ret
+	}
+	
+	public func GetElectors() -> [Elector] {
+		let rows = SQLDB.queryMultiRow("SELECT * FROM Elector WHERE PID = ? ORDER BY EID", ID!)
+		var ret : [Elector] = []
+		for row in rows {
+			ret.append(Elector(row: row))
+		}
+		return ret
+	}
+
+
 }

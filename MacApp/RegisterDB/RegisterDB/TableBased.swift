@@ -59,6 +59,10 @@ public class TableBased<IDType> {
 		_hasTable = false
 	}
 	
+	public func reassertCounts() {
+		
+	}
+	
 	public func reload() {
 		if let id = ID {
 			ID = id
