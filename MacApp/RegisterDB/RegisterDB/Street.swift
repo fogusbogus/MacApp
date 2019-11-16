@@ -51,6 +51,7 @@ public class Street : TableBased<Int> {
 			let sql = "CREATE TABLE Street (ID INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT, PropertyCount INTEGER, ElectorCount INTEGER, GPS TEXT, Meta TEXT, PDID INTEGER, SID INTEGER, PID INTEGER, EID INTEGER, Created DATE)"
 			SQLDB.execute(sql)
 			_hasTable = SQLDB.tableExists("Street")
+			SQLDB.assertIndex(indexName: "idxStreetIDs", table: "Street", fields: ["PDID", "SID", "PID", "EID"])
 		}
 	}
 	

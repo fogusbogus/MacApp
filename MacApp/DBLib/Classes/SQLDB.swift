@@ -13,7 +13,7 @@ import Logging
 
 
 public class SQLDB : BaseIndentLog {
-
+	
 	public typealias SQLitePointer = OpaquePointer
 	
 	static let shared = SQLDB()
@@ -55,10 +55,10 @@ public class SQLDB : BaseIndentLog {
 		}
 	}
 	
-	public static func open(_ openCurrent : Bool = false) {
-		open(path: "", openCurrent)
+	public static func open(openCurrent : Bool = false) {
+		open(path: "", openCurrent: openCurrent)
 	}
-	public static func open(path: String, _ openCurrent : Bool = false) {
+	public static func open(path: String, openCurrent : Bool = false) {
 		close()
 		
 		var sqlPath = path
@@ -108,7 +108,7 @@ public class SQLDB : BaseIndentLog {
 			bindParameters(statement: statement, parms: parms)
 			
 			//shared.SQL(sql)
-
+			
 			var step = sqlite3_step(statement)
 			while step != SQLITE_DONE {
 				if step == SQLITE_ROW {
@@ -480,6 +480,12 @@ public class SQLDB : BaseIndentLog {
 		}
 	}
 	
+	public static var DB : SQLitePointer? {
+		get {
+			return _db
+		}
+	}
+	
 	@discardableResult public static func execute(_ sql: String, parms:Any?...) -> Bool {
 		if !assertDB {
 			return false
@@ -506,6 +512,63 @@ public class SQLDB : BaseIndentLog {
 			}
 		}
 		sqlite3_finalize(statement)
+		return ret
+	}
+	
+	
+	@discardableResult public static func bulkInsert(_ sql: String, parms: [Array<Any>]) -> Bool {
+		if !assertDB {
+			return false
+		}
+		
+		var statement : SQLitePointer? = nil
+		
+		var ret = false
+		
+		execute("BEGIN IMMEDIATE TRANSACTION")
+		if sqlite3_prepare_v2(_db, sql, -1, &statement, nil) == SQLITE_OK {
+
+			for p in parms {
+				if let ar = p as? Array<Any> {
+					var index = 1
+					for parm in ar {
+						if statement.bindValue(index, value: parm) {
+							index += 1
+						}
+						else {
+							let err = sqlite3_errmsg(statement)
+							print("\(String(describing: err))")
+						}
+					}
+					if sqlite3_step(statement) == SQLITE_DONE {
+						ret = true
+					}
+					if sqlite3_reset(statement) == SQLITE_OK {
+						continue
+					}
+					else {
+						break
+					}
+				}
+				else {
+					if !statement.bindValue(1, value: p) {
+						let err = sqlite3_errmsg(statement)
+						print("\(String(describing: err))")
+					}
+					if sqlite3_step(statement) == SQLITE_DONE {
+						ret = true
+					}
+					if sqlite3_reset(statement) == SQLITE_OK {
+						continue
+					}
+					else {
+						break
+					}
+				}
+			}
+		}
+		sqlite3_finalize(statement)
+		execute("COMMIT TRANSACTION")
 		return ret
 	}
 }

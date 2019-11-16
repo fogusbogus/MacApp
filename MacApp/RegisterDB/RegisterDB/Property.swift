@@ -53,6 +53,7 @@ public class Property : TableBased<Int> {
 			let sql = "CREATE TABLE Property (ID INTEGER PRIMARY KEY AUTOINCREMENT, DisplayName TEXT, Name TEXT, Number INTEGER, NumberPrefix TEXT, NumberSuffix TEXT, ElectorCount INTEGER, GPS TEXT, Meta TEXT, PDID INTEGER, SID INTEGER, PID INTEGER, EID INTEGER, Created DATE)"
 			SQLDB.execute(sql)
 			_hasTable = SQLDB.tableExists("Property")
+			SQLDB.assertIndex(indexName: "idxPropertyIDs", table: "Property", fields: ["PDID", "SID", "PID", "EID"])
 		}
 	}
 	

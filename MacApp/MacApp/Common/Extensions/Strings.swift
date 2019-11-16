@@ -227,8 +227,13 @@ public extension String {
 	///
 	/// - Parameter doesItLookLikeThis: Compare it to this
 	/// - Returns: Does it match?
-	func implies(_ doesItLookLikeThis: String) -> Bool {
-		return self.caseInsensitiveCompare(doesItLookLikeThis) == .orderedSame
+	func implies(_ doesItLookLikeThis: String...) -> Bool {
+		for item in doesItLookLikeThis {
+			if self.caseInsensitiveCompare(item) == .orderedSame {
+				return true
+			}
+		}
+		return false
 	}
 	
 	

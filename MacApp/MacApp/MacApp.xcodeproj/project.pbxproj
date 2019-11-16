@@ -33,11 +33,13 @@
 		C94A9BE222F245E1006CD380 /* EditElector.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C94A9BE122F245E1006CD380 /* EditElector.storyboard */; };
 		C94A9BE522F25A73006CD380 /* EditElector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A9BE322F25A73006CD380 /* EditElector.swift */; };
 		C95228A1230B5A300040E487 /* TODO in Resources */ = {isa = PBXBuildFile; fileRef = C95228A0230B5A300040E487 /* TODO */; };
+		C95FE873237C9FCA00E81811 /* NameDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95FE872237C9FCA00E81811 /* NameDefinitions.swift */; };
 		C962A09222A9BFC800510199 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962A09122A9BFC800510199 /* AppDelegate.swift */; };
 		C962A09422A9BFC800510199 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962A09322A9BFC800510199 /* ViewController.swift */; };
 		C962A09622A9BFC900510199 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C962A09522A9BFC900510199 /* Assets.xcassets */; };
 		C962A09922A9BFC900510199 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C962A09722A9BFC900510199 /* Main.storyboard */; };
 		C969B85722E77DA200EBC869 /* NewProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C969B85622E77DA200EBC869 /* NewProperty.swift */; };
+		C980D9282380442300B6ACE2 /* Names.csv in Resources */ = {isa = PBXBuildFile; fileRef = C980D9272380442300B6ACE2 /* Names.csv */; };
 		C9B5EC0C2315F77100814E1F /* PropertyMapWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B5EC0A2315F77100814E1F /* PropertyMapWindowController.swift */; };
 		C9B6342F22E674D60085C92A /* NewProperty.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B6342E22E674D60085C92A /* NewProperty.storyboard */; };
 		C9C25A1F237016F90098B08B /* libLogging.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C25A1E237016F90098B08B /* libLogging.dylib */; };
@@ -72,6 +74,7 @@
 		C94A9BE122F245E1006CD380 /* EditElector.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditElector.storyboard; sourceTree = "<group>"; };
 		C94A9BE322F25A73006CD380 /* EditElector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditElector.swift; sourceTree = "<group>"; };
 		C95228A0230B5A300040E487 /* TODO */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = TODO; sourceTree = "<group>"; };
+		C95FE872237C9FCA00E81811 /* NameDefinitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameDefinitions.swift; sourceTree = "<group>"; };
 		C962A08E22A9BFC800510199 /* MacApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C962A09122A9BFC800510199 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C962A09322A9BFC800510199 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +84,7 @@
 		C962A09B22A9BFC900510199 /* MacApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacApp.entitlements; sourceTree = "<group>"; };
 		C962A0CD22A9C90B00510199 /* libCommon.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libCommon.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		C969B85622E77DA200EBC869 /* NewProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProperty.swift; sourceTree = "<group>"; };
+		C980D9272380442300B6ACE2 /* Names.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Names.csv; sourceTree = "<group>"; };
 		C9B5EC0A2315F77100814E1F /* PropertyMapWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyMapWindowController.swift; sourceTree = "<group>"; };
 		C9B6342E22E674D60085C92A /* NewProperty.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewProperty.storyboard; sourceTree = "<group>"; };
 		C9C25A1E237016F90098B08B /* libLogging.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libLogging.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -226,6 +230,8 @@
 				C962A09A22A9BFC900510199 /* Info.plist */,
 				C962A09B22A9BFC900510199 /* MacApp.entitlements */,
 				C9C25A22237017C80098B08B /* Log.swift */,
+				C95FE872237C9FCA00E81811 /* NameDefinitions.swift */,
+				C980D9272380442300B6ACE2 /* Names.csv */,
 			);
 			path = MacApp;
 			sourceTree = "<group>";
@@ -309,6 +315,7 @@
 				C9C33F0B22D9CF93003D8B3A /* mainviewicons.xcassets in Resources */,
 				C962A09922A9BFC900510199 /* Main.storyboard in Resources */,
 				C912432F22F386A100564EE4 /* pnlDetails.xib in Resources */,
+				C980D9282380442300B6ACE2 /* Names.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +332,7 @@
 				C9C33F4D22DB9CA9003D8B3A /* TreeNodeImage.swift in Sources */,
 				C907983122C91F5D00073F31 /* TreeNodeContainerView.swift in Sources */,
 				C93CABFE22B2E6F200685968 /* StreetItem.swift in Sources */,
+				C95FE873237C9FCA00E81811 /* NameDefinitions.swift in Sources */,
 				C93CAC0022B2E90A00685968 /* StreetVC.swift in Sources */,
 				C907983322C9217F00073F31 /* NibView.swift in Sources */,
 				C926D6B22311EC6E00C82DC7 /* PropertyMap.swift in Sources */,

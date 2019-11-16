@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:ImportData/ImportData.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Logging/Logging.xcodeproj">
    </FileRef>
    <FileRef

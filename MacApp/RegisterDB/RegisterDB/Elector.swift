@@ -51,6 +51,7 @@ public class Elector : TableBased<Int> {
 			let sql = "CREATE TABLE Elector (ID INTEGER PRIMARY KEY AUTOINCREMENT, DisplayName TEXT, Surname TEXT, Forename TEXT, MiddleName TEXT, Meta TEXT, Markers TEXT, PDID INTEGER, SID INTEGER, PID INTEGER, EID INTEGER, Created DATE)"
 			SQLDB.execute(sql)
 			_hasTable = SQLDB.tableExists("Elector")
+			SQLDB.assertIndex(indexName: "idxElectorIDs", table: "Elector", fields: ["PDID", "SID", "PID", "EID"])
 		}
 	}
 	

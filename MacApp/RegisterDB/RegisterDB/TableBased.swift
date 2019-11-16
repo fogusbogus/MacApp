@@ -140,11 +140,7 @@ public class TableBased<IDType> {
 	}
 	
 	public final func save() {
-		Log.Debug("")
-		
-		Log.Checkpoint("Test", {
-			print("This is called!!")
-		}, keyAndValues: [:])
+
 		
 		if validID() {
 			if isDirty() {
