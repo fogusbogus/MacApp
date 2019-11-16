@@ -12,17 +12,17 @@ import Common
 import Logging
 
 public class Property : TableBased<Int> {
-	override public init(_ id: Int?, _ log: IIndentLog? = nil) {
-		super.init(id, log)
+	override public init(db : SQLDBInstance, _ id: Int?, _ log: IIndentLog? = nil) {
+		super.init(db: db, id, log)
 	}
-	override public init(_ log: IIndentLog? = nil) {
-		super.init(log)
+	override public init(db : SQLDBInstance, _ log: IIndentLog? = nil) {
+		super.init(db: db, log)
 	}
-	override public init(row: SQLRow, _ log: IIndentLog? = nil) {
-		super.init(row: row, log)
+	override public init(db : SQLDBInstance, row: SQLRow, _ log: IIndentLog? = nil) {
+		super.init(db: db, row: row, log)
 	}
-	public init(data: PropertyDataStruct, _ log: IIndentLog? = nil) {
-		super.init(log)
+	public init(db : SQLDBInstance, data: PropertyDataStruct, _ log: IIndentLog? = nil) {
+		super.init(db: db, log)
 		Data = data
 	}
 	
@@ -113,7 +113,7 @@ public class Property : TableBased<Int> {
 		Number = row.get("Number", 0)
 		NumberPrefix = row.get("NumberPrefix", "")
 		NumberSuffix = row.get("NumberSuffix", "")
-		ElectorCount = Elector.count(property: ID ?? -1)
+		ElectorCount = Elector.count(db: SQLDB, property: ID ?? -1)
 		GPS = row.get("GPS", "")
 		MetaData.load(json: row.get("Meta", ""), true)
 
@@ -176,16 +176,16 @@ public class Property : TableBased<Int> {
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
-	public static func count(pollingDistrict: Int) -> Int {
-		return SQLDB.queryValue("SELECT COUNT(*) FROM Elector WHERE PDID = \(pollingDistrict)", 0)
+	public static func count(db: SQLDBInstance, pollingDistrict: Int) -> Int {
+		return db.queryValue("SELECT COUNT(*) FROM Elector WHERE PDID = \(pollingDistrict)", 0)
 	}
 	
-	public static func count(street: Int) -> Int {
-		return SQLDB.queryValue("SELECT COUNT(*) FROM Property WHERE SID = \(street)", 0)
+	public static func count(db: SQLDBInstance, street: Int) -> Int {
+		return db.queryValue("SELECT COUNT(*) FROM Property WHERE SID = \(street)", 0)
 	}
 
 	public func createElector() -> Elector {
-		let ret = Elector()
+		let ret = Elector(db: SQLDB)
 		ret.PID = ID!
 		ret.SID = SID
 		ret.PDID = PDID
@@ -194,7 +194,7 @@ public class Property : TableBased<Int> {
 	
 	public func recalculateCounts() {
 		if _hasTable {
-			ElectorCount = Elector.count(street: ID!)
+			ElectorCount = Elector.count(db: SQLDB, street: ID!)
 		}
 	}
 	
@@ -203,20 +203,20 @@ public class Property : TableBased<Int> {
 	}
 
 	
-	public static func propertyExists(name: String, numberPrefix: String, number: Int, numberSuffix: String, sid: Int) -> Bool {
+	public static func propertyExists(db: SQLDBInstance, name: String, numberPrefix: String, number: Int, numberSuffix: String, sid: Int) -> Bool {
 		let sql = "SELECT COUNT(*) FROM Street WHERE Name LIKE ? AND NumberPrefix LIKE ? AND Number = ? AND NumberSuffix LIKE ? AND SID = ?"
-		return SQLDB.queryValue(sql, 0, name, numberPrefix, number, numberSuffix, sid) > 0
+		return db.queryValue(sql, 0, name, numberPrefix, number, numberSuffix, sid) > 0
 	}
 	
-	public static func propertyExists(data: PropertyDataStruct) -> Bool {
+	public static func propertyExists(db: SQLDBInstance, data: PropertyDataStruct) -> Bool {
 		let sql = "SELECT COUNT(*) FROM Street WHERE Name LIKE ? AND NumberPrefix LIKE ? AND Number = ? AND NumberSuffix LIKE ? AND SID = ?"
-		return SQLDB.queryValue(sql, 0, data.Name, data.NumberPrefix, data.Number, data.NumberSuffix, data.SID.Nil()) > 0
+		return db.queryValue(sql, 0, data.Name, data.NumberPrefix, data.Number, data.NumberSuffix, data.SID.Nil()) > 0
 	}
 	
-	public static func nextAvailableProperty(current: PropertyDataStruct) -> PropertyDataStruct {
+	public static func nextAvailableProperty(db: SQLDBInstance, current: PropertyDataStruct) -> PropertyDataStruct {
 		if current.SID != nil {
 			var current = current.suggestNextProperty()
-			while propertyExists(data: current) {
+			while propertyExists(db: db, data: current) {
 				current = current.suggestNextProperty()
 			}
 			return current
@@ -282,20 +282,20 @@ public struct PropertyDataStruct {
 		return ret
 	}
 	
-	public func GetProperties() -> [Property] {
-		let rows = SQLDB.queryMultiRow("SELECT * FROM Property WHERE SID = ? ORDER BY PID", ID!)
+	public func GetProperties(db: SQLDBInstance) -> [Property] {
+		let rows = db.queryMultiRow("SELECT * FROM Property WHERE SID = ? ORDER BY PID", ID!)
 		var ret : [Property] = []
 		for row in rows {
-			ret.append(Property(row: row))
+			ret.append(Property(db: db, row: row))
 		}
 		return ret
 	}
 	
-	public func GetElectors() -> [Elector] {
-		let rows = SQLDB.queryMultiRow("SELECT * FROM Elector WHERE PID = ? ORDER BY EID", ID!)
+	public func GetElectors(db: SQLDBInstance) -> [Elector] {
+		let rows = db.queryMultiRow("SELECT * FROM Elector WHERE PID = ? ORDER BY EID", ID!)
 		var ret : [Elector] = []
 		for row in rows {
-			ret.append(Elector(row: row))
+			ret.append(Elector(db: db, row: row))
 		}
 		return ret
 	}

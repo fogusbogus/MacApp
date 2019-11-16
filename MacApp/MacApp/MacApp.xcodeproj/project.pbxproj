@@ -46,6 +46,7 @@
 		C9C25A23237017C80098B08B /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C25A22237017C80098B08B /* Log.swift */; };
 		C9C33F0B22D9CF93003D8B3A /* mainviewicons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9C33F0A22D9CF93003D8B3A /* mainviewicons.xcassets */; };
 		C9C33F4D22DB9CA9003D8B3A /* TreeNodeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C33F4C22DB9CA9003D8B3A /* TreeNodeImage.swift */; };
+		C9D416532380B83B00E6B717 /* Databases.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D416522380B83B00E6B717 /* Databases.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +92,7 @@
 		C9C25A22237017C80098B08B /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		C9C33F0A22D9CF93003D8B3A /* mainviewicons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = mainviewicons.xcassets; sourceTree = "<group>"; };
 		C9C33F4C22DB9CA9003D8B3A /* TreeNodeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNodeImage.swift; sourceTree = "<group>"; };
+		C9D416522380B83B00E6B717 /* Databases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Databases.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,7 @@
 		C962A08522A9BFC800510199 = {
 			isa = PBXGroup;
 			children = (
+				C9D416522380B83B00E6B717 /* Databases.swift */,
 				C94A9BE022F245AC006CD380 /* EditDialogs */,
 				C9C33F0A22D9CF93003D8B3A /* mainviewicons.xcassets */,
 				C91E680722D52784005AF496 /* Icons */,
@@ -332,6 +335,7 @@
 				C9C33F4D22DB9CA9003D8B3A /* TreeNodeImage.swift in Sources */,
 				C907983122C91F5D00073F31 /* TreeNodeContainerView.swift in Sources */,
 				C93CABFE22B2E6F200685968 /* StreetItem.swift in Sources */,
+				C9D416532380B83B00E6B717 /* Databases.swift in Sources */,
 				C95FE873237C9FCA00E81811 /* NameDefinitions.swift in Sources */,
 				C93CAC0022B2E90A00685968 /* StreetVC.swift in Sources */,
 				C907983322C9217F00073F31 /* NibView.swift in Sources */,

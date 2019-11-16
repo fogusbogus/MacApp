@@ -115,7 +115,7 @@ class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate
 			if let elItem = selectedNode as? ElectorItem {
 				if elItem.linkedItem is Elector {
 					if usage == .new {
-						wcEditElector?.loadElector(elector: Elector())
+						wcEditElector?.loadElector(elector: Elector(db: Databases.shared.Register))
 					}
 					else {
 						wcEditElector?.loadElector(elector: elItem.linkedItem as! Elector)
@@ -244,11 +244,11 @@ class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate
 		
 		let dict = NSMutableDictionary(dictionary: root)
 		
-		let rowsPD = SQLDB.queryMultiRow("SELECT * FROM PollingDistrict ORDER BY Name")
+		let rowsPD = Databases.shared.Register.queryMultiRow("SELECT * FROM PollingDistrict ORDER BY Name")
 		var lst : [PollingDistrictItem] = []
 		for rowPD in rowsPD {
 			let pd = PollingDistrictItem(rowPD.get("Name", ""))
-			pd.linkedItem = PollingDistrict(row: rowPD)
+			pd.linkedItem = PollingDistrict(db: Databases.shared.Register, row: rowPD)
 			lst.assert(pd)
 		}
 //

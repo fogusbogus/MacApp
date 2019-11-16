@@ -36,7 +36,7 @@ class PollingDistrictItem : NodeBase {
 					return nb.linkedItem?.ID == childID
 				})
 				if child == nil {
-					let st = Street(childID)
+					let st = Street(db: Databases.shared.Register, childID)
 					child = StreetItem(st.Name)
 					child?.linkedItem = st
 				}
@@ -76,7 +76,7 @@ class StreetItem : NodeBase {
 					return nb.linkedItem?.ID == childID
 				})
 				if child == nil {
-					let pr = Property(childID)
+					let pr = Property(db: Databases.shared.Register, childID)
 					child = PropertyItem(pr.getDisplayName())
 					child?.linkedItem = pr
 				}
@@ -114,7 +114,7 @@ class PropertyItem: NodeBase {
 					return nb.linkedItem?.ID == childID
 				})
 				if child == nil {
-					let el = Elector(childID)
+					let el = Elector(db: Databases.shared.Register, childID)
 					child = ElectorItem(el.DisplayName)
 					child?.linkedItem = el
 				}
@@ -154,7 +154,7 @@ class ElectorItem: NodeBase {
 					return nb.linkedItem?.ID == childID
 				})
 				if child == nil {
-					let el = Elector(childID)
+					let el = Elector(db: Databases.shared.Register, childID)
 					child = ElectorItem(el.DisplayName)
 					child?.linkedItem = el
 				}

@@ -12,7 +12,7 @@ import Logging
 
 class NewPropertyWindowController: ModalWindowController, NewPropertyWindowDelegate {
 	func getSmartNextProperty(current: PropertyDataStruct) -> PropertyDataStruct {
-		return Property.nextAvailableProperty(current: current)
+		return Property.nextAvailableProperty(db: Databases.shared.Register, current: current)
 	}
 	
 	func isPropertyAlreadyTaken(data: PropertyDataStruct) -> Bool {
@@ -30,7 +30,7 @@ class NewPropertyWindowController: ModalWindowController, NewPropertyWindowDeleg
 	func addOrUpdate(data: PropertyDataStruct) {
 		Log.Checkpoint("addOrUpdate", {
 
-			let p = Property(data: data)
+			let p = Property(db: Databases.shared.Register, data: data)
 			p.save()
 
 		}, keyAndValues: ["data":data])

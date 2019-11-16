@@ -12,14 +12,14 @@ import Common
 import Logging
 
 public class PollingDistrict : TableBased<Int> {
-	override public init(_ id: Int?, _ log: IIndentLog? = nil) {
-		super.init(id, log)
+	override public init(db : SQLDBInstance, _ id: Int?, _ log: IIndentLog? = nil) {
+		super.init(db: db, id, log)
 	}
-	override public init(_ log: IIndentLog? = nil) {
-		super.init(log)
+	override public init(db : SQLDBInstance, _ log: IIndentLog? = nil) {
+		super.init(db: db, log)
 	}
-	override public init(row: SQLRow, _ log: IIndentLog? = nil) {
-		super.init(row: row, log)
+	override public init(db : SQLDBInstance, row: SQLRow, _ log: IIndentLog? = nil) {
+		super.init(db: db, row: row, log)
 	}
 	
 	override func sanityCheck() {
@@ -66,9 +66,9 @@ public class PollingDistrict : TableBased<Int> {
 	override func loadData(row: SQLRow) {
 		super.loadData(row: row)
 		Name = row.get("Name", "")
-		StreetCount = Street.count(pollingDistrict: ID ?? -1)
-		PropertyCount = Property.count(pollingDistrict: ID ?? -1)
-		ElectorCount = Elector.count(pollingDistrict: ID ?? -1)
+		StreetCount = Street.count(db: SQLDB, pollingDistrict: ID ?? -1)
+		PropertyCount = Property.count(db: SQLDB, pollingDistrict: ID ?? -1)
+		ElectorCount = Elector.count(db: SQLDB, pollingDistrict: ID ?? -1)
 		MetaData.load(json: row.get("Meta", ""), true)
 
 		_pdid = row.get("PDID", -1)
@@ -129,32 +129,32 @@ public class PollingDistrict : TableBased<Int> {
 	
 	public func recalculateCounts() {
 		if _hasTable {
-			StreetCount = Street.count(pollingDistrict: ID!)
-			PropertyCount = Property.count(pollingDistrict: ID!)
-			ElectorCount = Elector.count(pollingDistrict: ID!)
+			StreetCount = Street.count(db: SQLDB, pollingDistrict: ID!)
+			PropertyCount = Property.count(db: SQLDB, pollingDistrict: ID!)
+			ElectorCount = Elector.count(db: SQLDB, pollingDistrict: ID!)
 		}
 	}
 	
-	public static func assertCounts() {
+	public static func assertCounts(db: SQLDBInstance) {
 		let sql = "UPDATE PollingDistrict SET PropertyCount = (SELECT COUNT(*) FROM Property WHERE Property.PDID = PollingDistrict.ID)"
-		SQLDB.execute(sql)
+		db.execute(sql)
 		
 		let sql2 = "UPDATE PollingDistrict SET ElectorCount = (SELECT COUNT(*) FROM Elector WHERE Elector.PDID = PollingDistrict.ID)"
-		SQLDB.execute(sql2)
+		db.execute(sql2)
 		
 		let sql3 = "UPDATE PollingDistrict SET StreetCount = (SELECT COUNT(*) FROM Street WHERE Street.PDID = Street.ID)"
-		SQLDB.execute(sql3)
+		db.execute(sql3)
 		
 		//Streets
 		let sql4 = "UPDATE Street SET PropertyCount = (SELECT COUNT(*) FROM Property WHERE Property.SID = Street.ID)"
-		SQLDB.execute(sql4)
+		db.execute(sql4)
 
 		let sql5 = "UPDATE Street SET ElectorCount = (SELECT COUNT(*) FROM Elector WHERE Elector.SID = Street.ID)"
-		SQLDB.execute(sql5)
+		db.execute(sql5)
 		
 		//Properties
 		let sql6 = "UPDATE Property SET ElectorCount = (SELECT COUNT(*) FROM Elector WHERE Elector.PID = Property.ID)"
-		SQLDB.execute(sql6)
+		db.execute(sql6)
 
 	}
 	
@@ -166,7 +166,7 @@ public class PollingDistrict : TableBased<Int> {
 
 	
 	public func createStreet() -> Street {
-		let ret = Street()
+		let ret = Street(db: SQLDB)
 		ret.PDID = ID!
 		return ret
 	}
@@ -175,7 +175,7 @@ public class PollingDistrict : TableBased<Int> {
 		let rows = SQLDB.queryMultiRow("SELECT * FROM Street WHERE PDID = ? ORDER BY SID", ID!)
 		var ret : [Street] = []
 		for row in rows {
-			ret.append(Street(row: row))
+			ret.append(Street(db: SQLDB, row: row))
 		}
 		return ret
 	}
@@ -184,7 +184,7 @@ public class PollingDistrict : TableBased<Int> {
 		let rows = SQLDB.queryMultiRow("SELECT * FROM Property WHERE PDID = ? ORDER BY SID, PID", ID!)
 		var ret : [Property] = []
 		for row in rows {
-			ret.append(Property(row: row))
+			ret.append(Property(db: SQLDB, row: row))
 		}
 		return ret
 	}

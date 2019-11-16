@@ -35,27 +35,32 @@ public class TableBased<IDType> {
 		return getSignature().compare(_originalSignature) != .orderedSame
 	}
 	
-	public init(_ id: IDType?, _ log: IIndentLog? = nil) {
+	public init(db : SQLDBInstance, _ id: IDType?, _ log: IIndentLog? = nil) {
+		SQLDB = db
 		Log = log
-		DB.shared.assertDB()
+		db.assertDB
 		sanityCheck()
 		if let id = id {
 			ID = id
 		}
 	}
 	
-	public init(_ log: IIndentLog? = nil) {
+	public init(db : SQLDBInstance, _ log: IIndentLog? = nil) {
+		SQLDB = db
 		Log = log
-		DB.shared.assertDB()
+		db.assertDB
 		sanityCheck()
 	}
 	
-	public init(row: SQLRow, _ log: IIndentLog? = nil) {
+	public init(db : SQLDBInstance, row: SQLRow, _ log: IIndentLog? = nil) {
+		SQLDB = db
 		Log = log
-		DB.shared.assertDB()
+		db.assertDB
 		sanityCheck()
 		loadData(row: row)
 	}
+	
+	internal var SQLDB : SQLDBInstance
 	
 	var _hasTable = false
 	

@@ -159,7 +159,7 @@ class EditElectorWindowController: ModalWindowController, EditElectorWindowDeleg
 	}
 	
 	func addOrUpdate(data: ElectorDataStruct ) {
-		let e = Elector(data: data)
+		let e = Elector(db: Databases.shared.Register, data: data)
 		e.save()
 		refreshDelegate?.refreshElector()
 	}

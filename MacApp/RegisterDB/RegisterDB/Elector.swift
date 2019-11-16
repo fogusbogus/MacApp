@@ -12,17 +12,17 @@ import Common
 import Logging
 
 public class Elector : TableBased<Int> {
-	override public init(_ id: Int?, _ log: IIndentLog? = nil) {
-		super.init(id, log)
+	override public init(db : SQLDBInstance, _ id: Int?, _ log: IIndentLog? = nil) {
+		super.init(db: db, id, log)
 	}
-	override public init(_ log: IIndentLog? = nil) {
-		super.init(log)
+	override public init(db : SQLDBInstance, _ log: IIndentLog? = nil) {
+		super.init(db: db, log)
 	}
-	override public init(row: SQLRow, _ log: IIndentLog? = nil) {
-		super.init(row: row, log)
+	override public init(db : SQLDBInstance, row: SQLRow, _ log: IIndentLog? = nil) {
+		super.init(db: db, row: row, log)
 	}
-	public init(data: ElectorDataStruct, _ log: IIndentLog? = nil) {
-		super.init(log)
+	public init(db : SQLDBInstance, data: ElectorDataStruct, _ log: IIndentLog? = nil) {
+		super.init(db: db, log)
 		Data = data
 	}
 
@@ -157,20 +157,20 @@ public class Elector : TableBased<Int> {
 	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
-	public static func count(pollingDistrict: Int) -> Int {
-		return SQLDB.queryValue("SELECT COUNT(*) FROM Elector WHERE PDID = \(pollingDistrict)", 0)
+	public static func count(db: SQLDBInstance, pollingDistrict: Int) -> Int {
+		return db.queryValue("SELECT COUNT(*) FROM Elector WHERE PDID = \(pollingDistrict)", 0)
 	}
 	
-	public static func count(street: Int) -> Int {
-		return SQLDB.queryValue("SELECT COUNT(*) FROM Elector WHERE SID = \(street)", 0)
+	public static func count(db: SQLDBInstance, street: Int) -> Int {
+		return db.queryValue("SELECT COUNT(*) FROM Elector WHERE SID = \(street)", 0)
 	}
 	
-	public static func count(property: Int) -> Int {
-		return SQLDB.queryValue("SELECT COUNT(*) FROM Elector WHERE PID = \(property)", 0)
+	public static func count(db: SQLDBInstance, property: Int) -> Int {
+		return db.queryValue("SELECT COUNT(*) FROM Elector WHERE PID = \(property)", 0)
 	}
 	
-	public static func getParentageDisplayInformation(id: Int) -> [String:String] {
-		let row = SQLDB.querySingleRow("SELECT EL.DisplayName AS ELName, PR.DisplayName AS PRName, ST.Name AS STName, PD.Name AS PDName FROM Elector EL LEFT JOIN Property PR ON EL.PID = PR.ID LEFT JOIN Street ST ON EL.SID = ST.ID LEFT JOIN PollingDistrict PD ON EL.PDID = PD.ID WHERE EL.ID = ?", id)
+	public static func getParentageDisplayInformation(db: SQLDBInstance, id: Int) -> [String:String] {
+		let row = db.querySingleRow("SELECT EL.DisplayName AS ELName, PR.DisplayName AS PRName, ST.Name AS STName, PD.Name AS PDName FROM Elector EL LEFT JOIN Property PR ON EL.PID = PR.ID LEFT JOIN Street ST ON EL.SID = ST.ID LEFT JOIN PollingDistrict PD ON EL.PDID = PD.ID WHERE EL.ID = ?", id)
 		
 		var ret : [String:String] = [:]
 		ret["el"] = row.get("ELName", "")
@@ -218,9 +218,9 @@ public struct ElectorDataStruct {
 		Markers = ""
 	}
 	
-	public func getDisplayInformation() -> [String:String] {
+	public func getDisplayInformation(db: SQLDBInstance) -> [String:String] {
 		if let elid = ID {
-			return Elector.getParentageDisplayInformation(id: elid)
+			return Elector.getParentageDisplayInformation(db: db, id: elid)
 		}
 		return [:]
 	}

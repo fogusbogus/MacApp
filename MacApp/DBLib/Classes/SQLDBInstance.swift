@@ -1,8 +1,8 @@
 //
-//  SQLDB.swift
+//  SQLDBInstance.swift
 //  DBLib
 //
-//  Created by Matt Hogg on 06/06/2019.
+//  Created by Matt Hogg on 16/11/2019.
 //  Copyright © 2019 Matthew Hogg. All rights reserved.
 //
 
@@ -12,28 +12,24 @@ import Common
 import Logging
 
 
-internal class SQLDB : BaseIndentLog {
+public class SQLDBInstance : BaseIndentLog {
 	
 	public typealias SQLitePointer = OpaquePointer
-	
-	static let shared = SQLDB()
-	
-	// Initialization
-	
-	private override init() {
+		
+	public override init() {
 		super.init()
 	}
 	
-	internal static var _db : SQLitePointer? = nil
+	internal var _db : SQLitePointer? = nil
 	
 	
-	public static func tableExists(_ name: String) -> Bool {
+	public func tableExists(_ name: String) -> Bool {
 		let sql = "SELECT count(*) FROM sqlite_master WHERE type='table' AND name LIKE ?;"
 		let result = queryValue(sql, 0, name)
 		return result > 0
 	}
 	
-	public static func indexExists(_ name: String) -> Bool {
+	public func indexExists(_ name: String) -> Bool {
 		let table = name.replacingOccurrences(of: "[", with: "").replacingOccurrences(of: "]", with: "").trim()
 		let sql = "SELECT count(*) FROM sqlite_master WHERE type='index' AND name LIKE '{0}';"
 		let result = queryValue(sql.fmt(table.sqlSafe()), "")
@@ -43,7 +39,7 @@ internal class SQLDB : BaseIndentLog {
 		return false
 	}
 	
-	public static var assertDB : Bool {
+	public var assertDB : Bool {
 		get {
 			if _db == nil {
 				open()
@@ -52,10 +48,10 @@ internal class SQLDB : BaseIndentLog {
 		}
 	}
 	
-	public static func open(openCurrent : Bool = false) {
+	public func open(openCurrent : Bool = false) {
 		open(path: "", openCurrent: openCurrent)
 	}
-	public static func open(path: String, openCurrent : Bool = false) {
+	public func open(path: String, openCurrent : Bool = false) {
 		close()
 		
 		var sqlPath = path
@@ -88,14 +84,14 @@ internal class SQLDB : BaseIndentLog {
 		return
 	}
 	
-	public static func close() {
+	public func close() {
 		if let db = _db {
 			sqlite3_close(db)
 		}
 		_db = nil
 	}
 	
-	public static func queryValue<T>(_ sql: String, _ defaultValue: T, _ parms: Any?...) -> T {
+	public func queryValue<T>(_ sql: String, _ defaultValue: T, _ parms: Any?...) -> T {
 		if !assertDB {
 			return defaultValue
 		}
@@ -147,7 +143,7 @@ internal class SQLDB : BaseIndentLog {
 		return ret
 	}
 	
-	public static func assertIndex(indexName: String, createSql: String) {
+	public func assertIndex(indexName: String, createSql: String) {
 		if !indexExists(indexName) {
 			execute(createSql)
 		}
@@ -159,7 +155,7 @@ internal class SQLDB : BaseIndentLog {
 	///   - indexName: An index needs a unique name to identify it
 	///   - table: The associated table
 	///   - fields: An array of columns
-	public static func assertIndex(indexName: String, table: String, fields: [String]) {
+	public func assertIndex(indexName: String, table: String, fields: [String]) {
 		if indexExists(indexName) {
 			return
 		}
@@ -169,7 +165,7 @@ internal class SQLDB : BaseIndentLog {
 		assertIndex(indexName: indexName, createSql: sql)
 	}
 	
-	public static func assertColumn(tableName: String, nameAndTypes: [String:String]) {
+	public func assertColumn(tableName: String, nameAndTypes: [String:String]) {
 		
 		//The table might not exist
 		if !tableExists(tableName) {
@@ -186,7 +182,7 @@ internal class SQLDB : BaseIndentLog {
 				sql += "[\(name)] " + nameAndTypes[name]!
 			}
 			sql += ")"
-			SQLDB.execute(sql)
+			execute(sql)
 			return
 		}
 		
@@ -201,7 +197,7 @@ internal class SQLDB : BaseIndentLog {
 		}
 	}
 	
-	public static func getColumnDetailsForTable(tableName: String) -> [String:String] {
+	public func getColumnDetailsForTable(tableName: String) -> [String:String] {
 		if !assertDB {
 			return [:]
 		}
@@ -232,8 +228,8 @@ internal class SQLDB : BaseIndentLog {
 		return ret
 	}
 	
-	public static func newRow(tableName: String) -> SQLRow {
-		var rows = queryMultiRow("SELECT * FROM [\(tableName)] LIMIT 0")
+	public func newRow(tableName: String) -> SQLRow {
+		let rows = queryMultiRow("SELECT * FROM [\(tableName)] LIMIT 0")
 		guard rows.count > 0 else {
 			//If the table is valid we should never get here
 			let cnat = getColumnDetailsForTable(tableName: tableName)
@@ -243,7 +239,7 @@ internal class SQLDB : BaseIndentLog {
 	}
 	
 	
-	public static func queryRowsAsJson(_ sql: String, _ parms: Any?...) -> String {
+	public func queryRowsAsJson(_ sql: String, _ parms: Any?...) -> String {
 		if !assertDB {
 			return ""
 		}
@@ -283,7 +279,7 @@ internal class SQLDB : BaseIndentLog {
 		return ret.replacingOccurrences(of: "\\\"", with: "\"").replacingOccurrences(of: "\\\\", with: "\\")
 	}
 	
-	public static func querySingleRow(_ sql: String, _ parms: Any?...) -> SQLRow {
+	public func querySingleRow(_ sql: String, _ parms: Any?...) -> SQLRow {
 		let ret = queryMultiRow(sql, parms)
 		if ret.count > 0 {
 			return ret[0]
@@ -291,7 +287,7 @@ internal class SQLDB : BaseIndentLog {
 		return SQLRow()
 	}
 	
-	public static func queryMultiRow(_ sql: String, _ parms: Any?...) -> [SQLRow] {
+	public func queryMultiRow(_ sql: String, _ parms: Any?...) -> [SQLRow] {
 		if !assertDB {
 			return []
 		}
@@ -318,11 +314,11 @@ internal class SQLDB : BaseIndentLog {
 		
 	}
 	
-	public static func collectColumnDataDelimited<T>(_ sql: String, column: String, hintType: T, delimiter: String = ",", _ parms: Any?...) -> String {
+	public func collectColumnDataDelimited<T>(_ sql: String, column: String, hintType: T, delimiter: String = ",", _ parms: Any?...) -> String {
 		return collectColumnData(sql, column: column,  hintType: hintType, parms).toDelimitedString(delimiter: delimiter)
 	}
 	
-	public static func collectColumnData<T>(_ sql: String, column: String = "", hintType: T, _ parms: Any?...) -> [T] {
+	public func collectColumnData<T>(_ sql: String, column: String = "", hintType: T, _ parms: Any?...) -> [T] {
 		if !assertDB {
 			return []
 		}
@@ -356,7 +352,7 @@ internal class SQLDB : BaseIndentLog {
 		return ret
 	}
 	
-	private static func columnIndex(ptr: SQLitePointer?, columnName: String) -> Int32 {
+	private func columnIndex(ptr: SQLitePointer?, columnName: String) -> Int32 {
 		if ptr == nil {
 			return -1
 		}
@@ -373,10 +369,10 @@ internal class SQLDB : BaseIndentLog {
 	//need to be able to write the data back to SQLite in some way from the SQLRow. We may need to record whether it has
 	//changed or not.
 	
-	public static func updateTableFromSQLRow(row: SQLRow, sourceTable: String, idColumn: CodingKey, updateDelegate: SqliteUpdateDelegate?) -> Bool {
+	public func updateTableFromSQLRow(row: SQLRow, sourceTable: String, idColumn: CodingKey, updateDelegate: SqliteUpdateDelegate?) -> Bool {
 		return updateTableFromSQLRow(row: row, sourceTable: sourceTable, idColumn: idColumn.stringValue, updateDelegate: updateDelegate)
 	}
-	public static func updateTableFromSQLRow(row: SQLRow, sourceTable: String, idColumn: String, updateDelegate: SqliteUpdateDelegate? = nil) -> Bool {
+	public func updateTableFromSQLRow(row: SQLRow, sourceTable: String, idColumn: String, updateDelegate: SqliteUpdateDelegate? = nil) -> Bool {
 		if !assertDB {
 			return false
 		}
@@ -450,7 +446,7 @@ internal class SQLDB : BaseIndentLog {
 		return ret
 	}
 	
-	private static func unwrapParms(parms: [Any?]) -> [Any?] {
+	private func unwrapParms(parms: [Any?]) -> [Any?] {
 		var ret : [Any?] = []
 		for item in parms {
 			if let moreItems = item as? [Any?] {
@@ -463,7 +459,7 @@ internal class SQLDB : BaseIndentLog {
 		return ret
 	}
 	
-	private static func bindParameters(statement: SQLitePointer?, parms: [Any?]) {
+	private func bindParameters(statement: SQLitePointer?, parms: [Any?]) {
 		let parms = unwrapParms(parms: parms)
 		var index = 1
 		for parm in parms {
@@ -477,13 +473,13 @@ internal class SQLDB : BaseIndentLog {
 		}
 	}
 	
-	public static var DB : SQLitePointer? {
+	public var DB : SQLitePointer? {
 		get {
 			return _db
 		}
 	}
 	
-	@discardableResult public static func execute(_ sql: String, parms:Any?...) -> Bool {
+	@discardableResult public func execute(_ sql: String, parms:Any?...) -> Bool {
 		if !assertDB {
 			return false
 		}
@@ -514,7 +510,7 @@ internal class SQLDB : BaseIndentLog {
 	}
 	
 	
-	@discardableResult public static func bulkInsert(_ sql: String, parms: [Array<Any>]) -> Bool {
+	@discardableResult public func bulkInsert(_ sql: String, parms: [Array<Any>]) -> Bool {
 		if !assertDB {
 			return false
 		}
@@ -568,21 +564,6 @@ internal class SQLDB : BaseIndentLog {
 		sqlite3_finalize(statement)
 		execute("COMMIT TRANSACTION")
 		return ret
-	}
-}
-
-public protocol SqliteUpdateDelegate : class {
-	func RowHasUpdated(row: SQLRow)
-	func RowAdded(row: SQLRow)
-}
-
-public extension Array where Element : StringProtocol {
-	func sqlCSV() -> String {
-		var ret : [String] = []
-		for item in self {
-			ret.append(item.replacingOccurrences(of: "'", with: "''"))
-		}
-		return "'" + ret.toDelimitedString(delimiter: "','") + "'"
 	}
 }
 

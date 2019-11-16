@@ -17,6 +17,14 @@ class DB {
 	}
 	
 	private var _db : Bool = false
+	private var _sqldb : SQLDBInstance? = nil
+	
+	public var SQLDB : SQLDBInstance {
+		get {
+			_sqldb = _sqldb ?? SQLDBInstance()
+			return _sqldb!
+		}
+	}
 	
 	public func assertDB() {
 		if !_db {

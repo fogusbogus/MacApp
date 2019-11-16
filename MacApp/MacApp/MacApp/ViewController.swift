@@ -119,8 +119,7 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 	private var _forenames : [(String,String)] = []
 	private func getForenames() -> [(String,String)] {
 		if _forenames.count == 0 {
-			SQLDB.open(path: "names.sqlite", openCurrent: true)
-			let rows = SQLDB.queryMultiRow("SELECT * FROM Names")
+			let rows = Databases.shared.Names.queryMultiRow("SELECT * FROM Names")
 			
 			var ret : [(String,String)] = []
 			
@@ -162,7 +161,7 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 			getForenames()
 			
 			Log.Debug("Create polling districts")
-			let pd = PollingDistrict()
+			let pd = PollingDistrict(db: Databases.shared.Register)
 			pd.Name = "Cashes Green"
 			pd.MetaData.add(collection: ["name":"Cashes Green", "ward":"Cainscross", "parliamentary":"Stroud"])
 			pd.save()
@@ -198,7 +197,7 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 				}
 			}
 			st2.recalculateCounts()
-			PollingDistrict.assertCounts()
+			PollingDistrict.assertCounts(db: Databases.shared.Register)
 			
 			let streets = pd.GetStreets()
 			for street in streets {

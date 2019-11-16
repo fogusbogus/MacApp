@@ -35,7 +35,7 @@ class pnlDetails: NSViewController {
 	
 	public func loadData(electorData: ElectorDataStruct) {
 		_currentData = electorData
-		let disp = electorData.getDisplayInformation()
+		let disp = electorData.getDisplayInformation(db: Databases.shared.Register)
 		
 		lblPD.stringValue = disp["pd"] ?? ""
 		lblStreet.stringValue = disp["st"] ?? ""

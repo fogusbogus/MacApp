@@ -12,17 +12,17 @@ import Common
 import Logging
 
 public class Street : TableBased<Int> {
-	override public init(_ id: Int?, _ log: IIndentLog? = nil) {
-		super.init(id, log)
+	override public init(db : SQLDBInstance, _ id: Int?, _ log: IIndentLog? = nil) {
+		super.init(db: db, id, log)
 	}
-	override public init(_ log: IIndentLog? = nil) {
-		super.init(log)
+	override public init(db : SQLDBInstance, _ log: IIndentLog? = nil) {
+		super.init(db: db, log)
 	}
-	override public init(row: SQLRow, _ log: IIndentLog? = nil) {
-		super.init(row: row, log)
+	override public init(db : SQLDBInstance, row: SQLRow, _ log: IIndentLog? = nil) {
+		super.init(db: db, row: row, log)
 	}
-	public init(data: StreetDataStruct, _ log: IIndentLog? = nil) {
-		super.init(log)
+	public init(db : SQLDBInstance, data: StreetDataStruct, _ log: IIndentLog? = nil) {
+		super.init(db: db, log)
 		Data = data
 	}
 	
@@ -94,8 +94,8 @@ public class Street : TableBased<Int> {
 	override func loadData(row: SQLRow) {
 		super.loadData(row: row)
 		Name = row.get("Name", "")
-		PropertyCount = Property.count(street: ID ?? -1)
-		ElectorCount = Elector.count(street: ID ?? -1)
+		PropertyCount = Property.count(db: SQLDB, street: ID ?? -1)
+		ElectorCount = Elector.count(db: SQLDB, street: ID ?? -1)
 		GPS = row.get("GPS", "")
 		MetaData.load(json: row.get("Meta", ""), true)
 		
@@ -157,28 +157,28 @@ public class Street : TableBased<Int> {
 	
 	public func recalculateCounts() {
 		if _hasTable {
-			PropertyCount = Property.count(street: ID!)
-			ElectorCount = Elector.count(street: ID!)
+			PropertyCount = Property.count(db: SQLDB, street: ID!)
+			ElectorCount = Elector.count(db: SQLDB, street: ID!)
 		}
 	}
 	
-	public static func count(pollingDistrict: Int) -> Int {
-		return SQLDB.queryValue("SELECT COUNT(*) FROM Street WHERE PDID = \(pollingDistrict)", 0)
+	public static func count(db: SQLDBInstance, pollingDistrict: Int) -> Int {
+		return db.queryValue("SELECT COUNT(*) FROM Street WHERE PDID = \(pollingDistrict)", 0)
 	}
 	
-	public static func assertCounts() {
+	public static func assertCounts(db: SQLDBInstance) {
 		let sql = "UPDATE Street SET PropertyCount = (SELECT COUNT(*) FROM Property WHERE Property.SID = Street.ID)"
-		SQLDB.execute(sql)
+		db.execute(sql)
 
 		let sql2 = "UPDATE Street SET ElectorCount = (SELECT COUNT(*) FROM Elector WHERE Elector.SID = Street.ID)"
-		SQLDB.execute(sql2)
+		db.execute(sql2)
 		
 		let sql3 = "UPDATE Property SET ElectorCount = (SELECT COUNT(*) FROM Elector WHERE Elector.PID = Property.ID)"
-		SQLDB.execute(sql3)
+		db.execute(sql3)
 	}
 	
 	public func createProperty() -> Property {
-		let ret = Property()
+		let ret = Property(db: SQLDB)
 		ret.SID = ID!
 		ret.PDID = PDID
 		return ret
@@ -188,7 +188,7 @@ public class Street : TableBased<Int> {
 		let rows = SQLDB.queryMultiRow("SELECT * FROM Property WHERE SID = ? ORDER BY PID", ID!)
 		var ret : [Property] = []
 		for row in rows {
-			ret.append(Property(row: row))
+			ret.append(Property(db: SQLDB, row: row))
 		}
 		return ret
 	}
@@ -197,7 +197,7 @@ public class Street : TableBased<Int> {
 		let rows = SQLDB.queryMultiRow("SELECT * FROM Elector WHERE SID = ? ORDER BY PID, EID", ID!)
 		var ret : [Elector] = []
 		for row in rows {
-			ret.append(Elector(row: row))
+			ret.append(Elector(db: SQLDB, row: row))
 		}
 		return ret
 	}
