@@ -116,19 +116,41 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 		
 	}
 	
+	private var _forenames : [(String,String)] = []
+	private func getForenames() -> [(String,String)] {
+		if _forenames.count == 0 {
+			SQLDB.open(path: "names.sqlite", openCurrent: true)
+			let rows = SQLDB.queryMultiRow("SELECT * FROM Names")
+			
+			var ret : [(String,String)] = []
+			
+			for row in rows {
+				ret.append((row.get("Name", ""), row.get("sex", "")))
+			}
+			_forenames = ret
+		}
+		return _forenames
+	}
+	
 	@discardableResult
 	func newRandomElector(property: Property) -> Elector {
 		let surnames = ["Andrews", "Brown", "Cox", "Delamare", "Edgebaston", "Frederiksen", "Gamble", "Hopps", "Ing", "Johnson", "Kilmarnock", "Lewis", "Mann", "Nero", "Ogilvie", "Petersen", "Roberts", "Stevens", "Thomas", "Vick", "Williams", "Yanush"]
 		
-		let forenames = ["Adrian", "Annette", "Barry", "Belinda", "Carl", "Charlotte", "David", "Delilah", "Earl", "Elizabeth", "Frank", "Francis", "Gerald", "Georgina", "Harold", "Helen", "Isaac", "Isabelle", "John", "Julie", "Kevin", "Karen", "Liam", "Lorna", "Michael", "Mary", "Nigel", "Nina", "Oswald", "Ola", "Peter", "Penny", "Quentin", "Roger", "Rene", "Todd", "Tessa", "Uri", "Victor", "Vicky", "Will", "Wanda", "Yolanda", "Ziggy", "Zoe"]
+		let forenames = getForenames()
 		
 		let sn = Int.random(in: 0..<surnames.count)
 		let fn = Int.random(in: 0..<forenames.count)
 		let ret = property.createElector()
-		ret.Forename = forenames[fn]
+		ret.Forename = forenames[fn].0
+//		if forenames[fn].1.implies("M") {
+//			ret.MetaData.Gender = "Male"
+//		}
+//		else {
+//			ret.MetaData.Gender = "Female"
+//		}
 		ret.Surname = surnames[sn]
 		ret.DisplayName = "\(ret.Forename) \(ret.Surname)"
-		ret.MetaData.add(collection: ["fn":forenames[fn], "sn":surnames[sn], "dob":"1980-01-01" ])
+		ret.MetaData.add(collection: ["fn":ret.Forename, "sn":surnames[sn], "dob":"1980-01-01" ])
 		ret.save()
 		return ret
 	}
@@ -136,6 +158,8 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 	func setupDB() {
 		
 		Log.Checkpoint("Setting up the database with random fluff", "setupDB()", {
+			
+			getForenames()
 			
 			Log.Debug("Create polling districts")
 			let pd = PollingDistrict()

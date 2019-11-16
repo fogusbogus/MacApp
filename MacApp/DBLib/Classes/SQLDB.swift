@@ -28,12 +28,9 @@ public class SQLDB : BaseIndentLog {
 	
 	
 	public static func tableExists(_ name: String) -> Bool {
-		let sql = "SELECT count(*) FROM sqlite_master WHERE type='table' AND name LIKE '{0}';"
-		let result = queryValue(sql.fmt(name.sqlSafe()), "")
-		if !result.isOneOf("0", "") {
-			return true
-		}
-		return false
+		let sql = "SELECT count(*) FROM sqlite_master WHERE type='table' AND name LIKE ?;"
+		let result = queryValue(sql, 0, name)
+		return result > 0
 	}
 	
 	public static func indexExists(_ name: String) -> Bool {
@@ -490,6 +487,7 @@ public class SQLDB : BaseIndentLog {
 		if !assertDB {
 			return false
 		}
+		print(sql)
 		
 		var statement : SQLitePointer? = nil
 		
