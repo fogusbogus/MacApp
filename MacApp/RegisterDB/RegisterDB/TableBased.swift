@@ -38,7 +38,6 @@ public class TableBased<IDType> {
 	public init(db : SQLDBInstance, _ id: IDType?, _ log: IIndentLog? = nil) {
 		SQLDB = db
 		Log = log
-		db.assertDB
 		sanityCheck()
 		if let id = id {
 			ID = id
@@ -48,14 +47,12 @@ public class TableBased<IDType> {
 	public init(db : SQLDBInstance, _ log: IIndentLog? = nil) {
 		SQLDB = db
 		Log = log
-		db.assertDB
 		sanityCheck()
 	}
 	
 	public init(db : SQLDBInstance, row: SQLRow, _ log: IIndentLog? = nil) {
 		SQLDB = db
 		Log = log
-		db.assertDB
 		sanityCheck()
 		loadData(row: row)
 	}

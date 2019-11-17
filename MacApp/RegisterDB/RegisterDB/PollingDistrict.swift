@@ -36,8 +36,7 @@ public class PollingDistrict : TableBased<Int> {
 		super.saveAsNew()
 		let sql = "INSERT INTO PollingDistrict (Name, StreetCount, PropertyCount, ElectorCount, PDID, SID, PID, EID, Created) " +
 		"VALUES (?,?,?,?,?,?,?,?,?)"
-		SQLDB.execute(sql, parms: Name, StreetCount, PropertyCount, ElectorCount, _pdid, _sid, _pid, _eid, Date())
-		_id = SQLDB.queryValue("SELECT last_insert_rowid()", -1)
+		_id = SQLDB.execute(sql, parms: Name, StreetCount, PropertyCount, ElectorCount, _pdid, _sid, _pid, _eid, Date())
 		SQLDB.execute("UPDATE PollingDistrict SET SID = \(ID ?? -1) WHERE ID = \(ID ?? -1)")
 	}
 	

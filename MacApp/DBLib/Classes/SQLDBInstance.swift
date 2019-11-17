@@ -20,7 +20,7 @@ public class SQLDBInstance : BaseIndentLog {
 		super.init()
 	}
 	
-	internal var _db : SQLitePointer? = nil
+	private var _db : OpaquePointer? = nil
 	
 	
 	public func tableExists(_ name: String) -> Bool {
@@ -39,14 +39,14 @@ public class SQLDBInstance : BaseIndentLog {
 		return false
 	}
 	
-	public var assertDB : Bool {
-		get {
-			if _db == nil {
-				open()
-			}
-			return _db != nil
-		}
-	}
+//	public var assertDB : Bool {
+//		get {
+//			if _db == nil {
+//				open()
+//			}
+//			return _db != nil
+//		}
+//	}
 	
 	public func open(openCurrent : Bool = false) {
 		open(path: "", openCurrent: openCurrent)
@@ -77,12 +77,24 @@ public class SQLDBInstance : BaseIndentLog {
 				
 			}
 		}
-		
-		if sqlite3_open(sqlPath, &_db) == SQLITE_OK {
-			return
-		}
+		_path = sqlPath
 		return
 	}
+	
+	private func openDB() -> OpaquePointer? {
+		var db : OpaquePointer? = nil
+		if sqlite3_open(_path, &db) == SQLITE_OK {
+		}
+		return db
+	}
+	
+	private func closeDB(_ db: OpaquePointer?) {
+		if db != nil {
+			sqlite3_close(db!)
+		}
+	}
+	
+	private var _path : String = ""
 	
 	public func close() {
 		if let db = _db {
@@ -92,8 +104,12 @@ public class SQLDBInstance : BaseIndentLog {
 	}
 	
 	public func queryValue<T>(_ sql: String, _ defaultValue: T, _ parms: Any?...) -> T {
-		if !assertDB {
+		let _db = openDB()
+		if _db == nil {
 			return defaultValue
+		}
+		defer {
+			closeDB(_db)
 		}
 		var statement : SQLitePointer? = nil
 		var ret = defaultValue
@@ -142,6 +158,42 @@ public class SQLDBInstance : BaseIndentLog {
 		sqlite3_finalize(statement)
 		return ret
 	}
+	
+	private func lastInsertedRowID(_ _db: OpaquePointer?) -> Int {
+		if _db == nil {
+			return -1
+		}
+		var statement : SQLitePointer? = nil
+		var ret = -1
+		if sqlite3_prepare(_db, "SELECT last_insert_rowid()", -1, &statement, nil) == SQLITE_OK {
+			
+			var step = sqlite3_step(statement)
+			while step != SQLITE_DONE {
+				if step == SQLITE_ROW {
+					
+					
+					if let r = sqlite3_column_int(statement, 0) as? Int32 {
+						ret = Int(r) as! Int
+					}
+					else {
+						//Ah bugger. Might be an int64 instead!!
+						if let r64 = sqlite3_column_int64(statement, 0) as? Int64 {
+							ret = Int(r64) as! Int
+						}
+						else {
+							ret = -1
+						}
+					}
+					
+					break
+				}
+				step = sqlite3_step(statement)
+			}
+		}
+		sqlite3_finalize(statement)
+		return ret
+	}
+	
 	
 	public func assertIndex(indexName: String, createSql: String) {
 		if !indexExists(indexName) {
@@ -198,8 +250,12 @@ public class SQLDBInstance : BaseIndentLog {
 	}
 	
 	public func getColumnDetailsForTable(tableName: String) -> [String:String] {
-		if !assertDB {
+		let _db = openDB()
+		if _db == nil {
 			return [:]
+		}
+		defer {
+			closeDB(_db)
 		}
 		
 		var ret : [String:String] = [:]
@@ -240,8 +296,12 @@ public class SQLDBInstance : BaseIndentLog {
 	
 	
 	public func queryRowsAsJson(_ sql: String, _ parms: Any?...) -> String {
-		if !assertDB {
+		let _db = openDB()
+		if _db == nil {
 			return ""
+		}
+		defer {
+			closeDB(_db)
 		}
 		var statement : SQLitePointer? = nil
 		var ret = "\"rows\": ["
@@ -288,9 +348,14 @@ public class SQLDBInstance : BaseIndentLog {
 	}
 	
 	public func queryMultiRow(_ sql: String, _ parms: Any?...) -> [SQLRow] {
-		if !assertDB {
+		let _db = openDB()
+		if _db == nil {
 			return []
 		}
+		defer {
+			closeDB(_db)
+		}
+
 		var ret: [SQLRow] = []
 		var statement : SQLitePointer? = nil
 		
@@ -319,9 +384,14 @@ public class SQLDBInstance : BaseIndentLog {
 	}
 	
 	public func collectColumnData<T>(_ sql: String, column: String = "", hintType: T, _ parms: Any?...) -> [T] {
-		if !assertDB {
+		let _db = openDB()
+		if _db == nil {
 			return []
 		}
+		defer {
+			closeDB(_db)
+		}
+
 		var ret: [T] = []
 		var statement : SQLitePointer? = nil
 		
@@ -373,9 +443,14 @@ public class SQLDBInstance : BaseIndentLog {
 		return updateTableFromSQLRow(row: row, sourceTable: sourceTable, idColumn: idColumn.stringValue, updateDelegate: updateDelegate)
 	}
 	public func updateTableFromSQLRow(row: SQLRow, sourceTable: String, idColumn: String, updateDelegate: SqliteUpdateDelegate? = nil) -> Bool {
-		if !assertDB {
+		let _db = openDB()
+		if _db == nil {
 			return false
 		}
+		defer {
+			closeDB(_db)
+		}
+
 		assert(idColumn.trim().length() > 0, "No id column has been provided.")
 		assert(sourceTable.trim().length() > 0, "No source table has been provided.")
 		
@@ -473,16 +548,15 @@ public class SQLDBInstance : BaseIndentLog {
 		}
 	}
 	
-	public var DB : SQLitePointer? {
-		get {
-			return _db
+	@discardableResult public func execute(_ sql: String, parms:Any?...) -> Int {
+		let _db = openDB()
+		if _db == nil {
+			return -1
 		}
-	}
-	
-	@discardableResult public func execute(_ sql: String, parms:Any?...) -> Bool {
-		if !assertDB {
-			return false
+		defer {
+			closeDB(_db)
 		}
+
 		print(sql)
 		
 		var statement : SQLitePointer? = nil
@@ -506,14 +580,21 @@ public class SQLDBInstance : BaseIndentLog {
 			}
 		}
 		sqlite3_finalize(statement)
-		return ret
+		let toRet = lastInsertedRowID(_db)
+
+		return toRet
 	}
 	
 	
 	@discardableResult public func bulkInsert(_ sql: String, parms: [Array<Any>]) -> Bool {
-		if !assertDB {
+		let _db = openDB()
+		if _db == nil {
 			return false
 		}
+		defer {
+			closeDB(_db)
+		}
+
 		
 		var statement : SQLitePointer? = nil
 		

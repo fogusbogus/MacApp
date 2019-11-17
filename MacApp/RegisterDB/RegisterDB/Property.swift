@@ -61,8 +61,7 @@ public class Property : TableBased<Int> {
 		super.saveAsNew()
 		let sql = "INSERT INTO Property (DisplayName, Name, Number, NumberPrefix, NumberSuffix, ElectorCount, GPS, Meta, PDID, SID, PID, EID, Created) " +
 		"VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)"
-		SQLDB.execute(sql, parms: getDisplayName(), Name, Number, NumberPrefix, NumberSuffix, ElectorCount, GPS, MetaData.getSignature(true), _pdid, _sid, _pid, _eid, Date())
-		_id = SQLDB.queryValue("SELECT last_insert_rowid()", -1)
+		_id = SQLDB.execute(sql, parms: getDisplayName(), Name, Number, NumberPrefix, NumberSuffix, ElectorCount, GPS, MetaData.getSignature(true), _pdid, _sid, _pid, _eid, Date())
 		SQLDB.execute("UPDATE Property SET PID = \(ID ?? -1) WHERE ID = \(ID ?? -1)")
 	}
 	

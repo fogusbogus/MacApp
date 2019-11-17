@@ -26,7 +26,7 @@ internal class Databases {
 		get {
 			if _names == nil {
 				_names = SQLDBInstance()
-				_names?.open(path: "names.sqlite")
+				_names?.open(path: "names.sqlite", openCurrent: true)
 			}
 			return _names!
 		}

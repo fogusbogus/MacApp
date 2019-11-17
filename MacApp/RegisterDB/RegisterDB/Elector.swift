@@ -59,8 +59,7 @@ public class Elector : TableBased<Int> {
 		super.saveAsNew()
 		let sql = "INSERT INTO Elector (DisplayName, Surname, Forename, MiddleName, Meta, Markers, PDID, SID, PID, EID, Created) " +
 		"VALUES (?,?,?,?,?,?,?,?,?,?,?)"
-		SQLDB.execute(sql, parms: DisplayName, Surname, Forename, MiddleName, MetaData.getSignature(true), Markers, _pdid, _sid, _pid, _eid, Date())
-		_id = SQLDB.queryValue("SELECT last_insert_rowid()", -1)
+		_id = SQLDB.execute(sql, parms: DisplayName, Surname, Forename, MiddleName, MetaData.getSignature(true), Markers, _pdid, _sid, _pid, _eid, Date())
 		SQLDB.execute("UPDATE Elector SET EID = \(ID ?? -1) WHERE ID = \(ID ?? -1)")
 	}
 	
