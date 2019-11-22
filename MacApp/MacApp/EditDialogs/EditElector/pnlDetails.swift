@@ -31,37 +31,131 @@ class pnlDetails: NSViewController {
         // Do view setup here.
     }
 	
+	//MARK - On-screen properties
+	
+	public var Title : String {
+		get {
+			return cboTitle.stringValue
+		}
+		set {
+			cboTitle.stringValue = newValue
+		}
+	}
+	
+	public var Forename : String {
+		get {
+			return txtForename.stringValue
+		}
+		set {
+			txtForename.stringValue = newValue
+		}
+	}
+	
+	public var MiddleName : String {
+		get {
+			return txtMiddle.stringValue
+		}
+		set {
+			txtMiddle.stringValue = newValue
+		}
+	}
+	
+	public var Surname : String {
+		get {
+			return txtSurname.stringValue
+		}
+		set {
+			txtSurname.stringValue = newValue
+		}
+	}
+	
+	public var Gender : String {
+		get {
+			return cboGender.stringValue
+		}
+		set {
+			cboGender.stringValue = newValue
+		}
+	}
+	
+	public var NINO : String {
+		get {
+			return txtNINO.stringValue
+		}
+		set {
+			txtNINO.stringValue = newValue
+		}
+	}
+	
+	public var DOB : Date? {
+		get {
+			return dtDOB.dateValue == Date.distantPast ? nil : dtDOB.dateValue
+		}
+		set {
+			dtDOB.dateValue = newValue ?? Date.distantPast
+		}
+	}
+	
+	public var PollingDistrictName : String {
+		get {
+			return lblPD.stringValue
+		}
+		set {
+			lblPD.stringValue = newValue
+		}
+	}
+	
+	public var StreetName : String {
+		get {
+			return lblStreet.stringValue
+		}
+		set {
+			lblStreet.stringValue = newValue
+		}
+	}
+	
+	public var PropertyName : String {
+		get {
+			return lblProperty.stringValue
+		}
+		set {
+			lblProperty.stringValue = newValue
+		}
+	}
+	
+
+	
 	private var _currentData: ElectorDataStruct?
 	
 	public func loadData(electorData: ElectorDataStruct) {
 		_currentData = electorData
 		let disp = electorData.getDisplayInformation(db: Databases.shared.Register)
 		
-		lblPD.stringValue = disp["pd"] ?? ""
-		lblStreet.stringValue = disp["st"] ?? ""
-		lblProperty.stringValue = disp["pr"] ?? ""
+		PollingDistrictName = disp["pd"] ?? ""
+		StreetName = disp["st"] ?? ""
+		PropertyName = disp["pr"] ?? ""
 
 		let md = ElectorMeta(json: electorData.Meta)
 		
-		cboTitle.stringValue = md.Title
-		txtForename.stringValue = electorData.Forename
-		txtMiddle.stringValue = electorData.MiddleName
-		txtSurname.stringValue = electorData.Surname
-		cboGender.stringValue = md.Gender
-		dtDOB.dateValue = md.DOB ?? Date()
-		txtNINO.stringValue = md.NINO
+		Title = md.Title
+		Forename = electorData.Forename
+		MiddleName = electorData.MiddleName
+		Surname = electorData.Surname
+		Gender = md.Gender
+		DOB = md.DOB ?? Date.distantPast
+		NINO = md.NINO
 	}
 	
 	public func getData() -> ElectorDataStruct {
 		_currentData = _currentData ?? ElectorDataStruct()
 		let md = ElectorMeta(json: _currentData?.Meta ?? "")
-		md.Title = cboTitle.stringValue
-		_currentData?.Forename = txtForename.stringValue
-		_currentData?.MiddleName = txtMiddle.stringValue
-		_currentData?.Surname = txtSurname.stringValue
-		md.Gender = cboGender.stringValue
-		md.DOB = dtDOB.dateValue
-		md.NINO = txtNINO.stringValue
+		md.Title = Title
+		_currentData?.Forename = Forename
+		_currentData?.MiddleName = MiddleName
+		_currentData?.Surname = Surname
+		md.Gender = Gender
+		md.DOB = DOB
+		md.NINO = NINO
 		_currentData?.Meta = md.getSignature()
 		return _currentData!
 		

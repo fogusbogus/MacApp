@@ -59,6 +59,10 @@ public class TableBased<IDType> {
 	
 	internal var SQLDB : SQLDBInstance
 	
+	public func SetDatabase(db: SQLDBInstance) {
+		SQLDB = db
+	}
+	
 	var _hasTable = false
 	
 	/// Check your tables exist and create them in here. Override.

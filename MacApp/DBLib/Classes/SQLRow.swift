@@ -65,6 +65,15 @@ public class SQLRow {
 	}
 	
 	public init(sqlData: SQLitePointer?, columnsOnly: Bool = false) {
+		loadFromData(sqlData: sqlData, columnsOnly: columnsOnly)
+	}
+	
+	public func loadFromData(sqlData: SQLitePointer?, columnsOnly: Bool = false) {
+		_data = [:]
+		_keyMap = [:]
+		_signature = ""
+		_isDirty = false
+		
 		let colCount = sqlite3_column_count(sqlData)
 		
 		for i in 0..<colCount {
@@ -94,7 +103,6 @@ public class SQLRow {
 					default:
 						break
 					}
-					//_data[colName] = sqlite3_column_value(sqlData, i)
 				}
 			}
 			else {

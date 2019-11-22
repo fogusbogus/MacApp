@@ -21,6 +21,7 @@
 		C96BBCE22348BAF500875037 /* ConsoleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96BBCE12348BAF500875037 /* ConsoleOutput.swift */; };
 		C9B488EC234BD45C00765D61 /* BaseLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B488EB234BD45C00765D61 /* BaseLog.swift */; };
 		C9B488EE234BD53700765D61 /* ILogDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B488ED234BD53700765D61 /* ILogDelegate.swift */; };
+		C9C1417F2384C02E006505D4 /* FileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C1417E2384C02E006505D4 /* FileData.swift */; };
 		C9D416332380461400E6B717 /* CSVStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D416322380461400E6B717 /* CSVStringExtensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		C96BBCE12348BAF500875037 /* ConsoleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleOutput.swift; sourceTree = "<group>"; };
 		C9B488EB234BD45C00765D61 /* BaseLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLog.swift; sourceTree = "<group>"; };
 		C9B488ED234BD53700765D61 /* ILogDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILogDelegate.swift; sourceTree = "<group>"; };
+		C9C1417E2384C02E006505D4 /* FileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileData.swift; sourceTree = "<group>"; };
 		C9D416322380461400E6B717 /* CSVStringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVStringExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +94,7 @@
 				C90626272301B0050095D528 /* AES256.swift */,
 				C9B488EB234BD45C00765D61 /* BaseLog.swift */,
 				C9B488ED234BD53700765D61 /* ILogDelegate.swift */,
+				C9C1417E2384C02E006505D4 /* FileData.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				C962A0ED22A9D08700510199 /* Date.swift in Sources */,
 				C962A0C022A9C0F400510199 /* Log.swift in Sources */,
 				C9D416332380461400E6B717 /* CSVStringExtensions.swift in Sources */,
+				C9C1417F2384C02E006505D4 /* FileData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

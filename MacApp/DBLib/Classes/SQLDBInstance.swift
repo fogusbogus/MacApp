@@ -585,6 +585,46 @@ public class SQLDBInstance : BaseIndentLog {
 		return toRet
 	}
 	
+	/// Instead of taking up a whole load of memory with an array, you can process
+	/// the data row-by-row using a closure lambda function.
+	/// - Parameters:
+	///   - rowHandler: closure to handle the row of data
+	///   - sql: SQL to collect the data
+	///   - parms: parameters associated with the SQL
+	public func processMultiRow(rowHandler: (SQLRow) -> Void, _ sql: String, _ parms: Any?...) -> Bool {
+
+		let _db = openDB()
+		if _db == nil {
+			return false
+		}
+		defer {
+			closeDB(_db)
+		}
+
+		let data = SQLRow()
+		
+		var statement : SQLitePointer? = nil
+		
+		if sqlite3_prepare(_db, sql, -1, &statement, nil) == SQLITE_OK {
+			bindParameters(statement: statement, parms: parms)
+			var step = sqlite3_step(statement)
+			if step == SQLITE_DONE {
+				data.loadFromData(sqlData: statement, columnsOnly: true)
+				rowHandler(data)
+			}
+			while step != SQLITE_DONE {
+				if step == SQLITE_ROW {
+					data.loadFromData(sqlData: statement, columnsOnly: false)
+					rowHandler(data)
+				}
+				step = sqlite3_step(statement)
+			}
+		}
+		
+		sqlite3_finalize(statement)
+		return true
+	}
+
 	
 	@discardableResult public func bulkInsert(_ sql: String, parms: [Array<Any>]) -> Bool {
 		let _db = openDB()

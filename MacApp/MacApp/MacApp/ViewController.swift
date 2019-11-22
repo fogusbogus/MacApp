@@ -149,7 +149,9 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 //		}
 		ret.Surname = surnames[sn]
 		ret.DisplayName = "\(ret.Forename) \(ret.Surname)"
-		ret.MetaData.add(collection: ["fn":ret.Forename, "sn":surnames[sn], "dob":"1980-01-01" ])
+		let gender = forenames[fn].1 == "M" ? "Male" : "Female"
+		
+		ret.MetaData.add(collection: ["fn":ret.Forename, "sn":surnames[sn], "dob":"1980-01-01", "gender":gender ])
 		ret.save()
 		return ret
 	}

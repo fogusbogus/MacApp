@@ -318,6 +318,40 @@ internal class SQLDB : BaseIndentLog {
 		
 	}
 	
+	/// Instead of taking up a whole load of memory with an array, you can process
+	/// the data row-by-row using a closure lambda function.
+	/// - Parameters:
+	///   - rowHandler: closure to handle the row of data
+	///   - sql: SQL to collect the data
+	///   - parms: parameters associated with the SQL
+	public static func processMultiRow(rowHandler: (SQLRow) -> Void, _ sql: String, _ parms: Any?...) -> Bool {
+		if !assertDB {
+			return false
+		}
+		let data = SQLRow()
+		
+		var statement : SQLitePointer? = nil
+		
+		if sqlite3_prepare(_db, sql, -1, &statement, nil) == SQLITE_OK {
+			bindParameters(statement: statement, parms: parms)
+			var step = sqlite3_step(statement)
+			if step == SQLITE_DONE {
+				data.loadFromData(sqlData: statement, columnsOnly: true)
+				rowHandler(data)
+			}
+			while step != SQLITE_DONE {
+				if step == SQLITE_ROW {
+					data.loadFromData(sqlData: statement, columnsOnly: true)
+					rowHandler(data)
+				}
+				step = sqlite3_step(statement)
+			}
+		}
+		
+		sqlite3_finalize(statement)
+		return true
+	}
+
 	public static func collectColumnDataDelimited<T>(_ sql: String, column: String, hintType: T, delimiter: String = ",", _ parms: Any?...) -> String {
 		return collectColumnData(sql, column: column,  hintType: hintType, parms).toDelimitedString(delimiter: delimiter)
 	}
