@@ -10,7 +10,8 @@ import Foundation
 
 public extension String {
 	func getPieces() -> [String] {
-		let base = self.split(separator: ",")
+		let base : [String] = self.components(separatedBy: ",")
+		//let base = self.split(separator: ",")
 		var ret : [String] = []
 		
 		var quoteCount: Int = 0

@@ -9,4 +9,10 @@ which can then be clicked to select a new position. It should be ok to have a se
 dialog which allows selection/cancellation of a new property location. This should then update the
 metadata for saving.
 
+
+
+Create a module that allows us to mark property locations. Try not to make it cumbersome to use. Should be able to drag markers around.
+
+Look on the internet to see if a list of GPS locations are available, but more importantly see if there is any address information available. There should be as so many devices rely on something. However, it might not be free.
+
 */

@@ -119,13 +119,21 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 	private var _forenames : [(String,String)] = []
 	private func getForenames() -> [(String,String)] {
 		if _forenames.count == 0 {
-			let rows = Databases.shared.Names.queryMultiRow("SELECT * FROM Names")
-			
+			let db = SQLDBInstance()
+			db.open(path: "names.sqlite", openCurrent: true)
+
 			var ret : [(String,String)] = []
+			db.processMultiRow(rowHandler: { (row) in
+				//print(row.get("name", ""))
+				ret.append((row.get("name", ""), row.get("sex", "")))
+			}, "SELECT * FROM Names ORDER BY 1")
+
+			//let rows = Databases.shared.Names.queryMultiRow("SELECT * FROM Names")
 			
-			for row in rows {
-				ret.append((row.get("Name", ""), row.get("sex", "")))
-			}
+			
+			//for row in rows {
+			//	ret.append((row.get("Name", ""), row.get("sex", "")))
+			//}
 			_forenames = ret
 		}
 		return _forenames

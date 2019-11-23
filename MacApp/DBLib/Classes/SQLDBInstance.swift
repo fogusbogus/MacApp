@@ -591,6 +591,7 @@ public class SQLDBInstance : BaseIndentLog {
 	///   - rowHandler: closure to handle the row of data
 	///   - sql: SQL to collect the data
 	///   - parms: parameters associated with the SQL
+	@discardableResult
 	public func processMultiRow(rowHandler: (SQLRow) -> Void, _ sql: String, _ parms: Any?...) -> Bool {
 
 		let _db = openDB()

@@ -236,6 +236,9 @@ public extension String {
 		return false
 	}
 	
+	func isEmptyOrWhitespace() -> Bool {
+		return self.trim().length() == 0
+	}
 	
 	/////////////////////////////////////////////
 	// J
