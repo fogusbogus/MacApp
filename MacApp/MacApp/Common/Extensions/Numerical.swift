@@ -92,4 +92,14 @@ public extension Comparable {
 		}
 		return dv
 	}
+	
+	func match<T>(defaultValue: T, pairs: [Self:T]) -> T {
+		if let candidateKey = pairs.keys.first(where: { (key) -> Bool in
+			return key == self
+		}) {
+			return pairs[candidateKey]!
+		}
+		
+		return defaultValue
+	}
 }

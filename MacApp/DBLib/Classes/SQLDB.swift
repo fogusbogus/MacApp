@@ -52,6 +52,10 @@ internal class SQLDB : BaseIndentLog {
 		}
 	}
 	
+	public static func open(path: URL, openCurrent: Bool = false) {
+		open(path: path.path, openCurrent: openCurrent)
+	}
+
 	public static func open(openCurrent : Bool = false) {
 		open(path: "", openCurrent: openCurrent)
 	}

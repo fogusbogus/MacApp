@@ -32,8 +32,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
             endingLineNumber = "45"
-            landmarkName = "get(_:_:)"
-            landmarkType = "7">
+            landmarkName = "String"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -240,7 +240,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "85"
             endingLineNumber = "85"
-            landmarkName = "openDB()"
+            landmarkName = "open(path:openCurrent:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -288,8 +288,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "100"
             endingLineNumber = "100"
-            landmarkName = "close()"
-            landmarkType = "7">
+            landmarkName = "SQLDBInstance"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -304,8 +304,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "93"
             endingLineNumber = "93"
-            landmarkName = "closeDB(_:)"
-            landmarkType = "7">
+            landmarkName = "SQLDBInstance"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -400,7 +400,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "552"
             endingLineNumber = "552"
-            landmarkName = "execute(_:parms:)"
+            landmarkName = "bindParameters(statement:parms:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -512,7 +512,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "163"
             endingLineNumber = "163"
-            landmarkName = "lastInsertedRowID(_:)"
+            landmarkName = "queryValue(_:_:_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -624,8 +624,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "596"
             endingLineNumber = "596"
-            landmarkName = "processMultiRow(rowHandler:_:_:)"
-            landmarkType = "7">
+            landmarkName = "SQLDBInstance"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -663,70 +663,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2E89BF7A-3069-46AD-99FD-65275863526D"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ImportData/ImportData/main.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "290D88B5-4232-4ECD-8B71-87EC9D6FC293"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ImportData/ImportData/main.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "56B487CE-2F7E-4F66-84D4-E52E4886D3F8"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ImportData/ImportData/main.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "AD7261D7-69F9-48F6-AB68-F2A6334FE154"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ImportData/ImportData/main.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "D6D3E18F-D291-4E17-B578-97385EABEE41"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -736,7 +672,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "630"
             endingLineNumber = "630"
-            landmarkName = "bulkInsert(_:parms:)"
+            landmarkName = "processMultiRow(rowHandler:_:_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -768,22 +704,6 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "160"
             endingLineNumber = "160"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6C8A8F8B-30D9-4638-9E61-F50E00C6AA94"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ImportData/ImportData/main.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
             landmarkName = "unknown"
             landmarkType = "0">
          </BreakpointContent>
@@ -871,86 +791,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "50EBE73F-EB6F-4001-9282-138CED53A5C8"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ImportData/ImportData/main.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "25043213-95F9-4B5C-A44A-2A8DA8ACDAE3"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ImportData/ImportData/main.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "AAEF2A04-B765-4818-A470-D18DD7B47297"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ImportData/ImportData/main.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E7585125-E915-49B1-B7F8-AA85335297CE"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ImportData/ImportData/main.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "EDA0F9F1-5D5E-4C53-8D05-F4BFBDBB4124"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ImportData/ImportData/main.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "BEB6E53F-F00F-4752-9C79-0115B53617CF"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -1008,8 +848,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "15"
             endingLineNumber = "15"
-            landmarkName = "getPieces()"
-            landmarkType = "7">
+            landmarkName = "String"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1031,15 +871,63 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5AC16C3C-5D51-4219-9D64-3312EED9DA5C"
-            shouldBeEnabled = "Yes"
+            uuid = "3E5FA332-790B-4676-BE12-2BE4EAFBC7D8"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ImportData/ImportData/main.swift"
+            filePath = "MacApp/EditDialogs/Property/PropertyMap.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "57E2F89E-C4B4-4BD2-8738-25843A72D8E7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MacApp/EditDialogs/Property/PropertyMap.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9CD2E9E3-0BC7-4222-87B4-7739A92A63A4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MacApp/EditDialogs/Property/PropertyMap.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "09DA3E50-66EC-450D-A3B3-E7EC0FC55143"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MacApp/EditDialogs/Property/PropertyMap.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "unknown"
             landmarkType = "0">
          </BreakpointContent>

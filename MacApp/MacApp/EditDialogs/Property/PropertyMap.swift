@@ -11,6 +11,8 @@ import Common
 import MapKit
 import CoreLocation			//Allows us to find the user location
 import RegisterDB
+import DBLib
+import LocationTools
 
 class PropertyMapVC: NSViewControllerWithLog, MKMapViewDelegate {
 
@@ -47,16 +49,38 @@ class PropertyMapVC: NSViewControllerWithLog, MKMapViewDelegate {
 		london.coordinate = CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275)
 		//mapView.addAnnotation(london)
 		
+		let db = SQLDBInstance()
+		let dbURL = EasyURL.download("Postcodes.sqlite")
+		
+		db.open(path: dbURL, openCurrent: true)
+		
+		/*
+		TESTCODE -
+		
+		This following code will use some post code data from the post code database and plonk it on the map in the form of pins. This is not meant to be permanent, but rather just to show how to do it. However, the more the pins the more the map will be sluggish. Disappointing that scalability is limited.
+		*/
+		
+		db.processMultiRow(rowHandler: { (row) in
+			let latlon = row.get("latlon", "")
+			if latlon.contains(",") {
+				let lat = Double(latlon.before(","))
+				let lon = Double(latlon.after(","))
+				let pin = MKPointAnnotation()
+				pin.title = row.get("Postcode", "")
+				pin.coordinate = CLLocationCoordinate2D(latitude: lat!, longitude: lon!)
+				mapView.addAnnotation(pin)
+			}
+		}, "SELECT * FROM PostCode WHERE Code LIKE 'GL5 %'")
 	
 	}
 	
 	func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
 		if annotation is MKPointAnnotation {
 			let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "myPin")
-			pin.pinTintColor = .purple
+			pin.pinTintColor = .yellow
 			pin.isDraggable = true
             pin.canShowCallout = true
-            pin.animatesDrop = true
+            pin.animatesDrop = false
 			
 			return pin
 		}
@@ -207,6 +231,14 @@ class mapPin : NSObject, MKAnnotation {
 		self.coordinate = coordinates
 		self.title = title
 		self.subtitle = subTitle
+	}
+	
+	public func Bearing(_ toCoordinate: CLLocationCoordinate2D) -> Double {
+		return Directional.getBearing(origin: self.coordinate, destination: toCoordinate)
+	}
+	
+	public func Distance(_ toCoordinate: CLLocationCoordinate2D) -> Double {
+		return Directional.getDistance(origin: self.coordinate, destination: toCoordinate)
 	}
 }
 

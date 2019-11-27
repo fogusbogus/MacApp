@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 public extension String {
 	func getPieces() -> [String] {
 		let base : [String] = self.components(separatedBy: ",")
@@ -33,6 +34,7 @@ public extension String {
 		return ret
 	}
 	
+	
 	func count(text: String) -> Int {
 		return self.length() -  self.replacingOccurrences(of: text, with: "").length()
 	}
@@ -41,6 +43,17 @@ public extension String {
 }
 
 public extension Array where Element == String {
+	
+	func get<T>(_ columns: [String], _ column: String, _ defaultValue: T) -> T {
+		let colIndex = columns.map { (s) -> String in
+			return s.lowercased()
+		}.firstIndex(of: column.lowercased())
+		if colIndex != nil {
+			return get(colIndex!, defaultValue)
+		}
+		return defaultValue
+	}
+	
 	func get<T>(_ pieceNo : Int, _ defaultValue: T) -> T {
 		if pieceNo < 0 || pieceNo >= self.count {
 			return defaultValue

@@ -48,6 +48,9 @@ public class SQLDBInstance : BaseIndentLog {
 //		}
 //	}
 	
+	public func open(path: URL, openCurrent: Bool = false) {
+		open(path: path.path, openCurrent: openCurrent)
+	}
 	public func open(openCurrent : Bool = false) {
 		open(path: "", openCurrent: openCurrent)
 	}

@@ -121,6 +121,19 @@ public extension String {
 		return String(self[start ..< end])
 	}
 	
+	func appendDelimited(_ delimiter: String, appendThese: String...) -> String {
+		var ret = "" + self
+		for item in appendThese {
+			if item.length() > 0 {
+				if ret.length() > 0 {
+					ret += delimiter
+				}
+				ret += item
+			}
+		}
+		return ret
+	}
+	
 	/////////////////////////////////////////////
 	// B
 	/////////////////////////////////////////////
@@ -157,6 +170,39 @@ public extension String {
 		
 		return (self.length(encoding: encoding) - self.replacingOccurrences(of: ofThis, with: "").length(encoding: encoding)) / len
 	}
+	
+	/////////////////////////////////////////////
+	// D
+	/////////////////////////////////////////////
+	
+	func delimit(_ items: String...) -> String {
+		let delimiter = "" + self
+		var ret = ""
+		for item in items {
+			if item.length() > 0 {
+				if ret.length() > 0 {
+					ret += delimiter
+				}
+				ret += item
+			}
+		}
+		return ret
+	}
+
+	func delimit(_ items: [String]) -> String {
+		let delimiter = "" + self
+		var ret = ""
+		for item in items {
+			if item.length() > 0 {
+				if ret.length() > 0 {
+					ret += delimiter
+				}
+				ret += item
+			}
+		}
+		return ret
+	}
+
 	
 	/////////////////////////////////////////////
 	// F
@@ -208,6 +254,20 @@ public extension String {
 		
 		let b4 = aft.before(text).length()
 		return fromIndex + b4
+	}
+	
+	func indexOfAny(_ text: String...) -> Int? {
+		var idx = Int.max
+		for item in text {
+			let itemIdx = self.indexOf(item)
+			if itemIdx < idx {
+				idx = itemIdx
+			}
+		}
+		if idx == Int.max {
+			return nil
+		}
+		return idx
 	}
 	
 	/// Returns comparison of the string to one of the parameters
@@ -388,6 +448,13 @@ public extension String {
 			return self
 		}
 		return items[index]
+	}
+	
+	func prefix(_ prefixWith: String, onlyWhenBlank: Bool = false) -> String {
+		if (onlyWhenBlank && self.trim().length() > 0) || !onlyWhenBlank {
+			return prefixWith + self
+		}
+		return self
 	}
 	
 	/////////////////////////////////////////////
