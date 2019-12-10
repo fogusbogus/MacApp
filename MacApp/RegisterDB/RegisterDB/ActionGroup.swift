@@ -7,8 +7,6 @@
 //
 
 import Foundation
-
-import Foundation
 import DBLib
 import Common
 import Logging
@@ -68,7 +66,7 @@ public class ActionGroup : TableBased<String> {
 	
 	public var AppliesTo = "", Codes = "", Description = "", sysOrder = 0, Parent = ""
 	
-	override func signatureItems() -> [Any] {
+	override func signatureItems() -> [Any?] {
 		return [AppliesTo, Codes, Description, sysOrder, Parent] + super.signatureItems()
 	}
 	
@@ -90,7 +88,152 @@ public class ActionGroup : TableBased<String> {
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
+	func getActionCodes() -> [ActionCode] {
+		var ret : [ActionCode] = []
+		if Codes.length() == 0 {
+			return ret
+		}
+		let codes = Codes.split(separator: "~")
+		for code in codes {
+			if let ac = ActionCodeCache.shared[code.decomposedStringWithCompatibilityMapping] {
+				ret.append(ac)
+			}
+		}
+		return ret
+	}
 
+	static func allGroups(db: SQLDBInstance) -> [String:ActionGroup] {
+		var ret : [String:ActionGroup] = [:]
+		db.processMultiRow(rowHandler: { (row) in
+			ret[row.get("ID", "")] = ActionGroup(db: db, row: row)
+		}, "SELECT * FROM ActionGroup")
+		return ret
+	}
+	
+	static func getAllowedGroups(db: SQLDBInstance, linkType: LinkType, allowedCodes: [String]) -> [ActionGroup] {
+		var allGroups : [String:ActionGroup] = [:]
+		var groups: [String] = []
+		db.processMultiRow(rowHandler: { (csr) in
+			let codes = csr.get("codes", "").splitToArray("~")
+			var add = false
+			for code in codes {
+				if allowedCodes.containsLike(code) {
+					let id = csr.get("ID", "")
+					groups.append(id)
+					var grp = allGroups[id]
+					while grp != nil {
+						if allGroups.keys.contains(grp!.Parent) {
+							if !groups.contains(obj: grp!.Parent) {
+								groups.append(grp!.Parent)
+							}
+							if allGroups.keys.contains(grp!.Parent) {
+								grp = allGroups[grp!.Parent]!
+							}
+							else {
+								break
+							}
+						}
+						else {
+							break
+						}
+					}
+					add = true
+					break
+				}
+			}
+		}, "SELECT * FROM ActionGroup WHERE AppliesTo = ?", linkType.intValue)
+		
+		return groups.filter { (s) -> Bool in
+			return allGroups.keys.contains(s)
+		}.map { (s) -> ActionGroup in
+			return allGroups[s]!
+		}
+	}
+	
+	static func getAllowedGroups(db: SQLDBInstance, key: String) -> [ActionGroup] {
+		let lt = Functions.getLinkTypeAndId(link: key)
+		
+		return getAllowedGroups(db: db, linkType: lt.linkType, linkID: lt.linkID)
+	}
+	
+	static func getAllowedGroups(db: SQLDBInstance, linkType: LinkType, linkID: Int) -> [ActionGroup] {
+		let groups = getAllGroups(db: db, linkType: linkType)
+		var ret : [ActionGroup] = []
+		for group in groups {
+			if group.getAllowedCodes(linkType: linkType, linkID: linkID).count > 0 {
+				ret.append(group)
+			}
+		}
+		return ret
+	}
+	
+	func getAllowedCodes(key: String) -> [ActionCode] {
+		let lt = Functions.getLinkTypeAndId(link: key)
+		return getAllowedCodes(linkType: lt.linkType, linkID: lt.linkID)
+	}
+	
+	func getAllowedCodes(linkType: LinkType, linkID: Int) -> [ActionCode] {
+		
+		//Get this item's action codes
+		var ret : [ActionCode] = getActionCodes()
+		
+		let ds = ret.map { (ac) -> String in
+			return ac.ID!.trim().uppercased()
+		}.joined(separator: "~")
+		
+		let contains = "~\(ds)~"
+		
+		let allActions = ""
+		
+		//TODO
+		return []
+	}
+	
+	static func getAllGroups(db: SQLDBInstance, linkType: LinkType) -> [ActionGroup] {
+		var ret : [ActionGroup] = []
+		
+		let sql = "SELECT * FROM ActionGroup WHERE AppliesTo LIKE '%\(linkType.intValue)%' ORDER BY sysOrder"
+		
+		db.processMultiRow(rowHandler: { (row) in
+			ret.append(ActionGroup(db: db, row: row))
+		}, sql)
+		return ret
+	}
+	
+	static func getBasegroups(db: SQLDBInstance, key: String) -> [ActionGroup] {
+		let lt = Functions.getLinkTypeAndId(link: key)
+		
+		var ret : [ActionGroup] = []
+		db.processMultiRow(rowHandler: { (csr) in
+			ret.append(ActionGroup(db: db, row: csr))
+		}, "SELECT * FROM ActionGroup WHERE Parent = '' AND AppliesTo LIKE '%\(lt.linkType.intValue)%'")
+		return ret
+	}
+	
+	func getChildGroups() -> [ActionGroup] {
+		var ret : [ActionGroup] = []
+		SQLDB.processMultiRow(rowHandler: { (csr) in
+			ret.append(ActionGroup(db: SQLDB, row: csr))
+		}, "SELECT * FROM ActionGroup WHERE Parent LIKE ?", ID)
+		return ret
+	}
+	
+	func getChildGroups(allowedCodes: [ActionCode]) -> [ActionGroup] {
+		var ret : [ActionGroup] = []
+		
+		SQLDB.processMultiRow(rowHandler: { (csr) in
+			let codes = csr.get("codes", "").splitToArray("~")
+			for code in codes {
+				if allowedCodes.first(where: { (ac) -> Bool in
+					return ac.ID!.uppercased() == code.uppercased()
+				}) != nil {
+					ret.append(ActionGroup(db: SQLDB, row: csr))
+				}
+			}
+		}, "SELECT * FROM ActionGroup WHERE Parent LIKE ?", ID)
+		return ret
+	}
+	
 }
 
 public struct ActionGroupDataStruct {

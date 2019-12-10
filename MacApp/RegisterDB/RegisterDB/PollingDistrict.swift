@@ -51,7 +51,7 @@ public class PollingDistrict : TableBased<Int> {
 	private var _pdid = -1, _sid = -1, _pid = -1, _eid = -1
 	private var _created = Date()
 	
-	override func signatureItems() -> [Any] {
+	override func signatureItems() -> [Any?] {
 		return [Name, StreetCount, PropertyCount, ElectorCount, _pdid, _sid, _pid, _eid, _created] + super.signatureItems()
 	}
 	

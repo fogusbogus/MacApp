@@ -18,13 +18,20 @@
 		C9080E4A22E0DD1300D37D70 /* Street.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9080E4922E0DD1300D37D70 /* Street.swift */; };
 		C9080E4C22E1354500D37D70 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9080E4B22E1354500D37D70 /* Property.swift */; };
 		C9080E4E22E1366300D37D70 /* Elector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9080E4D22E1366300D37D70 /* Elector.swift */; };
+		C91606E923946EAE0038C3EF /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91606E823946EAE0038C3EF /* Globals.swift */; };
 		C91FC2D6238DF06C00E88A0F /* ActionGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91FC2D5238DF06C00E88A0F /* ActionGroup.swift */; };
+		C93C4CA3239DD9490093D416 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93C4CA2239DD9490093D416 /* Protocols.swift */; };
+		C950962D23906CDF0005292F /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C950962C23906CDF0005292F /* Functions.swift */; };
 		C975188523076B7500BD4160 /* PropertyMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = C975188423076B7500BD4160 /* PropertyMeta.swift */; };
 		C98E391322E52FF30077C208 /* PollingDistrict.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E391222E52FF30077C208 /* PollingDistrict.swift */; };
+		C990910323931C710053C78D /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = C990910223931C710053C78D /* Action.swift */; };
 		C9C25A1B237015D80098B08B /* libLogging.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C25A1A237015D80098B08B /* libLogging.dylib */; };
+		C9CE48D6238F5749009AA250 /* ActionCodeCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE48D5238F5749009AA250 /* ActionCodeCache.swift */; };
+		C9CE48D8238F57C4009AA250 /* ActionCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE48D7238F57C4009AA250 /* ActionCode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C90299A3239F017C002CB58B /* RegisterDB.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = RegisterDB.playground; path = ../../MHLib/RegisterDB.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C90626252300CA550095D528 /* ElectorMeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectorMeta.swift; sourceTree = "<group>"; };
 		C906262923021CF00095D528 /* CryptoInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoInt.swift; sourceTree = "<group>"; };
 		C9080E3322DFDD2800D37D70 /* libRegisterDB.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libRegisterDB.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,10 +45,17 @@
 		C9080E4922E0DD1300D37D70 /* Street.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Street.swift; sourceTree = "<group>"; };
 		C9080E4B22E1354500D37D70 /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
 		C9080E4D22E1366300D37D70 /* Elector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Elector.swift; sourceTree = "<group>"; };
+		C91606E72394160A0038C3EF /* TODO */ = {isa = PBXFileReference; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
+		C91606E823946EAE0038C3EF /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		C91FC2D5238DF06C00E88A0F /* ActionGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionGroup.swift; sourceTree = "<group>"; };
+		C93C4CA2239DD9490093D416 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		C950962C23906CDF0005292F /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		C975188423076B7500BD4160 /* PropertyMeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyMeta.swift; sourceTree = "<group>"; };
 		C98E391222E52FF30077C208 /* PollingDistrict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollingDistrict.swift; sourceTree = "<group>"; };
+		C990910223931C710053C78D /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		C9C25A1A237015D80098B08B /* libLogging.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libLogging.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9CE48D5238F5749009AA250 /* ActionCodeCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCodeCache.swift; sourceTree = "<group>"; };
+		C9CE48D7238F57C4009AA250 /* ActionCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +85,8 @@
 		C9080E2A22DFDD2800D37D70 = {
 			isa = PBXGroup;
 			children = (
+				C90299A3239F017C002CB58B /* RegisterDB.playground */,
+				C91606E72394160A0038C3EF /* TODO */,
 				C9080E3522DFDD2800D37D70 /* RegisterDB */,
 				C9080E3422DFDD2800D37D70 /* Products */,
 				C9080E3F22DFDD3A00D37D70 /* Frameworks */,
@@ -88,17 +104,23 @@
 		C9080E3522DFDD2800D37D70 /* RegisterDB */ = {
 			isa = PBXGroup;
 			children = (
+				C990910223931C710053C78D /* Action.swift */,
+				C9CE48D7238F57C4009AA250 /* ActionCode.swift */,
+				C9CE48D5238F5749009AA250 /* ActionCodeCache.swift */,
+				C91FC2D5238DF06C00E88A0F /* ActionGroup.swift */,
+				C9080E4722E0DBBC00D37D70 /* DB.swift */,
+				C9080E4D22E1366300D37D70 /* Elector.swift */,
+				C950962C23906CDF0005292F /* Functions.swift */,
+				C91606E823946EAE0038C3EF /* Globals.swift */,
 				C90626242300CA440095D528 /* Meta */,
+				C98E391222E52FF30077C208 /* PollingDistrict.swift */,
+				C9080E4B22E1354500D37D70 /* Property.swift */,
+				C9080E4422DFDF1400D37D70 /* RegisterDB-Bridging-Header.h */,
 				C9080E3622DFDD2800D37D70 /* RegisterDB.h */,
 				C9080E3822DFDD2800D37D70 /* RegisterDB.m */,
-				C9080E4522DFDF1400D37D70 /* TableBased.swift */,
-				C9080E4422DFDF1400D37D70 /* RegisterDB-Bridging-Header.h */,
-				C9080E4722E0DBBC00D37D70 /* DB.swift */,
 				C9080E4922E0DD1300D37D70 /* Street.swift */,
-				C9080E4B22E1354500D37D70 /* Property.swift */,
-				C9080E4D22E1366300D37D70 /* Elector.swift */,
-				C98E391222E52FF30077C208 /* PollingDistrict.swift */,
-				C91FC2D5238DF06C00E88A0F /* ActionGroup.swift */,
+				C9080E4522DFDF1400D37D70 /* TableBased.swift */,
+				C93C4CA2239DD9490093D416 /* Protocols.swift */,
 			);
 			path = RegisterDB;
 			sourceTree = "<group>";
@@ -183,6 +205,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9080E4C22E1354500D37D70 /* Property.swift in Sources */,
+				C9CE48D8238F57C4009AA250 /* ActionCode.swift in Sources */,
+				C9CE48D6238F5749009AA250 /* ActionCodeCache.swift in Sources */,
+				C950962D23906CDF0005292F /* Functions.swift in Sources */,
 				C90626262300CA550095D528 /* ElectorMeta.swift in Sources */,
 				C9080E4622DFDF1400D37D70 /* TableBased.swift in Sources */,
 				C9080E3922DFDD2800D37D70 /* RegisterDB.m in Sources */,
@@ -191,7 +216,10 @@
 				C91FC2D6238DF06C00E88A0F /* ActionGroup.swift in Sources */,
 				C9080E4A22E0DD1300D37D70 /* Street.swift in Sources */,
 				C9080E4E22E1366300D37D70 /* Elector.swift in Sources */,
+				C91606E923946EAE0038C3EF /* Globals.swift in Sources */,
 				C98E391322E52FF30077C208 /* PollingDistrict.swift in Sources */,
+				C990910323931C710053C78D /* Action.swift in Sources */,
+				C93C4CA3239DD9490093D416 /* Protocols.swift in Sources */,
 				C9080E4822E0DBBC00D37D70 /* DB.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

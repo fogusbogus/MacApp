@@ -14,6 +14,7 @@
 		C962A0F022A9D0CB00510199 /* libCommon.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C962A0EF22A9D0CB00510199 /* libCommon.dylib */; };
 		C962A0F222A9D14100510199 /* SQLDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962A0F122A9D14100510199 /* SQLDB.swift */; };
 		C962A0F422A9D16E00510199 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962A0F322A9D16E00510199 /* Meta.swift */; };
+		C9AAFBBD2395D7AA00F3C70A /* BulkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AAFBBC2395D7AA00F3C70A /* BulkData.swift */; };
 		C9C25A15236F91680098B08B /* libLogging.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C25A14236F91680098B08B /* libLogging.dylib */; };
 		C9C25A16236F91680098B08B /* libLogging.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = C9C25A14236F91680098B08B /* libLogging.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		C9D416512380B27600E6B717 /* SQLDBInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D416502380B27600E6B717 /* SQLDBInstance.swift */; };
@@ -43,6 +44,7 @@
 		C962A0EF22A9D0CB00510199 /* libCommon.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libCommon.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		C962A0F122A9D14100510199 /* SQLDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLDB.swift; sourceTree = "<group>"; };
 		C962A0F322A9D16E00510199 /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
+		C9AAFBBC2395D7AA00F3C70A /* BulkData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulkData.swift; sourceTree = "<group>"; };
 		C9C25A14236F91680098B08B /* libLogging.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libLogging.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9D416502380B27600E6B717 /* SQLDBInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLDBInstance.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,6 +106,7 @@
 				C962A0F122A9D14100510199 /* SQLDB.swift */,
 				C962A0F322A9D16E00510199 /* Meta.swift */,
 				C9D416502380B27600E6B717 /* SQLDBInstance.swift */,
+				C9AAFBBC2395D7AA00F3C70A /* BulkData.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				C962A0F222A9D14100510199 /* SQLDB.swift in Sources */,
 				C962A0EB22A9D07300510199 /* OpaquePointer.swift in Sources */,
 				C962A0DF22A9CF7F00510199 /* DBLib.m in Sources */,
+				C9AAFBBD2395D7AA00F3C70A /* BulkData.swift in Sources */,
 				C962A0F422A9D16E00510199 /* Meta.swift in Sources */,
 				C962A0E922A9CFD300510199 /* SQLRow.swift in Sources */,
 				C9D416512380B27600E6B717 /* SQLDBInstance.swift in Sources */,

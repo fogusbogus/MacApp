@@ -11,7 +11,42 @@ import DBLib
 import Common
 import Logging
 
-public class Street : TableBased<Int> {
+public class Street : TableBased<Int>, HasTODOItems, KeyedItem, LocatableItem {
+	
+	private func assertGPS() {
+		if GPS.length() == 0 {
+			GPS = "0,0"
+		}
+	}
+	public var Longitude: Double {
+		get {
+			assertGPS()
+			return Double(GPS.after(","))!
+		}
+		set {
+			GPS = "\(Latitude),\(newValue)"
+		}
+	}
+	public var Latitude: Double {
+		get {
+			assertGPS()
+			return Double(GPS.before(","))!
+		}
+		set {
+			GPS = "\(newValue),\(Longitude)"
+		}
+	}
+	
+	public var Key: String {
+		get {
+			return "ST\(ID!)"
+		}
+	}
+
+	public func getIDsForTODOItems(includeChildren: Bool) -> String {
+		return ""
+	}
+	
 	override public init(db : SQLDBInstance, _ id: Int?, _ log: IIndentLog? = nil) {
 		super.init(db: db, id, log)
 	}
@@ -74,7 +109,7 @@ public class Street : TableBased<Int> {
 	private var _pdid = -1, _sid = -1, _pid = -1, _eid = -1
 	private var _created = Date()
 	
-	override func signatureItems() -> [Any] {
+	override func signatureItems() -> [Any?] {
 		return [Name, PropertyCount, ElectorCount, GPS, MetaData.getSignature(), _pdid, _sid, _pid, _eid, _created] + super.signatureItems()
 	}
 	

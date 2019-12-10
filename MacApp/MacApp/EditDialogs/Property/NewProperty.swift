@@ -171,7 +171,7 @@ class NewPropertyVC : NSViewControllerWithLog {
 				if let h = handler {
 					Log.Debug("Store current data and get next available number")
 					
-					let data = PropertyDataStruct(Name: txtName.stringValue, NumberPrefix: txtNumberPrefix.stringValue, NumberSuffix: txtNumberSuffix.stringValue, DisplayName: "", ElectorCount: 0, Number: Int(txtNumber.stringValue) ?? 0, ID: -1, GPS: "", Meta: "", EID: nil, PID: nil, SID: _street?.ID, PDID: _street?.PDID)
+					let data = PropertyDataStruct(Name: txtName.stringValue, NumberPrefix: txtNumberPrefix.stringValue, NumberSuffix: txtNumberSuffix.stringValue, DisplayName: "", ElectorCount: 0, Number: Int(txtNumber.stringValue) ?? 0, ID: -1, GPS: "", Meta: "", EID: nil, PID: nil, SID: _street?.ID, PDID: _street?.PDID, Split: 0, SplitCount: 0, TodoActions: "", Status: 0)
 					
 					h.addOrUpdate(data: data)
 					let newData = h.getSmartNextProperty(current: data)

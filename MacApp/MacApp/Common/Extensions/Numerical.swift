@@ -93,6 +93,16 @@ public extension Comparable {
 		return dv
 	}
 	
+	func `switch`<T>(_ defaultValue: T, _ parms: [Self:T]) -> T {
+		let retItem = parms.first { (k, v) -> Bool in
+			return k == self
+		}
+		if retItem == nil {
+			return defaultValue
+		}
+		return retItem!.value
+	}
+	
 	func match<T>(defaultValue: T, pairs: [Self:T]) -> T {
 		if let candidateKey = pairs.keys.first(where: { (key) -> Bool in
 			return key == self

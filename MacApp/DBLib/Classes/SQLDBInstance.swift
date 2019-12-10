@@ -106,6 +106,27 @@ public class SQLDBInstance : BaseIndentLog {
 		_db = nil
 	}
 	
+	public func queryList<T>(_ sql: String, column: String, hintValue: T, parms: Any?...) -> [T] {
+		var ret: [T] = []
+		self.processMultiRow(rowHandler: { (row) in
+			ret.append(row.get(column, hintValue))
+		}, sql, parms)
+		return ret
+	}
+	
+	public func queryList<T>(_ sql: String, columnIndex: Int, hintValue: T, parms: Any?...) -> [T] {
+
+		var ret: [T] = []
+		self.processMultiRow(rowHandler: { (row) in
+			ret.append(row.get(columnIndex, hintValue))
+		}, sql, parms)
+		return ret
+	}
+
+	public func queryList<T>(_ sql: String, hintValue: T, parms: Any?...) -> [T] {
+		return queryList(sql, columnIndex: 0, hintValue: hintValue, parms: parms)
+	}
+	
 	public func queryValue<T>(_ sql: String, _ defaultValue: T, _ parms: Any?...) -> T {
 		let _db = openDB()
 		if _db == nil {
@@ -117,7 +138,7 @@ public class SQLDBInstance : BaseIndentLog {
 		var statement : SQLitePointer? = nil
 		var ret = defaultValue
 		if sqlite3_prepare(_db, sql, -1, &statement, nil) == SQLITE_OK {
-			bindParameters(statement: statement, parms: parms)
+			bindParameters(statement: statement, parameters: parms)
 			
 			//shared.SQL(sql)
 			
@@ -158,6 +179,10 @@ public class SQLDBInstance : BaseIndentLog {
 				step = sqlite3_step(statement)
 			}
 		}
+		else {
+			let errmsg = String(cString: sqlite3_errmsg(_db))
+			print("E: " + errmsg)
+		}
 		sqlite3_finalize(statement)
 		return ret
 	}
@@ -192,6 +217,10 @@ public class SQLDBInstance : BaseIndentLog {
 				}
 				step = sqlite3_step(statement)
 			}
+		}
+		else {
+			let errmsg = String(cString: sqlite3_errmsg(_db))
+			print("E: " + errmsg)
 		}
 		sqlite3_finalize(statement)
 		return ret
@@ -283,6 +312,10 @@ public class SQLDBInstance : BaseIndentLog {
 				step = sqlite3_step(statement)
 			}
 		}
+		else {
+			let errmsg = String(cString: sqlite3_errmsg(_db))
+			print("E: " + errmsg)
+		}
 		sqlite3_finalize(statement)
 		return ret
 	}
@@ -310,7 +343,7 @@ public class SQLDBInstance : BaseIndentLog {
 		var ret = "\"rows\": ["
 		var rowCount = 0
 		if sqlite3_prepare(_db, sql, -1, &statement, nil) == SQLITE_OK {
-			bindParameters(statement: statement, parms: parms)
+			bindParameters(statement: statement, parameters: parms)
 			var step = sqlite3_step(statement)
 			while step != SQLITE_DONE {
 				if step == SQLITE_ROW {
@@ -335,6 +368,10 @@ public class SQLDBInstance : BaseIndentLog {
 				}
 				step = sqlite3_step(statement)
 			}
+		}
+		else {
+			let errmsg = String(cString: sqlite3_errmsg(_db))
+			print("E: " + errmsg)
 		}
 		ret += "] }"
 		ret = "{ \"rowcount\": \(rowCount), " + ret
@@ -363,7 +400,7 @@ public class SQLDBInstance : BaseIndentLog {
 		var statement : SQLitePointer? = nil
 		
 		if sqlite3_prepare(_db, sql, -1, &statement, nil) == SQLITE_OK {
-			bindParameters(statement: statement, parms: parms)
+			bindParameters(statement: statement, parameters: parms)
 			var step = sqlite3_step(statement)
 			if step == SQLITE_DONE {
 				//Just collect the columns
@@ -376,7 +413,11 @@ public class SQLDBInstance : BaseIndentLog {
 				step = sqlite3_step(statement)
 			}
 		}
-		
+		else {
+			let errmsg = String(cString: sqlite3_errmsg(_db))
+			print("E: " + errmsg)
+		}
+
 		sqlite3_finalize(statement)
 		return ret
 		
@@ -399,7 +440,7 @@ public class SQLDBInstance : BaseIndentLog {
 		var statement : SQLitePointer? = nil
 		
 		if sqlite3_prepare(_db, sql, -1, &statement, nil) == SQLITE_OK {
-			bindParameters(statement: statement, parms: parms)
+			bindParameters(statement: statement, parameters: parms)
 			var step = sqlite3_step(statement)
 			let index = columnIndex(ptr: statement, columnName: column)
 			
@@ -420,7 +461,11 @@ public class SQLDBInstance : BaseIndentLog {
 				step = sqlite3_step(statement)
 			}
 		}
-		
+		else {
+			let errmsg = String(cString: sqlite3_errmsg(_db))
+			print("E: " + errmsg)
+		}
+
 		sqlite3_finalize(statement)
 		return ret
 	}
@@ -507,6 +552,10 @@ public class SQLDBInstance : BaseIndentLog {
 				ret = true
 			}
 		}
+		else {
+			let errmsg = String(cString: sqlite3_errmsg(_db))
+			print("E: " + errmsg)
+		}
 		sqlite3_finalize(statement)
 		if isInsert {
 			row.set(idColumn, sqlite3_last_insert_rowid(statement))
@@ -524,11 +573,11 @@ public class SQLDBInstance : BaseIndentLog {
 		return ret
 	}
 	
-	private func unwrapParms(parms: [Any?]) -> [Any?] {
+	private func unwrapParameters(parameters: [Any?]) -> [Any?] {
 		var ret : [Any?] = []
-		for item in parms {
+		for item in parameters {
 			if let moreItems = item as? [Any?] {
-				ret.append(contentsOf: unwrapParms(parms: moreItems))
+				ret.append(contentsOf: unwrapParameters(parameters: moreItems))
 			}
 			else {
 				ret.append(item)
@@ -537,8 +586,8 @@ public class SQLDBInstance : BaseIndentLog {
 		return ret
 	}
 	
-	private func bindParameters(statement: SQLitePointer?, parms: [Any?]) {
-		let parms = unwrapParms(parms: parms)
+	private func bindParameters(statement: SQLitePointer?, parameters: [Any?]) {
+		let parms = unwrapParameters(parameters: parameters)
 		var index = 1
 		for parm in parms {
 			if statement.bindValue(index, value: parm) {
@@ -582,6 +631,10 @@ public class SQLDBInstance : BaseIndentLog {
 				ret = true
 			}
 		}
+		else {
+			let errmsg = String(cString: sqlite3_errmsg(_db))
+			print("E: " + errmsg)
+		}
 		sqlite3_finalize(statement)
 		let toRet = lastInsertedRowID(_db)
 
@@ -610,7 +663,7 @@ public class SQLDBInstance : BaseIndentLog {
 		var statement : SQLitePointer? = nil
 		
 		if sqlite3_prepare(_db, sql, -1, &statement, nil) == SQLITE_OK {
-			bindParameters(statement: statement, parms: parms)
+			bindParameters(statement: statement, parameters: parms)
 			var step = sqlite3_step(statement)
 			if step == SQLITE_DONE {
 				data.loadFromData(sqlData: statement, columnsOnly: true)
@@ -624,13 +677,21 @@ public class SQLDBInstance : BaseIndentLog {
 				step = sqlite3_step(statement)
 			}
 		}
+		else {
+			let errmsg = String(cString: sqlite3_errmsg(_db))
+			print("E: " + errmsg)
+		}
 		
 		sqlite3_finalize(statement)
 		return true
 	}
 
 	
-	@discardableResult public func bulkInsert(_ sql: String, parms: [Array<Any>]) -> Bool {
+	/// Use this for bulk operations
+	/// - Parameters:
+	///   - sql: Executable SQL with ? parameters
+	///   - data: Bulk data
+	@discardableResult public func bulkTransaction(_ sql: String, _ data : BulkData) -> Bool {
 		let _db = openDB()
 		if _db == nil {
 			return false
@@ -647,44 +708,31 @@ public class SQLDBInstance : BaseIndentLog {
 		execute("BEGIN IMMEDIATE TRANSACTION")
 		if sqlite3_prepare_v2(_db, sql, -1, &statement, nil) == SQLITE_OK {
 
-			for p in parms {
-				if let ar = p as? Array<Any> {
-					var index = 1
-					for parm in ar {
-						if statement.bindValue(index, value: parm) {
-							index += 1
-						}
-						else {
-							let err = sqlite3_errmsg(statement)
-							print("\(String(describing: err))")
-						}
-					}
-					if sqlite3_step(statement) == SQLITE_DONE {
-						ret = true
-					}
-					if sqlite3_reset(statement) == SQLITE_OK {
-						continue
+			for rowData in data.AllData {
+				var index = 1
+				for parm in rowData {
+					if statement.bindValue(index, value: parm) {
+						index += 1
 					}
 					else {
-						break
-					}
-				}
-				else {
-					if !statement.bindValue(1, value: p) {
 						let err = sqlite3_errmsg(statement)
 						print("\(String(describing: err))")
 					}
-					if sqlite3_step(statement) == SQLITE_DONE {
-						ret = true
-					}
-					if sqlite3_reset(statement) == SQLITE_OK {
-						continue
-					}
-					else {
-						break
-					}
+				}
+				if sqlite3_step(statement) == SQLITE_DONE {
+					ret = true
+				}
+				if sqlite3_reset(statement) == SQLITE_OK {
+					continue
+				}
+				else {
+					break
 				}
 			}
+		}
+		else {
+			let errmsg = String(cString: sqlite3_errmsg(_db))
+			print("E: " + errmsg)
 		}
 		sqlite3_finalize(statement)
 		execute("COMMIT TRANSACTION")

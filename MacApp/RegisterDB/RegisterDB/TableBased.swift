@@ -19,7 +19,11 @@ public class TableBased<IDType> {
 	internal var _id : IDType?
 	internal var _originalSignature = ""
 	
-	func signatureItems() -> [Any] {
+	
+	//TODO: SI01 - This needs to cater for nulls
+	//We need something as flexible as Json but not necessarily Json because of
+	//speed issues.
+	func signatureItems() -> [Any?] {
 		return []
 	}
 	
@@ -28,7 +32,39 @@ public class TableBased<IDType> {
 	}
 	
 	final func getSignature() -> String {
+		
+		var dct = Dictionary<String, Any?>()
+		let sig = signatureItems()
+		var index = 0
+		for item in sig {
+			let key = "\(index)"
+			if let dt = item as? Date {
+				
+				dct[key] = dt.toISOString()
+			}
+			else {
+				dct[key] = item
+			}
+			index += 1
+		}
+		let ret = getJson(dict: dct)
+		if ret.length() > 0 {
+			return ret
+		}
 		return "\t".join(signatureItems())
+	}
+	
+	private func getJson(dict: Dictionary<String, Any?>) -> String {
+		do {
+			let ret = try JSONSerialization.data(withJSONObject: dict, options: .sortedKeys)
+			if let string = String(data: ret, encoding: String.Encoding.utf8) {
+				return string
+			}
+		}
+		catch {
+			
+		}
+		return ""
 	}
 	
 	public final func isDirty() -> Bool {
@@ -39,6 +75,7 @@ public class TableBased<IDType> {
 		SQLDB = db
 		Log = log
 		sanityCheck()
+		assertExtra()
 		if let id = id {
 			ID = id
 		}
@@ -48,12 +85,14 @@ public class TableBased<IDType> {
 		SQLDB = db
 		Log = log
 		sanityCheck()
+		assertExtra()
 	}
 	
 	public init(db : SQLDBInstance, row: SQLRow, _ log: IIndentLog? = nil) {
 		SQLDB = db
 		Log = log
 		sanityCheck()
+		assertExtra()
 		loadData(row: row)
 	}
 	
@@ -68,6 +107,10 @@ public class TableBased<IDType> {
 	/// Check your tables exist and create them in here. Override.
 	func sanityCheck() {
 		_hasTable = false
+	}
+	
+	func assertExtra() {
+		
 	}
 	
 	public func reassertCounts() {

@@ -242,6 +242,47 @@ public class SQLRow {
 		return defaultValue
 	}
 	
+	public func getNull<T>(_ id: CodingKey, _ hintValue: T) -> T? {
+		return getNull(id.stringValue, hintValue)
+	}
+	public func getNull<T>( _ id: String, _ hintValue: T) -> T? {
+		if hasKey(id) {
+			if isNull(id) {
+				return nil
+			}
+			if hintValue is Int {
+				if let vInt = _data[mapID(id)] as? Int {
+					return vInt as! T
+				}
+				if let v = _data[mapID(id)] as? Int32 {
+					return Int(v) as! T
+				}
+				if let v64 = _data[mapID(id)] as? Int64 {
+					return Int(v64) as! T
+				}
+				return hintValue
+			}
+			if let ret = _data[mapID(id)] as? T {
+				return ret
+			}
+		}
+		return nil
+	}
+	
+	public func getNull<T>(_ index: Int, _ hintValue: T) -> T? {
+		let id = Array(_keyMap.keys)[index]
+		return getNull(id, hintValue)
+	}
+	
+	public func get<T>(_ index: Int, _ defaultValue: T) -> T {
+		let id = Array(_keyMap.keys)[index]
+		return get(id, defaultValue)
+	}
+	
+	public func columnIndex(_ id: String) -> Int? {
+		return Array(_keyMap.keys).firstIndex(of: mapID(id))
+	}
+	
 	public func text(_ id: String, _ defaultValue: String = "") -> String {
 		if !hasKey(id) || isNull(id) {
 			return defaultValue

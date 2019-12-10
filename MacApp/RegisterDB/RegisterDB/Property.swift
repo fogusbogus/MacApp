@@ -11,7 +11,24 @@ import DBLib
 import Common
 import Logging
 
-public class Property : TableBased<Int> {
+public class Property : TableBased<Int>, HasTODOItems, KeyedItem, LocatableItem {
+	public var Key: String {
+		get {
+			return "PR\(ID!)"
+		}
+	}
+	
+	public func getIDsForTODOItems(includeChildren: Bool) -> String {
+		var ds = SQLDB.queryList("SELECT ID FROM Action WHERE LinkID = ? AND LinkType = 1 WHERE Required = '1'", hintValue: "", parms: ID!)
+		if includeChildren {
+			let idsIn = SQLDB.queryList("SELECT ID FROM Elector WHERE PID = ? ORDER BY sysOrder", hintValue: "", parms: ID!).toDelimitedString(delimiter: ",")
+			if idsIn.length() > 0 {
+				ds.append(contentsOf: SQLDB.queryList("SELECT ID FROM Action WHERE LinkID IN (\(idsIn)) AND LinkType = 2 WHERE Required = '1'", hintValue: ""))
+			}
+		}
+		return ds.toDelimitedString(delimiter: ",")
+	}
+	
 	override public init(db : SQLDBInstance, _ id: Int?, _ log: IIndentLog? = nil) {
 		super.init(db: db, id, log)
 	}
@@ -28,7 +45,7 @@ public class Property : TableBased<Int> {
 	
 	public var Data : PropertyDataStruct {
 		get {
-			return PropertyDataStruct(Name: Name, NumberPrefix: NumberPrefix, NumberSuffix: NumberSuffix, DisplayName: DisplayName, ElectorCount: ElectorCount, Number: Number, ID: ID, GPS: GPS, Meta: MetaData.getSignature(true), EID: EID.Nil(), PID: PID.Nil(), SID: SID.Nil(), PDID: PDID.Nil())
+			return PropertyDataStruct(Name: Name, NumberPrefix: NumberPrefix, NumberSuffix: NumberSuffix, DisplayName: DisplayName, ElectorCount: ElectorCount, Number: Number, ID: ID, GPS: GPS, Meta: MetaData.getSignature(true), EID: EID.Nil(), PID: PID.Nil(), SID: SID.Nil(), PDID: PDID.Nil(), Split: Split, SplitCount: SplitCount, TodoActions: TodoActions, Status: Status)
 		}
 		set {
 			self.ID = newValue.ID
@@ -43,6 +60,10 @@ public class Property : TableBased<Int> {
 			self.Number = newValue.Number
 			self.ElectorCount = newValue.ElectorCount
 			self.MetaData.load(json: newValue.Meta, true)
+			self.Split = newValue.Split!
+			self.SplitCount = newValue.SplitCount!
+			self.TodoActions = newValue.TodoActions
+			self.Status = newValue.Status!
 			handler?.dataChanged()
 		}
 	}
@@ -57,27 +78,58 @@ public class Property : TableBased<Int> {
 		}
 	}
 	
+	override func assertExtra() {
+		SQLDB.assertColumn(tableName: "Property", nameAndTypes: ["Split":"INTEGER"])
+		SQLDB.assertColumn(tableName: "Property", nameAndTypes: ["SplitCount":"INTEGER"])
+		SQLDB.assertColumn(tableName: "Property", nameAndTypes: ["TodoActions":"TEXT"])
+		SQLDB.assertColumn(tableName: "Property", nameAndTypes: ["Status":"INTEGER"])
+	}
+	
 	override func saveAsNew() {
 		super.saveAsNew()
-		let sql = "INSERT INTO Property (DisplayName, Name, Number, NumberPrefix, NumberSuffix, ElectorCount, GPS, Meta, PDID, SID, PID, EID, Created) " +
-		"VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)"
-		_id = SQLDB.execute(sql, parms: getDisplayName(), Name, Number, NumberPrefix, NumberSuffix, ElectorCount, GPS, MetaData.getSignature(true), _pdid, _sid, _pid, _eid, Date())
+		let sql = "INSERT INTO Property (DisplayName, Name, Number, NumberPrefix, NumberSuffix, ElectorCount, GPS, Meta, PDID, SID, PID, EID, Created, Split, SplitCount, TodoActions, Status) " +
+		"VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
+		_id = SQLDB.execute(sql, parms: getDisplayName(), Name, Number, NumberPrefix, NumberSuffix, ElectorCount, GPS, MetaData.getSignature(true), _pdid, _sid, _pid, _eid, Date(), Split, SplitCount, TodoActions, Status)
 		SQLDB.execute("UPDATE Property SET PID = \(ID ?? -1) WHERE ID = \(ID ?? -1)")
 	}
 	
 	override func saveAsUpdate() {
 		super.saveAsUpdate()
-		let sql = "UPDATE Property SET DisplayName = ?, Name = ?, Number = ?, NumberPrefix = ?, NumberSuffix = ?, ElectorCount = ?, GPS = ?, Meta = ?, PDID = ?, SID = ?, PID = ?, EID = ? WHERE ID = \(ID ?? -1)"
-		SQLDB.execute(sql, parms: getDisplayName(), Name, Number, NumberPrefix, NumberSuffix, ElectorCount, GPS, MetaData.getSignature(true), _pdid, _sid, ID ?? _pid, _eid)
+		let sql = "UPDATE Property SET DisplayName = ?, Name = ?, Number = ?, NumberPrefix = ?, NumberSuffix = ?, ElectorCount = ?, GPS = ?, Meta = ?, PDID = ?, SID = ?, PID = ?, EID = ?, Split = ?, SplitCount = ?, TodoActions = ?, Status = ? WHERE ID = \(ID ?? -1)"
+		SQLDB.execute(sql, parms: getDisplayName(), Name, Number, NumberPrefix, NumberSuffix, ElectorCount, GPS, MetaData.getSignature(true), _pdid, _sid, ID ?? _pid, _eid, Split, SplitCount, TodoActions, Status)
 	}
 	
-	public var DisplayName = "", Name = "", Number = 0, NumberPrefix = "", NumberSuffix = "", ElectorCount = 0, GPS = ""
+	public var DisplayName = "", Name = "", Number = 0, NumberPrefix = "", NumberSuffix = "", ElectorCount = 0, GPS = "", TodoActions = ""
 	
-	private var _pdid = -1, _sid = -1, _pid = -1, _eid = -1
+	private var _pdid = -1, _sid = -1, _pid = -1, _eid = -1, Split = 0, SplitCount = 0, Status = 0
 	private var _created = Date()
 	
-	override func signatureItems() -> [Any] {
-		return [Name, Number, NumberPrefix, NumberSuffix, ElectorCount, GPS, MetaData.getSignature(), _pdid, _sid, _pid, _eid, _created] + super.signatureItems()
+	private func assertGPS() {
+		if GPS.length() == 0 {
+			GPS = "0,0"
+		}
+	}
+	public var Longitude: Double {
+		get {
+			assertGPS()
+			return Double(GPS.after(","))!
+		}
+		set {
+			GPS = "\(Latitude),\(newValue)"
+		}
+	}
+	public var Latitude: Double {
+		get {
+			assertGPS()
+			return Double(GPS.before(","))!
+		}
+		set {
+			GPS = "\(newValue),\(Longitude)"
+		}
+	}
+	
+	override func signatureItems() -> [Any?] {
+		return [Name, Number, NumberPrefix, NumberSuffix, ElectorCount, GPS, MetaData.getSignature(), _pdid, _sid, _pid, _eid, _created, Split, SplitCount, TodoActions, Status] + super.signatureItems()
 	}
 	
 	override public func getChildIDs() -> [Int] {
@@ -123,6 +175,11 @@ public class Property : TableBased<Int> {
 		_created = row.get("Created", Date())
 		
 		DisplayName = row.get("DisplayName", "")
+		
+		Split = row.get("Split", 0)
+		SplitCount = row.get("SplitCount", 0)
+		TodoActions = row.get("TodoActions", "")
+		Status = row.get("Status", 0)
 	}
 	
 	public func getDisplayName() -> String {
@@ -223,10 +280,83 @@ public class Property : TableBased<Int> {
 		return current.suggestNextProperty()
 	}
 	
+	public static func clearResidents(db: SQLDBInstance, id: Int, action: Action, undo: Bool) {
+		if undo {
+			undoClearResidents(db: db, id: id, action: action)
+			return
+		}
+		
+		//Look to see if there is already a NEWRES against the property
+		var sql = "SELECT ID FROM Action WHERE Retract <> 1 AND LinkType = 1 AND LinkID = ? AND Code = 'NEWRES' LIMIT 1"
+		let minID = db.queryValue(sql, -1, id)
+		
+		//Grab a list of the NEWELEC actions
+		sql = "SELECT ID FROM Action WHERE ID > ? AND Code = 'NEWELEC' NAD LinkType = 1 AND LinkID = ? AND Retract <> 1 AND IFNULL(INT_ID, '') = ''"
+		let ids = db.queryList(sql, hintValue: "", parms: minID, id)
+		let newElecs = ",".delimit(ids.map { String($0)})
+		action.CodeData = ["cleared":newElecs].jsonString!
+		if action.ID ?? -1 < 0 {
+			action.oldSaveRecord(asEdit: false)
+		}
+		
+		sql = "UPDATE Action SET SupersedeID = \(action.ID!) WHERE LinkID = \(id) AND LinkType = 1 AND IFNULL(INT_ID, '') = '' AND Code IN ('\(Globals.shared.aliases(code: "NEWELEC"))') AND IFNULL(SupersedeID, 0) < 1"
+		db.execute(sql)
+		
+		let code = ActionCodeCache.shared["NEWRES"]?.MetaData
+		let groupIgnore = code?.get("groupignore", "")
+		let deletecode = code?.get("deletecode", "")
+		var deleteCodes = ActionGroup(db: db, groupIgnore).Codes
+		
+		if deleteCodes.trim().length() == 0 {
+			return
+		}
+		
+		deleteCodes = "'" + deleteCodes.replacingOccurrences(of: "~", with: "','")
+		
+		sql = "SELECT ID FROM Elector WHERE PropertyID = ?"
+		var elecIDs = db.queryList(sql, hintValue: -1, parms: id)
+		var validIDs : [Int] = []
+		
+		for elecID in elecIDs {
+			sql = "SELECT COUNT(*) FROM Action WHERE EID = ? AND Code IN (\(deleteCodes)) AND Retract <> 1"
+			if db.queryValue(sql, 0, elecID) == 0 {
+				//Not already deleted
+				validIDs.append(elecID)
+			}
+		}
+		
+		elecIDs = []
+		elecIDs.append(contentsOf: validIDs)
+		
+		for elecID in elecIDs {
+			let delAction = Action(db: db, -1)
+			delAction.Code = deletecode!
+			delAction.LinkType = 2
+			delAction.LinkID = elecID
+			delAction.CodeData = ["clearaction":action.ID!].jsonString!
+			delAction.oldSaveRecord(asEdit: false)
+		}
+	}
+	
+	public static func undoClearResidents(db: SQLDBInstance, id: Int, action: Action) {
+		if action.CodeData.isEmptyOrWhitespace() {
+			return
+		}
+		
+		let findJson = ["clearaction":id].jsonString!
+		var sql = "DELETE FROM Action WHERE Retract <> '1' AND PID = ? AND Data LIKE ? AND IFNULL(INT_ID, '') = ''"
+		db.execute(sql, parms: id, findJson)
+		sql = "UPDATE Action SET SupersedeID = NULL WHERE SupersedeID = ? AND IFNULL(INT_ID, '') = ''"
+		db.execute(sql, parms: action.ID!)
+	}
+	
+	/*
+
+	*/
 }
 
 public struct PropertyDataStruct {
-	public init(Name: String, NumberPrefix: String, NumberSuffix: String, DisplayName: String, ElectorCount: Int, Number: Int, ID: Int?, GPS: String, Meta : String, EID: Int?, PID: Int?, SID: Int?, PDID: Int?) {
+	public init(Name: String, NumberPrefix: String, NumberSuffix: String, DisplayName: String, ElectorCount: Int, Number: Int, ID: Int?, GPS: String, Meta : String, EID: Int?, PID: Int?, SID: Int?, PDID: Int?, Split : Int?, SplitCount : Int?, TodoActions : String, Status : Int?) {
 		
 		self.Name = Name
 		self.NumberPrefix = NumberPrefix
@@ -241,6 +371,10 @@ public struct PropertyDataStruct {
 		self.PID = PID
 		self.SID = SID
 		self.PDID = PDID
+		self.Split = Split
+		self.SplitCount = SplitCount
+		self.TodoActions = TodoActions
+		self.Status = Status
 	}
 	
 	
@@ -253,6 +387,8 @@ public struct PropertyDataStruct {
 	public var PID : Int?
 	public var SID : Int?
 	public var PDID : Int?
+	
+	public var Split : Int?, SplitCount : Int?, TodoActions = "", Status : Int?
 	
 	public func suggestNextProperty() -> PropertyDataStruct {
 		var ret = self

@@ -11,7 +11,17 @@ import DBLib
 import Common
 import Logging
 
-public class Elector : TableBased<Int> {
+public class Elector : TableBased<Int>, HasTODOItems, KeyedItem {
+	public func getIDsForTODOItems(includeChildren: Bool) -> String {
+		return ""
+	}
+	
+	public var Key: String {
+		get {
+			return "EL\(ID!)"
+		}
+	}
+
 	override public init(db : SQLDBInstance, _ id: Int?, _ log: IIndentLog? = nil) {
 		super.init(db: db, id, log)
 	}
@@ -73,7 +83,7 @@ public class Elector : TableBased<Int> {
 	private var _pdid = -1, _sid = -1, _pid = -1, _eid = -1
 	private var _created = Date()
 	
-	override func signatureItems() -> [Any] {
+	override func signatureItems() -> [Any?] {
 		return [DisplayName, Surname, Forename, MiddleName, MetaData.getSignature(), Markers, _pdid, _sid, _pid, _eid, _created] + super.signatureItems()
 	}
 	
@@ -107,10 +117,10 @@ public class Elector : TableBased<Int> {
 		Markers = row.get("Markers", "")
 		MetaData.load(json: row.get("Meta", ""), true)
 
-		_pdid = row.get("PDID", -1)
-		_sid = row.get("SID", -1)
-		_pid = row.get("PID", -1)
-		_eid = row.get("EID", -1)
+		PDID = row.getNull("PDID", -1)
+		SID = row.getNull("SID", -1)
+		PID = row.getNull("PID", -1)
+		EID = row.getNull("EID", -1)
 		_created = row.get("Created", Date())
 	}
 	
@@ -177,6 +187,164 @@ public class Elector : TableBased<Int> {
 		ret["st"] = row.get("STName", "")
 		ret["pd"] = row.get("PDName", "")
 		return ret
+	}
+	
+	public func recalculateName(electorID: Int? = nil) {
+		let sql = "SELECT AC.Data, EL.ID FROM Elector EL INNER JOIN Action AC ON (AC.LinkType = 2 AND AC.LinkID = EL.ID) WHERE EL.ID = ? AND AC.Retract <> 1 AND AC.Code IN ('AMEND', 'NEWELEC', 'ITR', 'QEAMEND') ORDER BY AC.TS DESC"
+		
+		let newNameData = SQLDB.queryValue(sql, "§", electorID ?? ID)
+		
+		if newNameData == "§" {
+			SQLDB.execute("UPDATE Elector SET DisplayName = Name WHERE ID = ?", parms: electorID ?? ID)
+			return
+		}
+		
+		let _fn = Fields.forename.map
+		let _mn = Fields.middle.map
+		let _sn = Fields.surname.map
+		
+		let fn = _metaData?[_fn] ?? ""
+		let mn = _metaData?[_mn] ?? ""
+		let sn = _metaData?[_sn] ?? ""
+		let name = "\(fn) \(mn) \(sn)".removeMultipleSpaces(true)
+		if name.length() == 0 {
+			SQLDB.execute("UPDATE Elector SET DisplayName = Name WHERE ID = ?", parms: electorID ?? ID)
+		}
+		else {
+			SQLDB.execute("UPDATE Elector SET DisplayName = ? WHERE ID = ?", parms: name, electorID ?? ID)
+		}
+	}
+	
+	public static func CalculateElectorNames(db: SQLDBInstance) {
+		db.assertColumn(tableName: "Elector", nameAndTypes: ["DisplayName":"TEXT"])
+		
+		//Go through any name defining actions and set the name from that
+		var sql = "SELECT EL.ID AS ID, AC.Data AS Data FROM Elector EL INNER JOIN Action AC ON (AC.LinkType = 2 AND AC.LinkID = EL.ID) WHERE AC.Retract <> 1 AND AC.Code IN ('AMEND', 'NEWELEC', 'ITR', 'QEAMEND') ORDER BY AC.TS DESC"
+		
+		let _fn = Elector.Fields.forename.map
+		let _mn = Elector.Fields.middle.map
+		let _sn = Elector.Fields.surname.map
+		
+		var hash : [Int] = []
+		let data = BulkData()
+		
+		db.processMultiRow(rowHandler: { (csr) in
+			
+			let id = csr.get("id", -1)
+			
+			//There might be multiple name changing actions per elector. However, we only want the latest one
+			if id >= 0 && !hash.contains(id) {
+				let json = Meta(json: csr.get("Data", ""))
+				let fn = json.get(_fn, "")
+				let mn = json.get(_mn, "")
+				let sn = json.get(_sn, "")
+				
+				let name = "\(fn) \(mn) \(sn)".removeMultipleSpaces(true)
+				hash.append(id)
+				data.add(name, id)
+				data.pushRow()
+			}
+		}, sql)
+		
+		sql = "UPDATE Elector SET DisplayName = ? WHERE ID = ?"
+		
+		db.bulkTransaction(sql, data)
+		
+		//Finally, make sure we have a value in the display name
+		db.execute("UPDATE Elector SET DisplayName = Name WHERE IFNULL(DisplayName, '') = ''")
+	}
+	
+	public static func UpdateElectorMetaFromActionMeta(db: SQLDBInstance) {
+		var sql = "SELECT LinkID, Result FROM Action WHERE LinkType = 2 AND Retract <> 1 AND Code IN ('AMEND', 'NEWELEC', 'ITR', 'QEAMEND') ORDER BY TS DESC"
+		var hash : [Int:String] = [:]
+		
+		db.processMultiRow(rowHandler: { (csr) in
+			let linkID = csr.get("LinkID", -1)
+			if !hash.keys.contains(linkID) && linkID >= 0 {
+				hash[linkID] = csr.get("Result", "")
+			}
+		}, sql)
+		
+		sql = "UPDATE Elector SET Data = ? WHERE ID = ?"
+		
+		let updateData = BulkData()
+		hash.forEach { (key: Int, value: String) in
+			updateData.add(value, key)
+			updateData.pushRow()
+		}
+		db.bulkTransaction(sql, updateData)
+	}
+	
+	public enum Fields {
+		case title
+		case forename
+		case middle
+		case surname
+		case dob
+		case nino
+		case email
+		case phone
+		case nationality
+		case absentVote
+		case optOut
+		case type
+		case evidence
+		case notes
+		case previousAddress
+		case previousPostCode
+		case over76
+		case postalVote
+		case singleOccupier
+		case evidenceNotes
+		
+		var map : String {
+			get {
+				switch self {
+				case .title:
+					return "title"
+				case .forename:
+					return "fn"
+				case .middle:
+					return "mn"
+				case .surname:
+					return "sn"
+				case .dob:
+					return "dob"
+				case .nino:
+					return "nino"
+				case .email:
+					return "email"
+				case .phone:
+					return "phone"
+				case .nationality:
+					return "nat"
+				case .absentVote:
+					return "av"
+				case .optOut:
+					return "oo"
+				case .type:
+					return "type"
+				case .evidence:
+					return "ev"
+				case .notes:
+					return "notes"
+				case .previousAddress:
+					return "prevadd"
+				case .previousPostCode:
+					return "prevPC"
+				case .over76:
+					return "o76"
+				case .postalVote:
+					return "pv"
+				case .singleOccupier:
+					return "so"
+				case .evidenceNotes:
+					return "evnotes"
+				default:
+					return ""
+				}
+			}
+		}
 	}
 }
 

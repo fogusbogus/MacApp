@@ -237,7 +237,7 @@ internal class SQLDB : BaseIndentLog {
 	}
 	
 	public static func newRow(tableName: String) -> SQLRow {
-		var rows = queryMultiRow("SELECT * FROM [\(tableName)] LIMIT 0")
+		let rows = queryMultiRow("SELECT * FROM [\(tableName)] LIMIT 0")
 		guard rows.count > 0 else {
 			//If the table is valid we should never get here
 			let cnat = getColumnDetailsForTable(tableName: tableName)

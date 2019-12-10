@@ -1,0 +1,16 @@
+TODO:
+1-Dec-19	TODO001		TableBased.swift
+	getSignature() relies on an array of strings and just joins them using a tab character as a separator. This isn't ideal because it doesn't deal with nulls very well, having to decide on a default real value to replace the null.
+
+9-Dec-19	NOTES		General Note
+	Instead of using inheritance everywhere it might be a good idea to start to use protocols (interfaces) to provide particular functionality or subscription.
+
+
+
+BUGS:
+
+
+
+
+COMPLETE:
+

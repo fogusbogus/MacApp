@@ -296,6 +296,15 @@ public extension String {
 		return false
 	}
 	
+	func impliesContains(_ doesItContainOneOfThese: String...) -> Bool {
+		for item in doesItContainOneOfThese {
+			if self.localizedCaseInsensitiveContains(item) {
+				return true
+			}
+		}
+		return false
+	}
+	
 	func isEmptyOrWhitespace() -> Bool {
 		return self.trim().length() == 0
 	}
@@ -540,6 +549,21 @@ public extension String {
 		return substring(from: range.lowerBound, to: range.upperBound)
 	}
 	
+	func splitToArray(_ splitter: String) -> [String] {
+		var ret : [String] = []
+		var text = self
+		var cand = text.before(splitter)
+		while cand != "" {
+			text = text.after(splitter)
+			ret.append(cand)
+			cand = text.before(splitter)
+		}
+		if text.length() > 0 {
+			ret.append(text)
+		}
+		return ret
+	}
+	
 	/////////////////////////////////////////////
 	// T
 	/////////////////////////////////////////////
@@ -584,5 +608,13 @@ public extension String {
 		guard data.count > 0 else { return nil }
 		
 		return data
+	}
+}
+
+public extension Array where Element == String {
+	func containsLike(_ likeThis: String) -> Bool {
+		return self.first(where: { (s) -> Bool in
+			return s.implies(likeThis)
+		}) != nil
 	}
 }
