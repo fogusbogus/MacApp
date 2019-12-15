@@ -519,7 +519,7 @@ public extension String {
 	func sqlSafe() -> String {
 		return self.replacingOccurrences(of: "'", with: "''")
 	}
-	
+		
 	//Returns the substring using from and to
 	func substring(from: Int, to: Int) -> String {
 		guard from < self.length() else { return "" }

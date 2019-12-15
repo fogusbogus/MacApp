@@ -40,6 +40,15 @@ public extension Array {
 	}
 }
 
+public extension Array where Element == String {
+	func sqlStringList() -> String {
+		let ret = self.map({ (s) -> String in
+			return s.sqlSafe()
+		}) .joined(separator: "','")
+		return "'\(ret)'"
+	}
+}
+
 public extension Dictionary where Key: ExpressibleByStringLiteral, Value: Any {
     var jsonString: String? {
         if let dict = (self as AnyObject) as? Dictionary<String, AnyObject> {

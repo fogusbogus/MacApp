@@ -23,9 +23,9 @@ class Functions {
 }
 
 public enum LinkType : Int {
-	case street = 1
-	case property = 2
-	case elector = 3
+	case street = 0
+	case property = 1
+	case elector = 2
 	
 	@discardableResult
 	mutating func parse(link: String) -> LinkType {
@@ -41,13 +41,13 @@ public enum LinkType : Int {
 		}
 		set {
 			switch newValue {
-			case 1:
+			case 0:
 				self = .street
 				break
-			case 2:
+			case 1:
 				self = .property
 				break
-			case 3:
+			case 2:
 				self = .elector
 				break
 			default:

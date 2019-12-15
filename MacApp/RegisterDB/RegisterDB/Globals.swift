@@ -104,4 +104,13 @@ class Globals {
 	public func refreshSyncStatus() {
 		_reqSync = nil
 	}
+	
+	public var splitCount : Int {
+		get {
+			return get("SPLITCOUNT", 0)
+		}
+		set {
+			self["SPLITCOUNT"] = "\(newValue)"
+		}
+	}
 }

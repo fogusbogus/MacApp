@@ -11,7 +11,23 @@ import DBLib
 import Common
 import Logging
 
-public class PollingDistrict : TableBased<Int> {
+public class PollingDistrict : TableBased<Int>, KeyedItem {
+	public static func getCalculatedName(db: SQLDBInstance, id: Int) -> String {
+		return db.queryValue("SELECT DisplayName FROM PollingDistrict WHERE ID = ? LIMIT 1", "", id)
+	}
+	
+	public var Key: String {
+		get {
+			return "PD\(ID!)"
+		}
+	}
+	
+	public static func getChildrenIDs(db: SQLDBInstance, id: Int) -> [Int] {
+		let sql = "SELECT ID FROM Street WHERE PDID = ? ORDER BY ID"
+		return db.queryList(sql, hintValue: 0, parms: id)
+
+	}
+	
 	override public init(db : SQLDBInstance, _ id: Int?, _ log: IIndentLog? = nil) {
 		super.init(db: db, id, log)
 	}

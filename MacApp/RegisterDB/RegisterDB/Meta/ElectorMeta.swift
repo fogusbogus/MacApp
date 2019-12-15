@@ -38,6 +38,31 @@ public class ElectorMeta: Meta, MetaCryptoDelegate {
 		}
 	}
 	
+	public var Forename: String {
+		get {
+			return get("fn", "")
+		}
+		set {
+			setOrRemove("fn", newValue)
+		}
+	}
+	public var MiddleName: String {
+		get {
+			return get("mn", "")
+		}
+		set {
+			setOrRemove("mn", newValue)
+		}
+	}
+	public var Surname: String {
+		get {
+			return get("sn", "")
+		}
+		set {
+			setOrRemove("sn", newValue)
+		}
+	}
+	
 	public var Title: String {
 		get {
 			return get("title", "")
@@ -191,6 +216,14 @@ public class ElectorMeta: Meta, MetaCryptoDelegate {
 		}
 	}
 	
+	public var OriginalMeta: String {
+		get {
+			return get("previous", "")
+		}
+		set {
+			setOrRemove("previous", newValue)
+		}
+	}
 
-
+	
 }

@@ -7,9 +7,16 @@
 //
 
 import Foundation
+import DBLib
+import MapKit
 
 public protocol HasTODOItems {
-	func getIDsForTODOItems(includeChildren: Bool) -> String
+	func getIDsForTODOItems(includeChildren: Bool, includeComplete: Bool) -> String
+	static func getIDsForTODOItems(db: SQLDBInstance, id: Int, includeChildren: Bool, includeComplete: Bool) -> String
+}
+
+public protocol Iconised {
+	static func calculateIcon(db: SQLDBInstance, id: Int) -> String
 }
 
 public protocol KeyedItem {
@@ -19,10 +26,15 @@ public protocol KeyedItem {
 	var SID : Int? { get set }
 	var PID : Int? { get set }
 	var EID : Int? { get set }
+	
+	static func getChildrenIDs(db: SQLDBInstance, id: Int) -> [Int]
+	static func getCalculatedName(db: SQLDBInstance, id: Int) -> String
 }
 
 public protocol LocatableItem {
 	var GPS : String { get set }
 	var Longitude : Double { get set }
 	var Latitude : Double { get set }
+	
+	func getCoord() -> CLLocationCoordinate2D
 }

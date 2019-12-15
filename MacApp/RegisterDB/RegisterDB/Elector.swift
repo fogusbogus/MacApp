@@ -12,8 +12,30 @@ import Common
 import Logging
 
 public class Elector : TableBased<Int>, HasTODOItems, KeyedItem {
-	public func getIDsForTODOItems(includeChildren: Bool) -> String {
-		return ""
+	
+	public static func getCalculatedName(db: SQLDBInstance, id: Int) -> String {
+		let data = db.querySingleRow("SELECT * FROM Elector WHERE ID = ? LIMIT 1", id)
+		let fn = data.get("forename", "")
+		let mn = getMiddleInitials(middleName: data.get("middlename", ""))
+		let sn = data.get("surname", "")
+		return "\(fn) \(mn) \(sn)".removeMultipleSpaces(true)
+	}
+	
+	public static func getChildrenIDs(db: SQLDBInstance, id: Int) -> [Int] {
+		return []
+	}
+	
+	public static func getIDsForTODOItems(db: SQLDBInstance, id: Int, includeChildren: Bool, includeComplete: Bool) -> String {
+		var sql = "SELECT ID FROM Action WHERE LinkID = ? AND LinkType = 2 AND Required = '1'"
+		if !includeComplete {
+			sql += " AND IsComplete IS NULL"
+		}
+		
+		return db.queryList(sql, hintValue: 0, parms: id).toDelimitedString(delimiter: ",")
+	}
+
+	public func getIDsForTODOItems(includeChildren: Bool, includeComplete: Bool = false) -> String {
+		return Elector.getIDsForTODOItems(db: SQLDB, id: ID!, includeChildren: includeChildren, includeComplete: includeComplete)
 	}
 	
 	public var Key: String {
@@ -76,10 +98,18 @@ public class Elector : TableBased<Int>, HasTODOItems, KeyedItem {
 	override func saveAsUpdate() {
 		super.saveAsUpdate()
 		let sql = "UPDATE Elector SET DisplayName = ?, Surname = ?, Forename = ?, MiddleName = ?, Meta = ?, Markers = ?, PDID = ?, SID = ?, PID = ?, EID = ? WHERE ID = \(ID ?? -1)"
+		GetPreviousData()
 		SQLDB.execute(sql, parms: DisplayName, Surname, Forename, MiddleName, MetaData.getSignature(true), Markers, _pdid, _sid, _pid, ID ?? _eid)
 	}
 	
-	public var DisplayName = "", Surname = "", Forename = "", MiddleName = "", Markers = ""
+	private func GetPreviousData() {
+		/*
+		TODO:
+		We need to see the differences between the original data and the new. We will need to create a previous entry in the json with the original data (note, not the original meta), but only for the data that has changed. If we record everything the string could get huge very quickly.
+		*/
+	}
+	
+	public var DisplayName = "", Surname = "", Forename = "", MiddleName = "", Markers = "", OriginalMeta = ""
 	private var _pdid = -1, _sid = -1, _pid = -1, _eid = -1
 	private var _created = Date()
 	
@@ -102,6 +132,17 @@ public class Elector : TableBased<Int>, HasTODOItems, KeyedItem {
 		return ret.trim()
 	}
 	
+	public static func getMiddleInitials(middleName: String) -> String {
+		let parts = middleName.components(separatedBy: .whitespacesAndNewlines)
+		var ret = ""
+		parts.filter { (s) -> Bool in
+			return s.trim().length() > 0
+			}.forEach { (s) in
+				ret += " " + s.trim().left(1).uppercased()
+			}
+		return ret.trim()
+	}
+	
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	override func loadData() {
@@ -115,7 +156,8 @@ public class Elector : TableBased<Int>, HasTODOItems, KeyedItem {
 		Forename = row.get("Forename", "")
 		MiddleName = row.get("MiddleName", "")
 		Markers = row.get("Markers", "")
-		MetaData.load(json: row.get("Meta", ""), true)
+		OriginalMeta = row.get("Meta", "")
+		MetaData.load(json: OriginalMeta, true)
 
 		PDID = row.getNull("PDID", -1)
 		SID = row.getNull("SID", -1)
