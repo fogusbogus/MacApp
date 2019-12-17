@@ -45,7 +45,7 @@ class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate
 
 	
 	func refreshElector() {
-		Log.Checkpoint("refreshElector", {
+		Log.checkpoint("refreshElector", {
 			
 			if let el = selectedNode?.linkedItem as? Elector {
 				el.reload()
@@ -56,7 +56,7 @@ class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate
 	}
 	
 	func refreshStreet() {
-		Log.Checkpoint("refreshStreet", {
+		Log.checkpoint("refreshStreet", {
 			
 			selectedNode?.getChildItems()
 			outlineView.reloadItem(selectedNode, reloadChildren: true)
@@ -65,12 +65,12 @@ class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate
 	
 	
 	@objc func menuItemSelected(_ sender: NSMenuItem) {
-		Log.Checkpoint("menuItemSelected", {
+		Log.checkpoint("menuItemSelected", {
 			
 			
 			let ma : MenuAction = MenuAction(rawValue: sender.tag)!
 			
-			Log.Debug(String(describing:ma))
+			Log.debug(String(describing:ma))
 			
 			switch ma {
 			case .newChild:
@@ -101,7 +101,7 @@ class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate
 	
 	func openEditElectorWindow(_ usage: FormUseType = .notSpecified) {
 		
-		Log.Checkpoint("openEditElectorWindow", {
+		Log.checkpoint("openEditElectorWindow", {
 			
 			
 			if wcEditElector == nil {
@@ -134,7 +134,7 @@ class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate
 	
 	func openNewPropertyWindow() {
 		
-		Log.Checkpoint("openNewPropertyWindow", {
+		Log.checkpoint("openNewPropertyWindow", {
 			
 			
 			if wc == nil {
@@ -157,7 +157,7 @@ class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate
 	
 	func menuButton(_ title: String, tag: MenuAction = .none, keys: String = "") -> NSMenuItem {
 		
-		return Log.Checkpoint("menuButton", { () -> NSMenuItem in
+		return Log.checkpoint("menuButton", { () -> NSMenuItem in
 			
 			
 			let ret = NSMenuItem(title: title, action: #selector(menuItemSelected(_:)), keyEquivalent: keys)
@@ -209,7 +209,7 @@ class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate
 			let ov = sender as? NSOutlineView
 			if let sn = ov?.selectedNode() {
 	
-				Log.Debug("\(sn.className) \(sn.id)")
+				Log.debug("\(sn.className) \(sn.id)")
 				
 				if sn != selectedNode {
 					selectedNode = sn

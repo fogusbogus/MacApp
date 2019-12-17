@@ -21,14 +21,14 @@ class NewPropertyWindowController: ModalWindowController, NewPropertyWindowDeleg
 	
 	func windowHasLoaded() {
 		
-		Log.Checkpoint("windowHasLoaded", {
+		Log.checkpoint("windowHasLoaded", {
 			
 		}, keyAndValues: [:])
 		
 	}
 	
 	func addOrUpdate(data: PropertyDataStruct) {
-		Log.Checkpoint("addOrUpdate", {
+		Log.checkpoint("addOrUpdate", {
 
 			let p = Property(db: Databases.shared.Register, data: data)
 			p.save()
@@ -37,7 +37,7 @@ class NewPropertyWindowController: ModalWindowController, NewPropertyWindowDeleg
 	}
 	
 	func cancel() {
-		Log.Checkpoint("cancel", {
+		Log.checkpoint("cancel", {
 			close()
 			refreshDelegate?.refreshStreet()
 		}, keyAndValues: [:])
@@ -116,7 +116,7 @@ class NewPropertyVC : NSViewControllerWithLog {
 	
 	func openMapWindow() {
 		
-		Log.Checkpoint("openMapWindow", {
+		Log.checkpoint("openMapWindow", {
 			
 			if wcMap == nil {
 				wcMap = PropertyMapWindowController.loadFromNib()
@@ -155,10 +155,10 @@ class NewPropertyVC : NSViewControllerWithLog {
 	
 	@IBAction func btnAdd_Click(_ sender: NSButton) {
 		
-		Log.Checkpoint("btnAdd_Click", {
+		Log.checkpoint("btnAdd_Click", {
 			
 			if sender == btnCancel {
-				Log.Debug("Cancel pressed")
+				Log.debug("Cancel pressed")
 				if let h = handler {
 					h.cancel()
 				}
@@ -167,9 +167,9 @@ class NewPropertyVC : NSViewControllerWithLog {
 				}
 			}
 			if sender == btnAdd {
-				Log.Debug("Add pressed")
+				Log.debug("Add pressed")
 				if let h = handler {
-					Log.Debug("Store current data and get next available number")
+					Log.debug("Store current data and get next available number")
 					
 					let data = PropertyDataStruct(Name: txtName.stringValue, NumberPrefix: txtNumberPrefix.stringValue, NumberSuffix: txtNumberSuffix.stringValue, DisplayName: "", ElectorCount: 0, Number: Int(txtNumber.stringValue) ?? 0, ID: -1, GPS: "", Meta: "", EID: nil, PID: nil, SID: _street?.ID, PDID: _street?.PDID, Split: 0, SplitCount: 0, TodoActions: "", Status: 0)
 					

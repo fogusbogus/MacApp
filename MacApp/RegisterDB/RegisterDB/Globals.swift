@@ -9,12 +9,15 @@
 import Foundation
 import DBLib
 import Common
+import Logging
 
 class Globals {
 	static let shared = Globals()
 	
 	private init() {
 	}
+	
+	public var Log : IIndentLog? = nil
 	
 	private var _values : [String:String] = [:]
 	

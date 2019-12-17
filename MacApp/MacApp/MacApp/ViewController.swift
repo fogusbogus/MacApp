@@ -35,7 +35,7 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 			if _logFileURL == nil {
 				let dir: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last! as URL
 				_logFileURL = dir.appendingPathComponent(DefaultFileName)
-				Log.Info("\n---------------------------------")
+				Log.info("\n---------------------------------")
 			}
 			return _logFileURL
 		}
@@ -67,13 +67,13 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 	
 	func selectionChange(node: NodeBase?) {
 
-		Log.Checkpoint("Something new has been selected from the tree", "selectionChange", { () -> Void in
+		Log.checkpoint("Something new has been selected from the tree", "selectionChange", { () -> Void in
 
 			if node == nil {
-				Log.Debug("Nothing selected")
+				Log.debug("Nothing selected")
 			}
 			else {
-				Log.Debug("\(String(describing: node))")
+				Log.debug("\(String(describing: node))")
 			}
 			currentlySelectedNode = node
 			selectedNodeListener?.selectionChange(node: node)
@@ -86,7 +86,7 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 		
 		//Log.Checkpoint("Segue preparation", "prepare", {
 		if let svc = segue.destinationController as? StreetVC {
-			Log.Debug("Segue is StreetVC")
+			Log.debug("Segue is StreetVC")
 			svc.selectedNodeHandler = selectedNodeListener ?? self
 			svc.Log = self
 		}
@@ -106,7 +106,7 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 	
 	func openNewPropertyWindow() {
 		
-		Log.Checkpoint("Open the property window", "openNewPropertyWindow()", {
+		Log.checkpoint("Open the property window", "openNewPropertyWindow()", {
 
 			let wc = NSStoryboard(name: "NewProperty", bundle: nil)
 			let np = wc.instantiateController(withIdentifier: "winController") as! NSWindowController
@@ -117,6 +117,7 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 	}
 	
 	private var _forenames : [(String,String)] = []
+	@discardableResult
 	private func getForenames() -> [(String,String)] {
 		if _forenames.count == 0 {
 			let db = SQLDBInstance()
@@ -166,17 +167,17 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 	
 	func setupDB() {
 		
-		Log.Checkpoint("Setting up the database with random fluff", "setupDB()", {
+		Log.checkpoint("Setting up the database with random fluff", "setupDB()", {
 			
 			getForenames()
 			
-			Log.Debug("Create polling districts")
+			Log.debug("Create polling districts")
 			let pd = PollingDistrict(db: Databases.shared.Register)
 			pd.Name = "Cashes Green"
 			pd.MetaData.add(collection: ["name":"Cashes Green", "ward":"Cainscross", "parliamentary":"Stroud"])
 			pd.save()
 			
-			Log.Debug("Create streets")
+			Log.debug("Create streets")
 
 			let st1 = pd.createStreet()
 			st1.Name = "Berkeley Close"
@@ -184,7 +185,7 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 			st1.MetaData.add(collection: ["name":"Berkeley Close", "ward":"Cainscross", "parliamentary":"Stroud", "propCount":30])
 			st1.save()
 			
-			Log.Debug("Create 26 properties in 'Berkeley Close' and a random amount of electors in each one")
+			Log.debug("Create 26 properties in 'Berkeley Close' and a random amount of electors in each one")
 			for pn in 1...26 {
 				let pr = newProp(street: st1, number: pn)
 				for _ in 0...Int.random(in: 0...5) {
@@ -193,9 +194,9 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 			}
 			pd.recalculateCounts()
 			st1.recalculateCounts()
-			//Log.Debug("\(st1.ElectorCount) electors created")
+			//Log.debug("\(st1.ElectorCount) electors created")
 
-			Log.Debug("Create 155 properties in 'Hunter's Way' and a random amount of electors in each one")
+			Log.debug("Create 155 properties in 'Hunter's Way' and a random amount of electors in each one")
 			let st2 = pd.createStreet()
 			st2.Name = "Hunters Way"
 			st1.MetaData.add(collection: ["name":"Hunters Way", "ward":"Cainscross", "parliamentary":"Stroud", "propCount":155])
@@ -211,12 +212,12 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 			
 			let streets = pd.GetStreets()
 			for street in streets {
-				Log.Args("Street: \(street.Name)", ["Properties":street.PropertyCount, "Electors":street.ElectorCount])
+				Log.args("Street: \(street.Name)", ["Properties":street.PropertyCount, "Electors":street.ElectorCount])
 			}
 			
 			let totalElectors = st1.ElectorCount + st2.ElectorCount
-			Log.Debug("\(totalElectors) electors created")
-			//Log.Debug("\(st2.ElectorCount) electors created")
+			Log.debug("\(totalElectors) electors created")
+			//Log.debug("\(st2.ElectorCount) electors created")
 
 		}, keyAndValues: [:])
 		
@@ -224,7 +225,7 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 
 	override func viewDidLoad() {
 		
-		Log.Checkpoint("View has loaded", "viewDidLoad", {
+		Log.checkpoint("View has loaded", "viewDidLoad", {
 			
 			super.viewDidLoad()
 			

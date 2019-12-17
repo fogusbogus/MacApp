@@ -12,7 +12,6 @@
 		C962A0AE22A9C03000510199 /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = C962A0AD22A9C03000510199 /* Common.h */; };
 		C962A0B022A9C03000510199 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = C962A0AF22A9C03000510199 /* Common.m */; };
 		C962A0BE22A9C06400510199 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962A0BD22A9C06400510199 /* NibView.swift */; };
-		C962A0C022A9C0F400510199 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962A0BF22A9C0F400510199 /* Log.swift */; };
 		C962A0C422A9C52200510199 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962A0C322A9C52200510199 /* Strings.swift */; };
 		C962A0C622A9C56700510199 /* Numerical.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962A0C522A9C56700510199 /* Numerical.swift */; };
 		C962A0C822A9C70A00510199 /* Collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962A0C722A9C70A00510199 /* Collections.swift */; };
@@ -21,8 +20,6 @@
 		C962A0ED22A9D08700510199 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962A0EC22A9D08700510199 /* Date.swift */; };
 		C96323E7239C6B3F00FDA5C1 /* DelimitedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96323E6239C6B3F00FDA5C1 /* DelimitedString.swift */; };
 		C96BBCE22348BAF500875037 /* ConsoleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96BBCE12348BAF500875037 /* ConsoleOutput.swift */; };
-		C9B488EC234BD45C00765D61 /* BaseLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B488EB234BD45C00765D61 /* BaseLog.swift */; };
-		C9B488EE234BD53700765D61 /* ILogDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B488ED234BD53700765D61 /* ILogDelegate.swift */; };
 		C9C1417F2384C02E006505D4 /* FileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C1417E2384C02E006505D4 /* FileData.swift */; };
 		C9D416332380461400E6B717 /* CSVStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D416322380461400E6B717 /* CSVStringExtensions.swift */; };
 /* End PBXBuildFile section */
@@ -35,7 +32,6 @@
 		C962A0AF22A9C03000510199 /* Common.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
 		C962A0BC22A9C06300510199 /* Common-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Common-Bridging-Header.h"; sourceTree = "<group>"; };
 		C962A0BD22A9C06400510199 /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
-		C962A0BF22A9C0F400510199 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		C962A0C322A9C52200510199 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		C962A0C522A9C56700510199 /* Numerical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Numerical.swift; sourceTree = "<group>"; };
 		C962A0C722A9C70A00510199 /* Collections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collections.swift; sourceTree = "<group>"; };
@@ -44,8 +40,6 @@
 		C962A0EC22A9D08700510199 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		C96323E6239C6B3F00FDA5C1 /* DelimitedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelimitedString.swift; sourceTree = "<group>"; };
 		C96BBCE12348BAF500875037 /* ConsoleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleOutput.swift; sourceTree = "<group>"; };
-		C9B488EB234BD45C00765D61 /* BaseLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLog.swift; sourceTree = "<group>"; };
-		C9B488ED234BD53700765D61 /* ILogDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILogDelegate.swift; sourceTree = "<group>"; };
 		C9C1417E2384C02E006505D4 /* FileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileData.swift; sourceTree = "<group>"; };
 		C9D416322380461400E6B717 /* CSVStringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVStringExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,6 +55,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C93D064823A674130056D519 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		C962A0A122A9C03000510199 = {
 			isa = PBXGroup;
 			children = (
@@ -93,13 +94,11 @@
 			isa = PBXGroup;
 			children = (
 				C962A0BD22A9C06400510199 /* NibView.swift */,
-				C962A0BF22A9C0F400510199 /* Log.swift */,
 				C962A0CB22A9C79300510199 /* JCollection.swift */,
 				C90626272301B0050095D528 /* AES256.swift */,
-				C9B488EB234BD45C00765D61 /* BaseLog.swift */,
-				C9B488ED234BD53700765D61 /* ILogDelegate.swift */,
 				C9C1417E2384C02E006505D4 /* FileData.swift */,
 				C96323E6239C6B3F00FDA5C1 /* DelimitedString.swift */,
+				C93D064823A674130056D519 /* Protocols */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -196,13 +195,10 @@
 				C962A0C622A9C56700510199 /* Numerical.swift in Sources */,
 				C90626282301B0050095D528 /* AES256.swift in Sources */,
 				C949800A238B3C560016AD95 /* EasyURL.swift in Sources */,
-				C9B488EE234BD53700765D61 /* ILogDelegate.swift in Sources */,
 				C962A0C822A9C70A00510199 /* Collections.swift in Sources */,
 				C962A0C422A9C52200510199 /* Strings.swift in Sources */,
-				C9B488EC234BD45C00765D61 /* BaseLog.swift in Sources */,
 				C962A0ED22A9D08700510199 /* Date.swift in Sources */,
 				C96323E7239C6B3F00FDA5C1 /* DelimitedString.swift in Sources */,
-				C962A0C022A9C0F400510199 /* Log.swift in Sources */,
 				C9D416332380461400E6B717 /* CSVStringExtensions.swift in Sources */,
 				C9C1417F2384C02E006505D4 /* FileData.swift in Sources */,
 			);

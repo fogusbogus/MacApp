@@ -73,7 +73,7 @@ public class TableBased<IDType> {
 	
 	public init(db : SQLDBInstance, _ id: IDType?, _ log: IIndentLog? = nil) {
 		SQLDB = db
-		Log = log
+		Log = log ?? Globals.shared.Log
 		sanityCheck()
 		assertExtra()
 		if let id = id {
@@ -83,14 +83,14 @@ public class TableBased<IDType> {
 	
 	public init(db : SQLDBInstance, _ log: IIndentLog? = nil) {
 		SQLDB = db
-		Log = log
+		Log = log ?? Globals.shared.Log
 		sanityCheck()
 		assertExtra()
 	}
 	
 	public init(db : SQLDBInstance, row: SQLRow, _ log: IIndentLog? = nil) {
 		SQLDB = db
-		Log = log
+		Log = log ?? Globals.shared.Log
 		sanityCheck()
 		assertExtra()
 		loadData(row: row)

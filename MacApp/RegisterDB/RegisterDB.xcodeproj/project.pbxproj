@@ -26,6 +26,8 @@
 		C975188523076B7500BD4160 /* PropertyMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = C975188423076B7500BD4160 /* PropertyMeta.swift */; };
 		C98E391322E52FF30077C208 /* PollingDistrict.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E391222E52FF30077C208 /* PollingDistrict.swift */; };
 		C990910323931C710053C78D /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = C990910223931C710053C78D /* Action.swift */; };
+		C9A293C723A990E80004CDC1 /* NameFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A293C623A990E80004CDC1 /* NameFunctions.swift */; };
+		C9A293C923A992160004CDC1 /* StringFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A293C823A992160004CDC1 /* StringFunctions.swift */; };
 		C9B9781E23A1CC980015A2D6 /* ElectorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B9781D23A1CC980015A2D6 /* ElectorExtensions.swift */; };
 		C9C25A1B237015D80098B08B /* libLogging.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C25A1A237015D80098B08B /* libLogging.dylib */; };
 		C9CE48D6238F5749009AA250 /* ActionCodeCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE48D5238F5749009AA250 /* ActionCodeCache.swift */; };
@@ -56,6 +58,8 @@
 		C975188423076B7500BD4160 /* PropertyMeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyMeta.swift; sourceTree = "<group>"; };
 		C98E391222E52FF30077C208 /* PollingDistrict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollingDistrict.swift; sourceTree = "<group>"; };
 		C990910223931C710053C78D /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		C9A293C623A990E80004CDC1 /* NameFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameFunctions.swift; sourceTree = "<group>"; };
+		C9A293C823A992160004CDC1 /* StringFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFunctions.swift; sourceTree = "<group>"; };
 		C9B9781D23A1CC980015A2D6 /* ElectorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectorExtensions.swift; sourceTree = "<group>"; };
 		C9C25A1A237015D80098B08B /* libLogging.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libLogging.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9CE48D5238F5749009AA250 /* ActionCodeCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCodeCache.swift; sourceTree = "<group>"; };
@@ -89,6 +93,8 @@
 		C9080E2A22DFDD2800D37D70 = {
 			isa = PBXGroup;
 			children = (
+				C9A293C823A992160004CDC1 /* StringFunctions.swift */,
+				C9A293C623A990E80004CDC1 /* NameFunctions.swift */,
 				C90299A3239F017C002CB58B /* RegisterDB.playground */,
 				C91606E72394160A0038C3EF /* TODO */,
 				C9080E3522DFDD2800D37D70 /* RegisterDB */,
@@ -214,11 +220,13 @@
 				C9CE48D8238F57C4009AA250 /* ActionCode.swift in Sources */,
 				C9CE48D6238F5749009AA250 /* ActionCodeCache.swift in Sources */,
 				C950962D23906CDF0005292F /* Functions.swift in Sources */,
+				C9A293C723A990E80004CDC1 /* NameFunctions.swift in Sources */,
 				C9B9781E23A1CC980015A2D6 /* ElectorExtensions.swift in Sources */,
 				C901639023A5658D001646E9 /* Splits.swift in Sources */,
 				C90626262300CA550095D528 /* ElectorMeta.swift in Sources */,
 				C9080E4622DFDF1400D37D70 /* TableBased.swift in Sources */,
 				C9080E3922DFDD2800D37D70 /* RegisterDB.m in Sources */,
+				C9A293C923A992160004CDC1 /* StringFunctions.swift in Sources */,
 				C906262A23021CF00095D528 /* CryptoInt.swift in Sources */,
 				C975188523076B7500BD4160 /* PropertyMeta.swift in Sources */,
 				C91FC2D6238DF06C00E88A0F /* ActionGroup.swift in Sources */,

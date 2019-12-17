@@ -111,7 +111,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Matthew Hogg";
 				TargetAttributes = {
 					C9655D4822ADB87A00295976 = {
@@ -269,6 +269,7 @@
 		C9655D5122ADB87A00295976 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JH3ZC8234Q;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -279,6 +280,7 @@
 		C9655D5222ADB87A00295976 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JH3ZC8234Q;
 				PRODUCT_NAME = "$(TARGET_NAME)";

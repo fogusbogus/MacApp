@@ -8,8 +8,8 @@
 
 import Foundation
 import DBLib
-import Common
 import Logging
+import Common
 
 
 public class Action : TableBased<Int> {
@@ -428,9 +428,13 @@ public class Action : TableBased<Int> {
 		return ret
 	}
 	
-	public static func discoverCodes(db: SQLDBInstance, linkType: Int, linkID: Int) -> [ActionCode] {
+	public static func discoverCodes(db: SQLDBInstance, linkType: Int, linkID: Int, log: IIndentLog? = nil) -> [ActionCode] {
 		var sql = "SELECT * FROM Action WHERE Retract <> 1 AND IFNULL(SupersedeID, 0) < 1 AND LinkType = ? AND LinkID = ?"
 		let cds = DelimitedString()
+		
+		log.SQL(sql)
+	
+		
 		db.processMultiRow(rowHandler: { (csr) in
 			var code = ""
 			if csr.get("Required", "") == "1" {

@@ -111,11 +111,11 @@ public class ActionGroup : TableBased<String> {
 	}
 	
 	static func getAllowedGroups(db: SQLDBInstance, linkType: LinkType, allowedCodes: [String]) -> [ActionGroup] {
-		var allGroups : [String:ActionGroup] = [:]
+		let allGroups : [String:ActionGroup] = [:]
 		var groups: [String] = []
 		db.processMultiRow(rowHandler: { (csr) in
 			let codes = csr.get("codes", "").splitToArray("~")
-			var add = false
+			//var add = false
 			for code in codes {
 				if allowedCodes.containsLike(code) {
 					let id = csr.get("ID", "")
@@ -137,7 +137,7 @@ public class ActionGroup : TableBased<String> {
 							break
 						}
 					}
-					add = true
+					//add = true
 					break
 				}
 			}

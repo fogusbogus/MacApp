@@ -43,9 +43,10 @@
 		C962A09922A9BFC900510199 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C962A09722A9BFC900510199 /* Main.storyboard */; };
 		C969B85722E77DA200EBC869 /* NewProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C969B85622E77DA200EBC869 /* NewProperty.swift */; };
 		C980D9282380442300B6ACE2 /* Names.csv in Resources */ = {isa = PBXBuildFile; fileRef = C980D9272380442300B6ACE2 /* Names.csv */; };
+		C9A293CA23A9A0B40004CDC1 /* libLogging.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C25A1E237016F90098B08B /* libLogging.dylib */; };
+		C9A293CB23A9A0B40004CDC1 /* libLogging.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = C9C25A1E237016F90098B08B /* libLogging.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		C9B5EC0C2315F77100814E1F /* PropertyMapWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B5EC0A2315F77100814E1F /* PropertyMapWindowController.swift */; };
 		C9B6342F22E674D60085C92A /* NewProperty.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B6342E22E674D60085C92A /* NewProperty.storyboard */; };
-		C9C25A1F237016F90098B08B /* libLogging.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C25A1E237016F90098B08B /* libLogging.dylib */; };
 		C9C25A23237017C80098B08B /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C25A22237017C80098B08B /* Log.swift */; };
 		C9C33F0B22D9CF93003D8B3A /* mainviewicons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9C33F0A22D9CF93003D8B3A /* mainviewicons.xcassets */; };
 		C9C33F4D22DB9CA9003D8B3A /* TreeNodeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C33F4C22DB9CA9003D8B3A /* TreeNodeImage.swift */; };
@@ -59,6 +60,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				C9A293CB23A9A0B40004CDC1 /* libLogging.dylib in Embed Libraries */,
 				C9498026238B54DA0016AD95 /* libLocationTools.dylib in Embed Libraries */,
 			);
 			name = "Embed Libraries";
@@ -119,7 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9C25A1F237016F90098B08B /* libLogging.dylib in Frameworks */,
+				C9A293CA23A9A0B40004CDC1 /* libLogging.dylib in Frameworks */,
 				C90BC4A322E26EDA002FB78F /* libRegisterDB.dylib in Frameworks */,
 				C933276622B5798E003EEA09 /* libCommon.dylib in Frameworks */,
 				C933276722B5798E003EEA09 /* libDBLib.dylib in Frameworks */,
@@ -297,7 +299,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Matthew Hogg";
 				TargetAttributes = {
 					C962A08D22A9BFC800510199 = {
@@ -520,6 +522,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MacApp/MacApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = JH3ZC8234Q;
@@ -541,6 +544,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MacApp/MacApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = JH3ZC8234Q;
