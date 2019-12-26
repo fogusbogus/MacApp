@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9047FFC23B42380005F2374 /* vcElectorZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9047FFB23B42380005F2374 /* vcElectorZone.swift */; };
+		C9047FFE23B4255E005F2374 /* vcElectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9047FFD23B4255E005F2374 /* vcElectors.swift */; };
+		C904800023B427D2005F2374 /* NSViewControllerWithSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9047FFF23B427D2005F2374 /* NSViewControllerWithSubviews.swift */; };
 		C907982F22C91F3800073F31 /* TreeNodeContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C907982E22C91F3800073F31 /* TreeNodeContainerView.xib */; };
 		C907983122C91F5D00073F31 /* TreeNodeContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C907983022C91F5D00073F31 /* TreeNodeContainerView.swift */; };
 		C907983322C9217F00073F31 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C907983222C9217F00073F31 /* NibView.swift */; };
@@ -47,9 +50,14 @@
 		C9A293CB23A9A0B40004CDC1 /* libLogging.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = C9C25A1E237016F90098B08B /* libLogging.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		C9B5EC0C2315F77100814E1F /* PropertyMapWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B5EC0A2315F77100814E1F /* PropertyMapWindowController.swift */; };
 		C9B6342F22E674D60085C92A /* NewProperty.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B6342E22E674D60085C92A /* NewProperty.storyboard */; };
+		C9C0E48623AEF0990014CE2C /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9C0E48523AEF0990014CE2C /* TestView.xib */; };
 		C9C25A23237017C80098B08B /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C25A22237017C80098B08B /* Log.swift */; };
 		C9C33F0B22D9CF93003D8B3A /* mainviewicons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9C33F0A22D9CF93003D8B3A /* mainviewicons.xcassets */; };
 		C9C33F4D22DB9CA9003D8B3A /* TreeNodeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C33F4C22DB9CA9003D8B3A /* TreeNodeImage.swift */; };
+		C9C7112823B053F600AC999E /* vcProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C7112623B053F600AC999E /* vcProperties.swift */; };
+		C9C7112923B053F600AC999E /* vcProperties.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9C7112723B053F600AC999E /* vcProperties.xib */; };
+		C9C7112C23B0EA5A00AC999E /* vcPropElecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C7112A23B0EA5A00AC999E /* vcPropElecs.swift */; };
+		C9C7112D23B0EA5A00AC999E /* vcPropElecs.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9C7112B23B0EA5A00AC999E /* vcPropElecs.xib */; };
 		C9D416532380B83B00E6B717 /* Databases.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D416522380B83B00E6B717 /* Databases.swift */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +77,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C9047FFB23B42380005F2374 /* vcElectorZone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vcElectorZone.swift; sourceTree = "<group>"; };
+		C9047FFD23B4255E005F2374 /* vcElectors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vcElectors.swift; sourceTree = "<group>"; };
+		C9047FFF23B427D2005F2374 /* NSViewControllerWithSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSViewControllerWithSubviews.swift; sourceTree = "<group>"; };
 		C907982E22C91F3800073F31 /* TreeNodeContainerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TreeNodeContainerView.xib; sourceTree = "<group>"; };
 		C907983022C91F5D00073F31 /* TreeNodeContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNodeContainerView.swift; sourceTree = "<group>"; };
 		C907983222C9217F00073F31 /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
@@ -109,10 +120,15 @@
 		C980D9272380442300B6ACE2 /* Names.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Names.csv; sourceTree = "<group>"; };
 		C9B5EC0A2315F77100814E1F /* PropertyMapWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyMapWindowController.swift; sourceTree = "<group>"; };
 		C9B6342E22E674D60085C92A /* NewProperty.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewProperty.storyboard; sourceTree = "<group>"; };
+		C9C0E48523AEF0990014CE2C /* TestView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestView.xib; sourceTree = "<group>"; };
 		C9C25A1E237016F90098B08B /* libLogging.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libLogging.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9C25A22237017C80098B08B /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		C9C33F0A22D9CF93003D8B3A /* mainviewicons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = mainviewicons.xcassets; sourceTree = "<group>"; };
 		C9C33F4C22DB9CA9003D8B3A /* TreeNodeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNodeImage.swift; sourceTree = "<group>"; };
+		C9C7112623B053F600AC999E /* vcProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vcProperties.swift; sourceTree = "<group>"; };
+		C9C7112723B053F600AC999E /* vcProperties.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = vcProperties.xib; sourceTree = "<group>"; };
+		C9C7112A23B0EA5A00AC999E /* vcPropElecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vcPropElecs.swift; sourceTree = "<group>"; };
+		C9C7112B23B0EA5A00AC999E /* vcPropElecs.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = vcPropElecs.xib; sourceTree = "<group>"; };
 		C9D416522380B83B00E6B717 /* Databases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Databases.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -267,6 +283,14 @@
 				C9C25A22237017C80098B08B /* Log.swift */,
 				C95FE872237C9FCA00E81811 /* NameDefinitions.swift */,
 				C980D9272380442300B6ACE2 /* Names.csv */,
+				C9C0E48523AEF0990014CE2C /* TestView.xib */,
+				C9C7112623B053F600AC999E /* vcProperties.swift */,
+				C9C7112723B053F600AC999E /* vcProperties.xib */,
+				C9C7112A23B0EA5A00AC999E /* vcPropElecs.swift */,
+				C9C7112B23B0EA5A00AC999E /* vcPropElecs.xib */,
+				C9047FFB23B42380005F2374 /* vcElectorZone.swift */,
+				C9047FFD23B4255E005F2374 /* vcElectors.swift */,
+				C9047FFF23B427D2005F2374 /* NSViewControllerWithSubviews.swift */,
 			);
 			path = MacApp;
 			sourceTree = "<group>";
@@ -341,13 +365,16 @@
 				C91A6F9022C17AE400A1E165 /* TreeNodeView.xib in Resources */,
 				C926D6B02311E9D800C82DC7 /* PropertyMap.storyboard in Resources */,
 				C933276D22B6CE67003EEA09 /* TreeItem.xib in Resources */,
+				C9C0E48623AEF0990014CE2C /* TestView.xib in Resources */,
 				C962A09622A9BFC900510199 /* Assets.xcassets in Resources */,
 				C933276B22B6CE49003EEA09 /* Tree.xib in Resources */,
 				C9B6342F22E674D60085C92A /* NewProperty.storyboard in Resources */,
+				C9C7112923B053F600AC999E /* vcProperties.xib in Resources */,
 				C937958D22FA248E00FDB98F /* pnlButtons.xib in Resources */,
 				C95228A1230B5A300040E487 /* TODO in Resources */,
 				C94A9BE222F245E1006CD380 /* EditElector.storyboard in Resources */,
 				C907982F22C91F3800073F31 /* TreeNodeContainerView.xib in Resources */,
+				C9C7112D23B0EA5A00AC999E /* vcPropElecs.xib in Resources */,
 				C9C33F0B22D9CF93003D8B3A /* mainviewicons.xcassets in Resources */,
 				C962A09922A9BFC900510199 /* Main.storyboard in Resources */,
 				C912432F22F386A100564EE4 /* pnlDetails.xib in Resources */,
@@ -363,17 +390,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				C933276F22B6CE7E003EEA09 /* TreeItem.swift in Sources */,
+				C9047FFE23B4255E005F2374 /* vcElectors.swift in Sources */,
 				C93CABFC22B2E2AC00685968 /* StreetSource.swift in Sources */,
 				C9C25A23237017C80098B08B /* Log.swift in Sources */,
+				C9C7112823B053F600AC999E /* vcProperties.swift in Sources */,
 				C9C33F4D22DB9CA9003D8B3A /* TreeNodeImage.swift in Sources */,
 				C907983122C91F5D00073F31 /* TreeNodeContainerView.swift in Sources */,
 				C93CABFE22B2E6F200685968 /* StreetItem.swift in Sources */,
 				C9D416532380B83B00E6B717 /* Databases.swift in Sources */,
+				C904800023B427D2005F2374 /* NSViewControllerWithSubviews.swift in Sources */,
 				C95FE873237C9FCA00E81811 /* NameDefinitions.swift in Sources */,
 				C93CAC0022B2E90A00685968 /* StreetVC.swift in Sources */,
 				C907983322C9217F00073F31 /* NibView.swift in Sources */,
 				C926D6B22311EC6E00C82DC7 /* PropertyMap.swift in Sources */,
 				C962A09422A9BFC800510199 /* ViewController.swift in Sources */,
+				C9047FFC23B42380005F2374 /* vcElectorZone.swift in Sources */,
+				C9C7112C23B0EA5A00AC999E /* vcPropElecs.swift in Sources */,
 				C91A6F9222C17F1000A1E165 /* TreeNodeView.swift in Sources */,
 				C9B5EC0C2315F77100814E1F /* PropertyMapWindowController.swift in Sources */,
 				C94A9BE522F25A73006CD380 /* EditElector.swift in Sources */,

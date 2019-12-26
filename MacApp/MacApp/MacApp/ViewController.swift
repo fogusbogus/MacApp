@@ -12,7 +12,29 @@ import RegisterDB
 import DBLib
 import Logging
 
-class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog {
+class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog, SubviewHandler, TableSelectionHasChangedDelegate {
+	func selectedRowChanged(_ owner: Any, _ row: Int, jsonData: String?) {
+		print("row selected: \(row), \(jsonData)")
+		if jsonData!.length() > 0 {
+			let data = JCollection(json: jsonData!)
+			vcElecs?.loadFromProperty(db: Databases.shared.Register, propertyID: data.get("pid", -1))
+		}
+	}
+	
+	
+	func notifySubview(view: Any) {
+		if let view = view as? vcProperties {
+			vcProps = view
+			vcProps?.RowChangedHandler = self
+		}
+		if let view = view as? vcElectors {
+			vcElecs = view
+		}
+	}
+	
+	private var vcProps : vcProperties?
+	private var vcElecs : vcElectors?
+	
 	var LogIndent: Int = 0
 	
 	private var _log : IIndentLog? = nil
@@ -57,16 +79,41 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 		return LogIndent
 	}
 
+	@IBOutlet weak var vwPropElecs: NSView!
 	
+	public var pnlPropElecs : vcPropElecs {
+		get {
+			
+			return vwPropElecs as! vcPropElecs
+		}
+	}
 	
 	@IBOutlet weak var pnlStreets: NSView!
 	
+	@IBOutlet weak var pnlPE: NSView!
+	
 	var selectedNodeListener : SelectedNodeListenerDelegate?
 	
-	private var currentlySelectedNode: NodeBase?
+	private var _currentlySelectedNode: NodeBase?
+	
+	private var currentlySelectedNode: NodeBase? {
+		get {
+			return _currentlySelectedNode
+		}
+		set {
+			_currentlySelectedNode = newValue
+			if let street = newValue?.linkedItem as? Street {
+				vcProps?.loadFromStreet(db: street.SQLDB, streetID: street.ID!)
+			}
+		}
+	}
 	
 	func selectionChange(node: NodeBase?) {
-
+		
+		let subv = pnlPE.allSubviews().first { (sv) -> Bool in
+			return sv is NSTableView
+		}
+		
 		Log.checkpoint("Something new has been selected from the tree", "selectionChange", { () -> Void in
 
 			if node == nil {
@@ -85,10 +132,17 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 	override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
 		
 		//Log.Checkpoint("Segue preparation", "prepare", {
+		if let svc = segue.destinationController as? SubviewNotifier {
+			svc.subscribe(self)
+		}
 		if let svc = segue.destinationController as? StreetVC {
+
 			Log.debug("Segue is StreetVC")
 			svc.selectedNodeHandler = selectedNodeListener ?? self
 			svc.Log = self
+		}
+		if let svc = segue.destinationController as? vcPropElecs {
+			Log.debug("Segue is vcPropElecs")
 		}
 		//}, keyAndValues: ["segue":segue, "sender":sender])
 	}
@@ -280,4 +334,10 @@ extension NSView {
 	
 }
 
+protocol SubviewHandler {
+	func notifySubview(view: Any)
+}
 
+protocol SubviewNotifier {
+	func subscribe(_ handler: SubviewHandler)
+}

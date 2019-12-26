@@ -11,39 +11,9 @@ import DBLib
 import Common
 import Logging
 
-public class Elector : TableBased<Int>, HasTODOItems, KeyedItem {
+//Although we are handling the protocols in extensions below, we can define the class with them. This will add readability.
+public class Elector : TableBased<Int> { //}, HasTODOItems, KeyedItem {
 	
-	public static func getCalculatedName(db: SQLDBInstance, id: Int) -> String {
-		let data = db.querySingleRow("SELECT * FROM Elector WHERE ID = ? LIMIT 1", id)
-		let fn = data.get("forename", "")
-		let mn = getMiddleInitials(middleName: data.get("middlename", ""))
-		let sn = data.get("surname", "")
-		return "\(fn) \(mn) \(sn)".removeMultipleSpaces(true)
-	}
-	
-	public static func getChildrenIDs(db: SQLDBInstance, id: Int) -> [Int] {
-		return []
-	}
-	
-	public static func getIDsForTODOItems(db: SQLDBInstance, id: Int, includeChildren: Bool, includeComplete: Bool) -> String {
-		var sql = "SELECT ID FROM Action WHERE LinkID = ? AND LinkType = 2 AND Required = '1'"
-		if !includeComplete {
-			sql += " AND IsComplete IS NULL"
-		}
-		
-		return db.queryList(sql, hintValue: 0, parms: id).toDelimitedString(delimiter: ",")
-	}
-
-	public func getIDsForTODOItems(includeChildren: Bool, includeComplete: Bool = false) -> String {
-		return Elector.getIDsForTODOItems(db: SQLDB, id: ID!, includeChildren: includeChildren, includeComplete: includeComplete)
-	}
-	
-	public var Key: String {
-		get {
-			return "EL\(ID!)"
-		}
-	}
-
 	override public init(db : SQLDBInstance, _ id: Int?, _ log: IIndentLog? = nil) {
 		super.init(db: db, id, log)
 	}
@@ -166,39 +136,6 @@ public class Elector : TableBased<Int>, HasTODOItems, KeyedItem {
 		_created = row.get("Created", Date())
 	}
 	
-	public var PDID : Int? {
-		get {
-			return _pdid > 0 ? _pdid : nil
-		}
-		set {
-			_pdid = newValue ?? 0
-		}
-	}
-	
-	public var SID : Int? {
-		get {
-			return _sid > 0 ? _sid : nil
-		}
-		set {
-			_sid = newValue ?? 0
-		}
-	}
-	public var PID : Int? {
-		get {
-			return _pid > 0 ? _pid : nil
-		}
-		set {
-			_pid = newValue ?? 0
-		}
-	}
-	public var EID : Int? {
-		get {
-			return _eid > 0 ? _eid : nil
-		}
-		set {
-			_eid = newValue ?? 0
-		}
-	}
 	
 	override public var MetaData: ElectorMeta {
 		get {
@@ -433,4 +370,83 @@ public struct ElectorDataStruct {
 		}
 		return [:]
 	}
+}
+
+
+
+//Instead of incorporating the protocol into the main code, we can use an extension to seperate it out. It's a little less readable, but actually keeps the code cleaner in practice. It also has the added benefit of encapsulating the functionality of the protocol.
+
+//Another important thing to note is that this doesn't work with vars.
+
+extension Elector : HasTODOItems {
+	public static func getIDsForTODOItems(db: SQLDBInstance, id: Int, includeChildren: Bool, includeComplete: Bool) -> String {
+		var sql = "SELECT ID FROM Action WHERE LinkID = ? AND LinkType = 2 AND Required = '1'"
+		if !includeComplete {
+			sql += " AND IsComplete IS NULL"
+		}
+		
+		return db.queryList(sql, hintValue: 0, parms: id).toDelimitedString(delimiter: ",")
+	}
+
+	public func getIDsForTODOItems(includeChildren: Bool, includeComplete: Bool = false) -> String {
+		return Elector.getIDsForTODOItems(db: SQLDB, id: ID!, includeChildren: includeChildren, includeComplete: includeComplete)
+	}
+
+}
+
+extension Elector: KeyedItem {
+	public var Key: String {
+		get {
+			return "EL\(ID!)"
+		}
+	}
+
+	public var PDID : Int? {
+		get {
+			return _pdid > 0 ? _pdid : nil
+		}
+		set {
+			_pdid = newValue ?? 0
+		}
+	}
+	
+	public var SID : Int? {
+		get {
+			return _sid > 0 ? _sid : nil
+		}
+		set {
+			_sid = newValue ?? 0
+		}
+	}
+	public var PID : Int? {
+		get {
+			return _pid > 0 ? _pid : nil
+		}
+		set {
+			_pid = newValue ?? 0
+		}
+	}
+	public var EID : Int? {
+		get {
+			return _eid > 0 ? _eid : nil
+		}
+		set {
+			_eid = newValue ?? 0
+		}
+	}
+
+	
+	public static func getChildrenIDs(db: SQLDBInstance, id: Int) -> [Int] {
+		return []
+	}
+
+	public static func getCalculatedName(db: SQLDBInstance, id: Int) -> String {
+		let data = db.querySingleRow("SELECT * FROM Elector WHERE ID = ? LIMIT 1", id)
+		let fn = data.get("forename", "")
+		let mn = getMiddleInitials(middleName: data.get("middlename", ""))
+		let sn = data.get("surname", "")
+		return "\(fn) \(mn) \(sn)".removeMultipleSpaces(true)
+	}
+
+	
 }

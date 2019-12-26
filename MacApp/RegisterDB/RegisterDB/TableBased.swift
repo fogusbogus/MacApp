@@ -96,7 +96,7 @@ public class TableBased<IDType> {
 		loadData(row: row)
 	}
 	
-	internal var SQLDB : SQLDBInstance
+	public var SQLDB : SQLDBInstance
 	
 	public func SetDatabase(db: SQLDBInstance) {
 		SQLDB = db

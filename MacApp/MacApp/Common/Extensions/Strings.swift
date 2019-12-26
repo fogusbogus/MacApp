@@ -235,6 +235,35 @@ public extension String {
 		return String(data: data, encoding: encoding)
 	}
 	
+	/////////////////////////////////////////////
+	// G
+	/////////////////////////////////////////////
+	
+	/// Ever wanted to check the pattern of a string? This supports upper/lower alphas, numbers and others. [Aa9?]
+	func getPattern() -> String {
+		let chars = Array(self)
+		var ret = ""
+		chars.forEach { (c) in
+			if c.isLowercase {
+				ret += "a"
+			}
+			else {
+				if c.isUppercase {
+					ret += "A"
+				}
+				else {
+					if c.isNumber {
+						ret += "9"
+					}
+					else {
+						ret += "?"
+					}
+				}
+			}
+		}
+		return ret
+	}
+
 	
 	/////////////////////////////////////////////
 	// I

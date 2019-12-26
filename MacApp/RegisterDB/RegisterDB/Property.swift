@@ -13,81 +13,7 @@ import Logging
 import MapKit
 
 
-public class Property : TableBased<Int>, HasTODOItems, KeyedItem, LocatableItem, Iconised {
-	public func getCoord() -> CLLocationCoordinate2D {
-		if GPS.length() == 0 {
-			return CLLocationCoordinate2D()
-		}
-		return CLLocationCoordinate2D(latitude: Latitude, longitude: Longitude)
-	}
-	
-	public static func getCalculatedName(db: SQLDBInstance, id: Int) -> String {
-		let row = db.querySingleRow("SELECT * FROM Property WHERE ID = ? LIMIT 1", id)
-		let np = row.get("NumberPrefix", "")
-		let n = row.get("Number", 0)
-		let ns = row.get("NumberSuffix", "")
-		let ret = row.get("Name", "").nonBlank("\(np)\(n)\(ns)")
-		return ret
-	}
-	
-	public static func getChildrenIDs(db: SQLDBInstance, id: Int) -> [Int] {
-		let sql = "SELECT ID FROM Elector WHERE PID = ? ORDER BY ID"
-		return db.queryList(sql, hintValue: 0, parms: id)
-	}
-	
-	
-	public static func calculateIcon(db: SQLDBInstance, id: Int) -> String {
-		var sql = "SELECT COUNT(*) FROM Action WHERE PID = ? OR (LinkType = 1 AND LinkID = ?) AND Required = '1'"
-		let totalTODO = db.queryValue(sql, 0, id, id)
-		
-		sql = "SELECT COUNT(*) FROM Action WHERE PID = ? OR (LinkType = 1 AND LinkID = ?) AND Required = '1' AND Retract <> 1"
-		let totalTODOFulfilled = db.queryValue(sql, 0, id, id)
-		
-		if totalTODO == 0 && totalTODOFulfilled == 0 {
-			return "unprocessed"
-		}
-		if totalTODO == totalTODOFulfilled {
-			return "processed"
-		}
-		return "processing"
-	}
-
-	
-	public var Key: String {
-		get {
-			return "PR\(ID!)"
-		}
-	}
-	
-	public static func getIDsForTODOItems(db: SQLDBInstance, id: Int, includeChildren: Bool, includeComplete: Bool) -> String {
-		var sql = "SELECT ID FROM Action WHERE LinkID = ? AND LinkType = 1 WHERE Required = '1'"
-		if !includeComplete {
-			sql += " AND IsComplete IS NULL"
-		}
-		var ds = db.queryList(sql, hintValue: "", parms: id)
-		if includeChildren {
-			
-			let idsIn = Property.getChildrenIDs(db: db, id: id).toDelimitedString(delimiter: ",")
-			if idsIn.length() > 0 {
-				
-				sql = "SELECT ID FROM Action WHERE LinkID IN (\(idsIn)) AND LinkType = 2 WHERE Required = '1'"
-				if !includeComplete {
-					sql += " AND IsComplete IS NULL"
-				}
-
-				db.processMultiRow(rowHandler: { (csr) in
-					ds.append("\(csr.get(0,0)):\(csr.get(1,0))")
-				}, sql)
-				
-			}
-		}
-		return ds.toDelimitedString(delimiter: ",")
-	}
-	
-	public func getIDsForTODOItems(includeChildren: Bool, includeComplete: Bool = false) -> String {
-		
-		return Property.getIDsForTODOItems(db: SQLDB, id: ID!, includeChildren: includeChildren, includeComplete: includeComplete)
-	}
+public class Property : TableBased<Int> {
 	
 	override public init(db : SQLDBInstance, _ id: Int?, _ log: IIndentLog? = nil) {
 		super.init(db: db, id, log)
@@ -169,24 +95,6 @@ public class Property : TableBased<Int>, HasTODOItems, KeyedItem, LocatableItem,
 			GPS = "0,0"
 		}
 	}
-	public var Longitude: Double {
-		get {
-			assertGPS()
-			return Double(GPS.after(","))!
-		}
-		set {
-			GPS = "\(Latitude),\(newValue)"
-		}
-	}
-	public var Latitude: Double {
-		get {
-			assertGPS()
-			return Double(GPS.before(","))!
-		}
-		set {
-			GPS = "\(newValue),\(Longitude)"
-		}
-	}
 	
 	override func signatureItems() -> [Any?] {
 		return [Name, Number, NumberPrefix, NumberSuffix, ElectorCount, GPS, MetaData.getSignature(), _pdid, _sid, _pid, _eid, _created, Split, SplitCount, TodoActions, Status] + super.signatureItems()
@@ -256,39 +164,7 @@ public class Property : TableBased<Int>, HasTODOItems, KeyedItem, LocatableItem,
 		return ret
 	}
 	
-	public var PDID : Int? {
-		get {
-			return _pdid > 0 ? _pdid : nil
-		}
-		set {
-			_pdid = newValue ?? 0
-		}
-	}
-	
-	public var SID : Int? {
-		get {
-			return _sid > 0 ? _sid : nil
-		}
-		set {
-			_sid = newValue ?? 0
-		}
-	}
-	public var PID : Int? {
-		get {
-			return _pid > 0 ? _pid : nil
-		}
-		set {
-			_pid = newValue ?? 0
-		}
-	}
-	public var EID : Int? {
-		get {
-			return _eid > 0 ? _eid : nil
-		}
-		set {
-			_eid = newValue ?? 0
-		}
-	}
+
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
@@ -494,6 +370,140 @@ public struct PropertyDataStruct {
 		}
 		return ret
 	}
+}
 
+extension Property : HasTODOItems {
 
+	public static func getIDsForTODOItems(db: SQLDBInstance, id: Int, includeChildren: Bool, includeComplete: Bool) -> String {
+		var sql = "SELECT ID FROM Action WHERE LinkID = ? AND LinkType = 1 WHERE Required = '1'"
+		if !includeComplete {
+			sql += " AND IsComplete IS NULL"
+		}
+		var ds = db.queryList(sql, hintValue: "", parms: id)
+		if includeChildren {
+			
+			let idsIn = Property.getChildrenIDs(db: db, id: id).toDelimitedString(delimiter: ",")
+			if idsIn.length() > 0 {
+				
+				sql = "SELECT ID FROM Action WHERE LinkID IN (\(idsIn)) AND LinkType = 2 WHERE Required = '1'"
+				if !includeComplete {
+					sql += " AND IsComplete IS NULL"
+				}
+
+				db.processMultiRow(rowHandler: { (csr) in
+					ds.append("\(csr.get(0,0)):\(csr.get(1,0))")
+				}, sql)
+				
+			}
+		}
+		return ds.toDelimitedString(delimiter: ",")
+	}
+	
+	public func getIDsForTODOItems(includeChildren: Bool, includeComplete: Bool = false) -> String {
+		
+		return Property.getIDsForTODOItems(db: SQLDB, id: ID!, includeChildren: includeChildren, includeComplete: includeComplete)
+	}
+
+}
+
+extension Property : KeyedItem {
+	public var Key: String {
+		get {
+			return "PR\(ID!)"
+		}
+	}
+	public var PDID : Int? {
+		get {
+			return _pdid > 0 ? _pdid : nil
+		}
+		set {
+			_pdid = newValue ?? 0
+		}
+	}
+	
+	public var SID : Int? {
+		get {
+			return _sid > 0 ? _sid : nil
+		}
+		set {
+			_sid = newValue ?? 0
+		}
+	}
+	public var PID : Int? {
+		get {
+			return _pid > 0 ? _pid : nil
+		}
+		set {
+			_pid = newValue ?? 0
+		}
+	}
+	public var EID : Int? {
+		get {
+			return _eid > 0 ? _eid : nil
+		}
+		set {
+			_eid = newValue ?? 0
+		}
+	}
+
+	public static func getCalculatedName(db: SQLDBInstance, id: Int) -> String {
+		let row = db.querySingleRow("SELECT * FROM Property WHERE ID = ? LIMIT 1", id)
+		let np = row.get("NumberPrefix", "")
+		let n = row.get("Number", 0)
+		let ns = row.get("NumberSuffix", "")
+		let ret = row.get("Name", "").nonBlank("\(np)\(n)\(ns)")
+		return ret
+	}
+	
+	public static func getChildrenIDs(db: SQLDBInstance, id: Int) -> [Int] {
+		let sql = "SELECT ID FROM Elector WHERE PID = ? ORDER BY ID"
+		return db.queryList(sql, hintValue: 0, parms: id)
+	}
+}
+
+extension Property : LocatableItem {
+	public var Longitude: Double {
+		get {
+			assertGPS()
+			return Double(GPS.after(","))!
+		}
+		set {
+			GPS = "\(Latitude),\(newValue)"
+		}
+	}
+	public var Latitude: Double {
+		get {
+			assertGPS()
+			return Double(GPS.before(","))!
+		}
+		set {
+			GPS = "\(newValue),\(Longitude)"
+		}
+	}
+
+	public func getCoord() -> CLLocationCoordinate2D {
+		if GPS.length() == 0 {
+			return CLLocationCoordinate2D()
+		}
+		return CLLocationCoordinate2D(latitude: Latitude, longitude: Longitude)
+	}
+
+}
+
+extension Property: Iconised {
+	public static func calculateIcon(db: SQLDBInstance, id: Int) -> String {
+		var sql = "SELECT COUNT(*) FROM Action WHERE PID = ? OR (LinkType = 1 AND LinkID = ?) AND Required = '1'"
+		let totalTODO = db.queryValue(sql, 0, id, id)
+		
+		sql = "SELECT COUNT(*) FROM Action WHERE PID = ? OR (LinkType = 1 AND LinkID = ?) AND Required = '1' AND Retract <> 1"
+		let totalTODOFulfilled = db.queryValue(sql, 0, id, id)
+		
+		if totalTODO == 0 && totalTODOFulfilled == 0 {
+			return "unprocessed"
+		}
+		if totalTODO == totalTODOFulfilled {
+			return "processed"
+		}
+		return "processing"
+	}
 }

@@ -112,6 +112,14 @@ public class JCollection {
 		if let ret = _dict[k] as? T {
 			return ret
 		}
+		if defaultValue is Int {
+			let value = get(k, "")
+			return Int(value) as! T
+		}
+		if defaultValue is Double {
+			let value = get(k, "")
+			return Double(value) as! T
+		}
 		return defaultValue
 	}
 	
@@ -137,11 +145,15 @@ public class JCollection {
 	public init(json: String) {
 		do {
 			let parsedData = try JSONSerialization.jsonObject(with: json.data(using: .utf8)!, options: []) as! [String:Any]
-			let stringData = parsedData as! [String:String]
-			for key in stringData.keys
-			{
-				_dict[key] = stringData[key]
+			
+			for (key, item) in parsedData {
+				_dict[key] = "\(item)"
 			}
+//			let stringData = parsedData as! [String:String]
+//			for key in stringData.keys
+//			{
+//				_dict[key] = stringData[key]
+//			}
 		}
 		catch {
 			

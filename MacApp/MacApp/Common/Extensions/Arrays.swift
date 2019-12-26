@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Cocoa
 
 public extension Array {
 	
@@ -46,6 +47,19 @@ public extension Array where Element == String {
 			return s.sqlSafe()
 		}) .joined(separator: "','")
 		return "'\(ret)'"
+	}
+}
+
+public extension NSView {
+	func allSubviews() -> [NSView] {
+		var ret : [NSView] = []
+		
+		ret.append(contentsOf: self.subviews)
+		self.subviews.forEach { (vw) in
+			ret.append(contentsOf: vw.allSubviews())
+		}
+		
+		return ret
 	}
 }
 
