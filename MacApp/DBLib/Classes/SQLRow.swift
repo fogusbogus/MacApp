@@ -22,6 +22,19 @@ public class SQLRow {
 	private var _signature : String = ""
 	private var _isDirty = false
 	
+	public func clone() -> SQLRow {
+		let clone = SQLRow()
+		_data.keys.forEach { (key) in
+			clone._data[key] = _data[key]
+		}
+		_keyMap.keys.forEach { (key) in
+			clone._keyMap[key] = _keyMap[key]
+		}
+		clone._signature = _signature
+		clone._isDirty = _isDirty
+		return clone
+	}
+	
 	private func getSignature() -> String {
 		var ret = ""
 		let keys = _keyMap.keys.sorted()

@@ -32,12 +32,26 @@ class vcElectors: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
 		db.processMultiRow(rowHandler: { (row) in
 			//			let id = row.get("id", 0)
 			//			let name = row.get("displayname", "")
-			
+			//let tmp = row.clone()
 			data.append(row.toJsonString())
 		}, sql, propertyID)
 		tblData.endUpdates()
 		tblData.reloadData()
 	}
+	
+	func select(id: Int) {
+		let index = data.firstIndex { (json) -> Bool in
+			let jc = JCollection(json: json)
+			return jc.get("id", -1) == id
+		}
+		if index != nil {
+			tblData.selectRowIndexes(IndexSet(arrayLiteral: index!), byExtendingSelection: false)
+		}
+		else {
+			tblData.selectRowIndexes(IndexSet(), byExtendingSelection: false)
+		}
+	}
+
 	
 	//MARK: - Data source
 	

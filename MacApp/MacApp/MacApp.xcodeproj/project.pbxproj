@@ -10,6 +10,7 @@
 		C9047FFC23B42380005F2374 /* vcElectorZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9047FFB23B42380005F2374 /* vcElectorZone.swift */; };
 		C9047FFE23B4255E005F2374 /* vcElectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9047FFD23B4255E005F2374 /* vcElectors.swift */; };
 		C904800023B427D2005F2374 /* NSViewControllerWithSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9047FFF23B427D2005F2374 /* NSViewControllerWithSubviews.swift */; };
+		C904800223B7FFD7005F2374 /* NodeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C904800123B7FFD7005F2374 /* NodeItem.swift */; };
 		C907982F22C91F3800073F31 /* TreeNodeContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C907982E22C91F3800073F31 /* TreeNodeContainerView.xib */; };
 		C907983122C91F5D00073F31 /* TreeNodeContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C907983022C91F5D00073F31 /* TreeNodeContainerView.swift */; };
 		C907983322C9217F00073F31 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C907983222C9217F00073F31 /* NibView.swift */; };
@@ -80,6 +81,7 @@
 		C9047FFB23B42380005F2374 /* vcElectorZone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vcElectorZone.swift; sourceTree = "<group>"; };
 		C9047FFD23B4255E005F2374 /* vcElectors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vcElectors.swift; sourceTree = "<group>"; };
 		C9047FFF23B427D2005F2374 /* NSViewControllerWithSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSViewControllerWithSubviews.swift; sourceTree = "<group>"; };
+		C904800123B7FFD7005F2374 /* NodeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeItem.swift; sourceTree = "<group>"; };
 		C907982E22C91F3800073F31 /* TreeNodeContainerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TreeNodeContainerView.xib; sourceTree = "<group>"; };
 		C907983022C91F5D00073F31 /* TreeNodeContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNodeContainerView.swift; sourceTree = "<group>"; };
 		C907983222C9217F00073F31 /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				C91A6F9122C17F1000A1E165 /* TreeNodeView.swift */,
 				C907982E22C91F3800073F31 /* TreeNodeContainerView.xib */,
 				C907983022C91F5D00073F31 /* TreeNodeContainerView.swift */,
+				C904800123B7FFD7005F2374 /* NodeItem.swift */,
 			);
 			path = Tree;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 			files = (
 				C933276F22B6CE7E003EEA09 /* TreeItem.swift in Sources */,
 				C9047FFE23B4255E005F2374 /* vcElectors.swift in Sources */,
+				C904800223B7FFD7005F2374 /* NodeItem.swift in Sources */,
 				C93CABFC22B2E2AC00685968 /* StreetSource.swift in Sources */,
 				C9C25A23237017C80098B08B /* Log.swift in Sources */,
 				C9C7112823B053F600AC999E /* vcProperties.swift in Sources */,

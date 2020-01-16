@@ -18,6 +18,7 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 		if jsonData!.length() > 0 {
 			let data = JCollection(json: jsonData!)
 			vcElecs?.loadFromProperty(db: Databases.shared.Register, propertyID: data.get("pid", -1))
+			selectFromKey(linkType: .property, id: data.get("id", -1), parentID: data.get("sid", -1))
 		}
 	}
 	
@@ -47,6 +48,22 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 			if newValue != nil {
 				LogFileURL = newValue!.LogFileURL
 			}
+		}
+	}
+	
+	func selectFromKey(linkType: LinkType, id: Int, parentID: Int) {
+		_streetVC?.selectNode(linkType: linkType, id: id)
+		if linkType == .street {
+			return
+		}
+		if linkType == .property {
+			_streetVC?.expandNode(linkType: .street, id: parentID)
+			vcProps?.select(id: id)
+			return
+		}
+		if linkType == .elector {
+			_streetVC?.expandNode(linkType: .property, id: parentID)
+			vcElecs?.select(id: id)
 		}
 	}
 
@@ -87,6 +104,8 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 			return vwPropElecs as! vcPropElecs
 		}
 	}
+	
+	private weak var _streetVC : StreetVC?
 	
 	@IBOutlet weak var pnlStreets: NSView!
 	
@@ -136,7 +155,7 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 			svc.subscribe(self)
 		}
 		if let svc = segue.destinationController as? StreetVC {
-
+			_streetVC = svc
 			Log.debug("Segue is StreetVC")
 			svc.selectedNodeHandler = selectedNodeListener ?? self
 			svc.Log = self

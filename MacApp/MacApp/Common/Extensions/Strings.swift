@@ -571,7 +571,8 @@ public extension String {
 	func substring(from: Int) -> String {
 		let start = index(startIndex, offsetBy: from)
 		let end = self.endIndex
-		return String(self[start ..< end])    }
+		return String(self[start ..< end])
+	}
 	
 	//Returns the substring
 	func substring(range: NSRange) -> String {

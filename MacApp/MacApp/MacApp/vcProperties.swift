@@ -17,6 +17,7 @@ class vcProperties: NSViewController, NSTableViewDataSource, NSTableViewDelegate
 	@IBOutlet weak var col1: NSTableColumn!
 	@IBOutlet weak var col2: NSTableColumn!
 	
+	@IBOutlet weak var colEC: NSTableColumn!
 	@IBAction func selected(_ sender: NSTableView) {
 		//Something has been selected in the table
 		let last = _selectedRow ?? -1
@@ -49,8 +50,23 @@ class vcProperties: NSViewController, NSTableViewDataSource, NSTableViewDelegate
 		tblData.endUpdates()
 	}
 	
+	func select(id: Int) {
+		let index = data.firstIndex { (json) -> Bool in
+			let jc = JCollection(json: json)
+			return jc.get("id", -1) == id
+		}
+		if index != nil {
+			tblData.selectRowIndexes(IndexSet(arrayLiteral: index!), byExtendingSelection: false)
+		}
+		else {
+			tblData.selectRowIndexes(IndexSet(), byExtendingSelection: false)
+		}
+	}
+	
 	func clearData() {
+		_selectedRow = nil
 		data = []
+		calculateHeadings(propertyCount: 0, electorCount: 0)
 		tblData.reloadData()
 	}
 	
@@ -60,14 +76,40 @@ class vcProperties: NSViewController, NSTableViewDataSource, NSTableViewDelegate
 		clearData()
 		tblData.beginUpdates()
 		
+		var propCount = 0, elecCount = 0
+		
 		db.processMultiRow(rowHandler: { (row) in
 //			let id = row.get("id", 0)
 //			let name = row.get("displayname", "")
-			
+			propCount += 1
+			elecCount += row.get("electorCount", 0)
 			data.append(row.toJsonString())
 		}, sql, streetID)
 		tblData.endUpdates()
 		tblData.reloadData()
+		calculateHeadings(propertyCount: propCount, electorCount: elecCount)
+	}
+	
+	private var _pcTitle = "", _ecTitle = ""
+	func calculateHeadings(propertyCount: Int, electorCount: Int) {
+		if _pcTitle.isEmptyOrWhitespace() {
+			_pcTitle = col2.title
+		}
+		if _ecTitle.isEmptyOrWhitespace() {
+			_ecTitle = colEC.title
+		}
+		if propertyCount > 0 {
+			col2.title = _pcTitle + " [\(propertyCount)]"
+		}
+		else {
+			col2.title = _pcTitle
+		}
+		if electorCount > 0 {
+			colEC.title = _ecTitle + " [\(electorCount)]"
+		}
+		else {
+			colEC.title = _ecTitle
+		}
 	}
 	
 	/*

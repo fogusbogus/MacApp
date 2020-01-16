@@ -642,7 +642,7 @@ public class SQLDBInstance : BaseIndentLog {
 	}
 	
 	/// Instead of taking up a whole load of memory with an array, you can process
-	/// the data row-by-row using a closure lambda function.
+	/// the data row-by-row using a closure lambda function. Note the SQLRow is reused and if you want to keep a copy, use the clone() function of the SQLRow.
 	/// - Parameters:
 	///   - rowHandler: closure to handle the row of data
 	///   - sql: SQL to collect the data

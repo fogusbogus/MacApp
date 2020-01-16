@@ -12,7 +12,7 @@ import Common
 import RegisterDB
 import Logging
 
-class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate, NSMenuDelegate, StreetVCRefreshDelegate, ElectorVCRefreshDelegate, IIndentLog {
+class StreetVC: NSViewController, NSMenuDelegate, StreetVCRefreshDelegate, ElectorVCRefreshDelegate, IIndentLog {
 	var LogIndent: Int = 0
 	
 	var LogFileURL: URL?
@@ -159,7 +159,6 @@ class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate
 		
 		return Log.checkpoint("menuButton", { () -> NSMenuItem in
 			
-			
 			let ret = NSMenuItem(title: title, action: #selector(menuItemSelected(_:)), keyEquivalent: keys)
 			ret.tag = tag.rawValue
 			return ret
@@ -202,6 +201,7 @@ class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate
 //			selectedNodeHandler = newValue as? SelectedNodeListenerDelegate
 //		}
 //	}
+	@IBOutlet weak var tree: NSOutlineView!
 	
 	@IBAction func ovAction(_ sender: Any) {
 		
@@ -232,6 +232,60 @@ class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate
 		outlineView.setFrameSize(self.view.frame.size)
 		print("new frame size: \(outlineView.frame.width), \(outlineView.frame.height)")
 		outlineView.setNeedsDisplay(outlineView.frame)
+	}
+	
+	func expandNode(linkType: LinkType, id: Int) {
+		let rc = 0..<outlineView.numberOfRows
+		let item = rc.first { (row) -> Bool in
+			if linkType == .street {
+				if let st = outlineView.nodeAtRow(row) as? StreetItem {
+					return st.linkedItem?.ID! == id
+				}
+			}
+			if linkType == .property {
+				if let pr = outlineView.nodeAtRow(row) as? PropertyItem {
+					return pr.linkedItem?.ID! == id
+				}
+			}
+			if linkType == .elector {
+				if let el = outlineView.nodeAtRow(row) as? ElectorItem {
+					return el.linkedItem?.ID! == id
+				}
+			}
+			return false
+		}
+		if item != nil {
+			let node = outlineView.nodeAtRow(item!)
+//			node?.expand()
+//			outlineView.scrollRowToVisible(item!)
+		}
+	}
+	
+	func selectNode(linkType: LinkType, id: Int) {
+		let rc = 0..<outlineView.numberOfRows
+		let item = rc.first { (row) -> Bool in
+			if linkType == .street {
+				if let st = outlineView.nodeAtRow(row) as? StreetItem {
+					return st.linkedItem?.ID! == id
+				}
+			}
+			if linkType == .property {
+				if let pr = outlineView.nodeAtRow(row) as? PropertyItem {
+					return pr.linkedItem?.ID! == id
+				}
+			}
+			if linkType == .elector {
+				if let el = outlineView.nodeAtRow(row) as? ElectorItem {
+					return el.linkedItem?.ID! == id
+				}
+			}
+			return false
+		}
+		if item != nil {
+			let index = item! //outlineView.childIndex(forItem: item)
+			outlineView.scrollRowToVisible(index)
+			outlineView.selectRowIndexes(IndexSet(arrayLiteral: index), byExtendingSelection: false)
+		}
 	}
 	
 	func addData() {
@@ -300,6 +354,12 @@ class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate
 	
 	//MARK: Delegate
 	
+
+}
+
+
+extension StreetVC : NSOutlineViewDataSource, NSOutlineViewDelegate {
+	
 	func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?, item: Any) -> NSView? {
 		if isHeader(item) {
 			return outlineView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "HeaderCell"), owner: self)
@@ -319,6 +379,7 @@ class StreetVC: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate
 		//return outlineView. outlineView(outlineView, shouldExpandItem: item)
 	}
 }
+
 
 @objc protocol SelectedNodeListenerDelegate {
 	func selectionChange(node: NodeBase?)

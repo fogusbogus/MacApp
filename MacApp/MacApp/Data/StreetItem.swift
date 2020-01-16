@@ -20,10 +20,10 @@ class PollingDistrictItem : NodeBase {
 		image = ImageRepo.shared["icoGlobe"]
 	}
 	
-	override func expand() {
-		super.expand()
-		print("PD: I'm expanding")
-	}
+//	override func expand() {
+//		super.expand()
+//		print("PD: I'm expanding")
+//	}
 	
 	override func getChildItems() {
 		super.getChildItems()
@@ -184,6 +184,11 @@ class NodeBase : NSObject, TableBasedDelegate {
 		
 	}
 	
+	func expand() {
+		getChildItems()
+		
+	}
+	
 	private var _linkedItem : TableBased<Int>?
 	
 	public var linkedItem : TableBased<Int>? {
@@ -246,9 +251,21 @@ class NodeBase : NSObject, TableBasedDelegate {
 		}
 	}
 	
-	func expand() {
+	func expand(outlineView: NSOutlineView? = nil) {
 		getChildItems()
+		_isExpanded = true
+//		let set = IndexSet()
+//		children?.forEach({ (child) in
+//
+//			outlineView?.hideRows(at: <#T##IndexSet#>, withAnimation: <#T##NSTableView.AnimationOptions#>)
+//		})
 	}
+	
+	func collapse() {
+		
+	}
+	
+	private var _isExpanded = false
 	
 	func containsNode(id: String) -> Bool {
 		return findNode(id: id) != nil
@@ -278,13 +295,16 @@ class NodeBase : NSObject, TableBasedDelegate {
 		if !hasChildren {
 			return nil
 		}
-		
-		for i in 0..<childCount {
-			if children![i].id.implies(id) {
-				return i
-			}
-		}
-		return nil
+
+		return children?.firstIndex(where: { (node) -> Bool in
+			return node.id.implies(id)
+		})
+//		for i in 0..<childCount {
+//			if children![i].id.implies(id) {
+//				return i
+//			}
+//		}
+//		return nil
 	}
 	
 	func removeNode(id: String) -> Bool {
