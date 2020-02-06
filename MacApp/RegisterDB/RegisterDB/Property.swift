@@ -459,6 +459,18 @@ extension Property : KeyedItem {
 		let sql = "SELECT ID FROM Elector WHERE PID = ? ORDER BY ID"
 		return db.queryList(sql, hintValue: 0, parms: id)
 	}
+	
+	public func calculatedName() -> String {
+		//Let's try to calculate it from the MetaData - this is up-to-date
+		let pn = MetaData.get("name", "")
+		let pc = MetaData.get("pc", "")
+		
+		//Use a cached version, or cache the street descriptor
+		let sn = Repo.get("calculatedName.streetName", initial: {
+			return Street.getCalculatedName(db: SQLDB, id: SID!)})
+		
+		return ", ".delimit(pn.trim(), sn.trim(), pc.trim())
+	}
 }
 
 extension Property : LocatableItem {

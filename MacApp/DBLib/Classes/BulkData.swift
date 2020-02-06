@@ -15,6 +15,9 @@ public class BulkData {
 		
 	}
 	
+	/*
+	We keep an array of items which we push to via the current collection.
+	*/
 	private var _array : [[Any?]] = []
 	private var _current : [Any?] = []
 	

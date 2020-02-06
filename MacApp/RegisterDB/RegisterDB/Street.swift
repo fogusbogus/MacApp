@@ -277,20 +277,18 @@ public class Street : TableBased<Int>, HasTODOItems, KeyedItem, LocatableItem, I
 	}
 	
 	public func GetProperties() -> [Property] {
-		let rows = SQLDB.queryMultiRow("SELECT * FROM Property WHERE SID = ? ORDER BY PID", ID!)
 		var ret : [Property] = []
-		for row in rows {
+		SQLDB.processMultiRow(rowHandler: { (row) in
 			ret.append(Property(db: SQLDB, row: row))
-		}
+		}, "SELECT * FROM Property WHERE SID = ? ORDER BY PID", ID!)
 		return ret
 	}
 
 	public func GetElectors() -> [Elector] {
-		let rows = SQLDB.queryMultiRow("SELECT * FROM Elector WHERE SID = ? ORDER BY PID, EID", ID!)
-		var ret : [Elector] = []
-		for row in rows {
+		var ret : [Elector] = []		
+		SQLDB.processMultiRow(rowHandler: { (row) in
 			ret.append(Elector(db: SQLDB, row: row))
-		}
+		}, "SELECT * FROM Elector WHERE SID = ? ORDER BY PID, EID", ID!)
 		return ret
 	}
 
@@ -315,3 +313,9 @@ public struct StreetDataStruct {
 	var PDID : Int?
 }
 
+public extension Street {
+	static func countIncompleteProperties(db: SQLDBInstance, id: Int) -> Int {
+		let sql = "SELECT COUNT(*) FROM Property P INNER JOIN Action A ON P.SID = A.SID WHERE A.SID = ? AND A.IsComplete IS NULL AND A.Required = 1 AND A.RequestedCodes NOT IN ('TODO', '')"
+		return db.queryValue(sql, 0, id)
+	}
+}

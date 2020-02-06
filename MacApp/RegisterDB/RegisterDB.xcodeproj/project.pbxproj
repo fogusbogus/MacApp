@@ -32,6 +32,7 @@
 		C9C25A1B237015D80098B08B /* libLogging.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C25A1A237015D80098B08B /* libLogging.dylib */; };
 		C9CE48D6238F5749009AA250 /* ActionCodeCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE48D5238F5749009AA250 /* ActionCodeCache.swift */; };
 		C9CE48D8238F57C4009AA250 /* ActionCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE48D7238F57C4009AA250 /* ActionCode.swift */; };
+		C9E2C7DA23E8E8A500EFB623 /* ObjectRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E2C7D923E8E8A500EFB623 /* ObjectRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		C9C25A1A237015D80098B08B /* libLogging.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libLogging.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9CE48D5238F5749009AA250 /* ActionCodeCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCodeCache.swift; sourceTree = "<group>"; };
 		C9CE48D7238F57C4009AA250 /* ActionCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCode.swift; sourceTree = "<group>"; };
+		C9E2C7D923E8E8A500EFB623 /* ObjectRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				C93C4CA2239DD9490093D416 /* Protocols.swift */,
 				C9B9781D23A1CC980015A2D6 /* ElectorExtensions.swift */,
 				C901638F23A5658D001646E9 /* Splits.swift */,
+				C9E2C7D923E8E8A500EFB623 /* ObjectRepository.swift */,
 			);
 			path = RegisterDB;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				C906262A23021CF00095D528 /* CryptoInt.swift in Sources */,
 				C975188523076B7500BD4160 /* PropertyMeta.swift in Sources */,
 				C91FC2D6238DF06C00E88A0F /* ActionGroup.swift in Sources */,
+				C9E2C7DA23E8E8A500EFB623 /* ObjectRepository.swift in Sources */,
 				C9080E4A22E0DD1300D37D70 /* Street.swift in Sources */,
 				C9080E4E22E1366300D37D70 /* Elector.swift in Sources */,
 				C91606E923946EAE0038C3EF /* Globals.swift in Sources */,

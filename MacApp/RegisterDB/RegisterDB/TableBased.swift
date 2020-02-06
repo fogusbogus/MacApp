@@ -13,6 +13,7 @@ import Logging
 
 public class TableBased<IDType> {
 	
+	internal var Repo = ObjectRepository()
 	public var Log : IIndentLog? = nil
 	public var handler : TableBasedDelegate?
 
@@ -221,6 +222,22 @@ public class TableBased<IDType> {
 		return s.length() > 0
 	}
 	
+}
+
+protocol ITableBased {
+	associatedtype T
+	
+	var SQLDB : SQLDBInstance {get set}
+	func SetDatabase(db: SQLDBInstance)
+	func reassertCounts()
+	func reload()
+	func IDChanged()
+	var hasLoaded : Bool {get}
+	var ID : T {get set}
+	var MetaData : DBLib.Meta {get}
+	func clear()
+	var hasChildren : Bool {get}
+	func validID() -> Bool
 }
 
 
