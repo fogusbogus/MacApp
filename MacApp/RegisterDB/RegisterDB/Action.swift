@@ -11,7 +11,6 @@ import DBLib
 import Logging
 import Common
 
-
 public class Action : TableBased<Int> {
 	override public init(db : SQLDBInstance, _ id: Int?, _ log: IIndentLog? = nil) {
 		super.init(db: db, id, log)

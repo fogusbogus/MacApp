@@ -12,8 +12,6 @@
 		C906262A23021CF00095D528 /* CryptoInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C906262923021CF00095D528 /* CryptoInt.swift */; };
 		C9080E3722DFDD2800D37D70 /* RegisterDB.h in Headers */ = {isa = PBXBuildFile; fileRef = C9080E3622DFDD2800D37D70 /* RegisterDB.h */; };
 		C9080E3922DFDD2800D37D70 /* RegisterDB.m in Sources */ = {isa = PBXBuildFile; fileRef = C9080E3822DFDD2800D37D70 /* RegisterDB.m */; };
-		C9080E4122DFDD3A00D37D70 /* libCommon.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9080E4022DFDD3A00D37D70 /* libCommon.dylib */; };
-		C9080E4322DFDD3A00D37D70 /* libDBLib.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9080E4222DFDD3A00D37D70 /* libDBLib.dylib */; };
 		C9080E4622DFDF1400D37D70 /* TableBased.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9080E4522DFDF1400D37D70 /* TableBased.swift */; };
 		C9080E4822E0DBBC00D37D70 /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9080E4722E0DBBC00D37D70 /* DB.swift */; };
 		C9080E4A22E0DD1300D37D70 /* Street.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9080E4922E0DD1300D37D70 /* Street.swift */; };
@@ -29,11 +27,30 @@
 		C9A293C723A990E80004CDC1 /* NameFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A293C623A990E80004CDC1 /* NameFunctions.swift */; };
 		C9A293C923A992160004CDC1 /* StringFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A293C823A992160004CDC1 /* StringFunctions.swift */; };
 		C9B9781E23A1CC980015A2D6 /* ElectorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B9781D23A1CC980015A2D6 /* ElectorExtensions.swift */; };
-		C9C25A1B237015D80098B08B /* libLogging.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C25A1A237015D80098B08B /* libLogging.dylib */; };
 		C9CE48D6238F5749009AA250 /* ActionCodeCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE48D5238F5749009AA250 /* ActionCodeCache.swift */; };
 		C9CE48D8238F57C4009AA250 /* ActionCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE48D7238F57C4009AA250 /* ActionCode.swift */; };
 		C9E2C7DA23E8E8A500EFB623 /* ObjectRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E2C7D923E8E8A500EFB623 /* ObjectRepository.swift */; };
+		C9F516EB23F7595F002FB91F /* LoggingFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9F516EA23F7595F002FB91F /* LoggingFramework.framework */; };
+		C9F516EC23F7595F002FB91F /* LoggingFramework.framework in Embed Libraries */ = {isa = PBXBuildFile; fileRef = C9F516EA23F7595F002FB91F /* LoggingFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C9F516EF23F7596E002FB91F /* SQLDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9F516ED23F7596E002FB91F /* SQLDB.framework */; };
+		C9F516F123F7596E002FB91F /* MHExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9F516EE23F7596E002FB91F /* MHExt.framework */; };
+		C9F516F223F7596E002FB91F /* MHExt.framework in Embed Libraries */ = {isa = PBXBuildFile; fileRef = C9F516EE23F7596E002FB91F /* MHExt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C9F516AD23F37FD8002FB91F /* Embed Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C9F516F223F7596E002FB91F /* MHExt.framework in Embed Libraries */,
+				C9F516EC23F7595F002FB91F /* LoggingFramework.framework in Embed Libraries */,
+			);
+			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C901638F23A5658D001646E9 /* Splits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splits.swift; sourceTree = "<group>"; };
@@ -66,6 +83,9 @@
 		C9CE48D5238F5749009AA250 /* ActionCodeCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCodeCache.swift; sourceTree = "<group>"; };
 		C9CE48D7238F57C4009AA250 /* ActionCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCode.swift; sourceTree = "<group>"; };
 		C9E2C7D923E8E8A500EFB623 /* ObjectRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectRepository.swift; sourceTree = "<group>"; };
+		C9F516EA23F7595F002FB91F /* LoggingFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LoggingFramework.framework; path = ../Libs/LoggingFramework.framework; sourceTree = "<group>"; };
+		C9F516ED23F7596E002FB91F /* SQLDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLDB.framework; path = ../Libs/SQLDB.framework; sourceTree = "<group>"; };
+		C9F516EE23F7596E002FB91F /* MHExt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MHExt.framework; path = ../Libs/MHExt.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,9 +93,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9080E4122DFDD3A00D37D70 /* libCommon.dylib in Frameworks */,
-				C9C25A1B237015D80098B08B /* libLogging.dylib in Frameworks */,
-				C9080E4322DFDD3A00D37D70 /* libDBLib.dylib in Frameworks */,
+				C9F516EF23F7596E002FB91F /* SQLDB.framework in Frameworks */,
+				C9F516EB23F7595F002FB91F /* LoggingFramework.framework in Frameworks */,
+				C9F516F123F7596E002FB91F /* MHExt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +163,9 @@
 		C9080E3F22DFDD3A00D37D70 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C9F516EE23F7596E002FB91F /* MHExt.framework */,
+				C9F516ED23F7596E002FB91F /* SQLDB.framework */,
+				C9F516EA23F7595F002FB91F /* LoggingFramework.framework */,
 				C9C25A1A237015D80098B08B /* libLogging.dylib */,
 				C9080E4022DFDD3A00D37D70 /* libCommon.dylib */,
 				C9080E4222DFDD3A00D37D70 /* libDBLib.dylib */,
@@ -171,6 +194,7 @@
 				C9080E2F22DFDD2800D37D70 /* Headers */,
 				C9080E3022DFDD2800D37D70 /* Sources */,
 				C9080E3122DFDD2800D37D70 /* Frameworks */,
+				C9F516AD23F37FD8002FB91F /* Embed Libraries */,
 			);
 			buildRules = (
 			);
@@ -364,6 +388,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = JH3ZC8234Q;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -373,6 +398,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "RegisterDB/RegisterDB-Bridging-Header.h";
@@ -386,6 +412,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = JH3ZC8234Q;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -395,6 +422,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "RegisterDB/RegisterDB-Bridging-Header.h";

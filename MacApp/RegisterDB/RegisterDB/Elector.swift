@@ -178,9 +178,9 @@ public class Elector : TableBased<Int> { //}, HasTODOItems, KeyedItem {
 			return
 		}
 		
-		let _fn = Fields.forename.map
-		let _mn = Fields.middle.map
-		let _sn = Fields.surname.map
+		let _fn = Fields.forename.jsonMap
+		let _mn = Fields.middle.jsonMap
+		let _sn = Fields.surname.jsonMap
 		
 		let fn = _metaData?[_fn] ?? ""
 		let mn = _metaData?[_mn] ?? ""
@@ -200,9 +200,9 @@ public class Elector : TableBased<Int> { //}, HasTODOItems, KeyedItem {
 		//Go through any name defining actions and set the name from that
 		var sql = "SELECT EL.ID AS ID, AC.Data AS Data FROM Elector EL INNER JOIN Action AC ON (AC.LinkType = 2 AND AC.LinkID = EL.ID) WHERE AC.Retract <> 1 AND AC.Code IN ('AMEND', 'NEWELEC', 'ITR', 'QEAMEND') ORDER BY AC.TS DESC"
 		
-		let _fn = Elector.Fields.forename.map
-		let _mn = Elector.Fields.middle.map
-		let _sn = Elector.Fields.surname.map
+		let _fn = Elector.Fields.forename.jsonMap
+		let _mn = Elector.Fields.middle.jsonMap
+		let _sn = Elector.Fields.surname.jsonMap
 		
 		var hash : [Int] = []
 		let data = BulkData()
@@ -276,7 +276,7 @@ public class Elector : TableBased<Int> { //}, HasTODOItems, KeyedItem {
 		case singleOccupier
 		case evidenceNotes
 		
-		var map : String {
+		var jsonMap : String {
 			get {
 				switch self {
 				case .title:
