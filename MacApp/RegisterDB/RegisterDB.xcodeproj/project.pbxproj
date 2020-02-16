@@ -32,9 +32,10 @@
 		C9E2C7DA23E8E8A500EFB623 /* ObjectRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E2C7D923E8E8A500EFB623 /* ObjectRepository.swift */; };
 		C9F516EB23F7595F002FB91F /* LoggingFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9F516EA23F7595F002FB91F /* LoggingFramework.framework */; };
 		C9F516EC23F7595F002FB91F /* LoggingFramework.framework in Embed Libraries */ = {isa = PBXBuildFile; fileRef = C9F516EA23F7595F002FB91F /* LoggingFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C9F516EF23F7596E002FB91F /* SQLDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9F516ED23F7596E002FB91F /* SQLDB.framework */; };
 		C9F516F123F7596E002FB91F /* MHExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9F516EE23F7596E002FB91F /* MHExt.framework */; };
 		C9F516F223F7596E002FB91F /* MHExt.framework in Embed Libraries */ = {isa = PBXBuildFile; fileRef = C9F516EE23F7596E002FB91F /* MHExt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C9F516F323F75EA1002FB91F /* SQLDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9F516ED23F7596E002FB91F /* SQLDB.framework */; };
+		C9F516F423F75EA1002FB91F /* SQLDB.framework in Embed Libraries */ = {isa = PBXBuildFile; fileRef = C9F516ED23F7596E002FB91F /* SQLDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +47,7 @@
 			files = (
 				C9F516F223F7596E002FB91F /* MHExt.framework in Embed Libraries */,
 				C9F516EC23F7595F002FB91F /* LoggingFramework.framework in Embed Libraries */,
+				C9F516F423F75EA1002FB91F /* SQLDB.framework in Embed Libraries */,
 			);
 			name = "Embed Libraries";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,9 +95,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9F516EF23F7596E002FB91F /* SQLDB.framework in Frameworks */,
 				C9F516EB23F7595F002FB91F /* LoggingFramework.framework in Frameworks */,
 				C9F516F123F7596E002FB91F /* MHExt.framework in Frameworks */,
+				C9F516F323F75EA1002FB91F /* SQLDB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
