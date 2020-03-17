@@ -7,11 +7,11 @@
 //
 
 import Cocoa
-import Common
+import UsefulExtensions
 import MapKit
 import CoreLocation			//Allows us to find the user location
 import RegisterDB
-import DBLib
+import SQLDB
 import LocationTools
 
 class PropertyMapVC: NSViewControllerWithLog, MKMapViewDelegate {
@@ -89,14 +89,14 @@ class PropertyMapVC: NSViewControllerWithLog, MKMapViewDelegate {
 	
 	func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
 		if let an = view.annotation {
-			print("\(an.subtitle)")
+			print("\(String(describing: an.subtitle))")
 		}
 	}
 	
 	private var _shiftPressed = false
 	
 	override func keyDown(with event: NSEvent) {
-		var handler = false
+		//var handler = false
 		if event.modifierFlags.contains(.shift) {
 			_shiftPressed = true
 		}

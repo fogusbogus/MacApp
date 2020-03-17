@@ -8,8 +8,8 @@
 
 import Cocoa
 import RegisterDB
-import DBLib
-import Common
+import SQLDB
+import UsefulExtensions
 
 class pnlDetails: NSViewController {
 

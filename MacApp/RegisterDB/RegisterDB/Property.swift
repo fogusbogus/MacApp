@@ -8,8 +8,8 @@
 
 import Foundation
 import SQLDB
-import Common
-import Logging
+import UsefulExtensions
+import LoggingLib
 import MapKit
 
 
@@ -76,7 +76,7 @@ public class Property : TableBased<Int> {
 		let sql = "INSERT INTO Property (DisplayName, Name, Number, NumberPrefix, NumberSuffix, ElectorCount, GPS, Meta, PDID, SID, PID, EID, Created, Split, SplitCount, TodoActions, Status) " +
 		"VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
 		_id = SQLDB.execute(sql, parms: getDisplayName(), Name, Number, NumberPrefix, NumberSuffix, ElectorCount, GPS, MetaData.getSignature(true), _pdid, _sid, _pid, _eid, Date(), Split, SplitCount, TodoActions, Status)
-		SQLDB.execute("UPDATE Property SET PID = \(ID ?? -1) WHERE ID = \(ID ?? -1)")
+		SQLDB.execute("UPDATE Property SET PID = \(_id ?? -1) WHERE ID = \(_id ?? -1)")
 	}
 	
 	override func saveAsUpdate() {

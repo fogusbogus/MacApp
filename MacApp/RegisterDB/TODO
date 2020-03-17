@@ -6,7 +6,7 @@ TODO:
 	Instead of using inheritance everywhere it might be a good idea to start to use protocols (interfaces) to provide particular functionality or subscription.
 
 1-Feb-20	TODO002		All applicable files
-	The reliance on inheritance is a noble one, but not really a modern concept. Protocols should be used. See Notes from 9-Dec-19.
+	The reliance on inheritance is a noble one, but not really a modern concept. Protocols and extensions should be used. See Notes from 9-Dec-19.
 
 
 BUGS:
@@ -16,3 +16,4 @@ BUGS:
 
 COMPLETE:
 
+6-Mar-20 - Getting stuck for things to do with this. Need to find a new project that I can use for myself and hopefully make some money out of. Especially as my bank has decided they don't have to repay PPI on the mortgage. Bugger.

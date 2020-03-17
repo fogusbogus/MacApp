@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import DBLib
+import SQLDB
 import MapKit
 
 public protocol HasTODOItems {
@@ -33,8 +33,39 @@ public protocol KeyedItem {
 
 public protocol LocatableItem {
 	var GPS : String { get set }
-	var Longitude : Double { get set }
-	var Latitude : Double { get set }
+//	var Longitude : Double { get set }
+//	var Latitude : Double { get set }
+//
+//	func getCoord() -> CLLocationCoordinate2D
+}
+
+public extension LocatableItem {
+
+	private mutating func assertGPS() {
+		if GPS.length() == 0 {
+			GPS = "0,0"
+		}
+	}
+	var Longitude: Double {
+		mutating get {
+			assertGPS()
+			return Double(GPS.after(","))!
+		}
+		set {
+			GPS = "\(Latitude),\(newValue)"
+		}
+	}
+	var Latitude: Double {
+		mutating get {
+			assertGPS()
+			return Double(GPS.before(","))!
+		}
+		set {
+			GPS = "\(newValue),\(Longitude)"
+		}
+	}
 	
-	func getCoord() -> CLLocationCoordinate2D
+	mutating func getCoord() -> CLLocationCoordinate2D {
+		return CLLocationCoordinate2D(latitude: Latitude, longitude: Longitude)
+	}
 }

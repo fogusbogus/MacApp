@@ -7,9 +7,9 @@
 //
 
 import Foundation
-import DBLib
-import Common
-import Logging
+import SQLDB
+import UsefulExtensions
+import LoggingLib
 
 public class ActionCode : TableBased<String> {
 	override public init(db : SQLDBInstance, _ id: String?, _ log: IIndentLog? = nil) {

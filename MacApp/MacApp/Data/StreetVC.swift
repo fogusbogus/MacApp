@@ -7,41 +7,51 @@
 //
 
 import Cocoa
-import DBLib
-import Common
+import SQLDB
+import UsefulExtensions
 import RegisterDB
-import Logging
+import LoggingLib
 
 class StreetVC: NSViewController, NSMenuDelegate, StreetVCRefreshDelegate, ElectorVCRefreshDelegate, IIndentLog {
-	var LogIndent: Int = 0
+	var IndentLog_Indent: Int = 0
 	
-	var LogFileURL: URL?
+	var IndentLog_URL: URL?
 	
 	private var _log : IIndentLog? = nil
-	var Log : IIndentLog? {
+	var IndentLog_Instance : IIndentLog? {
 		get {
 			return _log //?? self
 		}
 		set {
 			_log = newValue
 			if newValue != nil {
-				LogFileURL = newValue!.LogFileURL
+				IndentLog_URL = newValue!.IndentLog_URL
 			}
 		}
 	}
 	
-	func IncreaseLogIndent() -> Int {
-		return Log?.ResetLogIndent(LogIndent + 1) ?? 0
+	var Log : IIndentLog? {
+		get {
+			return IndentLog_Instance
+		}
+		set {
+			IndentLog_Instance = newValue
+		}
 	}
-	
-	func DecreaseLogIndent() -> Int {
-		return Log?.ResetLogIndent(LogIndent - 1) ?? 0
-	}
-	
-	func ResetLogIndent(_ indent: Int) -> Int {
-		LogIndent = indent < 0 ? 0 : indent
-		return LogIndent
-	}
+
+//
+//	func IncreaseLogIndent() -> Int {
+//		return Log?.ResetLogIndent(LogIndent + 1) ?? 0
+//	}
+//
+//	func DecreaseLogIndent() -> Int {
+//		return Log?.ResetLogIndent(LogIndent - 1) ?? 0
+//	}
+//
+//	func ResetLogIndent(_ indent: Int) -> Int {
+//		LogIndent = indent < 0 ? 0 : indent
+//		return LogIndent
+//	}
 
 	
 	func refreshElector() {

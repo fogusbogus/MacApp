@@ -7,8 +7,10 @@
 //
 
 import Foundation
-import Common
-import DBLib
+import UsefulExtensions
+import SQLDB
+
+Names.populateDB()
 
 //create the postcodes.sqlite database
 
@@ -53,6 +55,8 @@ let WD_UPDATE = "UPDATE Ward SET Code=?, CTID=?, DTID=? WHERE ID=?"
 
 var toUpdate : [Array<Any?>] = []
 
+var bulk = BulkData()
+
 for line in allLines {
 	let data = String(line).trim().getPieces()
 	//let pcid = _pc.lookupID(name: data.get(0, ""))
@@ -96,14 +100,16 @@ for line in allLines {
 		db.execute(WD_UPDATE, parms: wdCode, ctid.0, dtid.0, wdid.0)
 	}
 	
-	toUpdate.append([data.get(0, ""), inuse, intro, term, latlon, eastnorth, grid, ctid.0, dtid.0, wdid.0])
+	bulk.add(data.get(0, ""), inuse, intro, term, latlon, eastnorth, grid, ctid.0, dtid.0, wdid.0)
+	bulk.pushRow()
+	//toUpdate.append([data.get(0, ""), inuse, intro, term, latlon, eastnorth, grid, ctid.0, dtid.0, wdid.0])
 	
 	//db.execute(PC_UPDATE, parms: inuse, data.get(15, ""), data.get(16, ""), latlon, eastnorth, grid, ctid.0, dtid.0, wdid.0, pcid.0)
 }
 
 let PC_INSERT = "INSERT INTO PostCode (Code, InUse, Introduced, Terminated, LatLon, EastNorth, Grid, CTID, DTID, WDID) VALUES (?,?,?,?,?,?,?,?,?,?)"
 
-db.bulkInsert(PC_INSERT, parms: toUpdate)
+db.bulkTransaction(PC_INSERT, bulk) //(PC_INSERT, parms: toUpdate)
 
 /*
 

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Common
+import UsefulExtensions
 
 public class ObjectRepository {
 	private var _items : [String:Any?] = [:]

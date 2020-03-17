@@ -7,9 +7,9 @@
 //
 
 import Foundation
-import DBLib
-import Common
-import Logging
+import SQLDB
+import UsefulExtensions
+import LoggingLib
 
 public class PollingDistrict : TableBased<Int>, KeyedItem {
 	public static func getCalculatedName(db: SQLDBInstance, id: Int) -> String {
@@ -53,7 +53,7 @@ public class PollingDistrict : TableBased<Int>, KeyedItem {
 		let sql = "INSERT INTO PollingDistrict (Name, StreetCount, PropertyCount, ElectorCount, PDID, SID, PID, EID, Created) " +
 		"VALUES (?,?,?,?,?,?,?,?,?)"
 		_id = SQLDB.execute(sql, parms: Name, StreetCount, PropertyCount, ElectorCount, _pdid, _sid, _pid, _eid, Date())
-		SQLDB.execute("UPDATE PollingDistrict SET SID = \(ID ?? -1) WHERE ID = \(ID ?? -1)")
+		SQLDB.execute("UPDATE PollingDistrict SET SID = \(_id ?? -1) WHERE ID = \(_id ?? -1)")
 	}
 	
 	override func saveAsUpdate() {

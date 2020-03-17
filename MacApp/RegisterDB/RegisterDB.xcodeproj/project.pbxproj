@@ -3,13 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		C901639023A5658D001646E9 /* Splits.swift in Sources */ = {isa = PBXBuildFile; fileRef = C901638F23A5658D001646E9 /* Splits.swift */; };
 		C90626262300CA550095D528 /* ElectorMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90626252300CA550095D528 /* ElectorMeta.swift */; };
 		C906262A23021CF00095D528 /* CryptoInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C906262923021CF00095D528 /* CryptoInt.swift */; };
+		C907001823FE0C28004E0444 /* SQLDB in Frameworks */ = {isa = PBXBuildFile; productRef = C907001723FE0C28004E0444 /* SQLDB */; };
+		C907001E23FE0C58004E0444 /* UsefulExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = C907001D23FE0C58004E0444 /* UsefulExtensions */; };
 		C9080E3722DFDD2800D37D70 /* RegisterDB.h in Headers */ = {isa = PBXBuildFile; fileRef = C9080E3622DFDD2800D37D70 /* RegisterDB.h */; };
 		C9080E3922DFDD2800D37D70 /* RegisterDB.m in Sources */ = {isa = PBXBuildFile; fileRef = C9080E3822DFDD2800D37D70 /* RegisterDB.m */; };
 		C9080E4622DFDF1400D37D70 /* TableBased.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9080E4522DFDF1400D37D70 /* TableBased.swift */; };
@@ -29,30 +31,9 @@
 		C9B9781E23A1CC980015A2D6 /* ElectorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B9781D23A1CC980015A2D6 /* ElectorExtensions.swift */; };
 		C9CE48D6238F5749009AA250 /* ActionCodeCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE48D5238F5749009AA250 /* ActionCodeCache.swift */; };
 		C9CE48D8238F57C4009AA250 /* ActionCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE48D7238F57C4009AA250 /* ActionCode.swift */; };
+		C9DAA5282401567F009EFD45 /* LoggingLib in Frameworks */ = {isa = PBXBuildFile; productRef = C9DAA5272401567F009EFD45 /* LoggingLib */; };
 		C9E2C7DA23E8E8A500EFB623 /* ObjectRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E2C7D923E8E8A500EFB623 /* ObjectRepository.swift */; };
-		C9F516EB23F7595F002FB91F /* LoggingFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9F516EA23F7595F002FB91F /* LoggingFramework.framework */; };
-		C9F516EC23F7595F002FB91F /* LoggingFramework.framework in Embed Libraries */ = {isa = PBXBuildFile; fileRef = C9F516EA23F7595F002FB91F /* LoggingFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C9F516F123F7596E002FB91F /* MHExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9F516EE23F7596E002FB91F /* MHExt.framework */; };
-		C9F516F223F7596E002FB91F /* MHExt.framework in Embed Libraries */ = {isa = PBXBuildFile; fileRef = C9F516EE23F7596E002FB91F /* MHExt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C9F516F323F75EA1002FB91F /* SQLDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9F516ED23F7596E002FB91F /* SQLDB.framework */; };
-		C9F516F423F75EA1002FB91F /* SQLDB.framework in Embed Libraries */ = {isa = PBXBuildFile; fileRef = C9F516ED23F7596E002FB91F /* SQLDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		C9F516AD23F37FD8002FB91F /* Embed Libraries */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				C9F516F223F7596E002FB91F /* MHExt.framework in Embed Libraries */,
-				C9F516EC23F7595F002FB91F /* LoggingFramework.framework in Embed Libraries */,
-				C9F516F423F75EA1002FB91F /* SQLDB.framework in Embed Libraries */,
-			);
-			name = "Embed Libraries";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C901638F23A5658D001646E9 /* Splits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splits.swift; sourceTree = "<group>"; };
@@ -85,9 +66,6 @@
 		C9CE48D5238F5749009AA250 /* ActionCodeCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCodeCache.swift; sourceTree = "<group>"; };
 		C9CE48D7238F57C4009AA250 /* ActionCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCode.swift; sourceTree = "<group>"; };
 		C9E2C7D923E8E8A500EFB623 /* ObjectRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectRepository.swift; sourceTree = "<group>"; };
-		C9F516EA23F7595F002FB91F /* LoggingFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LoggingFramework.framework; path = ../Libs/LoggingFramework.framework; sourceTree = "<group>"; };
-		C9F516ED23F7596E002FB91F /* SQLDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLDB.framework; path = ../Libs/SQLDB.framework; sourceTree = "<group>"; };
-		C9F516EE23F7596E002FB91F /* MHExt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MHExt.framework; path = ../Libs/MHExt.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,9 +73,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9F516EB23F7595F002FB91F /* LoggingFramework.framework in Frameworks */,
-				C9F516F123F7596E002FB91F /* MHExt.framework in Frameworks */,
-				C9F516F323F75EA1002FB91F /* SQLDB.framework in Frameworks */,
+				C9DAA5282401567F009EFD45 /* LoggingLib in Frameworks */,
+				C907001E23FE0C58004E0444 /* UsefulExtensions in Frameworks */,
+				C907001823FE0C28004E0444 /* SQLDB in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,9 +143,6 @@
 		C9080E3F22DFDD3A00D37D70 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C9F516EE23F7596E002FB91F /* MHExt.framework */,
-				C9F516ED23F7596E002FB91F /* SQLDB.framework */,
-				C9F516EA23F7595F002FB91F /* LoggingFramework.framework */,
 				C9C25A1A237015D80098B08B /* libLogging.dylib */,
 				C9080E4022DFDD3A00D37D70 /* libCommon.dylib */,
 				C9080E4222DFDD3A00D37D70 /* libDBLib.dylib */,
@@ -196,13 +171,20 @@
 				C9080E2F22DFDD2800D37D70 /* Headers */,
 				C9080E3022DFDD2800D37D70 /* Sources */,
 				C9080E3122DFDD2800D37D70 /* Frameworks */,
-				C9F516AD23F37FD8002FB91F /* Embed Libraries */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C9DAA52624015667009EFD45 /* PBXTargetDependency */,
+				C9DAA52424015661009EFD45 /* PBXTargetDependency */,
+				C907002423FE0D30004E0444 /* PBXTargetDependency */,
 			);
 			name = RegisterDB;
+			packageProductDependencies = (
+				C907001723FE0C28004E0444 /* SQLDB */,
+				C907001D23FE0C58004E0444 /* UsefulExtensions */,
+				C9DAA5272401567F009EFD45 /* LoggingLib */,
+			);
 			productName = RegisterDB;
 			productReference = C9080E3322DFDD2800D37D70 /* libRegisterDB.dylib */;
 			productType = "com.apple.product-type.library.dynamic";
@@ -231,6 +213,12 @@
 				Base,
 			);
 			mainGroup = C9080E2A22DFDD2800D37D70;
+			packageReferences = (
+				C96D9BD623FB4A4D005A6964 /* XCRemoteSwiftPackageReference "UtilLibs" */,
+				C907001623FE0C28004E0444 /* XCRemoteSwiftPackageReference "SQLDB" */,
+				C907001923FE0C3E004E0444 /* XCRemoteSwiftPackageReference "LoggingLib" */,
+				C907001C23FE0C58004E0444 /* XCRemoteSwiftPackageReference "UsefulExtensions" */,
+			);
 			productRefGroup = C9080E3422DFDD2800D37D70 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -271,6 +259,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C907002423FE0D30004E0444 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = C907002323FE0D30004E0444 /* UsefulExtensions */;
+		};
+		C9DAA52424015661009EFD45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = C9DAA52324015661009EFD45 /* SQLDB */;
+		};
+		C9DAA52624015667009EFD45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = C9DAA52524015667009EFD45 /* LoggingLib */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		C9080E3A22DFDD2800D37D70 /* Debug */ = {
@@ -454,6 +457,74 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C907001623FE0C28004E0444 /* XCRemoteSwiftPackageReference "SQLDB" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fogusbogus/SQLDB.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.2;
+			};
+		};
+		C907001923FE0C3E004E0444 /* XCRemoteSwiftPackageReference "LoggingLib" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fogusbogus/LoggingLib.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
+		C907001C23FE0C58004E0444 /* XCRemoteSwiftPackageReference "UsefulExtensions" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fogusbogus/UsefulExtensions.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		C96D9BD623FB4A4D005A6964 /* XCRemoteSwiftPackageReference "UtilLibs" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fogusbogus/UtilLibs";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C907001723FE0C28004E0444 /* SQLDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C907001623FE0C28004E0444 /* XCRemoteSwiftPackageReference "SQLDB" */;
+			productName = SQLDB;
+		};
+		C907001D23FE0C58004E0444 /* UsefulExtensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C907001C23FE0C58004E0444 /* XCRemoteSwiftPackageReference "UsefulExtensions" */;
+			productName = UsefulExtensions;
+		};
+		C907002323FE0D30004E0444 /* UsefulExtensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C907001C23FE0C58004E0444 /* XCRemoteSwiftPackageReference "UsefulExtensions" */;
+			productName = UsefulExtensions;
+		};
+		C9DAA52324015661009EFD45 /* SQLDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C907001623FE0C28004E0444 /* XCRemoteSwiftPackageReference "SQLDB" */;
+			productName = SQLDB;
+		};
+		C9DAA52524015667009EFD45 /* LoggingLib */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C907001923FE0C3E004E0444 /* XCRemoteSwiftPackageReference "LoggingLib" */;
+			productName = LoggingLib;
+		};
+		C9DAA5272401567F009EFD45 /* LoggingLib */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C907001923FE0C3E004E0444 /* XCRemoteSwiftPackageReference "LoggingLib" */;
+			productName = LoggingLib;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C9080E2B22DFDD2800D37D70 /* Project object */;
 }

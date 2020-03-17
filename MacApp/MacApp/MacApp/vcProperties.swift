@@ -7,8 +7,8 @@
 //
 
 import Cocoa
-import Common
-import DBLib
+import UsefulExtensions
+import SQLDB
 
 class vcProperties: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
 	@IBOutlet var mainView: NSView!
@@ -41,7 +41,7 @@ class vcProperties: NSViewController, NSTableViewDataSource, NSTableViewDelegate
 		
 		tblData.beginUpdates()
 		
-		let newData = [id, propertyName] as [Any]
+		//let newData = [id, propertyName] as [Any]
 		//data.append(newData)
 		let newRow = IndexSet([data.count - 1])
 		

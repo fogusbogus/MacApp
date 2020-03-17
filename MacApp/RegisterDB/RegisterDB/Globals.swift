@@ -7,9 +7,9 @@
 //
 
 import Foundation
-import DBLib
-import Common
-import Logging
+import SQLDB
+import UsefulExtensions
+import LoggingLib
 
 class Globals {
 	static let shared = Globals()

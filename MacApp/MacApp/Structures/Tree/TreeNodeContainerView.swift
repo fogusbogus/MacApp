@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-import Common
+import UsefulExtensions
 
 class TreeNodeContainerView: NibView, TreeNodeViewControllerDelegate {
 	

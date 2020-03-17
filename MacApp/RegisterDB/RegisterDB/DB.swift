@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import DBLib
-import Common
+import SQLDB
+import UsefulExtensions
 
 class DB {
 	static let shared = DB()

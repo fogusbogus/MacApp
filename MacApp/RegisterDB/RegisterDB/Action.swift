@@ -7,9 +7,9 @@
 //
 
 import Foundation
-import DBLib
-import Logging
-import Common
+import SQLDB
+import LoggingLib
+import UsefulExtensions
 
 public class Action : TableBased<Int> {
 	override public init(db : SQLDBInstance, _ id: Int?, _ log: IIndentLog? = nil) {
@@ -478,3 +478,38 @@ public struct ActionDataStruct {
 	var ID  = -1, Code = "", CodeData = "", Description = "", InternalID = -1, LinkID = -1, LinkType = -1, Notes = "", RequestedCodes = "", Required = "", Response = "", Result = "", sysOrder = 0, Timestamp = Date(), StaffName = "", TextDate = "", TextTime = "", Retract = false, SID : Int? = nil, PID : Int? = nil, EID : Int? = nil, RawData = "", CurrentStaffID = -1, SupersedeID: Int? = nil, IsComplete = false
 }
 
+public extension Action {
+	static func getAllActionCodesText(db: SQLDBInstance, linkType: LinkType, linkID: Int) -> String {
+		let acs = getAllActions(db: db, linkType: linkType, linkID: linkID, includeRequired: true)
+		let ds = DelimitedString()
+		acs.forEach { (ac) in
+			if ac.RequestedCodes.length() > 0 {
+				ds.append(ac.RequestedCodes)
+			}
+			else {
+				ds.append(ac.Code)
+			}
+		}
+		return ds.toString("~")
+	}
+	
+	static func getAllActions(db: SQLDBInstance, linkType: LinkType, linkID: Int, includeRequired: Bool) -> [Action] {
+		let req = includeRequired ? "AND (Required <> '1' OR Required = '1')" : "AND Required <> '1'"
+		let sql = "SELECT * FROM Action WHERE LinkType = ? AND LinkID = ? \(req) AND Retract <> 1 ORDER BY sysOrder, TS"
+		var ret : [Action] = []
+		db.processMultiRow(rowHandler: { (csr) in
+			ret.append(Action(db: db, row: csr))
+		}, sql, linkType.intValue, linkID)
+		return ret
+	}
+	
+	func getDetailedDescription() -> String {
+		if LinkType == 2 && Code.implies(Globals.shared["ELECTORAMENDCODE"]) {
+			let el = Elector(db: SQLDB, LinkID, Log)
+			if el.JSONData().length() > 0 {
+				return el.getDifferences()
+			}
+		}
+		return Description
+	}
+}

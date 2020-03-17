@@ -8,7 +8,7 @@
 
 import Cocoa
 import RegisterDB
-import Logging
+import LoggingLib
 
 class NewPropertyWindowController: ModalWindowController, NewPropertyWindowDelegate {
 	func getSmartNextProperty(current: PropertyDataStruct) -> PropertyDataStruct {
@@ -77,36 +77,46 @@ protocol StreetVCRefreshDelegate {
 }
 
 class NSViewControllerWithLog : NSViewController, IIndentLog {
-	public var LogIndent: Int = 0
+	public var IndentLog_Indent: Int = 0
 	
 	private var _logFileURL : URL? = nil
-	public var LogFileURL: URL?
+	public var IndentLog_URL: URL?
 	
 	private var _log : IIndentLog? = nil
-	public var Log : IIndentLog? {
+	public var IndentLog_Instance : IIndentLog? {
 		get {
 			return _log //?? self
 		}
 		set {
 			_log = newValue
 			if newValue != nil {
-				LogFileURL = newValue!.LogFileURL
+				IndentLog_URL = newValue!.IndentLog_URL
 			}
 		}
 	}
 	
-	public func IncreaseLogIndent() -> Int {
-		return Log?.ResetLogIndent(LogIndent + 1) ?? 0
+	public var Log : IIndentLog? {
+		get {
+			return IndentLog_Instance
+		}
+		set {
+			IndentLog_Instance = newValue
+		}
 	}
+
 	
-	public func DecreaseLogIndent() -> Int {
-		return Log?.ResetLogIndent(LogIndent - 1) ?? 0
-	}
-	
-	public func ResetLogIndent(_ indent: Int) -> Int {
-		LogIndent = indent < 0 ? 0 : indent
-		return LogIndent
-	}
+//	public func IncreaseLogIndent() -> Int {
+//		return Log?.ResetLogIndent(LogIndent + 1) ?? 0
+//	}
+//
+//	public func DecreaseLogIndent() -> Int {
+//		return Log?.ResetLogIndent(LogIndent - 1) ?? 0
+//	}
+//
+//	public func ResetLogIndent(_ indent: Int) -> Int {
+//		LogIndent = indent < 0 ? 0 : indent
+//		return LogIndent
+//	}
 
 }
 

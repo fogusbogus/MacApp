@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Common
+import UsefulExtensions
 import Cocoa
 
 class TreeNode : NSView {

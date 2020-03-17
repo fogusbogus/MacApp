@@ -7,9 +7,9 @@
 //
 
 import Foundation
-import DBLib
-import Common
-import Logging
+import SQLDB
+import UsefulExtensions
+import LoggingLib
 
 //Although we are handling the protocols in extensions below, we can define the class with them. This will add readability.
 public class Elector : TableBased<Int> { //}, HasTODOItems, KeyedItem {
@@ -62,7 +62,7 @@ public class Elector : TableBased<Int> { //}, HasTODOItems, KeyedItem {
 		let sql = "INSERT INTO Elector (DisplayName, Surname, Forename, MiddleName, Meta, Markers, PDID, SID, PID, EID, Created) " +
 		"VALUES (?,?,?,?,?,?,?,?,?,?,?)"
 		_id = SQLDB.execute(sql, parms: DisplayName, Surname, Forename, MiddleName, MetaData.getSignature(true), Markers, _pdid, _sid, _pid, _eid, Date())
-		SQLDB.execute("UPDATE Elector SET EID = \(ID ?? -1) WHERE ID = \(ID ?? -1)")
+		SQLDB.execute("UPDATE Elector SET EID = \(_id ?? -1) WHERE ID = \(_id ?? -1)")
 	}
 	
 	override func saveAsUpdate() {
@@ -377,6 +377,41 @@ public struct ElectorDataStruct {
 //Instead of incorporating the protocol into the main code, we can use an extension to seperate it out. It's a little less readable, but actually keeps the code cleaner in practice. It also has the added benefit of encapsulating the functionality of the protocol.
 
 //Another important thing to note is that this doesn't work with vars.
+
+extension Elector : ProvidesJsonData {
+	func JSONData() -> String {
+		var r : [Elector.Fields:String] = [:]
+		
+		r[.title] = ""
+		
+
+		r[.forename] = Forename
+		r[.middle] = MiddleName
+		r[.surname] = Surname
+		r[.nationality] = MetaData.Nationality.joined(separator: ";")
+		r[.dob] = MetaData.DOB?.toISOString()
+		r[.nino] = MetaData.NINO
+		r[.evidence] = MetaData.Evidence
+		r[.evidenceNotes] = MetaData.EvidenceNotes
+		r[.notes] = MetaData.Notes
+		r[.email] = MetaData.Email
+		r[.phone] = MetaData.Phone
+		r[.previousAddress] = MetaData.PreviousAddress
+		r[.previousPostCode] = MetaData.PreviousPostCode
+		r[.over76] = MetaData.Over76 ? "1" : "0"
+		r[.postalVote] = MetaData.PostalVote ? "1" : "0"
+		r[.singleOccupier] = MetaData.SingleOccupier ? "1" : "0"
+		r[.absentVote] = MetaData.AbsentVote ? "1" : "0"
+
+		var o : [String:String] = [:]
+		r.forEach { (k, v) in
+			o[k.jsonMap] = v
+		}
+		return o.toJsonString()
+	}
+	
+	
+}
 
 extension Elector : HasTODOItems {
 	public static func getIDsForTODOItems(db: SQLDBInstance, id: Int, includeChildren: Bool, includeComplete: Bool) -> String {

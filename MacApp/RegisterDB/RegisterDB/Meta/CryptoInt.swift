@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Common
+import UsefulExtensions
 
 internal class CryptoInternal {
 	static let shared = CryptoInternal()

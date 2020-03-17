@@ -3,17 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		C9181C982389CB2A001B5FC8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9181C972389CB2A001B5FC8 /* main.swift */; };
 		C9181C9A2389CE1B001B5FC8 /* Lookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9181C992389CE1B001B5FC8 /* Lookup.swift */; };
+		C95E3308240005ED00699983 /* SQLDB in Frameworks */ = {isa = PBXBuildFile; productRef = C95E3307240005ED00699983 /* SQLDB */; };
+		C95E330B240005F700699983 /* UsefulExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = C95E330A240005F700699983 /* UsefulExtensions */; };
 		C9D4164223804A8300E6B717 /* Forenames.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4164123804A8300E6B717 /* Forenames.swift */; };
-		C9D4164A23804A9000E6B717 /* libCommon.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D4164923804A9000E6B717 /* libCommon.dylib */; };
-		C9D4164B23804A9000E6B717 /* libCommon.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = C9D4164923804A9000E6B717 /* libCommon.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		C9D4164E23804A9600E6B717 /* libDBLib.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D4164D23804A9600E6B717 /* libDBLib.dylib */; };
-		C9D4164F23804A9600E6B717 /* libDBLib.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = C9D4164D23804A9600E6B717 /* libDBLib.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,18 +23,6 @@
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 1;
-		};
-		C9D4164C23804A9000E6B717 /* Embed Libraries */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				C9D4164F23804A9600E6B717 /* libDBLib.dylib in Embed Libraries */,
-				C9D4164B23804A9000E6B717 /* libCommon.dylib in Embed Libraries */,
-			);
-			name = "Embed Libraries";
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -54,8 +40,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9D4164E23804A9600E6B717 /* libDBLib.dylib in Frameworks */,
-				C9D4164A23804A9000E6B717 /* libCommon.dylib in Frameworks */,
+				C95E330B240005F700699983 /* UsefulExtensions in Frameworks */,
+				C95E3308240005ED00699983 /* SQLDB in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,13 +94,16 @@
 				C9D4163A23804A8300E6B717 /* Sources */,
 				C9D4163B23804A8300E6B717 /* Frameworks */,
 				C9D4163C23804A8300E6B717 /* CopyFiles */,
-				C9D4164C23804A9000E6B717 /* Embed Libraries */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = ImportData;
+			packageProductDependencies = (
+				C95E3307240005ED00699983 /* SQLDB */,
+				C95E330A240005F700699983 /* UsefulExtensions */,
+			);
 			productName = ImportData;
 			productReference = C9D4163E23804A8300E6B717 /* ImportData */;
 			productType = "com.apple.product-type.tool";
@@ -143,6 +132,10 @@
 				Base,
 			);
 			mainGroup = C9D4163523804A8300E6B717;
+			packageReferences = (
+				C95E3306240005ED00699983 /* XCRemoteSwiftPackageReference "SQLDB" */,
+				C95E3309240005F700699983 /* XCRemoteSwiftPackageReference "UsefulExtensions" */,
+			);
 			productRefGroup = C9D4163F23804A8300E6B717 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -325,6 +318,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C95E3306240005ED00699983 /* XCRemoteSwiftPackageReference "SQLDB" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fogusbogus/SQLDB.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.3;
+			};
+		};
+		C95E3309240005F700699983 /* XCRemoteSwiftPackageReference "UsefulExtensions" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fogusbogus/UsefulExtensions.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C95E3307240005ED00699983 /* SQLDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C95E3306240005ED00699983 /* XCRemoteSwiftPackageReference "SQLDB" */;
+			productName = SQLDB;
+		};
+		C95E330A240005F700699983 /* UsefulExtensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C95E3309240005F700699983 /* XCRemoteSwiftPackageReference "UsefulExtensions" */;
+			productName = UsefulExtensions;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C9D4163623804A8300E6B717 /* Project object */;
 }

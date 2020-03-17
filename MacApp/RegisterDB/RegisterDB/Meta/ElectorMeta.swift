@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import DBLib
-import Common
+import SQLDB
+import UsefulExtensions
 import CommonCrypto
 
 
@@ -158,6 +158,15 @@ public class ElectorMeta: Meta, MetaCryptoDelegate {
 		}
 		set {
 			setOrRemove("evidencenotes", newValue)
+		}
+	}
+	
+	public var Evidence: String {
+		get {
+			return get("evidence", "")
+		}
+		set {
+			setOrRemove("evidence", newValue)
 		}
 	}
 	

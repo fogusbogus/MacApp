@@ -7,8 +7,8 @@
 //
 
 import Cocoa
-import Common
-import DBLib
+import UsefulExtensions
+import SQLDB
 
 class vcElectors: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
 	

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import DBLib
+import SQLDB
 
 public class Splits {
 	static let shared = Splits()

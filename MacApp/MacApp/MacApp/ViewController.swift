@@ -7,14 +7,14 @@
 //
 
 import Cocoa
-import Common
+import UsefulExtensions
 import RegisterDB
-import DBLib
-import Logging
+import SQLDB
+import LoggingLib
 
 class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog, SubviewHandler, TableSelectionHasChangedDelegate {
 	func selectedRowChanged(_ owner: Any, _ row: Int, jsonData: String?) {
-		print("row selected: \(row), \(jsonData)")
+		print("row selected: \(row), \(String(describing: jsonData))")
 		if jsonData!.length() > 0 {
 			let data = JCollection(json: jsonData!)
 			vcElecs?.loadFromProperty(db: Databases.shared.Register, propertyID: data.get("pid", -1))
@@ -36,17 +36,17 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 	private var vcProps : vcProperties?
 	private var vcElecs : vcElectors?
 	
-	var LogIndent: Int = 0
+	var IndentLog_Indent: Int = 0
 	
 	private var _log : IIndentLog? = nil
-	var Log : IIndentLog? {
+	var IndentLog_Instance : IIndentLog? {
 		get {
-			return _log //?? self
+			return _log ?? self
 		}
 		set {
 			_log = newValue
 			if newValue != nil {
-				LogFileURL = newValue!.LogFileURL
+				IndentLog_URL = newValue!.IndentLog_URL
 			}
 		}
 	}
@@ -69,7 +69,7 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 
 	var DefaultFileName = "logFile.txt"
 	private var _logFileURL : URL? = nil
-	var LogFileURL : URL? {
+	var IndentLog_URL : URL? {
 		get {
 			if _logFileURL == nil {
 				let dir: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last! as URL
@@ -82,19 +82,37 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 			_logFileURL = newValue
 		}
 	}
+	
+	func testArea() {
+		do {
+			let h = URL.init(string: "http://192.168.1.254/00000110500/gui/#/basicStatus")
+			let html = try String(contentsOf: h!)
+			print(html)
+		}
+		catch {}
+	}
+	
+	var Log : IIndentLog? {
+		get {
+			return IndentLog_Instance
+		}
+		set {
+			IndentLog_Instance = newValue
+		}
+	}
 
-	func IncreaseLogIndent() -> Int {
-		return Log?.ResetLogIndent(LogIndent + 1) ?? 0
-	}
-	
-	func DecreaseLogIndent() -> Int {
-		return Log?.ResetLogIndent(LogIndent - 1) ?? 0
-	}
-	
-	func ResetLogIndent(_ indent: Int) -> Int {
-		LogIndent = indent < 0 ? 0 : indent
-		return LogIndent
-	}
+//	func IncreaseLogIndent() -> Int {
+//		return Log?.ResetLogIndent(LogIndent + 1) ?? 0
+//	}
+//
+//	func DecreaseLogIndent() -> Int {
+//		return Log?.ResetLogIndent(LogIndent - 1) ?? 0
+//	}
+//
+//	func ResetLogIndent(_ indent: Int) -> Int {
+//		LogIndent = indent < 0 ? 0 : indent
+//		return LogIndent
+//	}
 
 	@IBOutlet weak var vwPropElecs: NSView!
 	
@@ -193,6 +211,7 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 	@discardableResult
 	private func getForenames() -> [(String,String)] {
 		if _forenames.count == 0 {
+			testArea()
 			let db = SQLDBInstance()
 			db.open(path: "names.sqlite", openCurrent: true)
 
@@ -304,7 +323,7 @@ class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog
 			
 			setupDB()
 			
-			let m = DBLib.Meta()
+			let m = SQLDB.Meta()
 			m.load(json: "{\"a\": {\"items\" : [{\"b\":\"0\", \"c\":\"1\"},{\"b\":\"1\", \"c\":\"2\"}]}}")
 			
 			// Do any additional setup after loading the view.

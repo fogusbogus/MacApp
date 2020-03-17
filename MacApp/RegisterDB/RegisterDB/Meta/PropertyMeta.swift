@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import DBLib
-import Common
+import SQLDB
+import UsefulExtensions
 import CommonCrypto
 
 public class PropertyMeta: Meta, MetaCryptoDelegate {

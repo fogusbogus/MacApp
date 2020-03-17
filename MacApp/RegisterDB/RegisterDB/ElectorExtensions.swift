@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import Common
-import DBLib
+import UsefulExtensions
+import SQLDB
 
 public extension Elector {
 	func canChangeNINO() -> Bool {

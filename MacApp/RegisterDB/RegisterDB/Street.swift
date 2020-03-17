@@ -7,18 +7,18 @@
 //
 
 import Foundation
-import DBLib
-import Common
-import Logging
+import SQLDB
+import UsefulExtensions
+import LoggingLib
 import MapKit
 
-public class Street : TableBased<Int>, HasTODOItems, KeyedItem, LocatableItem, Iconised {
-	public func getCoord() -> CLLocationCoordinate2D {
-		if GPS.length() == 0 {
-			return CLLocationCoordinate2D()
-		}
-		return CLLocationCoordinate2D(latitude: Latitude, longitude: Longitude)
-	}
+public class Street : TableBased<Int>, KeyedItem, LocatableItem {
+//	public func getCoord() -> CLLocationCoordinate2D {
+//		if GPS.length() == 0 {
+//			return CLLocationCoordinate2D()
+//		}
+//		return CLLocationCoordinate2D(latitude: Latitude, longitude: Longitude)
+//	}
 
 	public static func getCalculatedName(db: SQLDBInstance, id: Int) -> String {
 		return db.queryValue("SELECT DisplayName FROM Street WHERE ID = ? LIMIT 1", "", id)
@@ -29,46 +29,8 @@ public class Street : TableBased<Int>, HasTODOItems, KeyedItem, LocatableItem, I
 		return db.queryList(sql, hintValue: 0, parms: id)
 	}
 	
-	public static func calculateIcon(db: SQLDBInstance, id: Int) -> String {
-		var sql = "SELECT COUNT(*) FROM Action WHERE SID = ? OR (LinkType = 0 AND LinkID = ?) AND Required = '1'"
-		let totalTODO = db.queryValue(sql, 0, id, id)
-		
-		sql = "SELECT COUNT(*) FROM Action WHERE SID = ? OR (LinkType = 0 AND LinkID = ?) AND Required = '1' AND Retract <> 1"
-		let totalTODOFulfilled = db.queryValue(sql, 0, id, id)
-		
-		if totalTODO == 0 && totalTODOFulfilled == 0 {
-			return "unprocessed"
-		}
-		if totalTODO == totalTODOFulfilled {
-			return "processed"
-		}
-		return "processing"
-	}
 	
 	
-	private func assertGPS() {
-		if GPS.length() == 0 {
-			GPS = "0,0"
-		}
-	}
-	public var Longitude: Double {
-		get {
-			assertGPS()
-			return Double(GPS.after(","))!
-		}
-		set {
-			GPS = "\(Latitude),\(newValue)"
-		}
-	}
-	public var Latitude: Double {
-		get {
-			assertGPS()
-			return Double(GPS.before(","))!
-		}
-		set {
-			GPS = "\(newValue),\(Longitude)"
-		}
-	}
 	
 	public var Key: String {
 		get {
@@ -76,29 +38,7 @@ public class Street : TableBased<Int>, HasTODOItems, KeyedItem, LocatableItem, I
 		}
 	}
 
-	public static func getIDsForTODOItems(db: SQLDBInstance, id: Int, includeChildren: Bool, includeComplete: Bool) -> String {
-		let ds = DelimitedString()
-		var sql = "SELECT ID FROM Action WHERE LinkID = ? AND LinkType = 0 AND Required = '1' "
-		if !includeComplete {
-			sql += " AND IsComplete IS NULL"
-		}
-		ds.append(db.queryList(sql, hintValue: "", parms: id))
-		if includeChildren {
-			let idsIn = Street.getChildrenIDs(db: db, id: id).toDelimitedString(delimiter: ",")
-			if idsIn.length() > 0 {
-				sql = "SELECT ID FROM Action WHERE LinkID IN (\(idsIn)) AND LinkType = 1 WHERE Required = '1'"
-				if !includeComplete {
-					sql += " AND IsComplete IS NULL"
-				}
-				ds.append(db.queryList(sql, hintValue: ""))
-			}
-		}
-		return ds.toString(",")
-	}
 
-	public func getIDsForTODOItems(includeChildren: Bool, includeComplete: Bool = false) -> String {
-		return Street.getIDsForTODOItems(db: SQLDB, id: ID!, includeChildren: includeChildren, includeComplete: includeComplete)
-	}
 	
 	public static func getPropertiesCSV(db: SQLDBInstance, id: Int) -> String {
 		let sql = "SELECT ID FROM Property WHERE SID = ?"
@@ -318,4 +258,50 @@ public extension Street {
 		let sql = "SELECT COUNT(*) FROM Property P INNER JOIN Action A ON P.SID = A.SID WHERE A.SID = ? AND A.IsComplete IS NULL AND A.Required = 1 AND A.RequestedCodes NOT IN ('TODO', '')"
 		return db.queryValue(sql, 0, id)
 	}
+}
+
+extension Street : HasTODOItems {
+	public static func getIDsForTODOItems(db: SQLDBInstance, id: Int, includeChildren: Bool, includeComplete: Bool) -> String {
+		let ds = DelimitedString()
+		var sql = "SELECT ID FROM Action WHERE LinkID = ? AND LinkType = 0 AND Required = '1' "
+		if !includeComplete {
+			sql += " AND IsComplete IS NULL"
+		}
+		ds.append(db.queryList(sql, hintValue: "", parms: id))
+		if includeChildren {
+			let idsIn = Street.getChildrenIDs(db: db, id: id).toDelimitedString(delimiter: ",")
+			if idsIn.length() > 0 {
+				sql = "SELECT ID FROM Action WHERE LinkID IN (\(idsIn)) AND LinkType = 1 WHERE Required = '1'"
+				if !includeComplete {
+					sql += " AND IsComplete IS NULL"
+				}
+				ds.append(db.queryList(sql, hintValue: ""))
+			}
+		}
+		return ds.toString(",")
+	}
+
+	public func getIDsForTODOItems(includeChildren: Bool, includeComplete: Bool = false) -> String {
+		return Street.getIDsForTODOItems(db: SQLDB, id: ID!, includeChildren: includeChildren, includeComplete: includeComplete)
+	}
+}
+
+extension Street : Iconised {
+	public static func calculateIcon(db: SQLDBInstance, id: Int) -> String {
+		var sql = "SELECT COUNT(*) FROM Action WHERE SID = ? OR (LinkType = 0 AND LinkID = ?) AND Required = '1'"
+		let totalTODO = db.queryValue(sql, 0, id, id)
+		
+		sql = "SELECT COUNT(*) FROM Action WHERE SID = ? OR (LinkType = 0 AND LinkID = ?) AND Required = '1' AND Retract <> 1"
+		let totalTODOFulfilled = db.queryValue(sql, 0, id, id)
+		
+		if totalTODO == 0 && totalTODOFulfilled == 0 {
+			return "unprocessed"
+		}
+		if totalTODO == totalTODOFulfilled {
+			return "processed"
+		}
+		return "processing"
+	}
+	
+
 }

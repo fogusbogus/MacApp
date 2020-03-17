@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import DBLib
-import Common
+import SQLDB
+import UsefulExtensions
 import RegisterDB
 
 class CommandProcessing {

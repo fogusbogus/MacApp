@@ -7,9 +7,9 @@
 //
 
 import Foundation
-import DBLib
-import Common
-import Logging
+import SQLDB
+import UsefulExtensions
+import LoggingLib
 
 public class ActionGroup : TableBased<String> {
 	override public init(db : SQLDBInstance, _ id: String?, _ log: IIndentLog? = nil) {
@@ -175,7 +175,7 @@ public class ActionGroup : TableBased<String> {
 	func getAllowedCodes(linkType: LinkType, linkID: Int) -> [ActionCode] {
 		
 		//Get this item's action codes
-		var ret : [ActionCode] = getActionCodes()
+		let ret : [ActionCode] = getActionCodes()
 		
 		let ds = ret.map { (ac) -> String in
 			return ac.ID!.trim().uppercased()
@@ -183,10 +183,27 @@ public class ActionGroup : TableBased<String> {
 		
 		let contains = "~\(ds)~"
 		
-		let allActions = ""
+		let allActions : [String] = Action.getAllActionCodesText(db: SQLDB, linkType: linkType, linkID: linkID).splitToArray("~")
 		
-		//TODO
-		return []
+		var passed : [ActionCode] = []
+		
+		ret.forEach { (ac) in
+			if contains.impliesContains("~\(ac.ID!.trim())~") {
+				let pre = ac.Prerequisite
+				var canAdd = true
+				for strAc in allActions {
+					if !pre.isEmptyOrWhitespace() && !ActionCode.Criteria(code: strAc, criteria: pre) {
+						canAdd = false
+						break
+					}
+				}
+				if canAdd {
+					passed.append(ac)
+				}
+			}
+		}
+		
+		return passed
 	}
 	
 	static func getAllGroups(db: SQLDBInstance, linkType: LinkType) -> [ActionGroup] {
@@ -206,7 +223,7 @@ public class ActionGroup : TableBased<String> {
 		var ret : [ActionGroup] = []
 		db.processMultiRow(rowHandler: { (csr) in
 			ret.append(ActionGroup(db: db, row: csr))
-		}, "SELECT * FROM ActionGroup WHERE Parent = '' AND AppliesTo LIKE '%\(lt.linkType.intValue)%'")
+		}, "SELECT * FROM ActionGroup WHERE IFNULL(Parent, '') = '' AND AppliesTo LIKE '%\(lt.linkType.intValue)%'")
 		return ret
 	}
 	
@@ -234,6 +251,31 @@ public class ActionGroup : TableBased<String> {
 		return ret
 	}
 	
+	static func FilterCodes(group: ActionGroup?, codes: [ActionCode]) -> [ActionCode] {
+		guard group != nil else {
+			return codes
+		}
+		
+		var ret : [ActionCode] = []
+		let split = group!.Codes.splitToArray("~")
+		
+		codes.forEach { (ac) in
+			if split.containsLike(ac.ID!) {
+				ret.append(ac)
+			}
+		}
+		return ret
+	}
+	
+	static func FilterByAppliesTo(db: SQLDBInstance, appliesTo: String) -> [ActionGroup] {
+		var ret : [ActionGroup] = []
+		
+		db.processMultiRow(rowHandler: { (csr) in
+			ret.append(ActionGroup(db: db, row: csr))
+		}, "SELECT * FROM ActionGroup WHERE AppliesTo LIKE ? ORDER BY sysOrder", appliesTo)
+		
+		return ret
+	}
 }
 
 public struct ActionGroupDataStruct {

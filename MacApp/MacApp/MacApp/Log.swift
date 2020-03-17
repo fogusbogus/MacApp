@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Logging
+import LoggingLib
 
 public class Log : BaseIndentLog {
 	

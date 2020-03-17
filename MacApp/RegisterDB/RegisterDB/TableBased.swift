@@ -7,9 +7,9 @@
 //
 
 import Foundation
-import DBLib
-import Common
-import Logging
+import SQLDB
+import UsefulExtensions
+import LoggingLib
 
 public class TableBased<IDType> {
 	
@@ -170,10 +170,10 @@ public class TableBased<IDType> {
 		}
 	}
 	
-	internal var _metaData : DBLib.Meta?
-	public var MetaData : DBLib.Meta {
+	internal var _metaData : Meta?
+	public var MetaData : Meta {
 		get {
-			_metaData = _metaData ?? DBLib.Meta()
+			_metaData = _metaData ?? Meta()
 			return _metaData!
 		}
 	}
@@ -189,9 +189,10 @@ public class TableBased<IDType> {
 		//requires an override
 	}
 	
+
 	public final func save() {
 
-		
+		Log.debug("Saving record")
 		if validID() {
 			if isDirty() {
 				saveAsUpdate()
@@ -224,6 +225,10 @@ public class TableBased<IDType> {
 	
 }
 
+protocol ProvidesJsonData {
+	func JSONData() -> String
+}
+
 protocol ITableBased {
 	associatedtype T
 	
@@ -234,7 +239,7 @@ protocol ITableBased {
 	func IDChanged()
 	var hasLoaded : Bool {get}
 	var ID : T {get set}
-	var MetaData : DBLib.Meta {get}
+	var MetaData : SQLDB.Meta {get}
 	func clear()
 	var hasChildren : Bool {get}
 	func validID() -> Bool

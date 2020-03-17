@@ -2,25 +2,16 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../../Library/Autosave Information/Packages/MCAMobile/MCAMobile.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:LocationTools/LocationTools.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:ImportData/ImportData.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Logging/Logging.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:RegisterDB/RegisterDB.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:SQLiteDB/SQLiteDB.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:DBLib/DBLib.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:MacApp/Common/Common.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:MacApp/MacApp.xcodeproj">

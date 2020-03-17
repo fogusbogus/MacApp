@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import DBLib
+import SQLDB
 
 class Functions {
 	public static func translateToLinkType(type: String) -> Int {
@@ -96,6 +96,24 @@ public enum LinkType : Int {
 				self = .elector
 				break
 			}
+		}
+	}
+}
+
+extension Dictionary where Key == String {
+	func toJsonString() -> String {
+		if let ret = toJsonObject() {
+			return String(data: ret, encoding: .utf8)!
+		}
+		return ""
+	}
+	
+	private func toJsonObject() -> Data? {
+		do {
+			return try JSONSerialization.data(withJSONObject: self, options: .prettyPrinted)
+		}
+		catch {
+			return nil
 		}
 	}
 }
