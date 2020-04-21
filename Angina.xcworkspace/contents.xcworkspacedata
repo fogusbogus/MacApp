@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:Angina/Angina/Angina.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Angina/TwingeBPM/TwingeBPM.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Angina/AWSTwingeIntegration/AWSTwingeIntegration.xcodeproj">
+   </FileRef>
+</Workspace>

@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "LoggingLib",
+        "repositoryURL": "https://github.com/fogusbogus/LoggingLib.git",
+        "state": {
+          "branch": null,
+          "revision": "09e119aa2c7d336c85d8d6c0370bd9c7a24398b5",
+          "version": "1.0.4"
+        }
+      },
+      {
+        "package": "UsefulExtensions",
+        "repositoryURL": "https://github.com/fogusbogus/UsefulExtensions.git",
+        "state": {
+          "branch": null,
+          "revision": "7e0506402b0199d4aa52a0a17538e4f54ee37322",
+          "version": "1.0.10"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
