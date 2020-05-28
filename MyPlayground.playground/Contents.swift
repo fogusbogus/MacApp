@@ -2,4 +2,6 @@ import Cocoa
 
 var str = "Try this & never fear!"
 
-print(str.toHtml())
+let c = Array("±")
+print(c.first!.unicodeScalars.startIndex)
+
