@@ -7,122 +7,119 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C9B050AF248346F700EF4D66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B050AE248346F700EF4D66 /* AppDelegate.swift */; };
-		C9B050B1248346F700EF4D66 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B050B0248346F700EF4D66 /* SceneDelegate.swift */; };
-		C9B050B3248346F700EF4D66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B050B2248346F700EF4D66 /* ViewController.swift */; };
-		C9B050B6248346F700EF4D66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B050B4248346F700EF4D66 /* Main.storyboard */; };
-		C9B050B8248346F800EF4D66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9B050B7248346F800EF4D66 /* Assets.xcassets */; };
-		C9B050BB248346F800EF4D66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B050B9248346F800EF4D66 /* LaunchScreen.storyboard */; };
+		C9051274249BB7A500FEF1B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9051273249BB7A500FEF1B2 /* AppDelegate.swift */; };
+		C9051276249BB7A500FEF1B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9051275249BB7A500FEF1B2 /* SceneDelegate.swift */; };
+		C9051278249BB7A500FEF1B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9051277249BB7A500FEF1B2 /* ViewController.swift */; };
+		C905127B249BB7A500FEF1B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9051279249BB7A500FEF1B2 /* Main.storyboard */; };
+		C905127E249BB7A500FEF1B2 /* CloudKitStuff.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C905127C249BB7A500FEF1B2 /* CloudKitStuff.xcdatamodeld */; };
+		C9051280249BB7A600FEF1B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C905127F249BB7A600FEF1B2 /* Assets.xcassets */; };
+		C9051283249BB7A600FEF1B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9051281249BB7A600FEF1B2 /* LaunchScreen.storyboard */; };
+		C90512B8249D0C8D00FEF1B2 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90512B7249D0C8D00FEF1B2 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		C905128E249BB7A700FEF1B2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C905128A249BB7A600FEF1B2 /* CloudKitStuff.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C9051270249BB7A500FEF1B2;
-			remoteInfo = CloudKitStuff;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		C905128A249BB7A600FEF1B2 /* CloudKitStuff.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CloudKitStuff.xcodeproj; path = ../CloudKitStuff/CloudKitStuff.xcodeproj; sourceTree = "<group>"; };
-		C9B050AB248346F700EF4D66 /* Scratch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scratch.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C9B050AE248346F700EF4D66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C9B050B0248346F700EF4D66 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C9B050B2248346F700EF4D66 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C9B050B5248346F700EF4D66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C9B050B7248346F800EF4D66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C9B050BA248346F800EF4D66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		C9B050BC248346F800EF4D66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9051270249BB7A500FEF1B2 /* CloudKitStuff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudKitStuff.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9051273249BB7A500FEF1B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C9051275249BB7A500FEF1B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C9051277249BB7A500FEF1B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C905127A249BB7A500FEF1B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C905127D249BB7A500FEF1B2 /* CloudKitStuff.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CloudKitStuff.xcdatamodel; sourceTree = "<group>"; };
+		C905127F249BB7A600FEF1B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C9051282249BB7A600FEF1B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C9051284249BB7A600FEF1B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C90512B5249D0C8000FEF1B2 /* CloudKitStuff.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CloudKitStuff.entitlements; sourceTree = "<group>"; };
+		C90512B7249D0C8D00FEF1B2 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		C9B050A8248346F700EF4D66 /* Frameworks */ = {
+		C905126D249BB7A500FEF1B2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C90512B8249D0C8D00FEF1B2 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C905128B249BB7A600FEF1B2 /* Products */ = {
+		C9051267249BB7A500FEF1B2 = {
 			isa = PBXGroup;
 			children = (
-				C905128F249BB7A700FEF1B2 /* CloudKitStuff.app */,
+				C9051272249BB7A500FEF1B2 /* CloudKitStuff */,
+				C9051271249BB7A500FEF1B2 /* Products */,
+				C90512B6249D0C8D00FEF1B2 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C9051271249BB7A500FEF1B2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C9051270249BB7A500FEF1B2 /* CloudKitStuff.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C9B050A2248346F700EF4D66 = {
+		C9051272249BB7A500FEF1B2 /* CloudKitStuff */ = {
 			isa = PBXGroup;
 			children = (
-				C905128A249BB7A600FEF1B2 /* CloudKitStuff.xcodeproj */,
-				C9B050AD248346F700EF4D66 /* Scratch */,
-				C9B050AC248346F700EF4D66 /* Products */,
+				C90512B5249D0C8000FEF1B2 /* CloudKitStuff.entitlements */,
+				C9051273249BB7A500FEF1B2 /* AppDelegate.swift */,
+				C9051275249BB7A500FEF1B2 /* SceneDelegate.swift */,
+				C9051277249BB7A500FEF1B2 /* ViewController.swift */,
+				C9051279249BB7A500FEF1B2 /* Main.storyboard */,
+				C905127F249BB7A600FEF1B2 /* Assets.xcassets */,
+				C9051281249BB7A600FEF1B2 /* LaunchScreen.storyboard */,
+				C9051284249BB7A600FEF1B2 /* Info.plist */,
+				C905127C249BB7A500FEF1B2 /* CloudKitStuff.xcdatamodeld */,
 			);
+			path = CloudKitStuff;
 			sourceTree = "<group>";
 		};
-		C9B050AC248346F700EF4D66 /* Products */ = {
+		C90512B6249D0C8D00FEF1B2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C9B050AB248346F700EF4D66 /* Scratch.app */,
+				C90512B7249D0C8D00FEF1B2 /* CloudKit.framework */,
 			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		C9B050AD248346F700EF4D66 /* Scratch */ = {
-			isa = PBXGroup;
-			children = (
-				C9B050AE248346F700EF4D66 /* AppDelegate.swift */,
-				C9B050B0248346F700EF4D66 /* SceneDelegate.swift */,
-				C9B050B2248346F700EF4D66 /* ViewController.swift */,
-				C9B050B4248346F700EF4D66 /* Main.storyboard */,
-				C9B050B7248346F800EF4D66 /* Assets.xcassets */,
-				C9B050B9248346F800EF4D66 /* LaunchScreen.storyboard */,
-				C9B050BC248346F800EF4D66 /* Info.plist */,
-			);
-			path = Scratch;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C9B050AA248346F700EF4D66 /* Scratch */ = {
+		C905126F249BB7A500FEF1B2 /* CloudKitStuff */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C9B050BF248346F800EF4D66 /* Build configuration list for PBXNativeTarget "Scratch" */;
+			buildConfigurationList = C9051287249BB7A600FEF1B2 /* Build configuration list for PBXNativeTarget "CloudKitStuff" */;
 			buildPhases = (
-				C9B050A7248346F700EF4D66 /* Sources */,
-				C9B050A8248346F700EF4D66 /* Frameworks */,
-				C9B050A9248346F700EF4D66 /* Resources */,
+				C905126C249BB7A500FEF1B2 /* Sources */,
+				C905126D249BB7A500FEF1B2 /* Frameworks */,
+				C905126E249BB7A500FEF1B2 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Scratch;
-			productName = Scratch;
-			productReference = C9B050AB248346F700EF4D66 /* Scratch.app */;
+			name = CloudKitStuff;
+			productName = CloudKitStuff;
+			productReference = C9051270249BB7A500FEF1B2 /* CloudKitStuff.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		C9B050A3248346F700EF4D66 /* Project object */ = {
+		C9051268249BB7A500FEF1B2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "Matthew Hogg";
 				TargetAttributes = {
-					C9B050AA248346F700EF4D66 = {
+					C905126F249BB7A500FEF1B2 = {
 						CreatedOnToolsVersion = 11.5;
 					};
 				};
 			};
-			buildConfigurationList = C9B050A6248346F700EF4D66 /* Build configuration list for PBXProject "Scratch" */;
+			buildConfigurationList = C905126B249BB7A500FEF1B2 /* Build configuration list for PBXProject "CloudKitStuff" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -130,71 +127,56 @@
 				en,
 				Base,
 			);
-			mainGroup = C9B050A2248346F700EF4D66;
-			productRefGroup = C9B050AC248346F700EF4D66 /* Products */;
+			mainGroup = C9051267249BB7A500FEF1B2;
+			productRefGroup = C9051271249BB7A500FEF1B2 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = C905128B249BB7A600FEF1B2 /* Products */;
-					ProjectRef = C905128A249BB7A600FEF1B2 /* CloudKitStuff.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
-				C9B050AA248346F700EF4D66 /* Scratch */,
+				C905126F249BB7A500FEF1B2 /* CloudKitStuff */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXReferenceProxy section */
-		C905128F249BB7A700FEF1B2 /* CloudKitStuff.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = CloudKitStuff.app;
-			remoteRef = C905128E249BB7A700FEF1B2 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
 /* Begin PBXResourcesBuildPhase section */
-		C9B050A9248346F700EF4D66 /* Resources */ = {
+		C905126E249BB7A500FEF1B2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9B050BB248346F800EF4D66 /* LaunchScreen.storyboard in Resources */,
-				C9B050B8248346F800EF4D66 /* Assets.xcassets in Resources */,
-				C9B050B6248346F700EF4D66 /* Main.storyboard in Resources */,
+				C9051283249BB7A600FEF1B2 /* LaunchScreen.storyboard in Resources */,
+				C9051280249BB7A600FEF1B2 /* Assets.xcassets in Resources */,
+				C905127B249BB7A500FEF1B2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C9B050A7248346F700EF4D66 /* Sources */ = {
+		C905126C249BB7A500FEF1B2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9B050B3248346F700EF4D66 /* ViewController.swift in Sources */,
-				C9B050AF248346F700EF4D66 /* AppDelegate.swift in Sources */,
-				C9B050B1248346F700EF4D66 /* SceneDelegate.swift in Sources */,
+				C9051278249BB7A500FEF1B2 /* ViewController.swift in Sources */,
+				C905127E249BB7A500FEF1B2 /* CloudKitStuff.xcdatamodeld in Sources */,
+				C9051274249BB7A500FEF1B2 /* AppDelegate.swift in Sources */,
+				C9051276249BB7A500FEF1B2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C9B050B4248346F700EF4D66 /* Main.storyboard */ = {
+		C9051279249BB7A500FEF1B2 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C9B050B5248346F700EF4D66 /* Base */,
+				C905127A249BB7A500FEF1B2 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		C9B050B9248346F800EF4D66 /* LaunchScreen.storyboard */ = {
+		C9051281249BB7A600FEF1B2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C9B050BA248346F800EF4D66 /* Base */,
+				C9051282249BB7A600FEF1B2 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -202,7 +184,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		C9B050BD248346F800EF4D66 /* Debug */ = {
+		C9051285249BB7A600FEF1B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -262,7 +244,7 @@
 			};
 			name = Debug;
 		};
-		C9B050BE248346F800EF4D66 /* Release */ = {
+		C9051286249BB7A600FEF1B2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -316,37 +298,43 @@
 			};
 			name = Release;
 		};
-		C9B050C0248346F800EF4D66 /* Debug */ = {
+		C9051288249BB7A600FEF1B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CloudKitStuff/CloudKitStuff.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JH3ZC8234Q;
-				INFOPLIST_FILE = Scratch/Info.plist;
+				INFOPLIST_FILE = CloudKitStuff/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.fogusbogus.Scratch;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fogusbogus.CloudKitStuff;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		C9B050C1248346F800EF4D66 /* Release */ = {
+		C9051289249BB7A600FEF1B2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CloudKitStuff/CloudKitStuff.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JH3ZC8234Q;
-				INFOPLIST_FILE = Scratch/Info.plist;
+				INFOPLIST_FILE = CloudKitStuff/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.fogusbogus.Scratch;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fogusbogus.CloudKitStuff;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -355,25 +343,38 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C9B050A6248346F700EF4D66 /* Build configuration list for PBXProject "Scratch" */ = {
+		C905126B249BB7A500FEF1B2 /* Build configuration list for PBXProject "CloudKitStuff" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C9B050BD248346F800EF4D66 /* Debug */,
-				C9B050BE248346F800EF4D66 /* Release */,
+				C9051285249BB7A600FEF1B2 /* Debug */,
+				C9051286249BB7A600FEF1B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C9B050BF248346F800EF4D66 /* Build configuration list for PBXNativeTarget "Scratch" */ = {
+		C9051287249BB7A600FEF1B2 /* Build configuration list for PBXNativeTarget "CloudKitStuff" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C9B050C0248346F800EF4D66 /* Debug */,
-				C9B050C1248346F800EF4D66 /* Release */,
+				C9051288249BB7A600FEF1B2 /* Debug */,
+				C9051289249BB7A600FEF1B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C905127C249BB7A500FEF1B2 /* CloudKitStuff.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C905127D249BB7A500FEF1B2 /* CloudKitStuff.xcdatamodel */,
+			);
+			currentVersion = C905127D249BB7A500FEF1B2 /* CloudKitStuff.xcdatamodel */;
+			path = CloudKitStuff.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
-	rootObject = C9B050A3248346F700EF4D66 /* Project object */;
+	rootObject = C9051268249BB7A500FEF1B2 /* Project object */;
 }
