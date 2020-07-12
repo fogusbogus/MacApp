@@ -2635,8 +2635,8 @@
             filePath = "Angina/Angina/Angina/Active Storyboards/Classes/Event Encoding/Event.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
             landmarkName = "getSummaryInfo(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2651,8 +2651,8 @@
             filePath = "Angina/Angina/Angina/Active Storyboards/Classes/Event Encoding/Event.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
             landmarkName = "getSummaryInfo(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2667,8 +2667,8 @@
             filePath = "Angina/Angina/Angina/Active Storyboards/Classes/Event Encoding/Event.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
             landmarkName = "getSummaryInfo(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2683,8 +2683,8 @@
             filePath = "Angina/Angina/Angina/Active Storyboards/Classes/Event Encoding/Event.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "166"
-            endingLineNumber = "166"
+            startingLineNumber = "211"
+            endingLineNumber = "211"
             landmarkName = "getSummaryInfo(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2875,8 +2875,8 @@
             filePath = "Angina/Angina/Angina/Active Storyboards/Classes/Event Encoding/Event.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "getSummaryInfo(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2891,8 +2891,8 @@
             filePath = "Angina/Angina/Angina/Active Storyboards/Classes/Event Encoding/Event.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
             landmarkName = "getSummaryInfo(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2907,8 +2907,8 @@
             filePath = "Angina/Angina/Angina/Active Storyboards/Classes/Event Encoding/Event.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
             landmarkName = "getOrderedEvents(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2923,8 +2923,8 @@
             filePath = "Angina/Angina/Angina/Active Storyboards/Classes/Event Encoding/Event.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "188"
-            endingLineNumber = "188"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
             landmarkName = "getOrderedEvents(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2939,8 +2939,8 @@
             filePath = "Angina/Angina/Angina/Active Storyboards/Classes/Event Encoding/Event.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
+            startingLineNumber = "239"
+            endingLineNumber = "239"
             landmarkName = "getOrderedEvents(_:)"
             landmarkType = "7">
             <Locations>
@@ -2987,8 +2987,8 @@
             filePath = "Angina/Angina/Angina/Active Storyboards/Classes/Event Encoding/Event.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
+            startingLineNumber = "235"
+            endingLineNumber = "235"
             landmarkName = "getOrderedEvents(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3003,8 +3003,8 @@
             filePath = "Angina/Angina/Angina/Active Storyboards/Classes/Event Encoding/Event.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
             landmarkName = "getSummaryInfo(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3019,8 +3019,8 @@
             filePath = "Angina/Angina/Angina/Active Storyboards/Classes/Event Encoding/Event.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
             landmarkName = "getSummaryInfo(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3035,8 +3035,8 @@
             filePath = "Angina/Angina/Angina/Active Storyboards/Classes/Event Encoding/Event.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
             landmarkName = "getSummaryInfo(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3387,8 +3387,8 @@
             filePath = "Angina/Angina/Angina/Active Storyboards/Classes/Additional2/AdditionalInfoController.SavedData.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
             landmarkName = "save(dataProvider:forUpdateButton:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3435,8 +3435,8 @@
             filePath = "Angina/Angina/Angina/Active Storyboards/Classes/Additional2/AdditionalInfoController.SavedData.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
             landmarkName = "save(dataProvider:forUpdateButton:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3451,8 +3451,8 @@
             filePath = "Angina/Angina/Angina/Active Storyboards/Classes/Additional2/AdditionalInfoController.SavedData.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
+            startingLineNumber = "200"
+            endingLineNumber = "200"
             landmarkName = "save(dataProvider:forUpdateButton:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3502,6 +3502,470 @@
             startingLineNumber = "34"
             endingLineNumber = "34"
             landmarkName = "assert(_:name:data:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "77351A68-18F5-49BE-9D8C-E98B981C32D4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Angina/Angina/Angina/Active Storyboards/Classes/Event Encoding/Event.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "decode(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "71B9B121-2E49-4B52-A40E-CC1945CFCC28"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Angina/Angina/Angina/Active Storyboards/Classes/Event Encoding/Event.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "fromOlderVersion(v2:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B6C862D1-C488-4944-AF0B-1323BE3240B5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Angina/Angina/Angina/Active Storyboards/Classes/Event Encoding/Event.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "decode(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "83648029-F8EF-46BC-B01A-5807E3EB0348"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Angina/Angina/Angina/Active Storyboards/Classes/Event Encoding/Event.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "decode(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D3A7A60C-E680-42C1-A7A0-63642DD44B75"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Angina/Angina/Angina/Active Storyboards/Classes/Main Story/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "323"
+            endingLineNumber = "323"
+            landmarkName = "prepareAndSend(start:end:filters:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D3A7A60C-E680-42C1-A7A0-63642DD44B75 - 6ee7a33735f13c79"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Twinge.ViewController.prepareAndSend(start: Foundation.Date, end: Foundation.Date, filters: Swift.Array&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "Twinge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/Angina/Angina/Angina/Active%20Storyboards/Classes/Main%20Story/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "323"
+                  endingLineNumber = "323"
+                  offsetFromSymbolStart = "1178">
+               </Location>
+               <Location
+                  uuid = "D3A7A60C-E680-42C1-A7A0-63642DD44B75 - 52d3dd86602e2e6c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (__C.EKEvent, __C.EKEvent) -&gt; Swift.Bool in Twinge.ViewController.prepareAndSend(start: Foundation.Date, end: Foundation.Date, filters: Swift.Array&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "Twinge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/Angina/Angina/Angina/Active%20Storyboards/Classes/Main%20Story/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "323"
+                  endingLineNumber = "323"
+                  offsetFromSymbolStart = "157">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EFAD93E0-D31A-4491-A209-0D5FE8BDA6B7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Angina/Angina/Angina/Active Storyboards/Classes/Storage/iCloudStorage.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "saveEvent(event:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F784F3BB-7D6F-44B8-A4A5-0815D3AFA6C7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Angina/Angina/Angina/Active Storyboards/Classes/Main Story/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "256"
+            endingLineNumber = "256"
+            landmarkName = "copyCalendarItemsToICloud()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E6A82F97-5667-4121-97EB-12A82FF33390"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Angina/Angina/Angina/Active Storyboards/Classes/Storage/CalendarStorage.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "retrieveEvents(startDate:endDate:filter:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B9F3C5C8-3387-4C71-8007-E17E19B0ABCC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Angina/Angina/Angina/Active Storyboards/Classes/Storage/CalendarStorage.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "getCalendarEvents(startDate:endDate:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B9F3C5C8-3387-4C71-8007-E17E19B0ABCC - fe69726a36b04653"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Twinge.CalendarStorage.(getCalendarEvents in _A2662F1CDF8AC217C89301A886E16DC2)(startDate: Swift.String, endDate: Swift.String) -&gt; Swift.Array&lt;__C.EKEvent&gt;"
+                  moduleName = "Twinge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/Angina/Angina/Angina/Active%20Storyboards/Classes/Storage/CalendarStorage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "1816">
+               </Location>
+               <Location
+                  uuid = "B9F3C5C8-3387-4C71-8007-E17E19B0ABCC - ac0b00d72bb681f7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.EKEvent) -&gt; Swift.Bool in Twinge.CalendarStorage.(getCalendarEvents in _A2662F1CDF8AC217C89301A886E16DC2)(startDate: Swift.String, endDate: Swift.String) -&gt; Swift.Array&lt;__C.EKEvent&gt;"
+                  moduleName = "Twinge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/Angina/Angina/Angina/Active%20Storyboards/Classes/Storage/CalendarStorage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "60C8837C-1AC1-4C0A-ADFF-3F849ECDE118"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Angina/Angina/Angina/Active Storyboards/Classes/Storage/CalendarStorage.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "getCalendarEvents(startDate:endDate:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E89993E3-FF44-452D-855F-E025882B7600"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Angina/Angina/Angina/Active Storyboards/Classes/Storage/iCloudStorage.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "prepareDataForSave(data:event:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "938AA97B-011C-46E9-A126-5B2AC7C3D4AF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Angina/Angina/Angina/Active Storyboards/Classes/Event Encoding/Event.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "291"
+            endingLineNumber = "291"
+            landmarkName = "saveToCloud(db:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "56176238-B183-4ED4-AC12-EADA99CB911E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Angina/Angina/Angina/Active Storyboards/Classes/Event Encoding/Event.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "415"
+            endingLineNumber = "415"
+            landmarkName = "saveToCloud(db:parentID:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "331C4253-D8CD-45E0-A4E0-A24AD842B7C1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Angina/Angina/Angina/Active Storyboards/Classes/Event Encoding/Event.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "434"
+            endingLineNumber = "434"
+            landmarkName = "saveToCloud(db:parentID:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "149D003C-8EC2-4238-BB1E-9F335A1D851B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Angina/Angina/Angina/Active Storyboards/Classes/Event Encoding/Event.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "326"
+            endingLineNumber = "326"
+            landmarkName = "clearICloudData(db:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8EB2D21D-E05A-48BF-81D2-BA5EF017BA2A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Angina/Angina/Angina/Active Storyboards/Classes/Event Encoding/Event.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "308"
+            endingLineNumber = "308"
+            landmarkName = "saveToCloud(db:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "92EB1D06-1136-4F22-B35D-C68713F044D3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Angina/Angina/Angina/Active Storyboards/Classes/Main Story/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "260"
+            endingLineNumber = "260"
+            landmarkName = "copyCalendarItemsToICloud()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CB3917AB-2AD2-4858-9E46-92F7132DC98C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Angina/Angina/Angina/Active Storyboards/Classes/Event Encoding/Event.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "339"
+            endingLineNumber = "339"
+            landmarkName = "clearICloudData(db:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1F26594A-97E4-4A47-AE13-8BE613A8C654"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Angina/Angina/Angina/Active Storyboards/Classes/Event Encoding/Event.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "338"
+            endingLineNumber = "338"
+            landmarkName = "clearICloudData(db:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E5737A71-98B8-40CA-BBBC-7A0DF017AAEF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Angina/Angina/Angina/Active Storyboards/Classes/Event Encoding/Event.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "336"
+            endingLineNumber = "336"
+            landmarkName = "clearICloudData(db:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "856A8546-F995-411C-81E5-318BDEC4A91F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Angina/Angina/Angina/Active Storyboards/Classes/Event Encoding/Event.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "330"
+            endingLineNumber = "330"
+            landmarkName = "clearICloudData(db:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "856A8546-F995-411C-81E5-318BDEC4A91F - e619c598ef00c514"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;__C.CKRecord&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in static Twinge.TwingeEvent.clearICloudData(db: __C.CKDatabase, completion: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "Twinge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/Angina/Angina/Angina/Active%20Storyboards/Classes/Event%20Encoding/Event.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "330"
+                  endingLineNumber = "330"
+                  offsetFromSymbolStart = "185">
+               </Location>
+               <Location
+                  uuid = "856A8546-F995-411C-81E5-318BDEC4A91F - 307ffd3f276f3d80"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.CKRecord) -&gt; Swift.Optional&lt;Swift.String&gt; in closure #1 (Swift.Optional&lt;Swift.Array&lt;__C.CKRecord&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in static Twinge.TwingeEvent.clearICloudData(db: __C.CKDatabase, completion: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "Twinge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/Angina/Angina/Angina/Active%20Storyboards/Classes/Event%20Encoding/Event.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "331"
+                  endingLineNumber = "331"
+                  offsetFromSymbolStart = "39">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3C9480CE-92C0-4B5F-AB01-54ADA49E1A1E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Angina/Angina/Angina/Active Storyboards/Classes/Event Encoding/Event.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "335"
+            endingLineNumber = "335"
+            landmarkName = "clearICloudData(db:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4281B597-7362-4E6E-8C1D-F55FC3675169"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Angina/Angina/Angina/Active Storyboards/Classes/Event Encoding/Event.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "474"
+            endingLineNumber = "474"
+            landmarkName = "clearICloudData(db:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

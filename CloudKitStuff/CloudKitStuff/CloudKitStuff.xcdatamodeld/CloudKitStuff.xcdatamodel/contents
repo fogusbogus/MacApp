@@ -1,4 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="true" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Additional" representedClassName=".Additional" syncable="YES" codeGenerationType="class">
+        <attribute name="data" optional="YES" attributeType="String"/>
+        <attribute name="key" optional="YES" attributeType="String"/>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="twingeAdditional" inverseEntity="Event"/>
+    </entity>
+    <entity name="Event" representedClassName=".TwingeEvent" syncable="YES" codeGenerationType="class">
+        <attribute name="meta" optional="YES" attributeType="String"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="title" attributeType="String" defaultValueString="&lt;untitled&gt;"/>
+        <relationship name="eventGPS" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GPS" inverseName="event" inverseEntity="GPS"/>
+        <relationship name="twingeAdditional" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Additional" inverseName="event" inverseEntity="Additional"/>
+        <relationship name="twingeItem" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Item" inverseName="event" inverseEntity="Item"/>
+    </entity>
+    <entity name="GPS" representedClassName=".GPS" syncable="YES" codeGenerationType="class">
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="eventGPS" inverseEntity="Event"/>
+    </entity>
+    <entity name="Item" representedClassName=".Item" syncable="YES" codeGenerationType="class">
+        <attribute name="area" optional="YES" attributeType="String"/>
+        <attribute name="painLevel" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="twingeItem" inverseEntity="Event"/>
+    </entity>
+    <elements>
+        <element name="Additional" positionX="774.2421875" positionY="-1010.71875" width="128" height="88"/>
+        <element name="Event" positionX="430.40234375" positionY="-881.48828125" width="128" height="133"/>
+        <element name="GPS" positionX="604.78125" positionY="-1012.10546875" width="128" height="88"/>
+        <element name="Item" positionX="722.60546875" positionY="-720.61328125" width="128" height="88"/>
+    </elements>
 </model>

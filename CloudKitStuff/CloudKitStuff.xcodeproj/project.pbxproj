@@ -46,6 +46,7 @@
 		C9051267249BB7A500FEF1B2 = {
 			isa = PBXGroup;
 			children = (
+				C9E5ECA024B2478800B5B271 /* Model */,
 				C9051272249BB7A500FEF1B2 /* CloudKitStuff */,
 				C9051271249BB7A500FEF1B2 /* Products */,
 				C90512B6249D0C8D00FEF1B2 /* Frameworks */,
@@ -82,6 +83,13 @@
 				C90512B7249D0C8D00FEF1B2 /* CloudKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C9E5ECA024B2478800B5B271 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
