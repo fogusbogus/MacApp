@@ -10,8 +10,10 @@ import UIKit
 import MetalKit
 
 //This is just a tidy way of defining the colors we are going to use
-enum Colors {
+public enum TriColors {
 	static let wenderlichGreen = MTLClearColorMake(0.0, 0.4, 0.21, 1.0)
+	static let yellow = MTLClearColorMake(0.0, 1.0, 1.0, 1.0)
+	static let blue = MTLClearColorMake(0.0, 0.0, 1.0, 1.0)
 }
 
 class ViewController: UIViewController {
@@ -35,7 +37,7 @@ class ViewController: UIViewController {
 		
 
 		//Clear the screen to the color
-		metalView.clearColor = Colors.wenderlichGreen
+		metalView.clearColor = TriColors.wenderlichGreen
 
 		//Below in the extension we are handling the drawing, so we need to let the view know the delegate (i.e. me)
 		metalView.delegate = render
