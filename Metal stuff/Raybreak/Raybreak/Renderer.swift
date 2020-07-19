@@ -18,11 +18,11 @@ class Renderer: NSObject {
 //		Triangle([-1,1,0, 1,1,0, 1,-1,0], color: TriColors.yellow)
 //	]
 	
-	var vertices: [Float] = [
-		-1,	 1,	 0,
-		-1,	-1,	 0,
-		 1,	-1,	 0,
-		 1,	 1,	 0
+	var vertices: [Vertex] = [
+		Vertex(position: float3(-1,  1,  0), color: float4(1, 0, 0, 1)),
+		Vertex(position: float3(-1, -1,  0), color: float4(0, 1, 0, 1)),
+		Vertex(position: float3( 1, -1,  0), color: float4(0, 0, 1, 1)),
+		Vertex(position: float3( 1,  1,  0), color: float4(1, 0, 1, 1)),
 	]
 	
 	var indices : [UInt16] = [
@@ -49,15 +49,15 @@ class Renderer: NSObject {
 		super.init()
 		
 		//Create the buffer
-		buildModel()
+		buildBuffers()
 		
 		//Create the pipeline state
 		buildPipelineState()
 	}
 	
 	//Create the vertex buffer
-	private func buildModel() {
-		vertexBuffer = device.makeBuffer(bytes: vertices, length: vertices.count * MemoryLayout<Float>.size, options: [])
+	private func buildBuffers() {
+		vertexBuffer = device.makeBuffer(bytes: vertices, length: vertices.count * MemoryLayout<Vertex>.stride, options: [])
 		indexBuffer = device.makeBuffer(bytes: indices, length: indices.count * MemoryLayout<UInt16>.size, options: [])
 	}
 	
@@ -73,6 +73,24 @@ class Renderer: NSObject {
 		pipelineDescriptor.vertexFunction = vertexFunction
 		pipelineDescriptor.fragmentFunction = fragmentFunction
 		pipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+		
+		//Vertex descriptor
+		let vertexDescriptor = MTLVertexDescriptor()
+		
+		//Position data
+		vertexDescriptor.attributes[0].format = .float3
+		vertexDescriptor.attributes[0].offset = 0
+		vertexDescriptor.attributes[0].bufferIndex = 0
+		
+		//Color attribute
+		vertexDescriptor.attributes[1].format = .float4
+		vertexDescriptor.attributes[1].offset = MemoryLayout<float3>.stride
+		vertexDescriptor.attributes[1].bufferIndex = 0
+		
+		//Now for each descriptor
+		vertexDescriptor.layouts[0].stride = MemoryLayout<Vertex>.stride
+		
+		pipelineDescriptor.vertexDescriptor = vertexDescriptor
 		
 		//Now let's try it
 		do {
