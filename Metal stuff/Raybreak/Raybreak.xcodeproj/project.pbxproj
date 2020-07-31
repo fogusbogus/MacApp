@@ -16,6 +16,8 @@
 		C931F80C24C26920007E1466 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C931F80B24C26920007E1466 /* Renderer.swift */; };
 		C931F80E24C26A82007E1466 /* Shader.metal in Sources */ = {isa = PBXBuildFile; fileRef = C931F80D24C26A82007E1466 /* Shader.metal */; };
 		C931F81024C28D8B007E1466 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C931F80F24C28D8B007E1466 /* Triangle.swift */; };
+		C94010D424C4731900EDB131 /* Georgie.png in Resources */ = {isa = PBXBuildFile; fileRef = C94010D324C4731900EDB131 /* Georgie.png */; };
+		C94010D624C4738000EDB131 /* Texturable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94010D524C4738000EDB131 /* Texturable.swift */; };
 		C9D8345724C3C93A00E96AC4 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D8345624C3C93A00E96AC4 /* Types.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +33,8 @@
 		C931F80B24C26920007E1466 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		C931F80D24C26A82007E1466 /* Shader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shader.metal; sourceTree = "<group>"; };
 		C931F80F24C28D8B007E1466 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		C94010D324C4731900EDB131 /* Georgie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Georgie.png; sourceTree = "<group>"; };
+		C94010D524C4738000EDB131 /* Texturable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Texturable.swift; sourceTree = "<group>"; };
 		C9D8345624C3C93A00E96AC4 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,6 +68,7 @@
 		C931F7F624C2643A007E1466 /* Raybreak */ = {
 			isa = PBXGroup;
 			children = (
+				C94010D224C4730500EDB131 /* Images */,
 				C931F7F724C2643A007E1466 /* AppDelegate.swift */,
 				C931F7F924C2643A007E1466 /* SceneDelegate.swift */,
 				C931F7FB24C2643A007E1466 /* ViewController.swift */,
@@ -75,8 +80,17 @@
 				C931F80D24C26A82007E1466 /* Shader.metal */,
 				C931F80F24C28D8B007E1466 /* Triangle.swift */,
 				C9D8345624C3C93A00E96AC4 /* Types.swift */,
+				C94010D524C4738000EDB131 /* Texturable.swift */,
 			);
 			path = Raybreak;
+			sourceTree = "<group>";
+		};
+		C94010D224C4730500EDB131 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				C94010D324C4731900EDB131 /* Georgie.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C931F80424C2643B007E1466 /* LaunchScreen.storyboard in Resources */,
+				C94010D424C4731900EDB131 /* Georgie.png in Resources */,
 				C931F80124C2643B007E1466 /* Assets.xcassets in Resources */,
 				C931F7FF24C2643A007E1466 /* Main.storyboard in Resources */,
 			);
@@ -153,6 +168,7 @@
 				C931F80C24C26920007E1466 /* Renderer.swift in Sources */,
 				C931F7FC24C2643A007E1466 /* ViewController.swift in Sources */,
 				C931F7F824C2643A007E1466 /* AppDelegate.swift in Sources */,
+				C94010D624C4738000EDB131 /* Texturable.swift in Sources */,
 				C9D8345724C3C93A00E96AC4 /* Types.swift in Sources */,
 				C931F81024C28D8B007E1466 /* Triangle.swift in Sources */,
 				C931F80E24C26A82007E1466 /* Shader.metal in Sources */,

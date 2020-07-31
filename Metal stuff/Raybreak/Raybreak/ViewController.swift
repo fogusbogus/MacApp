@@ -33,7 +33,7 @@ class ViewController: UIViewController {
 		//Create the representation of the GPU
 		metalView.device = MTLCreateSystemDefaultDevice()
 		device = metalView.device
-		render = Renderer(device: device)
+		render = Renderer(device: device, imageName: "Georgie.png")
 		
 
 		//Clear the screen to the color

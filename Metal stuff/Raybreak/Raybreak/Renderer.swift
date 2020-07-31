@@ -12,17 +12,18 @@ class Renderer: NSObject {
 	let device : MTLDevice
 	let commandQueue : MTLCommandQueue
 	
-	//A very simple triangle
-//	var vertices: [Triangle] = [
-//		Triangle([-1,1,0, -1,-1,0, 1,-1,0], color: TriColors.blue),
-//		Triangle([-1,1,0, 1,1,0, 1,-1,0], color: TriColors.yellow)
-//	]
+	var texture: MTLTexture?
+
+	
+	typealias f3 = SIMD3<Float>
+	typealias f4 = SIMD4<Float>
+	typealias f2 = SIMD2<Float>
 	
 	var vertices: [Vertex] = [
-		Vertex(position: float3(-1,  1,  0), color: float4(1, 0, 0, 1)),
-		Vertex(position: float3(-1, -1,  0), color: float4(0, 1, 0, 1)),
-		Vertex(position: float3( 1, -1,  0), color: float4(0, 0, 1, 1)),
-		Vertex(position: float3( 1,  1,  0), color: float4(1, 0, 1, 1)),
+		Vertex(position: f3(-1,  1,  0), color: f4(1, 0, 0, 1), texture: f2(0, 1)),
+		Vertex(position: f3(-1, -1,  0), color: f4(0, 1, 0, 1), texture: f2(0, 0)),
+		Vertex(position: f3( 1, -1,  0), color: f4(0, 0, 1, 1), texture: f2(1, 0)),
+		Vertex(position: f3( 1,  1,  0), color: f4(1, 0, 1, 1), texture: f2(1, 1)),
 	]
 	
 	var indices : [UInt16] = [
@@ -34,6 +35,7 @@ class Renderer: NSObject {
 	var pipelineState: MTLRenderPipelineState?
 	var vertexBuffer: MTLBuffer?
 	var indexBuffer: MTLBuffer?
+	var fragmentFunctionName: String = "fragment_shader"
 	
 	struct Constants {
 		var animateBy: Float = 0.0
@@ -55,6 +57,24 @@ class Renderer: NSObject {
 		buildPipelineState()
 	}
 	
+	init(device: MTLDevice, imageName: String) {
+		self.device = device
+		commandQueue = device.makeCommandQueue()!
+		super.init()
+
+		//Pipeline needs to know of the new fragment
+		if let texture = setTexture(device: device, imageName: imageName) {
+			self.texture = texture
+			fragmentFunctionName = "textured_fragment"
+		}
+		
+		//Create the buffer
+		buildBuffers()
+		
+		//Create the pipeline state
+		buildPipelineState()
+	}
+	
 	//Create the vertex buffer
 	private func buildBuffers() {
 		vertexBuffer = device.makeBuffer(bytes: vertices, length: vertices.count * MemoryLayout<Vertex>.stride, options: [])
@@ -66,7 +86,7 @@ class Renderer: NSObject {
 		//Our shaders need to go into a library
 		let library = device.makeDefaultLibrary()
 		let vertexFunction = library?.makeFunction(name: "vertex_shader")
-		let fragmentFunction = library?.makeFunction(name: "fragment_shader")
+		let fragmentFunction = library?.makeFunction(name: fragmentFunctionName)
 		
 		//We can now create the pipeline descriptor
 		let pipelineDescriptor = MTLRenderPipelineDescriptor()
@@ -84,8 +104,13 @@ class Renderer: NSObject {
 		
 		//Color attribute
 		vertexDescriptor.attributes[1].format = .float4
-		vertexDescriptor.attributes[1].offset = MemoryLayout<float3>.stride
+		vertexDescriptor.attributes[1].offset = MemoryLayout<f3>.stride
 		vertexDescriptor.attributes[1].bufferIndex = 0
+		
+		//Texture attribute
+		vertexDescriptor.attributes[2].format = .float2
+		vertexDescriptor.attributes[2].offset = MemoryLayout<f2>.stride + MemoryLayout<f4>.stride
+		vertexDescriptor.attributes[2].bufferIndex = 0
 		
 		//Now for each descriptor
 		vertexDescriptor.layouts[0].stride = MemoryLayout<Vertex>.stride
@@ -131,9 +156,14 @@ extension Renderer : MTKViewDelegate {
 		//The constants structure can be passed too
 		commandEncoder?.setVertexBytes(&constants, length: MemoryLayout<Constants>.stride, index: 1)
 		
+		
 		//Let's get it out onto the screen
 		commandEncoder?.setRenderPipelineState(pipelineState)
 		commandEncoder?.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
+		
+		//Now the texture
+		commandEncoder?.setFragmentTexture(texture, index: 0)
+
 		
 		//The command to draw (doesn't happen until the commit - this is telling it a command to draw)
 		commandEncoder?.drawIndexedPrimitives(type: .triangle, indexCount: indices.count, indexType: .uint16, indexBuffer: indexBuffer, indexBufferOffset: 0)
@@ -144,6 +174,12 @@ extension Renderer : MTKViewDelegate {
 		
 		
 	}
+	
+	
+		
+}
+
+extension Renderer: Texturable {
 	
 	
 }
