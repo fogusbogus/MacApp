@@ -130,7 +130,11 @@ public class Action : TableBased<Int> {
 		Response = row.get("Response", "")
 		Result = row.get("Result", "")
 		sysOrder = row.get("sysOrder", 0)
-		Timestamp = Date.fromISOString(date: row.get("TS", ""))
+		if #available(OSX 11, *) {
+			Timestamp = Date.fromISOString(date: row.get("TS", ""))
+		} else {
+			// Fallback on earlier versions
+		}
 		StaffName = row.get("StaffName", "")
 		Retract = row.get("Retract", 0) == 1
 		SID = row.get("SID", -1)

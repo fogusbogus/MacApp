@@ -24,7 +24,11 @@ public class ElectorMeta: Meta, MetaCryptoDelegate {
 	public var DOB: Date? {
 		get {
 			if hasKey(key: "dob") {
-				return Date.fromISOString(date: get("dob", "", self))
+				if #available(OSX 11, *) {
+					return Date.fromISOString(date: get("dob", "", self))
+				} else {
+					// Fallback on earlier versions
+				}
 			}
 			return nil
 		}

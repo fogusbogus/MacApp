@@ -279,6 +279,10 @@ public extension Optional where Wrapped == Int {
 	func Nil() -> Int {
 		return self ?? -1
 	}
+	
+	var nilValue : Int {
+		self ?? -1
+	}
 }
 
 public protocol TableBasedDelegate {

@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:NameUploader/NameUploader.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:../../Library/Autosave Information/Packages/MCAMobile/MCAMobile.xcodeproj">
    </FileRef>
    <FileRef

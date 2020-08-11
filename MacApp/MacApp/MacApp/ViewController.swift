@@ -370,6 +370,15 @@ extension NSView {
 		return nil
 	}
 	
+	
+	func allSubviews() -> [NSView] {
+		var ret : [NSView] = []
+		ret.append(contentsOf: self.subviews)
+		self.subviews.forEach { (vw) in
+			ret.append(contentsOf: vw.allSubviews())
+		}
+		return ret
+	}
 }
 
 protocol SubviewHandler {
