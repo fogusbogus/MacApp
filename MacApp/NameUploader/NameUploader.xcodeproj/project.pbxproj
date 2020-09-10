@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9960DE024F0380400059B36 /* iCloudCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9960DDF24F0380400059B36 /* iCloudCollector.swift */; };
+		C9960DE224F0689700059B36 /* ThreadWait.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9960DE124F0689700059B36 /* ThreadWait.swift */; };
+		C9960DE424F0759200059B36 /* iCloudModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9960DE324F0759200059B36 /* iCloudModifier.swift */; };
 		C9D9AA1224DD765A00031428 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9AA1124DD765A00031428 /* AppDelegate.swift */; };
 		C9D9AA1424DD765A00031428 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9AA1324DD765A00031428 /* ViewController.swift */; };
 		C9D9AA1624DD765C00031428 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9D9AA1524DD765C00031428 /* Assets.xcassets */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C9960DDF24F0380400059B36 /* iCloudCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iCloudCollector.swift; sourceTree = "<group>"; };
+		C9960DE124F0689700059B36 /* ThreadWait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadWait.swift; sourceTree = "<group>"; };
+		C9960DE324F0759200059B36 /* iCloudModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iCloudModifier.swift; sourceTree = "<group>"; };
 		C9D9AA0E24DD765A00031428 /* NameUploader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NameUploader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9D9AA1124DD765A00031428 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9D9AA1324DD765A00031428 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +71,9 @@
 				C9D9AA1724DD765C00031428 /* Main.storyboard */,
 				C9D9AA1A24DD765C00031428 /* Info.plist */,
 				C9D9AA1B24DD765C00031428 /* NameUploader.entitlements */,
+				C9960DDF24F0380400059B36 /* iCloudCollector.swift */,
+				C9960DE324F0759200059B36 /* iCloudModifier.swift */,
+				C9960DE124F0689700059B36 /* ThreadWait.swift */,
 			);
 			path = NameUploader;
 			sourceTree = "<group>";
@@ -153,8 +162,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9960DE224F0689700059B36 /* ThreadWait.swift in Sources */,
 				C9D9AA1424DD765A00031428 /* ViewController.swift in Sources */,
 				C9D9AA1224DD765A00031428 /* AppDelegate.swift in Sources */,
+				C9960DE024F0380400059B36 /* iCloudCollector.swift in Sources */,
+				C9960DE424F0759200059B36 /* iCloudModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

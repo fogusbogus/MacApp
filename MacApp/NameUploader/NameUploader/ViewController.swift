@@ -11,7 +11,7 @@ import CloudKit
 import UsefulExtensions
 
 class ViewController: NSViewController {
-
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
@@ -64,45 +64,47 @@ class ViewController: NSViewController {
 		//e.g. Jody, T, F, MF
 		//Jackson, T, T, M
 		
-		let pred = NSPredicate(value: true) // NSPredicate(format: "Forename = %@", "T")
-		let query = CKQuery(recordType: "Names", predicate: pred)
-		
 		var toDelete : [CKRecord.ID] = []
-		do {
-			var queryOperation = createQuery(cursor: nil, query: query)
-			queryOperation?.resultsLimit = 400
-			
-			
-			queryOperation?.recordFetchedBlock = { (rec) in
+		let coll = iCloudCollector()
+		let queue = DispatchQueue(label: "com.app.queue")
+		queue.sync {
+			coll.collect(database: self._db, table: "Names", recordFetched: { (rec) in
 				toDelete.append(rec.recordID)
+			}) { (op) -> Bool in
+				op.resultsLimit = 400
+				return true
 			}
-			
-			queryOperation?.queryCompletionBlock = { (cursor, err) in
-				
-				if cursor != nil {
-					print("\(toDelete.count) records counted...fetch more records, please!")
-					let newOp = createQuery(cursor: cursor!, query: nil)
-					newOp?.recordFetchedBlock = queryOperation?.recordFetchedBlock
-					newOp?.queryCompletionBlock = queryOperation?.queryCompletionBlock
-					self._db.add(newOp!)
-				} else {
-					print("cursor is nil")
-					let batch = CKModifyRecordsOperation(recordsToSave: nil, recordIDsToDelete: toDelete)
-					batch.modifyRecordsCompletionBlock = { records, recordIDs, error in
-						if let error = error {
-							print(error)
-						}
-						else {
-							print("\(toDelete.count) records deleted")
-						}
-					}
-					_db.add(batch)
-
-				}
-			}
-			_db.add(queryOperation!)
 		}
+		print("Oooh! Here")
+		var modifier = iCloudModifier()
+		modifier.delete(database: _db, records: toDelete)
 		
+//		let pred = NSPredicate(value: true) // NSPredicate(format: "Forename = %@", "T")
+//		let query = CKQuery(recordType: "Names", predicate: pred)
+//
+//		do {
+//			var queryOperation = createQuery(cursor: nil, query: query)
+//			queryOperation?.resultsLimit = 400
+//
+//			queryOperation?.recordFetchedBlock = recordFetchedBlock
+//			queryOperation?.queryCompletionBlock = completionBlock
+//			self.collectionEnd = {
+//				let batch = CKModifyRecordsOperation(recordsToSave: nil, recordIDsToDelete: _toDelete)
+//				batch.modifyRecordsCompletionBlock = { records, recordIDs, error in
+//					if let error = error {
+//						print(error)
+//					}
+//					else {
+//						print("\(_toDelete.count) records deleted")
+//					}
+//				}
+//				_db.add(batch)
+//			}
+//
+//			_db.add(queryOperation!)
+//		}
+//
+
 		
 
 		
@@ -181,35 +183,58 @@ class ViewController: NSViewController {
 //		let qy = CKQuery(recordType: , predicate: <#T##NSPredicate#>)
 	}
 	
-	private var _recordFetchedBlock: (CKRecord?) -> Void?
+	private static var _toDelete : [CKRecord.ID] = []
 	
-	func completionBlock(cursor: CKQueryOperation.Cursor?, err: Error?) {
-		
-		if cursor != nil {
-			print("\(toDelete.count) records counted...fetch more records, please!")
-			let newOp = createQuery(cursor: cursor!, query: nil)
-			newOp?.recordFetchedBlock = _recordFetchedBlock
-			newOp?.queryCompletionBlock = { [weak self] (cursor, err) in
-				if cursor != nil {
-					self._db.add(completionBlock(cursor: cursor, err: nil))
-				}
-			}
-			self._db.add(newOp!)
-		} else {
-			print("cursor is nil")
-			let batch = CKModifyRecordsOperation(recordsToSave: nil, recordIDsToDelete: toDelete)
-			batch.modifyRecordsCompletionBlock = { records, recordIDs, error in
-				if let error = error {
-					print(error)
-				}
-				else {
-					print("\(toDelete.count) records deleted")
-				}
-			}
-			_db.add(batch)
-			
-		})
+	private static func recordFetchedBlock(rec: CKRecord) {
+		_toDelete.append(rec.recordID)
 	}
+	
+	private static var collectionEnd: (() -> Void)? = nil
+	
+	private static func completionBlock(cursor: CKQueryOperation.Cursor?, err: Error?) {
+		if cursor != nil {
+			print("\(_toDelete.count) records counted...fetch more records, please!")
+			
+			let newOp = CKQueryOperation(cursor: cursor!)
+			newOp.resultsLimit = 400
+			newOp.recordFetchedBlock = recordFetchedBlock
+			newOp.queryCompletionBlock = completionBlock
+			self._db.add(newOp)
+		} else {
+			collectionEnd?()
+			
+		}
+	}
+	
+	//private var _recordFetchedBlock: (CKRecord?) -> Void?
+	
+//	func completionBlock(cursor: CKQueryOperation.Cursor?, err: Error?) {
+//
+//		if cursor != nil {
+//			print("\(toDelete.count) records counted...fetch more records, please!")
+//			let newOp = createQuery(cursor: cursor!, query: nil)
+//			newOp?.recordFetchedBlock = _recordFetchedBlock
+//			newOp?.queryCompletionBlock = { [weak self] (cursor, err) in
+//				if cursor != nil {
+//					self._db.add(completionBlock(cursor: cursor, err: nil))
+//				}
+//			}
+//			self._db.add(newOp!)
+//		} else {
+//			print("cursor is nil")
+//			let batch = CKModifyRecordsOperation(recordsToSave: nil, recordIDsToDelete: toDelete)
+//			batch.modifyRecordsCompletionBlock = { records, recordIDs, error in
+//				if let error = error {
+//					print(error)
+//				}
+//				else {
+//					print("\(toDelete.count) records deleted")
+//				}
+//			}
+//			_db.add(batch)
+//
+//		})
+//	}
 	
 	static func createQuery(cursor: CKQueryOperation.Cursor? = nil, query: CKQuery? = nil) -> CKQueryOperation? {
 		var queryOperation : CKQueryOperation?

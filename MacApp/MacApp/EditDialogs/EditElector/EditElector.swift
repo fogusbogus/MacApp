@@ -96,6 +96,8 @@ class EditElector: NSSplitViewController, EditableFormButtonDelegate {
 }
 
 open class ModalWindowController : NSWindowController, NSWindowDelegate, IIndentLog {
+	public var IndentLog_Allowed: [LogType]?
+	
 	
 	public var IndentLog_Indent: Int = 0
 	

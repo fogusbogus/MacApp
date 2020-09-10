@@ -13,6 +13,8 @@ import RegisterDB
 import LoggingLib
 
 class StreetVC: NSViewController, NSMenuDelegate, StreetVCRefreshDelegate, ElectorVCRefreshDelegate, IIndentLog {
+	var IndentLog_Allowed: [LogType]?
+	
 	var IndentLog_Indent: Int = 0
 	
 	var IndentLog_URL: URL?

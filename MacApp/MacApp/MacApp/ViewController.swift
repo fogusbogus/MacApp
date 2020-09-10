@@ -13,6 +13,8 @@ import SQLDB
 import LoggingLib
 
 class ViewController: NSViewController, SelectedNodeListenerDelegate, IIndentLog, SubviewHandler, TableSelectionHasChangedDelegate {
+	var IndentLog_Allowed: [LogType]?
+	
 	func selectedRowChanged(_ owner: Any, _ row: Int, jsonData: String?) {
 		print("row selected: \(row), \(String(describing: jsonData))")
 		if jsonData!.length() > 0 {

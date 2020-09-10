@@ -77,6 +77,8 @@ protocol StreetVCRefreshDelegate {
 }
 
 class NSViewControllerWithLog : NSViewController, IIndentLog {
+	var IndentLog_Allowed: [LogType]?
+	
 	public var IndentLog_Indent: Int = 0
 	
 	private var _logFileURL : URL? = nil

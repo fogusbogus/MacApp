@@ -45,6 +45,7 @@
 		C962A09922A9BFC900510199 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C962A09722A9BFC900510199 /* Main.storyboard */; };
 		C969B85722E77DA200EBC869 /* NewProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C969B85622E77DA200EBC869 /* NewProperty.swift */; };
 		C980D9282380442300B6ACE2 /* Names.csv in Resources */ = {isa = PBXBuildFile; fileRef = C980D9272380442300B6ACE2 /* Names.csv */; };
+		C9960DDE24F037A800059B36 /* CollectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9960DDD24F037A800059B36 /* CollectData.swift */; };
 		C9B5EC0C2315F77100814E1F /* PropertyMapWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B5EC0A2315F77100814E1F /* PropertyMapWindowController.swift */; };
 		C9B6342F22E674D60085C92A /* NewProperty.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B6342E22E674D60085C92A /* NewProperty.storyboard */; };
 		C9C0E48623AEF0990014CE2C /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9C0E48523AEF0990014CE2C /* TestView.xib */; };
@@ -57,6 +58,7 @@
 		C9C7112D23B0EA5A00AC999E /* vcPropElecs.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9C7112B23B0EA5A00AC999E /* vcPropElecs.xib */; };
 		C9D416532380B83B00E6B717 /* Databases.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D416522380B83B00E6B717 /* Databases.swift */; };
 		C9D9AA0424DC314F00031428 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D9AA0324DC314F00031428 /* CloudKit.framework */; };
+		C9E4233E25098C6A0039F81C /* EditElectorSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9E4233D25098C6A0039F81C /* EditElectorSB.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -116,6 +118,7 @@
 		C962A0CD22A9C90B00510199 /* libCommon.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libCommon.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		C969B85622E77DA200EBC869 /* NewProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProperty.swift; sourceTree = "<group>"; };
 		C980D9272380442300B6ACE2 /* Names.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Names.csv; sourceTree = "<group>"; };
+		C9960DDD24F037A800059B36 /* CollectData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectData.swift; sourceTree = "<group>"; };
 		C9B5EC0A2315F77100814E1F /* PropertyMapWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyMapWindowController.swift; sourceTree = "<group>"; };
 		C9B6342E22E674D60085C92A /* NewProperty.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewProperty.storyboard; sourceTree = "<group>"; };
 		C9C0E48523AEF0990014CE2C /* TestView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestView.xib; sourceTree = "<group>"; };
@@ -130,6 +133,7 @@
 		C9D416522380B83B00E6B717 /* Databases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Databases.swift; sourceTree = "<group>"; };
 		C9D9AA0224DC313300031428 /* MacAppDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacAppDebug.entitlements; sourceTree = "<group>"; };
 		C9D9AA0324DC314F00031428 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		C9E4233D25098C6A0039F81C /* EditElectorSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditElectorSB.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +159,7 @@
 				C912432D22F386A000564EE4 /* pnlDetails.xib */,
 				C937958A22FA248E00FDB98F /* pnlButtons.swift */,
 				C937958B22FA248E00FDB98F /* pnlButtons.xib */,
+				C9E4233D25098C6A0039F81C /* EditElectorSB.storyboard */,
 			);
 			path = EditElector;
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 		C962A09022A9BFC800510199 /* MacApp */ = {
 			isa = PBXGroup;
 			children = (
+				C9960DDC24F0379300059B36 /* CloudServices */,
 				C9D9AA0224DC313300031428 /* MacAppDebug.entitlements */,
 				C962A09122A9BFC800510199 /* AppDelegate.swift */,
 				C962A09322A9BFC800510199 /* ViewController.swift */,
@@ -294,6 +300,14 @@
 				C9047FFF23B427D2005F2374 /* NSViewControllerWithSubviews.swift */,
 			);
 			path = MacApp;
+			sourceTree = "<group>";
+		};
+		C9960DDC24F0379300059B36 /* CloudServices */ = {
+			isa = PBXGroup;
+			children = (
+				C9960DDD24F037A800059B36 /* CollectData.swift */,
+			);
+			path = CloudServices;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,6 +386,7 @@
 			files = (
 				C91A6F9022C17AE400A1E165 /* TreeNodeView.xib in Resources */,
 				C926D6B02311E9D800C82DC7 /* PropertyMap.storyboard in Resources */,
+				C9E4233E25098C6A0039F81C /* EditElectorSB.storyboard in Resources */,
 				C933276D22B6CE67003EEA09 /* TreeItem.xib in Resources */,
 				C9C0E48623AEF0990014CE2C /* TestView.xib in Resources */,
 				C962A09622A9BFC900510199 /* Assets.xcassets in Resources */,
@@ -403,6 +418,7 @@
 				C93CABFC22B2E2AC00685968 /* StreetSource.swift in Sources */,
 				C9C25A23237017C80098B08B /* Log.swift in Sources */,
 				C9C7112823B053F600AC999E /* vcProperties.swift in Sources */,
+				C9960DDE24F037A800059B36 /* CollectData.swift in Sources */,
 				C9C33F4D22DB9CA9003D8B3A /* TreeNodeImage.swift in Sources */,
 				C907983122C91F5D00073F31 /* TreeNodeContainerView.swift in Sources */,
 				C93CABFE22B2E6F200685968 /* StreetItem.swift in Sources */,
