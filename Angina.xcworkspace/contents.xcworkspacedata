@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Angina/Twinge.macOS/Twinge.macOS.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Angina/AnginaSwiftUI/AnginaSwiftUI.xcodeproj">
    </FileRef>
    <FileRef

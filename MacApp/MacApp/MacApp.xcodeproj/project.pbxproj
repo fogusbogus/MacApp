@@ -58,7 +58,6 @@
 		C9C7112D23B0EA5A00AC999E /* vcPropElecs.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9C7112B23B0EA5A00AC999E /* vcPropElecs.xib */; };
 		C9D416532380B83B00E6B717 /* Databases.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D416522380B83B00E6B717 /* Databases.swift */; };
 		C9D9AA0424DC314F00031428 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D9AA0324DC314F00031428 /* CloudKit.framework */; };
-		C9E4233E25098C6A0039F81C /* EditElectorSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9E4233D25098C6A0039F81C /* EditElectorSB.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -133,7 +132,6 @@
 		C9D416522380B83B00E6B717 /* Databases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Databases.swift; sourceTree = "<group>"; };
 		C9D9AA0224DC313300031428 /* MacAppDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacAppDebug.entitlements; sourceTree = "<group>"; };
 		C9D9AA0324DC314F00031428 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		C9E4233D25098C6A0039F81C /* EditElectorSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditElectorSB.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,7 +157,6 @@
 				C912432D22F386A000564EE4 /* pnlDetails.xib */,
 				C937958A22FA248E00FDB98F /* pnlButtons.swift */,
 				C937958B22FA248E00FDB98F /* pnlButtons.xib */,
-				C9E4233D25098C6A0039F81C /* EditElectorSB.storyboard */,
 			);
 			path = EditElector;
 			sourceTree = "<group>";
@@ -386,7 +383,6 @@
 			files = (
 				C91A6F9022C17AE400A1E165 /* TreeNodeView.xib in Resources */,
 				C926D6B02311E9D800C82DC7 /* PropertyMap.storyboard in Resources */,
-				C9E4233E25098C6A0039F81C /* EditElectorSB.storyboard in Resources */,
 				C933276D22B6CE67003EEA09 /* TreeItem.xib in Resources */,
 				C9C0E48623AEF0990014CE2C /* TestView.xib in Resources */,
 				C962A09622A9BFC900510199 /* Assets.xcassets in Resources */,
