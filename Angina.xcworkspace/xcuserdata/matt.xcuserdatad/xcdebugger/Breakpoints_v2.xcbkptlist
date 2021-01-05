@@ -4427,8 +4427,8 @@
             filePath = "Angina/AnginaSwiftUI/AnginaSwiftUI/ReportScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "Selected"
             landmarkType = "24">
          </BreakpointContent>
@@ -4443,8 +4443,8 @@
             filePath = "Angina/AnginaSwiftUI/AnginaSwiftUI/ReportScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "Selected"
             landmarkType = "24">
          </BreakpointContent>
@@ -4459,8 +4459,8 @@
             filePath = "Angina/AnginaSwiftUI/AnginaSwiftUI/ReportScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "setAsSelected(id:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -4475,8 +4475,8 @@
             filePath = "Angina/AnginaSwiftUI/AnginaSwiftUI/ReportScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "setAsSelected(id:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -4511,6 +4511,54 @@
             endingLineNumber = "70"
             landmarkName = "unknown"
             landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "37CD4F3B-2B36-4354-9251-1C856733BB8F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Angina/AnginaSwiftUI/AnginaSwiftUI/Angina Screens/Angina.Additional.BP.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "canUpdateBP"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1829D9D2-9A0A-4D66-8738-B5CB71BE2438"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Angina/AnginaSwiftUI/AnginaSwiftUI/Angina Screens/Angina.Additional.BP.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "bpm"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B92490B0-258C-4481-8B1C-A3829645BE4E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Angina/AnginaSwiftUI/AnginaSwiftUI/Angina Screens/Angina.Additional.BP.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "bpm"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
