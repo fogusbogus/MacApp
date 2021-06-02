@@ -1,0 +1,426 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C9E1C156264FC30B002AC46B /* DataModel.h in Headers */ = {isa = PBXBuildFile; fileRef = C9E1C155264FC30B002AC46B /* DataModel.h */; };
+		C9E1C158264FC30B002AC46B /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E1C157264FC30B002AC46B /* DataModel.m */; };
+		C9E1C175264FCB0F002AC46B /* Customer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1C161264FCB0F002AC46B /* Customer+CoreDataClass.swift */; };
+		C9E1C176264FCB0F002AC46B /* Customer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1C162264FCB0F002AC46B /* Customer+CoreDataProperties.swift */; };
+		C9E1C177264FCB0F002AC46B /* Enquiry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1C163264FCB0F002AC46B /* Enquiry+CoreDataClass.swift */; };
+		C9E1C178264FCB0F002AC46B /* Enquiry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1C164264FCB0F002AC46B /* Enquiry+CoreDataProperties.swift */; };
+		C9E1C179264FCB0F002AC46B /* Returns+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1C165264FCB0F002AC46B /* Returns+CoreDataClass.swift */; };
+		C9E1C17A264FCB0F002AC46B /* Returns+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1C166264FCB0F002AC46B /* Returns+CoreDataProperties.swift */; };
+		C9E1C17B264FCB0F002AC46B /* Manufacturer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1C167264FCB0F002AC46B /* Manufacturer+CoreDataClass.swift */; };
+		C9E1C17C264FCB0F002AC46B /* Manufacturer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1C168264FCB0F002AC46B /* Manufacturer+CoreDataProperties.swift */; };
+		C9E1C17D264FCB0F002AC46B /* StockArea+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1C169264FCB0F002AC46B /* StockArea+CoreDataClass.swift */; };
+		C9E1C17E264FCB0F002AC46B /* StockArea+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1C16A264FCB0F002AC46B /* StockArea+CoreDataProperties.swift */; };
+		C9E1C17F264FCB0F002AC46B /* Sale+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1C16B264FCB0F002AC46B /* Sale+CoreDataClass.swift */; };
+		C9E1C180264FCB0F002AC46B /* Sale+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1C16C264FCB0F002AC46B /* Sale+CoreDataProperties.swift */; };
+		C9E1C181264FCB0F002AC46B /* Contact+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1C16D264FCB0F002AC46B /* Contact+CoreDataClass.swift */; };
+		C9E1C182264FCB0F002AC46B /* Contact+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1C16E264FCB0F002AC46B /* Contact+CoreDataProperties.swift */; };
+		C9E1C183264FCB0F002AC46B /* Part+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1C16F264FCB0F002AC46B /* Part+CoreDataClass.swift */; };
+		C9E1C184264FCB0F002AC46B /* Part+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1C170264FCB0F002AC46B /* Part+CoreDataProperties.swift */; };
+		C9E1C185264FCB0F002AC46B /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1C171264FCB0F002AC46B /* Category+CoreDataClass.swift */; };
+		C9E1C186264FCB0F002AC46B /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1C172264FCB0F002AC46B /* Category+CoreDataProperties.swift */; };
+		C9E1C187264FCB0F002AC46B /* Conversation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1C173264FCB0F002AC46B /* Conversation+CoreDataClass.swift */; };
+		C9E1C188264FCB0F002AC46B /* Conversation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1C174264FCB0F002AC46B /* Conversation+CoreDataProperties.swift */; };
+		C9E1C18B264FCBB2002AC46B /* AddressLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1C18A264FCBB2002AC46B /* AddressLocation.swift */; };
+		C9E1C18D264FD8EF002AC46B /* JsonCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1C18C264FD8EF002AC46B /* JsonCoding.swift */; };
+		C9E7A9D12655930700390321 /* Address+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7A9CF2655930700390321 /* Address+CoreDataClass.swift */; };
+		C9E7A9D22655930700390321 /* Address+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7A9D02655930700390321 /* Address+CoreDataProperties.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C9E1C152264FC30B002AC46B /* libDataModel.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libDataModel.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9E1C155264FC30B002AC46B /* DataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
+		C9E1C157264FC30B002AC46B /* DataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
+		C9E1C15F264FC32B002AC46B /* PartsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PartsModel.xcdatamodel; sourceTree = "<group>"; };
+		C9E1C161264FCB0F002AC46B /* Customer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Customer+CoreDataClass.swift"; path = "../../../Random Ideas/Customer+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C9E1C162264FCB0F002AC46B /* Customer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Customer+CoreDataProperties.swift"; path = "../../../Random Ideas/Customer+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C9E1C163264FCB0F002AC46B /* Enquiry+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Enquiry+CoreDataClass.swift"; path = "../../../Random Ideas/Enquiry+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C9E1C164264FCB0F002AC46B /* Enquiry+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Enquiry+CoreDataProperties.swift"; path = "../../../Random Ideas/Enquiry+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C9E1C165264FCB0F002AC46B /* Returns+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Returns+CoreDataClass.swift"; path = "../../../Random Ideas/Returns+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C9E1C166264FCB0F002AC46B /* Returns+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Returns+CoreDataProperties.swift"; path = "../../../Random Ideas/Returns+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C9E1C167264FCB0F002AC46B /* Manufacturer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Manufacturer+CoreDataClass.swift"; path = "../../../Random Ideas/Manufacturer+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C9E1C168264FCB0F002AC46B /* Manufacturer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Manufacturer+CoreDataProperties.swift"; path = "../../../Random Ideas/Manufacturer+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C9E1C169264FCB0F002AC46B /* StockArea+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "StockArea+CoreDataClass.swift"; path = "../../../Random Ideas/StockArea+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C9E1C16A264FCB0F002AC46B /* StockArea+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "StockArea+CoreDataProperties.swift"; path = "../../../Random Ideas/StockArea+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C9E1C16B264FCB0F002AC46B /* Sale+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Sale+CoreDataClass.swift"; path = "../../../Random Ideas/Sale+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C9E1C16C264FCB0F002AC46B /* Sale+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Sale+CoreDataProperties.swift"; path = "../../../Random Ideas/Sale+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C9E1C16D264FCB0F002AC46B /* Contact+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Contact+CoreDataClass.swift"; path = "../../../Random Ideas/Contact+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C9E1C16E264FCB0F002AC46B /* Contact+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Contact+CoreDataProperties.swift"; path = "../../../Random Ideas/Contact+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C9E1C16F264FCB0F002AC46B /* Part+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Part+CoreDataClass.swift"; path = "../../../Random Ideas/Part+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C9E1C170264FCB0F002AC46B /* Part+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Part+CoreDataProperties.swift"; path = "../../../Random Ideas/Part+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C9E1C171264FCB0F002AC46B /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Category+CoreDataClass.swift"; path = "../../../Random Ideas/Category+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C9E1C172264FCB0F002AC46B /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Category+CoreDataProperties.swift"; path = "../../../Random Ideas/Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C9E1C173264FCB0F002AC46B /* Conversation+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Conversation+CoreDataClass.swift"; path = "../../../Random Ideas/Conversation+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C9E1C174264FCB0F002AC46B /* Conversation+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Conversation+CoreDataProperties.swift"; path = "../../../Random Ideas/Conversation+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C9E1C18A264FCBB2002AC46B /* AddressLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressLocation.swift; sourceTree = "<group>"; };
+		C9E1C18C264FD8EF002AC46B /* JsonCoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonCoding.swift; sourceTree = "<group>"; };
+		C9E7A9CF2655930700390321 /* Address+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Address+CoreDataClass.swift"; path = "../../../Random Ideas/Address+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C9E7A9D02655930700390321 /* Address+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Address+CoreDataProperties.swift"; path = "../../../Random Ideas/Address+CoreDataProperties.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C9E1C150264FC30B002AC46B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C9E1C149264FC30B002AC46B = {
+			isa = PBXGroup;
+			children = (
+				C9E1C154264FC30B002AC46B /* DataModel */,
+				C9E1C153264FC30B002AC46B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C9E1C153264FC30B002AC46B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C9E1C152264FC30B002AC46B /* libDataModel.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C9E1C154264FC30B002AC46B /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				C9E7A9CF2655930700390321 /* Address+CoreDataClass.swift */,
+				C9E7A9D02655930700390321 /* Address+CoreDataProperties.swift */,
+				C9E1C189264FCB7C002AC46B /* Extensions */,
+				C9E1C161264FCB0F002AC46B /* Customer+CoreDataClass.swift */,
+				C9E1C162264FCB0F002AC46B /* Customer+CoreDataProperties.swift */,
+				C9E1C163264FCB0F002AC46B /* Enquiry+CoreDataClass.swift */,
+				C9E1C164264FCB0F002AC46B /* Enquiry+CoreDataProperties.swift */,
+				C9E1C165264FCB0F002AC46B /* Returns+CoreDataClass.swift */,
+				C9E1C166264FCB0F002AC46B /* Returns+CoreDataProperties.swift */,
+				C9E1C167264FCB0F002AC46B /* Manufacturer+CoreDataClass.swift */,
+				C9E1C168264FCB0F002AC46B /* Manufacturer+CoreDataProperties.swift */,
+				C9E1C169264FCB0F002AC46B /* StockArea+CoreDataClass.swift */,
+				C9E1C16A264FCB0F002AC46B /* StockArea+CoreDataProperties.swift */,
+				C9E1C16B264FCB0F002AC46B /* Sale+CoreDataClass.swift */,
+				C9E1C16C264FCB0F002AC46B /* Sale+CoreDataProperties.swift */,
+				C9E1C16D264FCB0F002AC46B /* Contact+CoreDataClass.swift */,
+				C9E1C16E264FCB0F002AC46B /* Contact+CoreDataProperties.swift */,
+				C9E1C16F264FCB0F002AC46B /* Part+CoreDataClass.swift */,
+				C9E1C170264FCB0F002AC46B /* Part+CoreDataProperties.swift */,
+				C9E1C171264FCB0F002AC46B /* Category+CoreDataClass.swift */,
+				C9E1C172264FCB0F002AC46B /* Category+CoreDataProperties.swift */,
+				C9E1C173264FCB0F002AC46B /* Conversation+CoreDataClass.swift */,
+				C9E1C174264FCB0F002AC46B /* Conversation+CoreDataProperties.swift */,
+				C9E1C155264FC30B002AC46B /* DataModel.h */,
+				C9E1C157264FC30B002AC46B /* DataModel.m */,
+				C9E1C15E264FC32B002AC46B /* PartsModel.xcdatamodeld */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		C9E1C189264FCB7C002AC46B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C9E1C18A264FCBB2002AC46B /* AddressLocation.swift */,
+				C9E1C18C264FD8EF002AC46B /* JsonCoding.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C9E1C14E264FC30B002AC46B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9E1C156264FC30B002AC46B /* DataModel.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		C9E1C151264FC30B002AC46B /* DataModel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9E1C15B264FC30B002AC46B /* Build configuration list for PBXNativeTarget "DataModel" */;
+			buildPhases = (
+				C9E1C14E264FC30B002AC46B /* Headers */,
+				C9E1C14F264FC30B002AC46B /* Sources */,
+				C9E1C150264FC30B002AC46B /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DataModel;
+			productName = DataModel;
+			productReference = C9E1C152264FC30B002AC46B /* libDataModel.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C9E1C14A264FC30B002AC46B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					C9E1C151264FC30B002AC46B = {
+						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
+					};
+				};
+			};
+			buildConfigurationList = C9E1C14D264FC30B002AC46B /* Build configuration list for PBXProject "DataModel" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C9E1C149264FC30B002AC46B;
+			productRefGroup = C9E1C153264FC30B002AC46B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C9E1C151264FC30B002AC46B /* DataModel */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C9E1C14F264FC30B002AC46B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9E1C180264FCB0F002AC46B /* Sale+CoreDataProperties.swift in Sources */,
+				C9E1C17F264FCB0F002AC46B /* Sale+CoreDataClass.swift in Sources */,
+				C9E7A9D22655930700390321 /* Address+CoreDataProperties.swift in Sources */,
+				C9E1C187264FCB0F002AC46B /* Conversation+CoreDataClass.swift in Sources */,
+				C9E1C175264FCB0F002AC46B /* Customer+CoreDataClass.swift in Sources */,
+				C9E1C17E264FCB0F002AC46B /* StockArea+CoreDataProperties.swift in Sources */,
+				C9E1C182264FCB0F002AC46B /* Contact+CoreDataProperties.swift in Sources */,
+				C9E1C185264FCB0F002AC46B /* Category+CoreDataClass.swift in Sources */,
+				C9E1C18B264FCBB2002AC46B /* AddressLocation.swift in Sources */,
+				C9E1C181264FCB0F002AC46B /* Contact+CoreDataClass.swift in Sources */,
+				C9E1C186264FCB0F002AC46B /* Category+CoreDataProperties.swift in Sources */,
+				C9E1C184264FCB0F002AC46B /* Part+CoreDataProperties.swift in Sources */,
+				C9E1C17D264FCB0F002AC46B /* StockArea+CoreDataClass.swift in Sources */,
+				C9E1C179264FCB0F002AC46B /* Returns+CoreDataClass.swift in Sources */,
+				C9E1C17A264FCB0F002AC46B /* Returns+CoreDataProperties.swift in Sources */,
+				C9E1C177264FCB0F002AC46B /* Enquiry+CoreDataClass.swift in Sources */,
+				C9E1C17C264FCB0F002AC46B /* Manufacturer+CoreDataProperties.swift in Sources */,
+				C9E7A9D12655930700390321 /* Address+CoreDataClass.swift in Sources */,
+				C9E1C178264FCB0F002AC46B /* Enquiry+CoreDataProperties.swift in Sources */,
+				C9E1C158264FC30B002AC46B /* DataModel.m in Sources */,
+				C9E1C18D264FD8EF002AC46B /* JsonCoding.swift in Sources */,
+				C9E1C188264FCB0F002AC46B /* Conversation+CoreDataProperties.swift in Sources */,
+				C9E1C17B264FCB0F002AC46B /* Manufacturer+CoreDataClass.swift in Sources */,
+				C9E1C183264FCB0F002AC46B /* Part+CoreDataClass.swift in Sources */,
+				C9E1C176264FCB0F002AC46B /* Customer+CoreDataProperties.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C9E1C159264FC30B002AC46B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C9E1C15A264FC30B002AC46B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C9E1C15C264FC30B002AC46B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JH3ZC8234Q;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C9E1C15D264FC30B002AC46B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JH3ZC8234Q;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C9E1C14D264FC30B002AC46B /* Build configuration list for PBXProject "DataModel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9E1C159264FC30B002AC46B /* Debug */,
+				C9E1C15A264FC30B002AC46B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9E1C15B264FC30B002AC46B /* Build configuration list for PBXNativeTarget "DataModel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9E1C15C264FC30B002AC46B /* Debug */,
+				C9E1C15D264FC30B002AC46B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C9E1C15E264FC32B002AC46B /* PartsModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C9E1C15F264FC32B002AC46B /* PartsModel.xcdatamodel */,
+			);
+			currentVersion = C9E1C15F264FC32B002AC46B /* PartsModel.xcdatamodel */;
+			path = PartsModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C9E1C14A264FC30B002AC46B /* Project object */;
+}

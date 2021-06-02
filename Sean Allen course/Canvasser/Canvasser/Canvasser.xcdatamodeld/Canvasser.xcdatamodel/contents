@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20C69" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Action" representedClassName="Action" syncable="YES" codeGenerationType="class">
+        <attribute name="data" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="elector" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Elector" inverseName="extra" inverseEntity="Elector"/>
+        <relationship name="todoAction" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TodoAction" inverseName="completion" inverseEntity="TodoAction"/>
+    </entity>
+    <entity name="Elector" representedClassName="Elector" syncable="YES" codeGenerationType="class">
+        <attribute name="dob" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="forename" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="middleNames" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="nino" optional="YES" attributeType="String"/>
+        <attribute name="previousData" optional="YES" attributeType="String"/>
+        <attribute name="surname" optional="YES" attributeType="String"/>
+        <relationship name="extra" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Action" inverseName="elector" inverseEntity="Action"/>
+        <relationship name="property" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Property" inverseName="electors" inverseEntity="Property"/>
+        <relationship name="todo" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TodoAction"/>
+    </entity>
+    <entity name="Property" representedClassName="Property" syncable="YES" codeGenerationType="class">
+        <attribute name="gpsLat" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="gpsLon" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="electors" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Elector" inverseName="property" inverseEntity="Elector"/>
+        <relationship name="street" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Street" inverseName="properties" inverseEntity="Street"/>
+        <relationship name="todo" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TodoAction"/>
+    </entity>
+    <entity name="Street" representedClassName="Street" syncable="YES" codeGenerationType="class">
+        <attribute name="gpsLat" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="gpsLon" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="postCode" optional="YES" attributeType="String"/>
+        <relationship name="properties" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Property" inverseName="street" inverseEntity="Property"/>
+    </entity>
+    <entity name="TodoAction" representedClassName="TodoAction" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="requestAction" optional="YES" attributeType="String"/>
+        <relationship name="completion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Action" inverseName="todoAction" inverseEntity="Action"/>
+    </entity>
+    <elements>
+        <element name="Action" positionX="436.0989990234375" positionY="251.5679321289062" width="128" height="103"/>
+        <element name="Elector" positionX="288.0203247070312" positionY="-232.5779266357422" width="128" height="208"/>
+        <element name="Property" positionX="-227.4904174804688" positionY="104.1498107910156" width="128" height="148"/>
+        <element name="Street" positionX="-307.3412475585938" positionY="-67.91851806640625" width="128" height="133"/>
+        <element name="TodoAction" positionX="241.291259765625" positionY="221.5242309570312" width="128" height="88"/>
+    </elements>
+</model>

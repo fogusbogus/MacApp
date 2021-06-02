@@ -1,0 +1,428 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C933A6F925471608004F4FC7 /* TreeNodeOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = C933A6F825471608004F4FC7 /* TreeNodeOld.swift */; };
+		C9459CA62562019B00F9C5E4 /* StackTree.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9459CA52562019B00F9C5E4 /* StackTree.xib */; };
+		C95CB98F2558D2280026B003 /* TreeList.xib in Resources */ = {isa = PBXBuildFile; fileRef = C95CB98E2558D2280026B003 /* TreeList.xib */; };
+		C95CB9932558D5910026B003 /* TreeListNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95CB9922558D5910026B003 /* TreeListNode.swift */; };
+		C95CB9962558D8360026B003 /* TreeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95CB9952558D8360026B003 /* TreeListView.swift */; };
+		C9BDA84B2533CE6F00E3EC0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BDA84A2533CE6F00E3EC0E /* AppDelegate.swift */; };
+		C9BDA84D2533CE6F00E3EC0E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BDA84C2533CE6F00E3EC0E /* ViewController.swift */; };
+		C9BDA84F2533CE7000E3EC0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9BDA84E2533CE7000E3EC0E /* Assets.xcassets */; };
+		C9BDA8522533CE7000E3EC0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9BDA8502533CE7000E3EC0E /* Main.storyboard */; };
+		C9DF7D16253C624E00639ECA /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DF7D15253C624E00639ECA /* Localization.swift */; };
+		C9DF7D18253C629900639ECA /* Application.strings in Resources */ = {isa = PBXBuildFile; fileRef = C9DF7D1A253C629900639ECA /* Application.strings */; };
+		C9DF7D1E253C675A00639ECA /* UsefulExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = C9DF7D1D253C675A00639ECA /* UsefulExtensions */; };
+		C9FD682A257BA9460017EAE8 /* LoggingLib in Frameworks */ = {isa = PBXBuildFile; productRef = C9FD6829257BA9460017EAE8 /* LoggingLib */; };
+		C9FD682D257BA9C70017EAE8 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FD682C257BA9C70017EAE8 /* Log.swift */; };
+		C9FD6846257D09380017EAE8 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FD6845257D09380017EAE8 /* Logging.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C933A6F825471608004F4FC7 /* TreeNodeOld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNodeOld.swift; sourceTree = "<group>"; };
+		C9459CA52562019B00F9C5E4 /* StackTree.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StackTree.xib; sourceTree = "<group>"; };
+		C95CB98E2558D2280026B003 /* TreeList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TreeList.xib; sourceTree = "<group>"; };
+		C95CB9922558D5910026B003 /* TreeListNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListNode.swift; sourceTree = "<group>"; };
+		C95CB9952558D8360026B003 /* TreeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListView.swift; sourceTree = "<group>"; };
+		C9BDA8472533CE6F00E3EC0E /* Twinge.macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twinge.macOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9BDA84A2533CE6F00E3EC0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C9BDA84C2533CE6F00E3EC0E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C9BDA84E2533CE7000E3EC0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C9BDA8512533CE7000E3EC0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C9BDA8532533CE7000E3EC0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9BDA8542533CE7000E3EC0E /* Twinge_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Twinge_macOS.entitlements; sourceTree = "<group>"; };
+		C9DF7D15253C624E00639ECA /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		C9DF7D19253C629900639ECA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Application.strings; sourceTree = "<group>"; };
+		C9FD682C257BA9C70017EAE8 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		C9FD6845257D09380017EAE8 /* Logging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C9BDA8442533CE6F00E3EC0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9FD682A257BA9460017EAE8 /* LoggingLib in Frameworks */,
+				C9DF7D1E253C675A00639ECA /* UsefulExtensions in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C9BDA83E2533CE6F00E3EC0E = {
+			isa = PBXGroup;
+			children = (
+				C9BDA8492533CE6F00E3EC0E /* Twinge.macOS */,
+				C9BDA8482533CE6F00E3EC0E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C9BDA8482533CE6F00E3EC0E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C9BDA8472533CE6F00E3EC0E /* Twinge.macOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C9BDA8492533CE6F00E3EC0E /* Twinge.macOS */ = {
+			isa = PBXGroup;
+			children = (
+				C9BDA84A2533CE6F00E3EC0E /* AppDelegate.swift */,
+				C9BDA84C2533CE6F00E3EC0E /* ViewController.swift */,
+				C933A6F825471608004F4FC7 /* TreeNodeOld.swift */,
+				C9BDA84E2533CE7000E3EC0E /* Assets.xcassets */,
+				C9BDA8502533CE7000E3EC0E /* Main.storyboard */,
+				C9BDA8532533CE7000E3EC0E /* Info.plist */,
+				C9BDA8542533CE7000E3EC0E /* Twinge_macOS.entitlements */,
+				C9DF7D1A253C629900639ECA /* Application.strings */,
+				C9DF7D15253C624E00639ECA /* Localization.swift */,
+				C95CB98E2558D2280026B003 /* TreeList.xib */,
+				C95CB9922558D5910026B003 /* TreeListNode.swift */,
+				C95CB9952558D8360026B003 /* TreeListView.swift */,
+				C9459CA52562019B00F9C5E4 /* StackTree.xib */,
+				C9FD682C257BA9C70017EAE8 /* Log.swift */,
+				C9FD6845257D09380017EAE8 /* Logging.swift */,
+			);
+			path = Twinge.macOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C9BDA8462533CE6F00E3EC0E /* Twinge.macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9BDA8572533CE7000E3EC0E /* Build configuration list for PBXNativeTarget "Twinge.macOS" */;
+			buildPhases = (
+				C9BDA8432533CE6F00E3EC0E /* Sources */,
+				C9BDA8442533CE6F00E3EC0E /* Frameworks */,
+				C9BDA8452533CE6F00E3EC0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Twinge.macOS;
+			packageProductDependencies = (
+				C9DF7D1D253C675A00639ECA /* UsefulExtensions */,
+				C9FD6829257BA9460017EAE8 /* LoggingLib */,
+			);
+			productName = Twinge.macOS;
+			productReference = C9BDA8472533CE6F00E3EC0E /* Twinge.macOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C9BDA83F2533CE6F00E3EC0E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				KnownAssetTags = (
+					New,
+				);
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1210;
+				TargetAttributes = {
+					C9BDA8462533CE6F00E3EC0E = {
+						CreatedOnToolsVersion = 12.0.1;
+					};
+				};
+			};
+			buildConfigurationList = C9BDA8422533CE6F00E3EC0E /* Build configuration list for PBXProject "Twinge.macOS" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C9BDA83E2533CE6F00E3EC0E;
+			packageReferences = (
+				C9DF7D1C253C675A00639ECA /* XCRemoteSwiftPackageReference "UsefulExtensions" */,
+				C9FD6828257BA9460017EAE8 /* XCRemoteSwiftPackageReference "LoggingLib" */,
+			);
+			productRefGroup = C9BDA8482533CE6F00E3EC0E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C9BDA8462533CE6F00E3EC0E /* Twinge.macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C9BDA8452533CE6F00E3EC0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9459CA62562019B00F9C5E4 /* StackTree.xib in Resources */,
+				C9BDA84F2533CE7000E3EC0E /* Assets.xcassets in Resources */,
+				C95CB98F2558D2280026B003 /* TreeList.xib in Resources */,
+				C9BDA8522533CE7000E3EC0E /* Main.storyboard in Resources */,
+				C9DF7D18253C629900639ECA /* Application.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C9BDA8432533CE6F00E3EC0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C95CB9932558D5910026B003 /* TreeListNode.swift in Sources */,
+				C9FD682D257BA9C70017EAE8 /* Log.swift in Sources */,
+				C9BDA84D2533CE6F00E3EC0E /* ViewController.swift in Sources */,
+				C9BDA84B2533CE6F00E3EC0E /* AppDelegate.swift in Sources */,
+				C9DF7D16253C624E00639ECA /* Localization.swift in Sources */,
+				C95CB9962558D8360026B003 /* TreeListView.swift in Sources */,
+				C933A6F925471608004F4FC7 /* TreeNodeOld.swift in Sources */,
+				C9FD6846257D09380017EAE8 /* Logging.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C9BDA8502533CE7000E3EC0E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9BDA8512533CE7000E3EC0E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C9DF7D1A253C629900639ECA /* Application.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9DF7D19253C629900639ECA /* en */,
+			);
+			name = Application.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C9BDA8552533CE7000E3EC0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C9BDA8562533CE7000E3EC0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		C9BDA8582533CE7000E3EC0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Twinge.macOS/Twinge_macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = JH3ZC8234Q;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = Twinge.macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fogusbogus.Twinge-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C9BDA8592533CE7000E3EC0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Twinge.macOS/Twinge_macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = JH3ZC8234Q;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = Twinge.macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fogusbogus.Twinge-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C9BDA8422533CE6F00E3EC0E /* Build configuration list for PBXProject "Twinge.macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9BDA8552533CE7000E3EC0E /* Debug */,
+				C9BDA8562533CE7000E3EC0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9BDA8572533CE7000E3EC0E /* Build configuration list for PBXNativeTarget "Twinge.macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9BDA8582533CE7000E3EC0E /* Debug */,
+				C9BDA8592533CE7000E3EC0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C9DF7D1C253C675A00639ECA /* XCRemoteSwiftPackageReference "UsefulExtensions" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fogusbogus/UsefulExtensions.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.27;
+			};
+		};
+		C9FD6828257BA9460017EAE8 /* XCRemoteSwiftPackageReference "LoggingLib" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fogusbogus/LoggingLib.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.9;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C9DF7D1D253C675A00639ECA /* UsefulExtensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9DF7D1C253C675A00639ECA /* XCRemoteSwiftPackageReference "UsefulExtensions" */;
+			productName = UsefulExtensions;
+		};
+		C9FD6829257BA9460017EAE8 /* LoggingLib */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9FD6828257BA9460017EAE8 /* XCRemoteSwiftPackageReference "LoggingLib" */;
+			productName = LoggingLib;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = C9BDA83F2533CE6F00E3EC0E /* Project object */;
+}

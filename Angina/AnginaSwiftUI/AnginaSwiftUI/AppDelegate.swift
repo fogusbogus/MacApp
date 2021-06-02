@@ -32,6 +32,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		// Use this method to release any resources that were specific to the discarded scenes, as they will not return.
 	}
 
-
+	static var orientationLock =
+		UIInterfaceOrientationMask.portrait
+	
+	func application(_ application: UIApplication,
+					 supportedInterfaceOrientationsFor window:
+						UIWindow?) -> UIInterfaceOrientationMask {
+		return AppDelegate.orientationLock
+	}
+	
+	func applicationWillTerminate(_ application: UIApplication) {
+		UIDevice.current.setValue(UIInterfaceOrientation.unknown, forKey: "orientation")
+	}
 }
 

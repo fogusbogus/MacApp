@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20E241" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Address" representedClassName="Address" syncable="YES" codeGenerationType="class">
+        <attribute name="country" optional="YES" attributeType="String"/>
+        <attribute name="postalAddress" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="zipCode" optional="YES" attributeType="String"/>
+        <fetchedProperty name="formatted" optional="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="Address"/>
+        </fetchedProperty>
+    </entity>
+    <entity name="Category" representedClassName="Category" syncable="YES" codeGenerationType="class">
+        <attribute name="code" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String" defaultValueString=""/>
+    </entity>
+    <entity name="Contact" representedClassName="Contact" syncable="YES" codeGenerationType="class">
+        <attribute name="contactType" optional="YES" attributeType="String"/>
+        <attribute name="detail" optional="YES" attributeType="String"/>
+        <relationship name="address" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Address"/>
+    </entity>
+    <entity name="Conversation" representedClassName="Conversation" syncable="YES" codeGenerationType="class">
+        <attribute name="detail" optional="YES" attributeType="String"/>
+        <attribute name="when" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="contact" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contact"/>
+        <relationship name="customer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Customer"/>
+        <relationship name="manufacturer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Manufacturer"/>
+    </entity>
+    <entity name="Customer" representedClassName="Customer" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="relationship" optional="YES" attributeType="String"/>
+        <attribute name="salutation" optional="YES" attributeType="String"/>
+        <relationship name="address" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Address"/>
+    </entity>
+    <entity name="Enquiry" representedClassName="Enquiry" syncable="YES" codeGenerationType="class">
+        <attribute name="keywords" optional="YES" attributeType="String"/>
+        <relationship name="contact" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Customer"/>
+        <relationship name="conversation" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Conversation"/>
+    </entity>
+    <entity name="Manufacturer" representedClassName="Manufacturer" syncable="YES" codeGenerationType="class">
+        <attribute name="country" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="contact" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Contact"/>
+    </entity>
+    <entity name="Part" representedClassName="Part" syncable="YES" codeGenerationType="class">
+        <attribute name="dateOfManufacture" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="detail" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="partNumber" optional="YES" attributeType="String"/>
+        <relationship name="category" maxCount="1" deletionRule="Nullify" destinationEntity="Category"/>
+        <relationship name="manufacturer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Manufacturer"/>
+        <relationship name="stockArea" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StockArea" inverseName="part" inverseEntity="StockArea"/>
+    </entity>
+    <entity name="Returns" representedClassName="Returns" syncable="YES" codeGenerationType="class">
+        <attribute name="reason" optional="YES" attributeType="String"/>
+        <attribute name="refundAmount" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="refundDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="conversation" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Conversation"/>
+        <relationship name="refundee" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Contact"/>
+    </entity>
+    <entity name="Sale" representedClassName="Sale" syncable="YES" codeGenerationType="class">
+        <attribute name="dateSold" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="serialNumber" optional="YES" attributeType="String"/>
+        <relationship name="customer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contact"/>
+        <relationship name="part" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Part"/>
+        <relationship name="returned" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Returns"/>
+    </entity>
+    <entity name="StockArea" representedClassName="StockArea" syncable="YES" codeGenerationType="class">
+        <attribute name="location" optional="YES" attributeType="String"/>
+        <attribute name="reorderThreshold" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="stockCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="part" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Part" inverseName="stockArea" inverseEntity="Part"/>
+    </entity>
+    <elements>
+        <element name="Address" positionX="63" positionY="-144" width="128" height="110"/>
+        <element name="Category" positionX="-54" positionY="9" width="128" height="59"/>
+        <element name="Contact" positionX="194.9719848632812" positionY="12.4486083984375" width="128" height="88"/>
+        <element name="Conversation" positionX="-169.1416015625" positionY="227.5347900390625" width="128" height="118"/>
+        <element name="Customer" positionX="225" positionY="9" width="128" height="89"/>
+        <element name="Enquiry" positionX="548.1193237304688" positionY="-121.8634033203125" width="128" height="88"/>
+        <element name="Manufacturer" positionX="89.99444580078125" positionY="-104.75390625" width="128" height="88"/>
+        <element name="Part" positionX="-2.43695068359375" positionY="-289.3809814453125" width="128" height="148"/>
+        <element name="Returns" positionX="573.9173583984375" positionY="169.7838134765625" width="128" height="118"/>
+        <element name="Sale" positionX="701.8580932617188" positionY="-329.3242797851562" width="128" height="118"/>
+        <element name="StockArea" positionX="-170.4850463867188" positionY="-329.18896484375" width="128" height="103"/>
+    </elements>
+</model>

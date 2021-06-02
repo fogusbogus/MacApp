@@ -11,22 +11,24 @@ import UsefulExtensions
 
 struct ContentView: View {
 	
-	var tb = ContentView.getModel()
-	
-	static func getModel() -> ToggleButtonModel {
-		let ret = ToggleButtonModel(text: "🟡")
-		ret.ExtraPadding = true
-		ret.font = .largeTitle
-		ret.DeselectedBackgroundColor = .blue
-		ret.DeselectedForegroundColor = .blue
-		ret.SelectedBackgroundColor = .yellow
-		ret.SelectedForegroundColor = .blue
-		
-		return ret
-	}
+//	var tb = ContentView.getModel()
+//
+//	static func getModel() -> ToggleButtonModel {
+//		let ret = ToggleButtonModel(text: "🟡")
+//		ret.ExtraPadding = true
+//		ret.font = .largeTitle
+//		ret.DeselectedBackgroundColor = .blue
+//		ret.DeselectedForegroundColor = .blue
+//		ret.SelectedBackgroundColor = .yellow
+//		ret.SelectedForegroundColor = .blue
+//
+//		return ret
+//	}
 	
 	var body: some View {
-		ToggleButton(model: tb)
+		//ToggleButton(model: tb)
+		//ReportScene()
+		MainScreen_Splits(numOfSplits: 32)
 	}
 	
 	/*
@@ -36,7 +38,10 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
 	static var previews: some View {
-		ContentView()
+		//ContentView()
+		//MainScreen_Splits(numOfSplits: 32)
+		
+		Angina_MainScreen()
 	}
 }
 

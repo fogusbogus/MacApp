@@ -1,0 +1,457 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C903B26F25C39BA800E53E5A /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C903B26E25C39BA800E53E5A /* ListItem.swift */; };
+		C903B27225C39FA000E53E5A /* ElectorListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C903B27125C39FA000E53E5A /* ElectorListItem.swift */; };
+		C903B27525C3A41C00E53E5A /* PropertyListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C903B27425C3A41C00E53E5A /* PropertyListItem.swift */; };
+		C903B27825C3A7D000E53E5A /* StreetListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C903B27725C3A7D000E53E5A /* StreetListItem.swift */; };
+		C903B27D25C4DFCA00E53E5A /* SQLDB in Frameworks */ = {isa = PBXBuildFile; productRef = C903B27C25C4DFCA00E53E5A /* SQLDB */; };
+		C903B28025C4EEF600E53E5A /* DatabaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C903B27F25C4EEF600E53E5A /* DatabaseHandler.swift */; };
+		C965C7CF25CA9870006324DF /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C965C7CE25CA9870006324DF /* MainScreen.swift */; };
+		C96B2F6025B3B1500069FEB5 /* CanvasserApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B2F5F25B3B1500069FEB5 /* CanvasserApp.swift */; };
+		C96B2F6225B3B1500069FEB5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B2F6125B3B1500069FEB5 /* ContentView.swift */; };
+		C96B2F6425B3B1510069FEB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C96B2F6325B3B1510069FEB5 /* Assets.xcassets */; };
+		C96B2F6725B3B1510069FEB5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C96B2F6625B3B1510069FEB5 /* Preview Assets.xcassets */; };
+		C96B2F6925B3B1510069FEB5 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B2F6825B3B1510069FEB5 /* Persistence.swift */; };
+		C96B2F6C25B3B1510069FEB5 /* Canvasser.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C96B2F6A25B3B1510069FEB5 /* Canvasser.xcdatamodeld */; };
+		C96B2F7625B3B1B50069FEB5 /* TitleBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B2F7525B3B1B50069FEB5 /* TitleBar.swift */; };
+		C9792E6F25CB6C6600C88937 /* Splits.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9792E6E25CB6C6600C88937 /* Splits.swift */; };
+		C9792E7225CB6D2000C88937 /* MainScreen.Splits.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9792E7125CB6D2000C88937 /* MainScreen.Splits.swift */; };
+		C99C43FC25B3B3C8005AA38F /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99C43FB25B3B3C8005AA38F /* ImageButton.swift */; };
+		C9C73A2025C891EA009DDD9E /* Databases.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C73A1F25C891EA009DDD9E /* Databases.swift */; };
+		C9C73A2325C96E74009DDD9E /* registerDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C9C73A2225C96E74009DDD9E /* registerDB.sqlite */; };
+		C9F51B6A25B4FA5500DB7B52 /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F51B6925B4FA5500DB7B52 /* NavBar.swift */; };
+		C9F51B6D25B8E63F00DB7B52 /* MessageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F51B6C25B8E63F00DB7B52 /* MessageItem.swift */; };
+		C9F51B7025BCEBAF00DB7B52 /* ActionHistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F51B6F25BCEBAF00DB7B52 /* ActionHistoryItem.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C903B26E25C39BA800E53E5A /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
+		C903B27125C39FA000E53E5A /* ElectorListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectorListItem.swift; sourceTree = "<group>"; };
+		C903B27425C3A41C00E53E5A /* PropertyListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListItem.swift; sourceTree = "<group>"; };
+		C903B27725C3A7D000E53E5A /* StreetListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetListItem.swift; sourceTree = "<group>"; };
+		C903B27F25C4EEF600E53E5A /* DatabaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHandler.swift; sourceTree = "<group>"; };
+		C965C7CE25CA9870006324DF /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		C96B2F5C25B3B1500069FEB5 /* Canvasser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Canvasser.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C96B2F5F25B3B1500069FEB5 /* CanvasserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasserApp.swift; sourceTree = "<group>"; };
+		C96B2F6125B3B1500069FEB5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C96B2F6325B3B1510069FEB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C96B2F6625B3B1510069FEB5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C96B2F6825B3B1510069FEB5 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		C96B2F6B25B3B1510069FEB5 /* Canvasser.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Canvasser.xcdatamodel; sourceTree = "<group>"; };
+		C96B2F6D25B3B1510069FEB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C96B2F7525B3B1B50069FEB5 /* TitleBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleBar.swift; sourceTree = "<group>"; };
+		C9792E6E25CB6C6600C88937 /* Splits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splits.swift; sourceTree = "<group>"; };
+		C9792E7125CB6D2000C88937 /* MainScreen.Splits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.Splits.swift; sourceTree = "<group>"; };
+		C99C43FB25B3B3C8005AA38F /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
+		C9C73A1F25C891EA009DDD9E /* Databases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Databases.swift; sourceTree = "<group>"; };
+		C9C73A2225C96E74009DDD9E /* registerDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = registerDB.sqlite; sourceTree = "<group>"; };
+		C9F51B6925B4FA5500DB7B52 /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
+		C9F51B6C25B8E63F00DB7B52 /* MessageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageItem.swift; sourceTree = "<group>"; };
+		C9F51B6F25BCEBAF00DB7B52 /* ActionHistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionHistoryItem.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C96B2F5925B3B1500069FEB5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C903B27D25C4DFCA00E53E5A /* SQLDB in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C903B27A25C4DF7300E53E5A /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				C903B27F25C4EEF600E53E5A /* DatabaseHandler.swift */,
+				C9C73A1F25C891EA009DDD9E /* Databases.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		C96B2F5325B3B1500069FEB5 = {
+			isa = PBXGroup;
+			children = (
+				C96B2F5E25B3B1500069FEB5 /* Canvasser */,
+				C96B2F5D25B3B1500069FEB5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C96B2F5D25B3B1500069FEB5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C96B2F5C25B3B1500069FEB5 /* Canvasser.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C96B2F5E25B3B1500069FEB5 /* Canvasser */ = {
+			isa = PBXGroup;
+			children = (
+				C9C73A2225C96E74009DDD9E /* registerDB.sqlite */,
+				C903B27A25C4DF7300E53E5A /* Database */,
+				C96B2F7425B3B18F0069FEB5 /* Main Screen Components */,
+				C96B2F5F25B3B1500069FEB5 /* CanvasserApp.swift */,
+				C96B2F6125B3B1500069FEB5 /* ContentView.swift */,
+				C96B2F6325B3B1510069FEB5 /* Assets.xcassets */,
+				C96B2F6825B3B1510069FEB5 /* Persistence.swift */,
+				C96B2F6D25B3B1510069FEB5 /* Info.plist */,
+				C96B2F6A25B3B1510069FEB5 /* Canvasser.xcdatamodeld */,
+				C96B2F6525B3B1510069FEB5 /* Preview Content */,
+				C965C7CE25CA9870006324DF /* MainScreen.swift */,
+			);
+			path = Canvasser;
+			sourceTree = "<group>";
+		};
+		C96B2F6525B3B1510069FEB5 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C96B2F6625B3B1510069FEB5 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C96B2F7425B3B18F0069FEB5 /* Main Screen Components */ = {
+			isa = PBXGroup;
+			children = (
+				C96B2F7525B3B1B50069FEB5 /* TitleBar.swift */,
+				C9F51B6925B4FA5500DB7B52 /* NavBar.swift */,
+				C99C43FB25B3B3C8005AA38F /* ImageButton.swift */,
+				C9F51B6C25B8E63F00DB7B52 /* MessageItem.swift */,
+				C9F51B6F25BCEBAF00DB7B52 /* ActionHistoryItem.swift */,
+				C903B26E25C39BA800E53E5A /* ListItem.swift */,
+				C903B27125C39FA000E53E5A /* ElectorListItem.swift */,
+				C903B27425C3A41C00E53E5A /* PropertyListItem.swift */,
+				C903B27725C3A7D000E53E5A /* StreetListItem.swift */,
+				C9792E6E25CB6C6600C88937 /* Splits.swift */,
+				C9792E7125CB6D2000C88937 /* MainScreen.Splits.swift */,
+			);
+			path = "Main Screen Components";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C96B2F5B25B3B1500069FEB5 /* Canvasser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C96B2F7025B3B1510069FEB5 /* Build configuration list for PBXNativeTarget "Canvasser" */;
+			buildPhases = (
+				C96B2F5825B3B1500069FEB5 /* Sources */,
+				C96B2F5925B3B1500069FEB5 /* Frameworks */,
+				C96B2F5A25B3B1500069FEB5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Canvasser;
+			packageProductDependencies = (
+				C903B27C25C4DFCA00E53E5A /* SQLDB */,
+			);
+			productName = Canvasser;
+			productReference = C96B2F5C25B3B1500069FEB5 /* Canvasser.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C96B2F5425B3B1500069FEB5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					C96B2F5B25B3B1500069FEB5 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+				};
+			};
+			buildConfigurationList = C96B2F5725B3B1500069FEB5 /* Build configuration list for PBXProject "Canvasser" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C96B2F5325B3B1500069FEB5;
+			packageReferences = (
+				C903B27B25C4DFCA00E53E5A /* XCRemoteSwiftPackageReference "SQLDB" */,
+			);
+			productRefGroup = C96B2F5D25B3B1500069FEB5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C96B2F5B25B3B1500069FEB5 /* Canvasser */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C96B2F5A25B3B1500069FEB5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C96B2F6725B3B1510069FEB5 /* Preview Assets.xcassets in Resources */,
+				C9C73A2325C96E74009DDD9E /* registerDB.sqlite in Resources */,
+				C96B2F6425B3B1510069FEB5 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C96B2F5825B3B1500069FEB5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C965C7CF25CA9870006324DF /* MainScreen.swift in Sources */,
+				C903B26F25C39BA800E53E5A /* ListItem.swift in Sources */,
+				C903B28025C4EEF600E53E5A /* DatabaseHandler.swift in Sources */,
+				C9F51B6D25B8E63F00DB7B52 /* MessageItem.swift in Sources */,
+				C9C73A2025C891EA009DDD9E /* Databases.swift in Sources */,
+				C9F51B7025BCEBAF00DB7B52 /* ActionHistoryItem.swift in Sources */,
+				C903B27825C3A7D000E53E5A /* StreetListItem.swift in Sources */,
+				C9792E6F25CB6C6600C88937 /* Splits.swift in Sources */,
+				C96B2F6C25B3B1510069FEB5 /* Canvasser.xcdatamodeld in Sources */,
+				C99C43FC25B3B3C8005AA38F /* ImageButton.swift in Sources */,
+				C903B27525C3A41C00E53E5A /* PropertyListItem.swift in Sources */,
+				C903B27225C39FA000E53E5A /* ElectorListItem.swift in Sources */,
+				C96B2F6925B3B1510069FEB5 /* Persistence.swift in Sources */,
+				C96B2F7625B3B1B50069FEB5 /* TitleBar.swift in Sources */,
+				C9F51B6A25B4FA5500DB7B52 /* NavBar.swift in Sources */,
+				C96B2F6225B3B1500069FEB5 /* ContentView.swift in Sources */,
+				C9792E7225CB6D2000C88937 /* MainScreen.Splits.swift in Sources */,
+				C96B2F6025B3B1500069FEB5 /* CanvasserApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C96B2F6E25B3B1510069FEB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C96B2F6F25B3B1510069FEB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C96B2F7125B3B1510069FEB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Canvasser/Preview Content\"";
+				DEVELOPMENT_TEAM = JH3ZC8234Q;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Canvasser/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fogusbogus.Canvasser;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C96B2F7225B3B1510069FEB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Canvasser/Preview Content\"";
+				DEVELOPMENT_TEAM = JH3ZC8234Q;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Canvasser/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fogusbogus.Canvasser;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C96B2F5725B3B1500069FEB5 /* Build configuration list for PBXProject "Canvasser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C96B2F6E25B3B1510069FEB5 /* Debug */,
+				C96B2F6F25B3B1510069FEB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C96B2F7025B3B1510069FEB5 /* Build configuration list for PBXNativeTarget "Canvasser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C96B2F7125B3B1510069FEB5 /* Debug */,
+				C96B2F7225B3B1510069FEB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C903B27B25C4DFCA00E53E5A /* XCRemoteSwiftPackageReference "SQLDB" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fogusbogus/SQLDB.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C903B27C25C4DFCA00E53E5A /* SQLDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C903B27B25C4DFCA00E53E5A /* XCRemoteSwiftPackageReference "SQLDB" */;
+			productName = SQLDB;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		C96B2F6A25B3B1510069FEB5 /* Canvasser.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C96B2F6B25B3B1510069FEB5 /* Canvasser.xcdatamodel */,
+			);
+			currentVersion = C96B2F6B25B3B1510069FEB5 /* Canvasser.xcdatamodel */;
+			path = Canvasser.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C96B2F5425B3B1500069FEB5 /* Project object */;
+}

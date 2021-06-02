@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C91153442581002800A299CB /* ReportScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91153432581002800A299CB /* ReportScene.swift */; };
 		C926264A24D8BC310040986F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C926264924D8BC310040986F /* AppDelegate.swift */; };
 		C926264C24D8BC310040986F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C926264B24D8BC310040986F /* SceneDelegate.swift */; };
 		C926264E24D8BC310040986F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C926264D24D8BC310040986F /* ContentView.swift */; };
@@ -14,9 +15,36 @@
 		C926265324D8BC320040986F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C926265224D8BC320040986F /* Preview Assets.xcassets */; };
 		C926265624D8BC320040986F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C926265424D8BC320040986F /* LaunchScreen.storyboard */; };
 		C926265F24D8BE580040986F /* UsefulExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = C926265E24D8BE580040986F /* UsefulExtensions */; };
+		C951681425A64BAF00A8C308 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C951681225A64BAF00A8C308 /* Model.xcdatamodeld */; };
+		C9612F1325991AF800424E2F /* Angina.MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9612F1225991AF800424E2F /* Angina.MainScreen.swift */; };
+		C9793BD525AB80C500255EDF /* TODO.txt in Resources */ = {isa = PBXBuildFile; fileRef = C9793BD425AB80C500255EDF /* TODO.txt */; };
+		C983931C25AE7148000FDE14 /* AdditionalBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C983931B25AE7148000FDE14 /* AdditionalBase.swift */; };
+		C983E517259E07EE002F1729 /* PainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C983E516259E07EE002F1729 /* PainButton.swift */; };
+		C98C15082588B3D400679D31 /* PreferencesUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98C15072588B3D400679D31 /* PreferencesUI.swift */; };
+		C99F80012592796C00FF7135 /* DataEntry.Heading.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99F80002592796C00FF7135 /* DataEntry.Heading.swift */; };
+		C99F800425927AB200FF7135 /* DataEntry.ITR.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99F800325927AB200FF7135 /* DataEntry.ITR.swift */; };
+		C9A013F72589937300252E45 /* MainScreen.Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A013F62589937300252E45 /* MainScreen.Header.swift */; };
+		C9A013FA2589A2BF00252E45 /* MainScreen.Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A013F92589A2BF00252E45 /* MainScreen.Navigator.swift */; };
+		C9A013FD2589A48100252E45 /* StandardIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A013FC2589A48100252E45 /* StandardIcon.swift */; };
+		C9A01400258A465F00252E45 /* MainScreen.Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A013FF258A465F00252E45 /* MainScreen.Message.swift */; };
+		C9A01403258AE39E00252E45 /* MainScreen.Splits.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A01402258AE39E00252E45 /* MainScreen.Splits.swift */; };
+		C9A01406258C1D3F00252E45 /* Splits.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A01405258C1D3E00252E45 /* Splits.swift */; };
+		C9A01409258EDB3400252E45 /* MainScreen.History.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A01408258EDB3400252E45 /* MainScreen.History.swift */; };
+		C9A0140C2590D60E00252E45 /* MainScreen.DetailLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0140B2590D60E00252E45 /* MainScreen.DetailLine.swift */; };
+		C9BE46F025A3D719006316CD /* Angina.Additional.Meds.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BE46EF25A3D719006316CD /* Angina.Additional.Meds.swift */; };
+		C9BE46F325A3DAA5006316CD /* Angina.Additional.Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BE46F225A3DAA5006316CD /* Angina.Additional.Food.swift */; };
+		C9BE46F625A3DD86006316CD /* Angina.Additional.Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BE46F525A3DD85006316CD /* Angina.Additional.Mood.swift */; };
+		C9BE46F925A3E281006316CD /* Angina.Additional.Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BE46F825A3E281006316CD /* Angina.Additional.Notes.swift */; };
+		C9C5C8D825A1FEB800CE55FD /* ParentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C5C8D725A1FEB800CE55FD /* ParentView.swift */; };
+		C9C5C8DC25A20FC300CE55FD /* Angina.Additional.BP.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C5C8DB25A20FC300CE55FD /* Angina.Additional.BP.swift */; };
+		C9D02E3025875BDA0080E9A6 /* HistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D02E2F25875BDA0080E9A6 /* HistoryItem.swift */; };
+		C9D80337259E070800A2D93C /* PainPointModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D80336259E070800A2D93C /* PainPointModel.swift */; };
+		C9D8033A259E074D00A2D93C /* PainPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D80339259E074D00A2D93C /* PainPoint.swift */; };
+		C9F266AF25D9F3F90092B42F /* AddtionalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F266AE25D9F3F90092B42F /* AddtionalData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C91153432581002800A299CB /* ReportScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportScene.swift; sourceTree = "<group>"; };
 		C926264624D8BC310040986F /* AnginaSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnginaSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C926264924D8BC310040986F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C926264B24D8BC310040986F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -25,6 +53,32 @@
 		C926265224D8BC320040986F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C926265524D8BC320040986F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C926265724D8BC320040986F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C951681325A64BAF00A8C308 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		C9612F1225991AF800424E2F /* Angina.MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Angina.MainScreen.swift; sourceTree = "<group>"; };
+		C9793BD425AB80C500255EDF /* TODO.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = TODO.txt; sourceTree = "<group>"; };
+		C983931B25AE7148000FDE14 /* AdditionalBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalBase.swift; sourceTree = "<group>"; };
+		C983E516259E07EE002F1729 /* PainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PainButton.swift; sourceTree = "<group>"; };
+		C98C15072588B3D400679D31 /* PreferencesUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesUI.swift; sourceTree = "<group>"; };
+		C99F80002592796C00FF7135 /* DataEntry.Heading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEntry.Heading.swift; sourceTree = "<group>"; };
+		C99F800325927AB200FF7135 /* DataEntry.ITR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEntry.ITR.swift; sourceTree = "<group>"; };
+		C9A013F62589937300252E45 /* MainScreen.Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.Header.swift; sourceTree = "<group>"; };
+		C9A013F92589A2BF00252E45 /* MainScreen.Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.Navigator.swift; sourceTree = "<group>"; };
+		C9A013FC2589A48100252E45 /* StandardIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardIcon.swift; sourceTree = "<group>"; };
+		C9A013FF258A465F00252E45 /* MainScreen.Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.Message.swift; sourceTree = "<group>"; };
+		C9A01402258AE39E00252E45 /* MainScreen.Splits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.Splits.swift; sourceTree = "<group>"; };
+		C9A01405258C1D3E00252E45 /* Splits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splits.swift; sourceTree = "<group>"; };
+		C9A01408258EDB3400252E45 /* MainScreen.History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.History.swift; sourceTree = "<group>"; };
+		C9A0140B2590D60E00252E45 /* MainScreen.DetailLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.DetailLine.swift; sourceTree = "<group>"; };
+		C9BE46EF25A3D719006316CD /* Angina.Additional.Meds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Angina.Additional.Meds.swift; sourceTree = "<group>"; };
+		C9BE46F225A3DAA5006316CD /* Angina.Additional.Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Angina.Additional.Food.swift; sourceTree = "<group>"; };
+		C9BE46F525A3DD85006316CD /* Angina.Additional.Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Angina.Additional.Mood.swift; sourceTree = "<group>"; };
+		C9BE46F825A3E281006316CD /* Angina.Additional.Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Angina.Additional.Notes.swift; sourceTree = "<group>"; };
+		C9C5C8D725A1FEB800CE55FD /* ParentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentView.swift; sourceTree = "<group>"; };
+		C9C5C8DB25A20FC300CE55FD /* Angina.Additional.BP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Angina.Additional.BP.swift; sourceTree = "<group>"; };
+		C9D02E2F25875BDA0080E9A6 /* HistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItem.swift; sourceTree = "<group>"; };
+		C9D80336259E070800A2D93C /* PainPointModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PainPointModel.swift; sourceTree = "<group>"; };
+		C9D80339259E074D00A2D93C /* PainPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PainPoint.swift; sourceTree = "<group>"; };
+		C9F266AE25D9F3F90092B42F /* AddtionalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddtionalData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +96,7 @@
 		C926263D24D8BC310040986F = {
 			isa = PBXGroup;
 			children = (
+				C95189AE25A6700200A8C308 /* Model */,
 				C926264824D8BC310040986F /* AnginaSwiftUI */,
 				C926264724D8BC310040986F /* Products */,
 			);
@@ -58,6 +113,10 @@
 		C926264824D8BC310040986F /* AnginaSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				C9C5C8D625A1FEAB00CE55FD /* Testing */,
+				C9612F1125991AC600424E2F /* Angina Screens */,
+				C99F7FFF2592793000FF7135 /* DataEntry */,
+				C9A013F52589935000252E45 /* Main Screen */,
 				C926264924D8BC310040986F /* AppDelegate.swift */,
 				C926264B24D8BC310040986F /* SceneDelegate.swift */,
 				C926264D24D8BC310040986F /* ContentView.swift */,
@@ -65,6 +124,10 @@
 				C926265424D8BC320040986F /* LaunchScreen.storyboard */,
 				C926265724D8BC320040986F /* Info.plist */,
 				C926265124D8BC320040986F /* Preview Content */,
+				C9D02E2F25875BDA0080E9A6 /* HistoryItem.swift */,
+				C98C15072588B3D400679D31 /* PreferencesUI.swift */,
+				C9793BD425AB80C500255EDF /* TODO.txt */,
+				C9F266AE25D9F3F90092B42F /* AddtionalData.swift */,
 			);
 			path = AnginaSwiftUI;
 			sourceTree = "<group>";
@@ -75,6 +138,64 @@
 				C926265224D8BC320040986F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C95189AE25A6700200A8C308 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C951681225A64BAF00A8C308 /* Model.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C9612F1125991AC600424E2F /* Angina Screens */ = {
+			isa = PBXGroup;
+			children = (
+				C9612F1225991AF800424E2F /* Angina.MainScreen.swift */,
+				C9D80336259E070800A2D93C /* PainPointModel.swift */,
+				C9D80339259E074D00A2D93C /* PainPoint.swift */,
+				C983E516259E07EE002F1729 /* PainButton.swift */,
+				C9C5C8DB25A20FC300CE55FD /* Angina.Additional.BP.swift */,
+				C9BE46EF25A3D719006316CD /* Angina.Additional.Meds.swift */,
+				C9BE46F225A3DAA5006316CD /* Angina.Additional.Food.swift */,
+				C9BE46F525A3DD85006316CD /* Angina.Additional.Mood.swift */,
+				C9BE46F825A3E281006316CD /* Angina.Additional.Notes.swift */,
+				C91153432581002800A299CB /* ReportScene.swift */,
+				C983931B25AE7148000FDE14 /* AdditionalBase.swift */,
+			);
+			path = "Angina Screens";
+			sourceTree = "<group>";
+		};
+		C99F7FFF2592793000FF7135 /* DataEntry */ = {
+			isa = PBXGroup;
+			children = (
+				C99F80002592796C00FF7135 /* DataEntry.Heading.swift */,
+				C99F800325927AB200FF7135 /* DataEntry.ITR.swift */,
+			);
+			path = DataEntry;
+			sourceTree = "<group>";
+		};
+		C9A013F52589935000252E45 /* Main Screen */ = {
+			isa = PBXGroup;
+			children = (
+				C9A013F62589937300252E45 /* MainScreen.Header.swift */,
+				C9A013F92589A2BF00252E45 /* MainScreen.Navigator.swift */,
+				C9A013FC2589A48100252E45 /* StandardIcon.swift */,
+				C9A013FF258A465F00252E45 /* MainScreen.Message.swift */,
+				C9A01402258AE39E00252E45 /* MainScreen.Splits.swift */,
+				C9A01405258C1D3E00252E45 /* Splits.swift */,
+				C9A01408258EDB3400252E45 /* MainScreen.History.swift */,
+				C9A0140B2590D60E00252E45 /* MainScreen.DetailLine.swift */,
+			);
+			path = "Main Screen";
+			sourceTree = "<group>";
+		};
+		C9C5C8D625A1FEAB00CE55FD /* Testing */ = {
+			isa = PBXGroup;
+			children = (
+				C9C5C8D725A1FEB800CE55FD /* ParentView.swift */,
+			);
+			path = Testing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -107,7 +228,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1160;
-				LastUpgradeCheck = 1160;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Matt Hogg";
 				TargetAttributes = {
 					C926264524D8BC310040986F = {
@@ -122,6 +243,10 @@
 			knownRegions = (
 				en,
 				Base,
+				"en-US",
+				de,
+				"en-GB",
+				fr,
 			);
 			mainGroup = C926263D24D8BC310040986F;
 			packageReferences = (
@@ -141,6 +266,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9793BD525AB80C500255EDF /* TODO.txt in Resources */,
 				C926265624D8BC320040986F /* LaunchScreen.storyboard in Resources */,
 				C926265324D8BC320040986F /* Preview Assets.xcassets in Resources */,
 				C926265024D8BC320040986F /* Assets.xcassets in Resources */,
@@ -154,8 +280,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9D80337259E070800A2D93C /* PainPointModel.swift in Sources */,
+				C9A01409258EDB3400252E45 /* MainScreen.History.swift in Sources */,
+				C9BE46F325A3DAA5006316CD /* Angina.Additional.Food.swift in Sources */,
+				C9D8033A259E074D00A2D93C /* PainPoint.swift in Sources */,
+				C9BE46F625A3DD86006316CD /* Angina.Additional.Mood.swift in Sources */,
+				C9F266AF25D9F3F90092B42F /* AddtionalData.swift in Sources */,
+				C951681425A64BAF00A8C308 /* Model.xcdatamodeld in Sources */,
 				C926264A24D8BC310040986F /* AppDelegate.swift in Sources */,
+				C983931C25AE7148000FDE14 /* AdditionalBase.swift in Sources */,
+				C9C5C8D825A1FEB800CE55FD /* ParentView.swift in Sources */,
+				C9A0140C2590D60E00252E45 /* MainScreen.DetailLine.swift in Sources */,
+				C9BE46F025A3D719006316CD /* Angina.Additional.Meds.swift in Sources */,
+				C9A013F72589937300252E45 /* MainScreen.Header.swift in Sources */,
 				C926264C24D8BC310040986F /* SceneDelegate.swift in Sources */,
+				C983E517259E07EE002F1729 /* PainButton.swift in Sources */,
+				C9A013FA2589A2BF00252E45 /* MainScreen.Navigator.swift in Sources */,
+				C9A013FD2589A48100252E45 /* StandardIcon.swift in Sources */,
+				C9C5C8DC25A20FC300CE55FD /* Angina.Additional.BP.swift in Sources */,
+				C9612F1325991AF800424E2F /* Angina.MainScreen.swift in Sources */,
+				C99F800425927AB200FF7135 /* DataEntry.ITR.swift in Sources */,
+				C91153442581002800A299CB /* ReportScene.swift in Sources */,
+				C9BE46F925A3E281006316CD /* Angina.Additional.Notes.swift in Sources */,
+				C9D02E3025875BDA0080E9A6 /* HistoryItem.swift in Sources */,
+				C9A01400258A465F00252E45 /* MainScreen.Message.swift in Sources */,
+				C98C15082588B3D400679D31 /* PreferencesUI.swift in Sources */,
+				C9A01403258AE39E00252E45 /* MainScreen.Splits.swift in Sources */,
+				C99F80012592796C00FF7135 /* DataEntry.Heading.swift in Sources */,
+				C9A01406258C1D3F00252E45 /* Splits.swift in Sources */,
 				C926264E24D8BC310040986F /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,6 +352,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -224,7 +377,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -260,6 +413,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -278,7 +432,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -369,6 +523,19 @@
 			productName = UsefulExtensions;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		C951681225A64BAF00A8C308 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C951681325A64BAF00A8C308 /* Model.xcdatamodel */,
+			);
+			currentVersion = C951681325A64BAF00A8C308 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C926263E24D8BC310040986F /* Project object */;
 }
