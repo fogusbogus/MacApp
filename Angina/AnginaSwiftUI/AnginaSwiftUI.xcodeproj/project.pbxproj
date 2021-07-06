@@ -31,6 +31,7 @@
 		C9A01406258C1D3F00252E45 /* Splits.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A01405258C1D3E00252E45 /* Splits.swift */; };
 		C9A01409258EDB3400252E45 /* MainScreen.History.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A01408258EDB3400252E45 /* MainScreen.History.swift */; };
 		C9A0140C2590D60E00252E45 /* MainScreen.DetailLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0140B2590D60E00252E45 /* MainScreen.DetailLine.swift */; };
+		C9B197842670DBB9003504F0 /* ListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B197832670DBB9003504F0 /* ListTest.swift */; };
 		C9BE46F025A3D719006316CD /* Angina.Additional.Meds.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BE46EF25A3D719006316CD /* Angina.Additional.Meds.swift */; };
 		C9BE46F325A3DAA5006316CD /* Angina.Additional.Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BE46F225A3DAA5006316CD /* Angina.Additional.Food.swift */; };
 		C9BE46F625A3DD86006316CD /* Angina.Additional.Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BE46F525A3DD85006316CD /* Angina.Additional.Mood.swift */; };
@@ -69,6 +70,7 @@
 		C9A01405258C1D3E00252E45 /* Splits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splits.swift; sourceTree = "<group>"; };
 		C9A01408258EDB3400252E45 /* MainScreen.History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.History.swift; sourceTree = "<group>"; };
 		C9A0140B2590D60E00252E45 /* MainScreen.DetailLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.DetailLine.swift; sourceTree = "<group>"; };
+		C9B197832670DBB9003504F0 /* ListTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTest.swift; sourceTree = "<group>"; };
 		C9BE46EF25A3D719006316CD /* Angina.Additional.Meds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Angina.Additional.Meds.swift; sourceTree = "<group>"; };
 		C9BE46F225A3DAA5006316CD /* Angina.Additional.Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Angina.Additional.Food.swift; sourceTree = "<group>"; };
 		C9BE46F525A3DD85006316CD /* Angina.Additional.Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Angina.Additional.Mood.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				C98C15072588B3D400679D31 /* PreferencesUI.swift */,
 				C9793BD425AB80C500255EDF /* TODO.txt */,
 				C9F266AE25D9F3F90092B42F /* AddtionalData.swift */,
+				C9B197832670DBB9003504F0 /* ListTest.swift */,
 			);
 			path = AnginaSwiftUI;
 			sourceTree = "<group>";
@@ -228,7 +231,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1160;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = "Matt Hogg";
 				TargetAttributes = {
 					C926264524D8BC310040986F = {
@@ -295,6 +298,7 @@
 				C9A013F72589937300252E45 /* MainScreen.Header.swift in Sources */,
 				C926264C24D8BC310040986F /* SceneDelegate.swift in Sources */,
 				C983E517259E07EE002F1729 /* PainButton.swift in Sources */,
+				C9B197842670DBB9003504F0 /* ListTest.swift in Sources */,
 				C9A013FA2589A2BF00252E45 /* MainScreen.Navigator.swift in Sources */,
 				C9A013FD2589A48100252E45 /* StandardIcon.swift in Sources */,
 				C9C5C8DC25A20FC300CE55FD /* Angina.Additional.BP.swift in Sources */,
@@ -330,6 +334,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -391,6 +396,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
