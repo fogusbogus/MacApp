@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C91EFEDC26E6ACEB0078B42F /* SQLDB in Frameworks */ = {isa = PBXBuildFile; productRef = C91EFEDB26E6ACEB0078B42F /* SQLDB */; };
 		C9911EF826E2B0D2005562B2 /* UsefulExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = C9911EF726E2B0D2005562B2 /* UsefulExtensions */; };
+		C99D365526EE2B6E005C2F9F /* SQLDB in Frameworks */ = {isa = PBXBuildFile; productRef = C99D365426EE2B6E005C2F9F /* SQLDB */; };
 		C9C7579C26E181A50074652F /* NewRegisterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C7579B26E181A50074652F /* NewRegisterApp.swift */; };
 		C9C7579E26E181A50074652F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C7579D26E181A50074652F /* ContentView.swift */; };
 		C9C757A026E181A80074652F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9C7579F26E181A80074652F /* Assets.xcassets */; };
@@ -36,18 +36,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9911EF826E2B0D2005562B2 /* UsefulExtensions in Frameworks */,
-				C91EFEDC26E6ACEB0078B42F /* SQLDB in Frameworks */,
+				C99D365526EE2B6E005C2F9F /* SQLDB in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C99D365326EE2B6E005C2F9F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C9C7578F26E181A50074652F = {
 			isa = PBXGroup;
 			children = (
 				C9C7579A26E181A50074652F /* NewRegister */,
 				C9C7579926E181A50074652F /* Products */,
+				C99D365326EE2B6E005C2F9F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,7 +109,7 @@
 			name = NewRegister;
 			packageProductDependencies = (
 				C9911EF726E2B0D2005562B2 /* UsefulExtensions */,
-				C91EFEDB26E6ACEB0078B42F /* SQLDB */,
+				C99D365426EE2B6E005C2F9F /* SQLDB */,
 			);
 			productName = NewRegister;
 			productReference = C9C7579826E181A50074652F /* NewRegister.app */;
@@ -394,15 +402,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C91EFEDB26E6ACEB0078B42F /* SQLDB */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C91EFEDA26E6ACEB0078B42F /* XCRemoteSwiftPackageReference "SQLDB" */;
-			productName = SQLDB;
-		};
 		C9911EF726E2B0D2005562B2 /* UsefulExtensions */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C9911EF626E2B0D2005562B2 /* XCRemoteSwiftPackageReference "UsefulExtensions" */;
 			productName = UsefulExtensions;
+		};
+		C99D365426EE2B6E005C2F9F /* SQLDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C91EFEDA26E6ACEB0078B42F /* XCRemoteSwiftPackageReference "SQLDB" */;
+			productName = SQLDB;
 		};
 /* End XCSwiftPackageProductDependency section */
 
