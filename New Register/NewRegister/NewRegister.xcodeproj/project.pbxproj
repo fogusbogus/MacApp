@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C9911EF826E2B0D2005562B2 /* UsefulExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = C9911EF726E2B0D2005562B2 /* UsefulExtensions */; };
-		C99D365526EE2B6E005C2F9F /* SQLDB in Frameworks */ = {isa = PBXBuildFile; productRef = C99D365426EE2B6E005C2F9F /* SQLDB */; };
+		C9B342C326EE2C94002CB71D /* SQLDB in Frameworks */ = {isa = PBXBuildFile; productRef = C9B342C226EE2C94002CB71D /* SQLDB */; };
 		C9C7579C26E181A50074652F /* NewRegisterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C7579B26E181A50074652F /* NewRegisterApp.swift */; };
 		C9C7579E26E181A50074652F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C7579D26E181A50074652F /* ContentView.swift */; };
 		C9C757A026E181A80074652F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9C7579F26E181A80074652F /* Assets.xcassets */; };
@@ -35,8 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9911EF826E2B0D2005562B2 /* UsefulExtensions in Frameworks */,
-				C99D365526EE2B6E005C2F9F /* SQLDB in Frameworks */,
+				C9B342C326EE2C94002CB71D /* SQLDB in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,8 +106,7 @@
 			);
 			name = NewRegister;
 			packageProductDependencies = (
-				C9911EF726E2B0D2005562B2 /* UsefulExtensions */,
-				C99D365426EE2B6E005C2F9F /* SQLDB */,
+				C9B342C226EE2C94002CB71D /* SQLDB */,
 			);
 			productName = NewRegister;
 			productReference = C9C7579826E181A50074652F /* NewRegister.app */;
@@ -402,12 +399,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C9911EF726E2B0D2005562B2 /* UsefulExtensions */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9911EF626E2B0D2005562B2 /* XCRemoteSwiftPackageReference "UsefulExtensions" */;
-			productName = UsefulExtensions;
-		};
-		C99D365426EE2B6E005C2F9F /* SQLDB */ = {
+		C9B342C226EE2C94002CB71D /* SQLDB */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C91EFEDA26E6ACEB0078B42F /* XCRemoteSwiftPackageReference "SQLDB" */;
 			productName = SQLDB;
