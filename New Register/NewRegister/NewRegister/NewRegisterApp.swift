@@ -32,7 +32,7 @@ class setupTemp {
 	func setupStreets() {
 		let db = SQLDBInstance()
 		if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-			let path: URL = dir.appendingPathComponent("Register3")
+			let path: URL = dir.appendingPathComponent("Register3.sqlite")
 			db.open(path: path, openCurrent: false)
 			db.execute("CREATE TABLE Ward (ID INT PRIMARY KEY, Name TEXT, LatLon TEXT)")
 			db.execute("CREATE TABLE Street (ID INT PRIMARY KEY, Name TEXT, WID INT, LatLon TEXT)")
