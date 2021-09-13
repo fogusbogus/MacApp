@@ -58,6 +58,7 @@ class setupTemp {
 					//stRow.set("id", streetId)
 					stRow.set("name", tup2.1)
 					stRow.set("wid", areaId)
+					//SELECT last_insert_rowid()
 					_ = db.updateTableFromSQLRow(row: stRow, sourceTable: "Street", idColumn: "id")
 					//db.execute("INSERT INTO Street (ID, Name, WID, LatLon) VALUES (?,?,?,?)", parms: streetId, tup2.1, areaId, "")
 					streetId += 1
