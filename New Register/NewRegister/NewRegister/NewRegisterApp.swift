@@ -34,13 +34,21 @@ class setupTemp {
 		if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
 			let path: URL = dir.appendingPathComponent("Register3.sqlite")
 			db.open(path: path, openCurrent: false)
-			db.execute("CREATE TABLE Ward (ID INT PRIMARY KEY, Name TEXT, LatLon TEXT)")
-			db.execute("CREATE TABLE Street (ID INT PRIMARY KEY, Name TEXT, WID INT, LatLon TEXT)")
-			
+			db.execute("CREATE TABLE District (ID INT PRIMARY KEY, Name TEXT)")
+			db.execute("CREATE TABLE Ward (ID INT PRIMARY KEY, Name TEXT, LatLon TEXT, DID INT)")
+			db.execute("CREATE TABLE Street (ID INT PRIMARY KEY, Name TEXT, WID INT, DID INT, LatLon TEXT)")
+			db.execute("CREATE TABLE Property (ID INT PRIMARY KEY, Name TEXT, SID INT, WID INT, DID INT, LatLon TEXT)")
+			db.execute("CREATE TABLE Elector (ID INT PRIMARY KEY, Name TEXT, PID INT, SID INT, WID INT, DID INT)")
+
 			let baseUrl = "https://geographic.org/streetview/uk/Stroud_District/index.html"
 			
 			let relUrl = "https://geographic.org/streetview/uk/Stroud_District/"
 
+			let district = db.newRow(tableName: "DISTRICT")
+			district.set("Name", "Stroud")
+			_ = db.updateTableFromSQLRow(row: district, sourceTable: "DISTRICT", idColumn: "ID")
+			let did = district.get("ID", -1)
+			
 			let areas = getWebpage(url: baseUrl)
 			var areaId = 1, streetId = 1
 			areas.forEach { tup in
@@ -49,6 +57,7 @@ class setupTemp {
 				let wardRow = db.newRow(tableName: "Ward")
 				//wardRow.set("id", areaId)
 				wardRow.set("name", title)
+				wardRow.set("did", did)
 				_ = db.updateTableFromSQLRow(row: wardRow, sourceTable: "Ward", idColumn: "id")
 				areaId = wardRow.get("id", areaId)
 
@@ -58,6 +67,7 @@ class setupTemp {
 					//stRow.set("id", streetId)
 					stRow.set("name", tup2.1)
 					stRow.set("wid", areaId)
+					stRow.set("did", did)
 					//SELECT last_insert_rowid()
 					_ = db.updateTableFromSQLRow(row: stRow, sourceTable: "Street", idColumn: "id")
 					//db.execute("INSERT INTO Street (ID, Name, WID, LatLon) VALUES (?,?,?,?)", parms: streetId, tup2.1, areaId, "")
