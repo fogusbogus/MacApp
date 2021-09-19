@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		C9B342C326EE2C94002CB71D /* SQLDB in Frameworks */ = {isa = PBXBuildFile; productRef = C9B342C226EE2C94002CB71D /* SQLDB */; };
+		C9B4139B26F697270058582A /* GirlsNames.Raw.json in Resources */ = {isa = PBXBuildFile; fileRef = C9B4139A26F697270058582A /* GirlsNames.Raw.json */; };
+		C9B4139F26F77DDF0058582A /* female.json in Resources */ = {isa = PBXBuildFile; fileRef = C9B4139C26F699B50058582A /* female.json */; };
+		C9B413A026F77DE20058582A /* males.json in Resources */ = {isa = PBXBuildFile; fileRef = C9B4139D26F74FC50058582A /* males.json */; };
+		C9B413A126F77DE50058582A /* surnames.json in Resources */ = {isa = PBXBuildFile; fileRef = C9B4139E26F752860058582A /* surnames.json */; };
+		C9B413A326F783430058582A /* UsefulExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = C9B413A226F783430058582A /* UsefulExtensions */; };
 		C9C7579C26E181A50074652F /* NewRegisterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C7579B26E181A50074652F /* NewRegisterApp.swift */; };
 		C9C7579E26E181A50074652F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C7579D26E181A50074652F /* ContentView.swift */; };
 		C9C757A026E181A80074652F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9C7579F26E181A80074652F /* Assets.xcassets */; };
@@ -18,6 +23,10 @@
 
 /* Begin PBXFileReference section */
 		C9911EF226E2AA29005562B2 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MyPlayground.playground; path = ../../MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		C9B4139A26F697270058582A /* GirlsNames.Raw.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = GirlsNames.Raw.json; sourceTree = "<group>"; };
+		C9B4139C26F699B50058582A /* female.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = female.json; sourceTree = "<group>"; };
+		C9B4139D26F74FC50058582A /* males.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = males.json; sourceTree = "<group>"; };
+		C9B4139E26F752860058582A /* surnames.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = surnames.json; sourceTree = "<group>"; };
 		C9C7579826E181A50074652F /* NewRegister.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewRegister.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9C7579B26E181A50074652F /* NewRegisterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRegisterApp.swift; sourceTree = "<group>"; };
 		C9C7579D26E181A50074652F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9B413A326F783430058582A /* UsefulExtensions in Frameworks */,
 				C9B342C326EE2C94002CB71D /* SQLDB in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,6 +87,10 @@
 				C9C757AA26E181A80074652F /* NewRegister.entitlements */,
 				C9C757A626E181A80074652F /* NewRegister.xcdatamodeld */,
 				C9C757A126E181A80074652F /* Preview Content */,
+				C9B4139A26F697270058582A /* GirlsNames.Raw.json */,
+				C9B4139C26F699B50058582A /* female.json */,
+				C9B4139D26F74FC50058582A /* males.json */,
+				C9B4139E26F752860058582A /* surnames.json */,
 			);
 			path = NewRegister;
 			sourceTree = "<group>";
@@ -107,6 +121,7 @@
 			name = NewRegister;
 			packageProductDependencies = (
 				C9B342C226EE2C94002CB71D /* SQLDB */,
+				C9B413A226F783430058582A /* UsefulExtensions */,
 			);
 			productName = NewRegister;
 			productReference = C9C7579826E181A50074652F /* NewRegister.app */;
@@ -156,7 +171,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9C757A326E181A80074652F /* Preview Assets.xcassets in Resources */,
+				C9B413A126F77DE50058582A /* surnames.json in Resources */,
+				C9B413A026F77DE20058582A /* males.json in Resources */,
+				C9B4139F26F77DDF0058582A /* female.json in Resources */,
 				C9C757A026E181A80074652F /* Assets.xcassets in Resources */,
+				C9B4139B26F697270058582A /* GirlsNames.Raw.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +422,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C91EFEDA26E6ACEB0078B42F /* XCRemoteSwiftPackageReference "SQLDB" */;
 			productName = SQLDB;
+		};
+		C9B413A226F783430058582A /* UsefulExtensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9911EF626E2B0D2005562B2 /* XCRemoteSwiftPackageReference "UsefulExtensions" */;
+			productName = UsefulExtensions;
 		};
 /* End XCSwiftPackageProductDependency section */
 
