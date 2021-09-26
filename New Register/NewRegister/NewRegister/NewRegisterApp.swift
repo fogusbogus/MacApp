@@ -153,6 +153,9 @@ class setupTemp {
 	}
 	
 	func setupStreets() {
+		
+		/*
+		
 		let db = SQLDBInstance()
 		if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
 			let path: URL = dir.appendingPathComponent("Register4.sqlite")
@@ -226,6 +229,7 @@ class setupTemp {
 			}
 			db.close()
 		}
+*/
 	}
 	
 	func getWebpage(url: String) -> [(String, String)] {
