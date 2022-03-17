@@ -14,6 +14,7 @@
 		C9A55D8227B17D01007271B3 /* Letter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A55D8127B17D01007271B3 /* Letter.swift */; };
 		C9A55D8427B17F28007271B3 /* WordleFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A55D8327B17F28007271B3 /* WordleFunc.swift */; };
 		C9A55D8627B18020007271B3 /* Guess.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A55D8527B18020007271B3 /* Guess.swift */; };
+		C9CA39B927DD267400608A72 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CA39B827DD267400608A72 /* Keyboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		C9A55D8127B17D01007271B3 /* Letter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Letter.swift; sourceTree = "<group>"; };
 		C9A55D8327B17F28007271B3 /* WordleFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordleFunc.swift; sourceTree = "<group>"; };
 		C9A55D8527B18020007271B3 /* Guess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guess.swift; sourceTree = "<group>"; };
+		C9CA39B827DD267400608A72 /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				C9A55D8127B17D01007271B3 /* Letter.swift */,
 				C9A55D8327B17F28007271B3 /* WordleFunc.swift */,
 				C9A55D8527B18020007271B3 /* Guess.swift */,
+				C9CA39B827DD267400608A72 /* Keyboard.swift */,
 			);
 			path = Wordle;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 				C9A55D8227B17D01007271B3 /* Letter.swift in Sources */,
 				C9A55D7627B17CF4007271B3 /* ContentView.swift in Sources */,
 				C9A55D7427B17CF4007271B3 /* WordleApp.swift in Sources */,
+				C9CA39B927DD267400608A72 /* Keyboard.swift in Sources */,
 				C9A55D8627B18020007271B3 /* Guess.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
