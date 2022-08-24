@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:TestPicker/TestPicker.xcodeproj">
+   </FileRef>
+   <Group
+      location = "group:CompileScans"
+      name = "CompileScans">
+      <Group
+         location = "group:scanned"
+         name = "scanned">
+         <Group
+            location = "group:scanned"
+            name = "scanned">
+            <FileRef
+               location = "group:scanned.entitlements">
+            </FileRef>
+            <FileRef
+               location = "group:ImageAnnotation.swift">
+            </FileRef>
+            <FileRef
+               location = "group:main.swift">
+            </FileRef>
+            <FileRef
+               location = "group:info.plist">
+            </FileRef>
+         </Group>
+         <FileRef
+            location = "group:scanned.xcodeproj">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:CompileScans.xcodeproj">
+      </FileRef>
+   </Group>
+</Workspace>

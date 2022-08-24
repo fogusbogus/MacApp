@@ -1,0 +1,32 @@
+{
+  "pins" : [
+    {
+      "identity" : "logginglib",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/fogusbogus/LoggingLib",
+      "state" : {
+        "revision" : "2ade3054f6266ec1b263f49c4839f9cedd03cd31",
+        "version" : "1.0.9"
+      }
+    },
+    {
+      "identity" : "sqldb",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/fogusbogus/SQLDB",
+      "state" : {
+        "branch" : "master",
+        "revision" : "cf5bd85035a99d9e8e897997d59134052232ea3f"
+      }
+    },
+    {
+      "identity" : "usefulextensions",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/fogusbogus/UsefulExtensions",
+      "state" : {
+        "branch" : "master",
+        "revision" : "a480766a3806068d96325f9312d3741f0943d412"
+      }
+    }
+  ],
+  "version" : 2
+}
