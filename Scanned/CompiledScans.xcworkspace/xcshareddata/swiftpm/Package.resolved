@@ -2,11 +2,11 @@
   "pins" : [
     {
       "identity" : "logginglib",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/fogusbogus/LoggingLib",
+      "kind" : "localSourceControl",
+      "location" : "/Users/matt/XCode/Libraries/LoggingLib/LoggingLib",
       "state" : {
-        "revision" : "2ade3054f6266ec1b263f49c4839f9cedd03cd31",
-        "version" : "1.0.9"
+        "branch" : "master",
+        "revision" : "a85848a18e3e0ca20e733255309ba01ba458dda0"
       }
     },
     {
