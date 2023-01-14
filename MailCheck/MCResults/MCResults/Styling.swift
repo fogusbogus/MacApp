@@ -24,23 +24,7 @@ extension Button {
 	}
 }
 
-extension View {
-	func measured(_ saveValue: @escaping (CGSize) -> Void) -> some View {
-		return self
-			.overlay {
-				GeometryReader { geo in
-					Color.clear
-						.onAppear() {
-							saveValue(geo.size)
-						}
-						.onChange(of: geo.size) { _ in
-							saveValue(geo.size)
-						}
-				}
-			}
-	}
-	
-}
+
 
 struct StandardGroupBoxStyle: GroupBoxStyle {
 	var background: some View {
@@ -92,17 +76,71 @@ struct GBS : GroupBoxStyle {
 }
 
 struct Styling : View {
+	
+	@ObservedObject var vw = MeasuringView()
+
 	var body: some View {
-//		Group {
-//			Text("Test")
-//		}
-//		.overlay {
-//			RoundedRectangle(cornerRadius: 25)
-//				.strokeBorder()
-//				.background(.orange)
-//				.cornerRadius(25)
-//		}
-		EmptyView()
+		VStack(alignment: .leading) {
+			HStack {
+				Text("First")
+					.decidesWidthOf(vw, key: "COL1", alignment: .leading)
+					.decidesHeightOf(vw, key: "ROW1")
+				Divider()
+					.followsHeightOf(vw, key: "ROW1")
+					.frame(width: 1)
+				Text("First part Two")
+					.decidesWidthOf(vw, key: "COL2", alignment: .leading)
+					.decidesHeightOf(vw, key: "ROW1")
+				Divider()
+					.followsHeightOf(vw, key: "ROW1")
+					.frame(width: 1)
+				Text("First part Three")
+					.decidesWidthOf(vw, key: "COL3", alignment: .leading)
+					.decidesHeightOf(vw, key: "ROW1")
+			}
+			.decidesWidthOf(vw, key: "WIDTH")
+			Divider()
+				.followsWidthOf(vw, key: "WIDTH")
+			HStack {
+				Text("Second")
+					.decidesWidthOf(vw, key: "COL1", alignment: .leading)
+					.decidesHeightOf(vw, key: "ROW2")
+				Divider()
+					.followsHeightOf(vw, key: "ROW2")
+					.frame(width: 1)
+				Text("Second part Two")
+					.decidesWidthOf(vw, key: "COL2", alignment: .leading)
+					.decidesHeightOf(vw, key: "ROW2")
+				Divider()
+					.followsHeightOf(vw, key: "ROW2")
+					.frame(width: 1)
+				Text("Second part Three")
+					.decidesWidthOf(vw, key: "COL3", alignment: .leading)
+					.decidesHeightOf(vw, key: "ROW2")
+			}
+			.decidesWidthOf(vw, key: "WIDTH")
+			Divider()
+				.followsWidthOf(vw, key: "WIDTH")
+			HStack {
+				Text("Second")
+					.decidesWidthOf(vw, key: "COL1", alignment: .leading)
+					.decidesHeightOf(vw, key: "ROW2")
+				Divider()
+					.followsHeightOf(vw, key: "ROW2")
+					.frame(width: 1)
+				Text("Second part Two")
+					.decidesWidthOf(vw, key: "COL2", alignment: .leading)
+					.decidesHeightOf(vw, key: "ROW2")
+				Divider()
+					.followsHeightOf(vw, key: "ROW2")
+					.frame(width: 1)
+				Text("Second part Three")
+					.decidesWidthOf(vw, key: "COL3", alignment: .leading)
+					.decidesHeightOf(vw, key: "ROW2")
+			}
+			.decidesWidthOf(vw, key: "WIDTH")
+		}
+		
 	}
 }
 

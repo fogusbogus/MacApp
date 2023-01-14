@@ -34,11 +34,12 @@ struct SPF_Results: View {
 								Text("Record")
 									.padding([.top, .bottom], 4)
 									.padding([.leading, .trailing])
-									.foregroundColor(.white)
+									.foregroundColor(Color(uiColor: UIColor.systemBackground))
 									.background(.primary)
 									.font(.caption)
 								HStack(alignment: .center) {
-									Text("v=DMARC1; p=quarantine; sp=quarantine; rua=mailto:mailauth-reports@google.com")
+									Text(verbatim: "v=DMARC1; p=quarantine; sp=quarantine; rua=mailto:mailauth-reports@google.com")
+										
 										.font(.caption)
 										.padding([.top, .bottom], 4)
 									Spacer()
@@ -62,6 +63,8 @@ struct SPF_Results: View {
 
 struct SPF_Results_Previews: PreviewProvider {
     static var previews: some View {
-        SPF_Results()
+		ScrollView {
+			SPF_Results()
+		}
     }
 }

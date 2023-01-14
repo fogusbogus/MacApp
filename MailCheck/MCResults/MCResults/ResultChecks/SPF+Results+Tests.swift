@@ -32,21 +32,23 @@ struct SPF_Results_Tests: View {
 					.font(.title3)
 					.bold()
 				
-				Table(getResults()) {
-					TableColumn("Test") { rec in
-						Text(rec.name)
+				ResultsView(results: results, headers: ["Test", "Result"]) { rec, header, measures in
+					switch header {
+						case "Test":
+							return AnyView(
+								Text(rec.name)
+									.followsWidthOf(measures, key: "WIDTH", alignment: .leading, multiplier: 0.8)
+							)
+							
+						default:
+							return AnyView(
+								HStack(alignment: .center, spacing: 8) {
+									rec.result.image
+									Text(rec.result.passText)
+								}
+							)
 					}
-					TableColumn("Result") { rec in
-						HStack(alignment: .center, spacing: 8) {
-							rec.result.image
-							Text(rec.result.passText)
-						}
-					}
-					.width(tableSize.width * 0.13)
 				}
-				.measured({ newSize in
-					tableSize = newSize
-				})
 				
 				
 				Group {

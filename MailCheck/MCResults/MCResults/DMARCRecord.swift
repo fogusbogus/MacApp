@@ -27,43 +27,53 @@ struct DMARCRecord: View {
 	var result: String = "v=DMARC1;p=reject;adkim=s;aspf=s;rua=mailto:dmarc-rua@dmarc.service.gov.uk;"
 	
 	@State var tableSize : CGSize = CGSize()
+	
+	var body: some View {
 		
-    var body: some View {
-		Table(DMARCResult.fromResultString(result)) {
-			TableColumn("Tag") { rec in
-				Text(rec.tag)
-			}
-			.width(tableSize.width * 0.15)
-			TableColumn("Value") { rec in
-				Text(rec.value)
-					.lineLimit(20)
-			}
-			.width(tableSize.width * 0.3)
-			TableColumn("Valid") { rec in
-				if let valid = rec.valid {
-					if valid {
-						ResultValue.good.image
+		ResultsView(results: DMARCResult.fromResultString(result), headers: ["Tag", "Value", "Valid", "Explanation"]) { rec, header, measures in
+			switch header {
+				case "Tag":
+					return AnyView(
+						Text(rec.tag)
+						//.frame(width:width * 0.15, alignment: .leading)
+					)
+				case "Value":
+					return AnyView(
+						Text(rec.value)
+							.lineLimit(20)
+						//.frame(width: width * 0.3, alignment: .leading)
+					)
+				case "Valid":
+					if let valid = rec.valid {
+						if valid {
+							return AnyView(
+								ResultValue.good.image							)//.frame(width:width * 0.06
+																				 //) as! AnyView
+							
+						}
+						else {
+							return AnyView(
+								ResultValue.bad.image
+							)//.frame(width:width * 0.06)
+							 //as! AnyView
+							
+						}
 					}
 					else {
-						ResultValue.bad.image
+						return AnyView(
+							ResultValue.unknown.image
+						)//.frame(width:width * 0.06) as! AnyView
 					}
-				}
-				else {
-					ResultValue.unknown.image
-				}
+				default:
+					return AnyView(Text(rec.explanation.substitute(rec.error))
+						.lineLimit(20).frame(alignment: .topLeading))
+					
 			}
-			.width(tableSize.width * 0.06)
-			//.width(width * 0.10)
-			TableColumn("Explanation") { rec in
-				Text(rec.explanation.substitute(rec.error))
-					.lineLimit(20)
-			}
-			
+
 		}
-		.measured { newSize in
-			tableSize = newSize
-		}
-    }
+
+		
+	}
 }
 
 extension String {
@@ -78,10 +88,8 @@ extension String {
 }
 
 struct DMARCRecord_Previews: PreviewProvider {
-    static var previews: some View {
-		GeometryReader { geo in
-			DMARCRecord(tableSize: geo.size)
-				.padding()
-		}
-    }
+	static var previews: some View {
+		DMARCRecord()
+			.padding()
+	}
 }
