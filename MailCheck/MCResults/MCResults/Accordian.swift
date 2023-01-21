@@ -22,6 +22,25 @@ struct BulletPoint<Content: View> : View {
 	}
 }
 
+struct NumberedPoint<Content: View> : View {
+	init(_ number: Int, @ViewBuilder _ content: @escaping () -> Content) {
+		self.number = number
+		self.content = content
+	}
+	
+	var number: Int
+	
+	var content: () -> Content
+	
+	var body: some View {
+		HStack(alignment: .top, spacing: 16) {
+			Text("\(number)")
+				.styling(.numberedPoint)
+			Group(content: content)
+		}
+	}
+}
+
 struct Accordian<Content: View>: View {
 	
 	init(title: String, isExpanded: Bool = false, @ViewBuilder _ content: @escaping () -> Content) {
@@ -37,8 +56,7 @@ struct Accordian<Content: View>: View {
 		VStack(alignment: .leading) {
 			HStack(alignment: .center) {
 				Text(title)
-					.font(.title3)
-					.bold()
+					.styling(.accordianHeading)
 				Spacer()
 				Button {
 					isExpanded = !isExpanded
@@ -68,31 +86,36 @@ struct Accordian_Previews: PreviewProvider {
 		Accordian(title: "DMARC (anti-spoofing) explained", isExpanded: true) {
 			VStack(alignment: .leading, spacing: 16) {
 				Text("What is anti-spoofing?")
-					.font(.title2)
+					.styling(.descriptionHeading)
 				Text("Anti-spoofing is about making it difficult for fake emails to be sent from your organisation's email address. DMARC is the key anti-spoofing control that organisations should implement. It is implemented alongside the standards SPF and DKIM.")
+					.styling(.description)
 				Text("How does it work?")
-				.font(.title2)
+					.styling(.descriptionHeading)
 				Text("Effective anti-spoofing controls on your domains involve implementing the following:")
+					.styling(.description)
 				Group {
 					BulletPoint {
 						Text("Sender Policy Framework (SPF)")
 							.bold() +
 						Text(" allows you to publish IP addresses which should be trusted for your domain.")
 					}
+					.styling(.description)
 					BulletPoint {
 						Text("Domain Keys Identified Mail (DKIM)")
 							.bold() +
 						Text(" allows you to cryptographically sign email you send to show it's from your domain.")
 					}
+					.styling(.description)
 					BulletPoint {
 						Text("Domain-based Message Authentication, Reporting and Conformance (DMARC)")
 							.bold() +
 						Text(" allows you to set a policy for how receiving email servers should handle email which doesn't pass either SPF or DKIM checks. This includes untrusted emails, which should be discarded. DMARC also generates reports, which you can use to understand how your email is being handled.")
 					}
+					.styling(.description)
 				}
 				.padding([.leading])
 				Text("Where can I find out more?")
-					.font(.title2)
+					.styling(.descriptionHeading)
 				HStack(spacing: 0) {
 					Text("Read the ")
 
@@ -100,6 +123,7 @@ struct Accordian_Previews: PreviewProvider {
 						
 					}
 				}
+				.styling(.description)
 			}
 		}
 		.padding()

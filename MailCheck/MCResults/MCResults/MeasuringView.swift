@@ -38,39 +38,80 @@ final class MeasuringView : ObservableObject {
 		}
 	}
 	
-	func setSize(index: String, size: CGSize) {
+	private func setSizeWH(index: String, size: CGSize, measuring: MeasurementType = .max) -> Bool {
+		let index = measuring.key(index)
 		var sz = self[index]
+		
 		var mustUpdate = false
-		if sz.width < size.width {
-			sz.width = size.width
-			print("\(index) width > \(size.width)")
-			mustUpdate = true
+		if measuring == .max {
+			if sz.width < size.width {
+				sz.width = size.width
+				print("\(index) width > \(size.width)")
+				mustUpdate = true
+			}
+			if sz.height < size.height {
+				sz.height = size.height
+				print("\(index) height > \(size.height)")
+				mustUpdate = true
+			}
 		}
-		if sz.height < size.height {
-			sz.height = size.height
-			print("\(index) height > \(size.height)")
-			mustUpdate = true
+		else {
+			if sz.width > size.width {
+				sz.width = size.width
+				print("\(index) width < \(size.width)")
+				mustUpdate = true
+			}
+			if sz.height > size.height {
+				sz.height = size.height
+				print("\(index) height < \(size.height)")
+				mustUpdate = true
+			}
 		}
 		self[index] = sz
+		return mustUpdate
+	}
+	
+	func setSize(index: String, size: CGSize) {
+		let mustUpdate = setSizeWH(index: index, size: size, measuring: .max) || setSizeWH(index: index, size: size, measuring: .min)
 		if mustUpdate {
 			update = !update
+		}
+	}
+	
+	enum MeasurementType {
+		case max, min
+		
+		func key(_ key: String) -> String {
+			return key + (self == .max ? ".max" : ".min")
 		}
 	}
 }
 
 extension View {
 	
-	func decidesHeightOf(_ heightClass: MeasuringView, key: String, alignment: Alignment = .center) -> some View {
-		return self.frame(minHeight: heightClass[key].height, alignment:alignment).measure(setValue: heightClass.setSize, index: key)
+	func decidesHeightOf(_ heightClass: MeasuringView, key: String, alignment: Alignment = .center, measuring: MeasuringView.MeasurementType = .max) -> some View {
+		switch measuring {
+			case .max:
+				return self.frame(minHeight: heightClass[measuring.key(key)].height, alignment:alignment).measure(setValue: heightClass.setSize, index: key)
+			case .min:
+				return self.frame(maxHeight: heightClass[measuring.key(key)].height, alignment:alignment).measure(setValue: heightClass.setSize, index: key)
+		}
+		
 	}
-	func decidesWidthOf(_ widthClass: MeasuringView, key: String, alignment: Alignment = .center) -> some View {
-		return self.frame(minWidth: widthClass[key].width, alignment:alignment).measure(setValue: widthClass.setSize, index: key)
+	func decidesWidthOf(_ widthClass: MeasuringView, key: String, alignment: Alignment = .center, measuring: MeasuringView.MeasurementType = .max) -> some View {
+		switch measuring {
+			case .max:
+				return self.frame(minWidth: widthClass[measuring.key(key)].width, alignment:alignment).measure(setValue: widthClass.setSize, index: key)
+			case .min:
+				return self.frame(maxWidth: widthClass[measuring.key(key)].width, alignment:alignment).measure(setValue: widthClass.setSize, index: key)
+		}
+		
 	}
-	func followsHeightOf(_ heightClass: MeasuringView, key: String, alignment: Alignment = .center, multiplier: CGFloat = 1.0) -> some View {
-		return self.frame(height: heightClass[key].height * multiplier, alignment: alignment)
+	func followsHeightOf(_ heightClass: MeasuringView, key: String, alignment: Alignment = .center, multiplier: CGFloat = 1.0, measuring: MeasuringView.MeasurementType = .max) -> some View {
+		return self.frame(height: heightClass[measuring.key(key)].height * multiplier, alignment: alignment)
 	}
-	func followsWidthOf(_ widthClass: MeasuringView, key: String, alignment: Alignment = .center, multiplier: CGFloat = 1.0) -> some View {
-		return self.frame(width: widthClass[key].width * multiplier, alignment: alignment)
+	func followsWidthOf(_ widthClass: MeasuringView, key: String, alignment: Alignment = .center, multiplier: CGFloat = 1.0, measuring: MeasuringView.MeasurementType = .max) -> some View {
+		return self.frame(width: widthClass[measuring.key(key)].width * multiplier, alignment: alignment)
 	}
 
 	func measure(setValue: @escaping (CGSize) -> Void) -> some View {

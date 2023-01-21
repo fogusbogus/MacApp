@@ -17,38 +17,33 @@ struct SPF_Results: View {
 			HStack(alignment: .firstTextBaseline) {
 				VStack(alignment: .leading, spacing: 16) {
 					Text("Check 2 of 5: Anti-spoofing - SPF")
+						.styling(.checkHeading)
 					HStack(alignment: .center) {
 						ResultValue.good.resizableImage.frame(width:24, height:24)
 						Text("We did not detect any issues with your SPF record")
-							.font(.title3)
+							.styling(.resultHeading)
 							.padding(.leading, 8)
 					}
 					.offset(x:-40, y:0)
 					Group { //Heading
 						Text("In our evaluation, \(domain) passed is all our tests. Well done. However, note that our tests here are limited in scope: we are only checking for syntax errors in your SPF record. You should also assess if your SPF record is complete as part of your overall approach to anti-spoofing (i.e. alongside DMARC and DKIM).")
+							.styling(.description)
 					}
 					AntiSpoofing_Explained(title: "SPF explained")
 					Accordian(title: "DMARC record for \(domain)") {
 						VStack(alignment: .leading) {
 							VStack(alignment: .leading, spacing: 0) {
 								Text("Record")
-									.padding([.top, .bottom], 4)
-									.padding([.leading, .trailing])
-									.foregroundColor(Color(uiColor: UIColor.systemBackground))
-									.background(.primary)
-									.font(.caption)
+									.styling(.verbatimDataHeading)
 								HStack(alignment: .center) {
 									Text(verbatim: "v=DMARC1; p=quarantine; sp=quarantine; rua=mailto:mailauth-reports@google.com")
-										
-										.font(.caption)
-										.padding([.top, .bottom], 4)
+										.styling(.verbatimData)
 									Spacer()
 								}
 								.background(Color("Accordian/Item"))
 							}
 							Text("DMARC record explained")
-								.font(.title2)
-								.bold()
+								.styling(.descriptionHeading)
 							
 							DMARCRecord(result: "v=DMARC1; p=quarantine; sp=quarantine; rua=mailto:mailauth-reports@google.com")
 							

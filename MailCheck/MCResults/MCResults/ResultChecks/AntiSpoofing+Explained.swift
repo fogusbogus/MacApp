@@ -14,14 +14,12 @@ struct AntiSpoofing_Explained: View {
 			VStack(alignment: .leading, spacing: 16) {
 				Group {
 					Text("What is anti-spoofing?")
-						.font(.title3)
-						.bold()
+						.styling(.resultHeading)
 					Text("Anti-spoofing is about making it difficult for fake emails to be sent from your organisation's email address. DMARC is the key anti-spoofing control that organisations should pmplement. It is pmplemented alongside the standards SPF and DKIM.")
 				}
 				Group {
 					Text("How does it work?")
-						.font(.title3)
-						.bold()
+						.styling(.resultHeading)
 					Text("Effective anti-spoofing controls on your domains involve implementing the following:")
 					BulletPoint {
 						Text("Sender Policy Framework (SPF) ").bold() +
@@ -38,17 +36,11 @@ struct AntiSpoofing_Explained: View {
 				}
 				Group {
 					Text("Where can I find out more?")
-						.font(.title3)
-						.bold()
-					HStack(alignment: .center, spacing: 0) {
-						Text("Read the ")
-						Button {
-							
-						} label: {
-							Text("NCSC's Email Security and Anti-Spoofing guidance")
-						}
+						.styling(.resultHeading)
+
+						Text("Read the ") +
+						Text("[NCSC's Email Security and Anti-Spoofing guidance](http://www.google.com)")
 						
-					}
 				}
 			}
 		}
@@ -58,5 +50,6 @@ struct AntiSpoofing_Explained: View {
 struct AntiSpoofing_Explained_Previews: PreviewProvider {
     static var previews: some View {
         AntiSpoofing_Explained()
+			.padding()
     }
 }

@@ -38,8 +38,7 @@ struct ResultsView<T>: View where T : Identifiable {
 				GridRow {
 					ForEach(getHeaders()) { header in
 						Text(header.id)
-							.foregroundColor(.blue)
-							.bold()
+							.styling(.resultTableHeading)
 					}
 				}
 				.padding(.bottom, 4)
@@ -57,7 +56,7 @@ struct ResultsView<T>: View where T : Identifiable {
 				}
 			})
 		}
-		.decidesHeightOf(measures, key: "HEIGHT")
+		//.decidesHeightOf(measures, key: "HEIGHT")
     }
 }
 
@@ -70,7 +69,7 @@ struct ListTest_Previews: PreviewProvider {
 		SPFTestResult(id: 3, name: "Are the referenced records free of syntax issues", result: ResultValue.warning),
 		SPFTestResult(id: 4, name: "Do all the lookups to other DNS records work?", result: ResultValue.good),
 		SPFTestResult(id: 5, name: "Is the number of DNS lookups under the limit of 10?", result: ResultValue.bad),
-		SPFTestResult(id: 7, name: "eeiorj woejrweijriowej rojwero jweorj weoirjwoerj oweirj oweirj oweirj oweijr oweijr weirj oweijr woei", result: ResultValue.good)
+		SPFTestResult(id: 7, name: "Extends over more than one line; Extends over more than one line; Extends over more than one line; Extends over more than one line; ", result: ResultValue.good)
 	]
     static var previews: some View {
 		VStack {
@@ -93,6 +92,7 @@ struct ListTest_Previews: PreviewProvider {
 
 			}
 			Text("This is some text")
+			Spacer()
 		}
     }
 }

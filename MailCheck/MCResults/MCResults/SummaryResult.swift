@@ -37,7 +37,7 @@ enum ResultValue : Codable {
 				return AnyView(Image(systemName: "multiply.circle.fill").resizable()
 					.foregroundColor(Color("Status/Bad")))
 			case .warning:
-				return AnyView(Image(systemName: "exclamationmark.triangle.fill").resizable().foregroundColor(Color("Status/Warning")))
+				return AnyView(Image(systemName: "exclamationmark.circle.fill").resizable().foregroundColor(Color("Status/Warning")))
 			case .unknown:
 				return AnyView(Image(systemName: "exclamationmark.circle.fill").resizable().foregroundColor(Color("Status/Unknown"))
 					.rotationEffect(Angle(degrees: 180)))
@@ -86,10 +86,9 @@ struct SummaryResult: View {
 		ResultContainer {
 			VStack(alignment: .leading) {
 				Text("Your result")
-					.font(.title2)
-					.bold()
+					.styling(.descriptionHeadingHighlight)
 				IssuesLegend(noIssues: noIssues, domain: "googlemail.com")
-					.font(.body)
+					.styling(.description)
 				HStack(alignment: .center) {
 					Spacer()
 					Group {
@@ -123,7 +122,7 @@ struct SummaryResult: View {
 					Spacer()
 				}
 			}
-			.font(.caption2)
+			.styling(.summarySmall)
 			.padding([.leading, .trailing], 64)
 			.frame(minWidth: 400)
 		}
