@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MeasuringView
 
 struct ResultsView<T>: View where T : Identifiable {
 	
