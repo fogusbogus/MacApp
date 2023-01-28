@@ -11,6 +11,8 @@ struct SPF_Results: View {
 	
 	var domain: String = "google.com"
 	
+	var testResults: [SPFTestResult]
+	
 	var body: some View {
 		
 		ResultContainer {
@@ -30,7 +32,8 @@ struct SPF_Results: View {
 							.styling(.description)
 					}
 					AntiSpoofing_Explained(title: "SPF explained")
-					Accordian(title: "DMARC record for \(domain)") {
+					SPF_Results_Tests(domain: domain, results: testResults, tableSize: CGSize.zero)
+					Accordian(title: "SPF record for \(domain)") {
 						VStack(alignment: .leading) {
 							VStack(alignment: .leading, spacing: 0) {
 								Text("Record")
@@ -45,7 +48,7 @@ struct SPF_Results: View {
 							Text("DMARC record explained")
 								.styling(.descriptionHeading)
 							
-							DMARCRecord(result: "v=DMARC1; p=quarantine; sp=quarantine; rua=mailto:mailauth-reports@google.com")
+							SPFRecord(result: "v=spf1 include:spf.protection.outlook.com -all")
 							
 						}
 					}
@@ -57,9 +60,18 @@ struct SPF_Results: View {
 
 
 struct SPF_Results_Previews: PreviewProvider {
+	static var data: [SPFTestResult] = [
+		SPFTestResult(id: 0, name: "Is there a single SPF record?", result: ResultValue.good),
+		SPFTestResult(id: 1, name: "Are the tags and values used valid?", result: ResultValue.good),
+		SPFTestResult(id: 2, name: "Is there a strong ending to the SPF record (i.e. -all or ~all)", result: ResultValue.good),
+		SPFTestResult(id: 3, name: "Are the referenced records free of syntax issues", result: ResultValue.warning),
+		SPFTestResult(id: 4, name: "Do all the lookups to other DNS records work?", result: ResultValue.good),
+		SPFTestResult(id: 5, name: "Is the number of DNS lookups under the limit of 10?", result: ResultValue.bad)
+	]
+	
     static var previews: some View {
 		ScrollView {
-			SPF_Results()
+			SPF_Results(testResults: data)
 		}
     }
 }

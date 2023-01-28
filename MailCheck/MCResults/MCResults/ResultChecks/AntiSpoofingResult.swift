@@ -35,17 +35,7 @@ struct AntiSpoofingResult: View {
 
 						Accordian(title: "DMARC record for \(domain)") {
 							VStack(alignment: .leading) {
-								VStack(alignment: .leading, spacing: 0) {
-									Text("Record")
-										.styling(.dataHeading)
-									HStack(alignment: .center) {
-										Text(verbatim: "v=DMARC1; p=quarantine; sp=quarantine; rua=mailto:mailauth-reports@google.com")
-											.styling(.summary)
-											.padding([.top, .bottom], 4)
-										Spacer()
-									}
-									.background(Color("Accordian/Item"))
-								}
+								DataHeading(title: "Record", data: "v=DMARC1; p=quarantine; sp=quarantine; rua=mailto:mailauth-reports@google.com")
 								Text("DMARC record explained")
 									.font(.title2)
 									.bold()
@@ -62,12 +52,12 @@ struct AntiSpoofingResult: View {
 
 struct AntiSpoofingResult_Previews: PreviewProvider {
 	static var previews: some View {
-		//ScrollView(.vertical, showsIndicators: true, content: {
+		ScrollView(.vertical, showsIndicators: true, content: {
 			AntiSpoofingResult()
-				
+			.padding()
 			
 			
-		//})
+		})
 		
 	}
 }

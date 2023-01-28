@@ -59,7 +59,7 @@ struct SPF_Results_Tests: View {
 					Text("Limitations of this checker. ").bold() +
 					Text("This checker is checking that your SPF record is syntactically valid. This checker does not check that you have included the right statements or IP addresses. To do this you will need to configure DMARC with an appropriate DMARC tool that allows you to assess if all your email sending systems are adequately covered in your SPF record.")
 				}
-				Spacer()
+				//Spacer()
 			}
 		}
 	}

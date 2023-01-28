@@ -10,7 +10,7 @@ import MeasuringView
 
 
 enum StylingType {
-	case checkHeading, resultHeading, description, accordianHeading, descriptionHeading, descriptionHeadingHighlight, summarySmall, dataHeading, summary, resultTableHeading, resultTableData, numberedHeading, numberedDescription, hyperlink, numberedPoint, verbatimDataHeading, verbatimData
+	case checkHeading, resultHeading, description, accordianHeading, descriptionHeading, descriptionHeadingHighlight, summarySmall, dataHeading, summary, resultTableHeading, resultTableData, numberedHeading, numberedDescription, hyperlink, numberedPoint, verbatimDataHeading, verbatimData, emailSummaryItemHeading
 }
 
 
@@ -62,7 +62,7 @@ extension View {
 			case .dataHeading:
 				return AnyView(
 					self.padding([.top, .bottom], 4)
-						.padding([.leading, .trailing])
+						.padding([.leading, .trailing], 8)
 						.foregroundColor(Color(uiColor: UIColor.systemBackground))
 						.background(.primary)
 						.font(.caption)
@@ -112,6 +112,12 @@ extension View {
 						.foregroundColor(Color(uiColor: UIColor.systemBackground))
 						.background(.primary)
 						.font(.caption)
+				)
+			case .emailSummaryItemHeading:
+				return AnyView(
+					self
+						.font(.title)
+						.fontWeight(.semibold)
 				)
 		}
 	}

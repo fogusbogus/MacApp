@@ -87,7 +87,7 @@ struct SummaryResult: View {
 			VStack(alignment: .leading) {
 				Text("Your result")
 					.styling(.descriptionHeadingHighlight)
-				IssuesLegend(noIssues: noIssues, domain: "googlemail.com")
+				BlockQuoteIssues(noIssues: noIssues, domain: "googlemail.com")
 					.styling(.description)
 				HStack(alignment: .center) {
 					Spacer()
@@ -158,43 +158,4 @@ struct SummaryItemsEmailPrivacy : Codable {
 	var mtaSts: ResultValue
 }
 
-struct IssuesLegend : View {
-	
-	var noIssues: Int
-	var domain: String
-	
-	private var howManyIssues: String {
-		get {
-			if noIssues == 0 {
-				return "No issues"
-			}
-			if noIssues == 1 {
-				return "1 issue"
-			}
-			return "\(noIssues) issues"
-		}
-	}
-	
-	var body: some View {
-		HStack(alignment: .center) {
-			Group {
-				Text(howManyIssues).bold() +
-				Text(" found for ") +
-				Text(domain).bold()
-			}
-				.padding()
-				.padding(.leading, 4)
-				.foregroundColor(Color("Issues/Fore"))
-				.overlay {
-					HStack {
-						Rectangle()
-							.foregroundColor(Color("Issues/Bar"))
-							.frame(width: 8)
-						Spacer()
-					}
-				}
-			Spacer()
-		}
-		.background(Color("Issues/Back"))
-	}
-}
+
