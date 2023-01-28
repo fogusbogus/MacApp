@@ -19,7 +19,7 @@ struct ResultWithResult: View {
 				.decidesWidthOf(measures, key: "W")
 			Circle()
 				.foregroundColor(.white)
-				.offset(x: measures["W"].width / 3, y: measures["H"].height / 3)
+				.offset(x: measures.offsetBy("W", 0.333), y: measures.offsetBy("H", 0.333))
 				.frame(width: 16, height: 16)
 			ResultValue.warning.resizableImage.frame(width: 16, height: 16).offset(x: 16, y: 16)
 		}
