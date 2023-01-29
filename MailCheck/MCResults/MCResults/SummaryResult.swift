@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-enum ResultValue : Codable {
-	case good, bad, warning, unknown
+indirect enum ResultValue : Codable {
+	case good, bad, warning, unknown, caveat(subresult: ResultValue)
 	
 	var image: some View {
 		switch self {
@@ -25,6 +25,8 @@ enum ResultValue : Codable {
 				return AnyView(Image(systemName: "exclamationmark.circle.fill")
 					.foregroundColor(Color("Status/Unknown"))
 					.rotationEffect(Angle(degrees: 180)))
+			case .caveat(subresult: let subresult):
+				return AnyView(ResultWithResult(caveat: subresult))
 		}
 	}
 	
@@ -41,11 +43,19 @@ enum ResultValue : Codable {
 			case .unknown:
 				return AnyView(Image(systemName: "exclamationmark.circle.fill").resizable().foregroundColor(Color("Status/Unknown"))
 					.rotationEffect(Angle(degrees: 180)))
+			case .caveat(subresult: let subresult):
+				return AnyView(ResultWithResult(caveat: subresult))
 		}
 	}
 	
 	var badCount: Int {
-		return self == .good ? 0 : 1
+		switch self {
+			case .good:
+				return 1
+				
+			default:
+				return 0
+		}
 	}
 	
 	var passText: String {
@@ -58,6 +68,8 @@ enum ResultValue : Codable {
 				return "Pass"
 			case .unknown:
 				return "Fail"
+			case .caveat(subresult: let subresult):
+				return "Pass with warning(s)"
 		}
 	}
 }
