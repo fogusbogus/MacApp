@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C916407E29BF865600A4C0F0 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C916407D29BF865600A4C0F0 /* extensions.swift */; };
+		C916408329C3807E00A4C0F0 /* ColorConsole in Frameworks */ = {isa = PBXBuildFile; productRef = C916408229C3807E00A4C0F0 /* ColorConsole */; };
 		C9A31FC729BF4E0500FD06E2 /* replacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A31FC629BF4E0500FD06E2 /* replacer.swift */; };
 		C9A31FCE29BF4E1C00FD06E2 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A31FCD29BF4E1C00FD06E2 /* Package.swift */; };
 		C9A31FD629BF6CB400FD06E2 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = C9A31FD529BF6CB400FD06E2 /* ArgumentParser */; };
@@ -38,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C916408329C3807E00A4C0F0 /* ColorConsole in Frameworks */,
 				C9A31FD929BF6CEE00FD06E2 /* LoggingLib in Frameworks */,
 				C9A31FD629BF6CB400FD06E2 /* ArgumentParser in Frameworks */,
 			);
@@ -99,6 +101,7 @@
 			packageProductDependencies = (
 				C9A31FD529BF6CB400FD06E2 /* ArgumentParser */,
 				C9A31FD829BF6CEE00FD06E2 /* LoggingLib */,
+				C916408229C3807E00A4C0F0 /* ColorConsole */,
 			);
 			productName = replacer;
 			productReference = C9A31FC329BF4E0500FD06E2 /* replacer */;
@@ -132,6 +135,7 @@
 				C9A31FCF29BF4E3400FD06E2 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
 				C9A31FD729BF6CEE00FD06E2 /* XCRemoteSwiftPackageReference "LoggingLib" */,
 				C916407A29BF863100A4C0F0 /* XCRemoteSwiftPackageReference "UsefulExtensions" */,
+				C916408129C3807E00A4C0F0 /* XCRemoteSwiftPackageReference "ColorConsole" */,
 			);
 			productRefGroup = C9A31FC429BF4E0500FD06E2 /* Products */;
 			projectDirPath = "";
@@ -325,6 +329,14 @@
 				kind = branch;
 			};
 		};
+		C916408129C3807E00A4C0F0 /* XCRemoteSwiftPackageReference "ColorConsole" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fogusbogus/ColorConsole";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		C9A31FCF29BF4E3400FD06E2 /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-argument-parser.git";
@@ -344,6 +356,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C916408229C3807E00A4C0F0 /* ColorConsole */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C916408129C3807E00A4C0F0 /* XCRemoteSwiftPackageReference "ColorConsole" */;
+			productName = ColorConsole;
+		};
 		C9A31FD529BF6CB400FD06E2 /* ArgumentParser */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C9A31FCF29BF4E3400FD06E2 /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
