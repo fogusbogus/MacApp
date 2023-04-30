@@ -1,0 +1,779 @@
+{
+	"artists": [
+		"artist": {
+			"key": "Genesis",
+			"artist": "Genesis"
+		},
+		
+		"artist": {
+			"key": "Tony Banks",
+			"artist": "Tony Banks"
+		},
+		"artist": {
+			"key": "Phil Collins",
+			"artist": "Phil Collins"
+		},
+		"artist": {
+			"key": "Mike Rutherford",
+			"artist": "Mike Rutherford"
+		},
+		"artist": {
+			"key": "Peter Gabriel",
+			"artist": "Peter Gabriel"
+		},
+		"artist": {
+			"key": "Steve Hackett",
+			"artist": "Steve Hackett"
+		},
+		"artist": {
+			"key": "Anthony Phillips",
+			"artist": "Anthony Phillips"
+		},
+
+	],
+	
+	"albums" : [
+		"album": {
+			"key":"FGTR",
+			"title": "From Genesis to Revelation",
+			"releaseDate": "1969"
+			"tracks": [
+				{
+					"key": "WTSTTS",
+					"title": "Where the Sour Turns to Sweet"
+				},
+				{
+					"key": "ITB",
+					"title": "In the Beginning"
+				},
+				{
+					"key": "FS", "title": "Fireside Song"
+				},
+				{
+					"key": "TS",
+					"title": "The Serpent"
+				},
+				{
+					"key": "AIVW",
+					"title": "Am I Very Wrong?"
+				},
+				{
+					"key": "ITW",
+					"title": "Into the Wilderness"
+				},
+				{
+					"key": "TC",
+					"title": "The Conqueror"
+				},
+				{
+					"key": "IH",
+					"title": "In Hiding"
+				},
+				{
+					"key": "OD",
+					"title": "One Day"
+				},
+				{
+					"key": "W",
+					"title": "Window"
+				},
+				{
+					"key": "IL",
+					"title": "In Limbo"
+				},
+				{
+					"key": "TSS",
+					"title": "The Silent Sun"
+				},
+				{
+					"key": "APTCMO",
+					"title": "A Place to Call My Own"
+				}
+			],
+			"personnel": [
+			]
+		},
+		"album": {
+			"key": "T",
+			"title": "Trespass",
+			"releaseDate": "1970"
+			"tracks": [
+				{
+					"key": "LFS",
+					"title": "Looking for Someone"
+				},
+				{
+					"key": "WM",
+					"title": "White Mountain"
+				},
+				{
+					"key": "VOA",
+					"title": "Visions of Angels"
+				},
+				{
+					"key": "S",
+					"title": "Stagnation"
+				},
+				{
+					"key": "D",
+					"title": "Dusk"
+				},
+				{
+					"key": "TK",
+					"title": "The Knife"
+				}
+			],
+			"personnel": [
+			]
+		},
+		"album": {
+			"key": "NC",
+			"title": "Nursery Cryme",
+			"releaseDate": "1971"
+			"tracks": [
+				{
+					"key": "TMB",
+					"title": "The Musical Box"
+				},
+				{
+					"key": "FAF",
+					"title": "For Absent Friends"
+				},
+				{
+					"key": "TROTGH",
+					"title": "The Return of the Giant Hogweed"
+				},
+				{
+					"key": "SS",
+					"title": "Seven Stones"
+				},
+				{
+					"key": "HTB",
+					"title": "Harold the Barrel"
+				},
+				{
+					"key": "H",
+					"title": "Harlequin"
+				},
+				{
+					"key": "TFOS",
+					"title": "The Fountain of Salmacis"
+				}
+			],
+			"personnel": [
+			]
+		},
+		"album": {
+			"key": "F",
+			"title": "Foxtrot",
+			"releaseDate": "1972"
+			"tracks": [
+				{
+					"key": "WOTS",
+					"title": "Watcher of the Skies"
+				},
+				{
+					"key": "TT",
+					"title": "Time Table"
+				},
+				{
+					"key": "GEOBF",
+					"title": "Get 'Em Out by Friday"
+				},
+				{
+					"key": "CUATC",
+					"title": "Can-Utility and the Coastliners"
+				},
+				{
+					"key": "H",
+					"title": "Horizons"
+				},
+				{
+					"key": "SR",
+					"title": "Supper's Ready"
+				}
+			],
+			"personnel": [
+			]
+		},
+		"album": {
+			"key": "SEBTP",
+			"title": "Selling England By The Pound",
+			"releaseDate": "1973"
+			"tracks": [
+				{
+					"key": "DWTMK",
+					"title": "Dancing with the Moonlit Knight"
+				},
+				{
+					"key": "IKWIL",
+					"title": "I Know What I Like (In Your Wardrobe)"
+				},
+				{
+					"key": "FOF",
+					"title": "Firth of Fifth"
+				},
+				{
+					"key": "MFM",
+					"title": "More Fool Me"
+				},
+				{
+					"key": "TBOEF",
+					"title": "The Battle of Epping Forest"
+				},
+				{
+					"key": "ATO",
+					"title": "After the Ordeal"
+				},
+				{
+					"key": "TCS",
+					"title": "The Cinema Show"
+				},
+				{
+					"key": "AOP",
+					"title": "Aisle of Plenty"
+				}
+			],
+			"personnel": [
+			]
+		},
+		"album": {
+			"key": "TLLDOB",
+			"title": "The Lamb Lies Down On Broadway",
+			"releaseDate": "1975"
+			"tracks": [
+				{
+					"key": "TLLDOB",
+					"title": "The Lamb Lies Down on Broadway"
+				},
+				{
+					"key": "FOAW",
+					"title": "Fly on a Windshield"
+				},
+				{
+					"key": "BMO1974",
+					"title": "Broadway Melody of 1974"
+				},
+				{
+					"key": "CC",
+					"title": "Cuckoo Cocoon"
+				},
+				{
+					"key": "ITC",
+					"title": "In the Cage"
+				},
+				{
+					"key": "TGPOLP",
+					"title": "The Grand Parade of Lifeless Packaging"
+				},
+				{
+					"key": "BINYC",
+					"title": "Back in N.Y.C."
+				},
+				{
+					"key": "HH",
+					"title": "Hairless Heart"
+				},
+				{
+					"key": "COT",
+					"title": "Counting Out Time"
+				},
+				{
+					"key": "TCC",
+					"title": "The Carpet Crawlers"
+				},
+				{
+					"key": "TCO32D",
+					"title": "The Chamber of 32 Doors"
+				},
+				{
+					"key": "LL",
+					"title": "Lilywhite Lilith"
+				},
+				{
+					"key": "TWR",
+					"title": "The Waiting Room"
+				},
+				{
+					"key": "A",
+					"title": "Anyway"
+				},
+				{
+					"key": "HCTSA",
+					"title": "Here Comes the Supernatural Anaesthetist"
+				},
+				{
+					"key": "TL",
+					"title": "The Lamia"
+				},
+				{
+					"key": "SSIEB",
+					"title": "Silent Sorrow in Empty Boats"
+				},
+				{
+					"key": "TCOS",
+					"title": "The Colony of Slippermen"
+				},
+				{
+					"key": "R",
+					"title": "Ravine"
+				},
+				{
+					"key": "TLDDOB",
+					"title": "The Light Dies Down on Broadway"
+				},
+				{
+					"key": "RTS",
+					"title": "Riding the Scree"
+				},
+				{
+					"key": "ITR",
+					"title": "In the Rapids"
+				},
+				{
+					"key": "IT",
+					"title": "it"
+				}
+			],
+			"personnel": [
+			]
+		},
+		"album": {
+			"key": "ATTOT",
+			"title": "A Trick Of The Tail",
+			"releaseDate": "1976"
+			"tracks": [
+				{
+					"key": "DOAV",
+					"title": "Dance on a Volcano"
+				},
+				{
+					"key": "E",
+					"title": "Entangled"
+				},
+				{
+					"key": "S",
+					"title": "Squonk"
+				},
+				{
+					"key": "MMM",
+					"title": "Mad Man Moon"
+				},
+				{
+					"key": "RAAB",
+					"title": "Robbery, Assault & Battery"
+				},
+				{
+					"key": "R",
+					"title": "Ripples"
+				},
+				{
+					"key": "ATTOT",
+					"title": "A Trick of the Tail"
+				},
+				{
+					"key": "LE",
+					"title": "Los Endos"
+				}
+			],
+			"personnel": [
+			]
+		},
+		"album": {
+			"key": "WAW",
+			"title": "Wind and Wuthering",
+			"releaseDate": "1976"
+			"tracks": [
+				{
+					"key": "EEOM",
+					"title": "Eleventh Earl of Mar"
+				},
+				{
+					"key": "OFTV",
+					"title": "One for the Vine"
+				},
+				{
+					"key": "YOSW",
+					"title": "Your Own Special Way"
+				},
+				{
+					"key": "WG",
+					"title": "Wot Gorilla?"
+				},
+				{
+					"key": "AIAMN",
+					"title": "All in a Mouse's Night"
+				},
+				{
+					"key": "BOTR",
+					"title": "Blood on the Rooftops"
+				},
+				{
+					"key": "USFTS",
+					"title": "Unquiet Slumber for the Sleepers..."
+				},
+				{
+					"key": "ITQE",
+					"title": "...in that Quiet Earth"
+				},
+				{
+					"key": "A",
+					"title": "Afterglow"
+				}
+			],
+			"personnel": [
+			]
+		},
+		"album": {
+			"key": "ATTWT",
+			"title": "...And Then There Were Three",
+			"releaseDate": "1978"
+			"tracks": [
+				{
+					"key": "DAO",
+					"title": "Down and Out"
+				},
+				{
+					"key": "U",
+					"title": "Undertow"
+				},
+				{
+					"key": "BOB",
+					"title": "Ballad of Big"
+				},
+				{
+					"key": "S",
+					"title": "Snowbound"
+				},
+				{
+					"key": "BR",
+					"title": "Burning Rope"
+				},
+				{
+					"key": "DITM",
+					"title": "Deep in the Motherlode"
+				},
+				{
+					"key": "MTM",
+					"title": "Many Too Many"
+				},
+				{
+					"key": "SFAND",
+					"title": "Scenes from a Night's Dream"
+				},
+				{
+					"key": "SIAJ",
+					"title": "Say It's Alright Joe"
+				},
+				{
+					"key": "TLL",
+					"title": "The Lady Lies"
+				},
+				{
+					"key": "FYFM",
+					"title": "Follow You, Follow Me"
+				}
+			],
+			"personnel": [
+			]
+		},
+		"album": {
+			"key": "D",
+			"title": "Duke",
+			"releaseDate": "1980"
+			"tracks": [
+				{
+					"key": "BTL",
+					"title": "Behind the Lines"
+				},
+				{
+					"key": "D",
+					"title": "Duchess"
+				},
+				{
+					"key": "GV",
+					"title": "Guide Vocal"
+				},
+				{
+					"key": "MOOT",
+					"title": "Man of Our Times"
+				},
+				{
+					"key": "M",
+					"title": "Misunderstanding"
+				},
+				{
+					"key": "H",
+					"title": "Heathaze"
+				},
+				{
+					"key": "TIOA",
+					"title": "Turn it on Again"
+				},
+				{
+					"key": "AT",
+					"title": "Alone Tonight"
+				},
+				{
+					"key": "CDS",
+					"title": "Cul-de-sac"
+				},
+				{
+					"key": "PDA",
+					"title": "Please Don't Ask"
+				},
+				{
+					"key": "DT",
+					"title": "Duke's Travels"
+				},
+				{
+					"key": "DE",
+					"title": "Duke's End"
+				}
+			],
+			"personnel": [
+			]
+		},
+		"album": {
+			"key": "A",
+			"title": "Abacab",
+			"releaseDate": "1981"
+			"tracks": [
+				{
+					"key": "A",
+					"title": "Abacab"
+				},
+				{
+					"key": "NRAA",
+					"title": "No Reply at All"
+				},
+				{
+					"key": "MASJ",
+					"title": "Me and Sarah Jane"
+				},
+				{
+					"key": "KID",
+					"title": "Keep it Dark"
+				},
+				{
+					"key": "DL",
+					"title": "Dodo/Lurker"
+				},
+				{
+					"key": "W",
+					"title": "Whodunnit?"
+				},
+				{
+					"key": "MOTC",
+					"title": "Man on the Corner"
+				},
+				{
+					"key": "LION",
+					"title": "Like it or Not"
+				},
+				{
+					"key": "AR",
+					"title": "Another Record"
+				}
+			],
+			"personnel": [
+			]
+		},
+		"album": {
+			"key": "G",
+			"title": "Genesis",
+			"releaseDate": "1983"
+			"tracks": [
+				{
+					"key": "M",
+					"title": "Mama"
+				},
+				{
+					"key": "TA",
+					"title": "That's All"
+				},
+				{
+					"key": "HBTS",
+					"title": "Home by the Sea"
+				},
+				{
+					"key": "SHBTS",
+					"title": "Second Home by the Sea"
+				},
+				{
+					"key": "IA",
+					"title": "Illegal Alien"
+				},
+				{
+					"key": "TIATH",
+					"title": "Taking It All Too Hard"
+				},
+				{
+					"key": "JAJTD",
+					"title": "Just a Job to Do"
+				},
+				{
+					"key": "SR",
+					"title": "Silver Rainbow"
+				},
+				{
+					"key": "IGGB",
+					"title": "It's Gonna Get Better"
+				}
+			],
+			"personnel": [
+			]
+		},
+		"album": {
+			"key": "IT",
+			"title": "Invisible Touch",
+			"releaseDate": "1986"
+			"tracks": [
+				{
+					"key": "IT",
+					"title": "Invisible Touch"
+				},
+				{
+					"key": "TTT",
+					"title": "Tonight Tonight Tonight"
+				},
+				{
+					"key": "LOC",
+					"title": "Land of Confusion"
+				},
+				{
+					"key": "ITD",
+					"title": "In Too Deep"
+				},
+				{
+					"key": "ASD",
+					"title": "Anything She Does"
+				},
+				{
+					"key": "D",
+					"title": "Domino"
+				},
+				{
+					"key": "TIAA",
+					"title": "Throwing it all Away"
+				},
+				{
+					"key": "TB",
+					"title": "The Brazilian"
+				}
+			],
+			"personnel": [
+			]
+		},
+		"album": {
+			"key": "WCD",
+			"title": "We Can't Dance",
+			"releaseDate": "1991"
+			"tracks": [
+				{
+					"key": "NSOM",
+					"title": "No Son of Mine"
+				},
+				{
+					"key": "JHKM",
+					"title": "Jesus He Knows Me"
+				},
+				{
+					"key": "DTLS",
+					"title": "Driving the Last Spike"
+				},
+				{
+					"key": "ICD",
+					"title": "I Can't Dance"
+				},
+				{
+					"key": "NAT",
+					"title": "Never a Time"
+				},
+				{
+					"key": "DWYS",
+					"title": "Dreaming While You Sleep"
+				},
+				{
+					"key": "TMW",
+					"title": "Tell Me Why?"
+				},
+				{
+					"key": "LF",
+					"title": "Living Forever"
+				},
+				{
+					"key": "HOMH",
+					"title": "Hold on My Heart"
+				},
+				{
+					"key": "WOTW",
+					"title": "Way of the World"
+				},
+				{
+					"key": "SILY",
+					"title": "Since I Lost You"
+				},
+				{
+					"key": "FL",
+					"title": "Fading Lights"
+				}
+			],
+			"personnel": [
+			]
+		},
+		"album": {
+			"key": "CAS",
+			"title": "Calling All Stations",
+			"releaseDate": "1997"
+			"tracks": [
+				{
+					"key": "CAS",
+					"title": "Calling All Stations"
+				},
+				{
+					"key": "C",
+					"title": "Congo"
+				},
+				{
+					"key": "S",
+					"title": "Shipwrecked"
+				},
+				{
+					"key": "AA",
+					"title": "Alien Afternoon"
+				},
+				{
+					"key": "NAU",
+					"title": "Not About Us"
+				},
+				{
+					"key": "ITWYN",
+					"title": "If That's What You Need"
+				},
+				{
+					"key": "TDL",
+					"title": "The Dividing Line"
+				},
+				{
+					"key": "UW",
+					"title": "Uncertain Weather"
+				},
+				{
+					"key": "ST",
+					"title": "Small Talk"
+				},
+				{
+					"key": "TMBSOW",
+					"title": "There Must Be Some Other Way"
+				},
+				{
+					"key": "OMF",
+					"title": "One Man's Fool"
+				}
+			],
+			"personnel": [
+			]
+		}
+	}
+}
