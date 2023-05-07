@@ -8,11 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		C921016929F5FB8500F4E295 /* TreeViewDepApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921016829F5FB8500F4E295 /* TreeViewDepApp.swift */; };
-		C921016B29F5FB8500F4E295 /* TreeViewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921016A29F5FB8500F4E295 /* TreeViewUI.swift */; };
 		C921016D29F5FB8600F4E295 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C921016C29F5FB8600F4E295 /* Assets.xcassets */; };
 		C921017029F5FB8600F4E295 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C921016F29F5FB8600F4E295 /* Preview Assets.xcassets */; };
-		C921017829F5FB9C00F4E295 /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921017729F5FB9C00F4E295 /* TreeNode.swift */; };
-		C921017A29F5FBA400F4E295 /* TreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921017929F5FBA400F4E295 /* TreeView.swift */; };
+		C95612632A08715D00424030 /* TreeView in Frameworks */ = {isa = PBXBuildFile; productRef = C95612622A08715D00424030 /* TreeView */; };
+		C95612652A0871EA00424030 /* TreeViewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95612642A0871EA00424030 /* TreeViewUI.swift */; };
 		C9F0872C29F9FDC200407523 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0872B29F9FDC200407523 /* Extensions.swift */; };
 		C9F0872E29FC760F00407523 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = C9F0872D29FC760F00407523 /* data.json */; };
 /* End PBXBuildFile section */
@@ -20,12 +19,10 @@
 /* Begin PBXFileReference section */
 		C921016529F5FB8500F4E295 /* TreeViewDep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreeViewDep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C921016829F5FB8500F4E295 /* TreeViewDepApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeViewDepApp.swift; sourceTree = "<group>"; };
-		C921016A29F5FB8500F4E295 /* TreeViewUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeViewUI.swift; sourceTree = "<group>"; };
 		C921016C29F5FB8600F4E295 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C921016F29F5FB8600F4E295 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C921017129F5FB8600F4E295 /* TreeViewDep.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TreeViewDep.entitlements; sourceTree = "<group>"; };
-		C921017729F5FB9C00F4E295 /* TreeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNode.swift; sourceTree = "<group>"; };
-		C921017929F5FBA400F4E295 /* TreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeView.swift; sourceTree = "<group>"; };
+		C95612642A0871EA00424030 /* TreeViewUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeViewUI.swift; sourceTree = "<group>"; };
 		C9F0872B29F9FDC200407523 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C9F0872D29FC760F00407523 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -35,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C95612632A08715D00424030 /* TreeView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,14 +59,12 @@
 			isa = PBXGroup;
 			children = (
 				C921016829F5FB8500F4E295 /* TreeViewDepApp.swift */,
-				C921016A29F5FB8500F4E295 /* TreeViewUI.swift */,
 				C921016C29F5FB8600F4E295 /* Assets.xcassets */,
 				C921017129F5FB8600F4E295 /* TreeViewDep.entitlements */,
 				C921016E29F5FB8600F4E295 /* Preview Content */,
-				C921017729F5FB9C00F4E295 /* TreeNode.swift */,
-				C921017929F5FBA400F4E295 /* TreeView.swift */,
 				C9F0872B29F9FDC200407523 /* Extensions.swift */,
 				C9F0872D29FC760F00407523 /* data.json */,
+				C95612642A0871EA00424030 /* TreeViewUI.swift */,
 			);
 			path = TreeViewDep;
 			sourceTree = "<group>";
@@ -97,6 +93,9 @@
 			dependencies = (
 			);
 			name = TreeViewDep;
+			packageProductDependencies = (
+				C95612622A08715D00424030 /* TreeView */,
+			);
 			productName = TreeViewDep;
 			productReference = C921016529F5FB8500F4E295 /* TreeViewDep.app */;
 			productType = "com.apple.product-type.application";
@@ -125,6 +124,9 @@
 				Base,
 			);
 			mainGroup = C921015C29F5FB8500F4E295;
+			packageReferences = (
+				C95612612A08715D00424030 /* XCRemoteSwiftPackageReference "TreeViewLib" */,
+			);
 			productRefGroup = C921016629F5FB8500F4E295 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -153,10 +155,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9F0872C29F9FDC200407523 /* Extensions.swift in Sources */,
-				C921017A29F5FBA400F4E295 /* TreeView.swift in Sources */,
-				C921016B29F5FB8500F4E295 /* TreeViewUI.swift in Sources */,
 				C921016929F5FB8500F4E295 /* TreeViewDepApp.swift in Sources */,
-				C921017829F5FB9C00F4E295 /* TreeNode.swift in Sources */,
+				C95612652A0871EA00424030 /* TreeViewUI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +352,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C95612612A08715D00424030 /* XCRemoteSwiftPackageReference "TreeViewLib" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fogusbogus/TreeViewLib";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C95612622A08715D00424030 /* TreeView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C95612612A08715D00424030 /* XCRemoteSwiftPackageReference "TreeViewLib" */;
+			productName = TreeView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C921015D29F5FB8500F4E295 /* Project object */;
 }
