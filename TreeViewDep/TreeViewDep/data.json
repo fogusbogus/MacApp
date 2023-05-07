@@ -6,30 +6,57 @@
 		},
 		
 		"artist": {
-			"key": "Tony Banks",
+			"key": "TB",
 			"artist": "Tony Banks"
 		},
 		"artist": {
-			"key": "Phil Collins",
+			"key": "PC",
 			"artist": "Phil Collins"
 		},
 		"artist": {
-			"key": "Mike Rutherford",
+			"key": "MR",
 			"artist": "Mike Rutherford"
 		},
 		"artist": {
-			"key": "Peter Gabriel",
+			"key": "PG",
 			"artist": "Peter Gabriel"
 		},
 		"artist": {
-			"key": "Steve Hackett",
+			"key": "SH",
 			"artist": "Steve Hackett"
 		},
 		"artist": {
-			"key": "Anthony Phillips",
+			"key": "AP",
 			"artist": "Anthony Phillips"
 		},
-
+		"artist": {
+			"key": "CS",
+			"artist": "Chris Stewart"
+		},
+		"artist": {
+			"key": "JS",
+			"artist": "John Silver"
+		},
+		"artist": {
+			"key": "JM",
+			"artist": "John Mayhew"
+		},
+		"artist": {
+			"key": "MB",
+			"artist": "Mick Barnard"
+		},
+		"artist": {
+			"key": "RW",
+			"artist": "Ray Wilson"
+		},
+		"artist": {
+			"key": "NZ",
+			"artist": "Nir Zidkyahu"
+		},
+		"artist": {
+			"key": "ND",
+			"artist": "Nik D'Virgilio"
+		}
 	],
 	
 	"albums" : [
@@ -91,6 +118,12 @@
 				}
 			],
 			"personnel": [
+				"TB",
+				"MR",
+				"AP",
+				"JS",
+				"PG",
+				"CS"
 			]
 		},
 		"album": {
@@ -124,6 +157,11 @@
 				}
 			],
 			"personnel": [
+				"TB",
+				"MR",
+				"AP",
+				"PG",
+				"JM"
 			]
 		},
 		"album": {
@@ -161,6 +199,11 @@
 				}
 			],
 			"personnel": [
+				"TB",
+				"MR",
+				"SH",
+				"PG",
+				"PC"
 			]
 		},
 		"album": {
@@ -194,6 +237,11 @@
 				}
 			],
 			"personnel": [
+				"TB",
+				"MR",
+				"SH",
+				"PG",
+				"PC"
 			]
 		},
 		"album": {
@@ -235,6 +283,11 @@
 				}
 			],
 			"personnel": [
+				"TB",
+				"MR",
+				"SH",
+				"PG",
+				"PC"
 			]
 		},
 		"album": {
@@ -336,6 +389,11 @@
 				}
 			],
 			"personnel": [
+				"TB",
+				"MR",
+				"SH",
+				"PG",
+				"PC"
 			]
 		},
 		"album": {
@@ -377,6 +435,10 @@
 				}
 			],
 			"personnel": [
+				"TB",
+				"MR",
+				"SH",
+				"PC"
 			]
 		},
 		"album": {
@@ -422,6 +484,10 @@
 				}
 			],
 			"personnel": [
+				"TB",
+				"MR",
+				"SH",
+				"PC"
 			]
 		},
 		"album": {
@@ -475,6 +541,9 @@
 				}
 			],
 			"personnel": [
+				"TB",
+				"MR",
+				"PC"
 			]
 		},
 		"album": {
@@ -532,6 +601,9 @@
 				}
 			],
 			"personnel": [
+				"TB",
+				"MR",
+				"PC"
 			]
 		},
 		"album": {
@@ -577,6 +649,9 @@
 				}
 			],
 			"personnel": [
+				"TB",
+				"MR",
+				"PC"
 			]
 		},
 		"album": {
@@ -622,6 +697,9 @@
 				}
 			],
 			"personnel": [
+				"TB",
+				"MR",
+				"PC"
 			]
 		},
 		"album": {
@@ -663,6 +741,9 @@
 				}
 			],
 			"personnel": [
+				"TB",
+				"MR",
+				"PC"
 			]
 		},
 		"album": {
@@ -720,6 +801,9 @@
 				}
 			],
 			"personnel": [
+				"TB",
+				"MR",
+				"PC"
 			]
 		},
 		"album": {
@@ -773,6 +857,11 @@
 				}
 			],
 			"personnel": [
+				"TB",
+				"MR",
+				"RW",
+				"NZ",
+				"ND"
 			]
 		}
 	}
