@@ -49,9 +49,9 @@ struct TreeViewUI: View, TreeViewUIDelegate {
 	}
 }
 
-protocol TreeViewNotifier {
-	func selectionChanged(node: TreeNode?, data: AnyObject?)
-}
+//protocol TreeViewNotifier {
+//	func selectionChanged(node: TreeNode?, data: AnyObject?)
+//}
 
 struct AlbumNodeUI : View {
 	var node: AlbumNode
