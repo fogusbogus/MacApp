@@ -19,6 +19,14 @@ class TreeViewUIOptions {
 }
 
 struct TreeViewUI: View, TreeViewUIDelegate {
+	internal init(options: TreeViewUIOptions = TreeViewUIOptions(), updater: Updater = Updater(), treeView: TreeView? = nil, dataProvider: TreeNodeDataProvider? = nil) {
+		self.options = options
+		self.updater = updater
+		self.treeView = treeView
+		self.dataProvider = dataProvider
+		self.treeView?.dataProviderDelegate = dataProvider
+	}
+	
 	func update() {
 		updater.toggle = !updater.toggle
 	}
@@ -39,10 +47,12 @@ struct TreeViewUI: View, TreeViewUIDelegate {
 	
 	var treeView: TreeView?
 	
+	var dataProvider: TreeNodeDataProvider?
+	
 	var body: some View {
 		VStack(alignment: .leading) {
 			ForEach(treeView?.getVisibleNodes() ?? [], id:\.self) { node in
-				VisibleNode(node: node, delegate: self, options: options)
+				VisibleNode(node: node, delegate: self, options: options, dataProvider: dataProvider)
 			}
 		}
 		.padding()
@@ -93,14 +103,23 @@ struct InfoNodeUI: View {
 }
 
 struct VisibleNode: View {
+	internal init(node: TreeNode, delegate: TreeViewUIDelegate? = nil, options: TreeViewUIOptions = TreeViewUIOptions(), dataProvider: TreeNodeDataProvider? = nil) {
+		self.node = node
+		self.delegate = delegate
+		self.options = options
+		self.node.dataProviderDelegate = dataProvider
+		self.dataProvider = dataProvider
+	}
+	
 	
 	var node: TreeNode
 	var delegate: TreeViewUIDelegate?
 	var options: TreeViewUIOptions = TreeViewUIOptions()
+	var dataProvider: TreeNodeDataProvider?
 	
 	var body: some View {
 		HStack(alignment: .center, spacing: 4) {
-			Text(node.nodes.count == 0 ? "" : (node.expanded ? options.expandedSymbol : options.collapsedSymbol))
+			Text(!node.hasChildren ? "" : (node.expanded ? options.expandedSymbol : options.collapsedSymbol))
 				.frame(width:CGFloat(options.indentSize) * CGFloat(node.level + 1))
 				.onTapGesture {
 					node.expanded = !node.expanded
