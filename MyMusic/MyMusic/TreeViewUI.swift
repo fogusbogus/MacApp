@@ -155,18 +155,3 @@ struct VisibleNode: View {
 	}
 }
 
-struct ContentView_Previews: PreviewProvider {
-	
-	static func getTreeView() -> TreeView {
-		let ret = TreeView()
-		let first = ret.append(text: "First")
-		first.append(text: "First.First")
-		first.append(text: "First.Second")
-		ret.append(text: "Second")
-		return ret
-	}
-	
-	static var previews: some View {
-		TreeViewUI(treeView: getTreeView())
-	}
-}

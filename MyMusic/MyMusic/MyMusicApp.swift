@@ -6,9 +6,28 @@
 //
 
 import SwiftUI
+import TreeView
 
 @main
-struct MyMusicApp: App {
+struct MyMusicApp: App, TreeNodeDataProvider {
+	func getChildren(forNode: TreeNode?) -> [TreeNode] {
+		guard forNode != nil else {
+			let artists = Artist.getAll()
+			return artists.map({
+				let tn = TreeNode()
+				tn.data = $0
+				return tn
+			})
+		}
+		if let artist = forNode?.data as? Artist {
+			return artist.albumsOrdered().map({TreeNode(data: $0)})
+		}
+	}
+	
+	func hasChildren(forNode: TreeView.TreeNode?) -> Bool {
+		<#code#>
+	}
+	
 	init() {
 		persistenceController.seedData()
 	}
