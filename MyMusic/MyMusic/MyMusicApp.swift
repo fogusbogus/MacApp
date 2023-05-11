@@ -20,7 +20,7 @@ struct MyMusicApp: App, TreeNodeDataProvider {
 			})
 		}
 		if let artist = forNode?.data as? Artist {
-			return artist.albumsOrdered().map({TreeNode(data: $0)})
+			return artist.albumsOrdered().map({TreeNode(text: $0.name, data: $0)})
 		}
 	}
 	
