@@ -14,8 +14,6 @@ protocol Logable {
 extension Artist : Logable {
 	func log() {
 		Log.funcParams("::Artist", items: [
-			"id":"\(self.id)",
-			"description": self.description,
 			"name": self.name,
 			"albumsPerformedOn":self.albumsPerformedOn?.map({($0 as? Album)?.name ?? ""}).joined(separator: ", ")
 		])
@@ -26,8 +24,6 @@ extension Artist : Logable {
 extension Album : Logable {
 	func log() {
 		Log.funcParams("::Album", items: [
-			"id":"\(self.id)",
-			"description": self.description,
 			"name": self.name,
 			"releaseYear": self.releaseYear,
 			"sortOrder": self.sortOrder
@@ -38,8 +34,6 @@ extension Album : Logable {
 extension Track: Logable {
 	func log() {
 		Log.funcParams("::Track", items: [
-			"id":"\(self.id)",
-			"description": self.description,
 			"name": self.name,
 			"trackNo": self.trackNo,
 			"type": self.type,
