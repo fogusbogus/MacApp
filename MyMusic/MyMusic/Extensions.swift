@@ -28,8 +28,7 @@ extension Artist {
 				return t1o < t2o
 			}
 		} pre: {
-			Log.log("")
-			Log.log(Log.label("Artist::tracksOrdered()"))
+			Log.funcParams("Artist::tracksOrdered()", items: [:])
 		} post: { v in
 			Log.log("\(v.count) track(s) returned")
 		}
@@ -39,8 +38,7 @@ extension Artist {
 		Log.return {
 			return albumsPerformedOn?.allObjects.compactMap({$0 as? Album}).sorted(by: {$0.sortOrder < $1.sortOrder}) ?? []
 		} pre: {
-			Log.log("")
-			Log.log(Log.label("Artist::albumsOrdered()"))
+			Log.funcParams("Artist::albumsOrdered()", items: [:])
 		} post: { v in
 			Log.log("\(v.count) album(s) returned")
 		}

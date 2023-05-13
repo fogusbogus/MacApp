@@ -18,6 +18,7 @@
 		C9E656362A0C674000B77582 /* TreeView in Frameworks */ = {isa = PBXBuildFile; productRef = C9E656352A0C674000B77582 /* TreeView */; };
 		C9E656392A0D9EB200B77582 /* TreeViewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E656382A0D9EB200B77582 /* TreeViewUI.swift */; };
 		C9E6563F2A0FC99200B77582 /* LoggingLib in Frameworks */ = {isa = PBXBuildFile; productRef = C9E6563E2A0FC99200B77582 /* LoggingLib */; };
+		C9E656412A10101A00B77582 /* Logging+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E656402A10101A00B77582 /* Logging+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		C95612882A0AA51100424030 /* MyMusic.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyMusic.entitlements; sourceTree = "<group>"; };
 		C95612942A0AA9D000424030 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C9E656382A0D9EB200B77582 /* TreeViewUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeViewUI.swift; sourceTree = "<group>"; };
+		C9E656402A10101A00B77582 /* Logging+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logging+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				C95612802A0AA51100424030 /* Preview Content */,
 				C95612942A0AA9D000424030 /* Extensions.swift */,
 				C9E656382A0D9EB200B77582 /* TreeViewUI.swift */,
+				C9E656402A10101A00B77582 /* Logging+Extensions.swift */,
 			);
 			path = MyMusic;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 				C95612952A0AA9D000424030 /* Extensions.swift in Sources */,
 				C95612842A0AA51100424030 /* Persistence.swift in Sources */,
 				C9E656392A0D9EB200B77582 /* TreeViewUI.swift in Sources */,
+				C9E656412A10101A00B77582 /* Logging+Extensions.swift in Sources */,
 				C956127D2A0AA51000424030 /* ContentView.swift in Sources */,
 				C956127B2A0AA51000424030 /* MyMusicApp.swift in Sources */,
 				C95612872A0AA51100424030 /* MyMusic.xcdatamodeld in Sources */,

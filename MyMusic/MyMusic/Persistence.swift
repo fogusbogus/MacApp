@@ -83,6 +83,7 @@ struct PersistenceController {
 					"A Place to Call My Own"
 				]) { track in
 					track.assertAuthors(artists: Artist.assertMany(["Tony Banks", "Mike Rutherford", "Peter Gabriel", "Anthony Phillips"]))
+					track.log()
 				}
 			}
 			
@@ -97,6 +98,7 @@ struct PersistenceController {
 					"The Knife"
 				]) { track in
 					track.assertAuthors(artists: Artist.assertMany(["Tony Banks", "Mike Rutherford", "Peter Gabriel", "Anthony Phillips"]))
+					track.log()
 				}
 			}
 			
@@ -131,6 +133,7 @@ struct PersistenceController {
 						default:
 							track.assertAuthors(artists: Artist.assertMany(["Tony Banks", "Mike Rutherford", "Peter Gabriel", "Steve Hackett", "Phil Collins"]))
 					}
+					track.log()
 					try? track.managedObjectContext?.save()
 					print("track now has \(track.authors?.count ?? 0) author(s)")
 				}
