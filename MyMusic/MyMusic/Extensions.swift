@@ -92,9 +92,7 @@ extension Artist {
 			}
 			return artist
 		} pre: {
-			Log.log("")
-			Log.log(Log.label(Log.label("Artist::assert")))
-			Log.paramList(["name":name, "context":context != nil, "completion":completion != nil])
+			Log.funcParams("Artist::assert", items: ["name":name, "context":context != nil, "completion":completion != nil])
 		} post: { v in
 			Log.log("\"\(v.name ?? "")\" returned")
 		}
