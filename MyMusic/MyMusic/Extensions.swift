@@ -8,18 +8,29 @@
 import Foundation
 import AppKit
 import UsefulExtensions
+import LoggingLib
+
+class Log : ConsoleLog {
+	
+}
 
 extension Artist {
 	
 	func tracksOrdered() -> [Track] {
-		var ret : [Track] = []
-		albumsOrdered().forEach { album in
-			ret.append(contentsOf: album.tracksOrdered())
-		}
-		return ret.sorted { t1, t2 in
-			let t1o = String(format: "%08d", (t1.album?.sortOrder ?? 0)) + String(format: "%08d", t1.trackNo)
-			let t2o = String(format: "%08d", (t2.album?.sortOrder ?? 0)) + String(format: "%08d", t2.trackNo)
-			return t1o < t2o
+		Log.return {
+			var ret : [Track] = []
+			albumsOrdered().forEach { album in
+				ret.append(contentsOf: album.tracksOrdered())
+			}
+			return ret.sorted { t1, t2 in
+				let t1o = String(format: "%08d", (t1.album?.sortOrder ?? 0)) + String(format: "%08d", t1.trackNo)
+				let t2o = String(format: "%08d", (t2.album?.sortOrder ?? 0)) + String(format: "%08d", t2.trackNo)
+				return t1o < t2o
+			}
+		} pre: {
+			Log.log(Log.label("Artist::tracksOrdered()"))
+		} post: { v in
+			Log.log("\(v.count) track(s) returned")
 		}
 	}
 
@@ -61,6 +72,13 @@ extension Artist {
 			extra(artist, true)
 		}
 		return artist
+	}
+	
+	@discardableResult
+	static func assertMany(_ names: [String], _ context: NSManagedObjectContext? = nil, completion: ((Artist, Bool) -> Void)? = nil) -> [Artist] {
+		var ret : [Artist] = []
+		names.filter({!$0.isEmptyOrWhitespace()}).forEach({ret.append(Artist.assert($0, context, completion: completion))})
+		return ret
 	}
 }
 
@@ -118,11 +136,15 @@ extension Album {
 extension Track {
 	@discardableResult
 	static func assert(_ name: String, album: Album, completion: ((Track, Bool) -> Void)?) -> Track {
-		if let candidate = album.tracks?.allObjects.compactMap({$0 as? Track}).first(where: {$0.name!.implies(name)}) {
+		if var candidate = album.tracks?.allObjects.compactMap({$0 as? Track}).first(where: {$0.name!.implies(name)}) {
 			if let callback = completion {
 				callback(candidate, false)
+				try? candidate.managedObjectContext?.save()
 			}
 			return candidate
+		}
+		else {
+			print("New track!")
 		}
 		let context = album.managedObjectContext ?? PersistenceController.shared.container.viewContext
 		let track = Track(context: context)
@@ -130,7 +152,19 @@ extension Track {
 		album.addToTracks(track)
 		if let extra = completion {
 			extra(track, true)
+			try? track.managedObjectContext?.save()
 		}
 		return track
+	}
+	
+	@discardableResult
+	func assertAuthors(artists: [Artist]) -> [Artist] {
+		let alreadyEstablished = self.authors?.allObjects.compactMap({$0 as? Artist}) ?? []
+		artists.forEach { artist in
+			if !alreadyEstablished.contains(obj: artist) {
+				addToAuthors(artist)
+			}
+		}
+		return self.authors?.allObjects.compactMap({$0 as? Artist}) ?? []
 	}
 }

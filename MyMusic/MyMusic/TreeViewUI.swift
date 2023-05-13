@@ -22,7 +22,8 @@ struct TreeViewUI: View, TreeViewUIDelegate {
 	internal init(options: TreeViewUIOptions = TreeViewUIOptions(), updater: Updater = Updater(), treeView: TreeView? = nil, dataProvider: TreeNodeDataProvider? = nil) {
 		self.options = options
 		self.updater = updater
-		self.treeView = treeView
+		self.treeView = treeView ?? TreeView()
+		self.treeView?.dataProviderDelegate = dataProvider
 		self.dataProvider = dataProvider
 		self.treeView?.dataProviderDelegate = dataProvider
 	}
@@ -66,8 +67,14 @@ struct TreeViewUI: View, TreeViewUIDelegate {
 struct AlbumNodeUI : View {
 	var node: Album
 	var selected: Bool
+	
+	var title: String {
+		get {
+			return (node.name ?? "") + " (\(node.releaseYear))"
+		}
+	}
 	var body: some View {
-		Text(node.name ?? "")
+		Text(title)
 			.background(selected ? .gray : .clear)
 			.font(Font.system(.body).smallCaps())
 	}
@@ -85,8 +92,23 @@ struct ArtistNodeUI: View {
 struct TrackNodeUI: View {
 	var node: Track
 	var selected: Bool
+	
+	var title: String {
+		get {
+			var ret = node.name ?? "Unknown Track"
+			if let authors = node.authors {
+				if authors.allObjects.count > 0 {
+					ret += " ("
+					ret += authors.allObjects.map({$0 as! Artist}).map({$0.name?.splitToArray(" ").last ?? ""}).joined(separator: "/")
+					ret += ")"
+				}
+			}
+			return ret
+		}
+	}
+	
 	var body: some View {
-		Text(node.name ?? "").foregroundColor(Color.blue)
+		Text(title).foregroundColor(Color.blue)
 			.background(selected ? .gray : .clear)
 	}
 }

@@ -43,13 +43,16 @@ struct PersistenceController {
 		}
 	}
 		
-	func addTracks(album: Album, titles: [String]) {
+	func addTracks(album: Album, titles: [String], completion: ((Track) -> Void)? = nil) {
 		var trackNo = (album.tracksOrdered().map({$0.trackNo}).max() ?? 0)+1
 		titles.forEach { track in
 			Track.assert(track, album: album) { trk, isNew in
 				if isNew {
 					trk.trackNo = Int32(trackNo)
 					trackNo += 1
+				}
+				if let complete = completion {
+					complete(trk)
 				}
 			}
 		}
@@ -78,7 +81,9 @@ struct PersistenceController {
 					"In Limbo",
 					"The Silent Sun",
 					"A Place to Call My Own"
-				])
+				]) { track in
+					track.assertAuthors(artists: Artist.assertMany(["Tony Banks", "Mike Rutherford", "Peter Gabriel", "Anthony Phillips"]))
+				}
 			}
 			
 			Album.assert("Trespass", artist: genesis) { album, isNew in
@@ -90,7 +95,9 @@ struct PersistenceController {
 					"Stagnation",
 					"Dusk",
 					"The Knife"
-				])
+				]) { track in
+					track.assertAuthors(artists: Artist.assertMany(["Tony Banks", "Mike Rutherford", "Peter Gabriel", "Anthony Phillips"]))
+				}
 			}
 			
 			Album.assert("Nursery Cryme", artist: genesis) { album, isNew in
@@ -103,11 +110,34 @@ struct PersistenceController {
 					"Harold the Barrel",
 					"Harlequin",
 					"The Fountain of Salmacis"
-				])
+				]) { track in
+					print(track.trackNo)
+					switch track.trackNo {
+						case 1:
+							track.assertAuthors(artists: Artist.assertMany(["Tony Banks", "Mike Rutherford", "Peter Gabriel", "Steve Hackett", "Anthony Phillips", "Phil Collins"]))
+						case 2:
+							track.assertAuthors(artists: Artist.assertMany(["Steve Hackett", "Phil Collins"]))
+						case 3:
+							track.assertAuthors(artists: Artist.assertMany(["Tony Banks", "Mike Rutherford", "Peter Gabriel", "Steve Hackett"]))
+						case 4:
+							track.assertAuthors(artists: Artist.assertMany(["Tony Banks",  "Steve Hackett"]))
+						case 5:
+							track.assertAuthors(artists: Artist.assertMany(["Peter Gabriel", "Phil Collins"]))
+						case 6:
+							track.assertAuthors(artists: Artist.assertMany([ "Mike Rutherford", "Anthony Phillips"]))
+						case 7:
+							track.assertAuthors(artists: Artist.assertMany(["Tony Banks", "Mike Rutherford", "Peter Gabriel", "Steve Hackett"]))
+
+						default:
+							track.assertAuthors(artists: Artist.assertMany(["Tony Banks", "Mike Rutherford", "Peter Gabriel", "Steve Hackett", "Phil Collins"]))
+					}
+					try? track.managedObjectContext?.save()
+					print("track now has \(track.authors?.count ?? 0) author(s)")
+				}
 			}
 			
 			Album.assert("Foxtrot", artist: genesis) { album, isNew in
-				album.releaseYear = 1971
+				album.releaseYear = 1972
 				addTracks(album: album, titles: [
 					"Watcher of the Skies",
 					"Time Table",
@@ -119,7 +149,7 @@ struct PersistenceController {
 			}
 			
 			Album.assert("Selling England By The Pound", artist: genesis) { album, isNew in
-				album.releaseYear = 1971
+				album.releaseYear = 1973
 				addTracks(album: album, titles: [
 					"Dancing with the Moonlit Knight",
 					"I Know What I Like (In Your Wardrobe)",
@@ -133,7 +163,7 @@ struct PersistenceController {
 			}
 			
 			Album.assert("The Lamb Lies Down On Broadway", artist: genesis) { album, isNew in
-				album.releaseYear = 1971
+				album.releaseYear = 1974
 				addTracks(album: album, titles: [
 					"The Lamb Lies Down on Broadway",
 					"Fly on a Windshield",
@@ -162,7 +192,7 @@ struct PersistenceController {
 			}
 			
 			Album.assert("A Trick Of The Tail", artist: genesis) { album, isNew in
-				album.releaseYear = 1971
+				album.releaseYear = 1976
 				addTracks(album: album, titles: [
 					"Dance on a Volcano",
 					"Entangled",
@@ -176,7 +206,7 @@ struct PersistenceController {
 			}
 			
 			Album.assert("Wind And Wuthering", artist: genesis) { album, isNew in
-				album.releaseYear = 1971
+				album.releaseYear = 1976
 				addTracks(album: album, titles: [
 					"Eleventh Earl of Mar",
 					"One for the Vine",
@@ -191,7 +221,7 @@ struct PersistenceController {
 			}
 			
 			Album.assert("...And Then There Were Three", artist: genesis) { album, isNew in
-				album.releaseYear = 1971
+				album.releaseYear = 1978
 				addTracks(album: album, titles: [
 					"Down and Out",
 					"Undertow",
@@ -208,7 +238,7 @@ struct PersistenceController {
 			}
 			
 			Album.assert("Duke", artist: genesis) { album, isNew in
-				album.releaseYear = 1971
+				album.releaseYear = 1980
 				addTracks(album: album, titles: [
 					"Behind the Lines",
 					"Duchess",
@@ -226,7 +256,7 @@ struct PersistenceController {
 			}
 			
 			Album.assert("Abacab", artist: genesis) { album, isNew in
-				album.releaseYear = 1971
+				album.releaseYear = 1981
 				addTracks(album: album, titles: [
 					"Abacab",
 					"No Reply at All",
@@ -241,7 +271,7 @@ struct PersistenceController {
 			}
 			
 			Album.assert("Genesis", artist: genesis) { album, isNew in
-				album.releaseYear = 1971
+				album.releaseYear = 1983
 				addTracks(album: album, titles: [
 					"Mama",
 					"That's All",
@@ -256,7 +286,7 @@ struct PersistenceController {
 			}
 			
 			Album.assert("Invisible Touch", artist: genesis) { album, isNew in
-				album.releaseYear = 1971
+				album.releaseYear = 1986
 				addTracks(album: album, titles: [
 					"Invisible Touch",
 					"Tonight Tonight Tonight",
@@ -270,7 +300,7 @@ struct PersistenceController {
 			}
 			
 			Album.assert("We Can't Dance", artist: genesis) { album, isNew in
-				album.releaseYear = 1971
+				album.releaseYear = 1991
 				addTracks(album: album, titles: [
 					"No Son of Mine",
 					"Jesus He Knows Me",
@@ -288,7 +318,7 @@ struct PersistenceController {
 			}
 			
 			Album.assert("Calling All Stations", artist: genesis) { album, isNew in
-				album.releaseYear = 1971
+				album.releaseYear = 1997
 				addTracks(album: album, titles: [
 					"Calling All Stations",
 					"Congo",
@@ -312,10 +342,138 @@ struct PersistenceController {
 			}
 			print(genesis.tracksOrdered())
 		}
+		Artist.assert("Crowded House") { artist, isNew in
+			Album.assert("Crowded House", artist: artist) { album, isNew in
+				album.releaseYear = 1986
+				addTracks(album: album, titles: [
+					"Mean to Me",
+					"World Where You Live",
+					"Now We're Getting Somewhere",
+					"Don't Dream It's Over",
+					"Love You 'Til the Day I Die",
+					"Something So Strong",
+					"Hold in the River",
+					"Can't Carry On",
+					"I Walk Away",
+					"Tombstone",
+					"That's What I Call Love"
+				])
+			}
+			Album.assert("Temple of Low Men", artist: artist) { album, isNew in
+				album.releaseYear = 1988
+				addTracks(album: album, titles: [
+					"I Feel Possessed",
+					"Kill Eye",
+					"Into Temptation",
+					"Mansion in the Slums",
+					"When You Come",
+					"Never Be the Same",
+					"Love This Life",
+					"Sister Madly",
+					"In the Lowlands",
+					"Better Be Home Soon"
+				])
+			}
+			Album.assert("Woodface", artist: artist) { album, isNew in
+				album.releaseYear = 1991
+				addTracks(album: album, titles: [
+					"Chocolate Cake",
+					"It's Only Natural",
+					"Fall at Your Feet",
+					"Tall Trees",
+					"Weather with You",
+					"Whispers and Moans",
+					"Four Seasons in One Day",
+					"There Goes God",
+					"Fame Is",
+					"All I Ask",
+					"As Sure as I Am",
+					"Italian Plastic",
+					"She Goes On",
+					"How Will You Go"
+				])
+			}
+			Album.assert("Together Alone", artist: artist) { album, isNew in
+				album.releaseYear = 1993
+				addTracks(album: album, titles: [
+					"Kare Kare",
+					"In My Command",
+					"Nails in My Feet",
+					"Black and White Boy",
+					"Fingers of Love",
+					"Pineapple Head",
+					"Locked Out",
+					"Private Universe",
+					"Walking on the Spot",
+					"Distant Sun",
+					"Catherine Wheels",
+					"Skin Feeling",
+					"Together Alone"
+				])
+			}
+			Album.assert("Time on Earth", artist: artist) { album, isNew in
+				album.releaseYear = 2007
+				addTracks(album: album, titles: [
+					"Nobody Wants To",
+					"Don't Stop Now",
+					"She Called Up",
+					"Say That Again",
+					"Pour le monde",
+					"Even a Child",
+					"Heaven That I'm Making",
+					"A Sigh",
+					"Silent House",
+					"English Trees",
+					"Walked Her Way Down",
+					"Transit Lounge",
+					"You Are the One to Make Me Cry",
+					"People Are Like Suns"
+				])
+			}
+			Album.assert("Intriguer", artist: artist) { album, isNew in
+				album.releaseYear = 2010
+				addTracks(album: album, titles: [
+					"Saturday Sun",
+					"Archer's Arrows",
+					"Amsterdam",
+					"Either Side of the World",
+					"Falling Dove",
+					"Isolation",
+					"Twice if You're Lucky",
+					"Inside Out",
+					"Even If",
+					"Elephants"
+				])
+			}
+			Album.assert("Dreamers are Waiting", artist: artist) { album, isNew in
+				album.releaseYear = 2021
+				addTracks(album: album, titles: [
+					"Bad Times Good",
+					"Playing with Fire",
+					"To the Island",
+					"Sweet Tooth",
+					"Whatever You Want",
+					"Show Me the Way",
+					"Goodnight Everyone",
+					"Too Good for This World",
+					"Start of Something",
+					"Real Life Woman",
+					"Love Isn't Hard at All",
+					"Deeper Down"
+				])
+			}
+		}
 		
+		do {
+			try PersistenceController.shared.container.viewContext.save()
+		}
+		catch {
+			print(error)
+		}
 	}
 
     init(inMemory: Bool = false) {
+		Log.devMode = true
         container = NSPersistentContainer(name: "MyMusic")
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")

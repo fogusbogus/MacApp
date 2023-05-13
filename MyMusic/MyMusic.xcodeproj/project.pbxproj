@@ -17,6 +17,7 @@
 		C95612982A0AF9EB00424030 /* UsefulExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = C95612972A0AF9EB00424030 /* UsefulExtensions */; };
 		C9E656362A0C674000B77582 /* TreeView in Frameworks */ = {isa = PBXBuildFile; productRef = C9E656352A0C674000B77582 /* TreeView */; };
 		C9E656392A0D9EB200B77582 /* TreeViewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E656382A0D9EB200B77582 /* TreeViewUI.swift */; };
+		C9E6563C2A0FC64900B77582 /* LoggingLib in Frameworks */ = {isa = PBXBuildFile; productRef = C9E6563B2A0FC64900B77582 /* LoggingLib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9E6563C2A0FC64900B77582 /* LoggingLib in Frameworks */,
 				C95612982A0AF9EB00424030 /* UsefulExtensions in Frameworks */,
 				C9E656362A0C674000B77582 /* TreeView in Frameworks */,
 			);
@@ -104,6 +106,7 @@
 			packageProductDependencies = (
 				C95612972A0AF9EB00424030 /* UsefulExtensions */,
 				C9E656352A0C674000B77582 /* TreeView */,
+				C9E6563B2A0FC64900B77582 /* LoggingLib */,
 			);
 			productName = MyMusic;
 			productReference = C95612772A0AA51000424030 /* MyMusic.app */;
@@ -136,6 +139,7 @@
 			packageReferences = (
 				C95612962A0AF9EB00424030 /* XCRemoteSwiftPackageReference "UsefulExtensions" */,
 				C9E656342A0C674000B77582 /* XCRemoteSwiftPackageReference "TreeViewLib" */,
+				C9E6563A2A0FC64900B77582 /* XCRemoteSwiftPackageReference "LoggingLib" */,
 			);
 			productRefGroup = C95612782A0AA51000424030 /* Products */;
 			projectDirPath = "";
@@ -386,6 +390,14 @@
 				kind = branch;
 			};
 		};
+		C9E6563A2A0FC64900B77582 /* XCRemoteSwiftPackageReference "LoggingLib" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = /Users/matt/XCode/Libraries/LoggingLib/LoggingLib;
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -398,6 +410,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C9E656342A0C674000B77582 /* XCRemoteSwiftPackageReference "TreeViewLib" */;
 			productName = TreeView;
+		};
+		C9E6563B2A0FC64900B77582 /* LoggingLib */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9E6563A2A0FC64900B77582 /* XCRemoteSwiftPackageReference "LoggingLib" */;
+			productName = LoggingLib;
 		};
 /* End XCSwiftPackageProductDependency section */
 

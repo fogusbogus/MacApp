@@ -1,151 +1,22 @@
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (1,1,'Where The Sour Turns To Sweet',1,1,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (2,1,'Fireside Song',1,2,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (3,1,'The Serpent',1,3,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (4,1,'Am I Very Wrong?',1,4,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (5,1,'Into The Wilderness',1,5,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (6,1,'The Conqueror',1,6,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (7,1,'In Hiding',1,7,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (8,1,'One Day',1,8,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (9,1,'Window',1,9,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (10,1,'In Limbo',1,10,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (11,1,'The Silent Sun',1,11,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (12,1,'A Place To Call My Own',1,12,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (13,2,'Looking For Someone',1,1,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (14,2,'White Mountain',1,2,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (15,2,'Visions Of Angels',1,3,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (16,2,'Stagnation',1,4,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (17,2,'Dusk',1,5,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (18,2,'The Knife',1,6,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (19,3,'The Musical Box',1,1,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (20,3,'For Absent Friends',1,2,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (21,3,'The Return Of The Giant Hogweed',1,3,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (22,3,'Seven Stones',1,4,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (23,3,'Harold The Barrel',1,5,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (24,3,'Harlequin',1,6,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (25,3,'The Fountain Of Salmacis',1,7,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (26,4,'Watcher Of The Skies',1,1,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (27,4,'Time Table',1,2,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (28,4,'Get ''Em Out By Friday',1,3,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (29,4,'Can-Utility And The Coastliners',1,4,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (30,4,'Horizons',1,5,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (31,4,'Supper''s Ready',1,6,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (32,5,'Dancing With The Moonlit Knight',1,1,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (33,5,'I Know What I Like (In Your Wardrobe)',1,2,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (34,5,'Firth Of Fifth',1,3,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (35,5,'More Fool Me',1,4,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (36,5,'The Battle Of Epping Forest',1,5,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (37,5,'After The Ordeal',1,6,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (38,5,'The Cinema Show',1,7,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (39,5,'Aisle Of Plenty',1,8,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (40,6,'The Lamb Lies Down On Broadway',1,1,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (41,6,'Fly On A Windshield',1,2,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (42,6,'Broadway Melody Of 1974',1,3,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (43,6,'Cuckoo Cocoon',1,4,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (44,6,'In The Cage',1,5,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (45,6,'The Grand Parade Of Lifeless Packaging',1,6,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (46,6,'Back In N.Y.C.',1,7,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (47,6,'Hairless Heart',1,8,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (48,6,'Counting Out Time',1,9,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (49,6,'The Carpet Crawlers',1,10,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (50,6,'The Chamber Of 32 Doors',1,11,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (51,6,'Lilywhite Lilith',1,12,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (52,6,'The Waiting Room',1,13,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (53,6,'Anyway',1,14,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (54,6,'Here Comes The Supernatural Anaesthetist',1,15,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (55,6,'The Lamia',1,16,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (56,6,'Silent Sorrow In Empty Boats',1,17,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (57,6,'The Colony Of Slippermen (The Arrival/A Visit To The Doktor/The Raven)',1,18,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (58,6,'Ravine',1,19,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (59,6,'The Light Dies Down On Broadway',1,20,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (60,6,'Riding The Scree',1,21,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (61,6,'In The Rapids',1,22,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (62,6,'it',1,23,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (63,7,'Dance On A Volcano',1,1,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (64,7,'Entangled',1,2,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (65,7,'Squonk',1,3,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (66,7,'Mad Man Moon',1,4,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (67,7,'Robbery, Assault & Battery',1,5,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (68,7,'Ripples',1,6,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (69,7,'A Trick Of The Tail',1,7,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (70,7,'Los Endos',1,8,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (71,8,'Eleventh Earl Of Mar',1,1,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (72,8,'One For The Vine',1,2,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (73,8,'Your Own Special Way',1,3,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (74,8,'Wot Gorilla?',1,4,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (75,8,'All In A Mouse''s Night',1,5,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (76,8,'Blood On The Rooftops',1,6,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (77,8,'Unquiet Slumber For The Sleepers...',1,7,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (78,8,'...In That Quiet Earth',1,8,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (79,8,'Afterglow',1,9,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (80,9,'Down And Out',1,1,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (81,9,'Undertow',1,2,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (82,9,'Ballad Of Big',1,3,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (83,9,'Snowbound',1,4,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (84,9,'Burning Rope',1,5,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (85,9,'Deep In The Motherlode',1,6,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (86,9,'Many Too Many',1,7,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (87,9,'Scenes From A Night''s Dream',1,8,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (88,9,'Say It''s Alright Joe',1,9,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (89,9,'The Lady Lies',1,10,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (90,9,'Follow You, Follow Me',1,11,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (91,10,'Behind The Lines',1,1,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (92,10,'Duchess',1,2,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (93,10,'Guide Vocal',1,3,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (94,10,'Man Of Our Times',1,4,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (95,10,'Misunderstanding',1,5,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (96,10,'Heathaze',1,6,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (97,10,'Turn It On Again',1,7,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (98,10,'Alone Tonight',1,8,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (99,10,'Cul-de-sac',1,9,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (100,10,'Please Don''t Ask',1,10,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (101,10,'Duke''s Travels',1,11,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (102,10,'Duke''s End',1,12,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (103,11,'Abacab',1,1,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (104,11,'No Reply at All',1,2,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (105,11,'Me and Sarah Jane',1,3,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (106,11,'Keep it Dark',1,4,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (107,11,'Dodo/Lurker',1,5,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (108,11,'Whodunnit?',1,6,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (109,11,'Man on the Corner',1,7,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (110,11,'Like it or Not',1,8,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (111,11,'Another Record',1,9,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (112,12,'Mama',1,1,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (113,12,'That''s All',1,2,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (114,12,'Home By The Sea',1,3,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (115,12,'Second Home By The Sea',1,4,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (116,12,'Illegal Alien',1,5,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (117,12,'Taking It All Too Hard',1,6,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (118,12,'Just A Job To Do',1,7,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (119,12,'Silver Rainbow',1,8,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (120,12,'It''s Gonna Get Better',1,9,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (121,13,'Invisible Touch',1,1,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (122,13,'Tonight, Tonight, Tonight',1,2,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (123,13,'Land Of Confusion',1,3,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (124,13,'In Too Deep',1,4,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (125,13,'Anything She Does',1,5,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (126,13,'Domino',1,6,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (127,13,'Throwing It All Away',1,7,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (128,13,'The Brazilian',1,8,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (129,13,'No Son Of Mine',1,1,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (130,13,'Jesus He Knows Me',1,2,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (131,13,'Driving The Last Spike',1,3,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (132,13,'I Can''t Dance',1,4,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (133,13,'Never A Time',1,5,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (134,13,'Dreaming While You Sleep',1,6,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (135,13,'Tell Me Why?',1,7,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (136,13,'Living Forever',1,8,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (137,13,'Hold On My Heart',1,9,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (138,13,'Way Of The World',1,10,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (139,13,'Since I Lost You',1,11,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (140,13,'Fading Lights',1,12,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (141,14,'Calling All Stations',1,1,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (142,14,'Congo',1,2,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (143,14,'Shipwrecked',1,3,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (144,14,'Alien Afternoon',1,4,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (145,14,'Not About Us',1,5,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (146,14,'If That''s What You Need',1,6,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (147,14,'The Dividing Line',1,7,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (148,14,'Uncertain Weather',1,8,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (149,14,'Small Talk',1,9,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (150,14,'There Must Be Some Other Way',1,10,'A');
-insert into track (id, albumId, name, authorGroupId, trackNo, trackType) values (151,14,'One Man''s Fool',1,11,'A');
+1.	"Bad Times Good"
+Neil FinnLiam FinnElroy FinnNick Seymour
+3:41
+2.	"Playing with Fire"
+N. FinnL. FinnE. FinnSeymourMitchell Froom
+3:27
+3.	"To the Island"	 	3:59
+4.	"Sweet Tooth"	 	3:12
+5.	"Whatever You Want"	 	3:22
+6.	"Show Me the Way"	 	3:43
+7.	"Goodnight Everyone"	L. Finn	3:30
+8.	"Too Good for This World"
+N. FinnTim Finn
+3:39
+9.	"Start of Something"
+L. FinnN. Finn
+3:20
+10.	"Real Life Woman"	 	3:48
+11.	"Love Isn't Hard at All"
+E. FinnN. Finn
+3:02
+12.	"Deeper Down"	 	3:10
