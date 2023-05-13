@@ -28,6 +28,7 @@ extension Artist {
 				return t1o < t2o
 			}
 		} pre: {
+			Log.log("")
 			Log.log(Log.label("Artist::tracksOrdered()"))
 		} post: { v in
 			Log.log("\(v.count) track(s) returned")
@@ -35,43 +36,69 @@ extension Artist {
 	}
 
 	func albumsOrdered() -> [Album] {
-		return albumsPerformedOn?.allObjects.compactMap({$0 as? Album}).sorted(by: {$0.sortOrder < $1.sortOrder}) ?? []
+		Log.return {
+			return albumsPerformedOn?.allObjects.compactMap({$0 as? Album}).sorted(by: {$0.sortOrder < $1.sortOrder}) ?? []
+		} pre: {
+			Log.log("")
+			Log.log(Log.label("Artist::albumsOrdered()"))
+		} post: { v in
+			Log.log("\(v.count) album(s) returned")
+		}
+
 	}
 	
 	static func getAll(_ context: NSManagedObjectContext? = nil) -> [Artist] {
-		let context = context ?? PersistenceController.shared.container.viewContext
-		let request = NSFetchRequest<Self>(entityName: "\(Self.self)")
-		do {
-			return try context.fetch(request)
+		Log.return {
+			let context = context ?? PersistenceController.shared.container.viewContext
+			let request = NSFetchRequest<Self>(entityName: "\(Self.self)")
+			do {
+				return try context.fetch(request)
+			}
+			catch {
+				Log.error(error)
+			}
+			return []
+		} pre: {
+			Log.log("")
+			Log.log(Log.label("Artist::getAll()"))
+		} post: { v in
+			Log.log("\(v.count) album(s) returned")
 		}
-		catch {}
-		return []
 	}
 	
 	@discardableResult
 	static func assert(_ name: String, _ context: NSManagedObjectContext? = nil, completion: ((Artist, Bool) -> Void)?) -> Artist {
-		let context = context ?? PersistenceController.shared.container.viewContext
-		let request = NSFetchRequest<Self>(entityName: "\(Self.self)")
-		let pred = NSPredicate(format: "name like %@", name)
-		request.predicate = pred
-		do {
-			let coll = try context.fetch(request)
-			if let ret = coll.first {
-				if let callback = completion {
-					callback(ret, false)
+		Log.return {
+			let context = context ?? PersistenceController.shared.container.viewContext
+			let request = NSFetchRequest<Self>(entityName: "\(Self.self)")
+			let pred = NSPredicate(format: "name like %@", name)
+			request.predicate = pred
+			do {
+				let coll = try context.fetch(request)
+				if let ret = coll.first {
+					if let callback = completion {
+						callback(ret, false)
+					}
+					return ret
 				}
-				return ret
 			}
+			catch {
+				Log.error(error)
+			}
+			let artist = Artist(context: context)
+			artist.name = name
+			if let extra = completion {
+				extra(artist, true)
+			}
+			return artist
+		} pre: {
+			Log.log("")
+			Log.log(Log.label(Log.label("Artist::assert")))
+			Log.paramList(["name":name, "context":context != nil, "completion":completion != nil])
+		} post: { v in
+			Log.log("\"\(v.name ?? "")\" returned")
 		}
-		catch {
-			
-		}
-		let artist = Artist(context: context)
-		artist.name = name
-		if let extra = completion {
-			extra(artist, true)
-		}
-		return artist
+
 	}
 	
 	@discardableResult
