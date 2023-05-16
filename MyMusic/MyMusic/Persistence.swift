@@ -44,15 +44,28 @@ struct PersistenceController {
 	}
 		
 	func addTracks(album: Album, titles: [String], completion: ((Track) -> Void)? = nil) {
+		Log.funcParams("Persistence::addTracks", items: [
+			"album":album.name,
+			"titles":titles.joined(separator: ", "),
+			"completion": completion != nil
+		])
 		var trackNo = (album.tracksOrdered().map({$0.trackNo}).max() ?? 0)+1
-		titles.forEach { track in
-			Track.assert(track, album: album) { trk, isNew in
-				if isNew {
-					trk.trackNo = Int32(trackNo)
-					trackNo += 1
-				}
-				if let complete = completion {
-					complete(trk)
+		Log.log("TrackNo calculated as \(trackNo)")
+		Log.process("Processing tracks") {
+			titles.forEach { track in
+				Log.log("Processing track \(track)")
+				Track.assert(track, album: album) { trk, isNew in
+					if isNew {
+						Log.log("Track is NEW")
+						trk.trackNo = Int32(trackNo)
+						trackNo += 1
+					}
+					if let complete = completion {
+						Log.process("Calling completion...") {
+							complete(trk)
+						}
+						Log.log("...done")
+					}
 				}
 			}
 		}
