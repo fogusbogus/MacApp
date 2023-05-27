@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22F66" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Abode" representedClassName="Abode" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="canvassArea" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CanvassArea" inverseName="abodes" inverseEntity="CanvassArea"/>
+        <relationship name="electors" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Elector" inverseName="mainResidence" inverseEntity="Elector"/>
+        <relationship name="subStreet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SubStreet" inverseName="abodes" inverseEntity="SubStreet"/>
+    </entity>
+    <entity name="CanvassArea" representedClassName="CanvassArea" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="sortName" optional="YES" attributeType="String"/>
+        <relationship name="abodes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Abode" inverseName="canvassArea" inverseEntity="Abode"/>
+    </entity>
+    <entity name="ChangeHistory" representedClassName="ChangeHistory" syncable="YES" codeGenerationType="class">
+        <attribute name="data" optional="YES" attributeType="String"/>
+        <attribute name="dataVersion" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="relatedObjectId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="ts" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
+    <entity name="Elector" representedClassName="Elector" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="sortName" optional="YES" attributeType="String"/>
+        <relationship name="mainResidence" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Abode" inverseName="electors" inverseEntity="Abode"/>
+    </entity>
+    <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
+    <entity name="PollingDistrict" representedClassName="PollingDistrict" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="sortName" optional="YES" attributeType="String"/>
+        <relationship name="wards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ward" inverseName="pollingDistrict" inverseEntity="Ward"/>
+    </entity>
+    <entity name="Register" representedClassName="Register" syncable="YES" codeGenerationType="class">
+        <attribute name="activeYearEnd" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="activeYearStart" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="endTS" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="name" attributeType="String" defaultValueString="My Register"/>
+        <attribute name="sortName" optional="YES" attributeType="String"/>
+        <attribute name="startTS" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="type" attributeType="String" defaultValueString="R"/>
+    </entity>
+    <entity name="Street" representedClassName="Street" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="postCode" optional="YES" attributeType="String"/>
+        <attribute name="sortName" optional="YES" attributeType="String"/>
+        <relationship name="subStreets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SubStreet" inverseName="street" inverseEntity="SubStreet"/>
+        <relationship name="ward" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ward" inverseName="streets" inverseEntity="Ward"/>
+    </entity>
+    <entity name="SubStreet" representedClassName="SubStreet" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="sortName" optional="YES" attributeType="String"/>
+        <relationship name="abodes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Abode" inverseName="subStreet" inverseEntity="Abode"/>
+        <relationship name="street" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Street" inverseName="subStreets" inverseEntity="Street"/>
+    </entity>
+    <entity name="Ward" representedClassName="Ward" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="sortName" optional="YES" attributeType="String"/>
+        <relationship name="pollingDistrict" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PollingDistrict" inverseName="wards" inverseEntity="PollingDistrict"/>
+        <relationship name="streets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Street" inverseName="ward" inverseEntity="Street"/>
+    </entity>
+</model>

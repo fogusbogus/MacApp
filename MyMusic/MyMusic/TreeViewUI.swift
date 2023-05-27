@@ -50,9 +50,19 @@ struct TreeViewUI: View, TreeViewUIDelegate {
 	
 	var dataProvider: TreeNodeDataProvider?
 	
+	var visibleNodes: [TreeNode] {
+		get {
+			let ret = treeView?.getVisibleNodes().map({ tn in
+				tn.treeView = self.treeView
+				return tn
+			})
+			return ret ?? []
+		}
+	}
+	
 	var body: some View {
 		VStack(alignment: .leading) {
-			ForEach(treeView?.getVisibleNodes() ?? [], id:\.self) { node in
+			ForEach(visibleNodes, id:\.self) { node in
 				VisibleNode(node: node, delegate: self, options: options, dataProvider: dataProvider)
 			}
 		}
@@ -89,6 +99,32 @@ struct ArtistNodeUI: View {
 	}
 }
 
+extension Array where Element == Artist {
+	func sameContent(_ other: Array<Element>) -> Bool {
+		if self.count != other.count {
+			return false
+		}
+		let selfSorted = self.sorted { a, b in
+			return a.name! < b.name!
+		}
+		let otherSorted = other.sorted { a, b in
+			return a.name! < b.name!
+		}
+		return selfSorted.elementsEqual(otherSorted)
+	}
+}
+
+extension Track {
+	func musicBy() -> [Artist] {
+		return self.authors?.array.map { $0 as! Artist } ?? []
+	}
+	
+	func lyricsBy() -> [Artist] {
+		return self.lyricists?.array.map { $0 as! Artist } ?? []
+	}
+	
+}
+
 struct TrackNodeUI: View {
 	var node: Track
 	var selected: Bool
@@ -96,20 +132,71 @@ struct TrackNodeUI: View {
 	var title: String {
 		get {
 			var ret = node.name ?? "Unknown Track"
-			if let authors = node.authors {
-				if authors.allObjects.count > 0 {
-					ret += " ("
-					ret += authors.allObjects.map({$0 as! Artist}).map({$0.name?.splitToArray(" ").last ?? ""}).joined(separator: "/")
-					ret += ")"
-				}
-			}
 			return ret
 		}
 	}
 	
+	func describeArtists(artists: [Artist]) -> String {
+		var who: [String] = []
+		artists.forEach { artist in
+			var lastName = artist.lastName()
+			if artists.filter({$0.lastName() == lastName}).count > 1 {
+				lastName = artist.lastNameAndInitials()
+			}
+			who.append(lastName)
+		}
+		return who.joined(separator: "/")
+	}
+	
+	/// Get the authors in a descriptive string
+	/// e.g.
+	/// M: Banks/Collins/Rutherford L: Collins
+	/// or
+	/// Banks/Collins/Rutherford (no lyrics or if music and lyrics by same people regardless of order)
+	var authors: String {
+		get {
+			let music = node.musicBy()
+			let lyrics = node.lyricsBy()
+			
+			let showMusic = music.count > 0
+			var showLyrics = lyrics.count > 0
+			
+			if music.sameContent(lyrics) {
+				showLyrics = false
+			}
+			
+			if showLyrics {
+				let musicSurnames = describeArtists(artists: music)
+				let lyricSurnames = describeArtists(artists: lyrics)
+				
+				
+				return " (M: \(musicSurnames) L: \(lyricSurnames))"
+			}
+			if showMusic {
+				let musicSurnames = describeArtists(artists: music)
+				return " (" + musicSurnames + ")"
+			}
+			return ""
+		}
+	}
+	
 	var body: some View {
-		Text(title).foregroundColor(Color.blue)
-			.background(selected ? .gray : .clear)
+		Group {
+			HStack(alignment: .center, spacing: 0) {
+				Text(title).foregroundColor(Color.blue).background(selected ? .gray : .clear)
+				Text(" \(authors)").italic().foregroundColor(.gray)
+			}
+		}
+	}
+}
+
+extension Artist {
+	func lastName() -> String {
+		return self.name?.splitToArray(" ").last ?? ""
+	}
+	
+	func lastNameAndInitials() -> String {
+		return self.name ?? ""
 	}
 }
 

@@ -1,0 +1,21 @@
+{
+	"pollingDistricts": {
+		"name": "Stroud",
+		"wards": [{
+			"name": "Alderley",
+			"streets": [{
+				"name": "Alderley Road"
+			},
+				{
+					"name": "Winterspring Lane"
+				}
+			]
+		}]
+		
+	}
+}
+
+
+{"pollingDistricts":
+[
+{"name":"Stroud","wards":[{"name":"Cainscross","streets":[{"name":"Berkeley Close","sort":"Berkeley"}]}]}]}

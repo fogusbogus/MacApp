@@ -45,6 +45,17 @@ extension Artist {
 
 	}
 	
+	func hasAlbums() -> Bool {
+		Log.return {
+			return albumsPerformedOn?.count ?? 0 > 0
+		} pre: {
+			
+		} post: { _, _ in
+			
+		}
+
+	}
+	
 	static func getAll(_ context: NSManagedObjectContext? = nil) -> [Artist] {
 		Log.return {
 			let context = context ?? PersistenceController.shared.container.viewContext
@@ -162,7 +173,7 @@ extension Track {
 		if var candidate = album.tracks?.allObjects.compactMap({$0 as? Track}).first(where: {$0.name!.implies(name)}) {
 			if let callback = completion {
 				callback(candidate, false)
-				try? candidate.managedObjectContext?.save()
+				PersistenceController.shared.saveData()
 			}
 			return candidate
 		}
@@ -175,19 +186,67 @@ extension Track {
 		album.addToTracks(track)
 		if let extra = completion {
 			extra(track, true)
-			try? track.managedObjectContext?.save()
+			PersistenceController.shared.saveData()
 		}
 		return track
 	}
 	
 	@discardableResult
 	func assertAuthors(artists: [Artist]) -> [Artist] {
-		let alreadyEstablished = self.authors?.allObjects.compactMap({$0 as? Artist}) ?? []
-		artists.forEach { artist in
-			if !alreadyEstablished.contains(obj: artist) {
-				addToAuthors(artist)
+		Log.return {
+			let alreadyEstablished = self.authors?.array.compactMap({$0 as? Artist}) ?? []
+			artists.forEach { artist in
+				if !alreadyEstablished.contains(obj: artist) {
+					addToAuthors(artist)
+				}
 			}
+			return self.authors?.array.compactMap({$0 as? Artist}) ?? []
+		} pre: {
+			Log.funcParams("assertAuthors", items: [
+				"artists":artists.map({ $0.name ?? "" }).joined(separator: ", ")
+			])
+		} post: { authors in
+			Log.funcParams("RESULTS (assertAuthors)", items: [
+				"Return Value":authors.map({$0.name ?? ""}).joined(separator: ", ")
+			])
 		}
-		return self.authors?.allObjects.compactMap({$0 as? Artist}) ?? []
+
+	}
+	
+	@discardableResult
+	func removeAllAuthors() -> [Artist] {
+		let artists = self.authors?.array.compactMap({$0 as? Artist}) ?? []
+		let this = self
+		artists.forEach({this.removeFromAuthors($0)})
+		return artists
+	}
+	@discardableResult
+	func removeAllLyricists() -> [Artist] {
+		let artists = self.lyricists?.array.compactMap({$0 as? Artist}) ?? []
+		let this = self
+		artists.forEach({this.removeFromLyricists($0)})
+		return artists
+	}
+	
+	@discardableResult
+	func assertLyricists(lyricists: [Artist]) -> [Artist] {
+		Log.return {
+			let alreadyEstablished = self.lyricists?.array.compactMap({$0 as? Artist}) ?? []
+			lyricists.forEach { artist in
+				if !alreadyEstablished.contains(obj: artist) {
+					addToLyricists(artist)
+				}
+			}
+			return self.lyricists?.array.compactMap({$0 as? Artist}) ?? []
+		} pre: {
+			Log.funcParams("assertAuthors", items: [
+				"artists":lyricists.map({ $0.name ?? "" }).joined(separator: ", ")
+			])
+		} post: { authors in
+			Log.funcParams("RESULTS (assertAuthors)", items: [
+				"Return Value":authors.map({$0.name ?? ""}).joined(separator: ", ")
+			])
+		}
+		
 	}
 }

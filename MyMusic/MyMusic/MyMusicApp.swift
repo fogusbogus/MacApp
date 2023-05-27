@@ -12,7 +12,7 @@ import TreeView
 struct MyMusicApp: App, TreeNodeDataProvider {
 	func getChildren(forNode: TreeNode?) -> [TreeNode] {
 		guard forNode != nil else {
-			return Artist.getAll().map({TreeNode(text: $0.name ?? "", data: $0)})
+			return Artist.getAll().filter({$0.hasAlbums()}).map({TreeNode(text: $0.name ?? "", data: $0)})
 		}
 		if let artist = forNode?.data as? Artist {
 			return artist.albumsOrdered().map({TreeNode(text: $0.name ?? "", data: $0)})
