@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Cocoa
 
 extension Abode {
 	func street() -> Street? {
@@ -18,6 +19,20 @@ extension Abode {
 	
 	func pollingDistrict() -> PollingDistrict? {
 		return ward()?.pollingDistrict
+	}
+	
+	static func findById(id: ObjectIdentifier, context: NSManagedObjectContext? = nil) -> Abode? {
+		let context = context ?? PersistenceController.shared.container.viewContext
+		let fetch = Abode.fetchRequest()
+		fetch.predicate = NSPredicate(format: "recordName == %@", "\(id)")
+		do {
+			let res = try context.fetch(fetch)
+			return res.first
+		}
+		catch {
+			
+		}
+		return nil
 	}
 }
 
@@ -59,7 +74,7 @@ extension SubStreet {
 
 extension Abode {
 	func sorterText() -> String {
-		return (name ?? "")
+		return (subStreet?.sorterText() ?? "") + "." + (sortName ?? "") + (name ?? "")
 	}
 
 }

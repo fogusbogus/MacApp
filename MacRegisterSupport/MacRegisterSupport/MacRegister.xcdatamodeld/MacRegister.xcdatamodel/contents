@@ -2,6 +2,8 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22F66" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Abode" representedClassName="Abode" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="sortName" optional="YES" attributeType="String"/>
+        <attribute name="type" attributeType="String" defaultValueString="A"/>
         <relationship name="canvassArea" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CanvassArea" inverseName="abodes" inverseEntity="CanvassArea"/>
         <relationship name="electors" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Elector" inverseName="mainResidence" inverseEntity="Elector"/>
         <relationship name="subStreet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SubStreet" inverseName="abodes" inverseEntity="SubStreet"/>

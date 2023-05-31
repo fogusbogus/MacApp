@@ -20,7 +20,7 @@ class TreeViewUIOptions {
 }
 
 struct TreeViewUI: View, TreeViewUIDelegate {
-	internal init(options: TreeViewUIOptions = TreeViewUIOptions(), updater: Updater = Updater(), treeView: TreeView? = nil, dataProvider: TreeNodeDataProvider? = nil, contextMenuDelegate: TreeNodeContextMenuProvider? = nil) {
+	internal init(options: TreeViewUIOptions = TreeViewUIOptions(), updater: Updater = Updater(), treeView: TreeView? = nil, dataProvider: TreeNodeDataProvider? = nil, contextMenuDelegate: TreeNodeContextMenuProvider? = nil, treeViewUIDelegate: TreeViewUIDelegate? = nil) {
 		self.options = options
 		self.updater = updater
 		self.treeView = treeView ?? TreeView()
@@ -28,6 +28,7 @@ struct TreeViewUI: View, TreeViewUIDelegate {
 		self.dataProvider = dataProvider
 		self.treeView?.dataProviderDelegate = dataProvider
 		self.contextMenuDelegate = contextMenuDelegate
+		self.treeViewUIDelegate = treeViewUIDelegate
 	}
 	
 	func update() {
@@ -42,6 +43,7 @@ struct TreeViewUI: View, TreeViewUIDelegate {
 		}
 		treeView?.selectedNode = node
 		update()
+		treeViewUIDelegate?.select(node: node)
 	}
 	
 	var options: TreeViewUIOptions = TreeViewUIOptions()
@@ -64,6 +66,25 @@ struct TreeViewUI: View, TreeViewUIDelegate {
 		}
 	}
 	
+	var treeViewUIDelegate: TreeViewUIDelegate?
+	
+	func gotoNodeFor(item: NSManagedObject) {
+		let el : Elector? = item as? Elector
+		let pr : Abode? = el?.mainResidence ?? item as? Abode
+		let ss : SubStreet? = pr?.subStreet ?? item as? SubStreet
+		let st : Street? = ss?.street ?? item as? Street
+		let wd : Ward? = st?.ward ?? item as? Ward
+		let pd : PollingDistrict? = wd?.pollingDistrict ?? item as? PollingDistrict
+
+		treeView?.findNode(data: pd)?.expanded = wd != nil
+		treeView?.findNode(data: wd)?.expanded = st != nil
+		treeView?.findNode(data: st)?.expanded = ss != nil
+		if let nodeToSelect = treeView?.findNode(data: ss) ?? treeView?.findNode(data: st) ?? treeView?.findNode(data: wd) ?? treeView?.findNode(data: pd) {
+			treeView?.selectedNode = treeView?.findNode(node: nodeToSelect)
+		}
+		
+	}
+
 	var body: some View {
 		VStack(alignment: .leading) {
 			ForEach(visibleNodes, id:\.self) { node in
@@ -73,6 +94,8 @@ struct TreeViewUI: View, TreeViewUIDelegate {
 		.padding()
 	}
 }
+
+
 
 struct TreeNodePollingDistrict: View {
 	var node: TreeNode
@@ -92,7 +115,7 @@ struct TreeNodePollingDistrict: View {
 		HStack(alignment: .center, spacing: 4) {
 			Text("🇬🇧")
 			Text(name)
-				.background(selected ? Color.green : Color.clear)
+				.background(selected ? Color.blue : Color.clear)
 		}
 		.contextMenu(menuItems: {contextMenuDelegate?.getContextMenu(node: node)})
 	}
@@ -116,7 +139,7 @@ struct TreeNodeWard: View {
 		HStack(alignment: .center, spacing: 4) {
 			Text("🎗️")
 			Text(name)
-				.background(selected ? Color.green : Color.clear)
+				.background(selected ? Color.blue : Color.clear)
 		}
 		.contextMenu(menuItems: {contextMenuDelegate?.getContextMenu(node: node)})
 	}
@@ -140,7 +163,7 @@ struct TreeNodeStreet: View {
 		HStack(alignment: .center, spacing: 4) {
 			Text("🏘️")
 			Text(name)
-				.background(selected ? Color.green : Color.clear)
+				.background(selected ? Color.blue : Color.clear)
 		}
 		.contextMenu(menuItems: {contextMenuDelegate?.getContextMenu(node: node)})
 	}
@@ -156,9 +179,9 @@ struct TreeNodeSubStreet: View {
 			if let ss = node.data as? SubStreet {
 				let abodeCount = ss.abodes?.count ?? 0
 				if abodeCount != 1 {
-					return "\(abodeCount) properties"
+					return "\(abodeCount) properties (\(ss.name ?? ""))"
 				}
-				return "1 property"
+				return "1 property (\(ss.name ?? ""))"
 			}
 			return "<Unknown>"
 		}
@@ -168,7 +191,7 @@ struct TreeNodeSubStreet: View {
 		HStack(alignment: .center, spacing: 4) {
 			Text("📍")
 			Text(name)
-				.background(selected ? Color.green : Color.clear)
+				.background(selected ? Color.blue : Color.clear)
 		}
 		.contextMenu(menuItems: {contextMenuDelegate?.getContextMenu(node: node)})
 	}
@@ -192,7 +215,7 @@ struct TreeNodeAbode: View {
 		HStack(alignment: .center, spacing: 4) {
 			Text("🛖")
 			Text(name)
-				.background(selected ? Color.green : Color.clear)
+				.background(selected ? Color.blue : Color.clear)
 		}
 		.contextMenu(menuItems: {contextMenuDelegate?.getContextMenu(node: node)})
 	}

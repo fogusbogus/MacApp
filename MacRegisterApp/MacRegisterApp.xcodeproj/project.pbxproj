@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C9007AC32A1EC1FA00C7EEF4 /* Migration.json in Resources */ = {isa = PBXBuildFile; fileRef = C9007AC22A1EC13F00C7EEF4 /* Migration.json */; };
+		C96CFD942A26939000B5491F /* TreeViewSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96CFD932A26939000B5491F /* TreeViewSearch.swift */; };
+		C97E38A02A23DDCA0070DC2B /* PropertiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97E389F2A23DDCA0070DC2B /* PropertiesView.swift */; };
 		C9AC94922A18F0C400C3085A /* MacRegisterAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AC94912A18F0C400C3085A /* MacRegisterAppApp.swift */; };
 		C9AC94942A18F0C400C3085A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AC94932A18F0C400C3085A /* ContentView.swift */; };
 		C9AC94962A18F0C400C3085A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9AC94952A18F0C400C3085A /* Assets.xcassets */; };
@@ -28,6 +30,7 @@
 		C9F9C2782A20D0850056BCBF /* UsefulExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = C9F9C2772A20D0850056BCBF /* UsefulExtensions */; };
 		C9F9C27A2A20DC0A0056BCBF /* NewWard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F9C2792A20DC090056BCBF /* NewWard.swift */; };
 		C9F9C27C2A20E8CF0056BCBF /* NewStreet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F9C27B2A20E8CF0056BCBF /* NewStreet.swift */; };
+		C9F9C27E2A227B740056BCBF /* NewPropertyRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F9C27D2A227B740056BCBF /* NewPropertyRange.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +49,8 @@
 
 /* Begin PBXFileReference section */
 		C9007AC22A1EC13F00C7EEF4 /* Migration.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Migration.json; path = /Users/matt/XCode/MacRegisterApp/MacRegisterApp/Migration.json; sourceTree = "<absolute>"; };
+		C96CFD932A26939000B5491F /* TreeViewSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeViewSearch.swift; sourceTree = "<group>"; };
+		C97E389F2A23DDCA0070DC2B /* PropertiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertiesView.swift; sourceTree = "<group>"; };
 		C9AC948E2A18F0C400C3085A /* MacRegisterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacRegisterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9AC94912A18F0C400C3085A /* MacRegisterAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacRegisterAppApp.swift; sourceTree = "<group>"; };
 		C9AC94932A18F0C400C3085A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,6 +68,7 @@
 		C9F9C2712A20CD160056BCBF /* NewSubStreet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSubStreet.swift; sourceTree = "<group>"; };
 		C9F9C2792A20DC090056BCBF /* NewWard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWard.swift; sourceTree = "<group>"; };
 		C9F9C27B2A20E8CF0056BCBF /* NewStreet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStreet.swift; sourceTree = "<group>"; };
+		C9F9C27D2A227B740056BCBF /* NewPropertyRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPropertyRange.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C97E389E2A23DDB70070DC2B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C97E389F2A23DDCA0070DC2B /* PropertiesView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		C9AC94852A18F0C400C3085A = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +115,7 @@
 		C9AC94902A18F0C400C3085A /* MacRegisterApp */ = {
 			isa = PBXGroup;
 			children = (
+				C97E389E2A23DDB70070DC2B /* Views */,
 				C9F9C2702A20CD060056BCBF /* New Items */,
 				C9F9C2652A1FB6F10056BCBF /* Data+Extensions.swift */,
 				C9F9C2632A1FB6E40056BCBF /* Migration.swift */,
@@ -115,6 +130,7 @@
 				C9AC94972A18F0C400C3085A /* Preview Content */,
 				C9F9C26C2A20AF230056BCBF /* TreeViewUI.swift */,
 				C9F9C26E2A20C96A0056BCBF /* MenuItem.swift */,
+				C96CFD932A26939000B5491F /* TreeViewSearch.swift */,
 			);
 			path = MacRegisterApp;
 			sourceTree = "<group>";
@@ -141,6 +157,7 @@
 				C9F9C2792A20DC090056BCBF /* NewWard.swift */,
 				C9F9C27B2A20E8CF0056BCBF /* NewStreet.swift */,
 				C9F9C2712A20CD160056BCBF /* NewSubStreet.swift */,
+				C9F9C27D2A227B740056BCBF /* NewPropertyRange.swift */,
 			);
 			path = "New Items";
 			sourceTree = "<group>";
@@ -235,8 +252,11 @@
 				C9F9C27C2A20E8CF0056BCBF /* NewStreet.swift in Sources */,
 				C9F9C2642A1FB6E40056BCBF /* Migration.swift in Sources */,
 				C9AC949B2A18F0C400C3085A /* Persistence.swift in Sources */,
+				C9F9C27E2A227B740056BCBF /* NewPropertyRange.swift in Sources */,
+				C96CFD942A26939000B5491F /* TreeViewSearch.swift in Sources */,
 				C9F9C2722A20CD160056BCBF /* NewSubStreet.swift in Sources */,
 				C9AC94942A18F0C400C3085A /* ContentView.swift in Sources */,
+				C97E38A02A23DDCA0070DC2B /* PropertiesView.swift in Sources */,
 				C9F9C27A2A20DC0A0056BCBF /* NewWard.swift in Sources */,
 				C9F9C26F2A20C96A0056BCBF /* MenuItem.swift in Sources */,
 				C9AC94922A18F0C400C3085A /* MacRegisterAppApp.swift in Sources */,

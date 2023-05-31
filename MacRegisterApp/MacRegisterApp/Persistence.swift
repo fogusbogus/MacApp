@@ -6,7 +6,7 @@
 //
 
 import CoreData
-
+import MeasuringView
 
 struct PersistenceController {
     static let shared = PersistenceController()
@@ -30,6 +30,8 @@ struct PersistenceController {
     }()
 
     let container: NSPersistentCloudKitContainer
+	
+	let measuring = MeasuringView()
 
     init(inMemory: Bool = false) {
         container = NSPersistentCloudKitContainer(name: "MacRegister")
