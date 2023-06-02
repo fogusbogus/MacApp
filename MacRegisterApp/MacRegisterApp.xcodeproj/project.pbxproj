@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C9007AC32A1EC1FA00C7EEF4 /* Migration.json in Resources */ = {isa = PBXBuildFile; fileRef = C9007AC22A1EC13F00C7EEF4 /* Migration.json */; };
+		C954109C2A2A3E620076267A /* View+Substreet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C954109B2A2A3E620076267A /* View+Substreet.swift */; };
 		C96CFD942A26939000B5491F /* TreeViewSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96CFD932A26939000B5491F /* TreeViewSearch.swift */; };
 		C96DF8FA2A28A48A0096868A /* Data+Navigational.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96DF8F92A28A48A0096868A /* Data+Navigational.swift */; };
 		C96DF8FC2A28A5360096868A /* View+PollingDistrict.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96DF8FB2A28A5360096868A /* View+PollingDistrict.swift */; };
@@ -53,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		C9007AC22A1EC13F00C7EEF4 /* Migration.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Migration.json; path = /Users/matt/XCode/MacRegisterApp/MacRegisterApp/Migration.json; sourceTree = "<absolute>"; };
+		C954109B2A2A3E620076267A /* View+Substreet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Substreet.swift"; sourceTree = "<group>"; };
 		C96CFD932A26939000B5491F /* TreeViewSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeViewSearch.swift; sourceTree = "<group>"; };
 		C96DF8F92A28A48A0096868A /* Data+Navigational.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Navigational.swift"; sourceTree = "<group>"; };
 		C96DF8FB2A28A5360096868A /* View+PollingDistrict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+PollingDistrict.swift"; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				C96DF8FB2A28A5360096868A /* View+PollingDistrict.swift */,
 				C96DF8FD2A28A5C10096868A /* Heading.swift */,
 				C9A473662A2903FA000952EB /* View+Ward.swift */,
+				C954109B2A2A3E620076267A /* View+Substreet.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				C96DF8FC2A28A5360096868A /* View+PollingDistrict.swift in Sources */,
 				C96CFD942A26939000B5491F /* TreeViewSearch.swift in Sources */,
 				C96DF8FA2A28A48A0096868A /* Data+Navigational.swift in Sources */,
+				C954109C2A2A3E620076267A /* View+Substreet.swift in Sources */,
 				C9F9C2722A20CD160056BCBF /* NewSubStreet.swift in Sources */,
 				C9AC94942A18F0C400C3085A /* ContentView.swift in Sources */,
 				C97E38A02A23DDCA0070DC2B /* PropertiesView.swift in Sources */,

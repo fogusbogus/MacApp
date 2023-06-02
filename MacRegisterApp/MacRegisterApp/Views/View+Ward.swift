@@ -32,11 +32,13 @@ struct View_Ward: View {
 	
 	var ward: Ward?
 	
-	@ObservedObject var measure = MeasuringView()
-	
+	@ObservedObject var measure = MeasuringView(delegate: SubLog())
+
 	@State private var data = View_Ward_Data()
 	
 	@State private var editMode = false
+	
+	
 	
 	var delegate: UpdateDataNavigationalDelegate? = nil
 	
@@ -50,7 +52,7 @@ struct View_Ward: View {
 	
 	var body: some View {
 		VStack(alignment: .leading, spacing: 16) {
-			Heading("🇬🇧 - \(ward?.name ?? "<Unknown Ward>")")
+			Heading("🎗️ - \(ward?.name ?? "<Unknown Ward>")")
 			Divider()
 			Group {
 				HStack(alignment: .firstTextBaseline, spacing: 8) {
@@ -124,6 +126,7 @@ struct View_Ward: View {
 		.padding()
 		.onAppear {
 			initiate()
+			Log.log(measure.dump())
 		}
 	}
 }

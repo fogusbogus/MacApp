@@ -8,6 +8,27 @@
 import SwiftUI
 import MeasuringView
 
+class SubLog: MeasuringViewLogging {
+	
+	init() {
+		Log.devMode = true
+	}
+	func log(_ type: String, _ message: String) {
+		switch type {
+			case "D":
+				Log.log(message)
+				
+			case "F":
+				Log.log(Log.label(message))
+				
+			default:
+				Log.log(message)
+		}
+	}
+	
+	
+}
+
 protocol UpdateDataNavigationalDelegate {
 	func update(item: DataNavigational?)
 }
@@ -35,7 +56,7 @@ struct View_PollingDistrict: View {
 	
 	var pollingDistrict: PollingDistrict?
 	
-	@ObservedObject var measure = MeasuringView()
+	@ObservedObject var measure = MeasuringView(delegate: SubLog())
 	
 	@State private var data = View_PollingDistrict_Data()
 	
