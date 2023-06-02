@@ -44,6 +44,21 @@ extension PollingDistrict {
 		return (sortName ?? "") + (name ?? "")
 	}
 
+	func getStreets() -> [Street] {
+		return getWards().flatMap {$0.getStreets()}
+	}
+	
+	func getSubstreets() -> [SubStreet] {
+		return getStreets().flatMap {$0.getSubStreets()}
+	}
+	
+	func getAbodes() -> [Abode] {
+		return getSubstreets().flatMap {$0.getAbodes()}
+	}
+	
+	func getElectors() -> [Elector] {
+		return getAbodes().flatMap {$0.getElectors()}
+	}
 }
 
 extension Ward {
@@ -53,7 +68,17 @@ extension Ward {
 	func sorterText() -> String {
 		return (sortName ?? "") + (name ?? "")
 	}
-
+	func getSubstreets() -> [SubStreet] {
+		return getStreets().flatMap {$0.getSubStreets()}
+	}
+	
+	func getAbodes() -> [Abode] {
+		return getSubstreets().flatMap {$0.getAbodes()}
+	}
+	
+	func getElectors() -> [Elector] {
+		return getAbodes().flatMap {$0.getElectors()}
+	}
 }
 
 extension Street {
@@ -63,6 +88,14 @@ extension Street {
 	
 	func sorterText() -> String {
 		return (sortName ?? "") + (name ?? "")
+	}
+	
+//	func getAbodes() -> [Abode] {
+//		return getSubstreets().flatMap {$0.getAbodes()}
+//	}
+	
+	func getElectors() -> [Elector] {
+		return getAbodes().flatMap {$0.getElectors()}
 	}
 }
 
@@ -77,4 +110,14 @@ extension Abode {
 		return (subStreet?.sorterText() ?? "") + "." + (sortName ?? "") + (name ?? "")
 	}
 
+	func getElectors() -> [Elector] {
+		return self.electors?.allObjects.compactMap {$0 as? Elector}.sorted(by: {$0.sorterText() < $1.sorterText()}) ?? []
+	}
+}
+
+
+extension Elector {
+	func sorterText() -> String {
+		return (sortName ?? "") + (name ?? "")
+	}
 }

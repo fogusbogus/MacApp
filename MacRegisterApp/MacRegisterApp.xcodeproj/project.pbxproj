@@ -9,7 +9,11 @@
 /* Begin PBXBuildFile section */
 		C9007AC32A1EC1FA00C7EEF4 /* Migration.json in Resources */ = {isa = PBXBuildFile; fileRef = C9007AC22A1EC13F00C7EEF4 /* Migration.json */; };
 		C96CFD942A26939000B5491F /* TreeViewSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96CFD932A26939000B5491F /* TreeViewSearch.swift */; };
+		C96DF8FA2A28A48A0096868A /* Data+Navigational.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96DF8F92A28A48A0096868A /* Data+Navigational.swift */; };
+		C96DF8FC2A28A5360096868A /* View+PollingDistrict.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96DF8FB2A28A5360096868A /* View+PollingDistrict.swift */; };
+		C96DF8FE2A28A5C10096868A /* Heading.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96DF8FD2A28A5C10096868A /* Heading.swift */; };
 		C97E38A02A23DDCA0070DC2B /* PropertiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97E389F2A23DDCA0070DC2B /* PropertiesView.swift */; };
+		C9A473672A2903FA000952EB /* View+Ward.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A473662A2903FA000952EB /* View+Ward.swift */; };
 		C9AC94922A18F0C400C3085A /* MacRegisterAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AC94912A18F0C400C3085A /* MacRegisterAppApp.swift */; };
 		C9AC94942A18F0C400C3085A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AC94932A18F0C400C3085A /* ContentView.swift */; };
 		C9AC94962A18F0C400C3085A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9AC94952A18F0C400C3085A /* Assets.xcassets */; };
@@ -50,7 +54,11 @@
 /* Begin PBXFileReference section */
 		C9007AC22A1EC13F00C7EEF4 /* Migration.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Migration.json; path = /Users/matt/XCode/MacRegisterApp/MacRegisterApp/Migration.json; sourceTree = "<absolute>"; };
 		C96CFD932A26939000B5491F /* TreeViewSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeViewSearch.swift; sourceTree = "<group>"; };
+		C96DF8F92A28A48A0096868A /* Data+Navigational.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Navigational.swift"; sourceTree = "<group>"; };
+		C96DF8FB2A28A5360096868A /* View+PollingDistrict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+PollingDistrict.swift"; sourceTree = "<group>"; };
+		C96DF8FD2A28A5C10096868A /* Heading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heading.swift; sourceTree = "<group>"; };
 		C97E389F2A23DDCA0070DC2B /* PropertiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertiesView.swift; sourceTree = "<group>"; };
+		C9A473662A2903FA000952EB /* View+Ward.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ward.swift"; sourceTree = "<group>"; };
 		C9AC948E2A18F0C400C3085A /* MacRegisterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacRegisterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9AC94912A18F0C400C3085A /* MacRegisterAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacRegisterAppApp.swift; sourceTree = "<group>"; };
 		C9AC94932A18F0C400C3085A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -87,10 +95,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C96DF8F82A28A4670096868A /* Conform */ = {
+			isa = PBXGroup;
+			children = (
+				C96DF8F92A28A48A0096868A /* Data+Navigational.swift */,
+			);
+			path = Conform;
+			sourceTree = "<group>";
+		};
 		C97E389E2A23DDB70070DC2B /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				C97E389F2A23DDCA0070DC2B /* PropertiesView.swift */,
+				C96DF8FB2A28A5360096868A /* View+PollingDistrict.swift */,
+				C96DF8FD2A28A5C10096868A /* Heading.swift */,
+				C9A473662A2903FA000952EB /* View+Ward.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -115,6 +134,7 @@
 		C9AC94902A18F0C400C3085A /* MacRegisterApp */ = {
 			isa = PBXGroup;
 			children = (
+				C96DF8F82A28A4670096868A /* Conform */,
 				C97E389E2A23DDB70070DC2B /* Views */,
 				C9F9C2702A20CD060056BCBF /* New Items */,
 				C9F9C2652A1FB6F10056BCBF /* Data+Extensions.swift */,
@@ -250,10 +270,14 @@
 				C9F9C2622A1FB6020056BCBF /* MacRegister.xcdatamodeld in Sources */,
 				C9F9C2662A1FB6F10056BCBF /* Data+Extensions.swift in Sources */,
 				C9F9C27C2A20E8CF0056BCBF /* NewStreet.swift in Sources */,
+				C96DF8FE2A28A5C10096868A /* Heading.swift in Sources */,
 				C9F9C2642A1FB6E40056BCBF /* Migration.swift in Sources */,
 				C9AC949B2A18F0C400C3085A /* Persistence.swift in Sources */,
+				C9A473672A2903FA000952EB /* View+Ward.swift in Sources */,
 				C9F9C27E2A227B740056BCBF /* NewPropertyRange.swift in Sources */,
+				C96DF8FC2A28A5360096868A /* View+PollingDistrict.swift in Sources */,
 				C96CFD942A26939000B5491F /* TreeViewSearch.swift in Sources */,
+				C96DF8FA2A28A48A0096868A /* Data+Navigational.swift in Sources */,
 				C9F9C2722A20CD160056BCBF /* NewSubStreet.swift in Sources */,
 				C9AC94942A18F0C400C3085A /* ContentView.swift in Sources */,
 				C97E38A02A23DDCA0070DC2B /* PropertiesView.swift in Sources */,

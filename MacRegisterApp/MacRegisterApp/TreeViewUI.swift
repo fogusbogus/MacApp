@@ -68,7 +68,7 @@ struct TreeViewUI: View, TreeViewUIDelegate {
 	
 	var treeViewUIDelegate: TreeViewUIDelegate?
 	
-	func gotoNodeFor(item: NSManagedObject) {
+	func gotoNodeFor(item: DataNavigational) {
 		let el : Elector? = item as? Elector
 		let pr : Abode? = el?.mainResidence ?? item as? Abode
 		let ss : SubStreet? = pr?.subStreet ?? item as? SubStreet
