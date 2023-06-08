@@ -115,3 +115,52 @@ extension PollingDistrict {
 		return []
 	}
 }
+
+extension Ward {
+	static func getAll(context: NSManagedObjectContext? = nil) -> [Ward] {
+		let context = context ?? PersistenceController.shared.container.viewContext
+		
+		let fetch = Ward.fetchRequest()
+		do {
+			let res = try context.fetch(fetch)
+			return res
+		}
+		catch {
+			
+		}
+		return []
+	}
+}
+
+extension Street {
+	static func getAll(context: NSManagedObjectContext? = nil) -> [Street] {
+		let context = context ?? PersistenceController.shared.container.viewContext
+		
+		let fetch = Street.fetchRequest()
+		do {
+			let res = try context.fetch(fetch)
+			return res
+		}
+		catch {
+			
+		}
+		return []
+	}
+}
+
+extension SubStreet {
+	static func getAll(context: NSManagedObjectContext? = nil) -> [SubStreet] {
+		let context = context ?? PersistenceController.shared.container.viewContext
+		
+		let fetch = SubStreet.fetchRequest()
+		do {
+			let res = try context.fetch(fetch)
+			return res
+		}
+		catch {
+			
+		}
+		return []
+	}
+}
+

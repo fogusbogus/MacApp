@@ -9,76 +9,81 @@ import SwiftUI
 import MeasuringView
 
 
-struct View_Ward_Data {
-	var name: String = ""
-	var sortName: String = ""
+class View_Ward_Data : ObservableObject {
+	
+	init(ward: Ward) {
+		self.ward = ward
+		self.name = ward.objectName
+		self.sortName = ward.sortingName
+	}
+	
+	var ward: Ward {
+		didSet {
+			reset()
+		}
+	}
+	
+	@Published var name: String
+	@Published var sortName: String
+	
+	func save() {
+		ward.name = name
+		ward.sortName = sortName
+		try? ward.managedObjectContext?.save()
+	}
+	
+	func reset() {
+		self.name = ward.objectName
+		self.sortName = ward.sortingName
+	}
 }
 
 struct View_Ward: View {
 	
-	init(ward: Ward? = nil, delegate: UpdateDataNavigationalDelegate? = nil) {
-		self.ward = ward
+	init(data: View_Ward_Data, delegate: UpdateDataNavigationalDelegate? = nil) {
+		self.data = data
 		self.delegate = delegate
-		self.data = View_Ward_Data(name: ward?.name ?? "", sortName: ward?.sortName ?? "")
+		self.measure = MeasuringView(delegate: SubLog())
 	}
 	
-	func save() {
-		if let save = ward {
-			save.name = data.name
-			save.sortName = data.sortName
-			try? save.managedObjectContext?.save()
-		}
-	}
-	
-	var ward: Ward?
+	@ObservedObject var data: View_Ward_Data
 	
 	@ObservedObject var measure = MeasuringView(delegate: SubLog())
-
-	@State private var data = View_Ward_Data()
 	
 	@State private var editMode = false
 	
-	
-	
 	var delegate: UpdateDataNavigationalDelegate? = nil
 	
-	@State private var initiated = false
-	
-	private func initiate() {
-		initiated = true
-		data.name = ward?.name ?? data.name
-		data.sortName = ward?.sortName ?? data.sortName
-	}
 	
 	var body: some View {
 		VStack(alignment: .leading, spacing: 16) {
-			Heading("🎗️ - \(ward?.name ?? "<Unknown Ward>")")
+			Heading("🎗️ - \(data.name)")
 			Divider()
 			Group {
 				HStack(alignment: .firstTextBaseline, spacing: 8) {
 					Text("Ward")
 						.decidesWidthOf(measure, key: "WARDPROMPT", alignment: .trailing)
-					Text(ward?.pollingDistrict?.name ?? "Unknown")
+					Text(data.ward.pollingDistrict?.name ?? "Unknown")
 				}
 				HStack(alignment: .firstTextBaseline, spacing: 8) {
 					Text("Streets")
 						.decidesWidthOf(measure, key: "WARDPROMPT", alignment: .trailing)
-					Text("\(ward?.getStreets().count ?? 0)")
+					Text("\(data.ward.getStreets().count ?? 0)")
 				}
 				HStack(alignment: .firstTextBaseline, spacing: 8) {
 					Text("Substreets")
 						.decidesWidthOf(measure, key: "WARDPROMPT", alignment: .trailing)
-					Text("\(ward?.getSubstreets().count ?? 0)")
+					Text("\(data.ward.getSubstreets().count ?? 0)")
 				}
 				HStack(alignment: .firstTextBaseline, spacing: 8) {
 					Text("Properties")
 						.decidesWidthOf(measure, key: "WARDPROMPT", alignment: .trailing)
-					Text("\(ward?.getAbodes().count ?? 0)")
+					Text("\(data.ward.getAbodes().count ?? 0)")
 				}
 				HStack(alignment: .firstTextBaseline, spacing: 8) {
 					Text("Electors")
 						.decidesWidthOf(measure, key: "WARDPROMPT", alignment: .trailing)
-					Text("\(ward?.getElectors().count ?? 0)")
+					Text("\(data.ward.getElectors().count ?? 0)")
 				}
 			}
 			Divider()
@@ -100,15 +105,16 @@ struct View_Ward: View {
 					if editMode {
 						Button {
 							editMode = false
-							save()
-							delegate?.update(item: ward)
+							data.save()
+							//delegate?.update(item: ward)
 						} label: {
 							Text("OK")
 						}
 						Button {
 							editMode = false
-							data.name = ward?.name ?? ""
-							data.sortName = ward?.sortName ?? ""
+							data.reset()
+//							data.name = ward?.name ?? ""
+//							data.sortName = ward?.sortName ?? ""
 						} label: {
 							Text("Cancel")
 						}
@@ -125,7 +131,7 @@ struct View_Ward: View {
 		}
 		.padding()
 		.onAppear {
-			initiate()
+			//initiate()
 			Log.log(measure.dump())
 		}
 	}
@@ -133,6 +139,6 @@ struct View_Ward: View {
 
 struct View_Ward_Previews: PreviewProvider {
 	static var previews: some View {
-		View_Ward()
+		View_Ward(data: View_Ward_Data(ward: Ward.getAll().first!))
 	}
 }

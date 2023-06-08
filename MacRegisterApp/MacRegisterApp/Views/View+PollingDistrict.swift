@@ -40,7 +40,10 @@ struct View_PollingDistrict_Data {
 
 struct View_PollingDistrict: View {
 	
-	init(pollingDistrict: PollingDistrict? = nil, delegate: UpdateDataNavigationalDelegate? = nil) {
+	init(pollingDistrict: PollingDistrict? = nil, delegate: UpdateDataNavigationalDelegate? = nil, refresh: Bool = true) {
+		if refresh {
+			self.measure.reset(key: "PROMPT")
+		}
 		self.pollingDistrict = pollingDistrict
 		self.delegate = delegate
 		self.data = View_PollingDistrict_Data(name: pollingDistrict?.name ?? "", sortName: pollingDistrict?.sortName ?? "")

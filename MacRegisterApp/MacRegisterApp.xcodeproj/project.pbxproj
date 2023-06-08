@@ -14,6 +14,9 @@
 		C96DF8FC2A28A5360096868A /* View+PollingDistrict.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96DF8FB2A28A5360096868A /* View+PollingDistrict.swift */; };
 		C96DF8FE2A28A5C10096868A /* Heading.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96DF8FD2A28A5C10096868A /* Heading.swift */; };
 		C97E38A02A23DDCA0070DC2B /* PropertiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97E389F2A23DDCA0070DC2B /* PropertiesView.swift */; };
+		C98DCE702A2EB1DD00CC6227 /* TestForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98DCE6F2A2EB1DD00CC6227 /* TestForm.swift */; };
+		C98DCE732A2EB22000CC6227 /* MeasuringView in Frameworks */ = {isa = PBXBuildFile; productRef = C98DCE722A2EB22000CC6227 /* MeasuringView */; };
+		C98DCE752A2F2E9700CC6227 /* EditHeading.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98DCE742A2F2E9700CC6227 /* EditHeading.swift */; };
 		C9A473672A2903FA000952EB /* View+Ward.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A473662A2903FA000952EB /* View+Ward.swift */; };
 		C9AC94922A18F0C400C3085A /* MacRegisterAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AC94912A18F0C400C3085A /* MacRegisterAppApp.swift */; };
 		C9AC94942A18F0C400C3085A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AC94932A18F0C400C3085A /* ContentView.swift */; };
@@ -31,7 +34,6 @@
 		C9F9C26D2A20AF230056BCBF /* TreeViewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F9C26C2A20AF230056BCBF /* TreeViewUI.swift */; };
 		C9F9C26F2A20C96A0056BCBF /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F9C26E2A20C96A0056BCBF /* MenuItem.swift */; };
 		C9F9C2722A20CD160056BCBF /* NewSubStreet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F9C2712A20CD160056BCBF /* NewSubStreet.swift */; };
-		C9F9C2752A20CD350056BCBF /* MeasuringView in Frameworks */ = {isa = PBXBuildFile; productRef = C9F9C2742A20CD350056BCBF /* MeasuringView */; };
 		C9F9C2782A20D0850056BCBF /* UsefulExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = C9F9C2772A20D0850056BCBF /* UsefulExtensions */; };
 		C9F9C27A2A20DC0A0056BCBF /* NewWard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F9C2792A20DC090056BCBF /* NewWard.swift */; };
 		C9F9C27C2A20E8CF0056BCBF /* NewStreet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F9C27B2A20E8CF0056BCBF /* NewStreet.swift */; };
@@ -60,6 +62,8 @@
 		C96DF8FB2A28A5360096868A /* View+PollingDistrict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+PollingDistrict.swift"; sourceTree = "<group>"; };
 		C96DF8FD2A28A5C10096868A /* Heading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heading.swift; sourceTree = "<group>"; };
 		C97E389F2A23DDCA0070DC2B /* PropertiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertiesView.swift; sourceTree = "<group>"; };
+		C98DCE6F2A2EB1DD00CC6227 /* TestForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestForm.swift; sourceTree = "<group>"; };
+		C98DCE742A2F2E9700CC6227 /* EditHeading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHeading.swift; sourceTree = "<group>"; };
 		C9A473662A2903FA000952EB /* View+Ward.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ward.swift"; sourceTree = "<group>"; };
 		C9AC948E2A18F0C400C3085A /* MacRegisterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacRegisterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9AC94912A18F0C400C3085A /* MacRegisterAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacRegisterAppApp.swift; sourceTree = "<group>"; };
@@ -88,9 +92,9 @@
 			files = (
 				C9AC94AD2A18F0E700C3085A /* LoggingLib in Frameworks */,
 				C9F9C2782A20D0850056BCBF /* UsefulExtensions in Frameworks */,
+				C98DCE732A2EB22000CC6227 /* MeasuringView in Frameworks */,
 				C9F9C2692A20AEB80056BCBF /* TreeView in Frameworks */,
 				C9AC94B02A18F31600C3085A /* MacRegisterSupport.framework in Frameworks */,
-				C9F9C2752A20CD350056BCBF /* MeasuringView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +117,7 @@
 				C96DF8FD2A28A5C10096868A /* Heading.swift */,
 				C9A473662A2903FA000952EB /* View+Ward.swift */,
 				C954109B2A2A3E620076267A /* View+Substreet.swift */,
+				C98DCE742A2F2E9700CC6227 /* EditHeading.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -154,6 +159,7 @@
 				C9F9C26C2A20AF230056BCBF /* TreeViewUI.swift */,
 				C9F9C26E2A20C96A0056BCBF /* MenuItem.swift */,
 				C96CFD932A26939000B5491F /* TreeViewSearch.swift */,
+				C98DCE6F2A2EB1DD00CC6227 /* TestForm.swift */,
 			);
 			path = MacRegisterApp;
 			sourceTree = "<group>";
@@ -205,8 +211,8 @@
 			packageProductDependencies = (
 				C9AC94AC2A18F0E700C3085A /* LoggingLib */,
 				C9F9C2682A20AEB80056BCBF /* TreeView */,
-				C9F9C2742A20CD350056BCBF /* MeasuringView */,
 				C9F9C2772A20D0850056BCBF /* UsefulExtensions */,
+				C98DCE722A2EB22000CC6227 /* MeasuringView */,
 			);
 			productName = MacRegisterApp;
 			productReference = C9AC948E2A18F0C400C3085A /* MacRegisterApp.app */;
@@ -239,8 +245,8 @@
 			packageReferences = (
 				C9AC94AB2A18F0E700C3085A /* XCRemoteSwiftPackageReference "LoggingLib" */,
 				C9F9C2672A20AEB80056BCBF /* XCRemoteSwiftPackageReference "TreeViewLib" */,
-				C9F9C2732A20CD350056BCBF /* XCRemoteSwiftPackageReference "MeasuringView" */,
 				C9F9C2762A20D0850056BCBF /* XCRemoteSwiftPackageReference "UsefulExtensions" */,
+				C98DCE712A2EB22000CC6227 /* XCRemoteSwiftPackageReference "MeasuringView" */,
 			);
 			productRefGroup = C9AC948F2A18F0C400C3085A /* Products */;
 			projectDirPath = "";
@@ -287,8 +293,10 @@
 				C97E38A02A23DDCA0070DC2B /* PropertiesView.swift in Sources */,
 				C9F9C27A2A20DC0A0056BCBF /* NewWard.swift in Sources */,
 				C9F9C26F2A20C96A0056BCBF /* MenuItem.swift in Sources */,
+				C98DCE752A2F2E9700CC6227 /* EditHeading.swift in Sources */,
 				C9AC94922A18F0C400C3085A /* MacRegisterAppApp.swift in Sources */,
 				C9F9C26D2A20AF230056BCBF /* TreeViewUI.swift in Sources */,
+				C98DCE702A2EB1DD00CC6227 /* TestForm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,25 +494,25 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C9AC94AB2A18F0E700C3085A /* XCRemoteSwiftPackageReference "LoggingLib" */ = {
+		C98DCE712A2EB22000CC6227 /* XCRemoteSwiftPackageReference "MeasuringView" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = /Users/matt/XCode/Libraries/LoggingLib/LoggingLib;
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-		C9F9C2672A20AEB80056BCBF /* XCRemoteSwiftPackageReference "TreeViewLib" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/fogusbogus/TreeViewLib";
+			repositoryURL = /Users/matt/XCode/SQLComms/MeasuringView/MeasuringView;
 			requirement = {
 				branch = main;
 				kind = branch;
 			};
 		};
-		C9F9C2732A20CD350056BCBF /* XCRemoteSwiftPackageReference "MeasuringView" */ = {
+		C9AC94AB2A18F0E700C3085A /* XCRemoteSwiftPackageReference "LoggingLib" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = /Users/matt/XCode/SQLComms/MeasuringView/MeasuringView;
+			repositoryURL = /Users/matt/XCode/Libraries/LoggingLib/LoggingLib;
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		C9F9C2672A20AEB80056BCBF /* XCRemoteSwiftPackageReference "TreeViewLib" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fogusbogus/TreeViewLib";
 			requirement = {
 				branch = main;
 				kind = branch;
@@ -521,6 +529,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C98DCE722A2EB22000CC6227 /* MeasuringView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C98DCE712A2EB22000CC6227 /* XCRemoteSwiftPackageReference "MeasuringView" */;
+			productName = MeasuringView;
+		};
 		C9AC94AC2A18F0E700C3085A /* LoggingLib */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C9AC94AB2A18F0E700C3085A /* XCRemoteSwiftPackageReference "LoggingLib" */;
@@ -530,11 +543,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C9F9C2672A20AEB80056BCBF /* XCRemoteSwiftPackageReference "TreeViewLib" */;
 			productName = TreeView;
-		};
-		C9F9C2742A20CD350056BCBF /* MeasuringView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9F9C2732A20CD350056BCBF /* XCRemoteSwiftPackageReference "MeasuringView" */;
-			productName = MeasuringView;
 		};
 		C9F9C2772A20D0850056BCBF /* UsefulExtensions */ = {
 			isa = XCSwiftPackageProductDependency;
