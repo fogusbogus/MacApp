@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import MeasuringView
 
 
 class View_Ward_Data : ObservableObject {
@@ -43,12 +42,9 @@ struct View_Ward: View {
 	init(data: View_Ward_Data, delegate: UpdateDataNavigationalDelegate? = nil) {
 		self.data = data
 		self.delegate = delegate
-		self.measure = MeasuringView(delegate: SubLog())
 	}
 	
 	@ObservedObject var data: View_Ward_Data
-	
-	@ObservedObject var measure = MeasuringView(delegate: SubLog())
 	
 	@State private var editMode = false
 	
@@ -57,83 +53,58 @@ struct View_Ward: View {
 	
 	var body: some View {
 		VStack(alignment: .leading, spacing: 16) {
-			Heading("🎗️ - \(data.name)")
+			View_Edit_Heading("Ward - \(data.name)", delegate: self)
 			Divider()
-			Group {
-				HStack(alignment: .firstTextBaseline, spacing: 8) {
-					Text("Ward")
-						.decidesWidthOf(measure, key: "WARDPROMPT", alignment: .trailing)
-					Text(data.ward.pollingDistrict?.name ?? "Unknown")
+			Form {
+				Section {
+					LabeledContent("Polling district", value: data.ward.pollingDistrict?.name ?? "Unknown")
+					LabeledContent("Streets", value: "\(data.ward.streetCount)")
+					LabeledContent("Substreets", value: "\(data.ward.subStreetCount)")
+					LabeledContent("Properties", value: "\(data.ward.propertyCount)")
+					LabeledContent("Electors", value: "\(data.ward.electorCount)")
 				}
-				HStack(alignment: .firstTextBaseline, spacing: 8) {
-					Text("Streets")
-						.decidesWidthOf(measure, key: "WARDPROMPT", alignment: .trailing)
-					Text("\(data.ward.getStreets().count ?? 0)")
-				}
-				HStack(alignment: .firstTextBaseline, spacing: 8) {
-					Text("Substreets")
-						.decidesWidthOf(measure, key: "WARDPROMPT", alignment: .trailing)
-					Text("\(data.ward.getSubstreets().count ?? 0)")
-				}
-				HStack(alignment: .firstTextBaseline, spacing: 8) {
-					Text("Properties")
-						.decidesWidthOf(measure, key: "WARDPROMPT", alignment: .trailing)
-					Text("\(data.ward.getAbodes().count ?? 0)")
-				}
-				HStack(alignment: .firstTextBaseline, spacing: 8) {
-					Text("Electors")
-						.decidesWidthOf(measure, key: "WARDPROMPT", alignment: .trailing)
-					Text("\(data.ward.getElectors().count ?? 0)")
-				}
-			}
-			Divider()
-			Group {
-				HStack(alignment: .firstTextBaseline, spacing: 8) {
-					Text("Name")
-						.decidesWidthOf(measure, key: "WARDPROMPT", alignment: .trailing)
-					TextField("Ward name", text: $data.name)
+				Divider()
+				Section {
+					TextField("Name", text: $data.name)
 						.disabled(!editMode)
-				}
-				HStack(alignment: .firstTextBaseline, spacing: 8) {
-					Text("Sort name")
-						.decidesWidthOf(measure, key: "WARDPROMPT", alignment: .trailing)
-					TextField("Ward sort name", text: $data.sortName)
+					TextField("Sort name", text: $data.sortName)
 						.disabled(!editMode)
-				}
-				HStack(alignment: .firstTextBaseline) {
-					Spacer()
-					if editMode {
-						Button {
-							editMode = false
-							data.save()
-							//delegate?.update(item: ward)
-						} label: {
-							Text("OK")
-						}
-						Button {
-							editMode = false
-							data.reset()
-//							data.name = ward?.name ?? ""
-//							data.sortName = ward?.sortName ?? ""
-						} label: {
-							Text("Cancel")
-						}
-					}
-					else {
-						Button {
-							editMode = true
-						} label: {
-							Text("Edit")
-						}
-					}
 				}
 			}
 		}
 		.padding()
-		.onAppear {
-			//initiate()
-			Log.log(measure.dump())
-		}
+	}
+}
+
+extension View_Ward : View_Edit_Heading_Delegate {
+	func edit() {
+		editMode = true
+	}
+	
+	func delete() {
+		//TODO: Implement
+	}
+	
+	func save() {
+		data.save()
+		editMode = false
+	}
+	
+	func cancel() {
+		editMode = false
+		data.reset()
+	}
+	
+	func canEdit() -> Bool {
+		return true
+	}
+	
+	func canDelete() -> Bool {
+		return data.ward.streetCount == 0
+	}
+	
+	func inEditMode() -> Bool {
+		return editMode
 	}
 }
 

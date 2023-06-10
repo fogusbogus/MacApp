@@ -20,6 +20,7 @@
         <attribute name="ts" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <entity name="Elector" representedClassName="Elector" syncable="YES" codeGenerationType="class">
+        <attribute name="markers" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="sortName" optional="YES" attributeType="String"/>
         <relationship name="mainResidence" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Abode" inverseName="electors" inverseEntity="Abode"/>

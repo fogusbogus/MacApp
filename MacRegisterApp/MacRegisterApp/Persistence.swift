@@ -164,3 +164,37 @@ extension SubStreet {
 	}
 }
 
+extension Abode {
+	static func getAll(context: NSManagedObjectContext? = nil) -> [Abode] {
+		let context = context ?? PersistenceController.shared.container.viewContext
+		
+		let fetch = Abode.fetchRequest()
+		do {
+			let res = try context.fetch(fetch)
+			return res
+		}
+		catch {
+			
+		}
+		return []
+	}
+	
+	var address: String {
+		get {
+			var items: [String] = [objectName]
+			if let ss = subStreet {
+				items.append(ss.objectName)
+				if let st = ss.street {
+					items.append(st.objectName)
+					if let wd = st.ward {
+						items.append(wd.objectName)
+						if let pd = wd.pollingDistrict {
+							items.append(pd.objectName)
+						}
+					}
+				}
+			}
+			return items.joined(separator: ", ")
+		}
+	}
+}

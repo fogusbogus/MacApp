@@ -178,10 +178,14 @@ struct TreeNodeSubStreet: View {
 		get {
 			if let ss = node.data as? SubStreet {
 				let abodeCount = ss.abodes?.count ?? 0
-				if abodeCount != 1 {
-					return "\(abodeCount) properties (\(ss.name ?? ""))"
+				var ssName = ss.name ?? ""
+				if !ssName.isEmptyOrWhitespace() {
+					ssName = " (\(ssName))"
 				}
-				return "1 property (\(ss.name ?? ""))"
+				if abodeCount != 1 {
+					return "\(abodeCount) properties\(ssName)"
+				}
+				return "1 property\(ssName)"
 			}
 			return "<Unknown>"
 		}

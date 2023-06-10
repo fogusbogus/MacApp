@@ -33,130 +33,137 @@ protocol UpdateDataNavigationalDelegate {
 	func update(item: DataNavigational?)
 }
 
-struct View_PollingDistrict_Data {
-	var name: String = ""
-	var sortName: String = ""
+class View_PollingDistrict_Data : ObservableObject {
+	
+	init(pollingDistrict: PollingDistrict) {
+		self.pollingDistrict = pollingDistrict
+		self.name = pollingDistrict.objectName
+		self.sortName = pollingDistrict.sortingName
+	}
+	
+	var pollingDistrict: PollingDistrict {
+		didSet {
+			reset()
+		}
+	}
+	
+	@Published var name: String
+	@Published var sortName: String
+	
+	func save() {
+		pollingDistrict.name = name
+		pollingDistrict.sortName = sortName
+		try? pollingDistrict.managedObjectContext?.save()
+	}
+	
+	func reset() {
+		self.name = pollingDistrict.objectName
+		self.sortName = pollingDistrict.sortingName
+	}
 }
 
 struct View_PollingDistrict: View {
 	
-	init(pollingDistrict: PollingDistrict? = nil, delegate: UpdateDataNavigationalDelegate? = nil, refresh: Bool = true) {
-		if refresh {
-			self.measure.reset(key: "PROMPT")
-		}
-		self.pollingDistrict = pollingDistrict
+	init(data: View_PollingDistrict_Data, delegate: UpdateDataNavigationalDelegate? = nil) {
+		self.data = data
 		self.delegate = delegate
-		self.data = View_PollingDistrict_Data(name: pollingDistrict?.name ?? "", sortName: pollingDistrict?.sortName ?? "")
 	}
 	
-	func save() {
-		if let save = pollingDistrict {
-			save.name = data.name
-			save.sortName = data.sortName
-			try? save.managedObjectContext?.save()
-		}
-	}
-	
-	var pollingDistrict: PollingDistrict?
-	
-	@ObservedObject var measure = MeasuringView(delegate: SubLog())
-	
-	@State private var data = View_PollingDistrict_Data()
+	@ObservedObject var data: View_PollingDistrict_Data
 	
 	@State private var editMode = false
 	
 	var delegate: UpdateDataNavigationalDelegate? = nil
 	
-	@State private var initiated = false
 	
-	private func initiate() {
-		initiated = true
-		data.name = pollingDistrict?.name ?? data.name
-		data.sortName = pollingDistrict?.sortName ?? data.sortName
-	}
-	
-    var body: some View {
+	var body: some View {
 		VStack(alignment: .leading, spacing: 16) {
-			Heading("🇬🇧 - \(pollingDistrict?.name ?? "<Unknown PD>")")
+			View_Edit_Heading("Polling district - \(data.name)", delegate: self)
 			Divider()
-			Group {
-				HStack(alignment: .firstTextBaseline, spacing: 8) {
-					Text("Wards")
-						.decidesWidthOf(measure, key: "PROMPT", alignment: .trailing)
-					Text("\(pollingDistrict?.wards?.count ?? 0)")
+			Form {
+				Section {
+					LabeledContent("Wards", value: "\(data.pollingDistrict.wardCount)")
+					LabeledContent("Streets", value: "\(data.pollingDistrict.streetCount)")
+					LabeledContent("Substreets", value: "\(data.pollingDistrict.subStreetCount)")
+					LabeledContent("Properties", value: "\(data.pollingDistrict.propertyCount)")
+					LabeledContent("Electors", value: "\(data.pollingDistrict.electorCount)")
 				}
-				HStack(alignment: .firstTextBaseline, spacing: 8) {
-					Text("Streets")
-						.decidesWidthOf(measure, key: "PROMPT", alignment: .trailing)
-					Text("\(pollingDistrict?.getStreets().count ?? 0)")
-				}
-				HStack(alignment: .firstTextBaseline, spacing: 8) {
-					Text("Substreets")
-						.decidesWidthOf(measure, key: "PROMPT", alignment: .trailing)
-					Text("\(pollingDistrict?.getSubstreets().count ?? 0)")
-				}
-				HStack(alignment: .firstTextBaseline, spacing: 8) {
-					Text("Properties")
-						.decidesWidthOf(measure, key: "PROMPT", alignment: .trailing)
-					Text("\(pollingDistrict?.getAbodes().count ?? 0)")
-				}
-				HStack(alignment: .firstTextBaseline, spacing: 8) {
-					Text("Electors")
-						.decidesWidthOf(measure, key: "PROMPT", alignment: .trailing)
-					Text("\(pollingDistrict?.getElectors().count ?? 0)")
-				}
-			}
-			Divider()
-			Group {
-				HStack(alignment: .firstTextBaseline, spacing: 8) {
-					Text("Name")
-						.decidesWidthOf(measure, key: "PROMPT", alignment: .trailing)
-					TextField("Polling district name", text: $data.name)
+				Divider()
+				Section {
+					TextField("Name", text: $data.name)
+						.disabled(!editMode)
+					TextField("Sort name", text: $data.sortName)
 						.disabled(!editMode)
 				}
-				HStack(alignment: .firstTextBaseline, spacing: 8) {
-					Text("Sort name")
-						.decidesWidthOf(measure, key: "PROMPT", alignment: .trailing)
-					TextField("Polling district sort name", text: $data.sortName)
-						.disabled(!editMode)
-				}
-				HStack(alignment: .firstTextBaseline) {
-					Spacer()
-					if editMode {
-						Button {
-							editMode = false
-							save()
-							delegate?.update(item: pollingDistrict)
-						} label: {
-							Text("OK")
-						}
-						Button {
-							editMode = false
-							data.name = pollingDistrict?.name ?? ""
-							data.sortName = pollingDistrict?.sortName ?? ""
-						} label: {
-							Text("Cancel")
-						}
-					}
-					else {
-						Button {
-							editMode = true
-						} label: {
-							Text("Edit")
-						}
-					}
-				}
+//				Spacer().frame(height:16)
+//				HStack(alignment: .firstTextBaseline) {
+//					Spacer()
+//					if editMode {
+//						Button {
+//							editMode = false
+//							data.save()
+//							delegate?.update(item: data.pollingDistrict)
+//						} label: {
+//							Text("OK")
+//						}
+//						Button {
+//							editMode = false
+//							data.reset()
+//						} label: {
+//							Text("Cancel")
+//						}
+//					}
+//					else {
+//						Button {
+//							editMode = true
+//						} label: {
+//							Text("Edit")
+//						}
+//					}
+//				}
 			}
 		}
 		.padding()
-		.onAppear {
-			initiate()
-		}
-    }
+	}
 }
 
+extension View_PollingDistrict : View_Edit_Heading_Delegate {
+	func edit() {
+		editMode = true
+	}
+	
+	func delete() {
+		//TODO: Mark as deleted
+	}
+	
+	func save() {
+		data.save()
+		editMode = false
+	}
+	
+	func cancel() {
+		editMode = false
+		data.reset()
+	}
+	
+	func canEdit() -> Bool {
+		return true
+	}
+	
+	func canDelete() -> Bool {
+		return data.pollingDistrict.wardCount == 0
+	}
+	
+	func inEditMode() -> Bool {
+		return self.editMode
+	}
+	
+	
+}
+
+
 struct View_PollingDistrict_Previews: PreviewProvider {
-    static var previews: some View {
-        View_PollingDistrict()
-    }
+	static var previews: some View {
+		View_PollingDistrict(data: View_PollingDistrict_Data(pollingDistrict: PollingDistrict.getAll().first!))
+	}
 }

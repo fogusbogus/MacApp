@@ -8,6 +8,16 @@
 import SwiftUI
 import MeasuringView
 
+struct Banner : View {
+	var title: String
+	var body: some View {
+		HStack {
+			Text(title).bold()
+			Spacer()
+		}.padding([.leading, .trailing], 4).padding([.top, .bottom], 2).background(.gray)
+	}
+}
+
 protocol PropertyViewDelegate {
 	func selectionChanged(abode: Abode?)
 }
@@ -34,43 +44,25 @@ struct PropertiesView: View {
 	
 	var body: some View {
 		//ScrollView {
-		Table(getAbodes(), selection: $selection) {
-			TableColumn("Type") { rec in
-				Text(rec.typeAsIcon)
+		VStack(alignment: .leading) {
+			Banner(title: "Properties")
+			Table(getAbodes(), selection: $selection) {
+				TableColumn("Type") { rec in
+					Text(rec.typeAsIcon)
+				}
+				.width(min: 32, max: 32)
+				TableColumn("Name") { rec in
+					Text(rec.name ?? "")
+				}
+				TableColumn("Elector count") { rec in
+					Text(rec.electorCountAsString)
+				}
+				.width(min: 96, max: 96)
 			}
-			.width(min: 32, max: 32)
-			TableColumn("Name") { rec in
-				Text(rec.name ?? "")
+			.onChange(of: selection) { newValue in
+				delegate?.selectionChanged(abode: getAbodes().first {ObjectIdentifier($0) == newValue})
 			}
-			TableColumn("Elector count") { rec in
-				Text(rec.electorCountAsString)
-			}
-			.width(min: 96, max: 96)
 		}
-		.onChange(of: selection) { newValue in
-			delegate?.selectionChanged(abode: getAbodes().first {ObjectIdentifier($0) == newValue})
-		}
-		//			VStack(alignment: .leading, spacing: 8) {
-		//				HStack(alignment: .firstTextBaseline, spacing: 8) {
-		//					Text(" ")
-		//						.decidesWidthOf(measure, key: "TYPE", alignment: .leading)
-		//					Text("Name")
-		//						.decidesWidthOf(measure, key: "NAME", alignment: .leading)
-		//					Text("Elector count")
-		//						.decidesWidthOf(measure, key: "COUNT", alignment: .leading)
-		//				}
-		//				ForEach(getAbodes(), id:\.self) { pr in
-		//					HStack(alignment: .firstTextBaseline, spacing: 8) {
-		//						Text("🏠")
-		//							.decidesWidthOf(measure, key: "TYPE", alignment: .leading)
-		//						Text(pr.name ?? "?")
-		//							.decidesWidthOf(measure, key: "NAME", alignment: .leading)
-		//						Text("\(pr.electors?.count ?? 0)")
-		//							.decidesWidthOf(measure, key: "COUNT", alignment: .leading)
-		//					}
-		//				}
-		//			}
-		//}
 	}
 }
 

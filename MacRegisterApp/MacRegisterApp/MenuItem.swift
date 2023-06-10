@@ -28,6 +28,12 @@ struct MenuItem : View {
 		self.action = action
 		self.data = data
 	}
+	init(ident: MenuItemIdentifier, handler: MenuHandler? = nil, data: AnyObject? = nil) {
+		self.label = ident.prompt
+		self.handler = handler
+		self.action = ident.actionCode
+		self.data = data
+	}
 	var body: some View {
 		Button {
 			handler?.selected(action: action, data: data)
