@@ -20,6 +20,7 @@ struct Banner : View {
 
 protocol PropertyViewDelegate {
 	func selectionChanged(abode: Abode?)
+	func getSelectedAbode() -> Abode?
 }
 
 struct PropertiesView: View {
@@ -27,6 +28,7 @@ struct PropertiesView: View {
 	var substreet: SubStreet?
 	var street: Street?
 	var delegate: PropertyViewDelegate?
+	var contextMenuDelegate: ContextMenuProviderDelegate?
 	
 	@State var selection: Abode.ID?
 	
@@ -47,17 +49,20 @@ struct PropertiesView: View {
 		VStack(alignment: .leading) {
 			Banner(title: "Properties")
 			Table(getAbodes(), selection: $selection) {
-				TableColumn("Type") { rec in
-					Text(rec.typeAsIcon)
-				}
-				.width(min: 32, max: 32)
-				TableColumn("Name") { rec in
-					Text(rec.name ?? "")
-				}
-				TableColumn("Elector count") { rec in
-					Text(rec.electorCountAsString)
-				}
-				.width(min: 96, max: 96)
+					TableColumn("Type") { rec in
+						Text(rec.typeAsIcon)
+							.contextMenu(menuItems: {contextMenuDelegate?.getContextMenu(data: delegate?.getSelectedAbode())})
+					}
+					.width(min: 32, max: 32)
+					TableColumn("Name") { rec in
+						Text(rec.name ?? "")
+							.contextMenu(menuItems: {contextMenuDelegate?.getContextMenu(data: delegate?.getSelectedAbode())})
+					}
+					TableColumn("Elector count") { rec in
+						Text(rec.electorCountAsString)
+							.contextMenu(menuItems: {contextMenuDelegate?.getContextMenu(data: delegate?.getSelectedAbode())})
+					}
+					.width(min: 96, max: 96)
 			}
 			.onChange(of: selection) { newValue in
 				delegate?.selectionChanged(abode: getAbodes().first {ObjectIdentifier($0) == newValue})

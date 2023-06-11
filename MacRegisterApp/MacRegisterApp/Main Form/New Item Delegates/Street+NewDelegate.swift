@@ -11,7 +11,7 @@ import SwiftUI
 extension MacRegisterAppApp : NewStreetDelegate {
 	func cancelNew(ward: Ward?) {
 		guard let ward = ward else { return }
-		closeWindow("new-st_\(ward.id)")
+		closeWindow(window: WindowType(type: .newStreet, object: ward))
 	}
 	
 	func okNew(ward: Ward?, name: String, sortName: String) {

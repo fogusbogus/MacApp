@@ -37,6 +37,15 @@ class View_Ward_Data : ObservableObject {
 	}
 }
 
+extension View_Ward_Data {
+	var heading: String {
+		if !name.isEmptyOrWhitespace() {
+			return "Ward - \(name)"
+		}
+		return "Unnamed ward in \(ward.pollingDistrict?.name ?? "Unknown polling district")"
+	}
+}
+
 struct View_Ward: View {
 	
 	init(data: View_Ward_Data, delegate: UpdateDataNavigationalDelegate? = nil) {
@@ -53,7 +62,7 @@ struct View_Ward: View {
 	
 	var body: some View {
 		VStack(alignment: .leading, spacing: 16) {
-			View_Edit_Heading("Ward - \(data.name)", delegate: self)
+			View_Edit_Heading(data.heading, delegate: self)
 			Divider()
 			Form {
 				Section {

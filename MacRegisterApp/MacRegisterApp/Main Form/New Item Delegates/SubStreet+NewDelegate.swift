@@ -12,7 +12,7 @@ import SwiftUI
 extension MacRegisterAppApp : NewSubStreetDelegate {
 	func cancelNew(street: Street?) {
 		guard let street = street else { return }
-		closeWindow("new-ss_\(street.id)")
+		closeWindow(window: WindowType(type: .newSubStreet, object: street))
 	}
 	
 	func okNew(street: Street?, name: String, sortName: String) {

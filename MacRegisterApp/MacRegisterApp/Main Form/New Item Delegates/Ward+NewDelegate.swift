@@ -11,7 +11,7 @@ import SwiftUI
 extension MacRegisterAppApp : NewWardDelegate {
 	func cancelNew(pollingDistrict: PollingDistrict?) {
 		guard let pollingDistrict = pollingDistrict else { return }
-		closeWindow("new-wd_\(pollingDistrict.id)")
+		closeWindow(window: WindowType(type: .newWard, object: pollingDistrict))
 	}
 	
 	func okNew(pollingDistrict: PollingDistrict?, name: String, sortName: String) {

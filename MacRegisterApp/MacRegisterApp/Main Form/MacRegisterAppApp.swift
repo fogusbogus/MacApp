@@ -8,69 +8,61 @@
 import SwiftUI
 import TreeView
 
-
 @main
-struct MacRegisterAppApp: App, TreeViewUIDelegate, PropertyViewDelegate {
+struct MacRegisterAppApp: App {
 	
 	@State var currentAbode: Abode?
 	
-	func selectionChanged(abode: Abode?) {
-		currentAbode = abode
+	func closeWindow(window: WindowType) {
+		detail = detail.filter {$0 != window}
 	}
 	
-	func update() {
-		
-	}
-	
-	func select(node: TreeNode?) {
-		updater.toggle.toggle()
-	}
-	
-
-
-
-	func closeWindow(_ key: String) {
-		detail = detail.filter {$0.0 != key}
-	}
-	
-	@State var detail: [(String, AnyObject)] = []
+	@State var detail: [WindowType] = []
 	@ObservedObject var updater = Updater()
 
-	func openWindow(id: String, data: AnyObject) {
-		detail = detail.filter {$0.0 != id}
-		detail.append((id, data))
+	func openWindow(window: WindowType) {
+		detail = detail.filter {$0 != window}
+		detail.append(window)
 	}
 	
 	func latestWindow() -> AnyView {
-		let key = (detail.last?.0 ?? "").before("_")
-		let data = detail.last?.1
-		switch key {
-			case "new-ss":
+		guard let window = detail.last else { return AnyView(currentWindowForSelection())}
+		
+		switch window.type {
+			case .newSubStreet:
 				return AnyView(
 					Group {
-						NewSubStreet(street: data as? Street, delegate: self)
+						NewSubStreet(street: window.object as? Street, delegate: self)
 						Spacer()
 					})
-			case "new-wd":
+			case .newWard:
 				return AnyView(
 					Group {
-						NewWard(pollingDistrict: data as? PollingDistrict, delegate: self)
+						NewWard(pollingDistrict: window.object as? PollingDistrict, delegate: self)
 						Spacer()
 					})
-			case "new-st":
+			case .newStreet:
 				return AnyView(
 					Group {
-						NewStreet(ward: data as? Ward, delegate: self)
+						NewStreet(ward: window.object as? Ward, delegate: self)
 						Spacer()
 					})
-			case "new-prrange":
-				let st = data as? Street ?? (data as? SubStreet)?.street
-				let ss = data as? SubStreet
+			case .newPropertyRange:
+				let st = window.object as? Street ?? (window.object as? SubStreet)?.street
+				let ss = window.object as? SubStreet
 				return AnyView(
 					Group {
 						NewPropertyRange(subStreet: ss, street: st, delegate: self)
 						Spacer()
 					})
+			
+			case .newElector:
+				return AnyView(
+					Group {
+						NewElector(property: window.object as? Abode, delegate: self)
+						Spacer()
+					})
+
 			default:
 				return AnyView(currentWindowForSelection())
 		}
@@ -101,7 +93,10 @@ struct MacRegisterAppApp: App, TreeViewUIDelegate, PropertyViewDelegate {
 						View_Street(data: View_Street_Data(street: st), delegate: self)
 						Spacer()
 					}
-					PropertiesView(street: st, delegate: self)
+					HSplitView {
+						PropertiesView(street: st, delegate: self, contextMenuDelegate: self)
+						View_Electors(property: currentAbode)
+					}
 				}
 			)
 		}
@@ -112,7 +107,10 @@ struct MacRegisterAppApp: App, TreeViewUIDelegate, PropertyViewDelegate {
 						View_SubStreet(data: View_SubStreet_Data(subStreet: ss), delegate: self)
 						Spacer()
 					}
-					PropertiesView(substreet: ss, delegate: self)
+					HSplitView {
+						PropertiesView(substreet: ss, delegate: self, contextMenuDelegate: self)
+						View_Electors(property: currentAbode)
+					}
 				}
 			)
 		}

@@ -15,9 +15,9 @@ extension MacRegisterAppApp : MenuHandler {
 		if let st = data as? Street {
 			switch action {
 				case MenuItemIdentifier.newSubStreet.actionCode:
-					openWindow(id: "new-ss_\(st.id)", data: st)
+					openWindow(window: WindowType(type: .newSubStreet, object: st))
 				case MenuItemIdentifier.newPropertyRange.actionCode:
-					openWindow(id: "new-prrange_\(st.id)", data: st)
+					openWindow(window: WindowType(type: .newPropertyRange, object: st))
 				default:
 					break
 			}
@@ -25,7 +25,7 @@ extension MacRegisterAppApp : MenuHandler {
 		if let pd = data as? PollingDistrict {
 			switch action {
 				case MenuItemIdentifier.newWard.actionCode:
-					openWindow(id: "new-wd_\(pd.id)", data: pd)
+					openWindow(window: WindowType(type: .newWard, object: pd))
 				default:
 					break
 			}
@@ -33,7 +33,7 @@ extension MacRegisterAppApp : MenuHandler {
 		if let wd = data as? Ward {
 			switch action {
 				case MenuItemIdentifier.newStreet.actionCode:
-					openWindow(id: "new-st_\(wd.id)", data: wd)
+					openWindow(window: WindowType(type: .newStreet, object: wd))
 				default:
 					break
 			}
@@ -41,7 +41,15 @@ extension MacRegisterAppApp : MenuHandler {
 		if let ss = data as? SubStreet {
 			switch action {
 				case MenuItemIdentifier.newPropertyRange.actionCode:
-					openWindow(id: "new-prrange_\(ss.id)", data: ss)
+					openWindow(window: WindowType(type: .newPropertyRange, object: ss))
+				default:
+					break
+			}
+		}
+		if let pr = data as? Abode {
+			switch action {
+				case MenuItemIdentifier.newElector.actionCode:
+					openWindow(window: WindowType(type: .newElector, object: pr))
 				default:
 					break
 			}

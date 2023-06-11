@@ -62,6 +62,15 @@ class View_PollingDistrict_Data : ObservableObject {
 	}
 }
 
+extension View_PollingDistrict_Data {
+	var heading: String {
+		if !name.isEmptyOrWhitespace() {
+			return "Polling district - \(name)"
+		}
+		return "Unknown polling district"
+	}
+}
+
 struct View_PollingDistrict: View {
 	
 	init(data: View_PollingDistrict_Data, delegate: UpdateDataNavigationalDelegate? = nil) {
@@ -78,7 +87,7 @@ struct View_PollingDistrict: View {
 	
 	var body: some View {
 		VStack(alignment: .leading, spacing: 16) {
-			View_Edit_Heading("Polling district - \(data.name)", delegate: self)
+			View_Edit_Heading(data.heading, delegate: self)
 			Divider()
 			Form {
 				Section {
@@ -95,32 +104,7 @@ struct View_PollingDistrict: View {
 					TextField("Sort name", text: $data.sortName)
 						.disabled(!editMode)
 				}
-//				Spacer().frame(height:16)
-//				HStack(alignment: .firstTextBaseline) {
-//					Spacer()
-//					if editMode {
-//						Button {
-//							editMode = false
-//							data.save()
-//							delegate?.update(item: data.pollingDistrict)
-//						} label: {
-//							Text("OK")
-//						}
-//						Button {
-//							editMode = false
-//							data.reset()
-//						} label: {
-//							Text("Cancel")
-//						}
-//					}
-//					else {
-//						Button {
-//							editMode = true
-//						} label: {
-//							Text("Edit")
-//						}
-//					}
-//				}
+
 			}
 		}
 		.padding()

@@ -8,16 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		C9007AC32A1EC1FA00C7EEF4 /* Migration.json in Resources */ = {isa = PBXBuildFile; fileRef = C9007AC22A1EC13F00C7EEF4 /* Migration.json */; };
-		C90F360D2A33DFF700DDCA82 /* View+Elector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F360C2A33DFF700DDCA82 /* View+Elector.swift */; };
+		C90F360D2A33DFF700DDCA82 /* View+Electors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F360C2A33DFF700DDCA82 /* View+Electors.swift */; };
 		C90F36102A34128400DDCA82 /* WindowManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F360F2A34128400DDCA82 /* WindowManagement.swift */; };
 		C90F36122A3412C000DDCA82 /* TreeNodeDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F36112A3412C000DDCA82 /* TreeNodeDataProvider.swift */; };
 		C90F36142A3413AE00DDCA82 /* TreeNodeContextMenuProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F36132A3413AE00DDCA82 /* TreeNodeContextMenuProvider.swift */; };
 		C90F36162A34167200DDCA82 /* MenuHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F36152A34167200DDCA82 /* MenuHandler.swift */; };
-		C90F36192A34177000DDCA82 /* SubStreet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F36182A34177000DDCA82 /* SubStreet.swift */; };
-		C90F361B2A34178700DDCA82 /* Street.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F361A2A34178700DDCA82 /* Street.swift */; };
-		C90F361D2A34178B00DDCA82 /* Ward.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F361C2A34178B00DDCA82 /* Ward.swift */; };
-		C90F361F2A34178F00DDCA82 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F361E2A34178F00DDCA82 /* Property.swift */; };
-		C90F36212A34179600DDCA82 /* PropertyRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F36202A34179600DDCA82 /* PropertyRange.swift */; };
+		C90F36192A34177000DDCA82 /* SubStreet+NewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F36182A34177000DDCA82 /* SubStreet+NewDelegate.swift */; };
+		C90F361B2A34178700DDCA82 /* Street+NewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F361A2A34178700DDCA82 /* Street+NewDelegate.swift */; };
+		C90F361D2A34178B00DDCA82 /* Ward+NewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F361C2A34178B00DDCA82 /* Ward+NewDelegate.swift */; };
+		C90F361F2A34178F00DDCA82 /* Property+NewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F361E2A34178F00DDCA82 /* Property+NewDelegate.swift */; };
+		C90F36212A34179600DDCA82 /* PropertyRange+NewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F36202A34179600DDCA82 /* PropertyRange+NewDelegate.swift */; };
+		C90F36242A34831E00DDCA82 /* PropertyView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F36232A34831E00DDCA82 /* PropertyView+Delegate.swift */; };
+		C90F36262A34839200DDCA82 /* TreeViewUI+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F36252A34839200DDCA82 /* TreeViewUI+Delegate.swift */; };
+		C90F36292A34C93300DDCA82 /* WindowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F36282A34C93300DDCA82 /* WindowType.swift */; };
+		C90F362C2A3515AF00DDCA82 /* DataNavigational+DescriptiveAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F362B2A3515AF00DDCA82 /* DataNavigational+DescriptiveAddress.swift */; };
+		C90F362E2A3564EA00DDCA82 /* NewElector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F362D2A3564EA00DDCA82 /* NewElector.swift */; };
+		C90F36302A35690200DDCA82 /* Elector+NewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F362F2A35690200DDCA82 /* Elector+NewDelegate.swift */; };
 		C954109C2A2A3E620076267A /* View+Substreet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C954109B2A2A3E620076267A /* View+Substreet.swift */; };
 		C96CFD942A26939000B5491F /* TreeViewSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96CFD932A26939000B5491F /* TreeViewSearch.swift */; };
 		C96DF8FA2A28A48A0096868A /* Data+Navigational.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96DF8F92A28A48A0096868A /* Data+Navigational.swift */; };
@@ -67,16 +73,22 @@
 
 /* Begin PBXFileReference section */
 		C9007AC22A1EC13F00C7EEF4 /* Migration.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Migration.json; path = /Users/matt/XCode/MacRegisterApp/MacRegisterApp/Migration.json; sourceTree = "<absolute>"; };
-		C90F360C2A33DFF700DDCA82 /* View+Elector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Elector.swift"; sourceTree = "<group>"; };
+		C90F360C2A33DFF700DDCA82 /* View+Electors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Electors.swift"; sourceTree = "<group>"; };
 		C90F360F2A34128400DDCA82 /* WindowManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowManagement.swift; sourceTree = "<group>"; };
 		C90F36112A3412C000DDCA82 /* TreeNodeDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNodeDataProvider.swift; sourceTree = "<group>"; };
 		C90F36132A3413AE00DDCA82 /* TreeNodeContextMenuProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNodeContextMenuProvider.swift; sourceTree = "<group>"; };
 		C90F36152A34167200DDCA82 /* MenuHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHandler.swift; sourceTree = "<group>"; };
-		C90F36182A34177000DDCA82 /* SubStreet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubStreet.swift; sourceTree = "<group>"; };
-		C90F361A2A34178700DDCA82 /* Street.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Street.swift; sourceTree = "<group>"; };
-		C90F361C2A34178B00DDCA82 /* Ward.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ward.swift; sourceTree = "<group>"; };
-		C90F361E2A34178F00DDCA82 /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
-		C90F36202A34179600DDCA82 /* PropertyRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyRange.swift; sourceTree = "<group>"; };
+		C90F36182A34177000DDCA82 /* SubStreet+NewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SubStreet+NewDelegate.swift"; sourceTree = "<group>"; };
+		C90F361A2A34178700DDCA82 /* Street+NewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Street+NewDelegate.swift"; sourceTree = "<group>"; };
+		C90F361C2A34178B00DDCA82 /* Ward+NewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ward+NewDelegate.swift"; sourceTree = "<group>"; };
+		C90F361E2A34178F00DDCA82 /* Property+NewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Property+NewDelegate.swift"; sourceTree = "<group>"; };
+		C90F36202A34179600DDCA82 /* PropertyRange+NewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PropertyRange+NewDelegate.swift"; sourceTree = "<group>"; };
+		C90F36232A34831E00DDCA82 /* PropertyView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PropertyView+Delegate.swift"; sourceTree = "<group>"; };
+		C90F36252A34839200DDCA82 /* TreeViewUI+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TreeViewUI+Delegate.swift"; sourceTree = "<group>"; };
+		C90F36282A34C93300DDCA82 /* WindowType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowType.swift; sourceTree = "<group>"; };
+		C90F362B2A3515AF00DDCA82 /* DataNavigational+DescriptiveAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataNavigational+DescriptiveAddress.swift"; sourceTree = "<group>"; };
+		C90F362D2A3564EA00DDCA82 /* NewElector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewElector.swift; sourceTree = "<group>"; };
+		C90F362F2A35690200DDCA82 /* Elector+NewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Elector+NewDelegate.swift"; sourceTree = "<group>"; };
 		C954109B2A2A3E620076267A /* View+Substreet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Substreet.swift"; sourceTree = "<group>"; };
 		C96CFD932A26939000B5491F /* TreeViewSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeViewSearch.swift; sourceTree = "<group>"; };
 		C96DF8F92A28A48A0096868A /* Data+Navigational.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Navigational.swift"; sourceTree = "<group>"; };
@@ -126,6 +138,7 @@
 		C90F360E2A34125E00DDCA82 /* Main Form */ = {
 			isa = PBXGroup;
 			children = (
+				C90F36222A34831000DDCA82 /* View Item Delegates */,
 				C90F36172A34176100DDCA82 /* New Item Delegates */,
 				C9AC94912A18F0C400C3085A /* MacRegisterAppApp.swift */,
 				C90F360F2A34128400DDCA82 /* WindowManagement.swift */,
@@ -139,13 +152,40 @@
 		C90F36172A34176100DDCA82 /* New Item Delegates */ = {
 			isa = PBXGroup;
 			children = (
-				C90F36182A34177000DDCA82 /* SubStreet.swift */,
-				C90F361A2A34178700DDCA82 /* Street.swift */,
-				C90F361C2A34178B00DDCA82 /* Ward.swift */,
-				C90F361E2A34178F00DDCA82 /* Property.swift */,
-				C90F36202A34179600DDCA82 /* PropertyRange.swift */,
+				C90F36182A34177000DDCA82 /* SubStreet+NewDelegate.swift */,
+				C90F361A2A34178700DDCA82 /* Street+NewDelegate.swift */,
+				C90F361C2A34178B00DDCA82 /* Ward+NewDelegate.swift */,
+				C90F361E2A34178F00DDCA82 /* Property+NewDelegate.swift */,
+				C90F36202A34179600DDCA82 /* PropertyRange+NewDelegate.swift */,
+				C90F362F2A35690200DDCA82 /* Elector+NewDelegate.swift */,
 			);
 			path = "New Item Delegates";
+			sourceTree = "<group>";
+		};
+		C90F36222A34831000DDCA82 /* View Item Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				C90F36232A34831E00DDCA82 /* PropertyView+Delegate.swift */,
+				C90F36252A34839200DDCA82 /* TreeViewUI+Delegate.swift */,
+			);
+			path = "View Item Delegates";
+			sourceTree = "<group>";
+		};
+		C90F36272A34C92C00DDCA82 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				C90F362A2A35159700DDCA82 /* Extensions */,
+				C90F36282A34C93300DDCA82 /* WindowType.swift */,
+			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
+		C90F362A2A35159700DDCA82 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C90F362B2A3515AF00DDCA82 /* DataNavigational+DescriptiveAddress.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		C96DF8F82A28A4670096868A /* Conform */ = {
@@ -166,7 +206,7 @@
 				C954109B2A2A3E620076267A /* View+Substreet.swift */,
 				C98DCE742A2F2E9700CC6227 /* EditHeading.swift */,
 				C98DCE762A32A01D00CC6227 /* View+Street.swift */,
-				C90F360C2A33DFF700DDCA82 /* View+Elector.swift */,
+				C90F360C2A33DFF700DDCA82 /* View+Electors.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -191,6 +231,7 @@
 		C9AC94902A18F0C400C3085A /* MacRegisterApp */ = {
 			isa = PBXGroup;
 			children = (
+				C90F36272A34C92C00DDCA82 /* Supporting */,
 				C90F360E2A34125E00DDCA82 /* Main Form */,
 				C96DF8F82A28A4670096868A /* Conform */,
 				C97E389E2A23DDB70070DC2B /* Views */,
@@ -236,6 +277,7 @@
 				C9F9C27B2A20E8CF0056BCBF /* NewStreet.swift */,
 				C9F9C2712A20CD160056BCBF /* NewSubStreet.swift */,
 				C9F9C27D2A227B740056BCBF /* NewPropertyRange.swift */,
+				C90F362D2A3564EA00DDCA82 /* NewElector.swift */,
 			);
 			path = "New Items";
 			sourceTree = "<group>";
@@ -325,30 +367,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C90F36212A34179600DDCA82 /* PropertyRange.swift in Sources */,
+				C90F36212A34179600DDCA82 /* PropertyRange+NewDelegate.swift in Sources */,
 				C9F9C2622A1FB6020056BCBF /* MacRegister.xcdatamodeld in Sources */,
+				C90F362C2A3515AF00DDCA82 /* DataNavigational+DescriptiveAddress.swift in Sources */,
 				C9F9C2662A1FB6F10056BCBF /* Data+Extensions.swift in Sources */,
 				C9F9C27C2A20E8CF0056BCBF /* NewStreet.swift in Sources */,
 				C98DCE772A32A01D00CC6227 /* View+Street.swift in Sources */,
 				C96DF8FE2A28A5C10096868A /* View_Edit_Heading.swift in Sources */,
 				C90F36142A3413AE00DDCA82 /* TreeNodeContextMenuProvider.swift in Sources */,
 				C9F9C2642A1FB6E40056BCBF /* Migration.swift in Sources */,
+				C90F36292A34C93300DDCA82 /* WindowType.swift in Sources */,
 				C90F36162A34167200DDCA82 /* MenuHandler.swift in Sources */,
 				C90F36102A34128400DDCA82 /* WindowManagement.swift in Sources */,
 				C9AC949B2A18F0C400C3085A /* Persistence.swift in Sources */,
 				C9A473672A2903FA000952EB /* View+Ward.swift in Sources */,
-				C90F360D2A33DFF700DDCA82 /* View+Elector.swift in Sources */,
+				C90F360D2A33DFF700DDCA82 /* View+Electors.swift in Sources */,
 				C9F9C27E2A227B740056BCBF /* NewPropertyRange.swift in Sources */,
-				C90F361F2A34178F00DDCA82 /* Property.swift in Sources */,
+				C90F361F2A34178F00DDCA82 /* Property+NewDelegate.swift in Sources */,
+				C90F36242A34831E00DDCA82 /* PropertyView+Delegate.swift in Sources */,
 				C96DF8FC2A28A5360096868A /* View+PollingDistrict.swift in Sources */,
 				C96CFD942A26939000B5491F /* TreeViewSearch.swift in Sources */,
 				C96DF8FA2A28A48A0096868A /* Data+Navigational.swift in Sources */,
-				C90F361B2A34178700DDCA82 /* Street.swift in Sources */,
+				C90F361B2A34178700DDCA82 /* Street+NewDelegate.swift in Sources */,
 				C954109C2A2A3E620076267A /* View+Substreet.swift in Sources */,
 				C9F9C2722A20CD160056BCBF /* NewSubStreet.swift in Sources */,
 				C90F36122A3412C000DDCA82 /* TreeNodeDataProvider.swift in Sources */,
-				C90F36192A34177000DDCA82 /* SubStreet.swift in Sources */,
-				C90F361D2A34178B00DDCA82 /* Ward.swift in Sources */,
+				C90F36192A34177000DDCA82 /* SubStreet+NewDelegate.swift in Sources */,
+				C90F36262A34839200DDCA82 /* TreeViewUI+Delegate.swift in Sources */,
+				C90F361D2A34178B00DDCA82 /* Ward+NewDelegate.swift in Sources */,
+				C90F36302A35690200DDCA82 /* Elector+NewDelegate.swift in Sources */,
 				C9AC94942A18F0C400C3085A /* ContentView.swift in Sources */,
 				C97E38A02A23DDCA0070DC2B /* PropertiesView.swift in Sources */,
 				C9F9C27A2A20DC0A0056BCBF /* NewWard.swift in Sources */,
@@ -356,6 +403,7 @@
 				C98DCE752A2F2E9700CC6227 /* EditHeading.swift in Sources */,
 				C9AC94922A18F0C400C3085A /* MacRegisterAppApp.swift in Sources */,
 				C9F9C26D2A20AF230056BCBF /* TreeViewUI.swift in Sources */,
+				C90F362E2A3564EA00DDCA82 /* NewElector.swift in Sources */,
 				C98DCE702A2EB1DD00CC6227 /* TestForm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

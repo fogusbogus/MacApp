@@ -36,6 +36,15 @@ class View_SubStreet_Data : ObservableObject {
 	}
 }
 
+extension View_SubStreet_Data {
+	var heading: String {
+		if !name.isEmptyOrWhitespace() {
+			return "Substreet - \(name)"
+		}
+		return "Unnamed substreet in \(subStreet.street?.objectName ?? "Unknown street")"
+	}
+}
+
 struct View_SubStreet: View {
 	
 	init(data: View_SubStreet_Data, delegate: UpdateDataNavigationalDelegate? = nil) {
@@ -52,7 +61,7 @@ struct View_SubStreet: View {
 	
 	var body: some View {
 		VStack(alignment: .leading, spacing: 16) {
-			View_Edit_Heading("Substreet - \(data.name)", delegate: self)
+			View_Edit_Heading(data.heading, delegate: self)
 			Divider()
 			Form {
 				Section {

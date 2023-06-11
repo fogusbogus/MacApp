@@ -15,11 +15,11 @@ extension MacRegisterAppApp : NewPropertyRangeDelegate {
 	///   - street: We can add via street
 	func cancelNew(substreet: SubStreet?, street: Street?) {
 		if let substreet = substreet {
-			closeWindow("new-prrange_\(substreet.id)")
+			closeWindow(window: WindowType(type: .newPropertyRange, object: substreet))
 		}
 		else {
 			if let street = street {
-				closeWindow("new-prrange_\(street.id)")
+				closeWindow(window: WindowType(type: .newPropertyRange, object: street))
 			}
 		}
 	}

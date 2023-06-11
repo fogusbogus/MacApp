@@ -10,7 +10,7 @@ import TreeView
 import SwiftUI
 
 enum MenuItemIdentifier {
-	case newWard, newStreet, newSubStreet, newProperty, newPropertyRange
+	case newWard, newStreet, newSubStreet, newProperty, newPropertyRange, newElector
 	
 	var actionCode: String {
 		get {
@@ -25,10 +25,13 @@ enum MenuItemIdentifier {
 					return "NEWPR"
 				case .newPropertyRange:
 					return "NEWPRRANGE"
+				case .newElector:
+					return "NEWEL"
 			}
 		}
 	}
 	
+
 	var prompt: String {
 		get {
 			switch self {
@@ -42,6 +45,8 @@ enum MenuItemIdentifier {
 					return "New Property..."
 				case .newPropertyRange:
 					return "New Property Range..."
+				case .newElector:
+					return "New elector(s)..."
 			}
 		}
 	}
@@ -89,5 +94,55 @@ extension MacRegisterAppApp : TreeNodeContextMenuProvider {
 		}
 		return AnyView(EmptyView())
 	}
+}
 
+protocol ContextMenuProviderDelegate {
+	func getContextMenu(data: DataNavigational?) -> AnyView
+}
+extension MacRegisterAppApp: ContextMenuProviderDelegate {
+	func getContextMenu(data: DataNavigational?) -> AnyView {
+		guard let data = data else { return AnyView(EmptyView()) }
+		if let pd = data as? PollingDistrict {
+			return AnyView(
+				MenuItem(ident: .newWard, handler: self, data: pd)
+			)
+		}
+		if let wd = data as? Ward {
+			return AnyView(
+				MenuItem(ident: .newStreet, handler: self, data: wd)
+			)
+		}
+		if let st = data as? Street {
+			if st.subStreets?.count ?? 0 < 2 {
+				return AnyView(
+					Group {
+						MenuItem(ident: .newSubStreet, handler: self, data: st)
+						Divider()
+						MenuItem(ident: .newProperty, handler: self, data: st)
+						MenuItem(ident: .newPropertyRange, handler: self, data: st)
+					}
+				)
+				
+			}
+			return AnyView(
+				MenuItem(ident: .newSubStreet, handler: self, data: st)
+			)
+		}
+		if let ss = data as? SubStreet {
+			return AnyView(
+				Group {
+					MenuItem(ident: .newProperty, handler: self, data: ss)
+					MenuItem(ident: .newPropertyRange, handler: self, data: ss)
+				}
+			)
+		}
+		if let pr = data as? Abode {
+			return AnyView(
+				MenuItem(ident: .newElector, handler: self, data: pr)
+			)
+		}
+		return AnyView(EmptyView())
+	}
+	
+	
 }
