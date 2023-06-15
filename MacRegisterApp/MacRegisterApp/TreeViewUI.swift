@@ -251,25 +251,25 @@ struct VisibleNode: View {
 					delegate?.update()
 				}
 			let selected = node.treeView?.getSelectedNode() == node
-			if let pd = node.data as? PollingDistrict {
+			if node.data is PollingDistrict {
 				TreeNodePollingDistrict(node: node, selected: selected, contextMenuDelegate: contextMenuDelegate)
 					.onTapGesture {
 						delegate?.select(node: node)
 					}
 			}
-			if let wd = node.data as? Ward {
+			if node.data is Ward {
 				TreeNodeWard(node: node, selected: selected, contextMenuDelegate: contextMenuDelegate)
 					.onTapGesture {
 						delegate?.select(node: node)
 					}
 			}
-			if let st = node.data as? Street {
+			if node.data is Street {
 				TreeNodeStreet(node: node, selected: selected, contextMenuDelegate: contextMenuDelegate)
 					.onTapGesture {
 						delegate?.select(node: node)
 					}
 			}
-			if let ss = node.data as? SubStreet {
+			if node.data is SubStreet {
 				TreeNodeSubStreet(node: node, selected: selected, contextMenuDelegate: contextMenuDelegate)
 					.onTapGesture {
 						delegate?.select(node: node)

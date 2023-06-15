@@ -198,3 +198,19 @@ extension Abode {
 		}
 	}
 }
+
+extension Elector {
+	static func getAll(context: NSManagedObjectContext? = nil) -> [Elector] {
+		let context = context ?? PersistenceController.shared.container.viewContext
+		
+		let fetch = Elector.fetchRequest()
+		do {
+			let res = try context.fetch(fetch)
+			return res
+		}
+		catch {
+			
+		}
+		return []
+	}
+}

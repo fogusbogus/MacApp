@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22F66" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Abode" representedClassName="Abode" syncable="YES" codeGenerationType="class">
+        <attribute name="email" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="sortName" optional="YES" attributeType="String"/>
         <attribute name="type" attributeType="String" defaultValueString="A"/>
@@ -20,8 +21,10 @@
         <attribute name="ts" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <entity name="Elector" representedClassName="Elector" syncable="YES" codeGenerationType="class">
+        <attribute name="email" optional="YES" attributeType="String" allowsCloudEncryption="YES"/>
         <attribute name="markers" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="salutation" optional="YES" attributeType="String"/>
         <attribute name="sortName" optional="YES" attributeType="String"/>
         <relationship name="mainResidence" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Abode" inverseName="electors" inverseEntity="Abode"/>
     </entity>

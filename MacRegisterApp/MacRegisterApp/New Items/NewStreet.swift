@@ -29,7 +29,7 @@ struct NewStreet: View {
 				return "Name must have a valid value"
 			}
 			
-			if !ward!.getStreets().allSatisfy {!$0.name!.implies(name)} {
+			if !ward!.getStreets().allSatisfy({!$0.name!.implies(name)}) {
 				return "Street already exists within this Ward"
 			}
 			return ""

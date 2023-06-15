@@ -70,7 +70,7 @@ struct NewPropertyRange: View {
 		let parts = range.splitToArray(",").map {$0.trim()}.filter {$0.length() > 0}
 		var ret : [String] = []
 		parts.forEach { part in
-			if let num = Int(part) {
+			if Int(part) != nil {
 				ret.assert(part)
 			}
 			else {

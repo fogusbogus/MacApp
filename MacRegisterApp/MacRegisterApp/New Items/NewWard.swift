@@ -29,7 +29,7 @@ struct NewWard: View {
 				return "Name must have a valid value"
 			}
 			
-			if !pollingDistrict!.getWards().allSatisfy {!$0.name!.implies(name)} {
+			if !pollingDistrict!.getWards().allSatisfy({!$0.name!.implies(name)}) {
 				return "Ward already exists within this polling district"
 			}
 			return ""

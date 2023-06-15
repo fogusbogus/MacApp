@@ -7,10 +7,18 @@
 
 import SwiftUI
 
+protocol ViewElectorsDelegate {
+	func getSelectedElector() -> Elector?
+	func select(elector: Elector?)
+}
+
 struct View_Electors: View {
 	var property: Abode?
 	
 	@State var selection: Elector.ID? = nil
+	
+	var contextMenuDelegate: ContextMenuProviderDelegate?
+	var delegate: ViewElectorsDelegate?
 	
 	private func getElectors() -> [Elector] {
 		return property?.getElectors() ?? []
@@ -23,15 +31,19 @@ struct View_Electors: View {
 			Table(getElectors(), selection: $selection) {
 				TableColumn("Name") { rec in
 					Text(rec.name ?? "")
+						.contextMenuForWholeItem()
+						.contextMenu(menuItems: {contextMenuDelegate?.getContextMenu(data: delegate?.getSelectedElector())})
 				}
 				TableColumn("Markers") { rec in
 					Text(rec.markers ?? "")
-					
+						.contextMenuForWholeItem()
+						.contextMenu(menuItems: {contextMenuDelegate?.getContextMenu(data: delegate?.getSelectedElector())})
 				}
 				.width(min: 96, max: 200)
 			}
 			.onChange(of: selection) { newValue in
-//				delegate?.selectionChanged(abode: getAbodes().first {ObjectIdentifier($0) == newValue})
+				let elector = getElectors().first {ObjectIdentifier($0) == newValue}
+				delegate?.select(elector: elector)
 			}
 		}
 	}

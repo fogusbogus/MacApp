@@ -6,6 +6,20 @@
 //
 
 import Foundation
+import SwiftUI
+
+extension View {
+	
+	func contextMenuForWholeItem() -> some View {
+		return self.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+			.contentShape(Rectangle())
+	}
+	/*
+	 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+	 .contentShape(Rectangle())
+	 .contextMenu(menuItems: {contextMenuDelegate?.getContextMenu(data: delegate?.getSelectedAbode())})
+	 */
+}
 
 extension Abode {
 	var describe: String? {
@@ -79,7 +93,7 @@ extension SubStreet {
 extension Street {
 	var describe: String? {
 		get {
-			var ret = name ?? ""
+			let ret = name ?? ""
 			if ret.isEmptyOrWhitespace() {
 				return nil
 			}
@@ -106,7 +120,7 @@ extension Street {
 extension Ward {
 	var describe: String? {
 		get {
-			var ret = name ?? ""
+			let ret = name ?? ""
 			if ret.isEmptyOrWhitespace() {
 				return nil
 			}
@@ -130,7 +144,7 @@ extension Ward {
 extension PollingDistrict {
 	var describe: String? {
 		get {
-			var ret = name ?? ""
+			let ret = name ?? ""
 			if ret.isEmptyOrWhitespace() {
 				return nil
 			}

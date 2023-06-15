@@ -51,15 +51,18 @@ struct PropertiesView: View {
 			Table(getAbodes(), selection: $selection) {
 					TableColumn("Type") { rec in
 						Text(rec.typeAsIcon)
+							.contextMenuForWholeItem()
 							.contextMenu(menuItems: {contextMenuDelegate?.getContextMenu(data: delegate?.getSelectedAbode())})
 					}
 					.width(min: 32, max: 32)
 					TableColumn("Name") { rec in
 						Text(rec.name ?? "")
+							.contextMenuForWholeItem()
 							.contextMenu(menuItems: {contextMenuDelegate?.getContextMenu(data: delegate?.getSelectedAbode())})
 					}
 					TableColumn("Elector count") { rec in
 						Text(rec.electorCountAsString)
+							.contextMenuForWholeItem()
 							.contextMenu(menuItems: {contextMenuDelegate?.getContextMenu(data: delegate?.getSelectedAbode())})
 					}
 					.width(min: 96, max: 96)

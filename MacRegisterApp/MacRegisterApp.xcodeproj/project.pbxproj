@@ -24,6 +24,9 @@
 		C90F362C2A3515AF00DDCA82 /* DataNavigational+DescriptiveAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F362B2A3515AF00DDCA82 /* DataNavigational+DescriptiveAddress.swift */; };
 		C90F362E2A3564EA00DDCA82 /* NewElector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F362D2A3564EA00DDCA82 /* NewElector.swift */; };
 		C90F36302A35690200DDCA82 /* Elector+NewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F362F2A35690200DDCA82 /* Elector+NewDelegate.swift */; };
+		C90F36322A3642EC00DDCA82 /* ViewElectors+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F36312A3642EC00DDCA82 /* ViewElectors+Delegate.swift */; };
+		C90F36342A39BA1000DDCA82 /* DataNavigationalDetailsForEditing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F36332A39BA1000DDCA82 /* DataNavigationalDetailsForEditing.swift */; };
+		C90F36362A39BA8F00DDCA82 /* NewProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F36352A39BA8F00DDCA82 /* NewProperty.swift */; };
 		C954109C2A2A3E620076267A /* View+Substreet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C954109B2A2A3E620076267A /* View+Substreet.swift */; };
 		C96CFD942A26939000B5491F /* TreeViewSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96CFD932A26939000B5491F /* TreeViewSearch.swift */; };
 		C96DF8FA2A28A48A0096868A /* Data+Navigational.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96DF8F92A28A48A0096868A /* Data+Navigational.swift */; };
@@ -89,6 +92,9 @@
 		C90F362B2A3515AF00DDCA82 /* DataNavigational+DescriptiveAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataNavigational+DescriptiveAddress.swift"; sourceTree = "<group>"; };
 		C90F362D2A3564EA00DDCA82 /* NewElector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewElector.swift; sourceTree = "<group>"; };
 		C90F362F2A35690200DDCA82 /* Elector+NewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Elector+NewDelegate.swift"; sourceTree = "<group>"; };
+		C90F36312A3642EC00DDCA82 /* ViewElectors+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewElectors+Delegate.swift"; sourceTree = "<group>"; };
+		C90F36332A39BA1000DDCA82 /* DataNavigationalDetailsForEditing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataNavigationalDetailsForEditing.swift; sourceTree = "<group>"; };
+		C90F36352A39BA8F00DDCA82 /* NewProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProperty.swift; sourceTree = "<group>"; };
 		C954109B2A2A3E620076267A /* View+Substreet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Substreet.swift"; sourceTree = "<group>"; };
 		C96CFD932A26939000B5491F /* TreeViewSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeViewSearch.swift; sourceTree = "<group>"; };
 		C96DF8F92A28A48A0096868A /* Data+Navigational.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Navigational.swift"; sourceTree = "<group>"; };
@@ -167,6 +173,7 @@
 			children = (
 				C90F36232A34831E00DDCA82 /* PropertyView+Delegate.swift */,
 				C90F36252A34839200DDCA82 /* TreeViewUI+Delegate.swift */,
+				C90F36312A3642EC00DDCA82 /* ViewElectors+Delegate.swift */,
 			);
 			path = "View Item Delegates";
 			sourceTree = "<group>";
@@ -278,6 +285,8 @@
 				C9F9C2712A20CD160056BCBF /* NewSubStreet.swift */,
 				C9F9C27D2A227B740056BCBF /* NewPropertyRange.swift */,
 				C90F362D2A3564EA00DDCA82 /* NewElector.swift */,
+				C90F36332A39BA1000DDCA82 /* DataNavigationalDetailsForEditing.swift */,
+				C90F36352A39BA8F00DDCA82 /* NewProperty.swift */,
 			);
 			path = "New Items";
 			sourceTree = "<group>";
@@ -388,6 +397,7 @@
 				C96DF8FC2A28A5360096868A /* View+PollingDistrict.swift in Sources */,
 				C96CFD942A26939000B5491F /* TreeViewSearch.swift in Sources */,
 				C96DF8FA2A28A48A0096868A /* Data+Navigational.swift in Sources */,
+				C90F36362A39BA8F00DDCA82 /* NewProperty.swift in Sources */,
 				C90F361B2A34178700DDCA82 /* Street+NewDelegate.swift in Sources */,
 				C954109C2A2A3E620076267A /* View+Substreet.swift in Sources */,
 				C9F9C2722A20CD160056BCBF /* NewSubStreet.swift in Sources */,
@@ -401,8 +411,10 @@
 				C9F9C27A2A20DC0A0056BCBF /* NewWard.swift in Sources */,
 				C9F9C26F2A20C96A0056BCBF /* MenuItem.swift in Sources */,
 				C98DCE752A2F2E9700CC6227 /* EditHeading.swift in Sources */,
+				C90F36342A39BA1000DDCA82 /* DataNavigationalDetailsForEditing.swift in Sources */,
 				C9AC94922A18F0C400C3085A /* MacRegisterAppApp.swift in Sources */,
 				C9F9C26D2A20AF230056BCBF /* TreeViewUI.swift in Sources */,
+				C90F36322A3642EC00DDCA82 /* ViewElectors+Delegate.swift in Sources */,
 				C90F362E2A3564EA00DDCA82 /* NewElector.swift in Sources */,
 				C98DCE702A2EB1DD00CC6227 /* TestForm.swift in Sources */,
 			);

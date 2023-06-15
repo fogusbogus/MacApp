@@ -36,10 +36,19 @@ class View_SubStreet_Data : ObservableObject {
 	}
 }
 
+extension Optional where Wrapped == String {
+	func whenNotEmptyOrWhitespace(_ code: (String) -> String) -> String {
+		if let text = self, !(self?.isEmptyOrWhitespace() ?? true) {
+			return code(text)
+		}
+		return self ?? ""
+	}
+}
+
 extension View_SubStreet_Data {
 	var heading: String {
 		if !name.isEmptyOrWhitespace() {
-			return "Substreet - \(name)"
+			return "Substreet - \(name)" + (subStreet.street?.objectName).whenNotEmptyOrWhitespace { " (\($0))"}
 		}
 		return "Unnamed substreet in \(subStreet.street?.objectName ?? "Unknown street")"
 	}

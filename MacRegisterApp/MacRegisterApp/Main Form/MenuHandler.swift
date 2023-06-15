@@ -54,6 +54,14 @@ extension MacRegisterAppApp : MenuHandler {
 					break
 			}
 		}
+		if let el = data as? Elector {
+			switch action {
+				case MenuItemIdentifier.editElector.actionCode:
+					openWindow(window: WindowType(type: .editElector, object: el))
+				default:
+					break
+			}
+		}
 	}
 
 }

@@ -49,7 +49,7 @@ extension MacRegisterAppApp : TreeNodeDataProvider {
 			return st.getSubStreets().count > 0
 		}
 		
-		if let ss = forNode.data as? SubStreet {
+		if forNode.data is SubStreet {
 			return false
 		}
 		

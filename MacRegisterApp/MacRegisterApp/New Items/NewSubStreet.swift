@@ -28,7 +28,7 @@ struct NewSubStreet: View {
 				return "Name must have a valid value"
 			}
 			
-			if !street!.getSubStreets().allSatisfy {!$0.name!.implies(name)} {
+			if !street!.getSubStreets().allSatisfy({!$0.name!.implies(name)}) {
 				return "Substreet already exists within this street"
 			}
 			return ""

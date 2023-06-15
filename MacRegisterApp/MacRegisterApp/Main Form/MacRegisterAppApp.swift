@@ -12,6 +12,7 @@ import TreeView
 struct MacRegisterAppApp: App {
 	
 	@State var currentAbode: Abode?
+	@State var selectedElector: Elector?
 	
 	func closeWindow(window: WindowType) {
 		detail = detail.filter {$0 != window}
@@ -62,6 +63,14 @@ struct MacRegisterAppApp: App {
 						NewElector(property: window.object as? Abode, delegate: self)
 						Spacer()
 					})
+				
+			case .editElector:
+				return AnyView(
+					Group {
+						NewElector(property: nil, delegate: self, details: ElectorDetails(object: selectedElector))
+						Spacer()
+					}
+				)
 
 			default:
 				return AnyView(currentWindowForSelection())
@@ -95,7 +104,7 @@ struct MacRegisterAppApp: App {
 					}
 					HSplitView {
 						PropertiesView(street: st, delegate: self, contextMenuDelegate: self)
-						View_Electors(property: currentAbode)
+						View_Electors(property: currentAbode, contextMenuDelegate: self, delegate: self)
 					}
 				}
 			)
@@ -109,7 +118,7 @@ struct MacRegisterAppApp: App {
 					}
 					HSplitView {
 						PropertiesView(substreet: ss, delegate: self, contextMenuDelegate: self)
-						View_Electors(property: currentAbode)
+						View_Electors(property: currentAbode, contextMenuDelegate: self, delegate: self)
 					}
 				}
 			)
@@ -122,7 +131,7 @@ struct MacRegisterAppApp: App {
 
 	func onShow() {
 		let pd = PollingDistrict.getAll()
-		print(pd.first?.name)
+		print(pd.first?.name ?? "")
 		if pd.count == 0 {
 					let bundle = Bundle.main.path(forResource: "Migration", ofType: "json")
 					if let data = Migration.read(path: bundle!) {
@@ -134,7 +143,7 @@ struct MacRegisterAppApp: App {
 	@State var tree = TreeView()
 	
 	func electorArea() -> AnyView {
-		if let currentAbode = currentAbode {
+		if currentAbode != nil {
 			print("Have an abode!")
 		}
 		return AnyView(EmptyView().frame(maxHeight:100))
