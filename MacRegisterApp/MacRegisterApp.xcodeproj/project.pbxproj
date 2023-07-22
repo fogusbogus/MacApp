@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C9007AC32A1EC1FA00C7EEF4 /* Migration.json in Resources */ = {isa = PBXBuildFile; fileRef = C9007AC22A1EC13F00C7EEF4 /* Migration.json */; };
+		C90E48972A504ACE00E99701 /* App+TreeViewNotifiyDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90E48962A504ACE00E99701 /* App+TreeViewNotifiyDelegate.swift */; };
 		C90F360D2A33DFF700DDCA82 /* View+Electors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F360C2A33DFF700DDCA82 /* View+Electors.swift */; };
 		C90F36102A34128400DDCA82 /* WindowManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F360F2A34128400DDCA82 /* WindowManagement.swift */; };
 		C90F36122A3412C000DDCA82 /* TreeNodeDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F36112A3412C000DDCA82 /* TreeNodeDataProvider.swift */; };
@@ -27,6 +28,9 @@
 		C90F36322A3642EC00DDCA82 /* ViewElectors+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F36312A3642EC00DDCA82 /* ViewElectors+Delegate.swift */; };
 		C90F36342A39BA1000DDCA82 /* DataNavigationalDetailsForEditing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F36332A39BA1000DDCA82 /* DataNavigationalDetailsForEditing.swift */; };
 		C90F36362A39BA8F00DDCA82 /* NewProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F36352A39BA8F00DDCA82 /* NewProperty.swift */; };
+		C90F36392A3C5C3900DDCA82 /* App+LatestWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F36382A3C5C3900DDCA82 /* App+LatestWindow.swift */; };
+		C92F925F2A615A920072BAFD /* DropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92F925E2A615A920072BAFD /* DropDelegate.swift */; };
+		C92F92612A629A9F0072BAFD /* MenuHandler+DialogType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92F92602A629A9F0072BAFD /* MenuHandler+DialogType.swift */; };
 		C954109C2A2A3E620076267A /* View+Substreet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C954109B2A2A3E620076267A /* View+Substreet.swift */; };
 		C96CFD942A26939000B5491F /* TreeViewSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96CFD932A26939000B5491F /* TreeViewSearch.swift */; };
 		C96DF8FA2A28A48A0096868A /* Data+Navigational.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96DF8F92A28A48A0096868A /* Data+Navigational.swift */; };
@@ -46,6 +50,11 @@
 		C9AC94AD2A18F0E700C3085A /* LoggingLib in Frameworks */ = {isa = PBXBuildFile; productRef = C9AC94AC2A18F0E700C3085A /* LoggingLib */; };
 		C9AC94B02A18F31600C3085A /* MacRegisterSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9AC94AF2A18F31600C3085A /* MacRegisterSupport.framework */; };
 		C9AC94B12A18F31600C3085A /* MacRegisterSupport.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C9AC94AF2A18F31600C3085A /* MacRegisterSupport.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C9D4D6832A4D8E2E008365F3 /* Elector+Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4D6822A4D8E2E008365F3 /* Elector+Meta.swift */; };
+		C9D4D6852A4D8E50008365F3 /* MetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4D6842A4D8E50008365F3 /* MetaData.swift */; };
+		C9D4D6892A4D8EC7008365F3 /* MetaNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4D6882A4D8EC7008365F3 /* MetaNote.swift */; };
+		C9D4D68B2A4DBD7D008365F3 /* RAG.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4D68A2A4DBD7D008365F3 /* RAG.swift */; };
+		C9D4D68D2A4DC030008365F3 /* Markers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4D68C2A4DC030008365F3 /* Markers.swift */; };
 		C9F9C25E2A1F8E3F0056BCBF /* TestData.json in Resources */ = {isa = PBXBuildFile; fileRef = C9F9C25D2A1F8E3F0056BCBF /* TestData.json */; };
 		C9F9C2622A1FB6020056BCBF /* MacRegister.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C9F9C2602A1FB6020056BCBF /* MacRegister.xcdatamodeld */; };
 		C9F9C2642A1FB6E40056BCBF /* Migration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F9C2632A1FB6E40056BCBF /* Migration.swift */; };
@@ -76,6 +85,7 @@
 
 /* Begin PBXFileReference section */
 		C9007AC22A1EC13F00C7EEF4 /* Migration.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Migration.json; path = /Users/matt/XCode/MacRegisterApp/MacRegisterApp/Migration.json; sourceTree = "<absolute>"; };
+		C90E48962A504ACE00E99701 /* App+TreeViewNotifiyDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App+TreeViewNotifiyDelegate.swift"; sourceTree = "<group>"; };
 		C90F360C2A33DFF700DDCA82 /* View+Electors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Electors.swift"; sourceTree = "<group>"; };
 		C90F360F2A34128400DDCA82 /* WindowManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowManagement.swift; sourceTree = "<group>"; };
 		C90F36112A3412C000DDCA82 /* TreeNodeDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNodeDataProvider.swift; sourceTree = "<group>"; };
@@ -95,11 +105,15 @@
 		C90F36312A3642EC00DDCA82 /* ViewElectors+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewElectors+Delegate.swift"; sourceTree = "<group>"; };
 		C90F36332A39BA1000DDCA82 /* DataNavigationalDetailsForEditing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataNavigationalDetailsForEditing.swift; sourceTree = "<group>"; };
 		C90F36352A39BA8F00DDCA82 /* NewProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProperty.swift; sourceTree = "<group>"; };
+		C90F36382A3C5C3900DDCA82 /* App+LatestWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App+LatestWindow.swift"; sourceTree = "<group>"; };
+		C92F925E2A615A920072BAFD /* DropDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDelegate.swift; sourceTree = "<group>"; };
+		C92F92602A629A9F0072BAFD /* MenuHandler+DialogType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuHandler+DialogType.swift"; sourceTree = "<group>"; };
 		C954109B2A2A3E620076267A /* View+Substreet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Substreet.swift"; sourceTree = "<group>"; };
 		C96CFD932A26939000B5491F /* TreeViewSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeViewSearch.swift; sourceTree = "<group>"; };
 		C96DF8F92A28A48A0096868A /* Data+Navigational.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Navigational.swift"; sourceTree = "<group>"; };
 		C96DF8FB2A28A5360096868A /* View+PollingDistrict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+PollingDistrict.swift"; sourceTree = "<group>"; };
 		C96DF8FD2A28A5C10096868A /* View_Edit_Heading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View_Edit_Heading.swift; sourceTree = "<group>"; };
+		C974917C2A5D6EDD00A24982 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C97E389F2A23DDCA0070DC2B /* PropertiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertiesView.swift; sourceTree = "<group>"; };
 		C98DCE6F2A2EB1DD00CC6227 /* TestForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestForm.swift; sourceTree = "<group>"; };
 		C98DCE742A2F2E9700CC6227 /* EditHeading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHeading.swift; sourceTree = "<group>"; };
@@ -113,6 +127,11 @@
 		C9AC949A2A18F0C400C3085A /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		C9AC949F2A18F0C400C3085A /* MacRegisterApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacRegisterApp.entitlements; sourceTree = "<group>"; };
 		C9AC94AF2A18F31600C3085A /* MacRegisterSupport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MacRegisterSupport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9D4D6822A4D8E2E008365F3 /* Elector+Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Elector+Meta.swift"; sourceTree = "<group>"; };
+		C9D4D6842A4D8E50008365F3 /* MetaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaData.swift; sourceTree = "<group>"; };
+		C9D4D6882A4D8EC7008365F3 /* MetaNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaNote.swift; sourceTree = "<group>"; };
+		C9D4D68A2A4DBD7D008365F3 /* RAG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAG.swift; sourceTree = "<group>"; };
+		C9D4D68C2A4DC030008365F3 /* Markers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Markers.swift; sourceTree = "<group>"; };
 		C9F9C25D2A1F8E3F0056BCBF /* TestData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TestData.json; sourceTree = "<group>"; };
 		C9F9C2612A1FB6020056BCBF /* MacRegister.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MacRegister.xcdatamodel; sourceTree = "<group>"; };
 		C9F9C2632A1FB6E40056BCBF /* Migration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Migration.swift; sourceTree = "<group>"; };
@@ -144,6 +163,7 @@
 		C90F360E2A34125E00DDCA82 /* Main Form */ = {
 			isa = PBXGroup;
 			children = (
+				C90F36372A3C5C0D00DDCA82 /* Window Management */,
 				C90F36222A34831000DDCA82 /* View Item Delegates */,
 				C90F36172A34176100DDCA82 /* New Item Delegates */,
 				C9AC94912A18F0C400C3085A /* MacRegisterAppApp.swift */,
@@ -151,6 +171,7 @@
 				C90F36112A3412C000DDCA82 /* TreeNodeDataProvider.swift */,
 				C90F36132A3413AE00DDCA82 /* TreeNodeContextMenuProvider.swift */,
 				C90F36152A34167200DDCA82 /* MenuHandler.swift */,
+				C92F92602A629A9F0072BAFD /* MenuHandler+DialogType.swift */,
 			);
 			path = "Main Form";
 			sourceTree = "<group>";
@@ -181,8 +202,11 @@
 		C90F36272A34C92C00DDCA82 /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
+				C9D4D6812A4D8E1B008365F3 /* MetaData */,
 				C90F362A2A35159700DDCA82 /* Extensions */,
 				C90F36282A34C93300DDCA82 /* WindowType.swift */,
+				C9D4D68C2A4DC030008365F3 /* Markers.swift */,
+				C92F925E2A615A920072BAFD /* DropDelegate.swift */,
 			);
 			path = Supporting;
 			sourceTree = "<group>";
@@ -193,6 +217,15 @@
 				C90F362B2A3515AF00DDCA82 /* DataNavigational+DescriptiveAddress.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C90F36372A3C5C0D00DDCA82 /* Window Management */ = {
+			isa = PBXGroup;
+			children = (
+				C90F36382A3C5C3900DDCA82 /* App+LatestWindow.swift */,
+				C90E48962A504ACE00E99701 /* App+TreeViewNotifiyDelegate.swift */,
+			);
+			path = "Window Management";
 			sourceTree = "<group>";
 		};
 		C96DF8F82A28A4670096868A /* Conform */ = {
@@ -238,6 +271,7 @@
 		C9AC94902A18F0C400C3085A /* MacRegisterApp */ = {
 			isa = PBXGroup;
 			children = (
+				C974917C2A5D6EDD00A24982 /* Info.plist */,
 				C90F36272A34C92C00DDCA82 /* Supporting */,
 				C90F360E2A34125E00DDCA82 /* Main Form */,
 				C96DF8F82A28A4670096868A /* Conform */,
@@ -275,6 +309,17 @@
 				C9AC94AF2A18F31600C3085A /* MacRegisterSupport.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C9D4D6812A4D8E1B008365F3 /* MetaData */ = {
+			isa = PBXGroup;
+			children = (
+				C9D4D6822A4D8E2E008365F3 /* Elector+Meta.swift */,
+				C9D4D6842A4D8E50008365F3 /* MetaData.swift */,
+				C9D4D6882A4D8EC7008365F3 /* MetaNote.swift */,
+				C9D4D68A2A4DBD7D008365F3 /* RAG.swift */,
+			);
+			path = MetaData;
 			sourceTree = "<group>";
 		};
 		C9F9C2702A20CD060056BCBF /* New Items */ = {
@@ -382,14 +427,17 @@
 				C9F9C2662A1FB6F10056BCBF /* Data+Extensions.swift in Sources */,
 				C9F9C27C2A20E8CF0056BCBF /* NewStreet.swift in Sources */,
 				C98DCE772A32A01D00CC6227 /* View+Street.swift in Sources */,
+				C90F36392A3C5C3900DDCA82 /* App+LatestWindow.swift in Sources */,
 				C96DF8FE2A28A5C10096868A /* View_Edit_Heading.swift in Sources */,
 				C90F36142A3413AE00DDCA82 /* TreeNodeContextMenuProvider.swift in Sources */,
 				C9F9C2642A1FB6E40056BCBF /* Migration.swift in Sources */,
+				C9D4D6892A4D8EC7008365F3 /* MetaNote.swift in Sources */,
 				C90F36292A34C93300DDCA82 /* WindowType.swift in Sources */,
 				C90F36162A34167200DDCA82 /* MenuHandler.swift in Sources */,
 				C90F36102A34128400DDCA82 /* WindowManagement.swift in Sources */,
 				C9AC949B2A18F0C400C3085A /* Persistence.swift in Sources */,
 				C9A473672A2903FA000952EB /* View+Ward.swift in Sources */,
+				C90E48972A504ACE00E99701 /* App+TreeViewNotifiyDelegate.swift in Sources */,
 				C90F360D2A33DFF700DDCA82 /* View+Electors.swift in Sources */,
 				C9F9C27E2A227B740056BCBF /* NewPropertyRange.swift in Sources */,
 				C90F361F2A34178F00DDCA82 /* Property+NewDelegate.swift in Sources */,
@@ -397,25 +445,31 @@
 				C96DF8FC2A28A5360096868A /* View+PollingDistrict.swift in Sources */,
 				C96CFD942A26939000B5491F /* TreeViewSearch.swift in Sources */,
 				C96DF8FA2A28A48A0096868A /* Data+Navigational.swift in Sources */,
+				C9D4D68D2A4DC030008365F3 /* Markers.swift in Sources */,
 				C90F36362A39BA8F00DDCA82 /* NewProperty.swift in Sources */,
 				C90F361B2A34178700DDCA82 /* Street+NewDelegate.swift in Sources */,
 				C954109C2A2A3E620076267A /* View+Substreet.swift in Sources */,
 				C9F9C2722A20CD160056BCBF /* NewSubStreet.swift in Sources */,
+				C9D4D6832A4D8E2E008365F3 /* Elector+Meta.swift in Sources */,
 				C90F36122A3412C000DDCA82 /* TreeNodeDataProvider.swift in Sources */,
 				C90F36192A34177000DDCA82 /* SubStreet+NewDelegate.swift in Sources */,
 				C90F36262A34839200DDCA82 /* TreeViewUI+Delegate.swift in Sources */,
 				C90F361D2A34178B00DDCA82 /* Ward+NewDelegate.swift in Sources */,
+				C92F925F2A615A920072BAFD /* DropDelegate.swift in Sources */,
 				C90F36302A35690200DDCA82 /* Elector+NewDelegate.swift in Sources */,
 				C9AC94942A18F0C400C3085A /* ContentView.swift in Sources */,
 				C97E38A02A23DDCA0070DC2B /* PropertiesView.swift in Sources */,
+				C9D4D6852A4D8E50008365F3 /* MetaData.swift in Sources */,
 				C9F9C27A2A20DC0A0056BCBF /* NewWard.swift in Sources */,
 				C9F9C26F2A20C96A0056BCBF /* MenuItem.swift in Sources */,
 				C98DCE752A2F2E9700CC6227 /* EditHeading.swift in Sources */,
 				C90F36342A39BA1000DDCA82 /* DataNavigationalDetailsForEditing.swift in Sources */,
 				C9AC94922A18F0C400C3085A /* MacRegisterAppApp.swift in Sources */,
 				C9F9C26D2A20AF230056BCBF /* TreeViewUI.swift in Sources */,
+				C92F92612A629A9F0072BAFD /* MenuHandler+DialogType.swift in Sources */,
 				C90F36322A3642EC00DDCA82 /* ViewElectors+Delegate.swift in Sources */,
 				C90F362E2A3564EA00DDCA82 /* NewElector.swift in Sources */,
+				C9D4D68B2A4DBD7D008365F3 /* RAG.swift in Sources */,
 				C98DCE702A2EB1DD00CC6227 /* TestForm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -550,6 +604,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MacRegisterApp/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -577,6 +632,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MacRegisterApp/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

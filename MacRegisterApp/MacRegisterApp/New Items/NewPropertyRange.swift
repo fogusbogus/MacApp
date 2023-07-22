@@ -46,6 +46,151 @@ enum RangeFilterType : CaseIterable, Identifiable, CustomStringConvertible {
 }
 
 struct NewPropertyRange: View {
+
+	init() {
+
+	}
+	init(subStreet: SubStreet?, street: Street?, delegate: NewPropertyRangeDelegate?) {
+		self.subStreet = subStreet
+		self.street = street
+		self.delegate = delegate
+	}
+
+	var subStreet: SubStreet?
+	var street: Street?
+	var delegate: NewPropertyRangeDelegate?
+
+	@State var filter: RangeFilterType = .none
+	@State var future: Bool = false
+
+	@ObservedObject var measure = MeasuringView()
+
+	@State var range: String = ""
+
+	private func getItems() -> [String] {
+		let parts = range.splitToArray(",").map {$0.trim()}.filter {$0.length() > 0}
+		var ret : [String] = []
+		parts.forEach { part in
+			if Int(part) != nil {
+				ret.assert(part)
+			}
+			else {
+				if part.contains("-") {
+					let nums = part.splitToArray("-").map {$0.trim()}.filter {$0.length() > 0}
+					if nums.count > 1 {
+						if let a = Int(nums[0]), let b = Int(nums[1]) {
+							(a...b).forEach {ret.assert("\($0)")}
+						}
+					}
+				}
+				else {
+					ret.assert(part)
+				}
+			}
+		}
+		ret.sort()
+		return filter.process(items: ret)
+	}
+
+	func canOK() -> Bool {
+		return warning.length() == 0
+	}
+
+	private var warning: String {
+		get {
+			//Need to do some kind of validation
+			let parts = range.splitToArray(",").map {$0.trim()}.filter {$0.length() > 0}
+			if parts.count == 0 {
+				return "No range has been specified"
+			}
+			var msgs : [String] = []
+			parts.forEach { part in
+				if let num = Int(part) {
+					if num < 1 {
+						msgs.append("Number must be 1 or more")
+					}
+				} else {
+					if part.contains("-") {
+						let nums = part.splitToArray("-").map {$0.trim()}.filter {$0.length() > 0}
+						if nums.count != 2 {
+							msgs.append("Number range should only have a start and end")
+						}
+						else {
+							if let n1 = Int(nums[0]), let n2 = Int(nums[1]) {
+								if n1 >= n2 {
+									msgs.append("Number range has conflicting values")
+								}
+								else {
+									if n2 - n1 > 100 {
+										msgs.append("Number range is more than 100 properties. Please refactor and repeat if necessary")
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			return msgs.first ?? ""
+		}
+	}
+
+    var body: some View {
+		VStack(alignment: .center, spacing: 4) {
+			Group {
+				HStack {
+					Text("New Range of Properties")
+						.font(.largeTitle)
+					Spacer()
+				}
+				Spacer()
+					.frame(height: 16)
+				HStack(alignment: .firstTextBaseline, spacing: 8) {
+					Text("Street:")
+						.decidesWidthOf(measure, key: "LABEL", alignment: .trailing)
+					Text(street?.name ?? subStreet?.street?.name ?? "<Unknown Street>").bold()
+					Spacer()
+				}
+				HStack(alignment: .firstTextBaseline, spacing: 8) {
+					Text("Substreet:")
+						.decidesWidthOf(measure, key: "LABEL", alignment: .trailing)
+					Text(subStreet?.name ?? "<Unknown Street>").bold()
+					Spacer()
+				}
+			}
+			Spacer()
+				.frame(height: 24)
+
+			Form {
+				TextField("Ranges:", text: $range, prompt: Text("e.g. 1-5, 10, House name 1, House name 2"))
+				Picker("Filter:", selection: $filter) {
+					ForEach(RangeFilterType.allCases) { f in
+						Text(String(describing: f))
+					}
+				}
+				FormToggle(label: "Future:", isOn: $future)
+				.offset(y: -2)
+			}
+			HStack(alignment:.center) {
+				if warning != "" {
+					Text("⚠️")
+					Text(warning)
+				}
+				Spacer()
+				Button("OK") {
+					delegate?.okNew(subStreet: subStreet, street: street, items: getItems(), future: future)
+				}
+				.disabled(!canOK())
+				Button("Cancel") {
+					delegate?.cancelNew(substreet: subStreet, street: street)
+				}
+			}
+			.frame(alignment: .trailing)
+		}
+		.padding()
+    }
+}
+
+struct NewPropertyRangeOld: View {
 	
 	init() {
 		
@@ -61,6 +206,7 @@ struct NewPropertyRange: View {
 	var delegate: NewPropertyRangeDelegate?
 	
 	@State var filter: RangeFilterType = .none
+	@State var future: Bool = false
 	
 	@ObservedObject var measure = MeasuringView()
 	
@@ -166,17 +312,24 @@ struct NewPropertyRange: View {
 			}
 			Spacer()
 				.frame(height: 24)
-			HStack(alignment: .firstTextBaseline, spacing: 8) {
-				Text("Filter:")
-					.decidesWidthOf(measure, key: "LABEL", alignment: .trailing)
-				Picker("", selection: $filter) {
-					ForEach(RangeFilterType.allCases) { f in
-						Text(String(describing: f))
+			Group {
+				HStack(alignment: .firstTextBaseline, spacing: 8) {
+					Text("Filter:")
+						.decidesWidthOf(measure, key: "LABEL", alignment: .trailing)
+					Picker("", selection: $filter) {
+						ForEach(RangeFilterType.allCases) { f in
+							Text(String(describing: f))
+						}
 					}
+					Spacer()
+				}
+				HStack(alignment: .firstTextBaseline, spacing: 8) {
+					Text("Future:")
+						.decidesWidthOf(measure, key: "LABEL", alignment: .trailing)
+					Toggle("", isOn: $future)
 				}
 				Spacer()
 			}
-			Spacer()
 				.frame(height: 24)
 			HStack(alignment:.center) {
 				if warning != "" {
@@ -185,7 +338,7 @@ struct NewPropertyRange: View {
 				}
 				Spacer()
 				Button("OK") {
-					delegate?.okNew(subStreet: subStreet, street: street, items: getItems())
+					delegate?.okNew(subStreet: subStreet, street: street, items: getItems(), future: future)
 				}
 				.disabled(!canOK())
 				Button("Cancel") {
@@ -200,7 +353,7 @@ struct NewPropertyRange: View {
 
 protocol NewPropertyRangeDelegate {
 	func cancelNew(substreet: SubStreet?, street: Street?)
-	func okNew(subStreet: SubStreet?, street: Street?, items: [String])
+	func okNew(subStreet: SubStreet?, street: Street?, items: [String], future: Bool)
 }
 
 

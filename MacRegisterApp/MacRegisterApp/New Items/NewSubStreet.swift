@@ -10,26 +10,58 @@ import SwiftUI
 import MeasuringView
 import UsefulExtensions
 
+protocol NewSubStreetDelegate {
+	func cancelNewSubStreet(street: Street?)
+	func saveNewSubStreet(street: Street?)
+	func cancelEditSubStreet(substreet: SubStreet?)
+	func saveEditSubStreet(substreet: SubStreet?)
+}
+
+class SubStreetDetails: DataNavigationalDetailsForEditing<SubStreet> {
+	
+	override func copyObject(object: SubStreet?) {
+		self.name = object?.name ?? ""
+		self.sortName = object?.sortName ?? ""
+		
+	}
+	
+	@Published var name: String = ""
+	@Published var sortName: String = ""
+	
+	override func canSave(withParent: DataNavigational? = nil) -> Bool { !name.isEmptyOrWhitespace() }
+	
+	override func copyToObject(_ object: SubStreet?) {
+		guard let elector = object ?? self.object else { return }
+		elector.name = name
+		elector.sortName = sortName
+	}
+	
+	override func reset() {
+		name = ""
+		sortName = ""
+	}
+}
+
 struct NewSubStreet: View {
 	
 	var street: Street?
 	var delegate: NewSubStreetDelegate?
 	
-	@State var name: String = ""
-	@State var sortName: String = ""
+	@StateObject var details = SubStreetDetails()
+	
 	var warning: String {
 		get {
-			if street == nil {
+			if details.object == nil {
 				return "Not attached to a valid street!"
 			}
 			
-			let ssName = name.trim()
+			let ssName = details.object?.objectName.trim() ?? ""
 			if ssName.length() == 0 {
-				return "Name must have a valid value"
+				return ""
 			}
 			
-			if !street!.getSubStreets().allSatisfy({!$0.name!.implies(name)}) {
-				return "Substreet already exists within this street"
+			if street?.getSubStreets().contains(where: {!$0.objectName.implies(details.name)}) ?? false {
+				return "Substreet already exists within this street. Use either blank or unique name."
 			}
 			return ""
 		}
@@ -39,51 +71,57 @@ struct NewSubStreet: View {
 		return warning.length() == 0
 	}
 	
-	@ObservedObject var measure: MeasuringView = MeasuringView()
+	var substreetEditMode : Bool { details.object != nil }
 	
     var body: some View {
-		VStack(alignment: .center, spacing: 4) {
-			Group {
-				HStack {
-					Text("New Substreet")
-						.font(.largeTitle)
-					Spacer()
-				}
-				Spacer()
-					.frame(height: 16)
-				HStack(alignment: .firstTextBaseline, spacing: 8) {
-					Text("Street:")
-						.decidesWidthOf(measure, key: "LABEL", alignment: .trailing)
-					Text(street?.name ?? "<Unknown Street>").bold()
-					Spacer()
-				}
+
+		Form {
+			Text(substreetEditMode ? "Edit substreet \((details.object?.objectName ?? "").substitute("un-named"))" : "New substreet").font(.largeTitle)
+			Text("for \(street?.location ?? details.object?.street?.location ?? "an unknown street")")
+			Divider()
+			LabeledContent("Polling district:") {
+				Text(street?.ward?.pollingDistrict?.objectName ?? details.object?.street?.ward?.pollingDistrict?.objectName ?? "Unknown polling district").bold()
 			}
-			Spacer()
-				.frame(height: 24)
-			HStack(alignment: .firstTextBaseline, spacing: 8) {
-				Text("Name:")
-					.decidesWidthOf(measure, key: "LABEL", alignment: .trailing)
-				TextField("Substreet name", text: $name)
+			LabeledContent("Ward:") {
+				Text(street?.ward?.objectName ?? details.object?.street?.ward?.objectName ?? "Unknown ward").bold()
 			}
-			HStack(alignment: .firstTextBaseline, spacing: 8) {
-				Text("Sort name:")
-					.decidesWidthOf(measure, key: "LABEL", alignment: .trailing)
-				TextField("Alphanumeric ordering tag", text: $sortName)
+			LabeledContent("Street:") {
+				Text(street?.objectName ?? details.object?.street?.objectName ?? "Unknown street").bold()
 			}
-			Spacer()
-				.frame(height: 24)
+			Divider()
+			TextField("Name:", text: $details.name)
+			TextField("Sort name:", text: $details.sortName)
 			HStack(alignment:.center) {
 				if warning != "" {
 					Text("⚠️")
 					Text(warning)
 				}
 				Spacer()
-				Button("OK") {
-					delegate?.okNew(street: street, name: name, sortName: sortName)
+				Button {
+					if let substreet = details.object {
+						details.copyToObject(substreet)
+						delegate?.saveEditSubStreet(substreet: substreet)
+						delegate?.cancelEditSubStreet(substreet: substreet)
+						return
+					}
+					let ss = SubStreet(context: street!.managedObjectContext ?? PersistenceController.shared.container.viewContext)
+					details.copyToObject(ss)
+					street!.addToSubStreets(ss)
+					details.reset()
+					delegate?.saveNewSubStreet(street: street)
+					delegate?.cancelNewSubStreet(street: street)
+				} label: {
+					Text("Save")
 				}
 				.disabled(!canOK())
-				Button("Cancel") {
-					delegate?.cancelNew(street: street)
+				Button {
+					if let substreet = details.object {
+						delegate?.cancelEditSubStreet(substreet: substreet)
+					} else {
+						delegate?.cancelNewSubStreet(street: street)
+					}
+				} label: {
+					Text("Cancel")
 				}
 			}
 			.frame(alignment: .trailing)
@@ -92,7 +130,7 @@ struct NewSubStreet: View {
     }
 }
 
-protocol NewSubStreetDelegate {
+protocol NewSubStreetDelegateOld {
 	func cancelNew(street: Street?)
 	func okNew(street: Street?, name: String, sortName: String)
 }

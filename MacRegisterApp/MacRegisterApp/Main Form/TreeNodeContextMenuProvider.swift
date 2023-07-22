@@ -213,7 +213,10 @@ extension MacRegisterAppApp: ContextMenuProviderDelegate {
 		}
 		if let pr = data as? Abode {
 			return AnyView(
-				MenuItem(ident: .newElector, handler: self, data: pr)
+				Group {
+					MenuItem(ident: .newElector, handler: self, data: pr)
+					MenuItem(ident: .editProperty, handler: self, data: pr)
+				}
 			)
 		}
 		if let el = data as? Elector {

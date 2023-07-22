@@ -118,10 +118,12 @@ struct TreeNodePollingDistrict: View {
 				.background(selected ? Color.blue : Color.clear)
 		}
 		.contextMenu(menuItems: {contextMenuDelegate?.getContextMenu(node: node)})
+
 	}
 }
 
 struct TreeNodeWard: View {
+	
 	var node: TreeNode
 	var selected: Bool
 	var contextMenuDelegate: TreeNodeContextMenuProvider?
@@ -149,6 +151,8 @@ struct TreeNodeStreet: View {
 	var node: TreeNode
 	var selected: Bool
 	var contextMenuDelegate: TreeNodeContextMenuProvider?
+	
+	@State var isTargeted: Bool = false
 
 	var name: String {
 		get {
@@ -165,7 +169,9 @@ struct TreeNodeStreet: View {
 			Text(name)
 				.background(selected ? Color.blue : Color.clear)
 		}
+		.background(isTargeted ? Color(nsColor: .highlightColor) : Color(nsColor: .controlBackgroundColor))
 		.contextMenu(menuItems: {contextMenuDelegate?.getContextMenu(node: node)})
+
 	}
 }
 
@@ -225,6 +231,16 @@ struct TreeNodeAbode: View {
 	}
 }
 
+extension TreeNode {
+	func getTransferableObject() -> NavDataIdentifier {
+		if let data = self.data as? DataNavigational {
+			print("getTransferableObject()")
+			return NavDataIdentifier.from(object: data)
+		}
+		return NavDataIdentifier.from(object: nil)
+	}
+}
+
 struct VisibleNode: View {
 	internal init(node: TreeNode, delegate: TreeViewUIDelegate? = nil, options: TreeViewUIOptions = TreeViewUIOptions(), dataProvider: TreeNodeDataProvider? = nil, contextMenuDelegate: TreeNodeContextMenuProvider? = nil) {
 		self.node = node
@@ -242,6 +258,8 @@ struct VisibleNode: View {
 	var dataProvider: TreeNodeDataProvider?
 	var contextMenuDelegate: TreeNodeContextMenuProvider?
 	
+	@State var isTargeted: Bool = false
+	
 	var body: some View {
 		HStack(alignment: .center, spacing: 4) {
 			Text(!node.hasChildren ? "" : (node.expanded ? options.expandedSymbol : options.collapsedSymbol))
@@ -251,35 +269,52 @@ struct VisibleNode: View {
 					delegate?.update()
 				}
 			let selected = node.treeView?.getSelectedNode() == node
-			if node.data is PollingDistrict {
+			if let pd = node.data as? PollingDistrict {
 				TreeNodePollingDistrict(node: node, selected: selected, contextMenuDelegate: contextMenuDelegate)
+					.draggable(node.getTransferableObject())
 					.onTapGesture {
 						delegate?.select(node: node)
 					}
 			}
-			if node.data is Ward {
+			if let wd = node.data as? Ward {
 				TreeNodeWard(node: node, selected: selected, contextMenuDelegate: contextMenuDelegate)
+					.draggable(node.getTransferableObject())
 					.onTapGesture {
 						delegate?.select(node: node)
 					}
+
 			}
-			if node.data is Street {
+			if let st = node.data as? Street {
 				TreeNodeStreet(node: node, selected: selected, contextMenuDelegate: contextMenuDelegate)
+					.draggable(node.getTransferableObject())
 					.onTapGesture {
 						delegate?.select(node: node)
 					}
+				
 			}
-			if node.data is SubStreet {
+			if let ss = node.data as? SubStreet {
 				TreeNodeSubStreet(node: node, selected: selected, contextMenuDelegate: contextMenuDelegate)
+					.draggable(NavDataIdentifier(type: "SubStreet", objectID: String(describing: ss.objectID)))
 					.onTapGesture {
 						delegate?.select(node: node)
 					}
+
 			}
 			Spacer()
 				.onTapGesture {
 					delegate?.select(node: nil)
 				}
 		}
+		.background(isTargeted ? Color.orange : Color.clear)
+		.dropDestination(for: NavDataIdentifier.self) { items, location in
+			items.forEach { nav in
+				print(nav.type)
+			}
+			return true
+		} isTargeted: { value in
+			self.isTargeted = true
+		}
+
 		
 	}
 }

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22F66" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22F82" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Abode" representedClassName="Abode" syncable="YES" codeGenerationType="class">
         <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="future" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="meta" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="sortName" optional="YES" attributeType="String"/>
         <attribute name="type" attributeType="String" defaultValueString="A"/>
@@ -9,7 +11,16 @@
         <relationship name="electors" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Elector" inverseName="mainResidence" inverseEntity="Elector"/>
         <relationship name="subStreet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SubStreet" inverseName="abodes" inverseEntity="SubStreet"/>
     </entity>
+    <entity name="Attachment" representedClassName="Attachment" syncable="YES" codeGenerationType="class">
+        <attribute name="data" optional="YES" attributeType="Binary"/>
+        <attribute name="meta" optional="YES" attributeType="String"/>
+        <attribute name="ts" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <relationship name="createdBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RegUser" inverseName="attachments" inverseEntity="RegUser"/>
+        <relationship name="note" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Note" inverseName="attachments" inverseEntity="Note"/>
+    </entity>
     <entity name="CanvassArea" representedClassName="CanvassArea" syncable="YES" codeGenerationType="class">
+        <attribute name="meta" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="sortName" optional="YES" attributeType="String"/>
         <relationship name="abodes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Abode" inverseName="canvassArea" inverseEntity="Abode"/>
@@ -20,18 +31,48 @@
         <attribute name="relatedObjectId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="ts" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
+    <entity name="CreatableObject" representedClassName="CreatableObject" syncable="YES" codeGenerationType="class">
+        <attribute name="createdTS" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="createdBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RegUser" inverseName="objectsCreated" inverseEntity="RegUser"/>
+        <relationship name="notes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Note" inverseName="noteGroup" inverseEntity="Note"/>
+    </entity>
     <entity name="Elector" representedClassName="Elector" syncable="YES" codeGenerationType="class">
         <attribute name="email" optional="YES" attributeType="String" allowsCloudEncryption="YES"/>
         <attribute name="markers" optional="YES" attributeType="String"/>
+        <attribute name="meta" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="salutation" optional="YES" attributeType="String"/>
-        <attribute name="sortName" optional="YES" attributeType="String"/>
+        <attribute name="salutation" optional="YES" attributeType="String">
+            <userInfo>
+                <entry key="description" value="Correspondence title"/>
+            </userInfo>
+        </attribute>
+        <attribute name="sortName" optional="YES" attributeType="String">
+            <userInfo>
+                <entry key="description" value="Alphanumeric sort value"/>
+            </userInfo>
+        </attribute>
+        <attribute name="validation" optional="YES" attributeType="String">
+            <userInfo>
+                <entry key="description" value="When an elector moves they need to be validated as living at that abode"/>
+            </userInfo>
+        </attribute>
         <relationship name="mainResidence" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Abode" inverseName="electors" inverseEntity="Abode"/>
+        <userInfo>
+            <entry key="description" value="Elector"/>
+        </userInfo>
     </entity>
     <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
+    <entity name="Note" representedClassName="Note" syncable="YES" codeGenerationType="class">
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <attribute name="ts" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <relationship name="attachments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Attachment" inverseName="note" inverseEntity="Attachment"/>
+        <relationship name="noteGroup" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CreatableObject" inverseName="notes" inverseEntity="CreatableObject"/>
+    </entity>
     <entity name="PollingDistrict" representedClassName="PollingDistrict" syncable="YES" codeGenerationType="class">
+        <attribute name="meta" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="sortName" optional="YES" attributeType="String"/>
         <relationship name="wards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ward" inverseName="pollingDistrict" inverseEntity="Ward"/>
@@ -40,12 +81,19 @@
         <attribute name="activeYearEnd" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="activeYearStart" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="endTS" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="meta" optional="YES" attributeType="String"/>
         <attribute name="name" attributeType="String" defaultValueString="My Register"/>
         <attribute name="sortName" optional="YES" attributeType="String"/>
         <attribute name="startTS" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="type" attributeType="String" defaultValueString="R"/>
     </entity>
+    <entity name="RegUser" representedClassName="RegUser" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="attachments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Attachment" inverseName="createdBy" inverseEntity="Attachment"/>
+        <relationship name="objectsCreated" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CreatableObject" inverseName="createdBy" inverseEntity="CreatableObject"/>
+    </entity>
     <entity name="Street" representedClassName="Street" syncable="YES" codeGenerationType="class">
+        <attribute name="meta" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="postCode" optional="YES" attributeType="String"/>
         <attribute name="sortName" optional="YES" attributeType="String"/>
@@ -53,12 +101,14 @@
         <relationship name="ward" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ward" inverseName="streets" inverseEntity="Ward"/>
     </entity>
     <entity name="SubStreet" representedClassName="SubStreet" syncable="YES" codeGenerationType="class">
+        <attribute name="meta" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="sortName" optional="YES" attributeType="String"/>
         <relationship name="abodes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Abode" inverseName="subStreet" inverseEntity="Abode"/>
         <relationship name="street" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Street" inverseName="subStreets" inverseEntity="Street"/>
     </entity>
     <entity name="Ward" representedClassName="Ward" syncable="YES" codeGenerationType="class">
+        <attribute name="meta" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="sortName" optional="YES" attributeType="String"/>
         <relationship name="pollingDistrict" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PollingDistrict" inverseName="wards" inverseEntity="PollingDistrict"/>

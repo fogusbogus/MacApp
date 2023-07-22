@@ -10,6 +10,24 @@ import SwiftUI
 
 
 extension MacRegisterAppApp : NewSubStreetDelegate {
+	func cancelNewSubStreet(street: Street?) {
+		guard let street = street else { return }
+		closeWindow(window: WindowType(type: .newSubStreet, object: street))
+	}
+	
+	func saveNewSubStreet(street: Street?) {
+		try? street?.managedObjectContext?.save()
+	}
+	
+	func cancelEditSubStreet(substreet: SubStreet?) {
+		guard let substreet = substreet else { return }
+		closeWindow(window: WindowType(type: .editSubStreet, object: substreet))
+	}
+	
+	func saveEditSubStreet(substreet: SubStreet?) {
+		try? substreet?.managedObjectContext?.save()
+	}
+	
 	func cancelNew(street: Street?) {
 		guard let street = street else { return }
 		closeWindow(window: WindowType(type: .newSubStreet, object: street))

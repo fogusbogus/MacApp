@@ -6,15 +6,17 @@
 //
 
 import Foundation
+import SwiftUI
 
-protocol DataNavigational {
+protocol DataNavigational : NSManagedObject {
 	var symbol: String {get}
 	var objectName: String {get}
 	var sortingName: String {get}
+	func inspect() -> String
 }
 
-enum DataNavigationalType {
-	case pollingDistrict, ward, street, subStreet, abode, elector
+enum DataNavigationalType : String {
+	case pollingDistrict = "PD", ward = "WD", street = "ST", subStreet = "SS", abode = "PR", elector = "EL"
 }
 
 extension PollingDistrict : DataNavigational {
@@ -23,6 +25,7 @@ extension PollingDistrict : DataNavigational {
 	}
 	var objectName: String { name ?? "" }
 	var sortingName: String { sortName ?? "" }
+	
 }
 extension Ward : DataNavigational {
 	var symbol: String {

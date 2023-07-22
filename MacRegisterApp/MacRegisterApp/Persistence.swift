@@ -104,7 +104,7 @@ extension PollingDistrict {
 	static func getAll(context: NSManagedObjectContext? = nil) -> [PollingDistrict] {
 		let context = context ?? PersistenceController.shared.container.viewContext
 		
-		let fetch = PollingDistrict.fetchRequest()
+		let fetch : NSFetchRequest<PollingDistrict> = PollingDistrict.fetchRequest()
 		do {
 			let res = try context.fetch(fetch)
 			return res
@@ -120,7 +120,7 @@ extension Ward {
 	static func getAll(context: NSManagedObjectContext? = nil) -> [Ward] {
 		let context = context ?? PersistenceController.shared.container.viewContext
 		
-		let fetch = Ward.fetchRequest()
+		let fetch : NSFetchRequest<Ward> = Ward.fetchRequest()
 		do {
 			let res = try context.fetch(fetch)
 			return res
@@ -136,7 +136,7 @@ extension Street {
 	static func getAll(context: NSManagedObjectContext? = nil) -> [Street] {
 		let context = context ?? PersistenceController.shared.container.viewContext
 		
-		let fetch = Street.fetchRequest()
+		let fetch : NSFetchRequest<Street> = Street.fetchRequest()
 		do {
 			let res = try context.fetch(fetch)
 			return res
@@ -152,7 +152,7 @@ extension SubStreet {
 	static func getAll(context: NSManagedObjectContext? = nil) -> [SubStreet] {
 		let context = context ?? PersistenceController.shared.container.viewContext
 		
-		let fetch = SubStreet.fetchRequest()
+		let fetch : NSFetchRequest<SubStreet> = SubStreet.fetchRequest()
 		do {
 			let res = try context.fetch(fetch)
 			return res
@@ -168,7 +168,7 @@ extension Abode {
 	static func getAll(context: NSManagedObjectContext? = nil) -> [Abode] {
 		let context = context ?? PersistenceController.shared.container.viewContext
 		
-		let fetch = Abode.fetchRequest()
+		let fetch : NSFetchRequest<Abode> = Abode.fetchRequest()
 		do {
 			let res = try context.fetch(fetch)
 			return res
@@ -203,7 +203,7 @@ extension Elector {
 	static func getAll(context: NSManagedObjectContext? = nil) -> [Elector] {
 		let context = context ?? PersistenceController.shared.container.viewContext
 		
-		let fetch = Elector.fetchRequest()
+		let fetch : NSFetchRequest<Elector> = Elector.fetchRequest()
 		do {
 			let res = try context.fetch(fetch)
 			return res

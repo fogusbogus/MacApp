@@ -29,7 +29,7 @@ extension MacRegisterAppApp : NewPropertyRangeDelegate {
 	///   - subStreet: We can add to the substreet
 	///   - street: We can add to the street (adds a new substreet)
 	///   - items: A string array of items to add
-	func okNew(subStreet: SubStreet?, street: Street?, items: [String]) {
+	func okNew(subStreet: SubStreet?, street: Street?, items: [String], future: Bool = false) {
 		guard let street = street else { return }
 		let closeByStreet = subStreet == nil
 		var ss = subStreet
@@ -54,6 +54,7 @@ extension MacRegisterAppApp : NewPropertyRangeDelegate {
 					sort = sort.right(maxLen)
 				}
 				pr.sortName = sort
+				pr.future = future
 				substreet.addToAbodes(pr)
 			}
 			try? context.save()

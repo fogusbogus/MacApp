@@ -14,16 +14,20 @@ class DataNavigationalDetailsForEditing<T: DataNavigational> : ObservableObject 
 		self.copyObject(object: object)
 	}
 	
+	func load(object: T?) {
+		copyObject(object: object)
+	}
+	
 	/// Override this function to setup the data from the object
 	/// - Parameter object: The object we are copying
 	func copyObject(object: T?) {
 		
 	}
 	
-	var object: T?
+	@Published var object: T?
 	
 	/// Override this
-	func canSave() -> Bool { true }
+	func canSave(withParent: DataNavigational?) -> Bool { errors(parent: nil).count == 0 }
 	
 	/// Override this - copies the inside object to an outside object
 	/// - Parameter object: Object to copy to
@@ -34,5 +38,9 @@ class DataNavigationalDetailsForEditing<T: DataNavigational> : ObservableObject 
 	/// Override this
 	func reset() {
 		
+	}
+	
+	func errors(parent: DataNavigational?) -> [Error] {
+		return []
 	}
 }

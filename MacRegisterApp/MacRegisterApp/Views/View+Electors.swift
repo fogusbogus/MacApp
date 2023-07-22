@@ -12,6 +12,15 @@ protocol ViewElectorsDelegate {
 	func select(elector: Elector?)
 }
 
+extension Elector {
+	func getMarkerSymbols() -> String {
+		if let rawValue = Int(self.markers ?? "0") {
+			return Marker(rawValue: rawValue)?.symbols ?? ""
+		}
+		return ""
+	}
+}
+
 struct View_Electors: View {
 	var property: Abode?
 	
@@ -35,7 +44,7 @@ struct View_Electors: View {
 						.contextMenu(menuItems: {contextMenuDelegate?.getContextMenu(data: delegate?.getSelectedElector())})
 				}
 				TableColumn("Markers") { rec in
-					Text(rec.markers ?? "")
+					Text(rec.getMarkerSymbols())
 						.contextMenuForWholeItem()
 						.contextMenu(menuItems: {contextMenuDelegate?.getContextMenu(data: delegate?.getSelectedElector())})
 				}

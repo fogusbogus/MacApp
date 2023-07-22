@@ -8,21 +8,21 @@
 import Foundation
 
 extension MacRegisterAppApp : NewElectorDelegate {
-	func cancel(elector: Elector?) {
+	func cancelEditElector(elector: Elector?) {
 		guard let elector = elector else { return }
 		closeWindow(window: WindowType(type: .editElector, object: elector))
 	}
 	
-	func save(elector: Elector?) {
+	func saveEditElector(elector: Elector?) {
 		try? elector?.managedObjectContext?.save()
 	}
 	
-	func cancel(property: Abode?) {
+	func cancelNewElector(property: Abode?) {
 		guard let property = property else { return }
 		closeWindow(window: WindowType(type: .newElector, object: property))
 	}
 	
-	func save(property: Abode?) {
+	func saveNewElector(property: Abode?) {
 		try? property?.managedObjectContext?.save()
 	}
 	

@@ -11,135 +11,68 @@ import TreeView
 @main
 struct MacRegisterAppApp: App {
 	
+	/*
+	 Details vars
+	 
+	 Because Swift won't allow us to put these in extensions, we'll define them in the main struct here.
+	 
+	 The reason we are defining these is because Swift has an issue where a refresh of the data isn't done when the object is
+	 created as part of the view. We need to store it and reload the data when required. A pain, sure, but easily overcome and not
+	 too far removed from common sense.
+	 
+	 */
+	//@State var pollingDistrictDetails: PollingDistrictDetails = PollingDistrictDetails()
+	//@State var wardDetails: WardDetails = WardDetails()
+	@State var streetDetails: StreetDetails = StreetDetails()
+	@State var subStreetDetails: SubStreetDetails = SubStreetDetails()
+	@State var propertyDetails: PropertyDetails = PropertyDetails()
+	@State var electorDetails: ElectorDetails = ElectorDetails()
+	
+	///------------------------------------
 	@State var currentAbode: Abode?
 	@State var selectedElector: Elector?
+	@ObservedObject var confirmationDialog = ConfirmationDialog() { data in
+		//OK code
+	} onCancel: { data in
+		//Cancel code
+	}
 	
 	func closeWindow(window: WindowType) {
 		detail = detail.filter {$0 != window}
 	}
 	
+	/// When we open views we keep them in a stack so we can grab the latest one and go back to the previous one when we close the current.
 	@State var detail: [WindowType] = []
+	/// Toggle flag for UI updates
 	@ObservedObject var updater = Updater()
-
-	func openWindow(window: WindowType) {
-		detail = detail.filter {$0 != window}
-		detail.append(window)
-	}
 	
-	func latestWindow() -> AnyView {
-		guard let window = detail.last else { return AnyView(currentWindowForSelection())}
-		
-		switch window.type {
-			case .newSubStreet:
-				return AnyView(
-					Group {
-						NewSubStreet(street: window.object as? Street, delegate: self)
-						Spacer()
-					})
-			case .newWard:
-				return AnyView(
-					Group {
-						NewWard(pollingDistrict: window.object as? PollingDistrict, delegate: self)
-						Spacer()
-					})
-			case .newStreet:
-				return AnyView(
-					Group {
-						NewStreet(ward: window.object as? Ward, delegate: self)
-						Spacer()
-					})
-			case .newPropertyRange:
-				let st = window.object as? Street ?? (window.object as? SubStreet)?.street
-				let ss = window.object as? SubStreet
-				return AnyView(
-					Group {
-						NewPropertyRange(subStreet: ss, street: st, delegate: self)
-						Spacer()
-					})
-			
-			case .newElector:
-				return AnyView(
-					Group {
-						NewElector(property: window.object as? Abode, delegate: self)
-						Spacer()
-					})
-				
-			case .editElector:
-				return AnyView(
-					Group {
-						NewElector(property: nil, delegate: self, details: ElectorDetails(object: selectedElector))
-						Spacer()
-					}
-				)
-
-			default:
-				return AnyView(currentWindowForSelection())
-		}
-	}
-	
-	func currentWindowForSelection() -> AnyView {
-		
-		if let pd = tree.selectedNode?.data as? PollingDistrict {
-			return AnyView(
-				Group {
-					View_PollingDistrict(data: View_PollingDistrict_Data(pollingDistrict: pd), delegate: self)
-					Spacer()
-				}
-				)
-		}
-		if let wd = tree.selectedNode?.data as? Ward {
-			return AnyView(
-				Group {
-					View_Ward(data: View_Ward_Data(ward: wd), delegate: self)
-					Spacer()
-				}
-			)
-		}
-		if let st = tree.selectedNode?.data as? Street {
-			return AnyView(
-				VStack {
-					HStack {
-						View_Street(data: View_Street_Data(street: st), delegate: self)
-						Spacer()
-					}
-					HSplitView {
-						PropertiesView(street: st, delegate: self, contextMenuDelegate: self)
-						View_Electors(property: currentAbode, contextMenuDelegate: self, delegate: self)
-					}
-				}
-			)
-		}
-		if let ss = tree.selectedNode?.data as? SubStreet {
-			return AnyView(
-				VStack {
-					HStack {
-						View_SubStreet(data: View_SubStreet_Data(subStreet: ss), delegate: self)
-						Spacer()
-					}
-					HSplitView {
-						PropertiesView(substreet: ss, delegate: self, contextMenuDelegate: self)
-						View_Electors(property: currentAbode, contextMenuDelegate: self, delegate: self)
-					}
-				}
-			)
-		}
-		return AnyView(EmptyView())
-	}
-	
-	
+	/// Our access to iCloud
     let persistenceController = PersistenceController.shared
 
 	func onShow() {
-		let pd = PollingDistrict.getAll()
-		print(pd.first?.name ?? "")
-		if pd.count == 0 {
-					let bundle = Bundle.main.path(forResource: "Migration", ofType: "json")
-					if let data = Migration.read(path: bundle!) {
-						data.save()
-					}
+//		let pd = PollingDistrict.getAll()
+//		print(pd.first?.name ?? "")
+//		if pd.count == 0 {
+//					let bundle = Bundle.main.path(forResource: "Migration", ofType: "json")
+//					if let data = Migration.read(path: bundle!) {
+//						data.save()
+//					}
+//		}
+		
+		/// Let's get rid of orphaned items. We're never going to see them.
+		SubStreet.getAll().filter({$0.street == nil}).forEach { ss in
+			ss.managedObjectContext?.delete(ss)
 		}
+		Abode.getAll().filter({$0.subStreet == nil}).forEach { pr in
+			pr.managedObjectContext?.delete(pr)
+		}
+		Elector.getAll().filter({$0.mainResidence == nil}).forEach { el in
+			el.managedObjectContext?.delete(el)
+		}
+		try? PersistenceController.shared.container.viewContext.save()
 	}
 	
+	/// Left-side tree of everything we can navigate
 	@State var tree = TreeView()
 	
 	func electorArea() -> AnyView {
@@ -151,9 +84,11 @@ struct MacRegisterAppApp: App {
 	
 	@State private var searchText = ""
 	
+
     var body: some Scene {
         WindowGroup {
 			NavigationSplitView {
+				///We always have our tree to the left
 				ScrollView {
 					TreeViewUI(options: TreeViewUIOptions(), treeView: tree, dataProvider: self, contextMenuDelegate: self, treeViewUIDelegate: self)
 						.environment(\.managedObjectContext, persistenceController.container.viewContext)
@@ -171,13 +106,25 @@ struct MacRegisterAppApp: App {
 				
 			}
 			.onAppear {
+				tree.notifyDelegate = self
+				///We need this to find nodes in our tree
 				tree.dataComparer = { a, b in
 					if let a = a as? NSManagedObject, let b = b as? NSManagedObject {
 						return a.objectID == b.objectID
 					}
 					return false
 				}
+				onShow()
 			}
+			.confirmationDialog(confirmationDialog.message,
+								isPresented: $confirmationDialog.showDialog) {
+				
+				Button(confirmationDialog.okText, role: .destructive) {
+					confirmationDialog.onOK(confirmationDialog.data)
+				}
+				
+			} 
+
         }
     }
 }

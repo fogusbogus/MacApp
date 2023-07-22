@@ -13,19 +13,21 @@ class PropertyDetails : DataNavigationalDetailsForEditing<Abode> {
 	@Published var sortName: String = ""
 	@Published var email: String = ""
 	@Published var type: String = ""
+	@Published var future: Bool = false
 	
 	override func copyObject(object: Abode?) {
 		self.name = object?.name ?? ""
 		self.sortName = object?.sortName ?? ""
 		self.email = object?.email ?? ""
 		self.type = object?.type ?? ""
+		self.future = object?.future ?? false
 	}
 	
-	override func canSave() -> Bool {
+	override func canSave(withParent: DataNavigational? = nil) -> Bool {
 		if name.isEmptyOrWhitespace() {
 			return false
 		}
-		if let subStreet = object?.subStreet {
+		if let subStreet = withParent as? SubStreet ?? object?.subStreet {
 			if subStreet.getAbodes().contains(where: {$0.objectName.removeMultipleSpaces(true).implies(name.removeMultipleSpaces(true)) && $0.id != object?.id}) {
 				return false
 			}
@@ -39,6 +41,7 @@ class PropertyDetails : DataNavigationalDetailsForEditing<Abode> {
 		abode.sortName = sortName
 		abode.email = email
 		abode.type = type
+		abode.future = future
 	}
 	
 	override func reset() {
@@ -46,14 +49,28 @@ class PropertyDetails : DataNavigationalDetailsForEditing<Abode> {
 		sortName = ""
 		email = ""
 		type = ""
+		future = false
+	}
+}
+
+struct FormToggle : View {
+	
+	var label: String
+	var isOn: Binding<Bool>
+	
+	var body: some View {
+		LabeledContent(label) {
+			Toggle("", isOn: isOn)
+				.offset(y: -5)
+		}
 	}
 }
 
 protocol NewPropertyDelegate {
-	func cancel(property: Abode?)
-	func save(property: Abode?)
-	func cancel(subStreet: SubStreet?)
-	func save(subStreet: SubStreet?)
+	func cancelEditProperty(property: Abode?)
+	func saveEditProperty(property: Abode?)
+	func cancelNewProperty(subStreet: SubStreet?)
+	func saveNewProperty(subStreet: SubStreet?)
 }
 
 struct NewProperty: View {
@@ -86,30 +103,32 @@ struct NewProperty: View {
 			TextField("Sort name", text: $details.sortName)
 			TextField("Email", text: $details.email)
 			TextField("Type", text: $details.type)
+			FormToggle(label: "Future:", isOn: $details.future)
+
 			HStack(alignment: .center, spacing: 16) {
 				Spacer()
 				Button {
 					if let property = details.object {
 						details.copyToObject(property)
-						delegate?.save(property: property)
-						delegate?.cancel(property: property)
+						delegate?.saveEditProperty(property: property)
+						delegate?.cancelEditProperty(property: property)
 						return
 					}
 					let pr = Abode(context: subStreet!.managedObjectContext ?? PersistenceController.shared.container.viewContext)
 					details.copyToObject(pr)
 					subStreet!.addToAbodes(pr)
 					details.reset()
-					delegate?.save(subStreet: subStreet)
+					delegate?.saveNewProperty(subStreet: subStreet)
 				} label: {
 					Text(propertyEditMode ? "Save" : "Save/Next")
 				}
 				.disabled(!canSave)
 				Button {
 					if let property = details.object {
-						delegate?.cancel(property: property)
+						delegate?.cancelEditProperty(property: property)
 					}
 					else {
-						delegate?.cancel(subStreet: subStreet)
+						delegate?.cancelNewProperty(subStreet: subStreet)
 					}
 				} label: {
 					Text("Cancel")

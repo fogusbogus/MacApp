@@ -10,11 +10,54 @@ import SwiftUI
 import MeasuringView
 import UsefulExtensions
 
+class NewWardDetails: DataNavigationalDetailsForEditing<Ward> {
+	
+	@State var name: String = ""
+	@State var sortName: String = ""
+	
+	enum NewWardDetailsError : Error {
+		case noValidPollingDistrict, invalidName, nameAlreadyExists
+	}
+	
+	/// Provide some means of validating our data
+	/// - Parameter parent: We might not have a parent yet, but a potential one
+	/// - Returns: An array of errors
+	override func errors(parent: DataNavigational?) -> [Error] {
+		var ret: [Error] = []
+		let pollingDistrict = parent as? PollingDistrict ?? object?.pollingDistrict
+		if pollingDistrict == nil {
+			ret.append(NewWardDetailsError.noValidPollingDistrict)
+		}
+		if name.trim().isEmptyOrWhitespace() {
+			ret.append(NewWardDetailsError.invalidName)
+		}
+		
+		if let object = object, let _ = pollingDistrict?.getWards().map({$0 as DataNavigational}).named(name, butNot: object) {
+			ret.append(NewWardDetailsError.nameAlreadyExists)
+		}
+		return ret
+	}
+	
+	override func copyToObject(_ object: Ward?) {
+		object?.name = name
+		object?.sortName = sortName
+	}
+	
+	override func copyObject(object: Ward?) {
+		self.object = object
+		self.name = object?.name ?? ""
+		self.sortName = object?.sortName ?? ""
+	}
+	
+	override func canSave(withParent: DataNavigational? = nil) -> Bool {
+		return errors(parent: withParent).count == 0
+	}
+}
+
 struct NewWard: View {
 	
 	var pollingDistrict: PollingDistrict?
 	var delegate: NewWardDelegate?
-
 	
 	@State var name: String = ""
 	@State var sortName: String = ""

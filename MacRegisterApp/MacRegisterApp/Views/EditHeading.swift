@@ -121,7 +121,7 @@ struct EditArea: View {
 				if editMode {
 					Button {
 						editMode = false
-						if let obj = object as? NSManagedObject {
+						if let obj = object {
 							try? obj.managedObjectContext?.save()
 						}
 						self.name = object?.objectName ?? ""

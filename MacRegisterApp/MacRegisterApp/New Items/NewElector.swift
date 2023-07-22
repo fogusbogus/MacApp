@@ -8,10 +8,10 @@
 import SwiftUI
 
 protocol NewElectorDelegate {
-	func cancel(property: Abode?)
-	func save(property: Abode?)
-	func cancel(elector: Elector?)
-	func save(elector: Elector?)
+	func cancelNewElector(property: Abode?)
+	func saveNewElector(property: Abode?)
+	func cancelEditElector(elector: Elector?)
+	func saveEditElector(elector: Elector?)
 }
 
 
@@ -31,7 +31,7 @@ class ElectorDetails: DataNavigationalDetailsForEditing<Elector> {
 	@Published var salutation: String = ""
 	@Published var email: String = ""
 	
-	override func canSave() -> Bool { !name.isEmptyOrWhitespace() }
+	override func canSave(withParent: DataNavigational? = nil) -> Bool { !name.isEmptyOrWhitespace() }
 	
 	override func copyToObject(_ object: Elector?) {
 		guard let elector = object ?? self.object else { return }
@@ -84,25 +84,25 @@ struct NewElector: View {
 				Button {
 					if let elector = details.object {
 						details.copyToObject(elector)
-						delegate?.save(elector: elector)
-						delegate?.cancel(elector: elector)
+						delegate?.saveEditElector(elector: elector)
+						delegate?.cancelEditElector(elector: elector)
 						return
 					}
-					var el = Elector(context: property!.managedObjectContext ?? PersistenceController.shared.container.viewContext)
+					let el = Elector(context: property!.managedObjectContext ?? PersistenceController.shared.container.viewContext)
 					details.copyToObject(el)
 					property!.addToElectors(el)
 					details.reset()
-					delegate?.save(property: property)
+					delegate?.saveNewElector(property: property)
 				} label: {
 					Text(electorEditMode ? "Save" : "Save/Next")
 				}
 				.disabled(!canSave)
 				Button {
 					if let elector = details.object {
-						delegate?.cancel(elector: elector)
+						delegate?.cancelEditElector(elector: elector)
 					}
 					else {
-						delegate?.cancel(property: property)
+						delegate?.cancelNewElector(property: property)
 					}
 				} label: {
 					Text("Cancel")
