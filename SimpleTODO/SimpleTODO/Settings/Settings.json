@@ -1,0 +1,43 @@
+{
+	"tag": {
+		"borderColor": "",
+		"backgroundColor": "",
+		"foregroundColor": "",
+		"borderWidth": 1,
+		"cornerRadius": 25
+	},
+	"ticket": {
+		"ticketIDPrioritySpacing": 0,
+		"symbolSize": 24,
+		"foregroundColor": "",
+		"borderWidth": 2,
+		"borderColor": "",
+		"cornerRadius": 25,
+		"backgroundColor": "",
+		"prioritySymbols": {
+			"7": "7.circle.fill",
+			"3": "3.circle.fill",
+			"8": "8.circle.fill",
+			"4": "4.circle.fill",
+			"0": "0.circle.fill",
+			"9": "9.circle.fill",
+			"5": "5.circle.fill",
+			"1": "1.circle.fill",
+			"6": "6.circle.fill",
+			"2": "2.circle.fill"
+		}
+	},
+	"general": {
+		
+	},
+	"lane": {
+		"ticketSpacing": 24,
+		"foregroundColor": "",
+		"borderWidth": 1,
+		"borderColor": "",
+		"targetedBackgroundColor": "",
+		"cornerRadius": 25,
+		"backgroundColor": ""
+	},
+	"user": { "showIcon": true }
+}
