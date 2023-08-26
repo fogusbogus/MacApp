@@ -23,6 +23,17 @@ extension Category {
 	
 	typealias CreateOrUpdatePredicate = (category: Category, isNew: Bool)
 	
+	static func getAll(_ context: NSManagedObjectContext? = nil) -> [Category] {
+		let context = context ?? PersistenceController.shared.container.viewContext
+		let fetch = Category.fetchRequest()
+		do {
+			return try context.fetch(fetch)
+		}
+		catch {
+			
+		}
+		return []
+	}
 	
 	@discardableResult
 	static func assert(withName: String, onCreateOrUpdate: ((CreateOrUpdatePredicate) -> Void)? = nil) -> Category {

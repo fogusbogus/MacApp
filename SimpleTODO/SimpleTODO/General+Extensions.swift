@@ -74,3 +74,9 @@ extension View {
 		return AnyView(self)
 	}
 }
+
+extension Date {
+	func getFormatted() -> String {
+		return self.formatted()
+	}
+}

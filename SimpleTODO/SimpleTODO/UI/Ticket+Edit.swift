@@ -175,7 +175,6 @@ struct Ticket_Edit: View {
 			}
 			Divider()
 			TicketComment_UI(ticket: ticket.ticket, delegate: delegate, ui: ui)
-			//Comment_UI(data: <#T##Comment?#>, designMode: <#T##Bool?#>, delegate: <#T##CommentDelegate?#>)
 		}
     }
 }

@@ -12,6 +12,9 @@ extension Lane {
 		
 		let context = PersistenceController.shared.container.viewContext
 		
+		let project = TODOProject.assert(name: "DEV Project") { project in
+		}
+		
 		let category = Category.assert(withName: "DEVTEST") { cat, isNew in
 			if isNew {
 				cat.code = "XX"
@@ -32,6 +35,9 @@ extension Lane {
 		Ticket.getAll() { tickets in
 			tickets.forEach { ticket in
 				ticket.name = ticket.name ?? ticket.brief
+				if ticket.project == nil {
+					project.addToTickets(ticket)
+				}
 			}
 			try? context.save()
 		}
@@ -89,6 +95,10 @@ extension Lane {
 			lane.order = 5
 			lane.visible = false
 		}
+		
 		try? PersistenceController.shared.container.viewContext.save()
+		
+		let saveData = Storage_Project.create(project)
+		print(saveData)
 	}
 }

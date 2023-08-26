@@ -9,7 +9,7 @@ import Foundation
 import CoreData
 
 extension TagPool {
-	func getAll() -> [TagPool] {
+	static func getAll() -> [TagPool] {
 		let context = PersistenceController.shared.container.viewContext
 		let fetch = TagPool.fetchRequest()
 		do {
@@ -20,7 +20,7 @@ extension TagPool {
 		return []
 	}
 	
-	func getAllAsTagDeclaration() -> [TagDeclaration] {
+	static func getAllAsTagDeclaration() -> [TagDeclaration] {
 		return getAll().asTagDeclarations()
 	}
 }
