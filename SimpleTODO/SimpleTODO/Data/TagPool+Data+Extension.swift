@@ -23,6 +23,11 @@ extension TagPool {
 	static func getAllAsTagDeclaration() -> [TagDeclaration] {
 		return getAll().asTagDeclarations()
 	}
+	
+	override public func willSave() {
+		Log.log("Prepare for saving: \(Self.self) '\(name ?? "")' (\(myObjectID))")
+	}
+
 }
 
 extension Array where Element == TagPool {

@@ -190,44 +190,65 @@ struct TicketCommentItem_UI: View {
 }
 
 class StandardTicketCommentHandler : TicketCommentDelegate {
-	private var currentComment: Comment? = nil
+	private var currentComment: Comment? = nil {
+		didSet {
+			if let comment = currentComment {
+				Log.paramList(["currentComment::set":comment.myObjectID])
+			}
+			else {
+				Log.paramList(["currentComment::set":"nil"])
+			}
+		}
+	}
 	private var maximumLevel = Int.max
 	private var minimumLevel = Int.max
 	
 	func addCommentToTicket(ticket: Ticket) {
-		let comment = Comment.create(ticket)
-		self.currentComment = comment
-		comment.author = User.currentUser()
-		comment.created = .now
-		ticket.addToComments(comment)
-		try? ticket.managedObjectContext?.save()
+		Log.funcParams("STCH::addCommentToTicket", items: ["ticket":ticket.myObjectID])
+		Log.process("...") {
+			let comment = Comment.create(ticket)
+			self.currentComment = comment
+			comment.author = User.currentUser()
+			comment.created = .now
+			ticket.addToComments(comment)
+			try? ticket.managedObjectContext?.save()
+		}
 	}
 	
 	func addReplyToComment(comment: Comment) {
-		let newComment = Comment.create(comment)
-		self.currentComment = newComment
-		newComment.author = User.currentUser()
-		newComment.created = .now
-		comment.addToReplies(newComment)
-		try? comment.managedObjectContext?.save()
+		Log.funcParams("STCH::addReplyToComment", items: ["comment":comment.myObjectID])
+		Log.process("...") {
+			let newComment = Comment.create(comment)
+			self.currentComment = newComment
+			newComment.author = User.currentUser()
+			newComment.created = .now
+			comment.addToReplies(newComment)
+			try? comment.managedObjectContext?.save()
+		}
 	}
 	
 	func markCommentOrReplyAsRemoved(comment: Comment) {
-		if comment.isSaved() && comment.text?.count ?? 0 > 0 {
-			comment.remove()
+		Log.funcParams("STCH::markCommentOrReplyAsRemoved", items: ["comment":comment.myObjectID])
+		Log.process("...") {
+			if comment.isSaved() && comment.text?.count ?? 0 > 0 {
+				comment.remove()
+			}
+			else {
+				comment.managedObjectContext?.delete(comment)
+				comment.parentComment?.removeFromReplies(comment)
+				comment.linkedToTicket?.removeFromComments(comment)
+			}
+			try? comment.managedObjectContext?.save()
+			currentComment = nil
 		}
-		else {
-			comment.managedObjectContext?.delete(comment)
-			comment.parentComment?.removeFromReplies(comment)
-			comment.linkedToTicket?.removeFromComments(comment)
-		}
-		try? comment.managedObjectContext?.save()
-		currentComment = nil
 	}
 	
 	func saveComment(comment: Comment) {
-		try? comment.managedObjectContext?.save()
-		currentComment = nil
+		Log.funcParams("STCH::saveComment", items: ["comment":comment.myObjectID])
+		Log.process("...") {
+			try? comment.managedObjectContext?.save()
+			currentComment = nil
+		}
 	}
 	
 	func isEditingComment(comment: Comment) -> Bool {
@@ -251,11 +272,17 @@ class StandardTicketCommentHandler : TicketCommentDelegate {
 	}
 	
 	func cancelEdit(comment: Comment) {
-		currentComment = nil
+		Log.funcParams("STCH::cancelEdit", items: ["comment":comment.myObjectID])
+		Log.process("...") {
+			currentComment = nil
+		}
 	}
 	
 	func editComment(comment: Comment) {
-		currentComment = comment
+		Log.funcParams("STCH::editComment", items: ["comment":comment.myObjectID])
+		Log.process("...") {
+			currentComment = comment
+		}
 	}
 	
 }
@@ -352,4 +379,26 @@ struct TicketComment_UI_Previews: PreviewProvider {
 				.padding()
 		}
     }
+}
+
+import CoreData
+
+extension NSManagedObject {
+	var myObjectID: String {
+		get {
+			return String(describing: objectID).split(whereSeparator: {$0 == " "}).first! + (objectID.isTemporaryID ? " (T)" : "")
+		}
+	}
+}
+
+extension Comment {
+	override public func didSave() {
+		Log.paramList(["Comment::save":self.myObjectID])
+	}
+}
+
+extension Ticket {
+	override public func didSave() {
+		Log.paramList(["Ticket::save":self.myObjectID])
+	}
 }

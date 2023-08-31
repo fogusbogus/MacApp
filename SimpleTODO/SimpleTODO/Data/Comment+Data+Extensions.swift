@@ -25,19 +25,35 @@ extension Comment {
 	}
 	
 	static func create(_ template: NSManagedObject? = nil) -> Comment {
-		let ret = Comment(context: template?.managedObjectContext ?? PersistenceController.shared.container.viewContext)
-		ret.created = .now
-		ret.author = User.admin()
-		ret.text = ""
-		return ret
+		return Log.return {
+
+			let ret = Comment(context: template?.managedObjectContext ?? PersistenceController.shared.container.viewContext)
+			ret.created = .now
+			ret.author = User.admin()
+			ret.text = ""
+			return ret
+			
+		} pre: {
+			Log.funcParams("Comment::create()", items: ["template":template?.myObjectID ?? ""])
+		} post: { ret in
+			Log.log("<< \(ret.myObjectID)")
+		}
+
 	}
 	
 	func remove() {
-		removedBy = removedBy ?? User.currentUser()
-		removed = true
-		whenRemoved = whenRemoved ?? .now
-		try? managedObjectContext?.save()
+		Log.process("Comment::remove()") {
+			removedBy = removedBy ?? User.currentUser()
+			removed = true
+			whenRemoved = whenRemoved ?? .now
+			try? managedObjectContext?.save()
+		}
 	}
+	
+	override public func willSave() {
+		Log.log("Prepare for saving: \(Self.self) '\(text ?? "")' (\(myObjectID))")
+	}
+
 }
 
 

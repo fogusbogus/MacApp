@@ -41,61 +41,52 @@ protocol CommentDelegate {
 
 class CommentHandler: CommentDelegate, ObservableObject {
 	func addNewComment(parentComment: Comment) {
-		currentComment = Comment.create(parentComment)
-		parentComment.addToReplies(currentComment!)
-		try? parentComment.managedObjectContext?.save()
-		ui = !ui
+		Log.funcParams("CH::addNewComment(Comment)", items: ["parentComment":parentComment.objectID])
+		Log.process("...") {
+			currentComment = Comment.create(parentComment)
+			parentComment.addToReplies(currentComment!)
+			try? parentComment.managedObjectContext?.save()
+			ui = !ui
+		}
 	}
 	
 	func addNewComment(ticket: Ticket) {
-		currentComment = Comment.create(ticket)
-		
-		ticket.addToComments(currentComment!)
-		try? ticket.managedObjectContext?.save()
-		ui = !ui
+		Log.funcParams("CH::addNewComment(Ticket)", items: ["ticket":ticket.objectID])
+		Log.process("...") {
+			currentComment = Comment.create(ticket)
+			
+			ticket.addToComments(currentComment!)
+			try? ticket.managedObjectContext?.save()
+			ui = !ui
+		}
 	}
 	
 	var ticket: Ticket?
-	var currentComment: Comment?
+	var currentComment: Comment? {
+		didSet {
+			Log.paramList(["currentComment::set":currentComment?.objectID ?? "nil"])
+		}
+	}
 	
 	@Published var ui: Bool = false
 	
-//	func addNewComment(parentComment: Comment?, ticket: Ticket?) {
-//		currentComment = parentComment
-//		if let comment = parentComment {
-//			currentComment = Comment.create(comment)
-//			comment.addToReplies(currentComment!)
-//			try? comment.managedObjectContext?.save()
-//		}
-//		else {
-//			if self.ticket != nil {
-//				currentComment = Comment.create(self.ticket)
-//
-//				self.ticket?.addToComments(currentComment!)
-//				try? self.ticket?.managedObjectContext?.save()
-//			}
-//			else {
-//				if let ticket = ticket {
-//					//We are adding to the ticket, not the comment
-//					currentComment = Comment.create(ticket)
-//					ticket.addToComments(currentComment!)
-//					try? self.ticket?.managedObjectContext?.save()
-//				}
-//			}
-//		}
-//		ui = !ui
-	//}
-	
+
 	func cancelComment(comment: Comment) {
-		currentComment = comment.parentComment
-		currentComment?.removeFromReplies(comment)
-		saveComment(comment: comment)
+		Log.funcParams("CH::cancelComment", items: ["comment":comment.objectID])
+		Log.process("...") {
+			currentComment = comment.parentComment
+			currentComment?.removeFromReplies(comment)
+			saveComment(comment: comment)
+		}
 	}
 	
 	func saveComment(comment: Comment) {
-		try? currentComment?.managedObjectContext?.save()
-		currentComment = nil
-		ui = !ui
+		Log.funcParams("CH::saveComment", items: ["comment":comment.objectID])
+		Log.process("...") {
+			try? currentComment?.managedObjectContext?.save()
+			currentComment = nil
+			ui = !ui
+		}
 	}
 	
 	func isEditing(comment: Comment?) -> Bool {
@@ -105,19 +96,29 @@ class CommentHandler: CommentDelegate, ObservableObject {
 	}
 	
 	func editComment(comment: Comment) {
-		currentComment = comment
+		Log.funcParams("CH::editComment", items: ["comment":comment.objectID])
+		Log.process("...") {
+			currentComment = comment
+		}
 	}
 	
 	func removeComment(comment: Comment) {
-		if let parent = comment.parentComment {
-			parent.removeFromReplies(comment)
-			parent.managedObjectContext?.delete(comment)
-			try? parent.managedObjectContext?.save()
-		}
-		else {
-			comment.linkedToTicket?.removeFromComments(comment)
-			comment.managedObjectContext?.delete(comment)
-			try? comment.managedObjectContext?.save()
+		Log.funcParams("CH::editComment", items: ["comment":comment.objectID])
+		Log.process("...") {
+			if let parent = comment.parentComment {
+				Log.process("Remove from a parent comment") {
+					parent.removeFromReplies(comment)
+					parent.managedObjectContext?.delete(comment)
+					try? parent.managedObjectContext?.save()
+				}
+			}
+			else {
+				Log.process("Remove from the ticket") {
+					comment.linkedToTicket?.removeFromComments(comment)
+					comment.managedObjectContext?.delete(comment)
+					try? comment.managedObjectContext?.save()
+				}
+			}
 		}
 	}
 	

@@ -9,15 +9,22 @@ import Foundation
 
 extension User {
 	static func `get`(withName: String) -> User? {
-		let context = PersistenceController.shared.container.viewContext
-		let fetch = User.fetchRequest()
-		fetch.predicate = NSPredicate(format: "name LIKE %@", withName)
-		do {
-			return try context.fetch(fetch).first
+		return Log.return {
+			let context = PersistenceController.shared.container.viewContext
+			let fetch = User.fetchRequest()
+			fetch.predicate = NSPredicate(format: "name LIKE %@", withName)
+			do {
+				return try context.fetch(fetch).first
+			}
+			catch {
+			}
+			return nil
+		} pre: {
+			Log.funcParams("User::get", items: ["withName":withName])
+		} post: { user in
+			Log.log("<< \(user?.myObjectID ?? "nil")")
 		}
-		catch {
-		}
-		return nil
+
 	}
 	
 	static func getAll() -> [User] {
@@ -40,15 +47,30 @@ extension User {
 	
 	@discardableResult
 	static func assert(withName: String, onCreateOrUpdate: ((CreateOrUpdatePredicate) -> Void)? = nil) -> User {
-		if let ret = get(withName: withName) {
-			onCreateOrUpdate?((user: ret, isNew: false))
-			return ret
+		return Log.return {
+			if let ret = get(withName: withName) {
+				onCreateOrUpdate?((user: ret, isNew: false))
+				return ret
+			}
+			
+			return Log.return {
+				let new = User(context: PersistenceController.shared.container.viewContext)
+				new.created = Date.now
+				new.name = withName
+				onCreateOrUpdate?((user: new, isNew: true))
+				return new
+			} pre: {
+				Log.log("Couldn't find user. Creating a new one.")
+			} post: { _ in
+				
+			}
+
+		} pre: {
+			Log.funcParams("User::assert", items: ["withName":withName, "onCreateOrUpdate":(onCreateOrUpdate != nil)])
+		} post: { user in
+			Log.log("<< \(user.myObjectID)")
 		}
-		let new = User(context: PersistenceController.shared.container.viewContext)
-		new.created = Date.now
-		new.name = withName
-		onCreateOrUpdate?((user: new, isNew: true))
-		return new
+
 	}
 	
 	func getSettings() -> Settings {
@@ -80,6 +102,10 @@ extension User {
 	func isCurrentUserOrAdmin() -> Bool {
 		return User.currentUser().objectID == objectID || User.admin().objectID == objectID
 	}
+	
+	override public func willSave() {
+		Log.log("Prepare for saving: \(Self.self) '\(name ?? "")' (\(myObjectID))")
+	}		
 }
 
 class PersistentSettings {

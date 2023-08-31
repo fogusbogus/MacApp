@@ -12,14 +12,21 @@ import CoreData
 
 extension TODOProject {
 	static func getNamed(_ name: String, context: NSManagedObjectContext? = nil) -> TODOProject? {
-		let context = PersistenceController.shared.container.viewContext
-		let fetch = TODOProject.fetchRequest()
-		fetch.predicate = NSPredicate(format: "name LIKE %@", name)
-		do {
-			return try context.fetch(fetch).first
+		return Log.return {
+			let context = PersistenceController.shared.container.viewContext
+			let fetch = TODOProject.fetchRequest()
+			fetch.predicate = NSPredicate(format: "name LIKE %@", name)
+			do {
+				return try context.fetch(fetch).first
+			}
+			catch {}
+			return nil
+		} pre: {
+			Log.funcParams("TODOProject::getNamed", items: ["name":name, "context":(context != nil)])
+		} post: { project in
+			Log.log("<< \(project?.myObjectID ?? "nil")")
 		}
-		catch {}
-		return nil
+
 	}
 	
 	static func getAll(context: NSManagedObjectContext? = nil) -> [TODOProject] {
@@ -36,21 +43,48 @@ extension TODOProject {
 		return self.tickets?.allObjects.map {$0 as! Ticket} ?? []
 	}
 	
-	static func create(_ context: NSManagedObjectContext? = nil, onCreateOrUpdate: ((TODOProject) -> Void)? = nil) -> TODOProject {
-		let context = context ?? PersistenceController.shared.container.viewContext
-		let project = TODOProject(context: context)
-		project.createdBy = User.currentUser()
-		project.createdTS = .now
-		onCreateOrUpdate?(project)
-		return project
+	typealias CreateOrUpdatePredicate = (project: TODOProject, isNew: Bool)
+	typealias CreateOrUpdateFunction = (CreateOrUpdatePredicate) -> Void
+	
+	static func create(_ context: NSManagedObjectContext? = nil, onCreateOrUpdate: CreateOrUpdateFunction? = nil) -> TODOProject {
+		return Log.return {
+			let context = context ?? PersistenceController.shared.container.viewContext
+			let project = TODOProject(context: context)
+			project.createdBy = User.currentUser()
+			project.createdTS = .now
+			onCreateOrUpdate?((project: project, isNew: true))
+			return project
+		} pre: {
+			Log.funcParams("TODOProject::create", items: ["context":(context != nil), "onCreateOrUpdate":(onCreateOrUpdate != nil)])
+		} post: { project in
+			Log.log("<< \(project.myObjectID)")
+		}
+
 	}
 	
 	@discardableResult
-	static func assert(name: String, context: NSManagedObjectContext? = nil, onCreateOrUpdate: ((TODOProject) -> Void)? = nil) -> TODOProject {
-		let project = getNamed(name, context: context) ?? create(context)
-		project.name = name
-		onCreateOrUpdate?(project)
-		return project
+	static func assert(name: String, context: NSManagedObjectContext? = nil, onCreateOrUpdate: CreateOrUpdateFunction? = nil) -> TODOProject {
+		return Log.return {
+			if let ret = getNamed(name, context: context) {
+				ret.name = name
+				onCreateOrUpdate?((project: ret, isNew: false))
+				return ret
+			}
+			let project = create(context)
+			project.name = name
+			onCreateOrUpdate?((project: project, isNew: true))
+			return project
+		} pre: {
+			Log.funcParams("TODOProject::assert", items: ["name":name, "context":(context != nil), "onCreateOrUpdate":(onCreateOrUpdate != nil)])
+		} post: { project in
+			Log.log("<< \(project.myObjectID)")
+		}
+
 	}
+	
+	override public func willSave() {
+		Log.log("Prepare for saving: \(Self.self) '\(name ?? "")' (\(myObjectID))")
+	}
+
 }
 

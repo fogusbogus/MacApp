@@ -28,20 +28,28 @@ extension Lane {
 	}
 	
 	static func `get`(withName: String, includeInvisible: Bool = false) -> Lane? {
-		let context = PersistenceController.shared.container.viewContext
-		let fetch = Lane.fetchRequest()
-		if includeInvisible {
-			fetch.predicate = NSPredicate(format: "name LIKE %@", withName)
+		return Log.return {
+			let context = PersistenceController.shared.container.viewContext
+			let fetch = Lane.fetchRequest()
+			if includeInvisible {
+				fetch.predicate = NSPredicate(format: "name LIKE %@", withName)
+			}
+			else {
+				fetch.predicate = NSPredicate(format: "name LIKE %@ AND visible = %d", withName, true)
+			}
+			do {
+				return try context.fetch(fetch).first
+			}
+			catch {
+				Log.error(error)
+			}
+			return nil
+		} pre: {
+			Log.funcParams("Lane::get", items: ["withName":withName, "includeInvisible":includeInvisible])
+		} post: { lane in
+			Log.log("<< \(lane?.myObjectID ?? "nil")")
 		}
-		else {
-			fetch.predicate = NSPredicate(format: "name LIKE %@ AND visible = %d", withName, true)
-		}
-		do {
-			return try context.fetch(fetch).first
-		}
-		catch {
-		}
-		return nil
+
 	}
 	
 	typealias CreateOrUpdatePredicate = (lane: Lane, isNew: Bool)
@@ -58,4 +66,7 @@ extension Lane {
 		return new
 	}
 	
+	override public func willSave() {
+		Log.log("Prepare for saving: \(Self.self) '\(name ?? "")' (\(myObjectID))")
+	}
 }
