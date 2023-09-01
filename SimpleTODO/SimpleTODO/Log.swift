@@ -7,5 +7,5 @@
 
 import LoggingLib
 
-class Log : ConsoleLog {
+class Log : CompactLog {
 }
