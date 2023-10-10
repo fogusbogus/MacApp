@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2">
+    <rect
+       x="207.52465"
+       y="419.76576"
+       width="415.0493"
+       height="292.42109"
+       id="rect10400" />
+  </defs>
+  <g
+     id="layer1"
+     style="display:inline">
+    <rect
+       style="fill:#000000;stroke-width:0.263608"
+       id="rect31"
+       width="187.18486"
+       height="140.59665"
+       x="11.40757"
+       y="78.201675"
+       ry="12.063028" />
+  </g>
+  <g
+     id="layer2"
+     style="display:inline">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:100.492px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2.5123"
+       x="34.53159"
+       y="187.22342"
+       id="text1435"
+       transform="scale(1.0147611,0.98545364)"><tspan
+         id="tspan1433"
+         style="fill:#ffffff;stroke-width:2.5123"
+         x="34.53159"
+         y="187.22342">PV</tspan></text>
+  </g>
+  <g
+     id="layer3"
+     style="display:none">
+    <text
+       xml:space="preserve"
+       transform="matrix(2.6245194,0,0,2.3813953,-507.54848,-903.47451)"
+       id="text10398"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect10400);fill:#ffffff;fill-opacity:1;stroke:none"><tspan
+         x="207.52539"
+         y="456.25884"
+         id="tspan12856">76</tspan></text>
+  </g>
+</svg>

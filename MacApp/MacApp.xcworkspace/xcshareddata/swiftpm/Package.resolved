@@ -1,0 +1,43 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "LoggingLib",
+        "repositoryURL": "https://github.com/fogusbogus/LoggingLib.git",
+        "state": {
+          "branch": null,
+          "revision": "2ade3054f6266ec1b263f49c4839f9cedd03cd31",
+          "version": "1.0.9"
+        }
+      },
+      {
+        "package": "SQLDB",
+        "repositoryURL": "https://github.com/fogusbogus/SQLDB.git",
+        "state": {
+          "branch": null,
+          "revision": "31d6fc2f50e12e2d5fb36f4ed8a680fb507dd04d",
+          "version": "1.0.5"
+        }
+      },
+      {
+        "package": "UsefulExtensions",
+        "repositoryURL": "https://github.com/fogusbogus/UsefulExtensions.git",
+        "state": {
+          "branch": null,
+          "revision": "2a03feb5422e33ac3323588d2af33fe5c2c870fc",
+          "version": "1.0.19"
+        }
+      },
+      {
+        "package": "CommonExtensions",
+        "repositoryURL": "https://github.com/fogusbogus/UtilLibs",
+        "state": {
+          "branch": "master",
+          "revision": "0bf9306b008e6690d3681ed0c2b7b580d578f1f8",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

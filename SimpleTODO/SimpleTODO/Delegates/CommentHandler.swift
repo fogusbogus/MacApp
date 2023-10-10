@@ -41,7 +41,7 @@ protocol CommentDelegate {
 
 class CommentHandler: CommentDelegate, ObservableObject {
 	func addNewComment(parentComment: Comment) {
-		Log.funcParams("CH::addNewComment(Comment)", items: ["parentComment":parentComment.objectID])
+		Log.function("CH::addNewComment(Comment)", parameters: ["parentComment":parentComment.objectID])
 		Log.process("...") {
 			currentComment = Comment.create(parentComment)
 			parentComment.addToReplies(currentComment!)
@@ -51,7 +51,7 @@ class CommentHandler: CommentDelegate, ObservableObject {
 	}
 	
 	func addNewComment(ticket: Ticket) {
-		Log.funcParams("CH::addNewComment(Ticket)", items: ["ticket":ticket.objectID])
+		Log.function("CH::addNewComment(Ticket)", parameters: ["ticket":ticket.objectID])
 		Log.process("...") {
 			currentComment = Comment.create(ticket)
 			
@@ -72,7 +72,7 @@ class CommentHandler: CommentDelegate, ObservableObject {
 	
 
 	func cancelComment(comment: Comment) {
-		Log.funcParams("CH::cancelComment", items: ["comment":comment.objectID])
+		Log.function("CH::cancelComment", parameters: ["comment":comment.objectID])
 		Log.process("...") {
 			currentComment = comment.parentComment
 			currentComment?.removeFromReplies(comment)
@@ -81,7 +81,7 @@ class CommentHandler: CommentDelegate, ObservableObject {
 	}
 	
 	func saveComment(comment: Comment) {
-		Log.funcParams("CH::saveComment", items: ["comment":comment.objectID])
+		Log.function("CH::saveComment", parameters: ["comment":comment.objectID])
 		Log.process("...") {
 			try? currentComment?.managedObjectContext?.save()
 			currentComment = nil
@@ -96,14 +96,14 @@ class CommentHandler: CommentDelegate, ObservableObject {
 	}
 	
 	func editComment(comment: Comment) {
-		Log.funcParams("CH::editComment", items: ["comment":comment.objectID])
+		Log.function("CH::editComment", parameters: ["comment":comment.objectID])
 		Log.process("...") {
 			currentComment = comment
 		}
 	}
 	
 	func removeComment(comment: Comment) {
-		Log.funcParams("CH::editComment", items: ["comment":comment.objectID])
+		Log.function("CH::editComment", parameters: ["comment":comment.objectID])
 		Log.process("...") {
 			if let parent = comment.parentComment {
 				Log.process("Remove from a parent comment") {

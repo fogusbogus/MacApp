@@ -1,0 +1,516 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C99E390524A3D77E00383B40 /* NoCookie.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = C99E390424A3D77E00383B40 /* NoCookie.entitlements */; };
+		C99E390724A3D77E00383B40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99E390624A3D77E00383B40 /* AppDelegate.swift */; };
+		C99E390A24A3D77E00383B40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C99E390824A3D77E00383B40 /* Main.storyboard */; };
+		C99E390C24A3D77E00383B40 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99E390B24A3D77E00383B40 /* ViewController.swift */; };
+		C99E390E24A3D77F00383B40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C99E390D24A3D77F00383B40 /* Assets.xcassets */; };
+		C99E391524A3D77F00383B40 /* NoCookie Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C99E391424A3D77F00383B40 /* NoCookie Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C99E391A24A3D77F00383B40 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C99E391924A3D77F00383B40 /* Cocoa.framework */; };
+		C99E391D24A3D77F00383B40 /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99E391C24A3D77F00383B40 /* SafariExtensionHandler.swift */; };
+		C99E391F24A3D77F00383B40 /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99E391E24A3D77F00383B40 /* SafariExtensionViewController.swift */; };
+		C99E392224A3D77F00383B40 /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C99E392024A3D77F00383B40 /* SafariExtensionViewController.xib */; };
+		C99E392524A3D77F00383B40 /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = C99E392424A3D77F00383B40 /* script.js */; };
+		C99E392724A3D77F00383B40 /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = C99E392624A3D77F00383B40 /* ToolbarItemIcon.pdf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C99E391624A3D77F00383B40 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C99E38F924A3D77D00383B40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C99E391324A3D77F00383B40;
+			remoteInfo = "NoCookie Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C99E392E24A3D77F00383B40 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C99E391524A3D77F00383B40 /* NoCookie Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		C99E390124A3D77D00383B40 /* NoCookie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoCookie.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C99E390424A3D77E00383B40 /* NoCookie.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NoCookie.entitlements; sourceTree = "<group>"; };
+		C99E390624A3D77E00383B40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C99E390924A3D77E00383B40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C99E390B24A3D77E00383B40 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C99E390D24A3D77F00383B40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C99E390F24A3D77F00383B40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C99E391424A3D77F00383B40 /* NoCookie Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "NoCookie Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C99E391924A3D77F00383B40 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		C99E391C24A3D77F00383B40 /* SafariExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionHandler.swift; sourceTree = "<group>"; };
+		C99E391E24A3D77F00383B40 /* SafariExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionViewController.swift; sourceTree = "<group>"; };
+		C99E392124A3D77F00383B40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
+		C99E392324A3D77F00383B40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C99E392424A3D77F00383B40 /* script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
+		C99E392624A3D77F00383B40 /* ToolbarItemIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ToolbarItemIcon.pdf; sourceTree = "<group>"; };
+		C99E392824A3D77F00383B40 /* NoCookie_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NoCookie_Extension.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C99E38FE24A3D77D00383B40 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C99E391124A3D77F00383B40 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C99E391A24A3D77F00383B40 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C99E38F824A3D77D00383B40 = {
+			isa = PBXGroup;
+			children = (
+				C99E390324A3D77E00383B40 /* NoCookie */,
+				C99E391B24A3D77F00383B40 /* NoCookie Extension */,
+				C99E391824A3D77F00383B40 /* Frameworks */,
+				C99E390224A3D77D00383B40 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C99E390224A3D77D00383B40 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C99E390124A3D77D00383B40 /* NoCookie.app */,
+				C99E391424A3D77F00383B40 /* NoCookie Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C99E390324A3D77E00383B40 /* NoCookie */ = {
+			isa = PBXGroup;
+			children = (
+				C99E390424A3D77E00383B40 /* NoCookie.entitlements */,
+				C99E390624A3D77E00383B40 /* AppDelegate.swift */,
+				C99E390824A3D77E00383B40 /* Main.storyboard */,
+				C99E390B24A3D77E00383B40 /* ViewController.swift */,
+				C99E390D24A3D77F00383B40 /* Assets.xcassets */,
+				C99E390F24A3D77F00383B40 /* Info.plist */,
+			);
+			path = NoCookie;
+			sourceTree = "<group>";
+		};
+		C99E391824A3D77F00383B40 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C99E391924A3D77F00383B40 /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C99E391B24A3D77F00383B40 /* NoCookie Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C99E391C24A3D77F00383B40 /* SafariExtensionHandler.swift */,
+				C99E391E24A3D77F00383B40 /* SafariExtensionViewController.swift */,
+				C99E392024A3D77F00383B40 /* SafariExtensionViewController.xib */,
+				C99E392324A3D77F00383B40 /* Info.plist */,
+				C99E392424A3D77F00383B40 /* script.js */,
+				C99E392624A3D77F00383B40 /* ToolbarItemIcon.pdf */,
+				C99E392824A3D77F00383B40 /* NoCookie_Extension.entitlements */,
+			);
+			path = "NoCookie Extension";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C99E390024A3D77D00383B40 /* NoCookie */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C99E392F24A3D77F00383B40 /* Build configuration list for PBXNativeTarget "NoCookie" */;
+			buildPhases = (
+				C99E38FD24A3D77D00383B40 /* Sources */,
+				C99E38FE24A3D77D00383B40 /* Frameworks */,
+				C99E38FF24A3D77D00383B40 /* Resources */,
+				C99E392E24A3D77F00383B40 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C99E391724A3D77F00383B40 /* PBXTargetDependency */,
+			);
+			name = NoCookie;
+			productName = NoCookie;
+			productReference = C99E390124A3D77D00383B40 /* NoCookie.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C99E391324A3D77F00383B40 /* NoCookie Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C99E392B24A3D77F00383B40 /* Build configuration list for PBXNativeTarget "NoCookie Extension" */;
+			buildPhases = (
+				C99E391024A3D77F00383B40 /* Sources */,
+				C99E391124A3D77F00383B40 /* Frameworks */,
+				C99E391224A3D77F00383B40 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NoCookie Extension";
+			productName = "NoCookie Extension";
+			productReference = C99E391424A3D77F00383B40 /* NoCookie Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C99E38F924A3D77D00383B40 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "Matt Hogg";
+				TargetAttributes = {
+					C99E390024A3D77D00383B40 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					C99E391324A3D77F00383B40 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+				};
+			};
+			buildConfigurationList = C99E38FC24A3D77D00383B40 /* Build configuration list for PBXProject "NoCookie" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C99E38F824A3D77D00383B40;
+			productRefGroup = C99E390224A3D77D00383B40 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C99E390024A3D77D00383B40 /* NoCookie */,
+				C99E391324A3D77F00383B40 /* NoCookie Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C99E38FF24A3D77D00383B40 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C99E390524A3D77E00383B40 /* NoCookie.entitlements in Resources */,
+				C99E390E24A3D77F00383B40 /* Assets.xcassets in Resources */,
+				C99E390A24A3D77E00383B40 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C99E391224A3D77F00383B40 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C99E392724A3D77F00383B40 /* ToolbarItemIcon.pdf in Resources */,
+				C99E392224A3D77F00383B40 /* SafariExtensionViewController.xib in Resources */,
+				C99E392524A3D77F00383B40 /* script.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C99E38FD24A3D77D00383B40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C99E390C24A3D77E00383B40 /* ViewController.swift in Sources */,
+				C99E390724A3D77E00383B40 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C99E391024A3D77F00383B40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C99E391F24A3D77F00383B40 /* SafariExtensionViewController.swift in Sources */,
+				C99E391D24A3D77F00383B40 /* SafariExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C99E391724A3D77F00383B40 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C99E391324A3D77F00383B40 /* NoCookie Extension */;
+			targetProxy = C99E391624A3D77F00383B40 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C99E390824A3D77E00383B40 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C99E390924A3D77E00383B40 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C99E392024A3D77F00383B40 /* SafariExtensionViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C99E392124A3D77F00383B40 /* Base */,
+			);
+			name = SafariExtensionViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C99E392924A3D77F00383B40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C99E392A24A3D77F00383B40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		C99E392C24A3D77F00383B40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "NoCookie Extension/NoCookie_Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JH3ZC8234Q;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "NoCookie Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fogusbogus.NoCookie-Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C99E392D24A3D77F00383B40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "NoCookie Extension/NoCookie_Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JH3ZC8234Q;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "NoCookie Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fogusbogus.NoCookie-Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		C99E393024A3D77F00383B40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NoCookie/NoCookie.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = JH3ZC8234Q;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = NoCookie/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fogusbogus.NoCookie;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C99E393124A3D77F00383B40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NoCookie/NoCookie.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = JH3ZC8234Q;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = NoCookie/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fogusbogus.NoCookie;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C99E38FC24A3D77D00383B40 /* Build configuration list for PBXProject "NoCookie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C99E392924A3D77F00383B40 /* Debug */,
+				C99E392A24A3D77F00383B40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C99E392B24A3D77F00383B40 /* Build configuration list for PBXNativeTarget "NoCookie Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C99E392C24A3D77F00383B40 /* Debug */,
+				C99E392D24A3D77F00383B40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C99E392F24A3D77F00383B40 /* Build configuration list for PBXNativeTarget "NoCookie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C99E393024A3D77F00383B40 /* Debug */,
+				C99E393124A3D77F00383B40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C99E38F924A3D77D00383B40 /* Project object */;
+}

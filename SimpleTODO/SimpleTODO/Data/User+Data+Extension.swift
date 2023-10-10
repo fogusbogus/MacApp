@@ -9,7 +9,8 @@ import Foundation
 
 extension User {
 	static func `get`(withName: String) -> User? {
-		return Log.return {
+		return Log.return("Get the user named '\(withName)'") {
+			Log.function("User::get", parameters: ["withName":withName])
 			let context = PersistenceController.shared.container.viewContext
 			let fetch = User.fetchRequest()
 			fetch.predicate = NSPredicate(format: "name LIKE %@", withName)
@@ -19,10 +20,8 @@ extension User {
 			catch {
 			}
 			return nil
-		} pre: {
-			Log.funcParams("User::get", items: ["withName":withName])
-		} post: { user in
-			Log.log("<< \(user?.myObjectID ?? "nil")")
+		} end: { user in
+			return "<< \(user?.myObjectID ?? "nil")"
 		}
 
 	}
@@ -47,28 +46,23 @@ extension User {
 	
 	@discardableResult
 	static func assert(withName: String, onCreateOrUpdate: ((CreateOrUpdatePredicate) -> Void)? = nil) -> User {
-		return Log.return {
+		return Log.return("Assert a user with the name '\(withName)'"){
+			Log.function("User::assert", parameters: ["withName":withName, "onCreateOrUpdate":(onCreateOrUpdate != nil)])
 			if let ret = get(withName: withName) {
 				onCreateOrUpdate?((user: ret, isNew: false))
 				return ret
 			}
 			
-			return Log.return {
+			return Log.return("Couldn't find user. Creating a new one.") {
 				let new = User(context: PersistenceController.shared.container.viewContext)
 				new.created = Date.now
 				new.name = withName
 				onCreateOrUpdate?((user: new, isNew: true))
 				return new
-			} pre: {
-				Log.log("Couldn't find user. Creating a new one.")
-			} post: { _ in
-				
 			}
 
-		} pre: {
-			Log.funcParams("User::assert", items: ["withName":withName, "onCreateOrUpdate":(onCreateOrUpdate != nil)])
-		} post: { user in
-			Log.log("<< \(user.myObjectID)")
+		} end: { user in
+			return "<< \(user.myObjectID)"
 		}
 
 	}

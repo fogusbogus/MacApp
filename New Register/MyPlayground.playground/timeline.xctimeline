@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Timeline
+   version = "3.0">
+   <TimelineItems>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/matt/XCode/New%20Register/MyPlayground.playground#CharacterRangeLen=6&amp;CharacterRangeLoc=2318&amp;EndingColumnNumber=10&amp;EndingLineNumber=106&amp;StartingColumnNumber=4&amp;StartingLineNumber=106&amp;Timestamp=652648373.351138"
+         lockedSize = "{651, 240}"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/matt/XCode/New%20Register/MyPlayground.playground#CharacterRangeLen=688&amp;CharacterRangeLoc=2351&amp;EndingColumnNumber=1&amp;EndingLineNumber=135&amp;StartingColumnNumber=0&amp;StartingLineNumber=107&amp;Timestamp=652648373.351261"
+         lockedSize = "{484, 155}"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/matt/XCode/New%20Register/MyPlayground.playground#CharacterRangeLen=10&amp;CharacterRangeLoc=764&amp;EndingColumnNumber=0&amp;EndingLineNumber=30&amp;StartingColumnNumber=3&amp;StartingLineNumber=29&amp;Timestamp=652648373.3513809"
+         lockedSize = "{418, 50}"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/matt/XCode/New%20Register/MyPlayground.playground#CharacterRangeLen=7&amp;CharacterRangeLoc=2865&amp;EndingColumnNumber=14&amp;EndingLineNumber=126&amp;StartingColumnNumber=7&amp;StartingLineNumber=126&amp;Timestamp=652648373.35149"
+         lockedSize = "{804, 155}"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/matt/XCode/New%20Register/MyPlayground.playground#CharacterRangeLen=7&amp;CharacterRangeLoc=2800&amp;EndingColumnNumber=14&amp;EndingLineNumber=123&amp;StartingColumnNumber=7&amp;StartingLineNumber=123&amp;Timestamp=652648373.351578"
+         lockedSize = "{818, 155}"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+   </TimelineItems>
+</Timeline>

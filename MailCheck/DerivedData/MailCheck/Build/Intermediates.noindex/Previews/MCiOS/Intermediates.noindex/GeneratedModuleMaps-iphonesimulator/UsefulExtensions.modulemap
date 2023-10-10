@@ -1,0 +1,4 @@
+module UsefulExtensions {
+header "UsefulExtensions-Swift.h"
+export *
+}

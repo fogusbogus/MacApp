@@ -1,0 +1,11 @@
+framework module SQLDB {
+  umbrella header "SQLDB.h"
+
+  export *
+  module * { export * }
+}
+
+module SQLDB.Swift {
+    header "SQLDB-Swift.h"
+    requires objc
+}

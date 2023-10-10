@@ -1,0 +1,4 @@
+module StandardControls {
+header "StandardControls-Swift.h"
+export *
+}

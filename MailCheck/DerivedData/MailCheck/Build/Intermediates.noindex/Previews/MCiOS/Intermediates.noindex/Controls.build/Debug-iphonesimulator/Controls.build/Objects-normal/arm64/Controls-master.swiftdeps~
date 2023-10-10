@@ -1,0 +1,9 @@
+version: "Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)"
+options: "30a2be9185ad36ab6a3bc6c934b65a786e16515e9776811278870c5f676792ae"
+build_start_time: [1670685087, 571230888]
+build_end_time: [1670685087, 596029043]
+inputs:
+  "/Users/matt/XCode/MailCheck/Controls/Sources/Controls/Accordian.swift": !private [1670511684, 416075706]
+  "/Users/matt/XCode/MailCheck/Controls/Sources/Controls/Controls.swift": !private [1669896501, 209239959]
+  "/Users/matt/XCode/MailCheck/Controls/Sources/Controls/MCResultsSummary.swift": !private [1670284584, 715451240]
+  "/Users/matt/XCode/MailCheck/Controls/Sources/Controls/TickMarker.swift": !private [1670421260, 180413246]

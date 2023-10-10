@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E258" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Journal" representedClassName="Journal" parentEntity="MetaBased" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="type" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="JournalType" inverseName="journals" inverseEntity="JournalType"/>
+    </entity>
+    <entity name="JournalType" representedClassName="JournalType" parentEntity="MetaBased" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="journals" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Journal" inverseName="type" inverseEntity="Journal"/>
+    </entity>
+    <entity name="MetaBased" representedClassName="MetaBased" isAbstract="YES" parentEntity="Versioned" syncable="YES" codeGenerationType="class">
+        <attribute name="meta" optional="YES" attributeType="String" allowsCloudEncryption="YES"/>
+    </entity>
+    <entity name="Versioned" representedClassName="Versioned" isAbstract="YES" syncable="YES" codeGenerationType="class">
+        <attribute name="version" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <elements>
+        <element name="Journal" positionX="-63" positionY="-18" width="128" height="59"/>
+        <element name="JournalType" positionX="-54" positionY="0" width="128" height="59"/>
+        <element name="MetaBased" positionX="-45" positionY="36" width="128" height="44"/>
+        <element name="Versioned" positionX="-54" positionY="18" width="128" height="44"/>
+    </elements>
+</model>

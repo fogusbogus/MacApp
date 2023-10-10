@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C09939C6B5C4CCC6A1BC1D1F4F93D6177DA287D3",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "2C2D2739445CBAC353C1A17C9C388D941142F4B3" : 0,
+    "C09939C6B5C4CCC6A1BC1D1F4F93D6177DA287D3" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "45D04186-7005-4C43-BD5B-CC26BC8D3900",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "2C2D2739445CBAC353C1A17C9C388D941142F4B3" : "XCode\/MailCheck\/DerivedData\/MailCheck\/SourcePackages\/checkouts\/UsefulExtensions\/",
+    "C09939C6B5C4CCC6A1BC1D1F4F93D6177DA287D3" : "XCode\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "MailCheck",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "MailCheck\/MailCheck.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/matt\/XCode\/MailCheck\/DerivedData\/MailCheck\/SourcePackages\/repositories\/UsefulExtensions-15dc25fc",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2C2D2739445CBAC353C1A17C9C388D941142F4B3"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/fogusbogus\/MacApp.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C09939C6B5C4CCC6A1BC1D1F4F93D6177DA287D3"
+    }
+  ]
+}

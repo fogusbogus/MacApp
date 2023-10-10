@@ -1,0 +1,12 @@
+{
+  "source": "/Users/matt/XCode/MailCheck/MCiOS/MCiOS/ContentView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Hello, world!"
+      }
+    ]
+  },
+  "version": 1
+}

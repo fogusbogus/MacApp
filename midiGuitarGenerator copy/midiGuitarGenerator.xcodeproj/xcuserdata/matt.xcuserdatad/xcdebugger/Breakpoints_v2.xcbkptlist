@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "7F9D6946-608A-470D-A2E3-DFCF0E124364"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6AAF442D-A7FF-4D16-9DB2-4ABAA6731A84"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "midiGuitarGeneratorTests/Timeline_Tests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "testTimeSignatureEventCreationWithInvalidNumerator()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6866AFBA-FB8C-404B-9C5F-5434A1C363CC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "midiGuitarGeneratorTests/Timecode_Tests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "getTimeline()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F6212E3D-C5C1-484A-BDB9-A08AF9C79E61"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "midiGuitarGeneratorTests/Timecode_Tests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "getTimeline()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "26E4FB5A-AD07-4497-8E03-5AF0316E8230"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "midiGuitarGenerator/TimeCode.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "translateToTimeCode(_:timeline:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9A4704BE-4BDC-460D-B949-62652CC33AE4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "midiGuitarGenerator/TimeCode.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "translateToDelta(_:timeline:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "550BFA44-3E5E-4F93-8C33-C58246D40121"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "midiGuitarGenerator/TimeCode.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "translateToBND(_:lastTimeCode:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "550BFA44-3E5E-4F93-8C33-C58246D40121 - 98bb3adcf60dacb2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static midiGuitarGenerator.TimeCode.translateToBND(_: Swift.String, lastTimeCode: Swift.String) -&gt; (bar: Swift.Int, numerator: Swift.Int, delta: Swift.Int)"
+                  moduleName = "midiGuitarGenerator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/midiGuitarGenerator/midiGuitarGenerator/TimeCode.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "820">
+               </Location>
+               <Location
+                  uuid = "550BFA44-3E5E-4F93-8C33-C58246D40121 - 98bb3adcf60dacd3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static midiGuitarGenerator.TimeCode.translateToBND(_: Swift.String, lastTimeCode: Swift.String) -&gt; (bar: Swift.Int, numerator: Swift.Int, delta: Swift.Int)"
+                  moduleName = "midiGuitarGenerator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/midiGuitarGenerator/midiGuitarGenerator/TimeCode.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "480">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "267A6828-2B0C-476F-AE13-9523041D1A2E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "midiGuitarGenerator/Timeline.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
+            landmarkName = "getBarNoFromDelta(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "267A6828-2B0C-476F-AE13-9523041D1A2E - 377facfee7901b47"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "midiGuitarGenerator.Timeline.getBarNoFromDelta(Swift.Int) -&gt; Swift.Int"
+                  moduleName = "midiGuitarGenerator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/midiGuitarGenerator/midiGuitarGenerator/Timeline.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "143"
+                  endingLineNumber = "143"
+                  offsetFromSymbolStart = "1212">
+               </Location>
+               <Location
+                  uuid = "267A6828-2B0C-476F-AE13-9523041D1A2E - 80b2d297552e875c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #4 ((key: Swift.Int, value: midiGuitarGenerator.TimelineEvent)) -&gt; Swift.Bool in midiGuitarGenerator.Timeline.getBarNoFromDelta(Swift.Int) -&gt; Swift.Int"
+                  moduleName = "midiGuitarGenerator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/midiGuitarGenerator/midiGuitarGenerator/Timeline.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "143"
+                  endingLineNumber = "143"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "267A6828-2B0C-476F-AE13-9523041D1A2E - 97cbb59299fdd497"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #5 ((key: Swift.Int, value: midiGuitarGenerator.TimelineEvent), (key: Swift.Int, value: midiGuitarGenerator.TimelineEvent)) -&gt; Swift.Bool in midiGuitarGenerator.Timeline.getBarNoFromDelta(Swift.Int) -&gt; Swift.Int"
+                  moduleName = "midiGuitarGenerator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/midiGuitarGenerator/midiGuitarGenerator/Timeline.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "143"
+                  endingLineNumber = "143"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "935CE95B-7D8C-40AE-A922-C8A7D406B42B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "midiGuitarGenerator/Timeline.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
+            landmarkName = "getBarNoFromDelta(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "935CE95B-7D8C-40AE-A922-C8A7D406B42B - 377facfee7901b24"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "midiGuitarGenerator.Timeline.getBarNoFromDelta(Swift.Int) -&gt; Swift.Int"
+                  moduleName = "midiGuitarGenerator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/midiGuitarGenerator/midiGuitarGenerator/Timeline.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "144"
+                  endingLineNumber = "144"
+                  offsetFromSymbolStart = "1812">
+               </Location>
+               <Location
+                  uuid = "935CE95B-7D8C-40AE-A922-C8A7D406B42B - 29a90152b9bc6b3d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #6 ((key: Swift.Int, value: midiGuitarGenerator.TimelineEvent)) -&gt; Swift.Bool in midiGuitarGenerator.Timeline.getBarNoFromDelta(Swift.Int) -&gt; Swift.Int"
+                  moduleName = "midiGuitarGenerator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/midiGuitarGenerator/midiGuitarGenerator/Timeline.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "144"
+                  endingLineNumber = "144"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A6FB61C9-BB26-46C8-ADAD-001A02A34EE9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "midiGuitarGeneratorTests/Timecode_Tests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "testTimelineTimecodeTranslateToDelta()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D072ED0B-BB45-4FE5-A67D-16AB58EE1917"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "midiGuitarGenerator/Guitar.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "addNote(stringNo:offset:position:velocity:alternateStringsArray:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C5BA49FB-DE20-4B31-8466-4C133F02ED8C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "midiGuitarGenerator/Guitar.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "strum(chord:position:mask:velocities:interval:direction:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C5BA49FB-DE20-4B31-8466-4C133F02ED8C - 7afd5507617d0204"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (Swift.Int) -&gt; () in midiGuitarGenerator.Guitar.strum(chord: midiGuitarGenerator.Chord, position: Swift.Int, mask: Swift.Array&lt;Swift.Bool&gt;, velocities: Swift.Array&lt;Swift.Int&gt;, interval: Swift.Int, direction: midiGuitarGenerator.Guitar.Direction) -&gt; ()"
+                  moduleName = "midiGuitarGenerator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/midiGuitarGenerator/midiGuitarGenerator/Guitar.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "1160">
+               </Location>
+               <Location
+                  uuid = "C5BA49FB-DE20-4B31-8466-4C133F02ED8C - 1d283d66c29c60a2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "midiGuitarGenerator.Guitar.strum(chord: midiGuitarGenerator.Chord, position: Swift.Int, mask: Swift.Array&lt;Swift.Bool&gt;, velocities: Swift.Array&lt;Swift.Int&gt;, interval: Swift.Int, direction: midiGuitarGenerator.Guitar.Direction) -&gt; ()"
+                  moduleName = "midiGuitarGenerator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/midiGuitarGenerator/midiGuitarGenerator/Guitar.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "2888">
+               </Location>
+               <Location
+                  uuid = "C5BA49FB-DE20-4B31-8466-4C133F02ED8C - 1d283d66c29c620f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "midiGuitarGenerator.Guitar.strum(chord: midiGuitarGenerator.Chord, position: Swift.Int, mask: Swift.Array&lt;Swift.Bool&gt;, velocities: Swift.Array&lt;Swift.Int&gt;, interval: Swift.Int, direction: midiGuitarGenerator.Guitar.Direction) -&gt; ()"
+                  moduleName = "midiGuitarGenerator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/midiGuitarGenerator/midiGuitarGenerator/Guitar.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "2888">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "407103EB-52E1-4C5F-A503-54E093EEA611"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GuitarTest/GuitarTestApp.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "generate()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "407103EB-52E1-4C5F-A503-54E093EEA611 - 88e051308c7e351"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GuitarTest.GuitarTestApp.generate() -&gt; ()"
+                  moduleName = "GuitarTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/midiGuitarGenerator/GuitarTest/GuitarTestApp.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "1440">
+               </Location>
+               <Location
+                  uuid = "407103EB-52E1-4C5F-A503-54E093EEA611 - 88e051308c7e351"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GuitarTest.GuitarTestApp.generate() -&gt; ()"
+                  moduleName = "GuitarTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/midiGuitarGenerator/GuitarTest/GuitarTestApp.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "1704">
+               </Location>
+               <Location
+                  uuid = "407103EB-52E1-4C5F-A503-54E093EEA611 - 88e051308c7e771"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GuitarTest.GuitarTestApp.generate() -&gt; ()"
+                  moduleName = "GuitarTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/midiGuitarGenerator/GuitarTest/GuitarTestApp.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "6700">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3B705341-FA6C-4A08-A1C9-6A04A46F69E0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "midiGuitarGenerator/Timeline.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "getTimelineData(channel:noteOffset:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "28DE3AF8-B85C-4352-A79F-DA1BB034B65A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "midiGuitarGenerator/Guitar.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "strum(chord:position:mask:velocities:interval:direction:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3382885C-2B64-4D54-BDA9-A75E3F8F0538"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "midiGuitarGenerator/Guitar.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "strum(chord:position:mask:velocities:interval:direction:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "860C4BFD-793B-4551-8CDF-A8138FAD0C46"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "midiGuitarGenerator/Guitar.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "setupTrackNames()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E066E032-9E65-4BBC-85B7-F3F1567FC43E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "midiGuitarGenerator/TextEvent.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "toMIDIData(channel:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "23297EB5-DA9C-4AF4-8A31-8BC549FE793B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "midiGuitarGenerator/Guitar.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "strum(chord:timecode:mask:velocity:interval:direction:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "23297EB5-DA9C-4AF4-8A31-8BC549FE793B - 1d283d66c29c60a2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "midiGuitarGenerator.Guitar.strum(chord: midiGuitarGenerator.Chord, position: Swift.Int, mask: Swift.Array&lt;Swift.Bool&gt;, velocities: Swift.Array&lt;Swift.Int&gt;, interval: Swift.Int, direction: midiGuitarGenerator.Guitar.Direction) -&gt; ()"
+                  moduleName = "midiGuitarGenerator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/midiGuitarGenerator/midiGuitarGenerator/Guitar.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "268">
+               </Location>
+               <Location
+                  uuid = "23297EB5-DA9C-4AF4-8A31-8BC549FE793B - d26d68e862a54270"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "midiGuitarGenerator.Guitar.strum(chord: midiGuitarGenerator.Chord, timecode: Swift.String, mask: Swift.String, velocity: Swift.Int, interval: Swift.Int, direction: midiGuitarGenerator.Guitar.Direction) -&gt; ()"
+                  moduleName = "midiGuitarGenerator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/midiGuitarGenerator/midiGuitarGenerator/Guitar.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "268">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A7CDFBBB-DCFC-47D3-B212-DE24BEDB3965"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "midiGuitarGenerator/Guitar.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "autoStrum(chord:timecode:velocity:interval:direction:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A7CDFBBB-DCFC-47D3-B212-DE24BEDB3965 - d26d68e862a54270"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "midiGuitarGenerator.Guitar.strum(chord: midiGuitarGenerator.Chord, timecode: Swift.String, mask: Swift.String, velocity: Swift.Int, interval: Swift.Int, direction: midiGuitarGenerator.Guitar.Direction) -&gt; ()"
+                  moduleName = "midiGuitarGenerator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/midiGuitarGenerator/midiGuitarGenerator/Guitar.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "304">
+               </Location>
+               <Location
+                  uuid = "A7CDFBBB-DCFC-47D3-B212-DE24BEDB3965 - 1b9f8a47eb7c42e9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "midiGuitarGenerator.Guitar.autoStrum(chord: midiGuitarGenerator.Chord, timecode: Swift.String, velocity: Swift.Int, interval: Swift.Int, direction: midiGuitarGenerator.Guitar.Direction) -&gt; ()"
+                  moduleName = "midiGuitarGenerator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/midiGuitarGenerator/midiGuitarGenerator/Guitar.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "136">
+               </Location>
+               <Location
+                  uuid = "A7CDFBBB-DCFC-47D3-B212-DE24BEDB3965 - 1b9f8a47eb7c41a7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "midiGuitarGenerator.Guitar.autoStrum(chord: midiGuitarGenerator.Chord, timecode: Swift.String, velocity: Swift.Int, interval: Swift.Int, direction: midiGuitarGenerator.Guitar.Direction) -&gt; ()"
+                  moduleName = "midiGuitarGenerator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/midiGuitarGenerator/midiGuitarGenerator/Guitar.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "136">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "55552C17-8AA3-402A-BA74-253B0DCEC11E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "midiGuitarGenerator/Timeline.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "addEvent(position:event:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "52750EDC-BC60-4BE4-95DC-8BF46B76F38B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "midiGuitarGenerator/NoteEvent.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "toNoteOffMIDIData(channel:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3556A683-008B-4B92-A28F-5486394C778F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "midiGuitarGenerator/Guitar.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "allNotesOff(position:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EF97A34A-4D19-4A04-BE03-E8B225141C11"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "midiGuitarGenerator/Guitar.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
+            landmarkName = "generateMIDIData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EF97A34A-4D19-4A04-BE03-E8B225141C11 - e035961f4be09ca0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #5 ((key: Swift.Int, value: midiGuitarGenerator.Timeline)) -&gt; () in midiGuitarGenerator.Guitar.generateMIDIData() -&gt; Foundation.Data"
+                  moduleName = "midiGuitarGenerator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/midiGuitarGenerator/midiGuitarGenerator/Guitar.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "162"
+                  endingLineNumber = "162"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "EF97A34A-4D19-4A04-BE03-E8B225141C11 - e035961f4be09c03"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #5 ((key: Swift.Int, value: midiGuitarGenerator.Timeline)) -&gt; () in midiGuitarGenerator.Guitar.generateMIDIData() -&gt; Foundation.Data"
+                  moduleName = "midiGuitarGenerator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/midiGuitarGenerator/midiGuitarGenerator/Guitar.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "159"
+                  endingLineNumber = "159"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D7BD2E32-40BE-483B-86A1-6ADC403E4CD8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "midiGuitarGenerator/Timeline.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "getTimelineData(channel:noteOffset:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2025FD58-DFF2-41B4-90F1-8400C0A30EC5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "midiGuitarGenerator/Timeline.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "getTimelineData(channel:noteOffset:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

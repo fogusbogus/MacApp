@@ -1,0 +1,630 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C948AF2A2449D98600568B1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C948AF292449D98600568B1A /* AppDelegate.swift */; };
+		C948AF2C2449D98600568B1A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C948AF2B2449D98600568B1A /* SceneDelegate.swift */; };
+		C948AF2E2449D98600568B1A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C948AF2D2449D98600568B1A /* ViewController.swift */; };
+		C948AF312449D98600568B1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C948AF2F2449D98600568B1A /* Main.storyboard */; };
+		C948AF332449D98700568B1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C948AF322449D98700568B1A /* Assets.xcassets */; };
+		C948AF362449D98700568B1A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C948AF342449D98700568B1A /* LaunchScreen.storyboard */; };
+		C948AF3B2449D98700568B1A /* Twinge2 WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = C948AF3A2449D98700568B1A /* Twinge2 WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C948AF412449D98700568B1A /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C948AF3F2449D98700568B1A /* Interface.storyboard */; };
+		C948AF432449D98700568B1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C948AF422449D98700568B1A /* Assets.xcassets */; };
+		C948AF4A2449D98700568B1A /* Twinge2 WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C948AF492449D98700568B1A /* Twinge2 WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C948AF4F2449D98700568B1A /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C948AF4E2449D98700568B1A /* InterfaceController.swift */; };
+		C948AF512449D98700568B1A /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C948AF502449D98700568B1A /* ExtensionDelegate.swift */; };
+		C948AF532449D98700568B1A /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C948AF522449D98700568B1A /* NotificationController.swift */; };
+		C948AF552449D98800568B1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C948AF542449D98800568B1A /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C948AF3C2449D98700568B1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C948AF1E2449D98600568B1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C948AF392449D98700568B1A;
+			remoteInfo = "Twinge2 WatchKit App";
+		};
+		C948AF4B2449D98700568B1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C948AF1E2449D98600568B1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C948AF482449D98700568B1A;
+			remoteInfo = "Twinge2 WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C948AF5D2449D98800568B1A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C948AF4A2449D98700568B1A /* Twinge2 WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C948AF612449D98800568B1A /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				C948AF3B2449D98700568B1A /* Twinge2 WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		C948AF262449D98600568B1A /* Twinge2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twinge2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C948AF292449D98600568B1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C948AF2B2449D98600568B1A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C948AF2D2449D98600568B1A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C948AF302449D98600568B1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C948AF322449D98700568B1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C948AF352449D98700568B1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C948AF372449D98700568B1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C948AF3A2449D98700568B1A /* Twinge2 WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Twinge2 WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C948AF402449D98700568B1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		C948AF422449D98700568B1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C948AF442449D98700568B1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C948AF492449D98700568B1A /* Twinge2 WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Twinge2 WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C948AF4E2449D98700568B1A /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		C948AF502449D98700568B1A /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		C948AF522449D98700568B1A /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		C948AF542449D98800568B1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C948AF562449D98800568B1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C948AF572449D98800568B1A /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C948AF232449D98600568B1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C948AF462449D98700568B1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C948AF1D2449D98600568B1A = {
+			isa = PBXGroup;
+			children = (
+				C948AF282449D98600568B1A /* Twinge2 */,
+				C948AF3E2449D98700568B1A /* Twinge2 WatchKit App */,
+				C948AF4D2449D98700568B1A /* Twinge2 WatchKit Extension */,
+				C948AF272449D98600568B1A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C948AF272449D98600568B1A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C948AF262449D98600568B1A /* Twinge2.app */,
+				C948AF3A2449D98700568B1A /* Twinge2 WatchKit App.app */,
+				C948AF492449D98700568B1A /* Twinge2 WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C948AF282449D98600568B1A /* Twinge2 */ = {
+			isa = PBXGroup;
+			children = (
+				C948AF292449D98600568B1A /* AppDelegate.swift */,
+				C948AF2B2449D98600568B1A /* SceneDelegate.swift */,
+				C948AF2D2449D98600568B1A /* ViewController.swift */,
+				C948AF2F2449D98600568B1A /* Main.storyboard */,
+				C948AF322449D98700568B1A /* Assets.xcassets */,
+				C948AF342449D98700568B1A /* LaunchScreen.storyboard */,
+				C948AF372449D98700568B1A /* Info.plist */,
+			);
+			path = Twinge2;
+			sourceTree = "<group>";
+		};
+		C948AF3E2449D98700568B1A /* Twinge2 WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				C948AF3F2449D98700568B1A /* Interface.storyboard */,
+				C948AF422449D98700568B1A /* Assets.xcassets */,
+				C948AF442449D98700568B1A /* Info.plist */,
+			);
+			path = "Twinge2 WatchKit App";
+			sourceTree = "<group>";
+		};
+		C948AF4D2449D98700568B1A /* Twinge2 WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C948AF4E2449D98700568B1A /* InterfaceController.swift */,
+				C948AF502449D98700568B1A /* ExtensionDelegate.swift */,
+				C948AF522449D98700568B1A /* NotificationController.swift */,
+				C948AF542449D98800568B1A /* Assets.xcassets */,
+				C948AF562449D98800568B1A /* Info.plist */,
+				C948AF572449D98800568B1A /* PushNotificationPayload.apns */,
+			);
+			path = "Twinge2 WatchKit Extension";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C948AF252449D98600568B1A /* Twinge2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C948AF622449D98800568B1A /* Build configuration list for PBXNativeTarget "Twinge2" */;
+			buildPhases = (
+				C948AF222449D98600568B1A /* Sources */,
+				C948AF232449D98600568B1A /* Frameworks */,
+				C948AF242449D98600568B1A /* Resources */,
+				C948AF612449D98800568B1A /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C948AF3D2449D98700568B1A /* PBXTargetDependency */,
+			);
+			name = Twinge2;
+			productName = Twinge2;
+			productReference = C948AF262449D98600568B1A /* Twinge2.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C948AF392449D98700568B1A /* Twinge2 WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C948AF5E2449D98800568B1A /* Build configuration list for PBXNativeTarget "Twinge2 WatchKit App" */;
+			buildPhases = (
+				C948AF382449D98700568B1A /* Resources */,
+				C948AF5D2449D98800568B1A /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C948AF4C2449D98700568B1A /* PBXTargetDependency */,
+			);
+			name = "Twinge2 WatchKit App";
+			productName = "Twinge2 WatchKit App";
+			productReference = C948AF3A2449D98700568B1A /* Twinge2 WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		C948AF482449D98700568B1A /* Twinge2 WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C948AF5A2449D98800568B1A /* Build configuration list for PBXNativeTarget "Twinge2 WatchKit Extension" */;
+			buildPhases = (
+				C948AF452449D98700568B1A /* Sources */,
+				C948AF462449D98700568B1A /* Frameworks */,
+				C948AF472449D98700568B1A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Twinge2 WatchKit Extension";
+			productName = "Twinge2 WatchKit Extension";
+			productReference = C948AF492449D98700568B1A /* Twinge2 WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C948AF1E2449D98600568B1A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "Matthew Hogg";
+				TargetAttributes = {
+					C948AF252449D98600568B1A = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					C948AF392449D98700568B1A = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					C948AF482449D98700568B1A = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+				};
+			};
+			buildConfigurationList = C948AF212449D98600568B1A /* Build configuration list for PBXProject "Twinge2" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C948AF1D2449D98600568B1A;
+			productRefGroup = C948AF272449D98600568B1A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C948AF252449D98600568B1A /* Twinge2 */,
+				C948AF392449D98700568B1A /* Twinge2 WatchKit App */,
+				C948AF482449D98700568B1A /* Twinge2 WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C948AF242449D98600568B1A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C948AF362449D98700568B1A /* LaunchScreen.storyboard in Resources */,
+				C948AF332449D98700568B1A /* Assets.xcassets in Resources */,
+				C948AF312449D98600568B1A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C948AF382449D98700568B1A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C948AF432449D98700568B1A /* Assets.xcassets in Resources */,
+				C948AF412449D98700568B1A /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C948AF472449D98700568B1A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C948AF552449D98800568B1A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C948AF222449D98600568B1A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C948AF2E2449D98600568B1A /* ViewController.swift in Sources */,
+				C948AF2A2449D98600568B1A /* AppDelegate.swift in Sources */,
+				C948AF2C2449D98600568B1A /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C948AF452449D98700568B1A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C948AF532449D98700568B1A /* NotificationController.swift in Sources */,
+				C948AF512449D98700568B1A /* ExtensionDelegate.swift in Sources */,
+				C948AF4F2449D98700568B1A /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C948AF3D2449D98700568B1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C948AF392449D98700568B1A /* Twinge2 WatchKit App */;
+			targetProxy = C948AF3C2449D98700568B1A /* PBXContainerItemProxy */;
+		};
+		C948AF4C2449D98700568B1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C948AF482449D98700568B1A /* Twinge2 WatchKit Extension */;
+			targetProxy = C948AF4B2449D98700568B1A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C948AF2F2449D98600568B1A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C948AF302449D98600568B1A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C948AF342449D98700568B1A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C948AF352449D98700568B1A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C948AF3F2449D98700568B1A /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C948AF402449D98700568B1A /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C948AF582449D98800568B1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C948AF592449D98800568B1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C948AF5B2449D98800568B1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JH3ZC8234Q;
+				INFOPLIST_FILE = "Twinge2 WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fogusbogus.Twinge2.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Debug;
+		};
+		C948AF5C2449D98800568B1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JH3ZC8234Q;
+				INFOPLIST_FILE = "Twinge2 WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fogusbogus.Twinge2.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Release;
+		};
+		C948AF5F2449D98800568B1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JH3ZC8234Q;
+				IBSC_MODULE = Twinge2_WatchKit_Extension;
+				INFOPLIST_FILE = "Twinge2 WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fogusbogus.Twinge2.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Debug;
+		};
+		C948AF602449D98800568B1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JH3ZC8234Q;
+				IBSC_MODULE = Twinge2_WatchKit_Extension;
+				INFOPLIST_FILE = "Twinge2 WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fogusbogus.Twinge2.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Release;
+		};
+		C948AF632449D98800568B1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JH3ZC8234Q;
+				INFOPLIST_FILE = Twinge2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fogusbogus.Twinge2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C948AF642449D98800568B1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JH3ZC8234Q;
+				INFOPLIST_FILE = Twinge2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fogusbogus.Twinge2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C948AF212449D98600568B1A /* Build configuration list for PBXProject "Twinge2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C948AF582449D98800568B1A /* Debug */,
+				C948AF592449D98800568B1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C948AF5A2449D98800568B1A /* Build configuration list for PBXNativeTarget "Twinge2 WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C948AF5B2449D98800568B1A /* Debug */,
+				C948AF5C2449D98800568B1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C948AF5E2449D98800568B1A /* Build configuration list for PBXNativeTarget "Twinge2 WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C948AF5F2449D98800568B1A /* Debug */,
+				C948AF602449D98800568B1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C948AF622449D98800568B1A /* Build configuration list for PBXNativeTarget "Twinge2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C948AF632449D98800568B1A /* Debug */,
+				C948AF642449D98800568B1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C948AF1E2449D98600568B1A /* Project object */;
+}

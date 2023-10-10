@@ -1,0 +1,14 @@
+Target dependency graph (8 targets)
+Controls in Controls, no dependencies
+Controls in Controls, depends on:
+Controls in Controls (explicit)
+ControlsTests in Controls, depends on:
+Controls in Controls (explicit)
+UsefulExtensions in UsefulExtensions, no dependencies
+UsefulExtensions in UsefulExtensions, depends on:
+UsefulExtensions in UsefulExtensions (explicit)
+StandardControls in StandardControls, no dependencies
+StandardControls in StandardControls, depends on:
+StandardControls in StandardControls (explicit)
+StandardControlsTests in StandardControls, depends on:
+StandardControls in StandardControls (explicit)

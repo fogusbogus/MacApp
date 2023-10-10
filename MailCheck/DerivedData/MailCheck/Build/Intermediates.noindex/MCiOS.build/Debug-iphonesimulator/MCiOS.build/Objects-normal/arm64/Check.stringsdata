@@ -1,0 +1,52 @@
+{
+  "source": "/Users/matt/XCode/MailCheck/MCiOS/MCiOS/Check.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "You organisation's email, or that of an organisation you work with."
+      },
+      {
+        "comment": "",
+        "key": "This will help advise you on security changes that need to be made."
+      },
+      {
+        "comment": "",
+        "key": "Do check"
+      },
+      {
+        "comment": "",
+        "key": "Suspicious emails or emails from an unknown source."
+      },
+      {
+        "comment": "",
+        "key": "This service cannot tell you if an email is malicious. If you receive a suspicious email, report immediately to "
+      },
+      {
+        "comment": "",
+        "key": "Do not check"
+      },
+      {
+        "comment": "",
+        "key": "A free government service to help UK organisations check for cyber vulnewrabilities."
+      },
+      {
+        "comment": "",
+        "key": "Enter an email domain"
+      },
+      {
+        "comment": "",
+        "key": "You only need the part after the @"
+      },
+      {
+        "comment": "",
+        "key": "e.g. ncsc.gov.uk"
+      },
+      {
+        "comment": "",
+        "key": "Check domain"
+      }
+    ]
+  },
+  "version": 1
+}

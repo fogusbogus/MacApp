@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>10</integer>
+	<key>logs</key>
+	<dict>
+		<key>728696AA-3AC1-4F0F-82D4-FAF1ACD83658</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>728696AA-3AC1-4F0F-82D4-FAF1ACD83658.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>MCiOS project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>MCiOS</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build for Previews MCiOS</string>
+			<key>timeStartedRecording</key>
+			<real>694954649.54311705</real>
+			<key>timeStoppedRecording</key>
+			<real>694954649.62844598</real>
+			<key>title</key>
+			<string>Build for Previews MCiOS</string>
+			<key>uniqueIdentifier</key>
+			<string>728696AA-3AC1-4F0F-82D4-FAF1ACD83658</string>
+		</dict>
+		<key>CCECBA07-18EB-4585-83F9-2B2C0EAB2BAF</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>CCECBA07-18EB-4585-83F9-2B2C0EAB2BAF.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>MCiOS project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>MCiOS</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build MCiOS</string>
+			<key>timeStartedRecording</key>
+			<real>695150547.80588806</real>
+			<key>timeStoppedRecording</key>
+			<real>695150550.51990998</real>
+			<key>title</key>
+			<string>Build MCiOS</string>
+			<key>uniqueIdentifier</key>
+			<string>CCECBA07-18EB-4585-83F9-2B2C0EAB2BAF</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

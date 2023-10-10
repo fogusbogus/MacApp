@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "usefulextensions",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/fogusbogus/UsefulExtensions",
+      "state" : {
+        "revision" : "a480766a3806068d96325f9312d3741f0943d412",
+        "version" : "1.0.27"
+      }
+    }
+  ],
+  "version" : 2
+}

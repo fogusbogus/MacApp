@@ -1,0 +1,32 @@
+{
+  "source": "/Users/matt/XCode/MailCheck/MCiOS/MCiOS/DMARCResults.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "DMARC record explained"
+      },
+      {
+        "comment": "",
+        "key": "Record"
+      },
+      {
+        "comment": "",
+        "key": "Tag"
+      },
+      {
+        "comment": "",
+        "key": "Value"
+      },
+      {
+        "comment": "",
+        "key": "Valid"
+      },
+      {
+        "comment": "",
+        "key": "Explanation"
+      }
+    ]
+  },
+  "version": 1
+}

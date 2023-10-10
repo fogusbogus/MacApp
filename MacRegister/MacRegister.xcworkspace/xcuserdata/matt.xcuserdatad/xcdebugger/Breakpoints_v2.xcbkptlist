@@ -1,0 +1,2183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "B2848109-30C0-4613-83F1-AB3F1AA23C4D"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AAE56D79-4641-4FC2-BF51-0393BE44F7FB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Library/Developer/Xcode/DerivedData/MacRegister-drintqcmzfgocydqjkahxuszgqky/SourcePackages/checkouts/TreeViewLib/Sources/TreeView/TreeView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "updateNode(data:comparer:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A9057E40-7BF8-4443-A1F6-3E56C31F831F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Library/Developer/Xcode/DerivedData/MacRegister-drintqcmzfgocydqjkahxuszgqky/SourcePackages/checkouts/TreeViewLib/Sources/TreeView/TreeNode.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "updateContent(comparer:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "76F4AB53-6FB6-4415-859C-49643B1C39B9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Library/Developer/Xcode/DerivedData/MacRegister-drintqcmzfgocydqjkahxuszgqky/SourcePackages/checkouts/TreeViewLib/Sources/TreeView/TreeView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "76F4AB53-6FB6-4415-859C-49643B1C39B9 - 102aa9aeb859e2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Swift.Array&lt;&#x3c4;_0_0 where &#x3c4;_0_0 == TreeView.TreeNode&gt;.moveOrPlaceNode(node: TreeView.TreeNode, at: Swift.Int) -&gt; ()"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/Library/Developer/Xcode/DerivedData/MacRegister-drintqcmzfgocydqjkahxuszgqky/SourcePackages/checkouts/TreeViewLib/Sources/TreeView/TreeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "220"
+                  endingLineNumber = "220"
+                  offsetFromSymbolStart = "224">
+               </Location>
+               <Location
+                  uuid = "76F4AB53-6FB6-4415-859C-49643B1C39B9 - 102aa9aeb859e2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Swift.Array&lt;&#x3c4;_0_0 where &#x3c4;_0_0 == TreeView.TreeNode&gt;.moveOrPlaceNode(node: TreeView.TreeNode, at: Swift.Int) -&gt; ()"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/Library/Developer/Xcode/DerivedData/MacRegister-drintqcmzfgocydqjkahxuszgqky/SourcePackages/checkouts/TreeViewLib/Sources/TreeView/TreeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "220"
+                  endingLineNumber = "220"
+                  offsetFromSymbolStart = "340">
+               </Location>
+               <Location
+                  uuid = "76F4AB53-6FB6-4415-859C-49643B1C39B9 - aad4d9897f597196"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Swift.Array&lt;&#x3c4;_0_0 where &#x3c4;_0_0 == TreeView.TreeNode&gt;.moveOrPlaceNode(node: TreeView.TreeNode, at: Swift.Int, comparer: Swift.Optional&lt;(Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; Swift.Bool&gt;) -&gt; ()"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/Library/Developer/Xcode/DerivedData/MacRegister-drintqcmzfgocydqjkahxuszgqky/SourcePackages/checkouts/TreeViewLib/Sources/TreeView/TreeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "222"
+                  endingLineNumber = "222"
+                  offsetFromSymbolStart = "120">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "087A5C0C-6D40-4E91-AF7B-2155AD7103C7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Library/Developer/Xcode/DerivedData/MacRegister-drintqcmzfgocydqjkahxuszgqky/SourcePackages/checkouts/TreeViewLib/Sources/TreeView/TreeView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "226"
+            endingLineNumber = "226"
+            landmarkName = "moveOrPlaceNode(node:at:comparer:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "087A5C0C-6D40-4E91-AF7B-2155AD7103C7 - aad4d9897f597212"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Swift.Array&lt;&#x3c4;_0_0 where &#x3c4;_0_0 == TreeView.TreeNode&gt;.moveOrPlaceNode(node: TreeView.TreeNode, at: Swift.Int, comparer: Swift.Optional&lt;(Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; Swift.Bool&gt;) -&gt; ()"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/Library/Developer/Xcode/DerivedData/MacRegister-drintqcmzfgocydqjkahxuszgqky/SourcePackages/checkouts/TreeViewLib/Sources/TreeView/TreeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "226"
+                  endingLineNumber = "226"
+                  offsetFromSymbolStart = "1036">
+               </Location>
+               <Location
+                  uuid = "087A5C0C-6D40-4E91-AF7B-2155AD7103C7 - aad4d9897f597212"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Swift.Array&lt;&#x3c4;_0_0 where &#x3c4;_0_0 == TreeView.TreeNode&gt;.moveOrPlaceNode(node: TreeView.TreeNode, at: Swift.Int, comparer: Swift.Optional&lt;(Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; Swift.Bool&gt;) -&gt; ()"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/Library/Developer/Xcode/DerivedData/MacRegister-drintqcmzfgocydqjkahxuszgqky/SourcePackages/checkouts/TreeViewLib/Sources/TreeView/TreeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "226"
+                  endingLineNumber = "226"
+                  offsetFromSymbolStart = "720">
+               </Location>
+               <Location
+                  uuid = "087A5C0C-6D40-4E91-AF7B-2155AD7103C7 - aad4d9897f597212"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Swift.Array&lt;&#x3c4;_0_0 where &#x3c4;_0_0 == TreeView.TreeNode&gt;.moveOrPlaceNode(node: TreeView.TreeNode, at: Swift.Int, comparer: Swift.Optional&lt;(Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; Swift.Bool&gt;) -&gt; ()"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/Library/Developer/Xcode/DerivedData/MacRegister-drintqcmzfgocydqjkahxuszgqky/SourcePackages/checkouts/TreeViewLib/Sources/TreeView/TreeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "226"
+                  endingLineNumber = "226"
+                  offsetFromSymbolStart = "968">
+               </Location>
+               <Location
+                  uuid = "087A5C0C-6D40-4E91-AF7B-2155AD7103C7 - e26ac3aaf24836e1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (TreeView.TreeNode) -&gt; Swift.Bool in Swift.Array&lt;&#x3c4;_0_0 where &#x3c4;_0_0 == TreeView.TreeNode&gt;.moveOrPlaceNode(node: TreeView.TreeNode, at: Swift.Int, comparer: Swift.Optional&lt;(Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; Swift.Bool&gt;) -&gt; ()"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/Library/Developer/Xcode/DerivedData/MacRegister-drintqcmzfgocydqjkahxuszgqky/SourcePackages/checkouts/TreeViewLib/Sources/TreeView/TreeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "226"
+                  endingLineNumber = "226"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  uuid = "087A5C0C-6D40-4E91-AF7B-2155AD7103C7 - aad4d9897f597212"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Swift.Array&lt;&#x3c4;_0_0 where &#x3c4;_0_0 == TreeView.TreeNode&gt;.moveOrPlaceNode(node: TreeView.TreeNode, at: Swift.Int, comparer: Swift.Optional&lt;(Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; Swift.Bool&gt;) -&gt; ()"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/Library/Developer/Xcode/DerivedData/MacRegister-drintqcmzfgocydqjkahxuszgqky/SourcePackages/checkouts/TreeViewLib/Sources/TreeView/TreeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "226"
+                  endingLineNumber = "226"
+                  offsetFromSymbolStart = "828">
+               </Location>
+               <Location
+                  uuid = "087A5C0C-6D40-4E91-AF7B-2155AD7103C7 - aad4d9897f597212"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Swift.Array&lt;&#x3c4;_0_0 where &#x3c4;_0_0 == TreeView.TreeNode&gt;.moveOrPlaceNode(node: TreeView.TreeNode, at: Swift.Int, comparer: Swift.Optional&lt;(Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; Swift.Bool&gt;) -&gt; ()"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/Library/Developer/Xcode/DerivedData/MacRegister-drintqcmzfgocydqjkahxuszgqky/SourcePackages/checkouts/TreeViewLib/Sources/TreeView/TreeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "226"
+                  endingLineNumber = "226"
+                  offsetFromSymbolStart = "996">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "32D209DC-D65A-4045-8469-8AC10BCA9971"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/MacRegisterAppApp.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "cancelNew(substreet:street:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "32D209DC-D65A-4045-8469-8AC10BCA9971 - 2f8c2357f3ca0b65"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.MacRegisterAppApp.cancelNew(substreet: Swift.Optional&lt;MacRegisterApp.SubStreet&gt;, street: Swift.Optional&lt;MacRegisterApp.Street&gt;) -&gt; ()"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/MacRegisterAppApp.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "32D209DC-D65A-4045-8469-8AC10BCA9971 - 2f8c2357f3ca0b65"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.MacRegisterAppApp.cancelNew(substreet: Swift.Optional&lt;MacRegisterApp.SubStreet&gt;, street: Swift.Optional&lt;MacRegisterApp.Street&gt;) -&gt; ()"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/MacRegisterAppApp.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "76">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FD7C04E8-4690-4370-A2B4-870B7CDCD46C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/New Items/NewPropertyRange.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
+            landmarkName = "getItems()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "88D83766-D7A4-4392-B2A2-1BFD4E3ACF4C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/Views/PropertiesView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "PropertiesView"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "88D83766-D7A4-4392-B2A2-1BFD4E3ACF4C - 685c1ed7510b6e6e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of MacRegisterApp.PropertiesView.measure : MeasuringView.MeasuringView"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/Views/PropertiesView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "88D83766-D7A4-4392-B2A2-1BFD4E3ACF4C - 4952cb8297a02fdd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.PropertiesView.measure.getter : MeasuringView.MeasuringView"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/Views/PropertiesView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "88D83766-D7A4-4392-B2A2-1BFD4E3ACF4C - 8846aef11515f3c9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.PropertiesView.measure.setter : MeasuringView.MeasuringView"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/Views/PropertiesView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "88D83766-D7A4-4392-B2A2-1BFD4E3ACF4C - 3bd4343e30fdb4d8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.PropertiesView.measure.modify : MeasuringView.MeasuringView"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/Views/PropertiesView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "88D83766-D7A4-4392-B2A2-1BFD4E3ACF4C - 382efdd7160d9849"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.PropertiesView.measure.modify : MeasuringView.MeasuringView with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/Views/PropertiesView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "88D83766-D7A4-4392-B2A2-1BFD4E3ACF4C - a2f6b144eb4683bf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.PropertiesView.$measure.getter : SwiftUI.ObservedObject&lt;MeasuringView.MeasuringView&gt;.Wrapper"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/Views/PropertiesView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  uuid = "88D83766-D7A4-4392-B2A2-1BFD4E3ACF4C - 8ad0f17e4bdedd84"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.PropertiesView.init() -&gt; MacRegisterApp.PropertiesView"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/Views/PropertiesView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "76">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8AF54FCE-B0B0-4055-9C15-0CF227F09C68"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/Views/PropertiesView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DA387711-DDAD-4D92-96AA-64B00D86873D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/MacRegisterAppApp.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "411"
+            endingLineNumber = "411"
+            landmarkName = "electorArea()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DA387711-DDAD-4D92-96AA-64B00D86873D - bc61976782c85a4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.MacRegisterAppApp.electorArea() -&gt; SwiftUI.AnyView"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/MacRegisterAppApp.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "388"
+                  endingLineNumber = "388"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "DA387711-DDAD-4D92-96AA-64B00D86873D - bc61976782c85a4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.MacRegisterAppApp.electorArea() -&gt; SwiftUI.AnyView"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/MacRegisterAppApp.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "388"
+                  endingLineNumber = "388"
+                  offsetFromSymbolStart = "112">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E2CD88D3-23F2-4AA6-A4C4-3956E4DBC413"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/Data+Extensions.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "findById(id:context:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F0C1F3C1-06C8-4317-B95D-304352F29890"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Library/Developer/Xcode/DerivedData/MacRegister-drintqcmzfgocydqjkahxuszgqky/SourcePackages/checkouts/LoggingLib/Sources/LoggingLib/Log.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "label(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "577C344E-C479-4DD0-98A7-1D83534436C9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/MeasuringView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
+            landmarkName = "followsWidthOf(_:key:alignment:multiplier:measuring:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D68B5846-1C16-450B-A0C4-86BB568FF2D9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/MeasuringView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
+            landmarkName = "decidesWidthOf(_:key:alignment:measuring:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CAA57E18-727B-40D4-A0A7-A711BEF37111"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/Views/EditHeading.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "CAA57E18-727B-40D4-A0A7-A711BEF37111 - d803815dcaee630f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(Swift.Optional&lt;SwiftUI.TupleView&lt;(SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;)&gt;&gt;, Swift.Optional&lt;SwiftUI.TupleView&lt;(SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;)&gt;&gt;, Swift.Optional&lt;SwiftUI.TupleView&lt;(SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;)&gt;&gt;, Swift.Optional&lt;SwiftUI.TupleView&lt;(SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;)&gt;&gt;)&gt; in closure #1 () -&gt; SwiftUI.Group&lt;SwiftUI.TupleView&lt;(Swift.Optional&lt;SwiftUI.TupleView&lt;(SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;)&gt;&gt;, Swift.Optional&lt;SwiftUI.TupleView&lt;(SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;)&gt;&gt;, Swift.Optional&lt;SwiftUI.TupleView&lt;(SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;)&gt;&gt;, Swift.Optional&lt;SwiftUI.TupleView&lt;(SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;)&gt;&gt;)&gt;&gt; in MacRegisterApp.EditHeading.body.getter : some"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/Views/EditHeading.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "4928">
+               </Location>
+               <Location
+                  uuid = "CAA57E18-727B-40D4-A0A7-A711BEF37111 - d803815dcaee630f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(Swift.Optional&lt;SwiftUI.TupleView&lt;(SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;)&gt;&gt;, Swift.Optional&lt;SwiftUI.TupleView&lt;(SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;)&gt;&gt;, Swift.Optional&lt;SwiftUI.TupleView&lt;(SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;)&gt;&gt;, Swift.Optional&lt;SwiftUI.TupleView&lt;(SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;)&gt;&gt;)&gt; in closure #1 () -&gt; SwiftUI.Group&lt;SwiftUI.TupleView&lt;(Swift.Optional&lt;SwiftUI.TupleView&lt;(SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;)&gt;&gt;, Swift.Optional&lt;SwiftUI.TupleView&lt;(SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;)&gt;&gt;, Swift.Optional&lt;SwiftUI.TupleView&lt;(SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;)&gt;&gt;, Swift.Optional&lt;SwiftUI.TupleView&lt;(SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;, SwiftUI.LabeledContent&lt;SwiftUI.Text, SwiftUI.Text&gt;)&gt;&gt;)&gt;&gt; in MacRegisterApp.EditHeading.body.getter : some"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/Views/EditHeading.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "5040">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A16015A7-EDDE-4D4A-8564-B7F11932A2A9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/Views/EditHeading.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "init(object:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "76D87EDF-F369-40DC-93AB-0ED970ABFB1F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/Views/EditHeading.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "init(object:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FE37255B-ADAB-41E6-9DA6-89E050CCF9EA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/Views/View+PollingDistrict.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "canEdit()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "231FCDDA-5648-4094-BF89-5C99992EFFBC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/Views/View_Edit_Heading.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "231FCDDA-5648-4094-BF89-5C99992EFFBC - 3addf4ea1825aa0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Spacer, SwiftUI._ConditionalContent&lt;SwiftUI.TupleView&lt;(SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.tint(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.tint(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;)&gt;, SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.disabled(Swift.Bool) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.disabled(Swift.Bool) -&gt; some&gt;&gt;.0)&gt;&gt;)&gt; in MacRegisterApp.View_Edit_Heading.body.getter : some"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/Views/View_Edit_Heading.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "1696">
+               </Location>
+               <Location
+                  uuid = "231FCDDA-5648-4094-BF89-5C99992EFFBC - 8c1410588124b280"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Spacer, SwiftUI._ConditionalContent&lt;SwiftUI.TupleView&lt;(SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.tint(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.tint(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;)&gt;, SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.disabled(Swift.Bool) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.disabled(Swift.Bool) -&gt; some&gt;&gt;.0)&gt;&gt;)&gt; in MacRegisterApp.View_Edit_Heading.body.getter : some"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/Views/View_Edit_Heading.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "231FCDDA-5648-4094-BF89-5C99992EFFBC - 3addf4ea1825aa0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Spacer, SwiftUI._ConditionalContent&lt;SwiftUI.TupleView&lt;(SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.tint(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.tint(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;)&gt;, SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.disabled(Swift.Bool) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.disabled(Swift.Bool) -&gt; some&gt;&gt;.0)&gt;&gt;)&gt; in MacRegisterApp.View_Edit_Heading.body.getter : some"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/Views/View_Edit_Heading.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "1488">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ACB2B484-FF40-4ED1-8AF7-CB416A3C653A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/Views/View+Street.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "canDelete()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "50895C0C-7A3D-4F74-AFC6-92B13BD6D023"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/Main Form/TreeNodeContextMenuProvider.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "179"
+            endingLineNumber = "179"
+            landmarkName = "getContextMenu(data:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "50895C0C-7A3D-4F74-AFC6-92B13BD6D023 - a6a17998f6b1d74b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.MacRegisterAppApp.getContextMenu(data: Swift.Optional&lt;MacRegisterApp.DataNavigational&gt;) -&gt; SwiftUI.AnyView"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/Main%20Form/TreeNodeContextMenuProvider.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "104"
+                  endingLineNumber = "104"
+                  offsetFromSymbolStart = "440">
+               </Location>
+               <Location
+                  uuid = "50895C0C-7A3D-4F74-AFC6-92B13BD6D023 - a6a17998f6b1d74b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.MacRegisterAppApp.getContextMenu(data: Swift.Optional&lt;MacRegisterApp.DataNavigational&gt;) -&gt; SwiftUI.AnyView"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/Main%20Form/TreeNodeContextMenuProvider.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "104"
+                  endingLineNumber = "104"
+                  offsetFromSymbolStart = "2576">
+               </Location>
+               <Location
+                  uuid = "50895C0C-7A3D-4F74-AFC6-92B13BD6D023 - a6a17998f6b1e124"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.MacRegisterAppApp.getContextMenu(data: Swift.Optional&lt;MacRegisterApp.DataNavigational&gt;) -&gt; SwiftUI.AnyView"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/Main%20Form/TreeNodeContextMenuProvider.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "179"
+                  endingLineNumber = "179"
+                  offsetFromSymbolStart = "472">
+               </Location>
+               <Location
+                  uuid = "50895C0C-7A3D-4F74-AFC6-92B13BD6D023 - a6a17998f6b1e124"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.MacRegisterAppApp.getContextMenu(data: Swift.Optional&lt;MacRegisterApp.DataNavigational&gt;) -&gt; SwiftUI.AnyView"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/Main%20Form/TreeNodeContextMenuProvider.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "179"
+                  endingLineNumber = "179"
+                  offsetFromSymbolStart = "2608">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B2F6F171-0FA9-46F0-ABEA-F45A41E821F5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/Main Form/View Item Delegates/PropertyView+Delegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "getSelectedAbode()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C4FF2C69-D0BA-4AC0-842E-B864AF2C70B9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/Views/View+Electors.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "53E4CFEC-DBD4-42B5-838E-0DACE93614E0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/Views/View+Electors.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "53E4CFEC-DBD4-42B5-838E-0DACE93614E0 - af0f24ee8488ddc9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Optional&lt;Swift.ObjectIdentifier&gt;) -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(MacRegisterApp.Banner, &lt;&lt;opaque return type of SwiftUI.View.onChange&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Equatable&gt;(of: &#x3c4;_1_0, perform: (&#x3c4;_1_0) -&gt; ()) -&gt; some&gt;&gt;.0)&gt; in MacRegisterApp.View_Electors.body.getter : some"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/Views/View+Electors.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "340">
+               </Location>
+               <Location
+                  uuid = "53E4CFEC-DBD4-42B5-838E-0DACE93614E0 - af0f24ee8488dda8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Optional&lt;Swift.ObjectIdentifier&gt;) -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(MacRegisterApp.Banner, &lt;&lt;opaque return type of SwiftUI.View.onChange&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Equatable&gt;(of: &#x3c4;_1_0, perform: (&#x3c4;_1_0) -&gt; ()) -&gt; some&gt;&gt;.0)&gt; in MacRegisterApp.View_Electors.body.getter : some"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/Views/View+Electors.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "176">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2B99E29E-40CA-4231-9D97-D4780D4356BB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/Main Form/View Item Delegates/ViewElectors+Delegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "select(elector:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "56494089-8FA1-4B40-941E-EDBCE4B90BCC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/Main Form/View Item Delegates/ViewElectors+Delegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "getSelectedElector()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CD68E29F-BD56-45AE-9B74-5A303DD0F6E7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/Main Form/TreeNodeContextMenuProvider.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "227"
+            endingLineNumber = "227"
+            landmarkName = "getContextMenu(data:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CD68E29F-BD56-45AE-9B74-5A303DD0F6E7 - a6a17998f6b1e4d2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.MacRegisterAppApp.getContextMenu(data: Swift.Optional&lt;MacRegisterApp.DataNavigational&gt;) -&gt; SwiftUI.AnyView"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/Main%20Form/TreeNodeContextMenuProvider.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "225"
+                  endingLineNumber = "225"
+                  offsetFromSymbolStart = "2960">
+               </Location>
+               <Location
+                  uuid = "CD68E29F-BD56-45AE-9B74-5A303DD0F6E7 - a6a17998f6b1e714"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.MacRegisterAppApp.getContextMenu(data: Swift.Optional&lt;MacRegisterApp.DataNavigational&gt;) -&gt; SwiftUI.AnyView"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/Main%20Form/TreeNodeContextMenuProvider.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "227"
+                  endingLineNumber = "227"
+                  offsetFromSymbolStart = "2904">
+               </Location>
+               <Location
+                  uuid = "CD68E29F-BD56-45AE-9B74-5A303DD0F6E7 - a6a17998f6b1e714"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.MacRegisterAppApp.getContextMenu(data: Swift.Optional&lt;MacRegisterApp.DataNavigational&gt;) -&gt; SwiftUI.AnyView"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/Main%20Form/TreeNodeContextMenuProvider.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "227"
+                  endingLineNumber = "227"
+                  offsetFromSymbolStart = "2952">
+               </Location>
+               <Location
+                  uuid = "CD68E29F-BD56-45AE-9B74-5A303DD0F6E7 - a6a17998f6b1e714"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.MacRegisterAppApp.getContextMenu(data: Swift.Optional&lt;MacRegisterApp.DataNavigational&gt;) -&gt; SwiftUI.AnyView"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/Main%20Form/TreeNodeContextMenuProvider.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "227"
+                  endingLineNumber = "227"
+                  offsetFromSymbolStart = "2992">
+               </Location>
+               <Location
+                  uuid = "CD68E29F-BD56-45AE-9B74-5A303DD0F6E7 - a6a17998f6b1e714"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.MacRegisterAppApp.getContextMenu(data: Swift.Optional&lt;MacRegisterApp.DataNavigational&gt;) -&gt; SwiftUI.AnyView"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/Main%20Form/TreeNodeContextMenuProvider.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "227"
+                  endingLineNumber = "227"
+                  offsetFromSymbolStart = "3044">
+               </Location>
+               <Location
+                  uuid = "CD68E29F-BD56-45AE-9B74-5A303DD0F6E7 - a6a17998f6b1e714"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.MacRegisterAppApp.getContextMenu(data: Swift.Optional&lt;MacRegisterApp.DataNavigational&gt;) -&gt; SwiftUI.AnyView"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/Main%20Form/TreeNodeContextMenuProvider.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "227"
+                  endingLineNumber = "227"
+                  offsetFromSymbolStart = "3056">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "96C46722-5E08-469B-9ED9-193259498B24"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/New Items/NewElector.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BE4C2D28-A409-401E-99A3-91CF6E43CA1E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/New Items/NewElector.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7E2B09A3-BAC9-4C7C-A3AF-64E1320AB7EA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/New Items/NewElector.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "canSave"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "19F7C4F5-E5B6-4ACB-AE8E-DCA70AF99053"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/New Items/NewElector.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "canSave"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0B60BF69-B04E-4492-AFC5-525A84A24674"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/New Items/NewElector.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "ElectorDetails"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "406C090B-C41D-41AE-BE5B-A0FDA1396B22"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/New Items/NewElector.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DE03F8CC-C06B-48F7-AD34-521F0F40387A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/Main Form/Window Management/App+LatestWindow.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "currentWindowForSelection()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AD759227-AAA1-4C93-8E21-DA65927A9FC7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/New Items/NewStreet.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "warning"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "AD759227-AAA1-4C93-8E21-DA65927A9FC7 - b36ebcfe55e62e8f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.NewStreet.warning.getter : Swift.String"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/New%20Items/NewStreet.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  uuid = "AD759227-AAA1-4C93-8E21-DA65927A9FC7 - b36ebcfe55e62e0b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.NewStreet.warning.getter : Swift.String"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/New%20Items/NewStreet.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "92">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "388B53C0-07C3-40AF-8012-4B3BABF16D57"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/New Items/NewStreet.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "prompt"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "388B53C0-07C3-40AF-8012-4B3BABF16D57 - 6c3580164185b096"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.NewStreet.prompt.getter : Swift.String"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/New%20Items/NewStreet.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "388B53C0-07C3-40AF-8012-4B3BABF16D57 - 6c3580164185b72a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.NewStreet.prompt.getter : Swift.String"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/New%20Items/NewStreet.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E9B76F8B-AD7D-4514-95FA-421692FC9983"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/New Items/NewStreet.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "copyToObject(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E9B76F8B-AD7D-4514-95FA-421692FC9983 - 88c082d8e80a27f1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.StreetDetails.copyToObject(Swift.Optional&lt;MacRegisterApp.Street&gt;) -&gt; ()"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/New%20Items/NewStreet.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "E9B76F8B-AD7D-4514-95FA-421692FC9983 - 88c082d8e80a27f1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.StreetDetails.copyToObject(Swift.Optional&lt;MacRegisterApp.Street&gt;) -&gt; ()"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/New%20Items/NewStreet.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "E9B76F8B-AD7D-4514-95FA-421692FC9983 - 88c082d8e80a277d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.StreetDetails.copyToObject(Swift.Optional&lt;MacRegisterApp.Street&gt;) -&gt; ()"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/New%20Items/NewStreet.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "E9B76F8B-AD7D-4514-95FA-421692FC9983 - 88c082d8e80a277d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.StreetDetails.copyToObject(Swift.Optional&lt;MacRegisterApp.Street&gt;) -&gt; ()"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/New%20Items/NewStreet.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "80">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D239B421-FD5A-46BB-9037-D8F82C0ADD1D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/New Items/NewStreet.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "copyObject(object:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D239B421-FD5A-46BB-9037-D8F82C0ADD1D - ca55602f69f74822"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.StreetDetails.copyObject(object: Swift.Optional&lt;MacRegisterApp.Street&gt;) -&gt; ()"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/New%20Items/NewStreet.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "464">
+               </Location>
+               <Location
+                  uuid = "D239B421-FD5A-46BB-9037-D8F82C0ADD1D - ca55602f69f748ae"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.StreetDetails.copyObject(object: Swift.Optional&lt;MacRegisterApp.Street&gt;) -&gt; ()"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/New%20Items/NewStreet.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "D239B421-FD5A-46BB-9037-D8F82C0ADD1D - ca55602f69f7490b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.StreetDetails.copyObject(object: Swift.Optional&lt;MacRegisterApp.Street&gt;) -&gt; ()"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/New%20Items/NewStreet.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C88FCF5E-0C60-4166-878E-4FE7DE84D3B3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/New Items/NewStreet.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "canSave(withParent:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C88FCF5E-0C60-4166-878E-4FE7DE84D3B3 - 8efe207f5b95e251"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.StreetDetails.canSave() -&gt; Swift.Bool"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/New%20Items/NewStreet.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "C88FCF5E-0C60-4166-878E-4FE7DE84D3B3 - 8efe207f5b95e3d5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.StreetDetails.canSave() -&gt; Swift.Bool"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/New%20Items/NewStreet.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C227F7B4-73B5-4C8F-8581-D23ECF463F39"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/New Items/NewStreet.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CBB5EBFF-9650-4D50-893C-FBBAB5B43DC0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/New Items/NewStreet.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "init(object:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CBB5EBFF-9650-4D50-893C-FBBAB5B43DC0 - 4eaf190cfe1fb629"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of MacRegisterApp.StreetDetails.sortName : Swift.String"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/New%20Items/NewStreet.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "CBB5EBFF-9650-4D50-893C-FBBAB5B43DC0 - f6009ebea276e01f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.StreetDetails.sortName.getter : Swift.String"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/New%20Items/NewStreet.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  uuid = "CBB5EBFF-9650-4D50-893C-FBBAB5B43DC0 - c90cb45c5b4910e3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.StreetDetails.sortName.setter : Swift.String"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/New%20Items/NewStreet.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "160">
+               </Location>
+               <Location
+                  uuid = "CBB5EBFF-9650-4D50-893C-FBBAB5B43DC0 - 85533f054c613410"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.StreetDetails.sortName.modify : Swift.String"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/New%20Items/NewStreet.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "CBB5EBFF-9650-4D50-893C-FBBAB5B43DC0 - 86d8f96d76f08ee3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.StreetDetails.sortName.modify : Swift.String with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/New%20Items/NewStreet.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "CBB5EBFF-9650-4D50-893C-FBBAB5B43DC0 - 7498df9e9835c8fa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.StreetDetails.$sortName.getter : Combine.Published&lt;Swift.String&gt;.Publisher"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/New%20Items/NewStreet.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  uuid = "CBB5EBFF-9650-4D50-893C-FBBAB5B43DC0 - a97dc286af5794ce"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.StreetDetails.$sortName.setter : Combine.Published&lt;Swift.String&gt;.Publisher"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/New%20Items/NewStreet.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "216">
+               </Location>
+               <Location
+                  uuid = "CBB5EBFF-9650-4D50-893C-FBBAB5B43DC0 - 4d5a82bbfcf341d4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.StreetDetails.$sortName.modify : Combine.Published&lt;Swift.String&gt;.Publisher"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  uuid = "CBB5EBFF-9650-4D50-893C-FBBAB5B43DC0 - 32eeea76cc3a3f15"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.StreetDetails.$sortName.modify : Combine.Published&lt;Swift.String&gt;.Publisher with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/New%20Items/NewStreet.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "CBB5EBFF-9650-4D50-893C-FBBAB5B43DC0 - 822c45b3d68def6b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.StreetDetails.init() -&gt; MacRegisterApp.StreetDetails"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/New%20Items/NewStreet.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "240">
+               </Location>
+               <Location
+                  uuid = "CBB5EBFF-9650-4D50-893C-FBBAB5B43DC0 - 6faee9b42e639c3c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.StreetDetails.init(object: MacRegisterApp.Street) -&gt; MacRegisterApp.StreetDetails"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/New%20Items/NewStreet.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "388">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "34699512-8156-468D-92A9-248EAB2D55D7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/Data+Extensions.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "findById(id:context:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "34699512-8156-468D-92A9-248EAB2D55D7 - 42453a861bca4f6e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static MacRegisterApp.Street.findById(id: Swift.ObjectIdentifier, context: Swift.Optional&lt;__C.NSManagedObjectContext&gt;) -&gt; Swift.Optional&lt;MacRegisterApp.Street&gt;"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/Data+Extensions.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "34699512-8156-468D-92A9-248EAB2D55D7 - 42453a861bca4f6e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static MacRegisterApp.Street.findById(id: Swift.ObjectIdentifier, context: Swift.Optional&lt;__C.NSManagedObjectContext&gt;) -&gt; Swift.Optional&lt;MacRegisterApp.Street&gt;"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/Data+Extensions.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "76">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B9DB46C0-C9A8-4A1C-8319-EC3E971BB064"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/Data+Extensions.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "findById(id:context:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BE10219D-FD69-41C6-8DF7-581D3E4331C5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/Views/View+Electors.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "getMarkerSymbols()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2B9C54C4-033B-4BB1-9BF4-5DACA6E7C2C0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/Persistence.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "getAll(context:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6F7F98DF-EDCB-4D0B-B5F9-9A6390ABDAEB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/Persistence.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "getAll(context:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DC884546-2C10-46D2-9BE0-496B85F87345"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/Data+Extensions.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
+            landmarkName = "getWards()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4B74E04D-D94E-4378-8212-9F03AD370651"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/Data+Extensions.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
+            landmarkName = "getWards()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4B74E04D-D94E-4378-8212-9F03AD370651 - d5918c6b0baad4e4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.PollingDistrict.getWards() -&gt; Swift.Array&lt;MacRegisterApp.Ward&gt;"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/Data+Extensions.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "4B74E04D-D94E-4378-8212-9F03AD370651 - d6b17b578a3d0926"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Any) -&gt; Swift.Optional&lt;MacRegisterApp.Ward&gt; in MacRegisterApp.PollingDistrict.getWards() -&gt; Swift.Array&lt;MacRegisterApp.Ward&gt;"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/Data+Extensions.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "4B74E04D-D94E-4378-8212-9F03AD370651 - e387a873604fc7e0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (MacRegisterApp.Ward, MacRegisterApp.Ward) -&gt; Swift.Bool in MacRegisterApp.PollingDistrict.getWards() -&gt; Swift.Array&lt;MacRegisterApp.Ward&gt;"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/Data+Extensions.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2D9F19A2-8E47-4F25-81BB-75B0CDB8D07E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/Main Form/TreeNodeDataProvider.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "getChildren(forNode:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "60625470-3122-415A-830B-7A7435A33956"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/Main Form/MenuHandler.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "selected(action:data:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6C388CA5-24AA-41D7-876B-473CDA51181C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/Main Form/MenuHandler.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "selected(action:data:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6C388CA5-24AA-41D7-876B-473CDA51181C - 5e98edf207009f4e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.MacRegisterAppApp.selected(action: Swift.String, data: Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; ()"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/Main%20Form/MenuHandler.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  uuid = "6C388CA5-24AA-41D7-876B-473CDA51181C - 5e98edf207009f4e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.MacRegisterAppApp.selected(action: Swift.String, data: Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; ()"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/Main%20Form/MenuHandler.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "340">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "230D2A44-2A3C-4374-8781-A5414BF56B6C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/Supporting/Extensions/DataNavigational+DescriptiveAddress.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E3159212-66FD-4A85-864D-7D358C71F947"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/Supporting/Extensions/DataNavigational+DescriptiveAddress.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "04828E00-95F5-4604-AA47-A66C5E06A44C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/Supporting/Extensions/DataNavigational+DescriptiveAddress.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "95169D83-AE02-45C2-9F85-401BF96296CB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/Supporting/Extensions/DataNavigational+DescriptiveAddress.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "transferRepresentation"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C9CA5E72-289E-45F0-A13A-E73B68709296"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/Supporting/DropDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "performDrop(info:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "500CECE1-2B6C-46C8-9CCE-3E1419137C9E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/Supporting/DropDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "performDrop(info:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5633BD1B-AEBA-44AA-8773-0A9B8A0ECA0B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/Main Form/MenuHandler+DialogType.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "request(type:data:getMessage:okText:cancelText:onOK:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "116F6457-64B1-44FD-ABC6-B212C6B0DDFC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/Main Form/MacRegisterAppApp.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "onShow()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7B2E63C0-019B-4393-9940-9AEDED3076D0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/Main Form/MacRegisterAppApp.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "onShow()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "88B6A749-EB52-4615-85BD-18A211F66975"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/Main Form/MacRegisterAppApp.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "onShow()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BE353451-B830-4196-997B-0B89566C7B9C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/Main Form/MacRegisterAppApp.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "onShow()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "780B906A-AEFA-4FFC-8B61-70C268373E83"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/TreeViewUI.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "310"
+            endingLineNumber = "310"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "780B906A-AEFA-4FFC-8B61-70C268373E83 - 141927cf5221fd28"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #6 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt;, &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0)&gt; in MacRegisterApp.VisibleNode.body.getter : some"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/TreeViewUI.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "310"
+                  endingLineNumber = "310"
+                  offsetFromSymbolStart = "132">
+               </Location>
+               <Location
+                  uuid = "780B906A-AEFA-4FFC-8B61-70C268373E83 - be915f3fe123a72b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Array&lt;MacRegisterApp.NavDataIdentifier&gt;, __C.CGPoint) -&gt; Swift.Bool in MacRegisterApp.VisibleNode.body.getter : some"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/TreeViewUI.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "310"
+                  endingLineNumber = "310"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "780B906A-AEFA-4FFC-8B61-70C268373E83 - 9690d9e277d900f3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (MacRegisterApp.NavDataIdentifier) -&gt; () in closure #2 (Swift.Array&lt;MacRegisterApp.NavDataIdentifier&gt;, __C.CGPoint) -&gt; Swift.Bool in MacRegisterApp.VisibleNode.body.getter : some"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/TreeViewUI.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "311"
+                  endingLineNumber = "311"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  uuid = "780B906A-AEFA-4FFC-8B61-70C268373E83 - 9a93119575c48989"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacRegisterApp.VisibleNode.body.getter : some"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/TreeViewUI.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "319"
+                  endingLineNumber = "319"
+                  offsetFromSymbolStart = "660">
+               </Location>
+               <Location
+                  uuid = "780B906A-AEFA-4FFC-8B61-70C268373E83 - 9690d9e277d900f3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (MacRegisterApp.NavDataIdentifier) -&gt; () in closure #2 (Swift.Array&lt;MacRegisterApp.NavDataIdentifier&gt;, __C.CGPoint) -&gt; Swift.Bool in MacRegisterApp.VisibleNode.body.getter : some"
+                  moduleName = "MacRegisterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matt/XCode/MacRegisterApp/MacRegisterApp/TreeViewUI.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "311"
+                  endingLineNumber = "311"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3E0E6854-4390-49F5-BCDC-8588ED25FCD1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/Supporting/Extensions/DataNavigational+DescriptiveAddress.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "from(object:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9F003D89-F751-4B06-881F-2223A34F1D44"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/TreeViewUI.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
+            landmarkName = "getTransferableObject()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "92BB1A9D-E4B2-4EE5-A961-72F864D5E461"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../MacRegisterApp/MacRegisterApp/TreeViewUI.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "240"
+            endingLineNumber = "240"
+            landmarkName = "getTransferableObject()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

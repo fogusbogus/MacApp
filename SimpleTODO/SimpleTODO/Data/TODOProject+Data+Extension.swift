@@ -12,7 +12,8 @@ import CoreData
 
 extension TODOProject {
 	static func getNamed(_ name: String, context: NSManagedObjectContext? = nil) -> TODOProject? {
-		return Log.return {
+		return Log.return("Get project named '\(name)'") {
+			Log.function("TODOProject::getNamed", parameters: ["name":name, "context":(context != nil)])
 			let context = PersistenceController.shared.container.viewContext
 			let fetch = TODOProject.fetchRequest()
 			fetch.predicate = NSPredicate(format: "name LIKE %@", name)
@@ -21,10 +22,8 @@ extension TODOProject {
 			}
 			catch {}
 			return nil
-		} pre: {
-			Log.funcParams("TODOProject::getNamed", items: ["name":name, "context":(context != nil)])
-		} post: { project in
-			Log.log("<< \(project?.myObjectID ?? "nil")")
+		} end: { project in
+			return "<< \(project?.myObjectID ?? "nil")"
 		}
 
 	}
@@ -47,24 +46,24 @@ extension TODOProject {
 	typealias CreateOrUpdateFunction = (CreateOrUpdatePredicate) -> Void
 	
 	static func create(_ context: NSManagedObjectContext? = nil, onCreateOrUpdate: CreateOrUpdateFunction? = nil) -> TODOProject {
-		return Log.return {
+		return Log.return("Create a new TODOProject") {
+			Log.function("TODOProject::create", parameters: ["context":(context != nil), "onCreateOrUpdate":(onCreateOrUpdate != nil)])
 			let context = context ?? PersistenceController.shared.container.viewContext
 			let project = TODOProject(context: context)
 			project.createdBy = User.currentUser()
 			project.createdTS = .now
 			onCreateOrUpdate?((project: project, isNew: true))
 			return project
-		} pre: {
-			Log.funcParams("TODOProject::create", items: ["context":(context != nil), "onCreateOrUpdate":(onCreateOrUpdate != nil)])
-		} post: { project in
-			Log.log("<< \(project.myObjectID)")
+		} end: { project in
+			return "<< \(project.myObjectID)"
 		}
 
 	}
 	
 	@discardableResult
 	static func assert(name: String, context: NSManagedObjectContext? = nil, onCreateOrUpdate: CreateOrUpdateFunction? = nil) -> TODOProject {
-		return Log.return {
+		return Log.return("Assert a TODOProject named '\(name)'") {
+			Log.function("TODOProject::assert", parameters: ["name":name, "context":(context != nil), "onCreateOrUpdate":(onCreateOrUpdate != nil)])
 			if let ret = getNamed(name, context: context) {
 				ret.name = name
 				onCreateOrUpdate?((project: ret, isNew: false))
@@ -74,10 +73,8 @@ extension TODOProject {
 			project.name = name
 			onCreateOrUpdate?((project: project, isNew: true))
 			return project
-		} pre: {
-			Log.funcParams("TODOProject::assert", items: ["name":name, "context":(context != nil), "onCreateOrUpdate":(onCreateOrUpdate != nil)])
-		} post: { project in
-			Log.log("<< \(project.myObjectID)")
+		} end: { project in
+			return "<< \(project.myObjectID)"
 		}
 
 	}

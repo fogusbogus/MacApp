@@ -1,0 +1,60 @@
+{
+  "source": "/Users/matt/XCode/MailCheck/MCiOS/MCiOS/Home.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "What will it tell me?"
+      },
+      {
+        "comment": "",
+        "key": "Use this tool to check any email domain for two important areas of cyber security:"
+      },
+      {
+        "comment": "",
+        "key": "If any issues are found, we'll provide step-by-step guidance on what you should do."
+      },
+      {
+        "comment": "",
+        "key": "1."
+      },
+      {
+        "comment": "",
+        "key": "Email anti-spoofing. "
+      },
+      {
+        "comment": "",
+        "key": "Preventing cyber criminals sending emails pretending to be you (known as spoofing)."
+      },
+      {
+        "comment": "",
+        "key": "2."
+      },
+      {
+        "comment": "",
+        "key": "Email privacy. "
+      },
+      {
+        "comment": "",
+        "key": "Making it harder for cyber criminals to intercept and read your email in transit."
+      },
+      {
+        "comment": "",
+        "key": "Is it safe to check my email security?"
+      },
+      {
+        "comment": "",
+        "key": "Yes, this service is safe and easy to use. This checker looks at publicly available information only. It does not check any personal information and does not require you to input any personal details. "
+      },
+      {
+        "comment": "",
+        "key": "The tool will identify any vulnerabilities that are already easily publicly visible to criminals on the internet; our goal is to help organisations identify these and put in protections."
+      },
+      {
+        "comment": "",
+        "key": "Start now"
+      }
+    ]
+  },
+  "version": 1
+}

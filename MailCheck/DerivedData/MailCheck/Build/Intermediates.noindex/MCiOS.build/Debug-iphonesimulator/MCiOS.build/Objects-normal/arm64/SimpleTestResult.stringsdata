@@ -1,0 +1,28 @@
+{
+  "source": "/Users/matt/XCode/MailCheck/MCiOS/MCiOS/SimpleTestResult.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Test"
+      },
+      {
+        "comment": "",
+        "key": "Result"
+      },
+      {
+        "comment": "",
+        "key": "Review your configurations below to understand any errors further. Information on how to configure SPF can be found on the "
+      },
+      {
+        "comment": "",
+        "key": "Limitations of this checker. "
+      },
+      {
+        "comment": "",
+        "key": "This checker is checking that your SPF record is syntactically valid. This checker does not check that you have included the right statements or ip addresses. To do this you will need to configure DMARC with an appropriate DMARC tool that allows you to assess if all your email sending systems are adequately covered in your SPF record."
+      }
+    ]
+  },
+  "version": 1
+}

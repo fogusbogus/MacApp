@@ -28,7 +28,8 @@ extension Lane {
 	}
 	
 	static func `get`(withName: String, includeInvisible: Bool = false) -> Lane? {
-		return Log.return {
+		return Log.return("Get the lane named '\(withName)'") {
+			Log.function("Lane::get", parameters: ["withName":withName, "includeInvisible":includeInvisible])
 			let context = PersistenceController.shared.container.viewContext
 			let fetch = Lane.fetchRequest()
 			if includeInvisible {
@@ -44,10 +45,8 @@ extension Lane {
 				Log.error(error)
 			}
 			return nil
-		} pre: {
-			Log.funcParams("Lane::get", items: ["withName":withName, "includeInvisible":includeInvisible])
-		} post: { lane in
-			Log.log("<< \(lane?.myObjectID ?? "nil")")
+		} end: { lane in
+			return "<< \(lane?.myObjectID ?? "nil")"
 		}
 
 	}

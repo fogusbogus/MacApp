@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Timeline
+   version = "3.0">
+   <TimelineItems>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/matt/XCode/MacApp/MyPlayground.playground#CharacterRangeLen=2&amp;CharacterRangeLoc=6558&amp;EndingColumnNumber=8&amp;EndingLineNumber=239&amp;StartingColumnNumber=6&amp;StartingLineNumber=239&amp;Timestamp=595902510.8990999"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/matt/XCode/MacApp/MyPlayground.playground#CharacterRangeLen=0&amp;CharacterRangeLoc=6660&amp;EndingColumnNumber=0&amp;EndingLineNumber=244&amp;StartingColumnNumber=0&amp;StartingLineNumber=244&amp;Timestamp=595902510.89923"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/matt/XCode/MacApp/MyPlayground.playground#CharacterRangeLen=2&amp;CharacterRangeLoc=6606&amp;EndingColumnNumber=4&amp;EndingLineNumber=241&amp;StartingColumnNumber=2&amp;StartingLineNumber=241&amp;Timestamp=595902510.899317"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+   </TimelineItems>
+</Timeline>

@@ -1,5 +1,383 @@
 {
   "sourceLanguage" : "en",
-  "strings" : {},
+  "strings" : {
+    "" : {
+
+    },
+    "⚠️" : {
+
+    },
+    "🇬🇧" : {
+      "localizations" : {
+        "de" : {
+          "variations" : {
+            "device" : {
+              "mac" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "🇩🇪"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "🇩🇪"
+                }
+              }
+            }
+          }
+        },
+        "en" : {
+          "variations" : {
+            "device" : {
+              "mac" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "🇺🇸"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "🇺🇸"
+                }
+              }
+            }
+          }
+        },
+        "en-GB" : {
+          "variations" : {
+            "device" : {
+              "mac" : {
+                "stringUnit" : {
+                  "state" : "needs_review",
+                  "value" : "🇬🇧"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "🇬🇧"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "🎗️" : {
+
+    },
+    "🏘️" : {
+
+    },
+    "📍" : {
+
+    },
+    "🛖" : {
+
+    },
+    "Account Information" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kontoinformationen"
+          }
+        }
+      }
+    },
+    "Add Item" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anhängen"
+          }
+        }
+      }
+    },
+    "Address" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adresse"
+          }
+        }
+      }
+    },
+    "Alphanumeric ordering tag" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alphanumerisches Bestell-Tag"
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stornieren"
+          }
+        }
+      }
+    },
+    "City" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stadt"
+          }
+        }
+      }
+    },
+    "Current electors" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktuelle Wähler"
+          }
+        }
+      }
+    },
+    "Current properties" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktuelle Gebäude"
+          }
+        }
+      }
+    },
+    "e.g. 1-5, 10, House name 1, House name 2" : {
+
+    },
+    "Edit" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ändern"
+          }
+        }
+      }
+    },
+    "Edit elector %@" : {
+
+    },
+    "Edit property %@" : {
+
+    },
+    "Edit substreet %@" : {
+
+    },
+    "Elector count" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wählerzahl"
+          }
+        }
+      }
+    },
+    "Electors" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wählerschaft"
+          }
+        }
+      }
+    },
+    "Electors:" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wählerschaft:"
+          }
+        }
+      }
+    },
+    "Email" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Email"
+          }
+        }
+      }
+    },
+    "Filter:" : {
+
+    },
+    "for %@" : {
+
+    },
+    "Future:" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zukunft"
+          }
+        }
+      }
+    },
+    "Item at %@" : {
+
+    },
+    "Markers" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Markierungen"
+          }
+        }
+      }
+    },
+    "Name" : {
+
+    },
+    "Name:" : {
+
+    },
+    "New elector" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neue Wählerschaft"
+          }
+        }
+      }
+    },
+    "New property" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neue Gebäude"
+          }
+        }
+      }
+    },
+    "New Range of Properties" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neues Gebäudesortiment"
+          }
+        }
+      }
+    },
+    "New substreet" : {
+
+    },
+    "New Ward" : {
+
+    },
+    "OK" : {
+
+    },
+    "Password" : {
+
+    },
+    "Polling district" : {
+
+    },
+    "Polling district:" : {
+
+    },
+    "Post code:" : {
+
+    },
+    "Properties" : {
+
+    },
+    "Properties:" : {
+
+    },
+    "Ranges:" : {
+
+    },
+    "Salutation" : {
+
+    },
+    "Save" : {
+
+    },
+    "Save/Next" : {
+
+    },
+    "Select an item" : {
+
+    },
+    "Sort name" : {
+
+    },
+    "Sort name:" : {
+
+    },
+    "Street" : {
+
+    },
+    "Street:" : {
+
+    },
+    "Streets" : {
+
+    },
+    "Substreet:" : {
+
+    },
+    "Substreets" : {
+
+    },
+    "Substreets:" : {
+
+    },
+    "Type" : {
+
+    },
+    "Username" : {
+
+    },
+    "Ward" : {
+
+    },
+    "Ward name" : {
+
+    },
+    "Ward:" : {
+
+    },
+    "Wards" : {
+
+    },
+    "Zip code" : {
+      "localizations" : {
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Post code"
+          }
+        }
+      }
+    }
+  },
   "version" : "1.0"
 }

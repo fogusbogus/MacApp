@@ -1,0 +1,16 @@
+{
+  "source": "/Users/matt/XCode/MailCheck/MCiOS/MCiOS/CheckHeading.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Check your email security"
+      },
+      {
+        "comment": "",
+        "key": "About this service"
+      }
+    ]
+  },
+  "version": 1
+}

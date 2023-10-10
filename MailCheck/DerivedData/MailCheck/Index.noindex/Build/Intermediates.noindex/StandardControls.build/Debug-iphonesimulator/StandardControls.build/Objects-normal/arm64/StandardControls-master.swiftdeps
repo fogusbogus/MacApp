@@ -1,0 +1,6 @@
+version: "Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)"
+options: "4d71b05903fb080bf615f1ef7048067cd522b09771af404bd88f5a6d990a62d4"
+build_start_time: [1670685093, 413905143]
+build_end_time: [1670685093, 450433015]
+inputs:
+  "/Users/matt/XCode/MailCheck/StandardControls/Sources/StandardControls/StandardControls.swift": [1669896441, 243919849]

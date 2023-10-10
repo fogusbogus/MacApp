@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:../Library/Autosave Information/MHUseful">
+   </FileRef>
+   <FileRef
+      location = "group:../Library/Autosave Information/SQLDB/SQLDB.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../Library/Autosave Information/MHExt/MHExt.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../Library/Autosave Information/TestArea/TestArea.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:MHLib/Logging/Logging.xcodeproj">
+   </FileRef>
+</Workspace>

@@ -9,7 +9,8 @@ import Foundation
 
 extension Ticket {
 	static func `get`(withTicketID: String) -> Ticket? {
-		Log.return {
+		Log.return("get ticket with id: \(withTicketID)") {
+			Log.function("Ticket::get", parameters: ["withTicketID":withTicketID])
 			let context = PersistenceController.shared.container.viewContext
 			let fetch = Ticket.fetchRequest()
 			fetch.predicate = NSPredicate(format: "ticketID LIKE %@", withTicketID)
@@ -20,12 +21,9 @@ extension Ticket {
 				Log.error(error)
 			}
 			return nil
-		} pre: {
-			Log.funcParams("Ticket::get", items: ["withTicketID":withTicketID])
-		} post: { ticket in
-			Log.log("<< \(ticket?.myObjectID ?? "nil")")
+		} end: { ticket in
+			return "<< \(ticket?.myObjectID ?? "nil")"
 		}
-
 	}
 	
 	@discardableResult
@@ -47,30 +45,23 @@ extension Ticket {
 	
 	@discardableResult
 	static func assert(withTicketID: String, onCreateOrUpdate: ((CreateOrUpdatePredicate) -> Void)? = nil) -> Ticket {
-		return Log.return {
+		return Log.return("Assert a ticket with the id '\(withTicketID)'") {
+			Log.function("Ticket::assert", parameters: ["withTicketID":withTicketID,"onCreateOrUpdate":(onCreateOrUpdate != nil)])
 			if let ret = get(withTicketID: withTicketID) {
 				onCreateOrUpdate?((ticket: ret, isNew: false))
 				return ret
 			}
 			
-			return Log.return {
+			return Log.return("Couldn't find the ticket. Create a new one.") {
 				let new = Ticket(context: PersistenceController.shared.container.viewContext)
 				new.created = Date.now
 				new.ticketID = withTicketID
 				onCreateOrUpdate?((ticket: new, isNew: true))
 				return new
-			} pre: {
-				Log.log("Couldn't find the ticket. Create a new one.")
-			} post: { _ in
-				
 			}
-		} pre: {
-			Log.funcParams("Ticket::assert", items: ["withTicketID":withTicketID,"onCreateOrUpdate":(onCreateOrUpdate != nil)])
-		} post: { ticket in
-			Log.log("<< \(ticket.myObjectID)")
+		} end: { ticket in
+			return "<< \(ticket.myObjectID)"
 		}
-
-
 	}
 	
 	override public func willSave() {

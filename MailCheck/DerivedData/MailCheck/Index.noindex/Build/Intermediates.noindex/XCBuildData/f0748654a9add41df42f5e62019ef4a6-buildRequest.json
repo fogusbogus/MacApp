@@ -1,0 +1,77 @@
+{
+  "_buildCommand2" : {
+    "command" : "prepareForIndexing",
+    "enableIndexBuildArena" : true,
+    "targets" : null
+  },
+  "buildCommand" : "build",
+  "configuredTargets" : [
+    {
+      "guid" : "PACKAGE-TARGET:Controls"
+    },
+    {
+      "guid" : "PACKAGE-PRODUCT:Controls"
+    },
+    {
+      "guid" : "PACKAGE-PRODUCT:ControlsTests"
+    },
+    {
+      "guid" : "PACKAGE-PRODUCT:UsefulExtensions"
+    },
+    {
+      "guid" : "PACKAGE-TARGET:StandardControls"
+    },
+    {
+      "guid" : "PACKAGE-PRODUCT:StandardControls"
+    },
+    {
+      "guid" : "PACKAGE-PRODUCT:StandardControlsTests"
+    }
+  ],
+  "containerPath" : "/Users/matt/XCode/MailCheck/MailCheck.xcworkspace",
+  "continueBuildingAfterErrors" : true,
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "indexbuild",
+    "activeArchitecture" : "arm64",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "platform" : "iphonesimulator",
+      "sdk" : "iphonesimulator16.2",
+      "sdkVariant" : "iphonesimulator",
+      "supportedArchitectures" : [
+        "arm64",
+        "x86_64"
+      ],
+      "targetArchitecture" : "arm64"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "/Users/matt/XCode/MailCheck/DerivedData/MailCheck/Index.noindex/Build/Intermediates.noindex",
+      "buildProductsPath" : "/Users/matt/XCode/MailCheck/DerivedData/MailCheck/Index.noindex/Build/Products",
+      "derivedDataPath" : "/Users/matt/XCode/MailCheck/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/matt/XCode/MailCheck/DerivedData/MailCheck/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/matt/XCode/MailCheck/DerivedData/MailCheck/Index.noindex/PrecompiledHeaders",
+      "pchPath" : "/Users/matt/XCode/MailCheck/DerivedData/MailCheck/Index.noindex/Build/Intermediates.noindex/PrecompiledHeaders"
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ENABLE_PREVIEWS" : "NO",
+          "INDEX_ARENA_INFO_REGULAR_BUILD_PRODUCTS_DIR" : "/Users/matt/XCode/MailCheck/DerivedData/MailCheck/Build/Products",
+          "ONLY_ACTIVE_ARCH" : "YES"
+        }
+      }
+    }
+  },
+  "qos" : "utility",
+  "schemeCommand" : "launch",
+  "schemeCommand2" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : false,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17506" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17506"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="500" height="72"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="syk-8W-pwB">
+                    <rect key="frame" x="0.0" y="0.0" width="500" height="72"/>
+                    <subviews>
+                        <stackView orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4V1-qA-lSf">
+                            <rect key="frame" x="0.0" y="40" width="500" height="32"/>
+                            <beginningViews>
+                                <customView identifier="indent" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="glE-n5-GvM">
+                                    <rect key="frame" x="0.0" y="0.0" width="500" height="32"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="24" id="e46-s9-SnU"/>
+                                    </constraints>
+                                </customView>
+                            </beginningViews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="32" id="CXf-1r-S4k"/>
+                                <constraint firstAttribute="bottom" secondItem="glE-n5-GvM" secondAttribute="bottom" id="Q8n-B1-BN4"/>
+                                <constraint firstItem="glE-n5-GvM" firstAttribute="top" secondItem="4V1-qA-lSf" secondAttribute="top" id="wtk-62-QfA"/>
+                            </constraints>
+                            <visibilityPriorities>
+                                <integer value="1000"/>
+                            </visibilityPriorities>
+                            <customSpacing>
+                                <real value="3.4028234663852886e+38"/>
+                            </customSpacing>
+                        </stackView>
+                        <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" ambiguous="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PYQ-3r-pN6">
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="32"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="32" id="cCF-Av-2DJ"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="4V1-qA-lSf" secondAttribute="trailing" id="gIg-mU-rf1"/>
+                        <constraint firstAttribute="width" constant="500" id="gdZ-OK-tLv"/>
+                        <constraint firstItem="4V1-qA-lSf" firstAttribute="leading" secondItem="syk-8W-pwB" secondAttribute="leading" id="mrv-xd-HKD"/>
+                    </constraints>
+                    <visibilityPriorities>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                    </visibilityPriorities>
+                    <customSpacing>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                    </customSpacing>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="syk-8W-pwB" secondAttribute="trailing" id="AgW-ls-RVd"/>
+                <constraint firstItem="syk-8W-pwB" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="jEd-19-wsf"/>
+                <constraint firstItem="syk-8W-pwB" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="lUY-UX-Xvy"/>
+                <constraint firstAttribute="bottom" secondItem="syk-8W-pwB" secondAttribute="bottom" id="po9-7h-9ym"/>
+            </constraints>
+            <point key="canvasLocation" x="198.5" y="0.5"/>
+        </customView>
+    </objects>
+</document>

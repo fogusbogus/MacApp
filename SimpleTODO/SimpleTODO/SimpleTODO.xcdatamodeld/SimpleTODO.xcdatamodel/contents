@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22222" systemVersion="22G91" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Category" representedClassName="Category" syncable="YES" codeGenerationType="class">
+        <attribute name="code" optional="YES" attributeType="String"/>
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="iteration" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="createdBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="categoriesCreatedBy" inverseEntity="User"/>
+    </entity>
+    <entity name="Comment" representedClassName="Comment" syncable="YES" codeGenerationType="class">
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="removed" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <attribute name="whenRemoved" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="author" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="commentsMade" inverseEntity="User"/>
+        <relationship name="linkedToTicket" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ticket" inverseName="comments" inverseEntity="Ticket"/>
+        <relationship name="parentComment" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Comment" inverseName="replies" inverseEntity="Comment"/>
+        <relationship name="removedBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="commentsIHaveRemoved" inverseEntity="User"/>
+        <relationship name="replies" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comment" inverseName="parentComment" inverseEntity="Comment"/>
+    </entity>
+    <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
+    <entity name="Lane" representedClassName="Lane" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="order" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="visible" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <relationship name="projects" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TODOProject" inverseName="lanes" inverseEntity="TODOProject"/>
+        <relationship name="ticketsInLane" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ticket" inverseName="currentLane" inverseEntity="Ticket"/>
+    </entity>
+    <entity name="Notification" representedClassName="Notification" syncable="YES" codeGenerationType="class">
+        <attribute name="bespokeText" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String" defaultValueString="M"/>
+        <relationship name="mentionedBy" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="mentionedByUser" inverseEntity="User"/>
+        <relationship name="ticket" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ticket" inverseName="notifications" inverseEntity="Ticket"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="notifications" inverseEntity="User"/>
+    </entity>
+    <entity name="TagPool" representedClassName="TagPool" syncable="YES" codeGenerationType="class">
+        <attribute name="colorHex" attributeType="String" defaultValueString="#93FFA2"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="ticketsLinked" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ticket" inverseName="tag" inverseEntity="Ticket"/>
+    </entity>
+    <entity name="Ticket" representedClassName="Ticket" syncable="YES" codeGenerationType="class">
+        <attribute name="acceptanceCriteria" optional="YES" attributeType="String"/>
+        <attribute name="brief" optional="YES" attributeType="String"/>
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="priority" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="ticketID" optional="YES" attributeType="String"/>
+        <relationship name="assignedToUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="assignedTicket" inverseEntity="User"/>
+        <relationship name="childTickets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ticket" inverseName="parentTicket" inverseEntity="Ticket"/>
+        <relationship name="comments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comment" inverseName="linkedToTicket" inverseEntity="Comment"/>
+        <relationship name="createdBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="ticketsCreatedBy" inverseEntity="User"/>
+        <relationship name="currentLane" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lane" inverseName="ticketsInLane" inverseEntity="Lane"/>
+        <relationship name="notifications" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Notification" inverseName="ticket" inverseEntity="Notification"/>
+        <relationship name="parentTicket" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ticket" inverseName="childTickets" inverseEntity="Ticket"/>
+        <relationship name="project" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TODOProject" inverseName="tickets" inverseEntity="TODOProject"/>
+        <relationship name="tag" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TagPool" inverseName="ticketsLinked" inverseEntity="TagPool"/>
+    </entity>
+    <entity name="TODOProject" representedClassName="TODOProject" syncable="YES" codeGenerationType="class">
+        <attribute name="createdTS" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="createdBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="projectsCreated" inverseEntity="User"/>
+        <relationship name="lanes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lane" inverseName="projects" inverseEntity="Lane"/>
+        <relationship name="tickets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ticket" inverseName="project" inverseEntity="Ticket"/>
+        <relationship name="userPool" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="projects" inverseEntity="User"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="icon" optional="YES" attributeType="Transformable" valueTransformerName="UIColorValueTransformer"/>
+        <attribute name="iconBackgroundColor" optional="YES" attributeType="String"/>
+        <attribute name="iconForegroundColor" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="settings" attributeType="String" defaultValueString="{}"/>
+        <relationship name="assignedTicket" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ticket" inverseName="assignedToUser" inverseEntity="Ticket"/>
+        <relationship name="categoriesCreatedBy" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Category" inverseName="createdBy" inverseEntity="Category"/>
+        <relationship name="commentsIHaveRemoved" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comment" inverseName="removedBy" inverseEntity="Comment"/>
+        <relationship name="commentsMade" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comment" inverseName="author" inverseEntity="Comment"/>
+        <relationship name="mentionedByUser" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Notification" inverseName="mentionedBy" inverseEntity="Notification"/>
+        <relationship name="notifications" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Notification" inverseName="user" inverseEntity="Notification"/>
+        <relationship name="projects" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TODOProject" inverseName="userPool" inverseEntity="TODOProject"/>
+        <relationship name="projectsCreated" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TODOProject" inverseName="createdBy" inverseEntity="TODOProject"/>
+        <relationship name="ticketsCreatedBy" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ticket" inverseName="createdBy" inverseEntity="Ticket"/>
+    </entity>
+</model>

@@ -204,7 +204,7 @@ class StandardTicketCommentHandler : TicketCommentDelegate {
 	private var minimumLevel = Int.max
 	
 	func addCommentToTicket(ticket: Ticket) {
-		Log.funcParams("STCH::addCommentToTicket", items: ["ticket":ticket.myObjectID])
+		Log.function("STCH::addCommentToTicket", parameters: ["ticket":ticket.myObjectID])
 		Log.process("...") {
 			let comment = Comment.create(ticket)
 			self.currentComment = comment
@@ -216,7 +216,7 @@ class StandardTicketCommentHandler : TicketCommentDelegate {
 	}
 	
 	func addReplyToComment(comment: Comment) {
-		Log.funcParams("STCH::addReplyToComment", items: ["comment":comment.myObjectID])
+		Log.function("STCH::addReplyToComment", parameters: ["comment":comment.myObjectID])
 		Log.process("...") {
 			let newComment = Comment.create(comment)
 			self.currentComment = newComment
@@ -228,7 +228,7 @@ class StandardTicketCommentHandler : TicketCommentDelegate {
 	}
 	
 	func markCommentOrReplyAsRemoved(comment: Comment) {
-		Log.funcParams("STCH::markCommentOrReplyAsRemoved", items: ["comment":comment.myObjectID])
+		Log.function("STCH::markCommentOrReplyAsRemoved", parameters: ["comment":comment.myObjectID])
 		Log.process("...") {
 			if comment.isSaved() && comment.text?.count ?? 0 > 0 {
 				comment.remove()
@@ -244,7 +244,7 @@ class StandardTicketCommentHandler : TicketCommentDelegate {
 	}
 	
 	func saveComment(comment: Comment) {
-		Log.funcParams("STCH::saveComment", items: ["comment":comment.myObjectID])
+		Log.function("STCH::saveComment", parameters: ["comment":comment.myObjectID])
 		Log.process("...") {
 			try? comment.managedObjectContext?.save()
 			currentComment = nil
@@ -272,14 +272,14 @@ class StandardTicketCommentHandler : TicketCommentDelegate {
 	}
 	
 	func cancelEdit(comment: Comment) {
-		Log.funcParams("STCH::cancelEdit", items: ["comment":comment.myObjectID])
+		Log.function("STCH::cancelEdit", parameters: ["comment":comment.myObjectID])
 		Log.process("...") {
 			currentComment = nil
 		}
 	}
 	
 	func editComment(comment: Comment) {
-		Log.funcParams("STCH::editComment", items: ["comment":comment.myObjectID])
+		Log.function("STCH::editComment", parameters: ["comment":comment.myObjectID])
 		Log.process("...") {
 			currentComment = comment
 		}

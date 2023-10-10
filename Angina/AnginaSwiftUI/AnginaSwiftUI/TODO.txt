@@ -1,0 +1,9 @@
+TODO -
+
+Data model.
+
+Saving the data.
+
+Loading the data for the report.
+
+Reorganising the data and transferring to a report.

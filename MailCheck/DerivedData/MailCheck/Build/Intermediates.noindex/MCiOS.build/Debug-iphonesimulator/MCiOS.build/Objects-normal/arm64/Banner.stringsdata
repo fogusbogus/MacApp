@@ -1,0 +1,24 @@
+{
+  "source": "/Users/matt/XCode/MailCheck/MCiOS/MCiOS/Banner.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "BETA"
+      },
+      {
+        "comment": "",
+        "key": " This is a new service - your "
+      },
+      {
+        "comment": "",
+        "key": " will help us improve it."
+      },
+      {
+        "comment": "",
+        "key": "feedback"
+      }
+    ]
+  },
+  "version": 1
+}

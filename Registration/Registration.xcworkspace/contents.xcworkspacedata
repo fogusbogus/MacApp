@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:Elector+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:TrackChanges+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:../Tetris Clone/TestArea/TestArea.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../Tetris Clone/RegModel/RegModel.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../Tetris Clone/RegData/RegData.xcodeproj">
+   </FileRef>
+</Workspace>

@@ -1,0 +1,36 @@
+{
+  "source": "/Users/matt/XCode/MailCheck/MCiOS/MCiOS/Accordian.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "You can send up to 20 test emails to add to this list, to cover multiple email sending systems."
+      },
+      {
+        "comment": "",
+        "key": "Send further test\nemails"
+      },
+      {
+        "comment": "",
+        "key": "Timestamp"
+      },
+      {
+        "comment": "",
+        "key": "System"
+      },
+      {
+        "comment": "",
+        "key": "Selectors used"
+      },
+      {
+        "comment": "",
+        "key": "Was DKIM validated?"
+      },
+      {
+        "comment": "",
+        "key": "Was DKIM aligned?"
+      }
+    ]
+  },
+  "version": 1
+}

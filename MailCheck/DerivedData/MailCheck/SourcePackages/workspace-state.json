@@ -1,0 +1,27 @@
+{
+  "object" : {
+    "artifacts" : [
+
+    ],
+    "dependencies" : [
+      {
+        "basedOn" : null,
+        "packageRef" : {
+          "identity" : "usefulextensions",
+          "kind" : "remoteSourceControl",
+          "location" : "https://github.com/fogusbogus/UsefulExtensions",
+          "name" : "UsefulExtensions"
+        },
+        "state" : {
+          "checkoutState" : {
+            "branch" : "master",
+            "revision" : "916fa5fb3a68c1a0cc58c9446e15f64450e80b0a"
+          },
+          "name" : "sourceControlCheckout"
+        },
+        "subpath" : "UsefulExtensions"
+      }
+    ]
+  },
+  "version" : 5
+}

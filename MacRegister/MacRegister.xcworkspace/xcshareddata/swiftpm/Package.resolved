@@ -1,0 +1,41 @@
+{
+  "pins" : [
+    {
+      "identity" : "logginglib",
+      "kind" : "localSourceControl",
+      "location" : "/Users/matt/XCode/Libraries/LoggingLib/LoggingLib",
+      "state" : {
+        "branch" : "master",
+        "revision" : "f8ace7dee89631f82f79008f8b24026751f7ae40"
+      }
+    },
+    {
+      "identity" : "measuringview",
+      "kind" : "localSourceControl",
+      "location" : "/Users/matt/XCode/SQLComms/MeasuringView/MeasuringView",
+      "state" : {
+        "branch" : "main",
+        "revision" : "3f7c3c3b94af552a9e2d3009dbcda76b5ae3ab12"
+      }
+    },
+    {
+      "identity" : "treeviewlib",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/fogusbogus/TreeViewLib",
+      "state" : {
+        "branch" : "main",
+        "revision" : "e1576386912c9ada1f96e011d9d262c2f5702d8a"
+      }
+    },
+    {
+      "identity" : "usefulextensions",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/fogusbogus/UsefulExtensions",
+      "state" : {
+        "revision" : "5446d14931f90448ae3173c143360f58077363f5",
+        "version" : "1.0.29"
+      }
+    }
+  ],
+  "version" : 2
+}

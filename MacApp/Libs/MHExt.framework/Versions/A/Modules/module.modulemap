@@ -1,0 +1,11 @@
+framework module MHExt {
+  umbrella header "MHExt.h"
+
+  export *
+  module * { export * }
+}
+
+module MHExt.Swift {
+    header "MHExt-Swift.h"
+    requires objc
+}

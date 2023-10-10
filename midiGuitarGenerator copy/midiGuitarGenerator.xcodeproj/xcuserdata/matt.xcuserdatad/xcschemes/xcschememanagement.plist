@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>GuitarTest.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>midiGuitarGenerator.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>C94E6A282AD2F1C8002F818A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C94E6A322AD2F1C8002F818A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C94E6A652AD477F8002F818A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C94E6A782AD477F9002F818A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C94E6A822AD477F9002F818A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

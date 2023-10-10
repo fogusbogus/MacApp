@@ -1,0 +1,20 @@
+version: "Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)"
+options: "e2c095fc1cb951571c06ef7bdf523aed4002b702f796e1e9034a3771fde20e6e"
+build_start_time: [1670891231, 244377136]
+build_end_time: [1670891231, 287805080]
+inputs:
+  "/Users/matt/XCode/MailCheck/MCiOS/MCiOS/AboutThisService.swift": !private [1670265685, 185019493]
+  "/Users/matt/XCode/MailCheck/MCiOS/MCiOS/Accordian.swift": !private [1670610289, 829542160]
+  "/Users/matt/XCode/MailCheck/MCiOS/MCiOS/Banner.swift": !private [1670261602, 513154506]
+  "/Users/matt/XCode/MailCheck/MCiOS/MCiOS/Check.swift": !private [1670265303, 359083652]
+  "/Users/matt/XCode/MailCheck/MCiOS/MCiOS/CheckHeading.swift": !private [1670261453, 511356353]
+  "/Users/matt/XCode/MailCheck/MCiOS/MCiOS/ContentView.swift": !private [1669896535, 592795848]
+  "/Users/matt/XCode/MailCheck/MCiOS/MCiOS/DMARCResults.swift": !private [1670522567, 758164882]
+  "/Users/matt/XCode/MailCheck/MCiOS/MCiOS/Extensions.swift": !private [1670421747, 535784959]
+  "/Users/matt/XCode/MailCheck/MCiOS/MCiOS/Header.swift": !private [1670263340, 681575298]
+  "/Users/matt/XCode/MailCheck/MCiOS/MCiOS/Home.swift": !private [1670265624, 93174695]
+  "/Users/matt/XCode/MailCheck/MCiOS/MCiOS/InfoStripper.swift": !private [1670451056, 355917692]
+  "/Users/matt/XCode/MailCheck/MCiOS/MCiOS/MCiOSApp.swift": !private [1670522437, 381468057]
+  "/Users/matt/XCode/MailCheck/MCiOS/MCiOS/Measurer.swift": !private [1670684954, 906973361]
+  "/Users/matt/XCode/MailCheck/MCiOS/MCiOS/SimpleTestResult.swift": !private [1670610970, 843590259]
+  "/Users/matt/XCode/MailCheck/MCiOS/MCiOS/TickMarker.swift": !private [1670421422, 165353298]

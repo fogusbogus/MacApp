@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "measuringview",
+      "kind" : "localSourceControl",
+      "location" : "/Users/matt/XCode/SQLComms/MeasuringView/MeasuringView",
+      "state" : {
+        "branch" : "main",
+        "revision" : "b8d234844dc0f4d5e88095931e9002e4e4ee3cc5"
+      }
+    },
+    {
+      "identity" : "usefulextensions",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/fogusbogus/UsefulExtensions",
+      "state" : {
+        "branch" : "master",
+        "revision" : "916fa5fb3a68c1a0cc58c9446e15f64450e80b0a"
+      }
+    }
+  ],
+  "version" : 2
+}

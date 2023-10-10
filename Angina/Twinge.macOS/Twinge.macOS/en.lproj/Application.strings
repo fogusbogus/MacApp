@@ -1,0 +1,18 @@
+/* 
+  Application.strings
+  Twinge.macOS
+
+  Created by Matt Hogg on 18/10/2020.
+  
+*/
+
+/* Application */
+"Name"="Twinge";
+"Title"="{Name} for macOS";
+"Version"="1.0";
+"VersionHistory"="1.0";
+
+/* Version: 1.0 */
+"Author"="Matt Hogg";
+"Period"="Oct 2020 onwards";
+"Milestones"="Project creation";

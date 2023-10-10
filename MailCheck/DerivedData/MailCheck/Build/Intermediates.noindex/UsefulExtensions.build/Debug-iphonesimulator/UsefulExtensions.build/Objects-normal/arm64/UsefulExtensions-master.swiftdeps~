@@ -1,0 +1,40 @@
+version: "Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)"
+options: "ee38c641995dc3906eecd56429cecc09a2a98fe4e15a1a88a87f61019ea11b1e"
+build_start_time: [1670891230, 795452117]
+build_end_time: [1670891230, 847475051]
+inputs:
+  ? "/Users/matt/XCode/MailCheck/DerivedData/MailCheck/SourcePackages/checkouts/UsefulExtensions/Sources/UsefulExtensions/AES256.swift"
+  : !private [1670866579, 330637931]
+  ? "/Users/matt/XCode/MailCheck/DerivedData/MailCheck/SourcePackages/checkouts/UsefulExtensions/Sources/UsefulExtensions/Arrays.swift"
+  : !private [1670866579, 330786228]
+  ? "/Users/matt/XCode/MailCheck/DerivedData/MailCheck/SourcePackages/checkouts/UsefulExtensions/Sources/UsefulExtensions/BaseLog.swift"
+  : !private [1670866579, 330957174]
+  ? "/Users/matt/XCode/MailCheck/DerivedData/MailCheck/SourcePackages/checkouts/UsefulExtensions/Sources/UsefulExtensions/CSVStringExtensions.swift"
+  : !private [1670866579, 331091403]
+  ? "/Users/matt/XCode/MailCheck/DerivedData/MailCheck/SourcePackages/checkouts/UsefulExtensions/Sources/UsefulExtensions/Collections.swift"
+  : !private [1670866579, 331222772]
+  ? "/Users/matt/XCode/MailCheck/DerivedData/MailCheck/SourcePackages/checkouts/UsefulExtensions/Sources/UsefulExtensions/ConsoleOutput.swift"
+  : !private [1670866579, 331354618]
+  "/Users/matt/XCode/MailCheck/DerivedData/MailCheck/SourcePackages/checkouts/UsefulExtensions/Sources/UsefulExtensions/Date.swift": !private [1670866579, 331493854]
+  ? "/Users/matt/XCode/MailCheck/DerivedData/MailCheck/SourcePackages/checkouts/UsefulExtensions/Sources/UsefulExtensions/DelimitedString.swift"
+  : !private [1670866579, 331614494]
+  ? "/Users/matt/XCode/MailCheck/DerivedData/MailCheck/SourcePackages/checkouts/UsefulExtensions/Sources/UsefulExtensions/EasyURL.swift"
+  : !private [1670866579, 331731557]
+  ? "/Users/matt/XCode/MailCheck/DerivedData/MailCheck/SourcePackages/checkouts/UsefulExtensions/Sources/UsefulExtensions/Encoding.swift"
+  : !private [1670866579, 331844329]
+  ? "/Users/matt/XCode/MailCheck/DerivedData/MailCheck/SourcePackages/checkouts/UsefulExtensions/Sources/UsefulExtensions/FileData.swift"
+  : !private [1670866579, 331969976]
+  "/Users/matt/XCode/MailCheck/DerivedData/MailCheck/SourcePackages/checkouts/UsefulExtensions/Sources/UsefulExtensions/Html.swift": !private [1670866579, 332120895]
+  ? "/Users/matt/XCode/MailCheck/DerivedData/MailCheck/SourcePackages/checkouts/UsefulExtensions/Sources/UsefulExtensions/IDProvider.swift"
+  : !private [1670866579, 332256078]
+  ? "/Users/matt/XCode/MailCheck/DerivedData/MailCheck/SourcePackages/checkouts/UsefulExtensions/Sources/UsefulExtensions/JCollection.swift"
+  : !private [1670866579, 332392692]
+  ? "/Users/matt/XCode/MailCheck/DerivedData/MailCheck/SourcePackages/checkouts/UsefulExtensions/Sources/UsefulExtensions/NibView.swift"
+  : !private [1670866579, 332508087]
+  ? "/Users/matt/XCode/MailCheck/DerivedData/MailCheck/SourcePackages/checkouts/UsefulExtensions/Sources/UsefulExtensions/Numerical.swift"
+  : !private [1670866579, 332624912]
+  "/Users/matt/XCode/MailCheck/DerivedData/MailCheck/SourcePackages/checkouts/UsefulExtensions/Sources/UsefulExtensions/Real.swift": !private [1670866579, 332726478]
+  ? "/Users/matt/XCode/MailCheck/DerivedData/MailCheck/SourcePackages/checkouts/UsefulExtensions/Sources/UsefulExtensions/ReturnValue.swift"
+  : !private [1670866579, 332834243]
+  ? "/Users/matt/XCode/MailCheck/DerivedData/MailCheck/SourcePackages/checkouts/UsefulExtensions/Sources/UsefulExtensions/Strings.swift"
+  : !private [1670866579, 332974672]

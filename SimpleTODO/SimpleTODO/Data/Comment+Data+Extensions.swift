@@ -25,7 +25,8 @@ extension Comment {
 	}
 	
 	static func create(_ template: NSManagedObject? = nil) -> Comment {
-		return Log.return {
+		return Log.return("Create a comment") {
+			Log.function("Comment::create()", parameters: ["template":template?.myObjectID ?? ""])
 
 			let ret = Comment(context: template?.managedObjectContext ?? PersistenceController.shared.container.viewContext)
 			ret.created = .now
@@ -33,10 +34,8 @@ extension Comment {
 			ret.text = ""
 			return ret
 			
-		} pre: {
-			Log.funcParams("Comment::create()", items: ["template":template?.myObjectID ?? ""])
-		} post: { ret in
-			Log.log("<< \(ret.myObjectID)")
+		} end: { ret in
+			return "<< \(ret.myObjectID)"
 		}
 
 	}

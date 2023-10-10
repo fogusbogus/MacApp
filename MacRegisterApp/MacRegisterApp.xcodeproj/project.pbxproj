@@ -50,6 +50,7 @@
 		C9AC94AD2A18F0E700C3085A /* LoggingLib in Frameworks */ = {isa = PBXBuildFile; productRef = C9AC94AC2A18F0E700C3085A /* LoggingLib */; };
 		C9AC94B02A18F31600C3085A /* MacRegisterSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9AC94AF2A18F31600C3085A /* MacRegisterSupport.framework */; };
 		C9AC94B12A18F31600C3085A /* MacRegisterSupport.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C9AC94AF2A18F31600C3085A /* MacRegisterSupport.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C9B8C5222ABDA32A003C2212 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = C9B8C5212ABDA32A003C2212 /* Localizable.xcstrings */; };
 		C9D4D6832A4D8E2E008365F3 /* Elector+Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4D6822A4D8E2E008365F3 /* Elector+Meta.swift */; };
 		C9D4D6852A4D8E50008365F3 /* MetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4D6842A4D8E50008365F3 /* MetaData.swift */; };
 		C9D4D6892A4D8EC7008365F3 /* MetaNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4D6882A4D8EC7008365F3 /* MetaNote.swift */; };
@@ -127,6 +128,7 @@
 		C9AC949A2A18F0C400C3085A /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		C9AC949F2A18F0C400C3085A /* MacRegisterApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacRegisterApp.entitlements; sourceTree = "<group>"; };
 		C9AC94AF2A18F31600C3085A /* MacRegisterSupport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MacRegisterSupport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9B8C5212ABDA32A003C2212 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		C9D4D6822A4D8E2E008365F3 /* Elector+Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Elector+Meta.swift"; sourceTree = "<group>"; };
 		C9D4D6842A4D8E50008365F3 /* MetaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaData.swift; sourceTree = "<group>"; };
 		C9D4D6882A4D8EC7008365F3 /* MetaNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaNote.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 		C9AC94852A18F0C400C3085A = {
 			isa = PBXGroup;
 			children = (
+				C9B8C5212ABDA32A003C2212 /* Localizable.xcstrings */,
 				C9AC94902A18F0C400C3085A /* MacRegisterApp */,
 				C9AC948F2A18F0C400C3085A /* Products */,
 				C9AC94AE2A18F31600C3085A /* Frameworks */,
@@ -371,7 +374,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					C9AC948D2A18F0C400C3085A = {
 						CreatedOnToolsVersion = 14.3;
@@ -385,6 +388,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"en-GB",
+				de,
 			);
 			mainGroup = C9AC94852A18F0C400C3085A;
 			packageReferences = (
@@ -408,6 +413,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9AC94992A18F0C400C3085A /* Preview Assets.xcassets in Resources */,
+				C9B8C5222ABDA32A003C2212 /* Localizable.xcstrings in Resources */,
 				C9007AC32A1EC1FA00C7EEF4 /* Migration.json in Resources */,
 				C9AC94962A18F0C400C3085A /* Assets.xcassets in Resources */,
 				C9F9C25E2A1F8E3F0056BCBF /* TestData.json in Resources */,
@@ -481,6 +487,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -510,9 +518,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -541,6 +551,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -570,9 +582,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -599,6 +613,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"MacRegisterApp/Preview Content\"";
 				DEVELOPMENT_TEAM = JH3ZC8234Q;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -627,6 +642,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"MacRegisterApp/Preview Content\"";
 				DEVELOPMENT_TEAM = JH3ZC8234Q;
 				ENABLE_HARDENED_RUNTIME = YES;

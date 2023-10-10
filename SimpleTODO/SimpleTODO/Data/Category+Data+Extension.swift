@@ -10,7 +10,8 @@ import CoreData
 
 extension Category {
 	static func `get`(withName: String) -> Category? {
-		return Log.return {
+		return Log.return("get Category with name: '\(withName)'") {
+			Log.function("Category::get", parameters: ["withName":withName])
 			let context = PersistenceController.shared.container.viewContext
 			let fetch = Category.fetchRequest()
 			fetch.predicate = NSPredicate(format: "name LIKE %@", withName)
@@ -20,10 +21,8 @@ extension Category {
 			catch {
 			}
 			return nil
-		} pre: {
-			Log.funcParams("Category::get", items: ["withName":withName])
-		} post: { category in
-			Log.log("<< \(category?.myObjectID ?? "nil")")
+		} end: { category in
+			return "<< \(category?.myObjectID ?? "nil")"
 		}
 
 	}
@@ -44,43 +43,37 @@ extension Category {
 	
 	@discardableResult
 	static func assert(withName: String, onCreateOrUpdate: ((CreateOrUpdatePredicate) -> Void)? = nil) -> Category {
-		return Log.return {
+		return Log.return("Assert category with name '\(withName)'") {
+			Log.function("Category::assert", parameters: ["withName":withName, "onCreateOrUpdate":(onCreateOrUpdate != nil)])
 			if let ret = get(withName: withName) {
 				onCreateOrUpdate?((category: ret, isNew: false))
 				return ret
 			}
-			return Log.return {
+			return Log.return("Couldn't find the category. Creating a new one.") {
 				let new = Category(context: PersistenceController.shared.container.viewContext)
 				new.created = Date.now
 				new.name = withName
 				onCreateOrUpdate?((category: new, isNew: true))
 				return new
-			} pre: {
-				Log.log("Couldn't find the category. Creating a new one.")
-			} post: { _ in
-				
 			}
 
-		} pre: {
-			Log.funcParams("Category::assert", items: ["withName":withName, "onCreateOrUpdate":(onCreateOrUpdate != nil)])
-		} post: { category in
-			Log.log("<< \(category.myObjectID)")
+		} end: { category in
+			return "<< \(category.myObjectID)"
 		}
 
 	}
 	
 	func getNewTicket(save: Bool = true) -> String {
-		return Log.return {
+		return Log.return("get a new ticket") {
+			Log.function("Cateogry::getNewTicket", parameters: ["save":save])
 			self.iteration += 1
 			if save {
 				try? PersistenceController.shared.container.viewContext.save()
 			}
 			
 			return "\(code ?? "??")-\(iteration)"
-		} pre: {
-			Log.funcParams("Cateogry::getNewTicket", items: ["save":save])
-		} post: { id in
-			Log.log("<< \(id)")
+		} end: { id in
+			return "<< \(id)"
 		}
 
 	}

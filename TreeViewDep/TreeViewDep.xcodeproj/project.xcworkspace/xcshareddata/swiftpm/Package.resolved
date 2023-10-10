@@ -1,0 +1,41 @@
+{
+  "pins" : [
+    {
+      "identity" : "logginglib",
+      "kind" : "localSourceControl",
+      "location" : "/Users/matt/XCode/Libraries/LoggingLib/LoggingLib",
+      "state" : {
+        "branch" : "master",
+        "revision" : "d882cb0f6cf03f5da710fe994aca351e0fe9e25b"
+      }
+    },
+    {
+      "identity" : "sqldb",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/fogusbogus/SQLDB",
+      "state" : {
+        "revision" : "cf5bd85035a99d9e8e897997d59134052232ea3f",
+        "version" : "1.0.19"
+      }
+    },
+    {
+      "identity" : "treeviewlib",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/fogusbogus/TreeViewLib",
+      "state" : {
+        "branch" : "main",
+        "revision" : "43fb05994eae063f6be6ef5e1b071a3e393b2cd0"
+      }
+    },
+    {
+      "identity" : "usefulextensions",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/fogusbogus/UsefulExtensions",
+      "state" : {
+        "revision" : "5446d14931f90448ae3173c143360f58077363f5",
+        "version" : "1.0.29"
+      }
+    }
+  ],
+  "version" : 2
+}

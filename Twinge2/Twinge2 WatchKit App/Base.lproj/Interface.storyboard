@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16096" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Twinge2_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="Dismiss" id="TY3-zE-glu">
+                            <color key="titleColor" red="1" green="0.55384824503013119" blue="0.0078995121765893517" alpha="0.5490196078431373" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="dismissClick" destination="AgC-eL-Hgc" id="cF7-9u-hsa"/>
+                            </connections>
+                        </button>
+                        <imageView width="1" height="100" alignment="center" image="heart.fill" catalog="system" id="aIA-R5-5Ir">
+                            <gestureRecognizers>
+                                <tapGestureRecognizer id="UZd-tE-yZT">
+                                    <connections>
+                                        <action selector="selected:" destination="AgC-eL-Hgc" id="7ut-AB-e7m"/>
+                                    </connections>
+                                </tapGestureRecognizer>
+                            </gestureRecognizers>
+                            <color key="tintColor" red="0.63596526015228427" green="0.024431050133703249" blue="0.048253425002554244" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </imageView>
+                        <label width="1" alignment="left" text="-" textAlignment="center" id="jSy-BW-SmD"/>
+                    </items>
+                    <connections>
+                        <outlet property="btnDismiss" destination="TY3-zE-glu" id="n9C-uU-x2I"/>
+                        <outlet property="heart" destination="aIA-R5-5Ir" id="d53-AZ-oGW"/>
+                        <outlet property="heartTap" destination="UZd-tE-yZT" id="U1B-al-bRj"/>
+                        <outlet property="lblBPM" destination="jSy-BW-SmD" id="B9d-oi-zzD"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" numberOfLines="0" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                        <segue destination="eXb-UN-Cd0" kind="relationship" relationship="dynamicInteractiveNotificationInterface" id="mpB-YA-K8N"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Twinge2_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="Niz-AI-uX2">
+            <objects>
+                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="Twinge2_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="345"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="heart.fill" catalog="system" width="128" height="105"/>
+    </resources>
+</document>
