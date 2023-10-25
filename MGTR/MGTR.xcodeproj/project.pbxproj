@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C9D2C6A52AE4738A007D5A08 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D2C6A42AE4738A007D5A08 /* main.swift */; };
+		C9DC394C2AE928BB006A0BA1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DC394B2AE928BB006A0BA1 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		C9D2C69F2AE4738A007D5A08 /* CopyFiles */ = {
+		C9DC39462AE928BB006A0BA1 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -23,12 +23,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C9D2C6A12AE4738A007D5A08 /* MGTR */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MGTR; sourceTree = BUILT_PRODUCTS_DIR; };
-		C9D2C6A42AE4738A007D5A08 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		C9DC39482AE928BB006A0BA1 /* MGTR */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MGTR; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9DC394B2AE928BB006A0BA1 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		C9D2C69E2AE4738A007D5A08 /* Frameworks */ = {
+		C9DC39452AE928BB006A0BA1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -38,26 +38,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C9D2C6982AE4738A007D5A08 = {
+		C9DC393F2AE928BB006A0BA1 = {
 			isa = PBXGroup;
 			children = (
-				C9D2C6A32AE4738A007D5A08 /* MGTR */,
-				C9D2C6A22AE4738A007D5A08 /* Products */,
+				C9DC394A2AE928BB006A0BA1 /* MGTR */,
+				C9DC39492AE928BB006A0BA1 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		C9D2C6A22AE4738A007D5A08 /* Products */ = {
+		C9DC39492AE928BB006A0BA1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C9D2C6A12AE4738A007D5A08 /* MGTR */,
+				C9DC39482AE928BB006A0BA1 /* MGTR */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C9D2C6A32AE4738A007D5A08 /* MGTR */ = {
+		C9DC394A2AE928BB006A0BA1 /* MGTR */ = {
 			isa = PBXGroup;
 			children = (
-				C9D2C6A42AE4738A007D5A08 /* main.swift */,
+				C9DC394B2AE928BB006A0BA1 /* main.swift */,
 			);
 			path = MGTR;
 			sourceTree = "<group>";
@@ -65,13 +65,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C9D2C6A02AE4738A007D5A08 /* MGTR */ = {
+		C9DC39472AE928BB006A0BA1 /* MGTR */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C9D2C6A82AE4738A007D5A08 /* Build configuration list for PBXNativeTarget "MGTR" */;
+			buildConfigurationList = C9DC394F2AE928BB006A0BA1 /* Build configuration list for PBXNativeTarget "MGTR" */;
 			buildPhases = (
-				C9D2C69D2AE4738A007D5A08 /* Sources */,
-				C9D2C69E2AE4738A007D5A08 /* Frameworks */,
-				C9D2C69F2AE4738A007D5A08 /* CopyFiles */,
+				C9DC39442AE928BB006A0BA1 /* Sources */,
+				C9DC39452AE928BB006A0BA1 /* Frameworks */,
+				C9DC39462AE928BB006A0BA1 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -79,25 +79,25 @@
 			);
 			name = MGTR;
 			productName = MGTR;
-			productReference = C9D2C6A12AE4738A007D5A08 /* MGTR */;
+			productReference = C9DC39482AE928BB006A0BA1 /* MGTR */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		C9D2C6992AE4738A007D5A08 /* Project object */ = {
+		C9DC39402AE928BB006A0BA1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					C9D2C6A02AE4738A007D5A08 = {
+					C9DC39472AE928BB006A0BA1 = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
 				};
 			};
-			buildConfigurationList = C9D2C69C2AE4738A007D5A08 /* Build configuration list for PBXProject "MGTR" */;
+			buildConfigurationList = C9DC39432AE928BB006A0BA1 /* Build configuration list for PBXProject "MGTR" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -105,29 +105,29 @@
 				en,
 				Base,
 			);
-			mainGroup = C9D2C6982AE4738A007D5A08;
-			productRefGroup = C9D2C6A22AE4738A007D5A08 /* Products */;
+			mainGroup = C9DC393F2AE928BB006A0BA1;
+			productRefGroup = C9DC39492AE928BB006A0BA1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C9D2C6A02AE4738A007D5A08 /* MGTR */,
+				C9DC39472AE928BB006A0BA1 /* MGTR */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C9D2C69D2AE4738A007D5A08 /* Sources */ = {
+		C9DC39442AE928BB006A0BA1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9D2C6A52AE4738A007D5A08 /* main.swift in Sources */,
+				C9DC394C2AE928BB006A0BA1 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		C9D2C6A62AE4738A007D5A08 /* Debug */ = {
+		C9DC394D2AE928BB006A0BA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -190,7 +190,7 @@
 			};
 			name = Debug;
 		};
-		C9D2C6A72AE4738A007D5A08 /* Release */ = {
+		C9DC394E2AE928BB006A0BA1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -245,7 +245,7 @@
 			};
 			name = Release;
 		};
-		C9D2C6A92AE4738A007D5A08 /* Debug */ = {
+		C9DC39502AE928BB006A0BA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -256,7 +256,7 @@
 			};
 			name = Debug;
 		};
-		C9D2C6AA2AE4738A007D5A08 /* Release */ = {
+		C9DC39512AE928BB006A0BA1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -270,25 +270,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C9D2C69C2AE4738A007D5A08 /* Build configuration list for PBXProject "MGTR" */ = {
+		C9DC39432AE928BB006A0BA1 /* Build configuration list for PBXProject "MGTR" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C9D2C6A62AE4738A007D5A08 /* Debug */,
-				C9D2C6A72AE4738A007D5A08 /* Release */,
+				C9DC394D2AE928BB006A0BA1 /* Debug */,
+				C9DC394E2AE928BB006A0BA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C9D2C6A82AE4738A007D5A08 /* Build configuration list for PBXNativeTarget "MGTR" */ = {
+		C9DC394F2AE928BB006A0BA1 /* Build configuration list for PBXNativeTarget "MGTR" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C9D2C6A92AE4738A007D5A08 /* Debug */,
-				C9D2C6AA2AE4738A007D5A08 /* Release */,
+				C9DC39502AE928BB006A0BA1 /* Debug */,
+				C9DC39512AE928BB006A0BA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = C9D2C6992AE4738A007D5A08 /* Project object */;
+	rootObject = C9DC39402AE928BB006A0BA1 /* Project object */;
 }

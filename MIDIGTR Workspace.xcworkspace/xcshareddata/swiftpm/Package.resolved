@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "logginglib",
+      "kind" : "localSourceControl",
+      "location" : "/Users/matt/XCode/Libraries/LoggingLib/LoggingLib",
+      "state" : {
+        "revision" : "47b513966ccdc26f512054b525ddb5b087e952b3",
+        "version" : "1.3.8"
+      }
+    },
+    {
+      "identity" : "swift-argument-parser",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-argument-parser.git",
+      "state" : {
+        "revision" : "8f4d2753f0e4778c76d5f05ad16c74f707390531",
+        "version" : "1.2.3"
+      }
+    }
+  ],
+  "version" : 2
+}
