@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "logginglib",
+      "kind" : "localSourceControl",
+      "location" : "/Users/matt/XCode/Libraries/LoggingLib/LoggingLib",
+      "state" : {
+        "branch" : "master",
+        "revision" : "58e4b78bd27d8d88614f0f8cdae8902def06c7c2"
+      }
+    }
+  ],
+  "version" : 2
+}
