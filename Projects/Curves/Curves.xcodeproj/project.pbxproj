@@ -1,0 +1,586 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C9029BEF2B14C26F00D2ABC4 /* CurvesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9029BEE2B14C26F00D2ABC4 /* CurvesApp.swift */; };
+		C9029BF12B14C26F00D2ABC4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9029BF02B14C26F00D2ABC4 /* ContentView.swift */; };
+		C9029BF32B14C27000D2ABC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9029BF22B14C27000D2ABC4 /* Assets.xcassets */; };
+		C9029BF62B14C27000D2ABC4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9029BF52B14C27000D2ABC4 /* Preview Assets.xcassets */; };
+		C9029C012B14C27100D2ABC4 /* CurvesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9029C002B14C27100D2ABC4 /* CurvesTests.swift */; };
+		C9029C0B2B14C27100D2ABC4 /* CurvesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9029C0A2B14C27100D2ABC4 /* CurvesUITests.swift */; };
+		C9029C0D2B14C27100D2ABC4 /* CurvesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9029C0C2B14C27100D2ABC4 /* CurvesUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C9029BFD2B14C27100D2ABC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9029BE32B14C26F00D2ABC4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9029BEA2B14C26F00D2ABC4;
+			remoteInfo = Curves;
+		};
+		C9029C072B14C27100D2ABC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9029BE32B14C26F00D2ABC4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9029BEA2B14C26F00D2ABC4;
+			remoteInfo = Curves;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C9029BEB2B14C26F00D2ABC4 /* Curves.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Curves.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9029BEE2B14C26F00D2ABC4 /* CurvesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvesApp.swift; sourceTree = "<group>"; };
+		C9029BF02B14C26F00D2ABC4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C9029BF22B14C27000D2ABC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C9029BF52B14C27000D2ABC4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C9029BF72B14C27000D2ABC4 /* Curves.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Curves.entitlements; sourceTree = "<group>"; };
+		C9029BFC2B14C27100D2ABC4 /* CurvesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurvesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9029C002B14C27100D2ABC4 /* CurvesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvesTests.swift; sourceTree = "<group>"; };
+		C9029C062B14C27100D2ABC4 /* CurvesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurvesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9029C0A2B14C27100D2ABC4 /* CurvesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvesUITests.swift; sourceTree = "<group>"; };
+		C9029C0C2B14C27100D2ABC4 /* CurvesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C9029BE82B14C26F00D2ABC4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9029BF92B14C27100D2ABC4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9029C032B14C27100D2ABC4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C9029BE22B14C26F00D2ABC4 = {
+			isa = PBXGroup;
+			children = (
+				C9029BED2B14C26F00D2ABC4 /* Curves */,
+				C9029BFF2B14C27100D2ABC4 /* CurvesTests */,
+				C9029C092B14C27100D2ABC4 /* CurvesUITests */,
+				C9029BEC2B14C26F00D2ABC4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C9029BEC2B14C26F00D2ABC4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C9029BEB2B14C26F00D2ABC4 /* Curves.app */,
+				C9029BFC2B14C27100D2ABC4 /* CurvesTests.xctest */,
+				C9029C062B14C27100D2ABC4 /* CurvesUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C9029BED2B14C26F00D2ABC4 /* Curves */ = {
+			isa = PBXGroup;
+			children = (
+				C9029BEE2B14C26F00D2ABC4 /* CurvesApp.swift */,
+				C9029BF02B14C26F00D2ABC4 /* ContentView.swift */,
+				C9029BF22B14C27000D2ABC4 /* Assets.xcassets */,
+				C9029BF72B14C27000D2ABC4 /* Curves.entitlements */,
+				C9029BF42B14C27000D2ABC4 /* Preview Content */,
+			);
+			path = Curves;
+			sourceTree = "<group>";
+		};
+		C9029BF42B14C27000D2ABC4 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C9029BF52B14C27000D2ABC4 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C9029BFF2B14C27100D2ABC4 /* CurvesTests */ = {
+			isa = PBXGroup;
+			children = (
+				C9029C002B14C27100D2ABC4 /* CurvesTests.swift */,
+			);
+			path = CurvesTests;
+			sourceTree = "<group>";
+		};
+		C9029C092B14C27100D2ABC4 /* CurvesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C9029C0A2B14C27100D2ABC4 /* CurvesUITests.swift */,
+				C9029C0C2B14C27100D2ABC4 /* CurvesUITestsLaunchTests.swift */,
+			);
+			path = CurvesUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C9029BEA2B14C26F00D2ABC4 /* Curves */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9029C102B14C27100D2ABC4 /* Build configuration list for PBXNativeTarget "Curves" */;
+			buildPhases = (
+				C9029BE72B14C26F00D2ABC4 /* Sources */,
+				C9029BE82B14C26F00D2ABC4 /* Frameworks */,
+				C9029BE92B14C26F00D2ABC4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Curves;
+			productName = Curves;
+			productReference = C9029BEB2B14C26F00D2ABC4 /* Curves.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C9029BFB2B14C27100D2ABC4 /* CurvesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9029C132B14C27100D2ABC4 /* Build configuration list for PBXNativeTarget "CurvesTests" */;
+			buildPhases = (
+				C9029BF82B14C27100D2ABC4 /* Sources */,
+				C9029BF92B14C27100D2ABC4 /* Frameworks */,
+				C9029BFA2B14C27100D2ABC4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9029BFE2B14C27100D2ABC4 /* PBXTargetDependency */,
+			);
+			name = CurvesTests;
+			productName = CurvesTests;
+			productReference = C9029BFC2B14C27100D2ABC4 /* CurvesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C9029C052B14C27100D2ABC4 /* CurvesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9029C162B14C27100D2ABC4 /* Build configuration list for PBXNativeTarget "CurvesUITests" */;
+			buildPhases = (
+				C9029C022B14C27100D2ABC4 /* Sources */,
+				C9029C032B14C27100D2ABC4 /* Frameworks */,
+				C9029C042B14C27100D2ABC4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9029C082B14C27100D2ABC4 /* PBXTargetDependency */,
+			);
+			name = CurvesUITests;
+			productName = CurvesUITests;
+			productReference = C9029C062B14C27100D2ABC4 /* CurvesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C9029BE32B14C26F00D2ABC4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					C9029BEA2B14C26F00D2ABC4 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					C9029BFB2B14C27100D2ABC4 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = C9029BEA2B14C26F00D2ABC4;
+					};
+					C9029C052B14C27100D2ABC4 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = C9029BEA2B14C26F00D2ABC4;
+					};
+				};
+			};
+			buildConfigurationList = C9029BE62B14C26F00D2ABC4 /* Build configuration list for PBXProject "Curves" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C9029BE22B14C26F00D2ABC4;
+			productRefGroup = C9029BEC2B14C26F00D2ABC4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C9029BEA2B14C26F00D2ABC4 /* Curves */,
+				C9029BFB2B14C27100D2ABC4 /* CurvesTests */,
+				C9029C052B14C27100D2ABC4 /* CurvesUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C9029BE92B14C26F00D2ABC4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9029BF62B14C27000D2ABC4 /* Preview Assets.xcassets in Resources */,
+				C9029BF32B14C27000D2ABC4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9029BFA2B14C27100D2ABC4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9029C042B14C27100D2ABC4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C9029BE72B14C26F00D2ABC4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9029BF12B14C26F00D2ABC4 /* ContentView.swift in Sources */,
+				C9029BEF2B14C26F00D2ABC4 /* CurvesApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9029BF82B14C27100D2ABC4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9029C012B14C27100D2ABC4 /* CurvesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9029C022B14C27100D2ABC4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9029C0D2B14C27100D2ABC4 /* CurvesUITestsLaunchTests.swift in Sources */,
+				C9029C0B2B14C27100D2ABC4 /* CurvesUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C9029BFE2B14C27100D2ABC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9029BEA2B14C26F00D2ABC4 /* Curves */;
+			targetProxy = C9029BFD2B14C27100D2ABC4 /* PBXContainerItemProxy */;
+		};
+		C9029C082B14C27100D2ABC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9029BEA2B14C26F00D2ABC4 /* Curves */;
+			targetProxy = C9029C072B14C27100D2ABC4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C9029C0E2B14C27100D2ABC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C9029C0F2B14C27100D2ABC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		C9029C112B14C27100D2ABC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Curves/Curves.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Curves/Preview Content\"";
+				DEVELOPMENT_TEAM = JH3ZC8234Q;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fogusbogus.Curves;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C9029C122B14C27100D2ABC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Curves/Curves.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Curves/Preview Content\"";
+				DEVELOPMENT_TEAM = JH3ZC8234Q;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fogusbogus.Curves;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		C9029C142B14C27100D2ABC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JH3ZC8234Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fogusbogus.CurvesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Curves.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Curves";
+			};
+			name = Debug;
+		};
+		C9029C152B14C27100D2ABC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JH3ZC8234Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fogusbogus.CurvesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Curves.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Curves";
+			};
+			name = Release;
+		};
+		C9029C172B14C27100D2ABC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JH3ZC8234Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fogusbogus.CurvesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Curves;
+			};
+			name = Debug;
+		};
+		C9029C182B14C27100D2ABC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JH3ZC8234Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fogusbogus.CurvesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Curves;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C9029BE62B14C26F00D2ABC4 /* Build configuration list for PBXProject "Curves" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9029C0E2B14C27100D2ABC4 /* Debug */,
+				C9029C0F2B14C27100D2ABC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9029C102B14C27100D2ABC4 /* Build configuration list for PBXNativeTarget "Curves" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9029C112B14C27100D2ABC4 /* Debug */,
+				C9029C122B14C27100D2ABC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9029C132B14C27100D2ABC4 /* Build configuration list for PBXNativeTarget "CurvesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9029C142B14C27100D2ABC4 /* Debug */,
+				C9029C152B14C27100D2ABC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9029C162B14C27100D2ABC4 /* Build configuration list for PBXNativeTarget "CurvesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9029C172B14C27100D2ABC4 /* Debug */,
+				C9029C182B14C27100D2ABC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C9029BE32B14C26F00D2ABC4 /* Project object */;
+}
