@@ -1,0 +1,586 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C9F9C2EE2B22966100CD6FF4 /* MGTRFileEditApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F9C2ED2B22966100CD6FF4 /* MGTRFileEditApp.swift */; };
+		C9F9C2F02B22966100CD6FF4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F9C2EF2B22966100CD6FF4 /* ContentView.swift */; };
+		C9F9C2F22B22966200CD6FF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9F9C2F12B22966200CD6FF4 /* Assets.xcassets */; };
+		C9F9C2F52B22966200CD6FF4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9F9C2F42B22966200CD6FF4 /* Preview Assets.xcassets */; };
+		C9F9C3002B22966200CD6FF4 /* MGTRFileEditTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F9C2FF2B22966200CD6FF4 /* MGTRFileEditTests.swift */; };
+		C9F9C30A2B22966200CD6FF4 /* MGTRFileEditUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F9C3092B22966200CD6FF4 /* MGTRFileEditUITests.swift */; };
+		C9F9C30C2B22966200CD6FF4 /* MGTRFileEditUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F9C30B2B22966200CD6FF4 /* MGTRFileEditUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C9F9C2FC2B22966200CD6FF4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9F9C2E22B22966100CD6FF4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9F9C2E92B22966100CD6FF4;
+			remoteInfo = MGTRFileEdit;
+		};
+		C9F9C3062B22966200CD6FF4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9F9C2E22B22966100CD6FF4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9F9C2E92B22966100CD6FF4;
+			remoteInfo = MGTRFileEdit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C9F9C2EA2B22966100CD6FF4 /* MGTRFileEdit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MGTRFileEdit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9F9C2ED2B22966100CD6FF4 /* MGTRFileEditApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGTRFileEditApp.swift; sourceTree = "<group>"; };
+		C9F9C2EF2B22966100CD6FF4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C9F9C2F12B22966200CD6FF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C9F9C2F42B22966200CD6FF4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C9F9C2F62B22966200CD6FF4 /* MGTRFileEdit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MGTRFileEdit.entitlements; sourceTree = "<group>"; };
+		C9F9C2FB2B22966200CD6FF4 /* MGTRFileEditTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MGTRFileEditTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9F9C2FF2B22966200CD6FF4 /* MGTRFileEditTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGTRFileEditTests.swift; sourceTree = "<group>"; };
+		C9F9C3052B22966200CD6FF4 /* MGTRFileEditUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MGTRFileEditUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9F9C3092B22966200CD6FF4 /* MGTRFileEditUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGTRFileEditUITests.swift; sourceTree = "<group>"; };
+		C9F9C30B2B22966200CD6FF4 /* MGTRFileEditUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGTRFileEditUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C9F9C2E72B22966100CD6FF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9F9C2F82B22966200CD6FF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9F9C3022B22966200CD6FF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C9F9C2E12B22966100CD6FF4 = {
+			isa = PBXGroup;
+			children = (
+				C9F9C2EC2B22966100CD6FF4 /* MGTRFileEdit */,
+				C9F9C2FE2B22966200CD6FF4 /* MGTRFileEditTests */,
+				C9F9C3082B22966200CD6FF4 /* MGTRFileEditUITests */,
+				C9F9C2EB2B22966100CD6FF4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C9F9C2EB2B22966100CD6FF4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C9F9C2EA2B22966100CD6FF4 /* MGTRFileEdit.app */,
+				C9F9C2FB2B22966200CD6FF4 /* MGTRFileEditTests.xctest */,
+				C9F9C3052B22966200CD6FF4 /* MGTRFileEditUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C9F9C2EC2B22966100CD6FF4 /* MGTRFileEdit */ = {
+			isa = PBXGroup;
+			children = (
+				C9F9C2ED2B22966100CD6FF4 /* MGTRFileEditApp.swift */,
+				C9F9C2EF2B22966100CD6FF4 /* ContentView.swift */,
+				C9F9C2F12B22966200CD6FF4 /* Assets.xcassets */,
+				C9F9C2F62B22966200CD6FF4 /* MGTRFileEdit.entitlements */,
+				C9F9C2F32B22966200CD6FF4 /* Preview Content */,
+			);
+			path = MGTRFileEdit;
+			sourceTree = "<group>";
+		};
+		C9F9C2F32B22966200CD6FF4 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C9F9C2F42B22966200CD6FF4 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C9F9C2FE2B22966200CD6FF4 /* MGTRFileEditTests */ = {
+			isa = PBXGroup;
+			children = (
+				C9F9C2FF2B22966200CD6FF4 /* MGTRFileEditTests.swift */,
+			);
+			path = MGTRFileEditTests;
+			sourceTree = "<group>";
+		};
+		C9F9C3082B22966200CD6FF4 /* MGTRFileEditUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C9F9C3092B22966200CD6FF4 /* MGTRFileEditUITests.swift */,
+				C9F9C30B2B22966200CD6FF4 /* MGTRFileEditUITestsLaunchTests.swift */,
+			);
+			path = MGTRFileEditUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C9F9C2E92B22966100CD6FF4 /* MGTRFileEdit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9F9C30F2B22966200CD6FF4 /* Build configuration list for PBXNativeTarget "MGTRFileEdit" */;
+			buildPhases = (
+				C9F9C2E62B22966100CD6FF4 /* Sources */,
+				C9F9C2E72B22966100CD6FF4 /* Frameworks */,
+				C9F9C2E82B22966100CD6FF4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MGTRFileEdit;
+			productName = MGTRFileEdit;
+			productReference = C9F9C2EA2B22966100CD6FF4 /* MGTRFileEdit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C9F9C2FA2B22966200CD6FF4 /* MGTRFileEditTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9F9C3122B22966200CD6FF4 /* Build configuration list for PBXNativeTarget "MGTRFileEditTests" */;
+			buildPhases = (
+				C9F9C2F72B22966200CD6FF4 /* Sources */,
+				C9F9C2F82B22966200CD6FF4 /* Frameworks */,
+				C9F9C2F92B22966200CD6FF4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9F9C2FD2B22966200CD6FF4 /* PBXTargetDependency */,
+			);
+			name = MGTRFileEditTests;
+			productName = MGTRFileEditTests;
+			productReference = C9F9C2FB2B22966200CD6FF4 /* MGTRFileEditTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C9F9C3042B22966200CD6FF4 /* MGTRFileEditUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9F9C3152B22966200CD6FF4 /* Build configuration list for PBXNativeTarget "MGTRFileEditUITests" */;
+			buildPhases = (
+				C9F9C3012B22966200CD6FF4 /* Sources */,
+				C9F9C3022B22966200CD6FF4 /* Frameworks */,
+				C9F9C3032B22966200CD6FF4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9F9C3072B22966200CD6FF4 /* PBXTargetDependency */,
+			);
+			name = MGTRFileEditUITests;
+			productName = MGTRFileEditUITests;
+			productReference = C9F9C3052B22966200CD6FF4 /* MGTRFileEditUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C9F9C2E22B22966100CD6FF4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					C9F9C2E92B22966100CD6FF4 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					C9F9C2FA2B22966200CD6FF4 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = C9F9C2E92B22966100CD6FF4;
+					};
+					C9F9C3042B22966200CD6FF4 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = C9F9C2E92B22966100CD6FF4;
+					};
+				};
+			};
+			buildConfigurationList = C9F9C2E52B22966100CD6FF4 /* Build configuration list for PBXProject "MGTRFileEdit" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C9F9C2E12B22966100CD6FF4;
+			productRefGroup = C9F9C2EB2B22966100CD6FF4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C9F9C2E92B22966100CD6FF4 /* MGTRFileEdit */,
+				C9F9C2FA2B22966200CD6FF4 /* MGTRFileEditTests */,
+				C9F9C3042B22966200CD6FF4 /* MGTRFileEditUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C9F9C2E82B22966100CD6FF4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9F9C2F52B22966200CD6FF4 /* Preview Assets.xcassets in Resources */,
+				C9F9C2F22B22966200CD6FF4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9F9C2F92B22966200CD6FF4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9F9C3032B22966200CD6FF4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C9F9C2E62B22966100CD6FF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9F9C2F02B22966100CD6FF4 /* ContentView.swift in Sources */,
+				C9F9C2EE2B22966100CD6FF4 /* MGTRFileEditApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9F9C2F72B22966200CD6FF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9F9C3002B22966200CD6FF4 /* MGTRFileEditTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9F9C3012B22966200CD6FF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9F9C30C2B22966200CD6FF4 /* MGTRFileEditUITestsLaunchTests.swift in Sources */,
+				C9F9C30A2B22966200CD6FF4 /* MGTRFileEditUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C9F9C2FD2B22966200CD6FF4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9F9C2E92B22966100CD6FF4 /* MGTRFileEdit */;
+			targetProxy = C9F9C2FC2B22966200CD6FF4 /* PBXContainerItemProxy */;
+		};
+		C9F9C3072B22966200CD6FF4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9F9C2E92B22966100CD6FF4 /* MGTRFileEdit */;
+			targetProxy = C9F9C3062B22966200CD6FF4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C9F9C30D2B22966200CD6FF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C9F9C30E2B22966200CD6FF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		C9F9C3102B22966200CD6FF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MGTRFileEdit/MGTRFileEdit.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MGTRFileEdit/Preview Content\"";
+				DEVELOPMENT_TEAM = JH3ZC8234Q;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fogusbogus.MGTRFileEdit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C9F9C3112B22966200CD6FF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MGTRFileEdit/MGTRFileEdit.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MGTRFileEdit/Preview Content\"";
+				DEVELOPMENT_TEAM = JH3ZC8234Q;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fogusbogus.MGTRFileEdit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		C9F9C3132B22966200CD6FF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JH3ZC8234Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fogusbogus.MGTRFileEditTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MGTRFileEdit.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MGTRFileEdit";
+			};
+			name = Debug;
+		};
+		C9F9C3142B22966200CD6FF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JH3ZC8234Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fogusbogus.MGTRFileEditTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MGTRFileEdit.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MGTRFileEdit";
+			};
+			name = Release;
+		};
+		C9F9C3162B22966200CD6FF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JH3ZC8234Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fogusbogus.MGTRFileEditUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = MGTRFileEdit;
+			};
+			name = Debug;
+		};
+		C9F9C3172B22966200CD6FF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JH3ZC8234Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fogusbogus.MGTRFileEditUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = MGTRFileEdit;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C9F9C2E52B22966100CD6FF4 /* Build configuration list for PBXProject "MGTRFileEdit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9F9C30D2B22966200CD6FF4 /* Debug */,
+				C9F9C30E2B22966200CD6FF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9F9C30F2B22966200CD6FF4 /* Build configuration list for PBXNativeTarget "MGTRFileEdit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9F9C3102B22966200CD6FF4 /* Debug */,
+				C9F9C3112B22966200CD6FF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9F9C3122B22966200CD6FF4 /* Build configuration list for PBXNativeTarget "MGTRFileEditTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9F9C3132B22966200CD6FF4 /* Debug */,
+				C9F9C3142B22966200CD6FF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9F9C3152B22966200CD6FF4 /* Build configuration list for PBXNativeTarget "MGTRFileEditUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9F9C3162B22966200CD6FF4 /* Debug */,
+				C9F9C3172B22966200CD6FF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C9F9C2E22B22966100CD6FF4 /* Project object */;
+}
