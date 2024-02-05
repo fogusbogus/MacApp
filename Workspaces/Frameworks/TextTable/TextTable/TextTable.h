@@ -7,12 +7,6 @@
 
 #import <Foundation/Foundation.h>
 
-//! Project version number for TextTable.
-FOUNDATION_EXPORT double TextTableVersionNumber;
+@interface TextTable : NSObject
 
-//! Project version string for TextTable.
-FOUNDATION_EXPORT const unsigned char TextTableVersionString[];
-
-// In this header, you should import all the public headers of your framework using statements like #import <TextTable/PublicHeader.h>
-
-
+@end
