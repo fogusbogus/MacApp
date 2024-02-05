@@ -1,0 +1,626 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C97A17982B50066E0068960A /* TicketerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97A17972B50066E0068960A /* TicketerApp.swift */; };
+		C97A179A2B50066E0068960A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97A17992B50066E0068960A /* ContentView.swift */; };
+		C97A179C2B50066E0068960A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97A179B2B50066E0068960A /* Item.swift */; };
+		C97A179E2B50066F0068960A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C97A179D2B50066F0068960A /* Assets.xcassets */; };
+		C97A17A22B50066F0068960A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C97A17A12B50066F0068960A /* Preview Assets.xcassets */; };
+		C97A17AC2B5006700068960A /* TicketerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97A17AB2B5006700068960A /* TicketerTests.swift */; };
+		C97A17B62B5006700068960A /* TicketerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97A17B52B5006700068960A /* TicketerUITests.swift */; };
+		C97A17B82B5006700068960A /* TicketerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97A17B72B5006700068960A /* TicketerUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C97A17A82B5006700068960A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C97A178C2B50066E0068960A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C97A17932B50066E0068960A;
+			remoteInfo = Ticketer;
+		};
+		C97A17B22B5006700068960A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C97A178C2B50066E0068960A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C97A17932B50066E0068960A;
+			remoteInfo = Ticketer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C97A17942B50066E0068960A /* Ticketer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ticketer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C97A17972B50066E0068960A /* TicketerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketerApp.swift; sourceTree = "<group>"; };
+		C97A17992B50066E0068960A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C97A179B2B50066E0068960A /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		C97A179D2B50066F0068960A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C97A179F2B50066F0068960A /* Ticketer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Ticketer.entitlements; sourceTree = "<group>"; };
+		C97A17A12B50066F0068960A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C97A17A72B5006700068960A /* TicketerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TicketerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C97A17AB2B5006700068960A /* TicketerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketerTests.swift; sourceTree = "<group>"; };
+		C97A17B12B5006700068960A /* TicketerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TicketerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C97A17B52B5006700068960A /* TicketerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketerUITests.swift; sourceTree = "<group>"; };
+		C97A17B72B5006700068960A /* TicketerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C97A17912B50066E0068960A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C97A17A42B5006700068960A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C97A17AE2B5006700068960A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C97A178B2B50066E0068960A = {
+			isa = PBXGroup;
+			children = (
+				C97A17962B50066E0068960A /* Ticketer */,
+				C97A17AA2B5006700068960A /* TicketerTests */,
+				C97A17B42B5006700068960A /* TicketerUITests */,
+				C97A17952B50066E0068960A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C97A17952B50066E0068960A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C97A17942B50066E0068960A /* Ticketer.app */,
+				C97A17A72B5006700068960A /* TicketerTests.xctest */,
+				C97A17B12B5006700068960A /* TicketerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C97A17962B50066E0068960A /* Ticketer */ = {
+			isa = PBXGroup;
+			children = (
+				C97A17972B50066E0068960A /* TicketerApp.swift */,
+				C97A17992B50066E0068960A /* ContentView.swift */,
+				C97A179B2B50066E0068960A /* Item.swift */,
+				C97A179D2B50066F0068960A /* Assets.xcassets */,
+				C97A179F2B50066F0068960A /* Ticketer.entitlements */,
+				C97A17A02B50066F0068960A /* Preview Content */,
+			);
+			path = Ticketer;
+			sourceTree = "<group>";
+		};
+		C97A17A02B50066F0068960A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C97A17A12B50066F0068960A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C97A17AA2B5006700068960A /* TicketerTests */ = {
+			isa = PBXGroup;
+			children = (
+				C97A17AB2B5006700068960A /* TicketerTests.swift */,
+			);
+			path = TicketerTests;
+			sourceTree = "<group>";
+		};
+		C97A17B42B5006700068960A /* TicketerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C97A17B52B5006700068960A /* TicketerUITests.swift */,
+				C97A17B72B5006700068960A /* TicketerUITestsLaunchTests.swift */,
+			);
+			path = TicketerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C97A17932B50066E0068960A /* Ticketer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C97A17BB2B5006700068960A /* Build configuration list for PBXNativeTarget "Ticketer" */;
+			buildPhases = (
+				C97A17902B50066E0068960A /* Sources */,
+				C97A17912B50066E0068960A /* Frameworks */,
+				C97A17922B50066E0068960A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Ticketer;
+			productName = Ticketer;
+			productReference = C97A17942B50066E0068960A /* Ticketer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C97A17A62B5006700068960A /* TicketerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C97A17BE2B5006700068960A /* Build configuration list for PBXNativeTarget "TicketerTests" */;
+			buildPhases = (
+				C97A17A32B5006700068960A /* Sources */,
+				C97A17A42B5006700068960A /* Frameworks */,
+				C97A17A52B5006700068960A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C97A17A92B5006700068960A /* PBXTargetDependency */,
+			);
+			name = TicketerTests;
+			productName = TicketerTests;
+			productReference = C97A17A72B5006700068960A /* TicketerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C97A17B02B5006700068960A /* TicketerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C97A17C12B5006700068960A /* Build configuration list for PBXNativeTarget "TicketerUITests" */;
+			buildPhases = (
+				C97A17AD2B5006700068960A /* Sources */,
+				C97A17AE2B5006700068960A /* Frameworks */,
+				C97A17AF2B5006700068960A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C97A17B32B5006700068960A /* PBXTargetDependency */,
+			);
+			name = TicketerUITests;
+			productName = TicketerUITests;
+			productReference = C97A17B12B5006700068960A /* TicketerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C97A178C2B50066E0068960A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					C97A17932B50066E0068960A = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					C97A17A62B5006700068960A = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = C97A17932B50066E0068960A;
+					};
+					C97A17B02B5006700068960A = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = C97A17932B50066E0068960A;
+					};
+				};
+			};
+			buildConfigurationList = C97A178F2B50066E0068960A /* Build configuration list for PBXProject "Ticketer" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C97A178B2B50066E0068960A;
+			productRefGroup = C97A17952B50066E0068960A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C97A17932B50066E0068960A /* Ticketer */,
+				C97A17A62B5006700068960A /* TicketerTests */,
+				C97A17B02B5006700068960A /* TicketerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C97A17922B50066E0068960A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C97A17A22B50066F0068960A /* Preview Assets.xcassets in Resources */,
+				C97A179E2B50066F0068960A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C97A17A52B5006700068960A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C97A17AF2B5006700068960A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C97A17902B50066E0068960A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C97A179A2B50066E0068960A /* ContentView.swift in Sources */,
+				C97A179C2B50066E0068960A /* Item.swift in Sources */,
+				C97A17982B50066E0068960A /* TicketerApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C97A17A32B5006700068960A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C97A17AC2B5006700068960A /* TicketerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C97A17AD2B5006700068960A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C97A17B82B5006700068960A /* TicketerUITestsLaunchTests.swift in Sources */,
+				C97A17B62B5006700068960A /* TicketerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C97A17A92B5006700068960A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C97A17932B50066E0068960A /* Ticketer */;
+			targetProxy = C97A17A82B5006700068960A /* PBXContainerItemProxy */;
+		};
+		C97A17B32B5006700068960A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C97A17932B50066E0068960A /* Ticketer */;
+			targetProxy = C97A17B22B5006700068960A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C97A17B92B5006700068960A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C97A17BA2B5006700068960A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		C97A17BC2B5006700068960A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Ticketer/Ticketer.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Ticketer/Preview Content\"";
+				DEVELOPMENT_TEAM = JH3ZC8234Q;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fogusbogus.Ticketer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C97A17BD2B5006700068960A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Ticketer/Ticketer.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Ticketer/Preview Content\"";
+				DEVELOPMENT_TEAM = JH3ZC8234Q;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fogusbogus.Ticketer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C97A17BF2B5006700068960A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JH3ZC8234Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fogusbogus.TicketerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ticketer.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Ticketer";
+			};
+			name = Debug;
+		};
+		C97A17C02B5006700068960A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JH3ZC8234Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fogusbogus.TicketerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ticketer.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Ticketer";
+			};
+			name = Release;
+		};
+		C97A17C22B5006700068960A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JH3ZC8234Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fogusbogus.TicketerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Ticketer;
+			};
+			name = Debug;
+		};
+		C97A17C32B5006700068960A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JH3ZC8234Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fogusbogus.TicketerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Ticketer;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C97A178F2B50066E0068960A /* Build configuration list for PBXProject "Ticketer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C97A17B92B5006700068960A /* Debug */,
+				C97A17BA2B5006700068960A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C97A17BB2B5006700068960A /* Build configuration list for PBXNativeTarget "Ticketer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C97A17BC2B5006700068960A /* Debug */,
+				C97A17BD2B5006700068960A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C97A17BE2B5006700068960A /* Build configuration list for PBXNativeTarget "TicketerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C97A17BF2B5006700068960A /* Debug */,
+				C97A17C02B5006700068960A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C97A17C12B5006700068960A /* Build configuration list for PBXNativeTarget "TicketerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C97A17C22B5006700068960A /* Debug */,
+				C97A17C32B5006700068960A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C97A178C2B50066E0068960A /* Project object */;
+}
